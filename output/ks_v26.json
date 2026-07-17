@@ -1,0 +1,21 @@
+{
+ "polytopes-4d-26-vertices.parquet": {
+  "n": 78468,
+  "nonsmoothable": 8,
+  "bad_unit_faces": 8,
+  "bad_long": 78128,
+  "census_hits": {
+   "[(-2, -1), (0, -1), (1, 0), (1, 2)]": 8
+  },
+  "noncensus": [],
+  "single_defonly": [],
+  "both_sides": 0,
+  "both_sides_nontri": 0,
+  "both_sides_polys": [],
+  "statuses": {
+   "rigid": 8,
+   "def-only": 0
+  },
+  "secs": 158.6
+ }
+}

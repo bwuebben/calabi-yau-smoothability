@@ -1,0 +1,1169 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+% Last-resort stretch so a paragraph that cannot break cleanly sets loose
+% rather than running into the right margin.
+\setlength{\emergencystretch}{2em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{question}[theorem]{Question}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\Def}{\operatorname{Def}}
+\newcommand{\Sing}{\operatorname{Sing}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\conv}{\operatorname{conv}}
+\newcommand{\FF}{\mathbb{F}}
+
+\title{Non-smoothable Calabi--Yau threefolds \\from reflexive polytopes}
+\author{Bernd J. Wuebben}
+\date{July 14, 2026}
+
+\begin{document}
+
+\begin{abstract}
+We give explicit examples of compact Calabi--Yau threefolds with isolated
+Gorenstein canonical singularities that admit no global smoothing.  The
+examples are generic anticanonical hypersurfaces in Gorenstein Fano toric
+fourfolds; their singular points are cones over two-dimensional faces of the
+corresponding reflexive $4$-polytopes, and smoothability of such cones is
+governed by Altmann's description of the versal deformation together with the
+smoothing criterion of Corti--Filip--Petracci: the cone over a lattice polygon
+with primitive edges is smoothable if and only if the polygon decomposes as a
+Minkowski sum of unit segments and standard triangles.  Our first example has
+exactly three singular points, each isomorphic to the anticanonical cone over
+the Hirzebruch surface $\FF_1$ --- the exceptional local model in Gross's
+classification of primitive type~II contractions.  Our second example has
+exactly three singular points whose miniversal deformation spaces are
+positive-dimensional, so every singular point deforms nontrivially, and yet
+the threefold admits no smoothing; to our knowledge this phenomenon has not
+previously been exhibited on a compact Calabi--Yau threefold.  A refinement
+of the construction, using a third completing vertex to force the relevant
+dual edge to have lattice length one, produces a Calabi--Yau threefold whose
+singular locus is a \emph{single} point, the anticanonical cone over
+$\FF_1$; and a scan of the Kreuzer--Skarke classification produces one whose
+singular locus is a single point of the deformable type.  Along the way
+we record a complete classification of the isolated Gorenstein toric threefold
+singularities whose polygon admits an edge representation with coordinates in
+$\{-2,\dots,2\}$ into rigid, deformable-but-non-smoothable, and
+smoothable classes, together with the number of smoothing components in each
+case.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+Let $X$ be a projective threefold with trivial dualizing sheaf,
+$h^1(\mathcal{O}_X)=0$, and Gorenstein canonical singularities --- a
+\emph{Calabi--Yau threefold} with canonical singularities.  A basic question,
+going back to the foundational work of Friedman \cite{Friedman86}, is whether
+$X$ can be \emph{smoothed}: does there exist a flat proper family over a
+pointed disc with special fibre $X$ and smooth general fibre?
+
+For the mildest singularities the question is completely understood.  If $X$
+has ordinary double points, Friedman \cite{Friedman86} showed that a smoothing
+exists if and only if the exceptional curves of a small resolution satisfy a
+non-trivial ``good'' relation in homology; if $X$ has arbitrary isolated
+terminal Gorenstein singularities, Namikawa and Steenbrink
+\cite{NamikawaSteenbrink95} proved that $X$ is always smoothable.  Beyond the
+terminal case the picture changes qualitatively.  Gross \cite{Gross97}
+analyzed the case where $X$ arises from a primitive type~II contraction of a
+smooth Calabi--Yau threefold (a divisor $E$ contracted to a point) and proved
+that $X$ is then smoothable \emph{unless} $E \cong \PP^2$ or $E \cong \FF_1$
+\cite[Theorem~5.8]{Gross97}.  The two exceptions are genuinely
+non-smoothable: the germ at the singular point is the anticanonical cone over
+$E$, which for $E=\PP^2$ is the rigid quotient singularity
+$\frac13(1,1,1)$ \cite{Schlessinger71}, and for $E = \FF_1$ has
+one-dimensional tangent space $T^1$ but no genuine deformations at all.
+Deformations of Calabi--Yau threefolds with canonical and log canonical
+singularities remain an active subject; see Friedman--Laza
+\cite{FriedmanLaza25,FriedmanLazaSigma} for recent progress.
+
+This note produces explicit \emph{compact} examples beyond the quotient case,
+by a mechanism that is purely combinatorial.  The inputs are:
+
+\begin{enumerate}
+\item Altmann's theorem \cite{Altmann97} that for an isolated Gorenstein toric
+threefold singularity --- the cone $C(Q)$ over a lattice polygon $Q$ with
+primitive edges --- the irreducible components of the reduced miniversal base
+correspond to the maximal decompositions of $Q$ into Minkowski sums of lattice
+polytopes;
+\item the smoothing criterion of Corti--Filip--Petracci
+\cite[\S5.1]{CFP}: the \emph{smoothing} components correspond to the Minkowski
+decompositions of $Q$ into \emph{unit segments} and \emph{standard triangles};
+consequently $C(Q)$ is smoothable if and only if such a decomposition exists;
+\item Batyrev's construction \cite{Batyrev94}: for a reflexive polytope
+$\Delta \subset \ZZ^4$, the generic anticanonical hypersurface $X$ in the
+Gorenstein Fano toric fourfold $\PP_\Delta$ is a Calabi--Yau threefold with
+canonical singularities, and (as we spell out in
+Proposition~\ref{prop:planting}) the singular points of $X$ are precisely
+cones $C(F)$ over the two-dimensional faces $F$ of $\Delta$.
+\end{enumerate}
+
+Putting these together: \emph{if a reflexive $4$-polytope $\Delta$ has a
+two-dimensional face $F$ whose associated cone $C(F)$ is non-smoothable, then
+the generic anticanonical hypersurface $X \subset \PP_\Delta$ is a Calabi--Yau
+threefold that admits no smoothing} (Corollary~\ref{cor:global}).  The point
+is that non-smoothable faces are easy to recognize (a finite combinatorial
+test, Theorem~\ref{thm:trichotomy}) and easy to plant (a small search over
+completions of an embedded polygon, \S\ref{sec:examples}).
+
+Our two main examples are the following.  Write $e_1,\dots,e_4$ for the
+standard basis of $\ZZ^4$.
+
+\begin{theorem}[= Theorem~\ref{thm:A}]\label{thm:introA}
+Let
+\[
+\Delta_A=\conv\{(0,0,1,0),\,(-2,-1,1,0),\,(-2,-2,1,0),\,(-1,-2,1,0),\,
+e_4,\,(1,1,-1,-1)\}\subset\ZZ^4 .
+\]
+Then $\Delta_A$ is reflexive, and the generic anticanonical hypersurface
+$X_A\subset\PP_{\Delta_A}$ is a Calabi--Yau threefold whose singular locus
+consists of exactly three points, each analytically isomorphic to the
+anticanonical cone over the Hirzebruch surface $\FF_1$.  Every deformation of
+$X_A$ over a reduced base preserves these three singular germs; in particular
+$X_A$ admits no smoothing.  The maximal projective crepant partial resolution
+$\widehat X_A$ is a smooth Calabi--Yau threefold with
+$(h^{1,1},h^{2,1})=(5,101)$.
+\end{theorem}
+
+The local model here is precisely Gross's exceptional germ: the cone over
+$\FF_1$ is \emph{rigid in the reduced sense} --- its miniversal base is a fat
+point, with $\dim T^1 = 1$ but no positive-dimensional deformations
+\cite[\S5.5]{Gross97}.  Since it is the cone over a non-simplicial polygon, it
+is not a quotient singularity, so $X_A$ is not covered by the classical
+$\frac13(1,1,1)$ examples.  Compact Calabi--Yau threefolds containing such
+points are implicit in the primitive-contraction literature (see
+\cite{Gross97,KapustkaKapustka09,Kapustka09}, where the smoothable exceptional
+types are systematically smoothed and the $\FF_1$ case is excluded); we are
+not aware of an explicit compact example in print, and $\Delta_A$ provides one
+lying in the Kreuzer--Skarke classification \cite{KreuzerSkarke00}.
+
+The second example exhibits what we believe is a new phenomenon on compact
+Calabi--Yau threefolds.
+
+\begin{theorem}[= Theorem~\ref{thm:B}]\label{thm:introB}
+Let
+\[
+\begin{gathered}
+\Delta_B=\conv\{(0,0,1,0),\,(-2,-1,1,0),\,(-3,-2,1,0),\,\\
+(-2,-3,1,0),\,(-1,-2,1,0),\,e_4,\,(1,1,-1,-1)\}\subset\ZZ^4 .
+\end{gathered}
+\]
+Then $\Delta_B$ is reflexive, and the generic anticanonical hypersurface
+$X_B\subset\PP_{\Delta_B}$ is a Calabi--Yau threefold whose singular locus
+consists of exactly three points, each analytically isomorphic to the cone
+$C(Q_B)$ over the pentagon $Q_B$ that is the Minkowski sum of the
+$\frac13(1,1,1)$-triangle and a unit segment.  Each singular germ has
+one-dimensional reduced miniversal base, so each singular point of $X_B$
+admits a non-trivial one-parameter local deformation; nevertheless the
+miniversal base of each germ has no smoothing component, and $X_B$ admits no
+smoothing.  The maximal projective crepant partial resolution
+$\widehat X_B$ is a smooth Calabi--Yau threefold with
+$(h^{1,1},h^{2,1})=(9,81)$.
+\end{theorem}
+
+Thus $X_B$ is a canonical Calabi--Yau threefold all of whose singularities are
+honestly deformable --- there is no infinitesimal or local obstruction visible
+at first order, and the germs genuinely move --- and yet no deformation ever
+smooths it.  The unique local deformation direction pulls the pentagon apart
+into its Minkowski summands, trading each pentagon germ for a
+$\frac13(1,1,1)$ germ, which is then rigid: the singularity ``cascades'' to
+its rigid core and stops.  All previously known non-smoothable canonical
+Calabi--Yau examples that we are aware of are locally rigid (quotient points as
+in \cite{Gross97}, or the $\FF_1$-cone above).
+
+Both examples have exactly three singular points.  This is not an accident of
+the search but a feature of the minimal completion family, and it can be
+remedied: a third completing vertex forces the dual edge of the planted face
+to have lattice length one, giving a Calabi--Yau threefold whose singular
+locus is a \emph{single} non-smoothable point (Theorem~\ref{thm:C}; the same
+device produces a Calabi--Yau threefold with a single $\frac13(1,1,1)$ point,
+where the classical $X_9$ has three).  The deformable analogue exists as
+well: a systematic scan of the Kreuzer--Skarke classification
+\cite{KreuzerSkarke00} locates a $10$-vertex reflexive polytope whose
+hypersurface has a single singular point of the pentagon type $C(Q_B)$
+(Theorem~\ref{thm:D}) --- a compact Calabi--Yau threefold with one singular
+point which deforms non-trivially and yet is never absorbed by a smoothing.
+
+The two theorems are instances of a general planting mechanism which we state
+as Proposition~\ref{prop:planting} and Corollary~\ref{cor:global}, and which
+turns the smoothing question for a large class of compact Calabi--Yau
+threefolds into polygon combinatorics.  As bookkeeping for that combinatorics
+we record in \S\ref{sec:local} a complete census of the isolated Gorenstein
+toric threefold singularities whose polygon has an edge representation with
+coordinates in $[-2,2]$: there are $217$ classes up to equivalence --- the
+ordinary double point, $8$ rigid classes, $79$ deformable-but-non-smoothable
+classes, and $129$ smoothable classes.  The five classes whose polygon has one
+interior lattice point are exactly the anticanonical cones over the five
+smooth toric del Pezzo surfaces, and the census reproduces the classical
+deformation-theoretic data of these cones \cite[\S5.5]{Gross97} exactly
+(Remark~\ref{rem:delpezzo}); this both validates the computation and places
+the new examples in context: non-smoothability is common among Gorenstein
+toric threefold singularities (87 of the 216 canonical classes in the census),
+while the del Pezzo cone catalogue sees only its smallest stratum.
+
+Our approach is the Calabi--Yau analogue, one dimension up, of the program of
+Petracci and Corti--Hacking--Petracci on (non-)smoothability of Gorenstein
+toric \emph{Fano} threefolds \cite{Petracci20,CHP24}, where the local models
+are the same cones $C(F)$, attached to the facets of a reflexive
+$3$-polytope.  In our setting the local-to-global step is simpler than in
+loc.~cit.: because the relevant local models are non-smoothable outright, no
+almost-flatness or bundle-cohomology obstruction is needed --- the versal base
+of the germ already has no smoothing component, and this kills all global
+smoothings (Lemma~\ref{lem:localglobal}).
+
+All computations in this paper (the census, the face inventories of the
+example polytopes, the dual-edge point counts, the planting statistics and
+the Kreuzer--Skarke scan of \S\ref{sec:questions}, and the Hodge numbers) are
+implemented in six short exact-arithmetic computer programs, validated
+against the classical anchors recalled in the text (the quintic; $X_9 \subset
+\PP(1,1,1,3,3)$; the del Pezzo cone catalogue; Altmann's hexagon; and, for
+the scan, the Hodge numbers recorded in the Kreuzer--Skarke data itself).
+They are included with the arXiv submission as ancillary files.
+
+\subsection*{Acknowledgements}
+I am grateful to Mark Gross for first drawing my attention, many years ago, to the problem of smoothing canonical singularities on Calabi--Yau threefolds.
+
+\section{Local models: cones over polygons}\label{sec:local}
+
+\subsection{The dictionary}
+Let $N \cong \ZZ^3$ and let $Q \subset N_\RR$ be a lattice polygon placed at
+height one, i.e.\ $Q \subset \{ \langle u^*, \cdot\rangle = 1\}$ for a
+primitive $u^* \in M = N^\vee$.  Write $\sigma_Q$ for the cone over $Q$ and
+\[
+C(Q) \;=\; \Spec \CC[\sigma_Q^\vee \cap M].
+\]
+Every Gorenstein toric affine threefold without torus factors arises this way,
+and $C(Q)$ depends only on $Q$ up to affine unimodular equivalence of the
+plane $\{ \langle u^*,\cdot\rangle = 1\}$, i.e.\ up to $\ZZ^2 \rtimes
+GL_2(\ZZ)$ acting on $Q$.  We freely identify $Q$ with a polygon in $\ZZ^2$.
+The basic dictionary (see e.g.\ \cite{CFP}) is:
+\begin{itemize}
+\item $C(Q)$ has an \emph{isolated} singularity if and only if every edge of
+$Q$ has lattice length one (\emph{unit edges}); an edge of lattice length
+$m\ge 2$ produces a curve of transverse $A_{m-1}$-singularities.
+\item $C(Q)$ is canonical and Gorenstein; it is \emph{terminal} if and only if
+$Q$ has no lattice points other than its vertices, and it is smooth if and
+only if $Q$ is a standard triangle (unimodular image of
+$\conv\{(0,0),(1,0),(0,1)\}$).
+\item For a unit-edge $k$-gon, Pick's theorem gives $i = A - k/2 + 1$ interior
+lattice points, where $A$ is the euclidean area.
+\end{itemize}
+Since translations do not change the edges, a unit-edge polygon is equivalent
+data to its multiset $E(Q)=\{e_1,\dots,e_k\}$ of primitive edge vectors,
+listed counterclockwise, with $\sum e_i = 0$; and $GL_2(\ZZ)$-equivalence of
+polygons is $GL_2(\ZZ)$-equivalence of edge multisets.
+
+\subsection{Deformations: the trichotomy}
+Minkowski decompositions of unit-edge polygons are transparent at the level of
+edge multisets.
+
+\begin{lemma}\label{lem:partition}
+Let $Q$ be a unit-edge polygon with edge multiset $E(Q)$.  Minkowski
+decompositions $Q = R_1 + \dots + R_r$ into lattice polytopes (up to
+translation of the summands) correspond bijectively to partitions
+$E(Q)=E_1\sqcup\dots\sqcup E_r$ into non-empty zero-sum sub-multisets.  Under
+this correspondence a summand is a unit segment if and only if its part is a
+pair $\{v,-v\}$, and a standard triangle if and only if its part is a triple
+$\{a,b,c\}$ with $a+b+c=0$ and $|\det(a,b)|=1$.
+\end{lemma}
+
+\begin{proof}
+If $Q = R + S$, then each edge of $Q$ decomposes as the sum of the faces of
+$R$ and $S$ with the same outer normal, and lattice lengths add; since the
+edges of $Q$ are primitive, each edge comes entirely from $R$ or from $S$.
+Hence $E(Q) = E(R) \sqcup E(S)$, and inductively any decomposition partitions
+$E(Q)$ into zero-sum parts.  Conversely, a zero-sum sub-multiset of primitive
+vectors, sorted counterclockwise, closes up to a convex lattice polygon
+(a segment when the part is $\{v,-v\}$), and the Minkowski sum of the polygons
+associated to the parts of a partition has edge multiset $E(Q)$; since a
+convex polygon is determined by its edge multiset up to translation, that sum
+is $Q$.  The last statement is immediate: a triangle with primitive edges
+$a,b,c=-a-b$ is unimodular if and only if $|\det(a,b)|=1$.
+\end{proof}
+
+The deformation theory of $C(Q)$ is completely described by two results.
+
+\begin{theorem}[Altmann \cite{Altmann97}; Corti--Filip--Petracci
+{\cite[\S5.1]{CFP}}]\label{thm:trichotomy}
+Let $Q$ be a unit-edge lattice polygon, not a standard triangle, and let
+$V = C(Q)$.
+\begin{enumerate}
+\item The irreducible components of the reduced miniversal base space of $V$
+are in bijection with the maximal Minkowski decompositions of $Q$ into lattice
+summands; each component is smooth, and the component associated to a
+decomposition with $r$ summands has dimension $r-1$.
+\item The smoothing components are exactly those associated to decompositions
+all of whose summands are unit segments and standard triangles.
+\end{enumerate}
+Consequently, with the notation of Lemma~\textup{\ref{lem:partition}}, exactly
+one of the following holds:
+\begin{itemize}
+\item[\textup{(R)}] \textup{(rigid)} $E(Q)$ has no proper non-empty zero-sum
+sub-multiset.  Then the reduced miniversal base is a point: $V$ has no
+positive-dimensional deformations, and is not smoothable.
+\item[\textup{(D)}] \textup{(deformable, non-smoothable)} $E(Q)$ has a proper
+zero-sum sub-multiset, but admits no partition into pairs $\{v,-v\}$ and
+unimodular triples.  Then $V$ deforms non-trivially but no deformation has
+smooth general fibre.
+\item[\textup{(S)}] \textup{(smoothable)} $E(Q)$ admits such a partition; the
+number of such partitions equals the number of smoothing components of the
+miniversal base.
+\end{itemize}
+\end{theorem}
+
+For the dimensions in (1) and the concentration of $T^1$ in the Gorenstein
+degree see also \cite{Altmann95}; for unit-edge $k$-gons one has
+$\dim T^1 = k-3$.  Filip \cite{Filip25} re-derives and extends part (2) to
+non-isolated Gorenstein toric singularities via $0$-mutable Laurent
+polynomials.
+
+\begin{example}\label{ex:pentagon}
+The two smallest illustrations of the three classes:
+\begin{itemize}
+\item The $\frac13(1,1,1)$ singularity $=\CC^3/\mu_3$ is the cone over the
+triangle $T$ with $E(T)=\{(-2,-1),(1,-1),(1,2)\}$; no proper subset sums to
+zero, so it is rigid --- recovering Schlessinger \cite{Schlessinger71}.
+\item The ordinary double point is the cone over the unit square,
+$E=\{\pm(1,0),\pm(0,1)\}$: one partition into two segment pairs, hence
+smoothable with a single smoothing component ($xy-zw=t$).
+\item The pentagon $Q_B = T + s$, the Minkowski sum of $T$ with a unit segment
+$s$, has $E(Q_B)=\{(-2,-1),(-1,-1),(1,-1),(1,1),(1,2)\}$.  Its only proper
+zero-sum sub-multisets are the pair $\{(-1,-1),(1,1)\}$ and the complementary
+triple $E(T)$, which is not unimodular ($\det = 3$).  So $Q_B$ has exactly one
+non-trivial maximal decomposition, $T+s$: the reduced miniversal base of
+$C(Q_B)$ is a smooth curve, and there is no smoothing component --- $C(Q_B)$
+is deformable but not smoothable.  (Here $\dim T^1 = 2$, so the miniversal
+base is in addition non-reduced.)
+\end{itemize}
+\end{example}
+
+\begin{lemma}[The cascade]\label{lem:cascade}
+Let $Q = R_0 + \dots + R_r$ be a Minkowski decomposition of a unit-edge
+polygon into lattice summands, let $f_0,\dots,f_r$ be the standard
+basis of $\ZZ^{r+1}$, and let $\widetilde V$ be the Gorenstein toric
+$(3+r)$-fold associated to the \emph{Cayley cone}
+$\widetilde\sigma=\operatorname{Cone}\bigl(\bigcup_{i} R_i\times\{f_i\}\bigr)
+\subset \RR^2\oplus\RR^{r+1}$; write $u_0,\dots,u_r$ for the dual basis of
+$f_0,\dots,f_r$, viewed as characters of $\widetilde V$, and let
+\[
+\pi=\bigl(\chi^{u_0}-\chi^{u_1},\ \dots,\ \chi^{u_0}-\chi^{u_r}\bigr)\colon
+\widetilde V \longrightarrow \CC^r,
+\qquad \pi^{-1}(0)\cong C(Q),
+\]
+be Altmann's homogeneous deformation attached to the decomposition
+\cite{Altmann95} \textup{(}cf.\ \cite[Remark~6.2]{CFP}\textup{)}.  Then:
+\begin{enumerate}
+\item the general fibre of $\pi$ has exactly one singular point of analytic
+type $C(R_i)$ for each two-dimensional non-smooth summand $R_i$, and no
+other singular points;
+\item for the pentagon $Q_B = T + s$ of
+Example~\textup{\ref{ex:pentagon}}, the family $\pi$ dominates the
+positive-dimensional component of $\Def C(Q_B)$, whose general fibre
+therefore has a single singular point, of type $\frac13(1,1,1)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(1)  For two-dimensional $R_i$ the
+orbit closure of the face $\operatorname{Cone}(R_i\times\{f_i\})$ is an
+$r$-dimensional affine toric variety whose character lattice is freely
+generated by the restrictions of the $u_j$, $j \neq i$, while
+$\chi^{u_i}$ vanishes on it; so for generic $t\in\CC^r$ the $r$ equations of
+the fibre $\pi^{-1}(t)$ determine on it the single reduced point
+$\chi^{u_0}=t_i$, $\chi^{u_j}=t_i-t_j$, lying in the open orbit, and the
+implicit-function argument in the proof of
+Proposition~\ref{prop:planting}(2) below identifies the germ of
+$\pi^{-1}(t)$ there with $(C(R_i),0)$.  On the orbit closure of a face of
+$\widetilde\sigma$ meeting two distinct summand heights, some equation of
+$\pi^{-1}(t)$ restricts to $0=t_i$ or $t_i=t_j$, so the general fibre avoids
+these strata.  The remaining strata are the open orbit and the orbits of
+the proper faces $\tau$ of the cones
+$\operatorname{Cone}(R_i\times\{f_i\})$, and there the fibre is smooth.
+Over the open orbit this holds because $u_0,\dots,u_r$ extend to a basis of
+the character lattice.  Along the orbit of a proper face $\tau$ the ambient
+$\widetilde V$ is itself smooth: $\tau$ is spanned either by a single ray
+$(v,f_i)$ with $v$ a vertex of $R_i$, which is primitive, or by the rays
+over an edge $[v,v']$ of $R_i$, and since the edge is unit the pair
+$(v,f_i),\ (v'-v,0)$ extends to a lattice basis.  The functionals $u_j$,
+$j \neq i$ (including $u_0$), vanish on $\tau$ and form part of a basis of
+the saturated lattice $\tau^\perp \cap M$, so on the smooth chart
+$U_\tau \cong \CC^{\dim\tau}\times(\CC^\ast)^{3+r-\dim\tau}$ the characters
+$\chi^{u_0}$ and $\chi^{u_j}$, $j\neq i$, may be taken as coordinates of
+the torus factor, while $\chi^{u_i}$ is divisible by a nonconstant monomial
+in the $\CC^{\dim\tau}$-coordinates and hence vanishes along the orbit
+together with its derivatives in the torus coordinates.  The Jacobian of
+the $r$ equations of $\pi^{-1}(t)$ with respect to
+$\chi^{u_0},\chi^{u_j}$ is therefore unitriangular, and the fibre is a
+smooth complete intersection near the orbit.
+
+(2)  By Example~\ref{ex:pentagon} the reduced miniversal base of $C(Q_B)$
+is a smooth curve and $T+s$ is the unique non-trivial maximal
+decomposition, with $r=1$.  The family $\pi$ is non-trivial --- by (1) its
+general fibre has a single singular point of type
+$C(T) = \frac13(1,1,1)$, not $C(Q_B)$ --- so its classifying map to the
+miniversal base is non-constant and dominates the curve.  Hence the
+general fibre over the positive-dimensional component of $\Def C(Q_B)$ is
+the general fibre of $\pi$: a single $\frac13(1,1,1)$ point.  The only
+available deformation of the germ thus trades the pentagon cone for the
+rigid quotient cone, after which no further deformation is possible.
+\end{proof}
+
+\subsection{A census, and the del Pezzo catalogue}\label{subsec:census}
+Both tests in Theorem~\ref{thm:trichotomy} are finite, so the trichotomy can
+be tabulated.  We enumerated all unit-edge polygons whose (counterclockwise)
+edge vectors have coordinates in $[-2,2]$ --- all $k$-gons with
+$3 \le k \le 16$ occur --- and reduced modulo $GL_2(\ZZ)$.
+
+\begin{proposition}\label{prop:census}
+Up to equivalence there are exactly $217$ unit-edge polygons with an edge
+representation in the box above, excluding the standard triangle.  They
+comprise: the unit square (the ordinary double point, the unique terminal
+class, smoothable); $8$ rigid classes; $79$ deformable-but-non-smoothable
+classes; and $129$ smoothable classes.  The $8$ rigid classes are, listed as
+$[k,i;\,E(Q)]$:
+\[
+\begin{array}{l}
+[3,1;\,(-2,-1),(1,-1),(1,2)]\\[2pt]
+[4,1;\,(-2,-1),(0,-1),(1,0),(1,2)]\\[2pt]
+[4,2;\,(-2,-1),(2,-1),(1,2),(-1,0)]\\[2pt]
+[4,2;\,(-2,-1),(2,-1),(1,1),(-1,1)]\\[2pt]
+[5,2;\,(-2,-1),(2,-1),(1,1),(0,1),(-1,0)]\\[2pt]
+[5,3;\,(-2,-1),(-1,-1),(2,-1),(1,2),(0,1)]\\[2pt]
+[5,4;\,(-2,-1),(0,-1),(2,-1),(1,2),(-1,1)]\\[2pt]
+[6,5;\,(-2,-1),(-1,-1),(2,-1),(1,0),(1,2),(-1,1)]
+\end{array}
+\]
+\end{proposition}
+
+The count is computer-verified, and it is worth stating exactly what is
+certified.  The per-class verdicts and smoothing-component counts are
+$GL_2(\ZZ)$-invariants of the edge multiset, hence correct independently of
+any deduplication; they are anchored against the classical cases (the
+conifold, the rigid $\frac13(1,1,1)$ cone, Altmann's $\mathrm{dP}_6$ hexagon
+with its two smoothing components, and the del~Pezzo catalogue of
+Remark~\ref{rem:delpezzo}).  The class count $217$ depends on the
+deduplication, which is a union--find with transitive closure over the
+$GL_2(\ZZ)$-elements with entries in $[-3,3]$; the count is unchanged when
+the entry bound is raised to $[-4,4]$ (both runs are performed by the
+ancillary code on every execution), and this stability is the certificate we
+offer --- we have not certified the count against a trusted normal form.  Note that rigidity does not persist only
+for few edges: for every $k$ there are rigid unit-edge $k$-gons, e.g.\ with
+$E(Q) = \{(1,a_1),\dots,(1,a_{k-1}),\, (-(k-1),-\textstyle\sum a_j)\}$ for
+distinct $a_j$ with $\gcd(k-1,\sum a_j)=1$: any zero-sum subset must contain
+the last vector and then all the others.
+
+\begin{remark}[del Pezzo cross-check]\label{rem:delpezzo}
+The census contains exactly five classes with $i=1$ interior point.  If $Q$ is
+unit-edge with $i=1$, then $Q$ is reflexive (after centering) and one checks
+that $\sigma_Q^\vee$ is the cone at height one over the polar dual $Q^\circ$;
+hence
+\[
+C(Q) \;\cong\; \Spec \textstyle\bigoplus_{m\ge 0} H^0\!\left(S,\,
+\omega_S^{-m}\right),
+\]
+the anticanonical cone over the toric surface $S$ with moment polygon
+$Q^\circ$.  For the five census classes the surfaces $S$ are smooth: they are
+precisely the five smooth toric del Pezzo surfaces, and the census verdicts
+reproduce the classical deformation theory of their cones
+\cite[\S5.5]{Gross97} (which rests on \cite{Altmann97}):
+\begin{center}
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lcccc}
+\toprule
+$S$ & $\deg S$ & $[k,i]$ & $\dim T^1 = k-3$ & verdict \\
+\midrule
+$\PP^2$ & $9$ & $[3,1]$ & $0$ & rigid \\
+$\FF_1$ & $8$ & $[4,1]$ & $1$ & rigid (fat point) \\
+$\PP^1{\times}\PP^1$ & $8$ & $[4,1]$ & $1$ & smoothable, $1$ component \\
+$\mathrm{dP}_7$ & $7$ & $[5,1]$ & $2$ & smoothable, $1$ component \\
+$\mathrm{dP}_6$ & $6$ & $[6,1]$ & $3$ & smoothable, $2$ components \\
+\bottomrule
+\end{tabular}}
+\end{center}
+In particular the second rigid class of Proposition~\ref{prop:census},
+$Q_A$ with $E(Q_A)=\{(-2,-1),\allowbreak(0,-1),\allowbreak(1,0),\allowbreak(1,2)\}$, satisfies
+$Q_A^\circ = $ the moment polygon of $(\FF_1, -K)$, so
+\emph{$C(Q_A)$ is the anticanonical cone over $\FF_1$} --- the exceptional
+germ of \cite[Theorem~5.8]{Gross97}.  The deformable-but-non-smoothable
+classes all have $i \ge 2$; they are cones over polarized toric surfaces that
+are not anticanonically polarized del Pezzo surfaces, and so lie outside the
+catalogue above.
+\end{remark}
+
+\section{Two-faces of reflexive polytopes and Batyrev hypersurfaces}
+\label{sec:planting}
+
+Let $\widetilde N \cong \ZZ^4$ and let $\Delta \subset \widetilde N_\RR$ be a
+reflexive polytope: a lattice polytope with $0$ in its interior whose polar
+dual $\Delta^\circ=\{u : \langle u, v\rangle \ge -1 \ \forall v \in \Delta\}$
+is again a lattice polytope.  Let $\PP_\Delta$ be the toric fourfold of the
+face fan of $\Delta$; it is Gorenstein Fano, $-K_{\PP_\Delta}$ is ample and
+globally generated, and its space of sections has the monomial basis
+$\{\chi^m : m \in \Delta^\circ \cap \widetilde M\}$ \cite{Batyrev94,CLS}.
+
+For a face $G \preceq \Delta$ write $\sigma_G$ for the cone over $G$,
+$V(\sigma_G) \subset \PP_\Delta$ for the corresponding orbit closure, and
+$G^\circ \preceq \Delta^\circ$ for the dual face.  If $F$ is a
+two-dimensional face, then $\sigma_F$ is a three-dimensional cone,
+$V(\sigma_F)$ is a toric curve $\cong \PP^1$, and $F^\circ$ is an edge of
+$\Delta^\circ$; we write $\ell(F^\circ)$ for its lattice length.
+
+\emph{Normalization convention.}  When listing example data we describe each
+facet of $\Delta$ by the primitive integral functional $u$ normalized so that
+the facet lies on $\{\langle u,\cdot\rangle = 1\}$; the corresponding vertex
+of $\Delta^\circ$ is then $-u$, and the dual face $G^\circ$ of a face $G$ is
+spanned by the \emph{negatives} of the facet functionals through $G$.  Since
+lattice length is invariant under $u \mapsto -u$, we compute $\ell(F^\circ)$
+directly on the listed functionals.  (This matches the normalization used by
+the ancillary programs.)  The
+supporting functionals of the two facets of $\Delta$ containing $F$ restrict
+to the sublattice $N_F = \widetilde N \cap \RR\sigma_F$ as an integral height
+function equal to $-1$ on $F$; thus $(\sigma_F, N_F)$ is the Gorenstein cone
+over the lattice polygon $F$, and we write $C(F)$ for the associated toric
+threefold as in \S\ref{sec:local}, computed in the lattice induced on the
+affine span of $F$.
+
+\begin{proposition}\label{prop:planting}
+Let $\Delta \subset \ZZ^4$ be reflexive, all of whose edges have lattice
+length one, and let $X \in |{-K_{\PP_\Delta}}|$ be generic.  Then:
+\begin{enumerate}
+\item $X$ is a Calabi--Yau threefold with Gorenstein canonical singularities.
+\item For each two-dimensional face $F \preceq \Delta$ with $C(F)$ singular,
+$X$ meets the curve $V(\sigma_F)$ in exactly $\ell(F^\circ)$ points, all in
+the open orbit, and at each such point $p$ the germ $(X,p)$ is analytically
+isomorphic to $(C(F), 0)$.
+\item $X$ is smooth away from these points.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(1) is Batyrev's theorem \cite[\S4]{Batyrev94}.
+
+(2) Fix such an $F$.  The restriction map on anticanonical sections sends
+$\chi^m$ to a non-zero section on $V(\sigma_F)$ exactly when
+$m \in F^\circ \cap \widetilde M$: indeed $\chi^m$ vanishes identically on
+$V(\sigma_F)$ unless $\langle m, \cdot \rangle$ attains its minimum $-1$ on
+$F$.  The restricted line bundle is the toric line bundle on
+$V(\sigma_F)\cong\PP^1$ with one-dimensional moment polytope $F^\circ$, of
+degree $\ell(F^\circ)$ \cite[\S6.3]{CLS}, and the lattice points of $F^\circ$
+restrict to the full monomial basis of $H^0(\PP^1,
+\mathcal{O}(\ell(F^\circ)))$.  Hence for generic $X$ the intersection
+$X \cap V(\sigma_F)$ consists of $\ell(F^\circ)$ distinct reduced points
+avoiding the two torus-fixed points.
+
+For the local structure, split $\widetilde N \cong N_F \oplus \ZZ$; then the
+open toric chart of $\sigma_F$ is $U_{\sigma_F} \cong C(F) \times \CC^\ast$,
+with $V(\sigma_F)\cap U_{\sigma_F} = \{0\} \times \CC^\ast$
+\cite[Prop.~3.3.9]{CLS}.  Trivialize $-K$ on this chart and embed
+$C(F) \subset \CC^r$ by a generating set of $\sigma_F^\vee \cap M_F$; the
+defining equation of $X$ extends to a function $\widetilde f(z, t)$ on
+$\CC^r\times\CC^\ast$.  At a point $p=(0,t_0)$ of the transverse intersection
+above, $\widetilde f(0, \cdot)$ has a simple zero at $t_0$, so
+$\partial\widetilde f/\partial t (p) \neq 0$, and by the implicit function
+theorem $\{\widetilde f = 0\}$ is, near $p$, the graph of an analytic function
+$t = \varphi(z)$.  Intersecting with $C(F)\times\CC^\ast$ and projecting along
+the graph yields an analytic isomorphism $(X, p) \cong (C(F), 0)$.
+
+(3) $\Sing \PP_\Delta$ is the union of the orbit closures of the non-smooth
+cones of the face fan.  Cones over vertices and the full-dimensional cones'
+smooth loci are irrelevant for a generic hypersurface: since
+$-K_{\PP_\Delta}$ is globally generated, Bertini gives that $X$ is smooth away
+from $\Sing\PP_\Delta$, and $X$ avoids the finitely many torus-fixed points
+(the section $\chi^{u_\Gamma}$, for $u_\Gamma$ the vertex of $\Delta^\circ$
+dual to a facet $\Gamma$, is non-vanishing at the fixed point of
+$\sigma_\Gamma$).  For a two-dimensional cone $\sigma_e$ over an edge $e$ of
+$\Delta$ with vertices $v, w$: since $\ell(e)=1$ and $v$ lies at height $1$
+with respect to the (restriction of the) supporting functional of any facet
+containing $e$, the pair $(v, w-v)$ is a basis of $\widetilde N \cap
+\RR\sigma_e$, so $\sigma_e$ is smooth.  Hence, under the all-unit-edges
+hypothesis, $\Sing\PP_\Delta$ meets $X$ only in the curves $V(\sigma_F)$ of
+part (2), and there only at the listed points.
+\end{proof}
+
+\begin{remark}
+If $\Delta$ has an edge $e$ of lattice length $m \ge 2$, the same analysis
+shows that $X$ acquires a curve of transverse $A_{m-1}$-singularities along
+$V(\sigma_e)$; we exclude this only to keep the singular locus zero-dimensional.
+\end{remark}
+
+\section{Local-to-global: no smoothing}\label{sec:nosmoothing}
+
+\begin{lemma}\label{lem:localglobal}
+Let $X$ be a reduced projective variety with an isolated singular point $p$
+such that no irreducible component of the reduced miniversal base space of the
+germ $(X,p)$ has smooth general fibre.  Then for every flat proper family
+$\mathcal{X} \to (T,0)$ over a reduced irreducible pointed base with
+$\mathcal{X}_0 \cong X$, every fibre $\mathcal{X}_t$ for $t$ near $0$ is
+singular.  In particular $X$ admits no smoothing.
+
+If moreover the reduced miniversal base of $(X,p)$ is a point, then the
+induced family of germs at $p$ is trivial: every $\mathcal{X}_t$ has a
+singular point with germ isomorphic to $(X,p)$.
+\end{lemma}
+
+\begin{proof}
+By Grauert \cite{Grauert72}, the isolated singularity $(X,p)$ has a miniversal
+deformation $\mathcal{S} \to (S,0)$, which we represent on a suitable Milnor
+representative; versality holds for analytic families over reduced base germs
+after shrinking \cite[II.1]{GLS}.  The relative singular locus
+$\Sigma \subset \mathcal{S}$ is closed analytic, and (after shrinking) the
+projection $\Sigma \to S$ is finite, so its image is a closed analytic subset
+$D \subseteq S$ --- the locus of singular fibres.  A component of $S$ is a
+smoothing component precisely when it is not contained in $D$; by hypothesis
+there are none, so $D = S$ and \emph{every} fibre of the miniversal family is
+singular.
+
+Now let $\mathcal{X} \to (T,0)$ be as in the statement and restrict it to a
+Milnor representative around $p$; after shrinking $T$ this restriction is
+induced from $\mathcal{S} \to S$ by a base-change map $h : (T,0) \to (S,0)$.
+Its fibres are fibres of the miniversal family, hence singular; so
+$\mathcal{X}_t$ has a singular point near $p$ for every $t$ near $0$.
+
+For the final statement: if $S_{\mathrm{red}}$ is a point, then $h$ factors
+through $S_{\mathrm{red}}$ because $T$ is reduced, i.e.\ $h$ is constant, and
+the induced family of germs is the pullback of the central fibre.
+\end{proof}
+
+\begin{remark}
+Lemma~\ref{lem:localglobal} is deliberately the crudest possible
+local-to-global statement: it requires no Calabi--Yau hypothesis and no
+obstruction theory, because the local model already forbids smooth nearby
+fibres.  For the much finer relationship between local and global
+deformations of a Calabi--Yau threefold with isolated canonical
+singularities --- in particular when local smoothings do exist and the
+question is whether they are realized by global deformations --- see Gross
+\cite[\S\S1--2]{Gross97} and Namikawa's stratified local moduli
+\cite{Namikawa02}.
+\end{remark}
+
+\begin{corollary}\label{cor:global}
+Let $\Delta$ be a reflexive $4$-polytope with unit edges possessing a
+two-dimensional face $F$ such that the polygon $F$ is of type \textup{(R)} or
+\textup{(D)} in Theorem~\textup{\ref{thm:trichotomy}}.  Then the generic
+anticanonical hypersurface $X \subset \PP_\Delta$ is a Calabi--Yau threefold
+with canonical Gorenstein singularities which admits no smoothing.
+\end{corollary}
+
+\begin{proof}
+By Proposition~\ref{prop:planting}, $X$ has $\ell(F^\circ) \ge 1$ points with
+germ $C(F)$; by Theorem~\ref{thm:trichotomy} the miniversal base of this germ
+has no smoothing component; by Lemma~\ref{lem:localglobal} no deformation of
+$X$ over a reduced irreducible base (in particular no smoothing over a disc)
+has smooth general fibre.
+\end{proof}
+
+\section{The examples}\label{sec:examples}
+
+Both examples plant a non-smoothable polygon $Q$ from \S\ref{sec:local} as a
+two-dimensional face of a reflexive $4$-polytope of the simple shape
+$\conv\left(Q \times \{(1,0)\} \cup \{e_4,\ w\}\right)$, found by a small
+computer search over the completing vertex $w$.  (Placing $Q$ in the plane
+$x_3=1,\,x_4=0$ embeds it in a saturated affine sublattice, so the face
+polygon carries the intrinsic lattice structure of $Q$; translations of $Q$
+within that plane and the normalization of the first completing vertex to
+$e_4$ are unimodular coordinate changes.)
+
+\subsection{A Calabi--Yau threefold with three $\FF_1$-cone points}
+
+\begin{theorem}\label{thm:A}
+Let $Q_A$ be the rigid quadrilateral with
+$E(Q_A)=\{(-2,-1),\allowbreak(0,-1),\allowbreak(1,0),\allowbreak(1,2)\}$, embedded with vertices
+$(0,0),(-2,-1),(-2,-2),(-1,-2)$, and let
+\[
+\Delta_A=\conv\bigl(Q_A\times\{(1,0)\}\ \cup\ \{e_4,\ (1,1,-1,-1)\bigr\}
+\subset \ZZ^4 .
+\]
+Then:
+\begin{enumerate}
+\item $\Delta_A$ is reflexive with $6$ vertices and $6$ facets, and all $13$
+edges of $\Delta_A$ have lattice length one.  Its $13$ two-dimensional faces
+consist of the face $F_A = Q_A\times\{(1,0)\}$ and $12$ standard triangles.
+\item The generic anticanonical hypersurface $X_A \subset \PP_{\Delta_A}$ is a
+Calabi--Yau threefold whose singular locus consists of exactly
+$\ell(F_A^\circ) = 3$ points, at each of which the germ of $X_A$ is the
+anticanonical cone over $\FF_1$.
+\item Every deformation of $X_A$ over a reduced irreducible base preserves the
+three singular germs up to analytic isomorphism.  In particular $X_A$ admits
+no smoothing.
+\item Batyrev's formulas give $(h^{1,1},h^{2,1}) = (5,101)$, hence Euler
+number $-192$, for the maximal projective crepant partial resolution
+$\widehat X_A$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(1) is a finite verification.  The six facet inequalities
+$\langle u, \cdot\rangle \le 1$ of $\Delta_A$ have primitive normals
+\[
+(0,0,1,1),\ (0,0,1,-2),\ (-3,6,1,1),\ (6,-3,1,1),\ (-3,0,-5,1),\
+(0,-3,-5,1),
+\]
+each at level exactly $1$, which is reflexivity; the face $F_A$ is the
+intersection of $\Delta_A$ with the two supporting hyperplanes of the first
+two normals, and the classification of the remaining twelve two-dimensional
+faces and of all edge lengths is a direct computation (independently verified
+in exact arithmetic).  The dual edge $F_A^\circ$ is spanned by the negatives
+of the first two normals (the convention of \S\ref{sec:planting}), of lattice
+length $\gcd\bigl((0,0,1,1)-(0,0,1,-2)\bigr)=3$.
+
+(2) By Proposition~\ref{prop:planting}, the singular points of $X_A$ are: for
+$F_A$, three points with germ $C(Q_A)$; for the twelve standard-triangle
+faces, none, as their cones are smooth.  By Remark~\ref{rem:delpezzo},
+$C(Q_A)$ is the anticanonical cone over $\FF_1$.
+
+(3) $Q_A$ is rigid: $E(Q_A)$ has no proper zero-sum sub-multiset (a direct
+check of the $14$ proper non-empty subsets).  By
+Theorem~\ref{thm:trichotomy}(R) the reduced miniversal base of each germ is a
+point, and Lemma~\ref{lem:localglobal} applies, including its final statement.
+
+(4) With $\ell(\Delta_A)=8$ and $\ell(\Delta_A^\circ)=130$ lattice points and
+the face data above, Batyrev's formulas \cite{Batyrev94} for the Hodge numbers
+of $\widehat X_A$ give $h^{1,1}=5$ and $h^{2,1}=101$.  (The same
+implementation returns $(1,101)$ for the quintic simplex and $(4,112)$ for
+$X_9\subset\PP(1,1,1,3,3)$.)
+\end{proof}
+
+\begin{remark}
+The three germs of $X_A$ have $\dim T^1 = 1$ but fat-point miniversal bases:
+$X_A$ has first-order deformations at each singular point, all obstructed.
+This is exactly the local model excluded in Gross's smoothability theorem for
+primitive type~II contractions \cite[Theorem~5.8, \S5.5]{Gross97}, here
+realized three times on an explicit compact Calabi--Yau threefold in the
+Kreuzer--Skarke list.
+\end{remark}
+
+\subsection{A deformable but non-smoothable Calabi--Yau threefold}
+
+\begin{theorem}\label{thm:B}
+Let $Q_B = T + s$ be the def-only pentagon of Example~\textup{\ref{ex:pentagon}},
+embedded with vertices $(0,0),(-2,-1),(-3,-2),(-2,-3),(-1,-2)$, and let
+\[
+\Delta_B=\conv\bigl(Q_B\times\{(1,0)\}\ \cup\ \{e_4,\ (1,1,-1,-1)\bigr\}
+\subset \ZZ^4 .
+\]
+Then:
+\begin{enumerate}
+\item $\Delta_B$ is reflexive with $7$ vertices and $7$ facets; all $16$ edges
+have lattice length one; its $16$ two-dimensional faces are
+$F_B = Q_B \times \{(1,0)\}$ and $15$ standard triangles.
+\item The generic anticanonical $X_B \subset \PP_{\Delta_B}$ is a Calabi--Yau
+threefold whose singular locus consists of exactly $\ell(F_B^\circ)=3$ points,
+each with germ $C(Q_B)$.
+\item Each singular germ of $X_B$ admits a non-trivial one-parameter
+deformation: its reduced miniversal base is a smooth curve.  Nevertheless the
+miniversal base has no smoothing component, and $X_B$ admits no smoothing.
+\item $(h^{1,1},h^{2,1}) = (9,81)$ for the maximal projective crepant partial
+resolution, hence Euler number $-144$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(1) The seven facet normals are
+\[
+\begin{gathered}
+(0,0,1,1),\ (0,0,1,-2),\ (-3,6,1,1),\ (6,-3,1,1),\\
+(-3,3,-2,1),\ (-1,-1,-4,1),\ (3,-3,-2,1),
+\end{gathered}
+\]
+each at level $1$; the rest is finite verification as in
+Theorem~\ref{thm:A}(1), with $F_B^\circ$ again of length $3$.
+(2) is Proposition~\ref{prop:planting} plus the face inventory.
+(3) is Example~\ref{ex:pentagon} combined with
+Theorem~\ref{thm:trichotomy} and Lemma~\ref{lem:localglobal}.
+(4) is computed as in Theorem~\ref{thm:A}(4), with
+$\ell(\Delta_B)=10$, $\ell(\Delta_B^\circ)=104$.
+\end{proof}
+
+\begin{remark}\label{rem:stuck}
+By Lemma~\ref{lem:cascade}, the available local deformation at each singular
+point of $X_B$ replaces the pentagon cone by a $\frac13(1,1,1)$ point.  Thus,
+to the extent that these local deformations are realized by global ones,
+$X_B$ moves in a family whose neighbouring members are Calabi--Yau threefolds
+with three rigid quotient points --- which then admit no further deformation of
+their germs.  In every case the singularities never disappear.  We are not
+aware of a previous compact Calabi--Yau example in which all singular points
+are locally deformable and yet no smoothing exists; the known non-smoothable
+examples (quotient points, and the $\FF_1$-cone of Theorem~\ref{thm:A}) are
+locally rigid.
+\end{remark}
+
+\subsection{A single non-smoothable point}
+
+The examples above have three singular points because the dual edge of the
+planted face has lattice length $3$, and within the two-vertex completion
+family this cannot be pushed below $2$: every facet of $\Delta$ containing
+the planted face $F$ has normal of the form $u_t = (0,0,1,t)$ with
+$t \in \ZZ$ --- these are exactly the integral functionals restricting to $1$
+on the affine span of $F$ --- and the two facets through $F$ are the extreme
+supporting members of this pencil, so that
+$\ell(F^\circ) = t_{\max} - t_{\min}$.  With completing vertices $e_4$ and
+$w = (w_1,w_2,w_3,w_4)$ the bound $\ell(F^\circ)\ge 2$ is forced, as
+follows.  All vertices of $Q\times\{(1,0)\}$ have $x_3 = 1$ and $x_4 = 0$,
+and $e_4$ has $x_3 = 0$, $x_4=1$; for the origin to be interior some
+vertex must have negative third coordinate and some vertex negative
+fourth coordinate, so
+$w_3 \le -1$ and $w_4 \le -1$.  The member $u_t$ supports $\Delta$ if and
+only if $\langle u_t, e_4\rangle = t \le 1$ and
+$\langle u_t, w\rangle = w_3 + t w_4 \le 1$; since $w_4 < 0$ the second
+constraint bounds $t$ from below only, so $t_{\max} = 1$, attained on the
+facet through $e_4$.  The facet at the lower extreme must contain a vertex
+outside the plane of $F$, necessarily $w$, so
+$t_{\min} = (1-w_3)/w_4$, an integer with positive numerator ($\ge 2$) and
+negative denominator; hence $t_{\min} \le -1$ and
+$\ell(F^\circ) = 1 - t_{\min} \ge 2$.  A third completing vertex in
+$\{x_3 = 1\}$ removes the interiority constraint that forced
+$w_3 \le -1$ and realizes $t_{\min} = 0$:
+
+\begin{theorem}\label{thm:C}
+Let $Q_A$ be embedded as in Theorem~\textup{\ref{thm:A}} and let
+\[
+\Delta_C=\conv\bigl(Q_A\times\{(1,0)\}\ \cup\ \{e_4,\ (1,1,-1,0),\
+(-2,-2,1,-1)\}\bigr)\subset\ZZ^4 .
+\]
+Then:
+\begin{enumerate}
+\item $\Delta_C$ is reflexive with $7$ vertices and $10$ facets; all $18$
+edges have lattice length one; its $21$ two-dimensional faces are
+$F_C = Q_A\times\{(1,0)\}$ and $20$ standard triangles; and the dual edge
+$F_C^\circ$, spanned by the negatives of the facet functionals
+$(0,0,1,0)$ and $(0,0,1,1)$, has lattice length $1$.
+\item The generic anticanonical hypersurface $X_C \subset \PP_{\Delta_C}$ is
+a Calabi--Yau threefold whose singular locus is a \emph{single} point, at
+which the germ is the anticanonical cone over $\FF_1$.  Every deformation of
+$X_C$ over a reduced irreducible base preserves this germ; in particular
+$X_C$ admits no smoothing.
+\item The maximal projective crepant partial resolution $\widehat X_C$ has
+$(h^{1,1},h^{2,1}) = (4,108)$, hence Euler number $-208$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The ten facet normals are
+\[
+\begin{array}{lllll}
+(0,0,1,1), & (0,0,1,0), & (-2,0,-3,0), & (-2,0,-3,1), & (-2,4,1,-4),\\[2pt]
+(-2,4,1,1), & (0,-2,-3,0), & (0,-2,-3,1), & (4,-2,1,-4), & (4,-2,1,1),
+\end{array}
+\]
+each at level exactly $1$; the face inventory, edge lengths, and the dual
+edge $F_C^\circ$ (spanned by the negatives of the first two normals, of
+lattice length $1$)
+are finite verifications as in Theorem~\ref{thm:A}(1).  Parts (2) and (3)
+follow exactly as in Theorem~\ref{thm:A}, with
+$\ell(\Delta_C) = 9$, $\ell(\Delta_C^\circ) = 141$ in Batyrev's formulas.
+\end{proof}
+
+\begin{remark}
+The same pair of completing vertices applied to the $\frac13(1,1,1)$
+triangle (embedded with vertices $(0,0),(-2,-1),(-1,-2)$) gives a $6$-vertex
+reflexive polytope whose generic anticanonical hypersurface is a Calabi--Yau
+threefold with a \emph{single} $\frac13(1,1,1)$ point, with resolution Hodge
+numbers $(3,111)$ and $\chi = -216$; the classical
+$X_9 \subset \PP(1,1,1,3,3)$ has three such points.
+\end{remark}
+
+The rigid examples above leave one configuration outstanding: a single
+singular point of the \emph{deformable} type.  Our completion searches
+realize $\ell(F^\circ)=1$ for def-only faces only on polytopes carrying
+additional singular faces; the example below was instead found by scanning
+the Kreuzer--Skarke classification itself ($\Delta_D$ appeared in the scan
+of the polytopes with at most $10$ vertices; the scan was subsequently
+completed over the whole classification, see \S\ref{sec:questions}).
+
+\begin{theorem}\label{thm:D}
+Let
+\begin{align*}
+\Delta_D=\conv\{&(1,0,0,0),\,(0,1,0,0),\,(0,-1,0,0),\,(0,0,1,0),\,
+(-3,1,-1,0),\\
+&(0,1,1,0),\,(0,0,0,1),\,(-3,2,1,-1),\,(-2,2,2,-1),\,(1,0,1,1)\}
+\subset\ZZ^4 .
+\end{align*}
+Then:
+\begin{enumerate}
+\item $\Delta_D$ is reflexive with $10$ vertices and $15$ facets; all $30$
+edges have lattice length one; its $35$ two-dimensional faces are $34$
+standard triangles and one pentagon $F_D$, which is
+$GL_2(\ZZ)$-equivalent to the def-only pentagon $Q_B = T + s$ of
+Theorem~\textup{\ref{thm:B}}; and the dual edge $F_D^\circ$, spanned by the
+negatives of the facet functionals $(0,1,0,1)$ and $(-1,-1,1,1)$, has
+lattice length $1$.
+\item The generic anticanonical hypersurface $X_D \subset \PP_{\Delta_D}$ is
+a Calabi--Yau threefold whose singular locus is a \emph{single} point, with
+germ $C(Q_B)$: the reduced miniversal base of the singularity is a smooth
+curve, so the singular point of $X_D$ admits a non-trivial one-parameter
+local deformation, and yet $X_D$ admits no smoothing.
+\item The maximal projective crepant partial resolution $\widehat X_D$ has
+$(h^{1,1},h^{2,1}) = (8,118)$, hence Euler number $-220$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+All statements in (1) are finite verifications in exact arithmetic as in
+Theorem~\ref{thm:A}(1): the fifteen facet normals are
+\[
+\begin{array}{lllll}
+(0,1,0,1), & (-1,-1,1,1), & (1,1,0,0), & (1,1,0,-1), & (1,0,1,-1),\\[2pt]
+(1,1,-1,1), & (1,1,-1,-3), & (1,1,-3,1), & (1,1,-3,-5), & (1,-1,1,-1),\\[2pt]
+(1,-1,1,-3), & (1,-1,-1,1), & (1,-1,-1,-7), & (1,-1,-5,1), & (1,-1,-5,-11),
+\end{array}
+\]
+each at level exactly $1$; the pentagon face $F_D$ has vertices
+$5,7,8,9,10$ in the order listed, its edge multiset in the induced lattice
+is $\{(1,0),(3,2),(-1,0),(-3,-1),(0,-1)\}$, and an explicit unimodular map
+carries it to $E(Q_B)$; the first two facet normals listed are those of the
+two facets through $F_D$, and the dual edge they determine has lattice
+length $1$.  Part (2) follows from
+Proposition~\ref{prop:planting}, Example~\ref{ex:pentagon},
+Theorem~\ref{thm:trichotomy} and Lemma~\ref{lem:localglobal} exactly as in
+Theorem~\ref{thm:B}; part (3) is Batyrev's formulas with
+$\ell(\Delta_D) = 15$, $\ell(\Delta_D^\circ) = 152$.
+\end{proof}
+
+\begin{remark}
+Theorems~\ref{thm:C} and~\ref{thm:D} together answer the minimality
+question for both non-smoothable types: one rigid point, or one deformable
+point, on a compact Calabi--Yau threefold, each realized inside the
+Kreuzer--Skarke classification.  The scan that produced $\Delta_D$ found
+three $10$-vertex polytopes whose unique \emph{non-smoothable} face is
+def-only with dual edge of length one; $\Delta_D$ is the one whose other
+faces are all smooth (the other two carry additional ordinary
+smoothable singular points).  Over the full classification there are
+exactly four polytopes whose generic hypersurface has a \emph{single}
+singular point of def-only type --- with $10$, $11$, $11$ and $12$ vertices,
+$\Delta_D$ being the minimal one --- and in all four the germ is $C(Q_B)$;
+see \S\ref{sec:questions}.
+\end{remark}
+
+\section{Further remarks and questions}\label{sec:questions}
+
+\subsection{How common is this?}
+The planting search that produced $\Delta_A$ and $\Delta_B$ is the simplest
+possible: complete the embedded polygon by two vertices, one of which can be
+normalized to $e_4$.  This family realizes $18$ of the $87$ non-smoothable
+census classes of Proposition~\ref{prop:census} as two-dimensional faces of
+reflexive $4$-polytopes (both examples above use the same completing vertex
+$(1,1,-1,-1)$), and the count is stable: enlarging the coordinate box for
+the completing vertex from $[-3,3]$ to $[-5,5]$ produces no new classes, and
+every class realized this way has at most $6$ interior lattice points.
+Completing by \emph{three} vertices instead (as in
+Theorem~\ref{thm:C}, with both free vertices ranging over the box
+$[-2,2]^4$) raises the count to $32$ of the $87$: all $23$ classes with
+$i \le 6$ embed, together with $9$ classes with $7 \le i \le 10$.
+
+A complementary and ultimately decisive approach is to scan the
+Kreuzer--Skarke classification itself.  We have carried out the test of
+Theorem~\ref{thm:trichotomy} on \emph{all} $473{,}800{,}776$ reflexive
+$4$-polytopes \cite{KreuzerSkarke00}: $473{,}800{,}775$ of them through the
+per-vertex-count mirror of the database that we used, whose files cover
+$5$ to $33$ vertices, and the one remaining polytope separately.
+Granting that the mirror's entries are distinct members of the
+classification --- its per-file counts and Hodge data were validated
+throughout the sweep --- the one polytope it omits is the
+classification's unique member with more than $33$ vertices, and we
+identify it: it is the $36$-vertex
+product of two reflexive hexagons, verified directly (ancillary file
+\texttt{missing\_polytope.py}).  That polytope's $48$ two-dimensional faces
+are $36$ unit parallelograms and $12$ hexagons of $\mathrm{dP}_6$ type, all
+of type \textup{(S)} with dual edge of length one, so it contributes to
+none of the counts below.  We find:
+\begin{itemize}
+\item $8.27\%$ (that is, $39{,}175{,}536$ of them) carry a unit-edge
+non-smoothable two-dimensional face, so their generic anticanonical
+hypersurfaces are non-smoothable Calabi--Yau threefolds by
+Corollary~\ref{cor:global}; the fraction rises from $11.7\%$ at $5$
+vertices to a peak of $14.0\%$ at $9$ and then declines steadily with the
+vertex count, to below $1\%$ beyond $22$ vertices;
+\item def-only faces appear from $7$ vertices on (as they must: a
+def-only polygon has at least five edges --- a unit-edge triangle is
+indecomposable, and a decomposable unit-edge
+quadrilateral splits into two segment pairs and is smoothable --- and a
+pentagonal two-face together with the two further vertices needed to span
+dimension four already requires seven vertices), $497{,}434$ face
+occurrences in all;
+\item combining with the synthetic plantings above, exactly $65$ of the
+$87$ census classes are realized as two-dimensional faces of reflexive
+$4$-polytopes.  The $22$ classes that never occur are all of type
+\textup{(D)} and all have $i \ge 11$ interior points, so the occurrence of
+a class decays with its size and, beyond a threshold, ceases entirely ---
+an obstruction we do not explain;
+\item unit-edge non-smoothable faces \emph{outside} the census box also
+occur (rigid polygons with an edge coordinate exceeding $2$, with up to
+five edges in our samples), so the census stratum is a proper part of the
+phenomenon.
+\end{itemize}
+This answers the first natural quantitative question --- what fraction of
+the Batyrev landscape is non-smoothable --- completely, and the second ---
+which local models occur --- for the census stratum; the unit-edge
+non-smoothable faces outside the census box occur but remain to be
+classified.  The single-point examples are similarly constrained: among
+all reflexive $4$-polytopes with unit edges whose generic hypersurface
+has a \emph{single} singular point, and that point of def-only type, the
+point is the pentagon cone $C(Q_B)$ of Theorem~\ref{thm:D} in
+\emph{every} case (the four such polytopes on the list all give
+$C(Q_B)$); no other def-only germ occurs as the sole singularity of a
+Batyrev threefold.  (Def-only germs of other classes do occur as the
+unique \emph{non-smoothable} point of a hypersurface that also carries
+smoothable singular points; it is only as a lone singularity that
+$C(Q_B)$ is forced.)
+
+\begin{question}
+The faces with non-unit edges --- whose germs are non-isolated, governed
+by Filip's $0$-mutability criterion
+\cite{Filip25} rather than by Theorem~\ref{thm:trichotomy} --- deserve their
+own count.
+\end{question}
+
+\subsection{The smoothable faces and the global defect}
+Corollary~\ref{cor:global} uses only the non-smoothable local models.  In the
+opposite regime --- all two-dimensional faces of type \textup{(S)} --- local
+smoothings exist at every singular point, and the question becomes whether
+they can be realized simultaneously by a global deformation; for ordinary
+double points this is Friedman's defect condition \cite{Friedman86}, and for
+Calabi--Yau threefolds with canonical singularities the local-to-global
+obstruction theory of \cite{Gross97,Namikawa02} applies.  A combinatorial
+criterion on $\Delta$ for global smoothability of the Batyrev hypersurface,
+in the spirit of the Fano-threefold results of \cite{Petracci20,CHP24},
+seems within reach and is the natural continuation of this note.
+
+\subsection{Mirror symmetry}
+Corti--Filip--Petracci conjecture that the smoothing components of
+$\Def C(Q)$ correspond to the $0$-mutable Laurent polynomials with Newton
+polygon $Q$ \cite{CFP}, a mirror-theoretic statement.  It would be
+interesting to understand what the presence of a type \textup{(R)} or
+\textup{(D)} face of $\Delta$ --- and hence the non-smoothability of $X$ ---
+means for the mirror family of the Batyrev pair $(\Delta, \Delta^\circ)$.
+
+\begin{thebibliography}{99}
+
+\bibitem{Altmann95}
+K.~Altmann,
+\emph{Minkowski sums and homogeneous deformations of toric varieties},
+T\^ohoku Math.\ J.\ (2) \textbf{47} (1995), no.~2, 151--184.
+
+\bibitem{Altmann97}
+K.~Altmann,
+\emph{The versal deformation of an isolated toric Gorenstein singularity},
+Invent.\ Math.\ \textbf{128} (1997), no.~3, 443--479.
+
+\bibitem{Batyrev94}
+V.~V. Batyrev,
+\emph{Dual polyhedra and mirror symmetry for Calabi--Yau hypersurfaces in
+toric varieties},
+J.\ Algebraic Geom.\ \textbf{3} (1994), 493--535.
+
+\bibitem{CFP}
+A.~Corti, M.~Filip, and A.~Petracci,
+\emph{Mirror symmetry and smoothing Gorenstein toric affine 3-folds},
+in \emph{Facets of Algebraic Geometry: A Collection in Honor of William
+Fulton's 80th Birthday}, vol.~I, London Math.\ Soc.\ Lecture Note Ser.\
+\textbf{472}, Cambridge Univ.\ Press, 2022, pp.~132--163; arXiv:2006.16885.
+
+\bibitem{CHP24}
+A.~Corti, P.~Hacking, and A.~Petracci,
+\emph{Smoothing Gorenstein toric Fano 3-folds},
+arXiv:2412.06500 (2024).
+
+\bibitem{CLS}
+D.~A. Cox, J.~B. Little, and H.~K. Schenck,
+\emph{Toric Varieties},
+Graduate Studies in Mathematics \textbf{124}, Amer.\ Math.\ Soc., 2011.
+
+\bibitem{Filip25}
+M.~Filip,
+\emph{Laurent polynomials and deformations of non-isolated Gorenstein toric
+singularities},
+arXiv:2504.04486 (2025).
+
+\bibitem{Friedman86}
+R.~Friedman,
+\emph{Simultaneous resolution of threefold double points},
+Math.\ Ann.\ \textbf{274} (1986), 671--689.
+
+\bibitem{FriedmanLaza25}
+R.~Friedman and R.~Laza,
+\emph{Deformations of Calabi--Yau varieties with isolated log canonical
+singularities},
+arXiv:2306.03755; Int.\ Math.\ Res.\ Not.\ (2025).
+
+\bibitem{FriedmanLazaSigma}
+R.~Friedman and R.~Laza,
+\emph{Deformations of Calabi--Yau varieties with $k$-liminal singularities},
+Forum Math.\ Sigma \textbf{12} (2024), e44.
+
+\bibitem{Grauert72}
+H.~Grauert,
+\emph{\"Uber die Deformation isolierter Singularit\"aten analytischer Mengen},
+Invent.\ Math.\ \textbf{15} (1972), 171--198.
+
+\bibitem{GLS}
+G.-M. Greuel, C.~Lossen, and E.~Shustin,
+\emph{Introduction to Singularities and Deformations},
+Springer Monographs in Mathematics, Springer, 2007.
+
+\bibitem{Gross97}
+M.~Gross,
+\emph{Deforming Calabi--Yau threefolds},
+Math.\ Ann.\ \textbf{308} (1997), 187--220; updated version arXiv:alg-geom/9506022v2 (2025).
+
+\bibitem{Kapustka09}
+G.~Kapustka,
+\emph{Primitive contractions of Calabi--Yau threefolds II},
+J.\ Lond.\ Math.\ Soc.\ (2) \textbf{79} (2009), no.~1, 259--271;
+arXiv:0707.2488.
+
+\bibitem{KapustkaKapustka09}
+G.~Kapustka and M.~Kapustka,
+\emph{Primitive contractions of Calabi--Yau threefolds I},
+Comm.\ Algebra \textbf{37} (2009), no.~2, 482--502; arXiv:math/0703810.
+
+\bibitem{KreuzerSkarke00}
+M.~Kreuzer and H.~Skarke,
+\emph{Complete classification of reflexive polyhedra in four dimensions},
+Adv.\ Theor.\ Math.\ Phys.\ \textbf{4} (2000), 1209--1230.
+
+\bibitem{Namikawa02}
+Y.~Namikawa,
+\emph{Stratified local moduli of Calabi--Yau threefolds},
+Topology \textbf{41} (2002), 1219--1237.
+
+\bibitem{NamikawaSteenbrink95}
+Y.~Namikawa and J.~H.~M. Steenbrink,
+\emph{Global smoothing of Calabi--Yau threefolds},
+Invent.\ Math.\ \textbf{122} (1995), 403--419.
+
+\bibitem{Petracci20}
+A.~Petracci,
+\emph{Some examples of non-smoothable Gorenstein Fano toric threefolds},
+Math.\ Z.\ \textbf{295} (2020), 751--760; arXiv:1804.07960.
+
+\bibitem{Schlessinger71}
+M.~Schlessinger,
+\emph{Rigidity of quotient singularities},
+Invent.\ Math.\ \textbf{14} (1971), 17--26.
+
+\end{thebibliography}
+
+\bigskip
+\noindent{\sc Bernd J. Wuebben, New York, NY,} \texttt{wuebben@gmail.com}
+
+\end{document}
