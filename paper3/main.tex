@@ -58,6 +58,10 @@ germs occurring on doubly isolated mirror pairs are exactly the cyclic
 quotient points and the anticanonical cone over $\FF_1$ --- and the
 deformable-but-non-smoothable germs of the first paper of this series never
 occur, so those Calabi--Yau threefolds never have isolated-singular mirrors.
+At the opposite extreme, exactly one reflexive $4$-polytope --- the
+self-dual $24$-cell, whose hypersurface is the self-mirror threefold with
+Hodge numbers $(20,20)$ --- yields a mirror pair with both members
+\emph{smooth}.
 The $\FF_1$-cone occurs exactly once: a unique pair of polytopes, with $22$
 and $26$ vertices, whose hypersurfaces form a mirror pair with resolution
 Hodge numbers $(20,26)$ and $(26,20)$ in which $X$ is non-smoothable while
@@ -101,7 +105,8 @@ $\MM_F = \MM \cap (\RR u_1 + \RR u_2)$.
 
 \begin{theorem}[= Lemma~\ref{lem:mult}]\label{thm:intromult}
 $\ell(F^\circ) = [\,\MM_F : \ZZ u_1 + \ZZ u_2\,]$, the multiplicity of the
-transverse cone $\Cone(u_1,u_2)$ of $F$.  In particular $\ell(F^\circ)=1$ if
+normal cone $\Cone(u_1,u_2)$ of $F$ --- equivalently, of its dual, the
+transverse cone of $\Delta$ along $F$.  In particular $\ell(F^\circ)=1$ if
 and only if the transverse cone is smooth.
 \end{theorem}
 
@@ -154,7 +159,8 @@ $22$-vertex polytope.  In particular no deformable-but-non-smoothable
 Let $X$ be a unit-edge Batyrev Calabi--Yau threefold with a singular point of
 type \textup{(D)} --- for instance the pentagon-cone threefolds of
 \cite[Thms.~5.3, 5.7]{paper1}.  Then the Batyrev mirror $X^\circ$ is
-non-isolated: it carries a curve of transverse $A_{m-1}$ singularities.  The
+non-isolated: it carries a curve of transverse $A_{m-1}$ singularities for
+some $m \ge 2$.  The
 deformable-but-non-smoothable phenomenon never occurs on a doubly isolated
 mirror pair.
 \end{corollary}
@@ -180,10 +186,12 @@ Thus the Batyrev mirror of a Calabi--Yau threefold that is \emph{frozen} ---
 non-smoothable, with the very germ excluded in Gross's smoothing theorem for
 primitive contractions \cite[Thm.~5.8]{Gross97} --- can be isolated-singular
 with every singular point locally smoothable.  Notably, every dual edge on
-the mirror side has length one, so all of $X^\circ$'s germs sit exactly in
-the regime that \cite{paper2} identifies as beyond the reach of both
-Friedman's criterion and Gross's theorems; whether $X^\circ$ is globally
-smoothable is open (Question~\ref{q:mirror-smooth}).
+the mirror side has length one, so $X^\circ$ lies entirely in the
+$\ell(F^\circ)=1$ regime of \cite{paper2}: its $26$ nodes pose the
+cross-face Friedman problem of \cite[\S7]{paper2}, and its del Pezzo cone
+points are the germs that \cite[\S6]{paper2} places beyond Gross's theorems
+and for which no Friedman-type obstruction is known; whether $X^\circ$ is
+globally smoothable is open (Question~\ref{q:mirror-smooth}).
 
 Theorems~\ref{thm:class}--\ref{thm:pair} answer the mirror question of
 \cite[\S6.3]{paper1} for the non-smoothable stratum: among the
@@ -192,6 +200,14 @@ non-smoothable local models, only the cyclic quotients and the $\FF_1$-cone
 $\FF_1$ \cite[Thm.~5.8]{Gross97} --- admit doubly isolated mirror
 realizations, and the $\FF_1$-cone does so exactly once in the entire toric
 hypersurface landscape.
+
+The opposite extreme of the classification carries a matching uniqueness.
+Exactly eight of the $590$ polytopes have all two-dimensional faces smooth,
+so that $X$ itself is smooth; for exactly one of them --- the self-dual
+$24$-cell, whose hypersurface is the classical self-mirror threefold with
+$(h^{1,1},h^{2,1}) = (20,20)$ \cite{Braun12} --- the mirror is smooth as
+well.  The smooth Batyrev mirror pair is thus unique in the entire
+classification (Example~\ref{ex:24cell}).
 
 \subsection*{Two refuted conjectures, and a caution about low-vertex
 evidence}
@@ -203,11 +219,11 @@ Both statements are \emph{false}: the $\mathrm{dP}_7$ pentagon occurs ($87$
 faces, on polytopes with $19$ to $31$ vertices), as does the $\FF_1$
 quadrilateral (once).  What makes the failure instructive is its location.
 The conjecture is \emph{true} for all $395{,}406{,}329$ reflexive
-$4$-polytopes with at most $18$ vertices --- $83.5\%$ of the classification,
-including a complete verification of the local statement on $38{,}571$
-candidate configurations --- and fails from $19$ vertices on, where
-both-sides unit polytopes first become common
-(Table~\ref{tab:dist}).  Small-vertex evidence, however extensive, samples a
+$4$-polytopes with at most $18$ vertices --- $83.5\%$ of the classification
+--- and fails from $19$ vertices on, where both-sides unit polytopes first
+become common (Table~\ref{tab:dist}); the local statement had itself
+survived a complete check of the $38{,}571$ candidate configurations
+arising among the $1{,}037{,}834$ polytopes with at most eight vertices.  Small-vertex evidence, however extensive, samples a
 biased corner of the landscape; we record the episode as a data point on the
 epistemology of conjecture-making over the Kreuzer--Skarke list.
 
@@ -241,10 +257,11 @@ $\Delta^\circ = \{u : \langle u,v\rangle \ge -1\ \forall v \in \Delta\}$; a
 face $G \preceq \Delta$ has dual face $G^\circ \preceq \Delta^\circ$ with
 $\dim G + \dim G^\circ = 3$.  By the planting proposition
 \cite[Prop.~3.1]{paper1}, for $\Delta$ with unit edges the generic
-$X \in |{-K}|$ has, over each two-dimensional face $F$, exactly
+$X \in |{-K}|$ has, over each two-dimensional face $F$ with $C(F)$
+singular, exactly
 $\ell(F^\circ)$ singular points with germ $C(F)$, and no other singular
 points; and an edge of $\Delta$ of lattice length $m \ge 2$ produces a curve
-of transverse $A_{m-1}$ singularities \cite[\S2]{paper1}.
+of transverse $A_{m-1}$ singularities \cite[Rem.~3.2]{paper1}.
 
 \section{The transverse-multiplicity identity}\label{sec:mult}
 
@@ -252,6 +269,9 @@ Let $F$ be a two-dimensional face of a reflexive polytope
 $\Delta \subset \NN_\RR$, and let $u_1, u_2 \in \MM$ be the primitive inner
 normals of the two facets of $\Delta$ containing $F$, so that
 $\langle u_i, \cdot\rangle = -1$ on $F$ and $F^\circ = \conv\{u_1, u_2\}$.
+(The $u_i$ are vertices of $\Delta^\circ$; the facet tables of
+\cite{paper1} list the sign-flipped functionals taking the value $+1$ on
+the facet.)
 Put $\MM_F = \MM \cap (\RR u_1 + \RR u_2)$, a rank-two saturated sublattice
 of $\MM$ containing $u_1, u_2$ as primitive vectors.
 
@@ -281,11 +301,12 @@ $\ell(F^\circ) = |p| = [\,\MM_F : \ZZ u_1 + \ZZ u_2\,]$.
 Lemma~\ref{lem:mult} is elementary and may be known; what matters here is
 the reading it provides.  The right-hand side is the multiplicity of the
 two-dimensional cone $\Cone(u_1,u_2)$, which is the normal cone of $F$ and
-dually the transverse cone of $\Delta$ along $F$.  Thus \emph{the dual-edge
+dually the transverse cone of $\Delta$ along $F$ (for two-dimensional cones
+the multiplicities of a cone and its dual agree).  Thus \emph{the dual-edge
 length counts exactly the transverse singularity multiplicity}, and
 $\ell(F^\circ)=1$ is the statement that $\Delta$ is transversally smooth
 along $F$.  The lattice-point hypothesis on $v$ is essential: for an
-arbitrary pair of primitive vectors the two sides differ.
+arbitrary pair of primitive vectors the two sides can differ.
 \end{remark}
 
 Corollary~\ref{cor:introboth} is immediate: $X$ is isolated-singular iff
@@ -304,7 +325,8 @@ with $C(F)$ singular.  Under polar duality $F$ corresponds to the edge
 $F^\circ$ of $\Delta^\circ$, and:
 \begin{enumerate}
 \item $X$ has $\ell(F^\circ)$ isolated points of type $C(F)$ over $F$;
-\item $X^\circ$ has, along the toric curve $V(\sigma_{F^\circ})$ dual to
+\item $X^\circ$ has, along the toric surface $V(\sigma_{F^\circ})$
+associated to the edge
 $F^\circ$, a curve of transverse $A_{\ell(F^\circ)-1}$ singularities (and
 none if $\ell(F^\circ)=1$).
 \end{enumerate}
@@ -335,12 +357,14 @@ $0$-mutability criterion \cite{Filip25}.
 \subsection{Methodology}
 Both-sides unitality is a face-level test: all edges of lattice length one
 and, by Lemma~\ref{lem:mult}, all dual edges of length one.  We ran it over
-the complete Kreuzer--Skarke classification, using the validated fast
-integer engine of \cite{paper1} (per-file random-row self-tests against the
-reference implementation; the one polytope missing from the per-vertex-count
-mirror of the database, the $36$-vertex hexagon product, is included --- see
-\cite[\S6.1]{paper1}); every polytope passing the fast test is then
-re-verified, and its faces classified, by the exact reference toolkit.  The
+the complete Kreuzer--Skarke classification with the exact-arithmetic
+integer engine built for the scan of \cite[\S6.1]{paper1}; before scanning
+each database file the engine was re-checked against the slow reference
+implementation on random rows of that file, and the one polytope missing
+from the per-vertex-count mirror of the database --- the $36$-vertex
+hexagon product, see \cite[\S6.1]{paper1} --- is included.  Every polytope
+passing the fast test is then re-verified, and its faces classified, by the
+exact reference toolkit.  The
 scan results are committed as data files, and the ancillary program
 \texttt{both\_sides\_census.py} re-derives every statement of
 Theorems~\ref{thm:class}--\ref{thm:pair} from them, with assertions.
@@ -455,8 +479,8 @@ content of Theorem~\ref{thm:class} is that they are zonotopes or reflexive.
 
 \begin{example}[the low-vertex stratum]\label{ex:pair}
 Among the $3{,}905{,}789$ polytopes with at most nine vertices exactly five
-are both-sides unit, closed under polarity (two polar pairs and one
-self-polar polytope).  One pair is the smooth simplex and the simplex
+are both-sides unit; four of them form two polar pairs.  One pair is the
+smooth simplex and the simplex
 \[
 \conv\{(1,0,0,0),\,(0,1,0,0),\,(2,4,5,0),\,(3,3,0,5),\,(-6,-8,-5,-5)\},
 \]
@@ -466,7 +490,12 @@ quotient points) and whose polar is smooth.  A second pair consists of a
 simplicial six-vertex polytope with all faces smooth and its nine-vertex
 polar, carrying the six $\frac13(1,1,1)$ triangles and nine $[4,2]$
 zonotopes.  In each pair, the non-smoothable member mirrors a \emph{smooth}
-threefold.
+threefold.  The fifth polytope --- eight vertices, sixteen facets, all
+thirty-two faces smooth triangles --- shows that the polarity closure of
+Corollary~\ref{cor:introboth} does not respect vertex-count windows: its
+polar is a sixteen-vertex both-sides unit polytope all twenty-four of whose
+faces are $[4,1]$ diamonds, a smooth hypersurface whose mirror carries
+twenty-four cone-over-$\PP^1{\times}\PP^1$ points.
 \end{example}
 
 \begin{example}[the top of the classification]\label{ex:pair36}
@@ -478,6 +507,20 @@ hexagons, so its hypersurface has $48$ singular points, all of type
 \textup{(S)}, while its polar, the $12$-vertex free sum
 $H^\circ \oplus H^\circ$, has $72$ smooth triangular faces and smooth
 hypersurface.
+\end{example}
+
+\begin{example}[the unique smooth mirror pair]\label{ex:24cell}
+Exactly eight of the $590$ polytopes have every two-dimensional face
+smooth, so that $X$ itself is smooth.  For exactly one of them is the polar
+of the same kind: the $24$-cell --- self-dual, with $24$ octahedral facets,
+$96$ unimodular triangular faces, and no lattice points besides the origin
+and its $24$ vertices.  Its generic anticanonical hypersurface is the
+classical self-mirror Calabi--Yau threefold with
+$(h^{1,1},h^{2,1}) = (20,20)$ and $\chi = 0$, the covering space of the
+$(1,1)$-threefolds of Braun \cite{Braun12}.  The scan adds the uniqueness:
+among all $473{,}800{,}776$ reflexive $4$-polytopes, the $24$-cell is the
+only one whose generic anticanonical hypersurface and mirror are
+\emph{both} smooth.
 \end{example}
 
 \section{The unique frozen mirror pair}\label{sec:pair}
@@ -508,7 +551,7 @@ points, one $\mathrm{dP}_6$-cone point, and one point with germ the
 anticanonical cone over $\FF_1$; by \cite[Cor.~4.3]{paper1}, $X$ admits no
 smoothing;
 \item the polar $\Delta_{\FF_1}^\circ$ ($26$ vertices, $22$ facets) is
-both-sides unit with $92$ faces: $38$ smooth triangles, $26$ unit squares,
+both-sides unit with $68$ two-dimensional faces: $38$ smooth triangles, $26$ unit squares,
 two $\mathrm{dP}_7$ pentagons and two $\mathrm{dP}_6$ hexagons; the mirror
 $X^\circ$ has $26$ ordinary double points, two $\mathrm{dP}_7$-cone points
 and two $\mathrm{dP}_6$-cone points, each with a local smoothing;
@@ -540,9 +583,10 @@ the local model of Gross's exceptional case --- with a mirror all of whose
 singular points move locally.  Whether $X^\circ$ moves \emph{globally} is
 exactly the frontier of \cite{paper2}: all $26+2+2$ of its singular points
 sit over faces with $\ell(F^\circ) = 1$, so no face datum exists; the $26$
-nodes require a cross-face Friedman rescue; and the del Pezzo cone points
-are the $\ell = 1$ germs shown in \cite[Prop.~6.1]{paper2} to lie beyond
-both Friedman's criterion and Gross's theorems.  The pair thus concentrates,
+nodes require a cross-face Friedman rescue \cite[\S7]{paper2}; and the del
+Pezzo cone points are the $\ell = 1$ germs that
+\cite[Prop.~6.1, Rem.~6.2]{paper2} place beyond Gross's theorems, with no
+Friedman-type obstruction known.  The pair thus concentrates,
 on two mirror-dual threefolds, every open smoothability phenomenon of this
 series.
 \end{remark}
@@ -592,6 +636,11 @@ V.~V. Batyrev,
 \emph{Dual polyhedra and mirror symmetry for Calabi--Yau hypersurfaces in
 toric varieties},
 J.\ Algebraic Geom.\ \textbf{3} (1994), 493--535.
+
+\bibitem{Braun12}
+V.~Braun,
+\emph{The 24-cell and Calabi--Yau threefolds with Hodge numbers $(1,1)$},
+J.\ High Energy Phys.\ \textbf{05} (2012) 101; arXiv:1102.4880.
 
 \bibitem{CFP}
 A.~Corti, M.~Filip, and A.~Petracci,
