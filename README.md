@@ -33,14 +33,19 @@ smoothability means for their Batyrev mirrors.
    polytopes, at most 3,774 are explained per-face — at least 26,467 are
    cross-face rescues.
 
-3. **Non-smoothability and mirror non-isolatedness of Batyrev Calabi–Yau
-   threefolds** (`paper3/`) — the mirror-symmetric meaning: the dual-edge
-   length equals the transverse cone multiplicity, so X and its Batyrev
+3. **Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau
+   threefolds** (`paper3/`) — the mirror-symmetric capstone: the dual-edge
+   length equals the transverse-cone multiplicity, so X and its Batyrev
    mirror X° are both isolated-singular exactly on "both-sides unit"
-   polytopes; the paper studies which local germs occur there, with a
-   census of both-sides polytopes across the entire classification.
-   *Draft under active revision as the classification-wide census
-   completes.*
+   polytopes. A complete scan of the classification shows there are
+   **exactly 590** such polytopes; every 2-face is a triangle, a zonotope,
+   or a reflexive polygon; the only non-smoothable germs occurring are
+   cyclic quotients and — exactly once — the F₁-cone, giving a **unique
+   mirror pair** (22 and 26 vertices, resolution Hodge numbers (20,26) and
+   (26,20)) in which X admits no smoothing while every singular point of
+   X° is locally smoothable. The paper also records two refuted
+   conjectures: the natural low-vertex guess holds for all 395,406,329
+   polytopes with at most 18 vertices and fails from 19 on.
 
 ## Code (`src/`)
 
@@ -62,7 +67,8 @@ every run:
   omits (the 36-vertex hexagon×hexagon product), identified and verified.
 - `paper2_check.py`, `cascade_check.py` — machine checks for paper 2.
 - `bk_check.py` — the Batyrev–Kreuzer all-conifold census.
-- `both_sides_ks.py`, `both_sides_fast.py`, `both_sides_search.py`,
+- `both_sides_ks.py`, `both_sides_fast.py`, `both_sides_census.py` (the
+  590-polytope census, fully asserted), `both_sides_search.py`,
   `b1_*.py`, `mirror_check.py` — the both-sides-unit scans for paper 3.
 
 ## Data (`output/`)

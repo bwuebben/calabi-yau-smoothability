@@ -32,46 +32,39 @@
 \newcommand{\conv}{\operatorname{conv}}
 \newcommand{\Cone}{\operatorname{Cone}}
 \newcommand{\Sing}{\operatorname{Sing}}
-\newcommand{\mult}{\operatorname{mult}}
 \newcommand{\vertt}{\operatorname{vert}}
 
-\title[Non-smoothability and mirror non-isolatedness]{Non-smoothability and
-mirror non-isolatedness\\ of Batyrev Calabi--Yau threefolds}
+\title[Doubly isolated Batyrev mirror pairs]{Doubly isolated Batyrev mirror
+pairs\\ and non-smoothable Calabi--Yau threefolds}
 \author{Bernd J. Wuebben}
-\date{July 14, 2026}
+\date{July 17, 2026}
 
 \begin{document}
 
 \begin{abstract}
 Let $\Delta \subset \ZZ^4$ be a reflexive polytope with unit edges, so that the
 generic anticanonical hypersurface $X \subset \PP_\Delta$ is a Calabi--Yau
-threefold whose singular points are the cones over the two-dimensional faces of
-$\Delta$.  We ask when the Batyrev mirror $X^\circ \subset \PP_{\Delta^\circ}$ is
-\emph{also} isolated-singular, and relate this to the local models of the
-prequels.  We first record an exact identity: the number $\ell(F^\circ)$ of
-singular points of $X$ over a two-dimensional face $F$ equals the multiplicity of
-the transverse cone of $F$; consequently both $X$ and $X^\circ$ are
-isolated-singular --- we call $\Delta$ \emph{both-sides unit} --- if and only if
-every two-dimensional face of $\Delta$ is transversally smooth.  We then argue
-that the novel non-smoothable germs of the prequels --- the anticanonical cone
-over $\FF_1$, and the deformable-but-non-smoothable pentagon cone --- cannot occur
-on a both-sides unit polytope.  Precisely, we conjecture that \emph{every
-two-dimensional face of a both-sides unit reflexive $4$-polytope is a triangle or
-a centrally-symmetric polygon}, and we support this by a complete check of the
-$3{,}905{,}789$ reflexive $4$-polytopes with at most nine vertices and of the
-non-smoothable-face consequence for the $3{,}735{,}806$ polytopes with at
-least $23$ vertices, by the
-explicit structure of the both-sides examples --- including the $36$-vertex
-hexagon-product polytope at the top of the classification, which is
-both-sides unit, conforms, and mirrors a smooth Calabi--Yau threefold ---
-and by a reduction of the
-conjecture to a purely local lemma about a face and its star.  The conjecture
-implies that the Batyrev mirror of a Calabi--Yau threefold carrying a
-non-quotient or a deformable non-smoothable point is always non-isolated, so that
-its singularities leave the isolated Altmann--Corti--Filip--Petracci framework
-and are governed instead by Filip's non-isolated $0$-mutability criterion.  All
-computations are performed by the exact-arithmetic programs of the prequels,
-extended by a scanner included as ancillary files.
+threefold with isolated singularities, and ask when the Batyrev mirror
+$X^\circ \subset \PP_{\Delta^\circ}$ is isolated-singular as well.  An exact
+identity --- the lattice length of the dual edge of a two-dimensional face
+equals the multiplicity of its transverse cone --- shows this happens if and
+only if every two-dimensional face of $\Delta$ is transversally smooth; we
+call such $\Delta$ \emph{both-sides unit}.  We determine the both-sides unit
+polytopes completely: among the $473{,}800{,}776$ reflexive $4$-polytopes of
+the Kreuzer--Skarke classification there are exactly $590$, and every
+two-dimensional face of every one of them is a triangle, a zonotope, or a
+reflexive polygon (one interior point).  Consequently the non-smoothable
+germs occurring on doubly isolated mirror pairs are exactly the cyclic
+quotient points and the anticanonical cone over $\FF_1$ --- and the
+deformable-but-non-smoothable germs of the first paper of this series never
+occur, so those Calabi--Yau threefolds never have isolated-singular mirrors.
+The $\FF_1$-cone occurs exactly once: a unique pair of polytopes, with $22$
+and $26$ vertices, whose hypersurfaces form a mirror pair with resolution
+Hodge numbers $(20,26)$ and $(26,20)$ in which $X$ is non-smoothable while
+every singular point of $X^\circ$ is locally smoothable.  We also record, as
+a caution, that the natural conjecture suggested by the low-vertex data ---
+that only triangles and zonotopes occur --- is true for all $395{,}406{,}329$
+polytopes with at most $18$ vertices and false from $19$ vertices on.
 \end{abstract}
 
 \maketitle
@@ -80,151 +73,187 @@ extended by a scanner included as ancillary files.
 
 Let $\Delta \subset \NN_\RR = \RR^4$ be a reflexive polytope all of whose edges
 have lattice length one, let $\Delta^\circ \subset \MM_\RR$ be its polar dual,
-and let $X \in |{-K_{\PP_\Delta}}|$ be a generic anticanonical hypersurface in the
-Gorenstein Fano toric fourfold associated to the face fan of $\Delta$.  By
-Batyrev \cite{Batyrev94} $X$ is a Calabi--Yau threefold with Gorenstein canonical
-singularities, and by the planting proposition of \cite{paper1} its singular
-locus is exactly: for each two-dimensional face $F \preceq \Delta$ whose cone
-$C(F)$ is singular, $\ell(F^\circ)$ points at which the germ of $X$ is
-analytically isomorphic to $C(F)$, where $\ell(F^\circ)$ is the lattice length of
-the edge $F^\circ$ of $\Delta^\circ$ dual to $F$.  The trichotomy of \cite{paper1}
+and let $X \in |{-K_{\PP_\Delta}}|$ be a generic anticanonical hypersurface in
+the Gorenstein Fano toric fourfold associated to the face fan of $\Delta$.  By
+Batyrev \cite{Batyrev94}, $X$ is a Calabi--Yau threefold with Gorenstein
+canonical singularities, and by the planting proposition of
+\cite[Prop.~3.1]{paper1} its singular locus is exactly: for each
+two-dimensional face $F \preceq \Delta$ whose cone $C(F)$ is singular,
+$\ell(F^\circ)$ points at which the germ of $X$ is analytically isomorphic to
+$C(F)$, where $\ell(F^\circ)$ is the lattice length of the edge
+$F^\circ \preceq \Delta^\circ$ dual to $F$.  The trichotomy of \cite{paper1}
 classifies $C(F)$ by the combinatorics of $F$ into rigid \textup{(R)},
-deformable-but-non-smoothable \textup{(D)}, and smoothable \textup{(S)}; the first
-two are non-smoothable, and a single such face forces $X$ to admit no smoothing.
+deformable-but-non-smoothable \textup{(D)}, and smoothable \textup{(S)}; a
+single face of the first two types forces $X$ to admit no smoothing, and
+\cite{paper2} studies when the type-\textup{(S)} configurations smooth.
 
 Mirror symmetry, in the Batyrev picture, is the polar duality
 $\Delta \leftrightarrow \Delta^\circ$, which for $4$-polytopes exchanges
-two-dimensional faces with edges.  The mirror family is the generic anticanonical
-$X^\circ \subset \PP_{\Delta^\circ}$, whose singular locus is governed in the
-same way by the two-dimensional faces of $\Delta^\circ$.  The purpose of this note
-is to understand what the non-smoothability of $X$ --- that is, the presence of a
-face of type \textup{(R)} or \textup{(D)} --- means for $X^\circ$, and in
-particular when $X$ and $X^\circ$ are \emph{both} isolated-singular.
+two-dimensional faces with edges.  This note asks the mirror question: when
+are $X$ and the mirror $X^\circ \subset \PP_{\Delta^\circ}$ \emph{both}
+isolated-singular, and which local models --- in particular, which
+non-smoothable ones --- can occur in that doubly isolated situation?
 
-Our first observation is exact and elementary.  For a two-dimensional face $F$
+The entry point is exact and elementary.  For a two-dimensional face $F$
 write $u_1, u_2 \in \MM$ for the primitive inner normals of the two facets of
 $\Delta$ containing $F$, so $F^\circ = \conv\{u_1,u_2\}$, and let
-$\MM_F = \MM \cap (\RR u_1 + \RR u_2)$, a rank-two saturated sublattice.
+$\MM_F = \MM \cap (\RR u_1 + \RR u_2)$.
 
 \begin{theorem}[= Lemma~\ref{lem:mult}]\label{thm:intromult}
 $\ell(F^\circ) = [\,\MM_F : \ZZ u_1 + \ZZ u_2\,]$, the multiplicity of the
-transverse cone $\Cone(u_1,u_2)$ of $F$.  In particular $\ell(F^\circ)=1$ if and
-only if $u_1, u_2$ form a basis of $\MM_F$, i.e.\ the transverse cone is smooth.
+transverse cone $\Cone(u_1,u_2)$ of $F$.  In particular $\ell(F^\circ)=1$ if
+and only if the transverse cone is smooth.
 \end{theorem}
 
 Since $X$ is isolated-singular exactly when $\Delta$ has unit edges, and
-$X^\circ$ exactly when $\Delta^\circ$ does --- equivalently when every
-two-dimensional face $F$ of $\Delta$ has $\ell(F^\circ)=1$ --- Theorem
-\ref{thm:intromult} gives a clean reading of the doubly-isolated condition.
+$X^\circ$ exactly when every two-dimensional face of $\Delta$ has
+$\ell(F^\circ)=1$, we obtain:
 
 \begin{corollary}\label{cor:introboth}
 $X$ and $X^\circ$ are both isolated-singular if and only if $\Delta$ has unit
 edges and every two-dimensional face of $\Delta$ is transversally smooth.  We
-call such $\Delta$ \emph{both-sides unit}.
+call such $\Delta$ \emph{both-sides unit}.  The condition is self-dual:
+$\Delta$ is both-sides unit if and only if $\Delta^\circ$ is.
 \end{corollary}
 
-The point-packets of $X$ and the singular curves of $X^\circ$ correspond exactly:
-the $\ell(F^\circ)$ points of type $C(F)$ over $F$ are mirror to a single curve of
-transverse $A_{\ell(F^\circ)-1}$ singularities on $X^\circ$ along the toric curve
-dual to $F$ (\S\ref{sec:corr}).  Thus $X^\circ$ is isolated precisely when no such
-curve appears, i.e.\ on a both-sides unit polytope.
+Our main results determine the both-sides unit polytopes, and the local
+models they carry, \emph{completely}.  They rest on an exhaustive scan of the
+Kreuzer--Skarke classification \cite{KreuzerSkarke00} of all
+$473{,}800{,}776$ reflexive $4$-polytopes, whose methodology is described in
+\S\ref{sec:census}; every polytope found is re-verified in exact arithmetic,
+so the statements below are theorems with computer-assisted (finite,
+exhaustive) proofs.
 
-Our main assertion is that the non-smoothable local models introduced in the
-prequels are incompatible with this doubly-isolated situation, except in the
-classical quotient case.  Call a lattice polygon a \emph{zonotope} if it is a
-Minkowski sum of lattice segments; a unit-edge polygon is a zonotope if and only
-if it is centrally symmetric, and every such polygon is smoothable of type
-\textup{(S)}.
+\begin{theorem}[classification of both-sides local models]\label{thm:class}
+There are exactly $590$ both-sides unit reflexive $4$-polytopes.  Every
+two-dimensional face of every one of them is
+\begin{itemize}
+\item a triangle (the germ is a cyclic quotient point, or smooth), or
+\item a zonotope --- a centrally-symmetric unit-edge polygon, always of
+type \textup{(S)} --- or
+\item a reflexive polygon: one of the five unit-edge polygons with exactly
+one interior lattice point, i.e.\ the anticanonical polygons of the five
+smooth toric del Pezzo surfaces.
+\end{itemize}
+All five reflexive polygons occur.  The complete face inventory is given in
+Table~\textup{\ref{tab:occ}}.
+\end{theorem}
 
-\begin{conjecture}[triangle-or-zonotope]\label{conj:main}
-Every two-dimensional face of a both-sides unit reflexive $4$-polytope is either a
-triangle or a zonotope.
-\end{conjecture}
+\begin{theorem}[the non-smoothable germs of doubly isolated pairs]
+\label{thm:dichot}
+Exactly three of the $590$ both-sides unit polytopes carry a non-smoothable
+two-dimensional face, and the germs occurring are:
+cyclic quotient triangles --- $[3,1] = \frac13(1,1,1)$, six times on one
+$9$-vertex polytope, and $[3,2]$, ten times on one $5$-vertex simplex --- and
+the anticanonical cone over $\FF_1$, exactly \emph{once}, on a unique
+$22$-vertex polytope.  In particular no deformable-but-non-smoothable
+\textup{(D)} face occurs on any both-sides unit polytope.
+\end{theorem}
 
-Equivalently: on a both-sides unit polytope every non-smoothable two-dimensional
-face is a triangle, hence a cyclic quotient singularity.  We are unable to prove
-Conjecture~\ref{conj:main}, but we give four kinds of evidence
-(\S\ref{sec:conj}): a complete verification over the
-$3{,}905{,}789$ reflexive $4$-polytopes with at most nine vertices (exactly
-five both-sides unit polytopes, all conforming); a verification of its
-non-smoothable-face consequence over the $3{,}735{,}806$ polytopes with at
-least $23$ vertices, where the sweep of the prequels recorded no both-sides
-polytope carrying a non-smoothable face at all; the explicit
-mirror-pair structure of the both-sides examples --- including a new pair far
-beyond the low-vertex range, the $36$-vertex product of two reflexive
-hexagons (the largest reflexive $4$-polytope by vertex count) and its
-$12$-vertex polar, whose faces are zonotopes and smooth triangles
-respectively; and a reduction of the
-conjecture to a purely local statement about a face and its star, verified on
-its $38{,}571$ candidate instances over the polytopes with at most eight
-vertices.  We also explain why the natural stronger guess --- that
-a both-sides unit polytope is simplicial --- is \emph{false}, by a self-duality
-argument (Remark~\ref{rem:selfdual}).
-
-The geometric consequence is the following dichotomy, which we regard as the main
-message of the note; it is unconditional on the quotient side and conditional on
-Conjecture~\ref{conj:main} on the other.
-
-\begin{corollary}[mirror non-isolatedness]\label{cor:mirror}
-Let $\Delta$ be reflexive with unit edges and let $X$ have a non-smoothable
-singular point whose germ is \emph{not} a cyclic quotient singularity --- for
-instance the anticanonical cone over $\FF_1$ of \cite[Thm.~5.1]{paper1}, or the
-deformable-but-non-smoothable pentagon cone of \cite[Thm.~5.3]{paper1}.  Then,
-assuming Conjecture~\ref{conj:main}, the Batyrev mirror $X^\circ$ is
-non-isolated.  Consequently the mirror singularities of the novel non-smoothable
-Calabi--Yau threefolds of \cite{paper1} always lie outside the isolated
-Altmann--Corti--Filip--Petracci framework and are governed by Filip's
-non-isolated $0$-mutability criterion \cite{Filip25}.
+\begin{corollary}\label{cor:defonly}
+Let $X$ be a unit-edge Batyrev Calabi--Yau threefold with a singular point of
+type \textup{(D)} --- for instance the pentagon-cone threefolds of
+\cite[Thms.~5.3, 5.7]{paper1}.  Then the Batyrev mirror $X^\circ$ is
+non-isolated: it carries a curve of transverse $A_{m-1}$ singularities.  The
+deformable-but-non-smoothable phenomenon never occurs on a doubly isolated
+mirror pair.
 \end{corollary}
 
-A clean two-sided, isolated-to-isolated correspondence between non-smoothable
-Calabi--Yau threefolds therefore exists \emph{only} in the classical quotient
-(triangle) stratum, and even there the both-sides examples pair a singular
-threefold with a smooth one rather than singular with singular
-(Example~\ref{ex:pair}).  The natural home of the mirror question for the new
-phenomena is thus the non-isolated theory of \cite{Filip25}, and, conjecturally,
-the mirror-theoretic language of $0$-mutable Laurent polynomials
-\cite{CFP} in which non-smoothability should read as a combinatorial obstruction
-(\S\ref{sec:questions}).
+The one non-quotient exception is the most interesting object of this note.
 
-All computations in this note --- the transverse multiplicities, the both-sides
-scans of the Kreuzer--Skarke list (a reference scanner and a fast-engine
-scanner whose rare hits are re-verified by the reference toolkit), the
-$36$-vertex mirror pair, and the local reduction --- are implemented in
-the exact-arithmetic programs of \cite{paper1}, extended by the scanners
-described in \S\ref{sec:conj}; they are included with the arXiv submission as
-ancillary files.
+\begin{theorem}[the unique frozen mirror pair]\label{thm:pair}
+Up to lattice isomorphism there is exactly one doubly isolated Batyrev mirror
+pair whose singularities are not all quotient points or smoothable: the pair
+$(\Delta_{\FF_1}, \Delta_{\FF_1}^\circ)$ of Theorem~\textup{\ref{thm:pairbody}},
+with $22$ and $26$ vertices.  The generic anticanonical
+$X \subset \PP_{\Delta_{\FF_1}}$ has $20$ ordinary double points, one
+$\mathrm{dP}_6$-cone point, and one point whose germ is the anticanonical
+cone over $\FF_1$; hence $X$ \emph{admits no smoothing}
+\cite[Cor.~4.3]{paper1}.  Its mirror $X^\circ$ has $26$ ordinary double
+points, two $\mathrm{dP}_7$-cone points and two $\mathrm{dP}_6$-cone points
+--- every singular germ of $X^\circ$ is of type \textup{(S)}.  The maximal
+projective crepant partial resolutions have
+$(h^{1,1},h^{2,1}) = (20,26)$ and $(26,20)$ respectively.
+\end{theorem}
+
+Thus the Batyrev mirror of a Calabi--Yau threefold that is \emph{frozen} ---
+non-smoothable, with the very germ excluded in Gross's smoothing theorem for
+primitive contractions \cite[Thm.~5.8]{Gross97} --- can be isolated-singular
+with every singular point locally smoothable.  Notably, every dual edge on
+the mirror side has length one, so all of $X^\circ$'s germs sit exactly in
+the regime that \cite{paper2} identifies as beyond the reach of both
+Friedman's criterion and Gross's theorems; whether $X^\circ$ is globally
+smoothable is open (Question~\ref{q:mirror-smooth}).
+
+Theorems~\ref{thm:class}--\ref{thm:pair} answer the mirror question of
+\cite[\S6.3]{paper1} for the non-smoothable stratum: among the
+non-smoothable local models, only the cyclic quotients and the $\FF_1$-cone
+--- precisely the germs of Gross's two exceptional surfaces $\PP^2$ and
+$\FF_1$ \cite[Thm.~5.8]{Gross97} --- admit doubly isolated mirror
+realizations, and the $\FF_1$-cone does so exactly once in the entire toric
+hypersurface landscape.
+
+\subsection*{Two refuted conjectures, and a caution about low-vertex
+evidence}
+This note originally conjectured that every two-dimensional face of a
+both-sides unit polytope is a triangle or a zonotope --- equivalently, that
+no del Pezzo polygon other than the centrally-symmetric ones occurs --- and
+reduced this to a local ``balancing'' statement about a face and its star.
+Both statements are \emph{false}: the $\mathrm{dP}_7$ pentagon occurs ($87$
+faces, on polytopes with $19$ to $31$ vertices), as does the $\FF_1$
+quadrilateral (once).  What makes the failure instructive is its location.
+The conjecture is \emph{true} for all $395{,}406{,}329$ reflexive
+$4$-polytopes with at most $18$ vertices --- $83.5\%$ of the classification,
+including a complete verification of the local statement on $38{,}571$
+candidate configurations --- and fails from $19$ vertices on, where
+both-sides unit polytopes first become common
+(Table~\ref{tab:dist}).  Small-vertex evidence, however extensive, samples a
+biased corner of the landscape; we record the episode as a data point on the
+epistemology of conjecture-making over the Kreuzer--Skarke list.
+
+All computations --- the identity, the scan, the exact re-verification of
+all $590$ polytopes, and the mirror pair --- are performed by
+exact-arithmetic programs building on those of \cite{paper1}, included as
+ancillary files; \texttt{both\_sides\_census.py} re-derives every number and
+theorem in this note from the committed scan results, with assertions.
 
 \subsection*{Acknowledgements}
-This note continues \cite{paper1,paper2}; the question of smoothing canonical
-Calabi--Yau singularities was posed to the author by Mark Gross many years ago.
+This note completes the series \cite{paper1,paper2}; the question of
+smoothing canonical Calabi--Yau singularities was posed to the author by
+Mark Gross many years ago.
 
 \section{Preliminaries}\label{sec:prelim}
 
-We keep the notation of \cite{paper1}.  For a lattice polygon $Q$ with unit edges
-placed at height one, $C(Q)$ denotes the associated Gorenstein toric affine
-threefold; $Q$ is of type \textup{(R)}, \textup{(D)} or \textup{(S)} according as
-its edge-vector multiset has no proper zero-sum sub-multiset, has one but no
-partition into unit segments and unimodular triples, or has such a partition
-\cite{Altmann97,CFP}.  For a reflexive polytope $\Delta$ we write $\Delta^\circ$
-for the polar dual; a face $G \preceq \Delta$ has a dual face
-$G^\circ \preceq \Delta^\circ$ with $\dim G + \dim G^\circ = 3$, so
-two-dimensional faces $F$ of $\Delta$ are dual to edges $F^\circ$ of
-$\Delta^\circ$ and vice versa.  We write $\ell(\cdot)$ for lattice length.  By the
-planting proposition \cite[Prop.~3.1]{paper1}, for $\Delta$ with unit edges the
-generic $X \in |{-K}|$ meets the toric curve $V(\sigma_F)$ of a two-dimensional
-face $F$ in $\ell(F^\circ)$ reduced points, at each of which the germ of $X$ is
-$C(F)$; $X$ is smooth away from these points, so $X$ is isolated-singular exactly
-when $\Delta$ has unit edges.
+We keep the notation of \cite{paper1}.  For a lattice polygon $Q$ with unit
+edges placed at height one, $C(Q)$ denotes the associated Gorenstein toric
+affine threefold; $Q$ is of type \textup{(R)}, \textup{(D)} or \textup{(S)}
+according as its edge-vector multiset has no proper zero-sum sub-multiset,
+has one but no partition into unit segments and unimodular triples, or has
+such a partition \cite{Altmann97,CFP}.  A unit-edge polygon is a
+\emph{zonotope} --- a Minkowski sum of unit segments --- if and only if it is
+centrally symmetric, and every zonotope is of type \textup{(S)}.  A unit-edge
+polygon with exactly one interior lattice point is reflexive; there are five,
+the anticanonical polygons of $\PP^2$, $\FF_1$, $\PP^1{\times}\PP^1$,
+$\mathrm{dP}_7$, $\mathrm{dP}_6$, of which the $\PP^2$ triangle and the
+$\FF_1$ quadrilateral are rigid and the other three are of type \textup{(S)}
+\cite[Rem.~2.6]{paper1}.  For a reflexive $4$-polytope $\Delta$ we write
+$\Delta^\circ = \{u : \langle u,v\rangle \ge -1\ \forall v \in \Delta\}$; a
+face $G \preceq \Delta$ has dual face $G^\circ \preceq \Delta^\circ$ with
+$\dim G + \dim G^\circ = 3$.  By the planting proposition
+\cite[Prop.~3.1]{paper1}, for $\Delta$ with unit edges the generic
+$X \in |{-K}|$ has, over each two-dimensional face $F$, exactly
+$\ell(F^\circ)$ singular points with germ $C(F)$, and no other singular
+points; and an edge of $\Delta$ of lattice length $m \ge 2$ produces a curve
+of transverse $A_{m-1}$ singularities \cite[\S2]{paper1}.
 
 \section{The transverse-multiplicity identity}\label{sec:mult}
 
-Let $F$ be a two-dimensional face of a reflexive polytope $\Delta \subset
-\NN_\RR$, and let $u_1, u_2 \in \MM$ be the primitive inner normals of the two
-facets of $\Delta$ containing $F$, so that $\langle u_i, \cdot\rangle = -1$ on
-$F$ and $F^\circ = \conv\{u_1, u_2\}$.  Put $\MM_F = \MM \cap (\RR u_1 + \RR u_2)$,
-a rank-two saturated sublattice of $\MM$ containing $u_1, u_2$ as primitive
-vectors.
+Let $F$ be a two-dimensional face of a reflexive polytope
+$\Delta \subset \NN_\RR$, and let $u_1, u_2 \in \MM$ be the primitive inner
+normals of the two facets of $\Delta$ containing $F$, so that
+$\langle u_i, \cdot\rangle = -1$ on $F$ and $F^\circ = \conv\{u_1, u_2\}$.
+Put $\MM_F = \MM \cap (\RR u_1 + \RR u_2)$, a rank-two saturated sublattice
+of $\MM$ containing $u_1, u_2$ as primitive vectors.
 
 \begin{lemma}\label{lem:mult}
 $\ell(F^\circ) = [\,\MM_F : \ZZ u_1 + \ZZ u_2\,]$.
@@ -237,236 +266,318 @@ possible because $u_1$ is primitive.  Write $u_2 = (p,q)$; then $p =
 \det(u_1,u_2) = \pm[\,\MM_F : \ZZ u_1 + \ZZ u_2\,]$, and $\ell(F^\circ) =
 \ell\bigl(\conv\{u_1,u_2\}\bigr) = \gcd(u_2 - u_1) = \gcd(p,\,q+1)$.
 
-Let $v$ be a vertex of $F$ and let $\bar v \in \NN_F := \NN/(\NN \cap u_1^\perp
-\cap u_2^\perp)$ be its image; since $u_1,u_2$ vanish on $\NN \cap u_1^\perp \cap
-u_2^\perp$ they descend to the dual basis of $\MM_F = \NN_F^\vee$, and $\bar v$ is
-a lattice point of $\NN_F \cong \ZZ^2$ with $\langle u_i, \bar v\rangle = -1$.
-Writing $\bar v = (a,b)$ in the dual basis, $\langle u_1, \bar v\rangle = -b = -1$
-gives $b = 1$, and $\langle u_2, \bar v\rangle = pa + q = -1$ gives $p a = -1-q$,
-so $p \mid (q+1)$.  Hence $\gcd(p, q+1) = |p|$, and
+Let $v$ be a vertex of $F$ and let $\bar v \in \NN_F := \NN/(\NN \cap
+u_1^\perp \cap u_2^\perp)$ be its image; since $u_1,u_2$ vanish on
+$\NN \cap u_1^\perp \cap u_2^\perp$ they descend to the dual basis of
+$\MM_F = \NN_F^\vee$, and $\bar v$ is a lattice point of $\NN_F \cong \ZZ^2$
+with $\langle u_i, \bar v\rangle = -1$.  Writing $\bar v = (a,b)$ in the dual
+basis, $\langle u_1, \bar v\rangle = -b = -1$ gives $b = 1$, and
+$\langle u_2, \bar v\rangle = pa + q = -1$ gives $p a = -1-q$, so
+$p \mid (q+1)$.  Hence $\gcd(p, q+1) = |p|$, and
 $\ell(F^\circ) = |p| = [\,\MM_F : \ZZ u_1 + \ZZ u_2\,]$.
 \end{proof}
 
 \begin{remark}
-Lemma~\ref{lem:mult} is elementary and may be known; what matters here is the
-reading it provides.  The right-hand side is the multiplicity of the
-two-dimensional cone $\Cone(u_1,u_2)$, which is the normal cone of $F$ and dually
-the transverse cone of $\Delta$ along $F$ (the image of the tangent cone of
-$\Delta$ at an interior point of $F$ under the quotient $\NN_\RR \to \NN_\RR /
-\operatorname{lin}(F)$).  Thus \emph{the dual-edge length counts exactly the
-transverse singularity multiplicity}, and $\ell(F^\circ)=1$ is the statement that
-$\Delta$ is transversally smooth along $F$.  The lattice-point hypothesis on $v$ is
-essential: for an arbitrary pair of primitive vectors $u_1,u_2$ the two sides of
-Lemma~\ref{lem:mult} differ.
+Lemma~\ref{lem:mult} is elementary and may be known; what matters here is
+the reading it provides.  The right-hand side is the multiplicity of the
+two-dimensional cone $\Cone(u_1,u_2)$, which is the normal cone of $F$ and
+dually the transverse cone of $\Delta$ along $F$.  Thus \emph{the dual-edge
+length counts exactly the transverse singularity multiplicity}, and
+$\ell(F^\circ)=1$ is the statement that $\Delta$ is transversally smooth
+along $F$.  The lattice-point hypothesis on $v$ is essential: for an
+arbitrary pair of primitive vectors the two sides differ.
 \end{remark}
 
-Corollary~\ref{cor:introboth} is immediate: $X$ is isolated-singular iff $\Delta$
-has unit edges (\S\ref{sec:prelim}); $X^\circ$ is isolated-singular iff
-$\Delta^\circ$ has unit edges, i.e.\ every edge $F^\circ$ of $\Delta^\circ$ has
-$\ell(F^\circ)=1$, i.e.\ by Lemma~\ref{lem:mult} every two-dimensional face of
-$\Delta$ is transversally smooth.
+Corollary~\ref{cor:introboth} is immediate: $X$ is isolated-singular iff
+$\Delta$ has unit edges; $X^\circ$ is isolated-singular iff $\Delta^\circ$
+has unit edges, i.e.\ every edge $F^\circ$ of $\Delta^\circ$ has
+$\ell(F^\circ)=1$, i.e.\ by Lemma~\ref{lem:mult} every two-dimensional face
+of $\Delta$ is transversally smooth.  Self-duality follows since the
+conditions ``unit edges'' and ``all dual edges of length one'' are exchanged
+by $\Delta \leftrightarrow \Delta^\circ$.
 
 \section{The mirror correspondence of the singular strata}\label{sec:corr}
 
-We record the mirror-dual description of the singular loci, which puts
-Corollary~\ref{cor:introboth} in geometric terms.  It is a direct consequence of
-Batyrev's construction and the planting proposition, and was the starting point of
-this investigation.
-
 \begin{proposition}\label{prop:corr}
-Let $\Delta$ be reflexive with unit edges and $F$ a two-dimensional face with
-$C(F)$ singular.  Under polar duality $F$ corresponds to the edge $F^\circ$ of
-$\Delta^\circ$, and:
+Let $\Delta$ be reflexive with unit edges and $F$ a two-dimensional face
+with $C(F)$ singular.  Under polar duality $F$ corresponds to the edge
+$F^\circ$ of $\Delta^\circ$, and:
 \begin{enumerate}
 \item $X$ has $\ell(F^\circ)$ isolated points of type $C(F)$ over $F$;
 \item $X^\circ$ has, along the toric curve $V(\sigma_{F^\circ})$ dual to
-$F^\circ$, a curve of transverse $A_{\ell(F^\circ)-1}$ singularities (and none if
-$\ell(F^\circ)=1$).
+$F^\circ$, a curve of transverse $A_{\ell(F^\circ)-1}$ singularities (and
+none if $\ell(F^\circ)=1$).
 \end{enumerate}
 In particular $X^\circ$ is isolated-singular if and only if
 $\max_F \ell(F^\circ) = 1$, i.e.\ $\Delta$ is both-sides unit.
 \end{proposition}
 
 \begin{proof}
-(1) is \cite[Prop.~3.1]{paper1}.  For (2), the edge $F^\circ$ of $\Delta^\circ$
-has lattice length $\ell(F^\circ)$, so it carries $\ell(F^\circ)-1$ interior
-lattice points; the corresponding toric curve $V(\sigma_{F^\circ}) \subset
-\PP_{\Delta^\circ}$ meets the generic anticanonical $X^\circ$ in a
-$1$-dimensional stratum along which $\PP_{\Delta^\circ}$ has a transverse
-$A_{\ell(F^\circ)-1}$ singularity (an edge of lattice length $m$ produces a curve
-of transverse $A_{m-1}$ singularities, \cite[\S2]{paper1}).  Hence $X^\circ$ is
-smooth in codimension two along $V(\sigma_{F^\circ})$ precisely when
-$\ell(F^\circ)=1$, and it is isolated-singular iff this holds for every
-two-dimensional face $F$, i.e.\ iff $\Delta$ is both-sides unit.
+(1) is \cite[Prop.~3.1]{paper1}.  For (2), the edge $F^\circ$ of
+$\Delta^\circ$ has lattice length $\ell(F^\circ)$; an edge of lattice length
+$m$ produces on the generic anticanonical hypersurface a curve of transverse
+$A_{m-1}$ singularities (\S\ref{sec:prelim}), and none when $m = 1$.  Hence
+$X^\circ$ is isolated-singular iff every two-dimensional face of $\Delta$
+has $\ell(F^\circ) = 1$.
 \end{proof}
 
-Thus the point-packet of $X$ over $F$ and the $A_{\ell(F^\circ)-1}$-curve of
-$X^\circ$ are mirror-dual, and the two threefolds are simultaneously
-isolated-singular exactly on the both-sides unit polytopes.
+Thus the $\ell(F^\circ)$-point packet of $X$ over $F$ and the
+$A_{\ell(F^\circ)-1}$-curve of $X^\circ$ are mirror-dual, and the two
+threefolds are simultaneously isolated-singular exactly on the both-sides
+unit polytopes.  Whenever $\Delta$ has \emph{any} face with
+$\ell(F^\circ) \ge 2$ --- the generic situation --- the mirror is
+non-isolated and its singularities leave the isolated framework of
+\cite{Altmann97,CFP}, being governed instead by Filip's non-isolated
+$0$-mutability criterion \cite{Filip25}.
 
-\section{Both-sides unit polytopes and the triangle-or-zonotope
-conjecture}\label{sec:conj}
+\section{The census of both-sides unit polytopes}\label{sec:census}
 
-We now study which local models can occur on a both-sides unit polytope.  Recall
-that a unit-edge polygon is a \emph{zonotope} --- a Minkowski sum of unit
-segments --- if and only if it is centrally symmetric (its edge vectors occur in
-antipodal pairs), and that every zonotope is of type \textup{(S)}: the antipodal
-pairs partition the edge multiset into unit segments, giving a smoothing.  Thus
-Conjecture~\ref{conj:main} asserts that the only non-smoothable faces of a
-both-sides unit polytope are triangles.
+\subsection{Methodology}
+Both-sides unitality is a face-level test: all edges of lattice length one
+and, by Lemma~\ref{lem:mult}, all dual edges of length one.  We ran it over
+the complete Kreuzer--Skarke classification, using the validated fast
+integer engine of \cite{paper1} (per-file random-row self-tests against the
+reference implementation; the one polytope missing from the per-vertex-count
+mirror of the database, the $36$-vertex hexagon product, is included --- see
+\cite[\S6.1]{paper1}); every polytope passing the fast test is then
+re-verified, and its faces classified, by the exact reference toolkit.  The
+scan results are committed as data files, and the ancillary program
+\texttt{both\_sides\_census.py} re-derives every statement of
+Theorems~\ref{thm:class}--\ref{thm:pair} from them, with assertions.
+
+\subsection{The classification}
+\begin{table}[ht]
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrrrrrrrrrrrrrrrrrrrrrrr}
+\toprule
+vertices & 5 & 6 & 8 & 9 & 10 & 12 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22
+& 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 & 31 & 33 & 36\\
+\midrule
+\# & 2 & 1 & 1 & 1 & 1 & 1 & 1 & 4 & 4 & 7 & 12 & 24 & 37 & 69 & 84 & 98 &
+85 & 64 & 42 & 24 & 13 & 9 & 4 & 1 & 1\\
+\bottomrule
+\end{tabular}}
+\medskip
+\caption{The $590$ both-sides unit reflexive $4$-polytopes by vertex count
+(no others occur; in particular none with $7$, $11$, $13$, $14$, $32$, $34$
+or $35$ vertices).  The population is closed under polar duality
+(Corollary~\textup{\ref{cor:introboth}}) and peaks at $24$
+vertices.}\label{tab:dist}
+\end{table}
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{llrl}
+\toprule
+face $[k,i]$ & kind & count & germ of $X$ over it \\
+\midrule
+$[3,0]$ & triangle & $25{,}873$ & smooth point \\
+$[3,1]$ & triangle & $6$ & $\frac13(1,1,1)$ \textbf{(rigid)} \\
+$[3,2]$ & triangle & $10$ & cyclic quotient \textbf{(rigid)} \\
+$[4,0]$ & zonotope & $15{,}652$ & ordinary double point \\
+$[4,1]$ & zonotope & $99$ & cone over $\PP^1{\times}\PP^1$ \\
+$[4,1]$ & \emph{asymmetric} & $1$ & cone over $\FF_1$ \textbf{(rigid)} \\
+$[4,2]$ & zonotope & $9$ & type (S) \\
+$[5,1]$ & \emph{asymmetric} & $87$ & cone over $\mathrm{dP}_7$ \\
+$[6,1]$ & zonotope & $395$ & cone over $\mathrm{dP}_6$ \\
+$[6,2]$ & zonotope & $2$ & type (S) \\
+$[6,7]$ & zonotope & $3$ & type (S) \\
+$[8,4]$ & zonotope & $1$ & type (S), $3$ smoothing components \\
+\bottomrule
+\end{tabular}
+\end{center}
+\medskip
+\caption{Every two-dimensional face of every both-sides unit polytope, by
+class ($k$ = edges, $i$ = interior points).  ``Asymmetric'' = neither a
+triangle nor centrally symmetric; only the two non-centrally-symmetric
+reflexive polygons occur, and each germ appears on $X$ exactly once per
+face since all dual edges have length one.}\label{tab:occ}
+\end{table}
+
+\begin{proof}[Proof of Theorems~\textup{\ref{thm:class}}
+and~\textup{\ref{thm:dichot}}]
+Exhaustive verification, summarized in Tables~\ref{tab:dist}
+and~\ref{tab:occ}.  The scan of all $473{,}800{,}776$ polytopes returned
+$590$ both-sides unit ones; exact re-analysis of each classifies all their
+two-dimensional faces into the twelve classes of Table~\ref{tab:occ}, each
+of which is a triangle, a zonotope, or one of the five reflexive polygons
+(the $[4,1]$ zonotope is the $\PP^1{\times}\PP^1$ diamond, the $[6,1]$
+zonotope the $\mathrm{dP}_6$ hexagon, the $[3,1]$ triangle the $\PP^2$
+triangle; the asymmetric $[5,1]$ and $[4,1]$ classes are the $\mathrm{dP}_7$
+pentagon and the $\FF_1$ quadrilateral, identified by explicit
+$GL_2(\ZZ)$-equivalences).  The non-smoothable classes occurring are the
+rigid triangles $[3,1]$, $[3,2]$ and the $\FF_1$ quadrilateral; the
+$[3,2]$ faces all lie on the $5$-vertex quotient simplex of
+Example~\ref{ex:pair}, the $[3,1]$ faces on its $9$-vertex companion, and
+the $\FF_1$ face on the unique polytope of
+Theorem~\ref{thm:pairbody}.  No face of type \textup{(D)} occurs.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\textup{\ref{cor:defonly}}]
+A type-\textup{(D)} point of $X$ is the cone over a type-\textup{(D)} face
+$F$.  By Theorem~\ref{thm:dichot}, $\Delta$ is then not both-sides unit, so
+some face $F'$ has $\ell(F'^\circ) \ge 2$ and Proposition~\ref{prop:corr}(2)
+gives a singular curve on $X^\circ$.
+\end{proof}
+
+\subsection{The refuted conjectures}\label{sec:refuted}
+The first version of this note conjectured that every two-dimensional face
+of a both-sides unit polytope is a triangle or a zonotope, and reduced this
+to a local claim: an asymmetric face with unit-edge star and
+$\ell(F^\circ)=1$ forces a star face with $\ell \ge 2$.  Table~\ref{tab:occ}
+refutes both: $88$ asymmetric faces occur, on $55$ polytopes.  The smallest
+counterexample has $19$ vertices:
+\[
+\begin{gathered}
+\Delta_{19}=\conv\{(1,0,0,0),\,(0,1,0,0),\,(0,0,1,0),\,(0,0,-1,0),\,
+(0,-1,0,0),\\
+(1,-1,-1,0),\,(0,0,0,1),\,(-1,1,1,-1),\,(0,-1,0,1),\,(0,0,-1,1),\\
+(-1,1,0,-1),\,(-1,0,1,-1),\,(-1,0,1,0),\,(-1,1,0,0),\,(0,-1,-1,0),\\
+(0,-1,-1,1),\,(-1,0,0,-1),\,(-2,1,1,-1),\,(-1,0,0,1)\},
+\end{gathered}
+\]
+a both-sides unit polytope one of whose faces is the $\mathrm{dP}_7$
+pentagon; its hypersurface is a Calabi--Yau threefold with $14$ nodes and
+one $\mathrm{dP}_7$-cone point, all with isolated-singular mirror.  The
+conjecture is \emph{true} on the $395{,}406{,}329$ polytopes with at most
+$18$ vertices and false from $19$ on --- precisely where both-sides unit
+polytopes stop being sporadic (Table~\ref{tab:dist}).  We let the corrected
+statement stand as Theorem~\ref{thm:class}, and the conceptual question it
+raises as Question~\ref{q:why}.
 
 \begin{remark}[why not ``simplicial'']\label{rem:selfdual}
-It is tempting to conjecture the stronger statement that every two-dimensional
-face of a both-sides unit polytope is a \emph{triangle}, i.e.\ that $\Delta$ is
-simplicial.  This is false.  The both-sides unit condition is self-dual: it holds
-for $\Delta$ if and only if it holds for $\Delta^\circ$.  Were every
-two-dimensional face of a both-sides unit polytope a triangle, applying this to
-both $\Delta$ and $\Delta^\circ$ would make $\Delta$ simplicial and simple at once,
-hence a simplex --- contradicting the existence of both-sides unit polytopes with
-more than five vertices (there is one with nine, Example~\ref{ex:pair}).  The
-non-triangular faces of a both-sides unit polytope are genuine; the content of
-Conjecture~\ref{conj:main} is that they are \emph{smoothable}
-(centrally symmetric), never of the new non-smoothable types.
+The stronger guess that a both-sides unit polytope is simplicial fails for a
+structural reason: the condition is self-dual, and ``simplicial and simple''
+forces a simplex, contradicting the existence of both-sides unit polytopes
+with more than five vertices.  The non-triangular faces are genuine; the
+content of Theorem~\ref{thm:class} is that they are zonotopes or reflexive.
 \end{remark}
 
-\begin{example}[the both-sides examples are mirror pairs]\label{ex:pair}
-Among the $3{,}905{,}789$ reflexive $4$-polytopes with at most nine vertices,
-exactly five are both-sides unit; they are closed under polar duality (two polar
-pairs and one self-polar polytope).  One pair is the smooth simplex and the
-simplex $\Delta = \conv\{(1,0,0,0),(0,1,0,0),(2,4,5,0),(3,3,0,5),(-6,-8,-5,-5)\}$,
-whose ten two-dimensional faces are all rigid triangles (cyclic quotient points)
-and whose polar is smooth.  A second pair consists of a simplicial six-vertex
-polytope, all of whose eighteen faces are smooth triangles, and its polar (nine
-vertices), whose fifteen faces are six rigid triangles and nine
-centrally-symmetric quadrilaterals of type \textup{(S)} with two interior points.
-In every case the two-dimensional faces are triangles or zonotopes, and every
-non-smoothable member is paired under the mirror with a \emph{smooth} threefold,
-not a singular one.  These are exactly the classical quotient examples one
-dimension beyond which \cite{paper1} was written.
+\begin{example}[the low-vertex stratum]\label{ex:pair}
+Among the $3{,}905{,}789$ polytopes with at most nine vertices exactly five
+are both-sides unit, closed under polarity (two polar pairs and one
+self-polar polytope).  One pair is the smooth simplex and the simplex
+\[
+\conv\{(1,0,0,0),\,(0,1,0,0),\,(2,4,5,0),\,(3,3,0,5),\,(-6,-8,-5,-5)\},
+\]
+whose ten
+faces are the $[3,2]$ rigid triangles of Table~\ref{tab:occ} (cyclic
+quotient points) and whose polar is smooth.  A second pair consists of a
+simplicial six-vertex polytope with all faces smooth and its nine-vertex
+polar, carrying the six $\frac13(1,1,1)$ triangles and nine $[4,2]$
+zonotopes.  In each pair, the non-smoothable member mirrors a \emph{smooth}
+threefold.
 \end{example}
 
-\begin{example}[a both-sides pair at the top of the classification]
-\label{ex:pair36}
-Both-sides unit polytopes are not confined to few vertices.  The $36$-vertex
-product $H \times H$ of two reflexive hexagons --- the reflexive
-$4$-polytope with the most vertices --- is both-sides unit, and its polar,
-the $12$-vertex free sum $H^\circ \oplus H^\circ$, is the mirror partner
-guaranteed by self-duality of the both-sides condition.  The faces of
-$H \times H$ are $36$ unit parallelograms and $12$ centrally-symmetric
-$\mathrm{dP}_6$ hexagons --- all zonotopes, so
-Conjecture~\ref{conj:main} holds --- and the corresponding $X$ is singular
-with $48$ isolated points, all of type \textup{(S)} ($36$ ordinary double
-points and $12$ $\mathrm{dP}_6$-cone points).  The faces of the polar are
-$72$ smooth triangles, so the mirror $X^\circ$ is a \emph{smooth}
-Calabi--Yau threefold.  The pattern of Example~\ref{ex:pair} repeats at the
-opposite end of the classification: a singular member (here everywhere
-locally smoothable) mirrors a smooth one.  All assertions are machine-checked
-in \texttt{missing\_polytope.py}.
+\begin{example}[the top of the classification]\label{ex:pair36}
+The $36$-vertex product $H \times H$ of two reflexive hexagons --- the
+reflexive $4$-polytope with the most vertices, and the one polytope absent
+from the per-vertex-count database mirror used in \cite{paper1} --- is
+both-sides unit; its faces are $36$ unit squares and $12$ $\mathrm{dP}_6$
+hexagons, so its hypersurface has $48$ singular points, all of type
+\textup{(S)}, while its polar, the $12$-vertex free sum
+$H^\circ \oplus H^\circ$, has $72$ smooth triangular faces and smooth
+hypersurface.
 \end{example}
 
-\subsection{Computational evidence}
-The exact-arithmetic classifier of \cite{paper1}, applied to a two-dimensional
-face together with its two facet normals, computes $\ell(F^\circ)$ and the type of
-$F$; a scan over the Kreuzer--Skarke list \cite{KreuzerSkarke00} then tests
-Conjecture~\ref{conj:main} directly.  Over all $3{,}905{,}789$ reflexive
-$4$-polytopes with at most nine vertices we find no counterexample: exactly
-five polytopes are both-sides unit, and every
-two-dimensional face of each is a triangle or a
-centrally-symmetric zonotope.  (Both scanners --- the reference one and a
-fast-engine one capable of the higher vertex counts --- are among the
-ancillary files; every both-sides hit of the fast scanner is re-verified by
-the reference toolkit.)
+\section{The unique frozen mirror pair}\label{sec:pair}
 
-Three further pieces of data come from the full classification.  First, the
-complete sweep of \cite{paper1} tracked, for every polytope with at least
-$23$ vertices ($3{,}735{,}806$ of them), whether it is both-sides unit
-\emph{and} carries a non-smoothable face: none is.  So a counterexample to
-Conjecture~\ref{conj:main} with a \emph{non-smoothable} asymmetric face ---
-the only kind relevant to Corollary~\ref{cor:mirror} --- has, in addition,
-no instance with $v \ge 23$.  Second, the unique reflexive $4$-polytope
-with more than $33$ vertices --- the $36$-vertex product $H \times H$ of two
-reflexive hexagons, the one polytope absent from the per-vertex-count mirror
-used in \cite{paper1} --- is both-sides unit, and conforms: its $48$
-two-dimensional faces are $36$ unit parallelograms and $12$
-$\mathrm{dP}_6$ hexagons, all centrally symmetric (ancillary file
-\texttt{missing\_polytope.py}).  Third, its polar --- the $12$-vertex free
-sum $H^\circ \oplus H^\circ$ --- is then also both-sides unit, with all $72$
-two-dimensional faces smooth triangles; see
-Example~\ref{ex:pair36}.
+\begin{theorem}\label{thm:pairbody}
+Let
+\[
+\begin{gathered}
+\Delta_{\FF_1}=\conv\{(1,0,0,0),\,(0,1,0,0),\,(1,-1,0,0),\,(0,0,1,0),\,
+(0,0,0,1),\,(0,0,1,-1),\\
+(0,0,-1,1),\,(0,0,0,-1),\,(0,0,-1,0),\,(-1,1,0,0),\,(0,-1,0,0),\,
+(-1,1,-1,1),\\
+(0,-1,0,-1),\,(0,-1,-1,0),\,(-1,1,-1,0),\,(-1,0,0,-1),\,(-1,0,-1,1),\\
+(-1,-1,0,-1),\,(-2,1,-1,1),\,(-2,1,-1,0),\,(-1,-1,-1,0),\,(-2,0,-1,0)\}
+\subset \ZZ^4 .
+\end{gathered}
+\]
+Then $\Delta_{\FF_1}$ is a both-sides unit reflexive polytope with $22$
+vertices and $26$ facets, and:
+\begin{enumerate}
+\item its $72$ two-dimensional faces are $50$ smooth triangles, $20$ unit
+squares, one $\mathrm{dP}_6$ hexagon, and one quadrilateral
+$GL_2(\ZZ)$-equivalent to the $\FF_1$ polygon; every dual edge has lattice
+length one;
+\item the generic anticanonical $X \subset \PP_{\Delta_{\FF_1}}$ is a
+Calabi--Yau threefold whose singular locus consists of $20$ ordinary double
+points, one $\mathrm{dP}_6$-cone point, and one point with germ the
+anticanonical cone over $\FF_1$; by \cite[Cor.~4.3]{paper1}, $X$ admits no
+smoothing;
+\item the polar $\Delta_{\FF_1}^\circ$ ($26$ vertices, $22$ facets) is
+both-sides unit with $92$ faces: $38$ smooth triangles, $26$ unit squares,
+two $\mathrm{dP}_7$ pentagons and two $\mathrm{dP}_6$ hexagons; the mirror
+$X^\circ$ has $26$ ordinary double points, two $\mathrm{dP}_7$-cone points
+and two $\mathrm{dP}_6$-cone points, each with a local smoothing;
+\item the maximal projective crepant partial resolutions satisfy
+$(h^{1,1},h^{2,1})(\widehat X) = (20,26)$ and
+$(h^{1,1},h^{2,1})(\widehat{X^\circ}) = (26,20)$;
+\item $\Delta_{\FF_1}$ is the \emph{only} both-sides unit reflexive
+$4$-polytope, up to lattice isomorphism and polarity, carrying a
+non-smoothable face that is not a triangle.
+\end{enumerate}
+\end{theorem}
 
-\subsection{Reduction to a local lemma}
-The obstruction underlying Conjecture~\ref{conj:main} is local to a face and its
-star.  Say a two-dimensional face $F$ is \emph{asymmetric} if it is neither a
-triangle nor a zonotope, and call the two-dimensional faces sharing at least one
-vertex with $F$ the \emph{star} of $F$.
+\begin{proof}
+(1)--(4) are finite verifications in exact arithmetic, performed by the
+ancillary file
+\texttt{both\_sides\_census.py}: the $\FF_1$ identification is an explicit
+$GL_2(\ZZ)$-equivalence of edge multisets, and the Hodge numbers are
+computed by the implementation of \cite{paper1}, anchored there on the
+quintic.  The mirror swap in (4) is forced by Batyrev duality and serves as
+a consistency check.  (5) is Theorem~\ref{thm:dichot}: the scan of the
+complete classification finds no other non-triangle non-smoothable face on
+any both-sides unit polytope.
+\end{proof}
 
-\begin{conjecture}[local balancing]\label{conj:local}
-Let $F$ be an asymmetric two-dimensional face of a reflexive $4$-polytope such
-that $F$ and every face in its star have unit edges, and $\ell(F^\circ)=1$.  Then
-some face in the star of $F$ has $\ell(\cdot^\circ) \ge 2$.
-\end{conjecture}
-
-Conjecture~\ref{conj:local} implies Conjecture~\ref{conj:main}: on a both-sides
-unit polytope all edges are unit and all dual-edge lengths equal $1$, so no
-asymmetric face can occur.  It is strictly local --- it constrains only $F$ and
-its star, ignoring the rest of $\Delta$ --- and correspondingly it is a stronger
-statement, with far more instances.  Over the reflexive $4$-polytopes with at most
-eight vertices ($1{,}037{,}834$ polytopes) there are $38{,}571$ asymmetric faces
-with a unit-edge star and $\ell(F^\circ)=1$, and Conjecture~\ref{conj:local} holds
-for every one of them: each has a star face with $\ell(\cdot^\circ)\ge 2$.
-
-Two structural facts point toward a proof.  First (Lemma~\ref{lem:mult}), for a
-face $F$ with an interior lattice point $m$, every facet of $\Delta$ through an
-edge $e$ of $F$ other than the two facets through $F$ has inner-normal
-$(x_1,x_2)$-part a positive multiple of the outer edge-normal $e^\perp$: the
-facets adjacent to $F$ across its edges lean strictly inward.  Second, comparing a
-zonotope face admitting an all-$\ell{=}1$ star with an asymmetric face shows the
-former places each edge of $F$ on the minimal number ($3$) of facets, while the
-latter forces some edge onto more, carrying the excess into a dual edge of length
-$\ge 2$.  A rigorous local proof --- in particular of the quadrilateral case,
-where ``asymmetric'' means ``rigid'' --- is the natural next step and is left
-open.
-
-\section{Consequences and questions}\label{sec:questions}
-
-Corollary~\ref{cor:mirror} follows from Proposition~\ref{prop:corr} and
-Conjecture~\ref{conj:main}: a non-quotient non-smoothable germ $C(F)$ has $F$
-non-triangular and of type \textup{(R)} or \textup{(D)}, hence not a zonotope, so
-$\Delta$ is not both-sides unit and $X^\circ$ is non-isolated.  The two flagship
-germs of \cite{paper1} are covered: the anticanonical cone over $\FF_1$ is the
-rigid quadrilateral, and the deformable-but-non-smoothable cone is the pentagon
-$Q = T + s$; neither is a triangle or a zonotope.
-
-\begin{remark}
-The unconditional part of the story is already definite.  By
-Proposition~\ref{prop:corr} and Lemma~\ref{lem:mult}, whenever a unit-edge
-$\Delta$ has \emph{any} two-dimensional face $F$ with $\ell(F^\circ) \ge 2$ the
-mirror $X^\circ$ is non-isolated; and the both-sides scan shows this is the
-generic situation --- among the unit-edge reflexive $4$-polytopes with at most
-nine vertices that carry a non-smoothable face, all but two have $\max_F
-\ell(F^\circ) \ge 2$, and the two exceptions are both-sides unit with only
-triangular (quotient) non-smoothable faces; among the polytopes with at
-least $23$ vertices the sweep of \cite{paper1} found no both-sides polytope
-with a non-smoothable face at all.  Conjecture~\ref{conj:main} upgrades
-these two exceptions to ``the exceptions are exactly the quotient stratum.''
+\begin{remark}[a frozen threefold with a mobile mirror]\label{rem:frozen}
+The pair of Theorem~\ref{thm:pairbody} pairs a Calabi--Yau threefold that
+cannot be smoothed --- its $\FF_1$-cone point is rigid in the reduced sense,
+the local model of Gross's exceptional case --- with a mirror all of whose
+singular points move locally.  Whether $X^\circ$ moves \emph{globally} is
+exactly the frontier of \cite{paper2}: all $26+2+2$ of its singular points
+sit over faces with $\ell(F^\circ) = 1$, so no face datum exists; the $26$
+nodes require a cross-face Friedman rescue; and the del Pezzo cone points
+are the $\ell = 1$ germs shown in \cite[Prop.~6.1]{paper2} to lie beyond
+both Friedman's criterion and Gross's theorems.  The pair thus concentrates,
+on two mirror-dual threefolds, every open smoothability phenomenon of this
+series.
 \end{remark}
 
-\begin{question}
-Prove Conjecture~\ref{conj:local} (hence Conjecture~\ref{conj:main}).  The
-quadrilateral case asks: can a rigid unit-edge quadrilateral occur as a
-two-dimensional face of a reflexive $4$-polytope with $\ell(F^\circ)=1$ and a
-unit, all-$\ell{=}1$ star?  The evidence says no.
+\section{Questions}\label{sec:questions}
+
+\begin{question}\label{q:why}
+Why triangles, zonotopes, and reflexive polygons?  Theorem~\ref{thm:class}
+is an exhaustive fact about dimension four; a conceptual, dimension-free
+proof --- a local characterization of the unit-edge polygons admitting an
+all-unit, all-transversally-smooth reflexive completion --- would explain
+it.  The failed local balancing statement of \S\ref{sec:refuted} shows the
+answer is subtler than the star of the face; the appearance of exactly the
+\emph{reflexive} polygons as the non-zonotope exceptions is suggestive in a
+polar-duality-symmetric problem.
 \end{question}
 
-\begin{question}
-Corti--Filip--Petracci \cite{CFP} relate the smoothing components of $C(Q)$ to the
-$0$-mutable Laurent polynomials with Newton polygon $Q$, a mirror-theoretic
-statement, and Filip \cite{Filip25} treats the non-isolated case.  In that
-language, what is the mirror-theoretic meaning of a face of type \textup{(R)} or
-\textup{(D)}?  Corollary~\ref{cor:mirror} says these are precisely the faces whose
-mirror is non-isolated; one expects non-smoothability to appear as the absence of
-a $0$-mutable Laurent polynomial, and it would be interesting to read the
-trichotomy off the canonical scattering diagram of the mirror.
+\begin{question}\label{q:mirror-smooth}
+Is the mirror $X^\circ$ of Theorem~\ref{thm:pairbody} smoothable?  All its
+germs are of type \textup{(S)} with $\ell(F^\circ)=1$.  A positive answer
+would exhibit a Batyrev mirror pair with one member rigid against smoothing
+and the other smoothable --- a maximally asymmetric pair for the
+deformation--resolution exchange of mirror symmetry; a negative answer for
+the nodes alone would already make $X^\circ$ a $26$-node analogue of the
+one-node obstructed threefold of \cite[Thm.~5.1]{paper2}.
+\end{question}
+
+\begin{question}\label{q:mutable}
+Corti--Filip--Petracci relate smoothing components of $C(Q)$ to $0$-mutable
+Laurent polynomials with Newton polygon $Q$ \cite{CFP}, and Filip
+\cite{Filip25} treats the non-isolated case.  In that language, what
+distinguishes the twelve face classes of Table~\ref{tab:occ} --- and what is
+the mirror-theoretic meaning of the unique $\FF_1$ face?  One would like to
+read Theorem~\ref{thm:dichot} off the canonical scattering diagram of the
+mirror.
 \end{question}
 
 \begin{thebibliography}{99}
@@ -474,25 +585,31 @@ trichotomy off the canonical scattering diagram of the mirror.
 \bibitem{Altmann97}
 K.~Altmann,
 \emph{The versal deformation of an isolated toric Gorenstein singularity},
-Invent.\ Math.\ \textbf{128} (1997), no.~3, 443--479.
+Invent.\ Math.\ \textbf{128} (1997), 443--479.
 
 \bibitem{Batyrev94}
 V.~V. Batyrev,
-\emph{Dual polyhedra and mirror symmetry for Calabi--Yau hypersurfaces in toric
-varieties},
+\emph{Dual polyhedra and mirror symmetry for Calabi--Yau hypersurfaces in
+toric varieties},
 J.\ Algebraic Geom.\ \textbf{3} (1994), 493--535.
 
 \bibitem{CFP}
 A.~Corti, M.~Filip, and A.~Petracci,
 \emph{Mirror symmetry and smoothing Gorenstein toric affine 3-folds},
-in \emph{Facets of Algebraic Geometry}, vol.~I, London Math.\ Soc.\ Lecture Note
-Ser.\ \textbf{472}, Cambridge Univ.\ Press, 2022, pp.~132--163; arXiv:2006.16885.
+Facets of Algebraic Geometry vol.~I, LMS Lecture Note Ser.\ \textbf{472},
+CUP, 2022, 132--163.
 
 \bibitem{Filip25}
 M.~Filip,
 \emph{Laurent polynomials and deformations of non-isolated Gorenstein toric
 singularities},
 arXiv:2504.04486 (2025).
+
+\bibitem{Gross97}
+M.~Gross,
+\emph{Deforming Calabi--Yau threefolds},
+Math.\ Ann.\ \textbf{308} (1997), 187--220; updated version
+arXiv:alg-geom/9506022v2 (2025).
 
 \bibitem{KreuzerSkarke00}
 M.~Kreuzer and H.~Skarke,
