@@ -104,15 +104,25 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("files", nargs="+")
     ap.add_argument("--procs", type=int, default=max(1, (os.cpu_count() or 4) - 2))
+    ap.add_argument("--json", default=None,
+                    help="write per-file + total {n, cand, viol} counts")
     args = ap.parse_args()
-    grand = _empty()
+    import json
+    grand, out = _empty(), {}
     for path in args.files:
         selftest_engines(path, 40)
         t0 = time.time()
         agg = sweep(path, args.procs)
         print(f"{os.path.basename(path)}: n={agg['n']}  asymmetric-l1-nontriangle faces={agg['cand']}  "
               f"LOCAL-LEMMA VIOLATIONS (star all unit)={agg['viol']}  [{time.time()-t0:.0f}s]", flush=True)
+        out[os.path.basename(path)] = dict(n=agg["n"], cand=agg["cand"],
+                                           viol=agg["viol"])
         grand = _merge(grand, agg)
+        if args.json:
+            out["TOTAL"] = dict(n=grand["n"], cand=grand["cand"],
+                                viol=grand["viol"])
+            with open(args.json, "w") as f:
+                json.dump(out, f, indent=1)
     print("\n" + "=" * 60)
     print(f"TOTAL: n={grand['n']}  candidate asymmetric l=1 non-triangle faces={grand['cand']}  "
           f"local-lemma violations={grand['viol']}")

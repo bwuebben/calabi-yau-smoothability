@@ -1,0 +1,27 @@
+{
+ "polytopes-4d-05-vertices.parquet": {
+  "n": 1561,
+  "cand": 0,
+  "viol": 0
+ },
+ "TOTAL": {
+  "n": 1037834,
+  "cand": 38571,
+  "viol": 0
+ },
+ "polytopes-4d-06-vertices.parquet": {
+  "n": 24189,
+  "cand": 400,
+  "viol": 0
+ },
+ "polytopes-4d-07-vertices.parquet": {
+  "n": 177446,
+  "cand": 4599,
+  "viol": 0
+ },
+ "polytopes-4d-08-vertices.parquet": {
+  "n": 834638,
+  "cand": 33572,
+  "viol": 0
+ }
+}
