@@ -37,7 +37,7 @@ threefolds\\ in Gorenstein toric Fano fourfolds}
 \keywords{Calabi--Yau threefolds, smoothings, deformations of toric
 pairs, reflexive polytopes, anticanonical hypersurfaces, Batyrev
 construction}
-\date{July 14, 2026}
+\date{July 19, 2026}
 
 \begin{document}
 
@@ -46,16 +46,16 @@ Let $\Delta \subset \ZZ^4$ be a reflexive polytope with unit edges and let
 $X \subset \PP_\Delta$ be a generic anticanonical hypersurface: a
 Calabi--Yau threefold whose singular locus consists of $\ell(F^\circ)$
 points of type $C(F)$ for each non-smooth two-dimensional face $F$, where
-$\ell(F^\circ)$ is the lattice length of the dual edge.  In the prequel we
-showed that $X$ admits no smoothing when some $C(F)$ has no smoothing
-component.  Here we study the complementary case, in which every singular
+$\ell(F^\circ)$ is the lattice length of the dual edge.  In a companion
+paper we showed that $X$ admits no smoothing when some $C(F)$ has no
+smoothing component.  Here we study the complementary case, in which every singular
 germ is locally smoothable and the question is global.  We prove that the
 points over a face $F$ of type (S) are smoothed by an explicit binomial
 deformation of the ambient toric pair whenever $\ell(F^\circ) \ge 2$, by
 transplanting Petracci's homogeneous deformations of toric pairs to
 codimension-two faces; consequently $X$ is smoothable whenever $F$ is its
-unique non-smooth face, and, when every non-smooth face is a unit
-parallelogram with $\ell(F^\circ)\ge2$, unconditionally --- for several
+unique non-smooth face, and unconditionally whenever every non-smooth
+face is a unit parallelogram with $\ell(F^\circ)\ge2$; for several
 faces of general type (S) the face-wise smoothings assemble whenever the
 semiuniversal deformation space of $X$ is irreducible.  We show the
 threshold is sharp: we exhibit a
@@ -71,9 +71,11 @@ Friedman's criterion nor Gross's smoothing theorems decide these cases,
 which remain open.  Gross's theorem does smooth the same germs in their
 primitive realizations, and his exceptional surfaces $\PP^2$ and $\FF_1$
 are precisely the two rigid classes with one interior point of the
-prequel.  For polytopes all of whose singular faces
+companion paper.  For polytopes all of whose singular faces
 are unit parallelograms we compare the resulting per-face criterion with
-the Namikawa-criterion census of Batyrev--Kreuzer.
+the Namikawa-criterion census of Batyrev--Kreuzer: at most one in eight
+of their $30{,}241$ certified smoothings is explained face-locally, and
+at least $26{,}467$ involve a cross-face homology relation.
 \end{abstract}
 
 \maketitle
@@ -247,14 +249,17 @@ exceptional classes coincide, so Friedman's all-nonzero relation is
 satisfiable face-locally if and only if $\ell(F^\circ) \ge 2$ ---
 reproducing the threshold of Theorem~\ref{thm:A} from pure homology.  A
 scan of the entire Kreuzer--Skarke list (\S\ref{sec:bk}) shows that this
-per-face condition accounts for only $3{,}774$ of the $30{,}241$ conifold
-polytopes that Batyrev--Kreuzer certify smoothable --- about one in
-eight --- so the great majority of their smoothings are \emph{cross-face}
-rescues.
+per-face condition accounts for at most $3{,}774$ of the $30{,}241$
+conifold polytopes that Batyrev--Kreuzer certify smoothable --- about one
+in eight --- so the great majority of their smoothings are
+\emph{cross-face} rescues.
 
 All computations are performed by the exact-arithmetic programs of the
 prequel, extended by a scanner for conifold configurations; they are
-included as ancillary files.
+included as ancillary files and are public, with all data, at
+\begin{center}
+\url{https://github.com/bwuebben/calabi-yau-smoothability}\,.
+\end{center}
 
 \subsection*{Acknowledgements}
 I am grateful to Mark Gross for first drawing my attention, many years
@@ -488,7 +493,7 @@ Grauert's criterion $\pi_\ast\mathcal{L}$ is locally free and its
 formation commutes with base change.  Hence $f_0$ extends to a section
 $f$ of $\mathcal{L}$.  Its zero locus is a family of Cartier divisors in
 the fibres, and an algebraic family of divisors is flat
-\cite[Ch.~III, Ex.~9.8.5]{Hartshorne}.
+\cite[Ch.~III, Example~9.8.5]{Hartshorne}.
 
 Finally, each fibre $\mathcal{Y}_t = \{f_t = 0\}$ is an anticanonical
 Cartier divisor in the Gorenstein $\mathcal{X}_t$, so adjunction gives
@@ -931,15 +936,15 @@ Math.\ Ann.\ \textbf{308} (1997), 187--220.
 \bibitem[KK09]{KapustkaKapustka09} G.~Kapustka and M.~Kapustka,
 \emph{Primitive contractions of Calabi--Yau threefolds I},
 Comm.\ Algebra \textbf{37} (2009), 482--502.
-\bibitem[Nam02]{Namikawa02} Y.~Namikawa, \emph{Stratified local moduli of
-Calabi--Yau threefolds}, Topology \textbf{41} (2002), 1219--1237.
-\bibitem[Rim80]{Rim} D.~S. Rim, \emph{Equivariant $G$-structure on versal
-deformations}, Trans.\ Amer.\ Math.\ Soc.\ \textbf{257} (1980), 217--226.
 \bibitem[Mav04]{Mav04} A.~R. Mavlyutov, \emph{Deformations of Calabi--Yau
 hypersurfaces arising from deformations of toric varieties},
 Invent.\ Math.\ \textbf{157} (2004), 621--633.
+\bibitem[Nam02]{Namikawa02} Y.~Namikawa, \emph{Stratified local moduli of
+Calabi--Yau threefolds}, Topology \textbf{41} (2002), 1219--1237.
 \bibitem[Pet21]{Petracci18} A.~Petracci, \emph{Homogeneous deformations of
 toric pairs}, Manuscripta Math.\ \textbf{166} (2021), 37--72.
+\bibitem[Rim80]{Rim} D.~S. Rim, \emph{Equivariant $G$-structure on versal
+deformations}, Trans.\ Amer.\ Math.\ Soc.\ \textbf{257} (1980), 217--226.
 \bibitem[RT09]{RollenskeThomas} S.~Rollenske and R.~Thomas, \emph{Smoothing
 nodal Calabi--Yau $n$-folds}, J.\ Topol.\ \textbf{2} (2009), 405--421.
 \bibitem[Wue26]{paper1} B.~J. Wuebben, \emph{Non-smoothable Calabi--Yau

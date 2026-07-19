@@ -38,7 +38,7 @@
 \keywords{Calabi--Yau threefolds, smoothing of singularities, toric
 Gorenstein singularities, versal deformations, reflexive polytopes,
 Minkowski decompositions}
-\date{July 14, 2026}
+\date{July 19, 2026}
 
 \begin{document}
 
@@ -63,7 +63,11 @@ of the construction, using a third completing vertex to force the relevant
 dual edge to have lattice length one, produces a Calabi--Yau threefold whose
 singular locus is a \emph{single} point, the anticanonical cone over
 $\FF_1$; and a scan of the Kreuzer--Skarke classification produces one whose
-singular locus is a single point of the deformable type.  Along the way
+singular locus is a single point of the deformable type.  Carried over the
+whole classification, the scan shows that $8.27\%$ of all $473{,}800{,}776$
+reflexive $4$-polytopes carry a unit-edge non-smoothable two-dimensional
+face, so that non-smoothable Calabi--Yau hypersurfaces occur at scale
+throughout the Batyrev landscape.  Along the way
 we record a complete classification of the isolated Gorenstein toric threefold
 singularities whose polygon admits an edge representation with coordinates in
 $\{-2,\dots,2\}$ into rigid, deformable-but-non-smoothable, and
@@ -225,6 +229,8 @@ deformation-theoretic data of these cones \cite[\S5.5]{Gross97} exactly
 the new examples in context: non-smoothability is common among Gorenstein
 toric threefold singularities (87 of the 216 canonical classes in the census),
 while the del Pezzo cone catalogue sees only its smallest stratum.
+(Here and below ``canonical'' counts exclude the terminal ordinary double
+point, the census's unique terminal class.)
 
 Our approach is the Calabi--Yau analogue, one dimension up, of the program of
 Petracci and Corti--Hacking--Petracci on (non-)smoothability of Gorenstein
@@ -243,7 +249,9 @@ implemented in six short exact-arithmetic computer programs, validated
 against the classical anchors recalled in the text (the quintic; $X_9 \subset
 \PP(1,1,1,3,3)$; the del Pezzo cone catalogue; Altmann's hexagon; and, for
 the scan, the Hodge numbers recorded in the Kreuzer--Skarke data itself).
-They are included with the arXiv submission as ancillary files.
+They are included with the arXiv submission as ancillary files and are
+public, together with all data and results, at
+\url{https://github.com/bwuebben/calabi-yau-smoothability}.
 
 \subsection*{Acknowledgements}
 I am grateful to Mark Gross for first drawing my attention, many years ago, to the problem of smoothing canonical singularities on Calabi--Yau threefolds.
@@ -605,10 +613,17 @@ hypothesis, $\Sing\PP_\Delta$ meets $X$ only in the curves $V(\sigma_F)$ of
 part (2), and there only at the listed points.
 \end{proof}
 
-\begin{remark}
+\begin{remark}\label{rem:longedges}
 If $\Delta$ has an edge $e$ of lattice length $m \ge 2$, the same analysis
 shows that $X$ acquires a curve of transverse $A_{m-1}$-singularities along
-$V(\sigma_e)$; we exclude this only to keep the singular locus zero-dimensional.
+$V(\sigma_e)$; we impose the all-unit-edges hypothesis only to keep the
+singular locus zero-dimensional.  The local statement (2) at a
+\emph{unit-edge} face $F$ is unaffected by longer edges elsewhere: the
+points of $X$ on $V(\sigma_F)$ remain isolated singular points with germ
+$C(F)$, and part (1) holds for any reflexive $\Delta$, so
+Corollary~\ref{cor:global} below applies to every reflexive $\Delta$
+possessing a unit-edge face of type \textup{(R)} or \textup{(D)}, whether
+or not the remaining edges are unit.
 \end{remark}
 
 \section{Local-to-global: no smoothing}\label{sec:nosmoothing}
@@ -995,7 +1010,8 @@ none of the counts below.  We find:
 \item $8.27\%$ (that is, $39{,}175{,}536$ of them) carry a unit-edge
 non-smoothable two-dimensional face, so their generic anticanonical
 hypersurfaces are non-smoothable Calabi--Yau threefolds by
-Corollary~\ref{cor:global}; the fraction rises from $11.7\%$ at $5$
+Corollary~\ref{cor:global} (via Remark~\ref{rem:longedges} for the
+polytopes carrying longer edges elsewhere); the fraction rises from $11.7\%$ at $5$
 vertices to a peak of $14.0\%$ at $9$ and then declines steadily with the
 vertex count, to below $1\%$ beyond $22$ vertices;
 \item def-only faces appear from $7$ vertices on (as they must: a
@@ -1108,12 +1124,13 @@ Math.\ Ann.\ \textbf{274} (1986), 671--689.
 R.~Friedman and R.~Laza,
 \emph{Deformations of Calabi--Yau varieties with isolated log canonical
 singularities},
-arXiv:2306.03755; Int.\ Math.\ Res.\ Not.\ (2025).
+Int.\ Math.\ Res.\ Not.\ IMRN (2025), no.~10, Paper No.\ rnaf112;
+arXiv:2306.03755.
 
 \bibitem[FL24]{FriedmanLazaSigma}
 R.~Friedman and R.~Laza,
 \emph{Deformations of Calabi--Yau varieties with $k$-liminal singularities},
-Forum Math.\ Sigma \textbf{12} (2024), e44.
+Forum Math.\ Sigma \textbf{12} (2024), e59.
 
 \bibitem[Gra72]{Grauert72}
 H.~Grauert,

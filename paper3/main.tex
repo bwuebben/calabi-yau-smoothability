@@ -41,7 +41,7 @@ pairs\\ and non-smoothable Calabi--Yau threefolds}
 \keywords{Mirror symmetry, Batyrev duality, reflexive polytopes,
 Kreuzer--Skarke classification, Calabi--Yau threefolds, isolated
 singularities, smoothability}
-\date{July 17, 2026}
+\date{July 19, 2026}
 
 \begin{document}
 
@@ -54,7 +54,8 @@ identity --- the lattice length of the dual edge of a two-dimensional face
 equals the multiplicity of its transverse cone --- shows this happens if and
 only if every two-dimensional face of $\Delta$ is transversally smooth; we
 call such $\Delta$ \emph{both-sides unit}.  We determine the both-sides unit
-polytopes completely: among the $473{,}800{,}776$ reflexive $4$-polytopes of
+polytopes completely, by an exhaustive exact-arithmetic scan: among the
+$473{,}800{,}776$ reflexive $4$-polytopes of
 the Kreuzer--Skarke classification there are exactly $590$, and every
 two-dimensional face of every one of them is a triangle, a zonotope, or a
 reflexive polygon (one interior point).  Consequently the non-smoothable
@@ -239,7 +240,11 @@ All computations --- the identity, the scan, the exact re-verification of
 all $590$ polytopes, and the mirror pair --- are performed by
 exact-arithmetic programs building on those of \cite{paper1}, included as
 ancillary files; \texttt{both\_sides\_census.py} re-derives every number and
-theorem in this note from the committed scan results, with assertions.
+theorem in this note from the committed scan results, with assertions.  The
+code and the scan data are public at
+\url{https://github.com/bwuebben/calabi-yau-smoothability}, where every
+count in this note is recomputable from
+\texttt{src/both\_sides\_census.py}.
 
 \subsection*{Acknowledgements}
 This note completes the series \cite{paper1,paper2}; the question of
