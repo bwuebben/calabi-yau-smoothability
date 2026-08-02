@@ -15,23 +15,27 @@ smoothability means for their Batyrev mirrors.
    the Hirzebruch surface F₁ (down to a *single* such point), and — a new
    phenomenon — threefolds all of whose singular points deform nontrivially
    while no global smoothing exists. Includes a complete census of the
-   isolated Gorenstein toric threefold germs with small edge data (217
-   classes: rigid / deformable-but-non-smoothable / smoothable) and a sweep
+   isolated Gorenstein toric threefold germs with small edge data —
+   exactly 217 classes, proved and not merely computed, sorted into the
+   trichotomy type (R) rigid / type (D) deformable but non-smoothable /
+   type (S) smoothable — and a sweep
    of **all 473,800,776 reflexive 4-polytopes** of the Kreuzer–Skarke
    classification: **8.27% (39,175,536)** carry a unit-edge non-smoothable
    2-face, so their generic anticanonical hypersurfaces admit no smoothing.
 
 2. **Smoothing Calabi–Yau threefolds in Gorenstein toric Fano fourfolds**
-   (`paper2/`) — the positive direction: an explicit binomial deformation
-   (a codimension-two transplant of Petracci's homogeneous deformations of
-   toric pairs) smooths the points over a type-(S) face whenever the dual
+   (`paper2/`) — the positive direction: an explicit deformation of the
+   ambient toric pair, cut out by trinomials in Cox coordinates (a
+   codimension-two transplant of Petracci's homogeneous deformations of
+   toric pairs), smooths the points over a type-(S) face whenever the dual
    edge has lattice length ≥ 2; the threshold is sharp (a 7-vertex polytope
    whose hypersurface has a single ordinary double point and no smoothing);
    the ℓ = 1 del Pezzo-cone cases lie outside both Friedman's criterion and
    Gross's theorems and are open. Comparison with the Batyrev–Kreuzer
-   all-conifold census: of their 30,241 Namikawa-certified smoothable
-   polytopes, at most 3,774 are explained per-face — at least 26,467 are
-   cross-face rescues.
+   all-conifold census: their criterion constrains only the dual-length-1
+   faces, so of their 30,241 Namikawa-certified smoothable polytopes
+   exactly 3,774 — one in eight — are explained per-face, and the
+   remaining exactly 26,467 are cross-face rescues.
 
 3. **Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau
    threefolds** (`paper3/`) — the mirror-symmetric capstone: the dual-edge
@@ -39,13 +43,18 @@ smoothability means for their Batyrev mirrors.
    mirror X° are both isolated-singular exactly on "both-sides unit"
    polytopes. A complete scan of the classification shows there are
    **exactly 590** such polytopes; every 2-face is a triangle, a zonotope,
-   or a reflexive polygon; the only non-smoothable germs occurring are
-   cyclic quotients and — exactly once — the F₁-cone, giving a **unique
-   mirror pair** (22 and 26 vertices, resolution Hodge numbers (20,26) and
-   (26,20)) in which X admits no smoothing while every singular point of
-   X° is locally smoothable. The paper also records two refuted
-   conjectures: the natural low-vertex guess holds for all 395,406,329
-   polytopes with at most 18 vertices and fails from 19 on.
+   or a reflexive polygon; the only non-smoothable germs occurring are the
+   cyclic quotients ⅓(1,1,1) and ⅕(1,1,3) and — exactly once — the
+   F₁-cone, giving a **unique mirror pair** (22 and 26 vertices,
+   resolution Hodge numbers (20,26) and (26,20)) in which X admits no
+   smoothing while every singular point of X° is locally smoothable. The
+   germs that deform but admit no smoothing never occur at all, so a
+   Calabi–Yau threefold carrying one never has a mirror with isolated
+   singularities; at the opposite extreme exactly one polytope, the
+   self-dual 24-cell, gives a mirror pair with both members smooth. The
+   paper also records two refuted conjectures: the natural low-vertex
+   guess holds for all 395,406,329 polytopes with at most 18 vertices and
+   fails from 19 on.
 
 ## Code (`src/`)
 
@@ -54,22 +63,26 @@ for the database scanners). Every quantitative claim in the papers is
 produced by one of these scripts, and the anchor examples are asserted on
 every run:
 
-- `toric_census.py` — the local classification engine: rigid /
-  deformable-but-non-smoothable / smoothable trichotomy for cones over
-  unit-edge lattice polygons, with the 217-class census.
+- `toric_census.py` — the local classification engine: the type (R) /
+  type (D) / type (S) trichotomy for cones over unit-edge lattice
+  polygons, with the 217-class census.
 - `batyrev_global.py` — reflexive-4-polytope toolkit (facets, 2-faces in
   induced lattices, dual-edge lengths) and the headline example polytopes.
 - `hodge_numbers.py` — Batyrev Hodge numbers of the MPCP resolutions.
 - `plant_search.py` — planting non-smoothable polygons as 2-faces.
 - `ks_sweep.py` — the full Kreuzer–Skarke sweep (fast integer engine,
   selftested per file against the reference path).
-- `missing_polytope.py` — the one polytope the per-vertex-count mirror
-  omits (the 36-vertex hexagon×hexagon product), identified and verified.
+- `missing_polytope.py` — the one polytope the per-vertex-count parquet
+  files omit (the 36-vertex hexagon×hexagon product), identified and
+  verified.
 - `paper2_check.py`, `cascade_check.py` — machine checks for paper 2.
 - `bk_check.py` — the Batyrev–Kreuzer all-conifold census.
 - `both_sides_ks.py`, `both_sides_fast.py`, `both_sides_census.py` (the
   590-polytope census, fully asserted), `both_sides_search.py`,
-  `b1_*.py`, `mirror_check.py` — the both-sides-unit scans for paper 3.
+  `both_sides_chain.sh` (the full-database driver), `b1_*.py`,
+  `mirror_check.py` — the both-sides-unit scans for paper 3.
+- `face_data.py` — the named 2-faces printed in paper 3, each re-derived
+  from the vertex list exactly as it appears in the text.
 
 ## Data (`output/`)
 
@@ -78,8 +91,8 @@ the compute (the full sweep is ≈ 60 h): per-vertex-count sweep results
 (`ks_v*.json`), the Batyrev–Kreuzer census (`bk_*.json`), planting results
 (`plant_*.json`), and the both-sides census (`both_sides_*.json`).
 
-The polytope data itself is the Kreuzer–Skarke classification, mirrored as
-parquet at
+The polytope data itself is the Kreuzer–Skarke classification, republished
+as parquet at
 [huggingface.co/datasets/calabi-yau-data/polytopes-4d](https://huggingface.co/datasets/calabi-yau-data/polytopes-4d)
 (not redistributed here); the scanners download per-vertex-count files into
 `data/ks/`.
