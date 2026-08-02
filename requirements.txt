@@ -1,0 +1,4 @@
+# Core scripts are pure standard-library Python (>= 3.10).
+# The database scanners (ks_sweep.py, bk_check.py, both_sides_*.py) need:
+numpy
+pyarrow
