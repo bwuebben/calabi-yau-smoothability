@@ -55,7 +55,10 @@ identity (the lattice length of the dual edge of a two-dimensional face
 equals the multiplicity of its transverse cone) shows this happens if and
 only if every two-dimensional face of $\Delta$ is transversally smooth; we
 call such $\Delta$ \emph{both-sides unit}.  We determine the both-sides unit
-polytopes completely, by an exhaustive exact-arithmetic scan: among the
+polytopes completely, subject to the database-copy completeness and
+no-duplication hypothesis stated in \S\ref{sec:census}.  Under that
+hypothesis an exhaustive scan with exact integer predicates and exact
+re-verification finds that, among the
 $473{,}800{,}776$ reflexive $4$-polytopes of
 the Kreuzer--Skarke classification there are exactly $590$, and every
 two-dimensional face of every one of them is a triangle, a zonotope, or a
@@ -76,7 +79,10 @@ and $26$ vertices, whose hypersurfaces form a mirror pair, with Hodge
 numbers $(20,26)$ and $(26,20)$ for the MPCP resolutions, in which $X$
 is non-smoothable while
 every singular point of $X^\circ$ is locally smoothable.  We also record, as
-a caution, that the natural conjecture suggested by the low-vertex data
+a further obstruction, that the $26$ node-diagonal vectors of $X^\circ$
+admit no all-nonzero relation: any global smoothing would have to couple
+the nodal directions to the four del Pezzo-cone directions.  Finally, as a
+caution, the natural conjecture suggested by the low-vertex data
 (that only triangles and zonotopes occur) is true for all $395{,}406{,}329$
 polytopes with at most $18$ vertices and false from $19$ vertices on.
 \end{abstract}
@@ -143,16 +149,22 @@ $\Delta$ is both-sides unit if and only if $\Delta^\circ$ is.
 \end{corollary}
 
 Our main results determine the both-sides unit polytopes, and the local
-models they carry, \emph{completely}.  They rest on an exhaustive scan of the
-Kreuzer--Skarke classification \cite{KreuzerSkarke00} of all
-$473{,}800{,}776$ reflexive $4$-polytopes, whose methodology, including
-the checks on completeness, is described in
-\S\ref{sec:census}; every polytope found is re-verified in exact arithmetic,
-so the statements below are theorems with computer-assisted (finite,
-exhaustive) proofs.
+models they carry, \emph{completely}, subject to one explicit input
+assumption.  We use the following \emph{database hypothesis}: the
+per-vertex-count files described in \S\ref{sec:census} contain, without
+repetition, exactly the members of the Kreuzer--Skarke classification in
+their stated vertex range; the unique remaining $36$-vertex member is
+included separately.  Under this hypothesis the scan covers all
+$473{,}800{,}776$ reflexive $4$-polytopes \cite{KreuzerSkarke00}.  Every
+polytope returned by the scan is then re-verified in exact arithmetic, so
+the classification statements below have finite computer-assisted proofs
+conditional only on that database hypothesis.  The transverse identity
+and the assertions about each explicitly displayed polytope are
+unconditional.
 
 \begin{theorem}[classification of both-sides local models]\label{thm:class}
-There are exactly $590$ both-sides unit reflexive $4$-polytopes.  Every
+Under the database hypothesis above, there are exactly $590$ both-sides
+unit reflexive $4$-polytopes.  Every
 two-dimensional face of every one of them is
 \begin{itemize}
 \item a triangle (the germ is a cyclic quotient point, or smooth), or
@@ -168,7 +180,8 @@ Table~\textup{\ref{tab:occ}}.
 
 \begin{theorem}[the non-smoothable germs of doubly isolated pairs]
 \label{thm:dichot}
-Exactly three of the $590$ both-sides unit polytopes carry a non-smoothable
+Under the database hypothesis, exactly three of the $590$ both-sides unit
+polytopes carry a non-smoothable
 two-dimensional face.  Writing $[k,i]$ for a unit-edge polygon with $k$
 edges and $i$ interior lattice points, the germs occurring are:
 \begin{itemize}
@@ -184,7 +197,8 @@ In particular no deformable-but-non-smoothable
 \end{theorem}
 
 \begin{corollary}\label{cor:defonly}
-Let $X$ be a unit-edge Batyrev Calabi--Yau threefold with a singular point of
+Assume the database hypothesis.  Let $X$ be a unit-edge Batyrev
+Calabi--Yau threefold with a singular point of
 type \textup{(D)}, for instance the pentagon-cone threefolds of
 \cite[Thms.~5.3, 5.8]{paper1}.  Then the Batyrev mirror $X^\circ$ is
 non-isolated: it carries a curve of transverse $A_{m-1}$ singularities for
@@ -196,7 +210,8 @@ mirror pair.
 The one non-quotient exception is the most interesting object of this note.
 
 \begin{theorem}[the unique $\FF_1$ mirror pair]\label{thm:pair}
-Up to lattice isomorphism there is exactly one doubly isolated Batyrev mirror
+Under the database hypothesis, up to lattice isomorphism there is exactly
+one doubly isolated Batyrev mirror
 pair whose singularities are not all quotient points or smoothable: the pair
 $(\Delta_{\FF_1}, \Delta_{\FF_1}^\circ)$ of Theorem~\textup{\ref{thm:pairbody}},
 with $22$ and $26$ vertices.  The generic anticanonical
@@ -218,19 +233,19 @@ primitive contractions \cite[Thm.~5.8]{Gross97}) can be isolated-singular
 with every singular point locally smoothable.  Notably, every dual edge on
 the mirror side has length one, so $X^\circ$ lies entirely in the
 $\ell(F^\circ)=1$ regime of \cite{paper2}.  Its $26$ nodes pose the
-\emph{cross-face} Friedman problem of \cite[\S7]{paper2}: for the nodal
-part of the singular locus, a nodal
-Calabi--Yau threefold with a projective small resolution is smoothable only
-if its exceptional curve classes satisfy a homology relation with all
-coefficients non-zero (Friedman's criterion; $X^\circ$ itself is not
-nodal, so the criterion constrains rather than decides), and at $\ell(F^\circ)=1$ the
-single class over each face can only cancel against classes lying over
-\emph{other} faces.  Its del Pezzo cone
-points are the germs that \cite[\S6]{paper2} places beyond Gross's theorems
-and for which no Friedman-type obstruction is known (the statements there
-assume a unique non-smooth face, but their proofs are local at the point
-and apply verbatim); whether $X^\circ$ is
-globally smoothable is open (Question~\ref{q:mirror-smooth}).
+\emph{cross-face} problem of \cite[\S7]{paper2}.  Exact row reduction of
+their $26$ diagonal-relation vectors gives rank $18$ and two coloops, so
+the node subsystem has no relation with every coefficient non-zero
+(Remark~\ref{rem:node-subsystem}).  This would obstruct smoothing in an
+all-nodal threefold with a projective small resolution.  The actual
+$X^\circ$, however, also has four divisorial del Pezzo-cone points, so
+Friedman's nodal criterion does not apply to the mixed singularity
+configuration: their local deformation directions may participate in the
+global obstruction map.  Its del Pezzo-cone germs are precisely those that
+\cite[\S6]{paper2} places beyond Gross's theorems and for which no
+Friedman-type obstruction is known.  Thus any smoothing would have to be
+genuinely mixed, and whether one exists remains open
+(Question~\ref{q:mirror-smooth}).
 
 Theorems~\ref{thm:class}, \ref{thm:dichot} and~\ref{thm:pair} answer the
 mirror question of
@@ -264,10 +279,12 @@ quadrilateral (once).  See \S\ref{sec:refuted} for the refuted statements.
 Low-vertex evidence, however extensive, samples a biased corner of the
 landscape.
 
-All computations (the identity, the scan, the exact re-verification of
-all $590$ polytopes, and the mirror pair) are performed by
-exact-arithmetic programs building on those of \cite{paper1}, included as
-ancillary files; \texttt{both\_sides\_census.py} re-derives every number and
+All mathematical predicates and reported invariants in the scan, the exact
+re-verification of all $590$ polytopes, and the mirror-pair calculation use
+integer or rational arithmetic; the sole floating-point ordering operation
+is disclosed in \S\ref{subsec:method}.  The programs build on those of
+\cite{paper1} and are included as ancillary files;
+\texttt{both\_sides\_census.py} re-derives every number and
 theorem in this note from the scan results.  The
 code and the scan data are public at
 \url{https://github.com/bwuebben/calabi-yau-smoothability}, where every
@@ -295,7 +312,12 @@ unit-edge polygon with $k$ edges and $i$ interior lattice points.  A
 unit-edge polygon is a
 \emph{zonotope} (a Minkowski sum of unit segments) if and only if it is
 centrally symmetric, and every zonotope is of type \textup{(S)}.  A unit-edge
-polygon with exactly one interior lattice point is reflexive; there are
+polygon with exactly one interior lattice point is reflexive.  Indeed,
+translate that point to the origin and let the polygon have $k$ edges.
+Pick's theorem gives normalized area $k$, while the fan from the origin
+decomposes it into $k$ lattice triangles of positive integral normalized
+areas, one over each unit edge.  Every one therefore has normalized area
+one, so the origin has lattice distance one from every edge.  There are
 five, the Fano polygons of $\PP^2$, $\FF_1$, $\PP^1{\times}\PP^1$,
 $\mathrm{dP}_7$, $\mathrm{dP}_6$ (the subscript is the degree:
 $\mathrm{dP}_7 = \mathrm{Bl}_2\PP^2$, $\mathrm{dP}_6 = \mathrm{Bl}_3\PP^2$),
@@ -318,8 +340,9 @@ convention is used in \cite{paper1,paper2}.
 
 \section{The transverse-multiplicity identity}\label{sec:mult}
 
-Let $F$ be a two-dimensional face of a reflexive polytope
-$\Delta \subset \NN_\RR$, and let $u_1, u_2 \in \MM$ be the primitive inner
+Let $F$ be a codimension-two face of a reflexive polytope
+$\Delta \subset \NN_\RR$ of arbitrary dimension, and let
+$u_1, u_2 \in \MM$ be the primitive inner
 normals of the two facets of $\Delta$ containing $F$, so that
 $\langle u_i, \cdot\rangle = -1$ on $F$ and $F^\circ = \conv\{u_1, u_2\}$.
 \footnote{The $u_i$ are vertices of $\Delta^\circ$; \cite{paper1} and
@@ -357,7 +380,8 @@ $\ell(F^\circ) = |p| = [\,\MM_F : \ZZ u_1 + \ZZ u_2\,]$.
 
 \begin{remark}\label{rem:transverse}
 Lemma~\ref{lem:mult} is elementary and may be known; what matters here is
-the reading it provides.  The right-hand side is the multiplicity of the
+the reading it provides.  The proof works in every dimension for a
+codimension-two face.  The right-hand side is the multiplicity of the
 two-dimensional cone $\Cone(u_1,u_2)$, which is the normal cone of $F$ and
 dually the transverse cone of $\Delta$ along $F$ (for two-dimensional cones
 the multiplicities of a cone and its dual agree).  Thus \emph{the dual-edge
@@ -412,8 +436,11 @@ threefolds are simultaneously isolated-singular exactly on the both-sides
 unit polytopes.  Whenever $\Delta$ has \emph{any} face with
 $\ell(F^\circ) \ge 2$ (the generic situation), the mirror is
 non-isolated and its singularities leave the isolated framework of
-\cite{Altmann97,CFP}, being governed instead by Filip's non-isolated
-$0$-mutability criterion \cite{Filip25}.
+\cite{Altmann97,CFP}.  Filip \cite{Filip25} constructs, from a Laurent
+polynomial, a distinguished formal deformation of the associated
+non-isolated Gorenstein toric pair and proves that its general fibre is
+smooth exactly when the polynomial is $0$-mutable; this does not classify
+all components of every non-isolated germ.
 
 \section{Enumeration over the Kreuzer--Skarke
 classification}\label{sec:census}
@@ -423,11 +450,15 @@ The both-sides unit condition is a condition on faces: all edges of
 lattice length one
 and, by Lemma~\ref{lem:mult}, all dual edges of length one.  We tested it
 over
-the complete Kreuzer--Skarke classification with the exact-arithmetic
-implementation built for the scan of \cite[\S6.1]{paper1}.  The test
-computes the defining predicate itself in exact integer arithmetic, with
-no floating point and no heuristic pruning, so exhaustiveness reduces to
-implementation correctness, which is controlled in three independent ways.
+the per-vertex-count copy of the Kreuzer--Skarke classification used in
+\cite[\S6.1]{paper1}, with the production implementation built for that
+scan.  Subject to the database hypothesis in the introduction, this covers
+the complete classification.  All facet incidences, lattice lengths,
+determinants, and final predicates are checked in exact integer arithmetic,
+with no heuristic pruning.  The implementation uses floating-point
+\texttt{atan2} only to choose a cyclic ordering of the vertices of an
+already identified planar face; the ensuing edge and lattice tests are
+integral.  Implementation correctness is controlled in three complementary ways.
 (i) Before scanning each file of the database, the implementation was
 re-checked against an
 independently written reference implementation on random samples from that
@@ -545,7 +576,7 @@ face of its star to have $\ell \ge 2$.  The local claim
 had survived a complete check of the $38{,}571$ candidate configurations
 arising among the $1{,}037{,}834$ polytopes with at most eight vertices.
 Table~\ref{tab:occ} nevertheless
-refutes both statements: $88$ asymmetric faces occur, on $55$ polytopes.
+refutes both statements: \mbox{$88$ asymmetric faces occur, on $55$ polytopes}.
 The smallest
 counterexample has $19$ vertices:
 \[
@@ -674,7 +705,8 @@ and two $\mathrm{dP}_6$-cone points, each with a local smoothing;
 \item the maximal projective crepant partial resolutions satisfy
 $(h^{1,1},h^{2,1})(\widehat X) = (20,26)$ and
 $(h^{1,1},h^{2,1})(\widehat{X^\circ}) = (26,20)$;
-\item $\Delta_{\FF_1}$ is the \emph{only} both-sides unit reflexive
+\item under the database hypothesis, $\Delta_{\FF_1}$ is the \emph{only}
+both-sides unit reflexive
 $4$-polytope, up to lattice isomorphism, carrying a
 non-smoothable face that is not a triangle.
 \end{enumerate}
@@ -730,9 +762,9 @@ $\mathrm{dP}_6$, the class with two smoothing components in the catalogue of
 \cite[Rem.~2.6]{paper1}.  The Hodge numbers are
 given by Batyrev's formulas \cite[\S4]{Batyrev94}, evaluated in exact
 arithmetic.  The mirror swap in (4) is forced by Batyrev duality and serves as
-a consistency check.  (5) is Theorem~\ref{thm:dichot}: the scan of the
-complete classification finds no other non-triangle non-smoothable face on
-any both-sides unit polytope.
+a consistency check.  Conditional on the database hypothesis, (5) is
+Theorem~\ref{thm:dichot}: the scan finds no other non-triangle
+non-smoothable face on any both-sides unit polytope.
 \end{proof}
 
 \begin{remark}[a threefold with no smoothing whose mirror has only
@@ -745,15 +777,51 @@ singular points move locally.  Whether these local deformations assemble
 to a global smoothing of $X^\circ$ is
 exactly the frontier of \cite{paper2}: all $26+2+2$ of its singular points
 sit over faces with $\ell(F^\circ) = 1$, so the single-face smoothing
-techniques of \cite{paper2} do not apply; the $26$
-nodes require a cross-face Friedman rescue (\cite[\S7]{paper2}; see the
-introduction); and the del
-Pezzo cone points are the $\ell = 1$ germs that
+techniques of \cite{paper2} do not apply.  The node subsystem fails the
+all-nonzero relation of the nodal problem (Remark~\ref{rem:node-subsystem}),
+while the four del Pezzo-cone points are the $\ell = 1$ germs that
 \cite[Prop.~6.1, Rem.~6.2]{paper2} place beyond Gross's theorems, with no
-Friedman-type obstruction known (stated there for a unique non-smooth
-face, but proved locally at the point, so applying verbatim here).  The pair thus concentrates,
+Friedman-type obstruction known.  The mixed local-to-global problem remains
+open.  The pair thus concentrates,
 on two mirror-dual threefolds, every open smoothability phenomenon of this
 series.
+\end{remark}
+
+\begin{remark}[the node subsystem]\label{rem:node-subsystem}
+Let $q_1,\dots,q_{26}$ be the vertices of
+$\Delta_{\FF_1}^\circ$.  For each of its $26$ unit-square faces
+$S=(q_a,q_b,q_c,q_d)$ in cyclic order, form the diagonal-relation vector
+\[
+ \rho_S=e_a-e_b+e_c-e_d\in
+ \mathbb{Q}^{\operatorname{Vert}(\Delta_{\FF_1}^\circ)}.
+\]
+Exact row reduction of the resulting $26\times26$ matrix gives rank $18$.
+Exactly two rows are coloops.  The corresponding square faces, displayed
+in cyclic order, are
+\[
+\begin{aligned}
+S_-={}&\conv\{(-1,-1,0,-1),\ (-1,0,0,-1),\
+                 (0,1,0,-1),\ (0,0,0,-1)\},\\
+S_+={}&\conv\{(-1,-1,0,1),\ (0,-1,0,1),\
+                 (0,0,0,1),\ (-1,0,0,1)\}.
+\end{aligned}
+\]
+Deleting either row lowers the rank to $17$, deleting both lowers it to
+$16$, and deleting any other row leaves rank $18$.
+Thus every linear dependence among the $26$ node rows has coefficient zero
+on both $\rho_{S_-}$ and $\rho_{S_+}$; in particular there is no dependence
+with all coefficients non-zero.  The calculation is exact and is reproduced
+by the ancillary row-reduction script.
+\footnote{\texttt{paper3\_node\_relations.py}.}
+
+For a hypothetical all-nodal threefold this fails the
+Friedman--Batyrev--Kreuzer condition recalled in \cite[\S7]{paper2}.
+It does \emph{not} decide the actual $X^\circ$: its four additional
+del Pezzo-cone points have divisorial crepant resolutions, and their local
+smoothing directions may contribute to the mixed local-to-global
+obstruction map.  What the computation proves is that a purely nodal
+cross-face rescue is impossible; any smoothing of $X^\circ$ must couple
+the node directions to the del Pezzo directions.
 \end{remark}
 
 \section{Questions}\label{sec:questions}
@@ -774,15 +842,17 @@ Is the mirror $X^\circ$ of Theorem~\ref{thm:pairbody} smoothable?  All its
 germs are of type \textup{(S)} with $\ell(F^\circ)=1$.  A positive answer
 would exhibit a Batyrev mirror pair with one member rigid against smoothing
 and the other smoothable --- a maximally asymmetric pair for the
-deformation--resolution exchange of mirror symmetry; a negative answer for
-the nodes alone would already make $X^\circ$ a $26$-node analogue of the
-one-node obstructed threefold of \cite[Thm.~5.1]{paper2}.
+deformation--resolution exchange of mirror symmetry.  The node subsystem
+alone admits no all-nonzero relation (Remark~\ref{rem:node-subsystem}); can
+the four del Pezzo deformation directions supply the required mixed
+local-to-global cancellation?
 \end{question}
 
 \begin{question}\label{q:mutable}
 Corti--Filip--Petracci conjecturally relate smoothing components of $C(Q)$ to $0$-mutable
 Laurent polynomials with Newton polygon $Q$ \cite{CFP}, and Filip
-\cite{Filip25} treats the non-isolated case.  In that language, what
+\cite{Filip25} constructs distinguished formal deformations in the
+non-isolated case, detecting when their general fibres are smooth.  In that language, what
 distinguishes the twelve face classes of Table~\ref{tab:occ} --- and what is
 the mirror-theoretic meaning of the unique $\FF_1$ face?  One would like to
 read Theorem~\ref{thm:dichot} off the canonical scattering diagram of the
@@ -813,11 +883,11 @@ A.~Corti, M.~Filip, and A.~Petracci,
 Facets of Algebraic Geometry vol.~I, LMS Lecture Note Ser.\ \textbf{472},
 CUP, 2022, 132--163.
 
-\bibitem[Fil25]{Filip25}
+\bibitem[Fil26]{Filip25}
 M.~Filip,
 \emph{Laurent polynomials and deformations of non-isolated Gorenstein toric
 singularities},
-arXiv:2504.04486 (2025).
+Adv.\ Math.\ \textbf{487} (2026), 110775; arXiv:2504.04486.
 
 \bibitem[Gro97]{Gross97}
 M.~Gross,

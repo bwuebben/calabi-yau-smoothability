@@ -62,16 +62,18 @@ codimension-two faces.  Hence $X$ is smoothable when $F$ is its unique
 non-smooth face; unconditionally when every non-smooth face is a unit
 parallelogram with $\ell(F^\circ)\ge2$; and, for several type-(S) faces,
 whenever the semiuniversal deformation space of $X$ is irreducible.  The
-threshold is sharp: we exhibit a reflexive polytope with $7$ vertices
-whose hypersurface has a single ordinary double point and admits no
-smoothing.  At $\ell(F^\circ)=1$ the germs over a face with one interior
+threshold is sharp: every generic unit-edge Batyrev hypersurface whose
+singular locus consists of a single ordinary double point admits no
+smoothing, and we exhibit one from a reflexive polytope with $7$ vertices.
+At $\ell(F^\circ)=1$ the germs over a face with one interior
 lattice point are the anticanonical cones over $\PP^1{\times}\PP^1$,
 $\mathrm{dP}_7$ and $\mathrm{dP}_6$; we show their toric crepant
 resolutions are \emph{never} primitive contractions and that $X$ is not
 $\mathbb{Q}$-factorial there, so neither Friedman's criterion nor Gross's
 smoothing theorems decide them, and they remain open.  Finally we compare
 the resulting per-face criterion with the census of Batyrev--Kreuzer,
-whose criterion constrains only the $\ell(F^\circ)=1$ faces: exactly
+whose criterion constrains only the $\ell(F^\circ)=1$ faces.  Subject to
+the database-copy completeness hypothesis stated in \S\ref{sec:bk}, exactly
 $3{,}774$ of their $30{,}241$ smoothings, one in eight, are
 explained by the per-face criterion alone, and the remaining $26{,}467$
 involve a cross-face homology relation.
@@ -119,8 +121,8 @@ Corti--Hacking--Petracci \cite{CHP24}.  The obstruction side of the same
 programme is due to Petracci \cite{Petracci20}, who produces
 non-smoothable Gorenstein toric Fano threefolds by a local-to-global
 criterion on a reflexive $3$-polytope.  Theorem~\ref{thm:B} below plays
-the corresponding role here: a single reflexive $4$-polytope whose
-Calabi--Yau hypersurface is provably non-smoothable.  In both of those works the Minkowski data live on
+the corresponding role here: it gives a uniform one-node obstruction and
+an explicit reflexive $4$-polytope realizing it.  In both of those works the Minkowski data live on
 the \emph{facets} of the $3$-polytope and the object smoothed or
 obstructed is the Gorenstein toric Fano threefold itself; here the data
 live on the
@@ -240,7 +242,11 @@ smooth (Remark~\ref{rem:cascade-global}).
 The hypothesis $\ell(F^\circ)\ge 2$ is not an artifact of the method.
 
 \begin{theorem}[= Theorem~\ref{thm:B2}]\label{thm:B}
-Let
+Let $\Delta$ be a reflexive $4$-polytope with unit edges.  If the singular
+locus of its generic anticanonical hypersurface $X\subset\PP_\Delta$
+consists of a single ordinary double point, then $X$ admits no smoothing.
+
+In particular, let
 \[
 \Delta_N=\conv\bigl(\square\times\{(1,0)\}\ \cup\ \{e_4,\ (0,1,-1,0),\
 (-1,-2,1,-1)\}\bigr)\subset\ZZ^4,
@@ -340,8 +346,9 @@ census.  For the $\ell(F^\circ)$ nodes over a single square face the
 exceptional classes coincide, so Friedman's all-nonzero relation is
 satisfiable face-locally if and only if $\ell(F^\circ) \ge 2$; this
 reproduces the threshold of Theorem~\ref{thm:A} from pure homology.  A
-scan of the entire Kreuzer--Skarke list (\S\ref{sec:bk}) shows that this
-per-face condition accounts for exactly $3{,}774$ of the $30{,}241$
+scan of the database copy described in \S\ref{sec:bk}, subject to the
+completeness hypothesis stated there, shows that this per-face condition
+accounts for exactly $3{,}774$ of the $30{,}241$
 conifold polytopes that Batyrev--Kreuzer show to be smoothable, one
 in eight, so the great majority of their smoothings are
 \emph{cross-face} rescues.
@@ -450,17 +457,17 @@ for a cone, homogeneous deformations of affine toric varieties
 of polarized projective toric pairs (\cite[Thm.~6.1]{Petracci18}).
 Here $N$ is a lattice, $M = \operatorname{Hom}(N,\ZZ)$ its dual, and
 $\sigma \subseteq N \otimes \mathbb{R}$ a cone.  A
-datum for $(N,\sigma)$, with $\sigma$ strongly convex and
+$\partial$-deformation datum for $(N,\sigma)$, with $\sigma$ strongly convex and
 full-dimensional, is a tuple $(Q, Q_0, \dots, Q_r, w)$, $w \in M$,
 with (i) $Q \subseteq \sigma$ a non-empty rational polyhedron, (ii)
 $0 \notin Q$, (iii)
 $Q = Q_0 + \dots + Q_r$, (iv) $Q_1, \dots, Q_r$ lattice polyhedra, (v)
 $\min_Q w \ge -1$, and (vi) every vertex of
 $\sigma \cap \{\langle w, \cdot\rangle = -1\}$ contained in
-$\mathbb{R}^+ Q$ (the boundary-datum form of the definition, which is
-what \cite[Thm.~6.1]{Petracci18} takes as input).
+$\mathbb{R}^+ Q$.  This is the boundary form of the definition, which is
+what \cite[Thm.~6.1]{Petracci18} takes as input.
 
-\begin{lemma}[deformation datum from a codimension-two face]\label{lem:datum}
+\begin{lemma}[$\partial$-deformation datum from a codimension-two face]\label{lem:datum}
 Let $\Delta \subset \ZZ^4$ be reflexive, $F$ a two-dimensional face with
 a Minkowski decomposition $F = Q_0 + \dots + Q_r$ into lattice polytopes,
 and let $\tau = \Cone(\Delta\times\{1\}) \subset \ZZ^5$, the cone over the
@@ -474,7 +481,7 @@ for every \emph{interior} lattice point $v^\ast$ of $F^\circ$, the tuple
 \bigl(F\times\{1\},\ Q_0\times\{1\},\ Q_1\times\{0\}, \dots,
 Q_r\times\{0\},\ w = (v^\ast, 0)\bigr)
 \]
-is a deformation datum for $(\ZZ^5, \tau)$ in the sense of
+is a $\partial$-deformation datum for $(\ZZ^5, \tau)$ in the sense of
 \textup{\cite[Def.~3.1]{Petracci18}}.
 \end{lemma}
 
@@ -558,17 +565,49 @@ of the Gorenstein degree of $\sigma_F$ (which is exactly the degree
 in which the deformations of an isolated Gorenstein toric threefold
 singularity live \cite{Altmann95}, cf.\ \cite[Rem.~3.7]{Petracci18}),
 and $(F, Q_0,\dots,Q_r, -u_F)$ is a deformation datum for
-$(N_F,\sigma_F)$; write $\tilde\sigma_F = \tilde\tau \cap
-(N_F\oplus\ZZ^r)_\RR$ for its extended cone (here $N_F$ is embedded in
-$\ZZ^5$ by the height section $n \mapsto (n, u_F(n))$, and the summands
-are translated into $N_F$, as is possible because the direction lattice
-of $\operatorname{aff} F$ is saturated there).  Restrict the face family
-to the chart at the face $G \preceq \tilde\tau$ lying over $\sigma_F$
-(the cone of Step~2; that $G$ is a face of $\tilde\tau$ is seen from a
-supporting functional assembled from the constants
-$\langle v^\ast,\cdot\rangle|_{\operatorname{aff} Q_i}$, the functional
-$v^\ast$ being affine-constant on each summand's translate).  On the
-chart's torus the $j$-th trinomial of the family reads
+$(N_F,\sigma_F)$.
+
+We first normalize the translations of the summands.  Choose a vertex
+$v=q_0+\dots+q_r$ of $F$, where $q_i$ is the vertex of $Q_i$ exposed by
+a functional exposing $v$, and replace
+\[
+ Q_0\quad\text{by}\quad Q_0+q_1+\dots+q_r,
+ \qquad
+ Q_i\quad\text{by}\quad Q_i-q_i\quad (i\geq 1).
+\]
+These integral translations sum to zero and hence preserve the Minkowski
+sum.  Since the differences of points of every $Q_i$ lie in
+$\operatorname{span}_{\RR}(F-F)=\ker u_F$, after this normalization
+\[
+ u_F(Q_0)=1,\qquad u_F(Q_i)=0\quad(i\geq1).
+\]
+It does not change the family up to isomorphism.  Indeed, putting
+$a_i=-q_i$ for $i\geq1$, the lattice shear
+\[
+ (n,k;z_1,\dots,z_r)\longmapsto
+ \bigl(n+\textstyle\sum_i z_i a_i,k;z_1,\dots,z_r\bigr)
+\]
+fixes the original cone $\tau$ and the base characters $e_i^\ast$, and
+carries the old extended cone to the one formed from the translated
+summands.  We henceforth suppress the primes.
+
+Write $\tilde\sigma_F = \tilde\tau \cap
+(N_F\oplus\ZZ^r)_\RR$ for the extended cone, where $N_F$ is embedded in
+$\ZZ^5$ by the height section $n \mapsto (n,u_F(n))$; the displayed
+normalization is exactly what places the split summand generators in this
+graph lattice.  Restrict the face family to the chart at the face
+$G\preceq\tilde\tau$ lying over $\sigma_F$ (the cone of Step~2).  To see
+that it is a face, use the functional
+\[
+ L=(v^\ast,1,0,\dots,0).
+\]
+On a ray $(V,1)$ of $\tau$ it has value
+$\langle v^\ast,V\rangle+1\geq0$, with equality exactly for $V\in F$.
+On the normalized split generators it vanishes because
+$v^\ast|_{N_F}=-u_F$, $u_F(Q_0)=1$, and $u_F(Q_i)=0$ for $i\geq1$.
+Thus its zero cone is precisely $G$: each ray over a vertex
+$v=q_0+\dots+q_r$ of $F$ is the sum of the corresponding split
+generators.  On the chart's torus the $j$-th trinomial of the family reads
 \[
 \chi^{e_j^\ast} - 1 \;=\; t_j\,\chi^{\tilde w},
 \qquad \tilde w|_N = v^\ast
@@ -635,10 +674,8 @@ $m_{1,1} = m_{1,0} + e_1^\ast$.)
 \emph{Step 4.}  By \cite[Lemma~2.4]{paper1} the general fibre of this
 family is the general fibre of the Altmann family of the decomposition:
 one singular point of
-type $C(Q_i)$ for each two-dimensional non-smooth summand.  As every
-$Q_i$ is a unit segment or standard triangle, all summand cones are
-smooth, so the general fibre is smooth near the points over $F$.  This
-proves the lemma.
+type $C(Q_i)$ for each two-dimensional non-smooth summand, and no other
+singular points.  This proves the lemma.
 \end{proof}
 
 \section{Smoothing over one face, and over several}\label{sec:proofA}
@@ -939,25 +976,26 @@ Let $\Delta$ be reflexive with unit edges whose \emph{unique} non-smooth
 two-dimensional face $F$ has a
 Minkowski decomposition $F = Q_0 + \dots + Q_r$ into lattice polytopes and
 $\ell(F^\circ) \ge 2$.  Then there is an explicit $r$-parameter deformation of the
-generic anticanonical $X$, given by trinomial equations in the Cox coordinates,
+generic anticanonical $X$, induced by a trinomial deformation of the ambient
+toric pair,
 such that on a generic line through the origin of the base, the fibre over
 every sufficiently small $t \neq 0$ is a Calabi--Yau threefold that has exactly
 $\ell(F^\circ)$ points of type $C(Q_i)$ for each
 two-dimensional non-smooth summand $Q_i$, and no other singular points.
 In particular, if $F$ is deformable-but-non-smoothable (type
-\textup{(D)}), so that its maximal
-decomposition has at least one rigid two-dimensional summand, then $X$ deforms to
-a Calabi--Yau threefold in which each of the $\ell(F^\circ)$ points of type $C(F)$
-is replaced by a rigid point $C(R_j)$ for each rigid summand $R_j$; this deformed
-threefold is again non-smoothable.
+\textup{(D)}), take the construction for a maximal decomposition
+$F=R_0+\dots+R_s$.  Then $X$ deforms to a Calabi--Yau threefold in which
+each of the $\ell(F^\circ)$ points of type $C(F)$ is replaced by a rigid
+point $C(R_j)$ for each two-dimensional non-smooth summand $R_j$; this
+deformed threefold is again non-smoothable.
 \end{proposition}
 
 \begin{proof}
 Lemma~\ref{lem:datum} builds the deformation datum from any Minkowski decomposition
 into lattice polytopes with $\ell(F^\circ) \ge 2$: its proof uses only that
 $F = \sum_i Q_i$ and $v^\ast \in \operatorname{relint} F^\circ$, never the summand
-types.  The one place Lemma~\ref{lem:ident} used type~(S) is the unique splitting
-of each vertex of $F$ through the summands; but a vertex of a Minkowski sum
+types.  Lemma~\ref{lem:ident} is likewise independent of those types: a
+vertex of a Minkowski sum
 decomposes uniquely into vertices of the summands (its normal cone is the
 intersection of theirs), so that step, and the unimodular-height identification
 with the Altmann--Cayley cone, hold for an arbitrary decomposition.  By the cascade
@@ -998,8 +1036,9 @@ uniform in small $t$, by the Weierstrass division of the proof of
 Lemma~\ref{lem:transverse} applied at the central point of the total
 space), which transports each of them, with its germ
 $C(Q_i)$, to a singular point of $\mathcal Y_t$.
-When $F$ is of type~(D) the only
-two-dimensional non-smooth summands are the rigid $R_j$, so each $C(F)$ point
+When $F$ is of type~(D), take the decomposition to be maximal.  Every
+summand is then Minkowski-indecomposable, so every two-dimensional non-smooth
+summand is rigid.  Thus each $C(F)$ point
 becomes a collection of $C(R_j)$ points; since each $C(R_j)$ has no smoothing
 component (Theorem~\ref{thm:trich}), the deformed
 threefold admits no
@@ -1008,12 +1047,14 @@ smoothing by Lemma~\ref{lem:ltg}.
 
 \begin{remark}\label{rem:cascade-global}
 The smallest instance is the type-\textup{(D)} pentagon $Q_B = T + s$ of \cite{paper1}
-($T$ a standard triangle, whose cone $C(T)$ is the $\frac13(1,1,1)$ point,
+($T$ a non-standard determinant-$3$ lattice triangle, whose cone $C(T)$
+is the $\frac13(1,1,1)$ point,
 and $s$ a unit segment; its maximal decomposition is $T + s$
 with the single rigid summand $T$), realized with $\ell(F^\circ) = 3$ as the unique
 non-smooth face of the polytope $\Delta_B$ of \cite{paper1}.  The Calabi--Yau
 threefold $X_B$, whose three singular points are all deformable yet
-non-smoothable, then deforms, through an explicit trinomial family, to a
+non-smoothable, then deforms, through a family induced by explicit ambient
+trinomials, to a
 Calabi--Yau threefold with three ordinary $\frac13(1,1,1)$ points, itself
 non-smoothable.  (That the conditions of Lemma~\ref{lem:datum} hold for this
 non-standard summand is a finite
@@ -1030,8 +1071,12 @@ fibre.
 \label{sec:node}
 
 \begin{theorem}[restatement of Theorem~\textup{\ref{thm:B}}]\label{thm:B2}
-Let $\Delta_N$ be the reflexive polytope of
-Theorem~\textup{\ref{thm:B}}.  Then $\Delta_N$ has $7$ vertices and unit
+Let $\Delta$ be a reflexive $4$-polytope with unit edges.  If the singular
+locus of its generic anticanonical hypersurface $X\subset\PP_\Delta$
+consists of a single ordinary double point, then $X$ admits no smoothing.
+
+The polytope $\Delta_N$ of Theorem~\textup{\ref{thm:B}} provides an explicit
+example: it has $7$ vertices and unit
 edges; its unique non-smooth two-dimensional face is the unit square
 $\square\times\{(1,0)\}$, of type \textup{(S)}, with dual edge of
 lattice length $1$; the generic anticanonical $X_N$ is a Calabi--Yau
@@ -1062,22 +1107,27 @@ two.\footnote{The ancillary programs list the same data in the opposite
 normalization $\langle\cdot,\cdot\rangle=+1$ of \cite{paper1}, that is,
 negated.}  By
 Proposition~\ref{prop:planting}, $X_N$ has exactly one singular point, an ordinary
-double point $p$.
+double point.
 
-The square face has no interior lattice points and unit edges, so the
-MPCP subdivision of its cone inserts only the diagonal wall: the induced
-crepant resolution $\pi: \widehat X_N \to X_N$ is \emph{small}, with
-exceptional locus a single rational curve $\gamma$ over $p$, and it is
-projective because the MPCP subdivision is projective \cite{Batyrev94}.
-If $A$ is ample on $\widehat X_N$ then $A \cdot \gamma > 0$, so
-$[\gamma] \neq 0$ in $H_2(\widehat X_N; \mathbb{Q})$.  By Friedman's theorem
+It remains to prove the uniform assertion.  Let $X\subset\PP_\Delta$ be
+any hypersurface satisfying its hypotheses.  Proposition~\ref{prop:planting}
+and the toric description of an ordinary double point identify its unique
+singularity with the cone over a unit square whose dual edge has lattice
+length one.  The square has no interior lattice points, so an MPCP
+subdivision of its cone inserts only a diagonal wall: the induced crepant
+resolution $\pi:\widehat X\to X$ is \emph{small}, with exceptional locus a
+single rational curve $\gamma$, and it is projective because the MPCP
+subdivision is projective \cite{Batyrev94}.  If $A$ is ample on
+$\widehat X$ then $A\cdot\gamma>0$, so
+$[\gamma] \neq 0$ in $H_2(\widehat X; \mathbb{Q})$.  By Friedman's theorem
 \cite{Friedman86} (extended to all odd-dimensional nodal Calabi--Yau
 varieties in \cite{RollenskeThomas}), a nodal
 Calabi--Yau threefold with a projective small resolution is smoothable
 only if the exceptional classes
 satisfy a relation $\sum a_i [\gamma_i] = 0$ in
-$H_2(\widehat X_N;\mathbb{Q})$ with all $a_i \neq 0$; with a
-single node this forces $[\gamma] = 0$.  Hence $X_N$ admits no smoothing.
+$H_2(\widehat X;\mathbb{Q})$ with all $a_i \neq 0$; with a
+single node this forces $[\gamma] = 0$.  Hence $X$ admits no smoothing,
+and the explicit $X_N$ is a special case.
 \end{proof}
 
 \begin{remark}\label{rem:nonpoly}
@@ -1177,9 +1227,11 @@ $S$ as the toric boundary curve of $S$ corresponding to the edge
 $(q,v')$ of the star subdivision; these boundary divisors generate
 $\operatorname{Pic}(S)_{\mathbb{R}}$, so the intersection pairing of
 divisors of $\widehat X$ with curves contained in $S$ has rank
-$\rho(S)$, and the classes of the contracted curves span a face of
-dimension $\rho(S) \ge 2$ in $N_1(\widehat X)$: the relative Picard
-number of $\widehat X \to X$ is $\rho(S) \ge 2$.  Since
+$\rho(S)$.  Conversely every contracted curve lies in $S$, so its
+relative numerical class is in the image of $N_1(S)$ and the relative
+Picard number is at most $\rho(S)$.  Thus the classes of the contracted
+curves span a face of dimension $\rho(S) \ge 2$ in $N_1(\widehat X)$:
+the relative Picard number of $\widehat X \to X$ is $\rho(S) \ge 2$.  Since
 $K_{\widehat X} \equiv 0$, the cone theorem says nothing about these
 rays directly; apply it instead to the klt pair $(\widehat X,
 \varepsilon S)$ for small $\varepsilon > 0$: adjunction gives
@@ -1211,7 +1263,10 @@ punctured germ are computed on the $\CC^\ast$-bundle
 $(\text{total space of } \omega_S) \smallsetminus S$ over the del
 Pezzo surface $S$, whose Picard group is
 $\operatorname{Pic}(S)/\ZZ K_S$ in the algebraic and the analytic
-category alike, the same group as $\operatorname{Cl}(C(F))$.  Such a
+category alike, the same group as $\operatorname{Cl}(C(F))$; analytically,
+this follows from the exponential sequence, using
+$H^1(S,\mathcal O_S)=H^2(S,\mathcal O_S)=0$, and the Gysin sequence for
+the associated $\CC^\ast$-bundle.  Such a
 class is therefore represented by an algebraic divisor that is
 not $\mathbb{Q}$-Cartier at the point, so $X$ is not
 $\mathbb{Q}$-factorial.  (The germ computation alone would not suffice:
@@ -1271,7 +1326,11 @@ while faces with $\ell(F^\circ) = 1$ require a \emph{cross-face rescue}:
 the class $[\gamma_F]$ must be a rational combination of the classes over
 other faces.
 
-We have tabulated this over the \emph{entire} Kreuzer--Skarke list: for
+We tabulated this over the per-vertex-count database copy described in
+\cite[\S6.1]{paper1}, together with the separately reconstructed
+$36$-vertex polytope.  Assume, as in \cite[Proposition~6.1]{paper1}, that
+the files contain without repetition exactly the classification members in
+their stated vertex range.  Under this database hypothesis, for
 each reflexive $4$-polytope we test every two-dimensional face for being
 a standard triangle or a unit parallelogram, and compute $\ell(F^\circ)$
 as the lattice length of the edge of $\Delta^\circ$ dual to it.  Our
@@ -1312,7 +1371,9 @@ for the Calabi--Yau hypersurface, of the admissible Minkowski data of
 
 \begin{question}\label{q:ell1}
 Is a Calabi--Yau threefold whose unique singular point has germ $C(F)$
-with $F$ of type \textup{(S)} and $\ell(F^\circ) = 1$ ever smoothable?
+with $F$ of type \textup{(S)}, $i(F)\geq1$, and
+$\ell(F^\circ) = 1$ ever smoothable?  The nodal case $i(F)=0$ is answered
+negatively by Theorem~\ref{thm:B2}.
 For $i(F) = 1$ (the anticanonical cones over $\PP^1{\times}\PP^1$,
 $\mathrm{dP}_7$, $\mathrm{dP}_6$) Proposition~\ref{prop:C2} shows the
 toric resolution is never a primitive contraction and $X$ is not

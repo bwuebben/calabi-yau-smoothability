@@ -28,8 +28,9 @@ smoothability means for their Batyrev mirrors.
    ambient toric pair, cut out by trinomials in Cox coordinates (a
    codimension-two transplant of Petracci's homogeneous deformations of
    toric pairs), smooths the points over a type-(S) face whenever the dual
-   edge has lattice length ≥ 2; the threshold is sharp (a 7-vertex polytope
-   whose hypersurface has a single ordinary double point and no smoothing);
+   edge has lattice length ≥ 2; the threshold is sharp — no unit-edge
+   Batyrev hypersurface whose singular locus is a single ordinary double
+   point admits a smoothing, and a 7-vertex polytope realizes this;
    the ℓ = 1 del Pezzo-cone cases lie outside both Friedman's criterion and
    Gross's theorems and are open. Comparison with the Batyrev–Kreuzer
    all-conifold census: their criterion constrains only the dual-length-1
@@ -54,7 +55,20 @@ smoothability means for their Batyrev mirrors.
    self-dual 24-cell, gives a mirror pair with both members smooth. The
    paper also records two refuted conjectures: the natural low-vertex
    guess holds for all 395,406,329 polytopes with at most 18 vertices and
-   fails from 19 on.
+   fails from 19 on. An exact row reduction of the 26 node relations of the
+   mirror X° gives rank 18 with two coloops, so the nodes alone admit no
+   relation with every coefficient non-zero: any smoothing of X° would have
+   to couple them to its four del Pezzo-cone directions.
+
+The counts taken over the whole Kreuzer–Skarke classification — the 8.27%,
+the 3,774 / 26,467 split, the 590 both-sides unit polytopes and the
+uniqueness of the mirror pair — are stated in the papers under an explicit
+hypothesis on the database copy scanned: that the per-vertex-count files
+contain, without repetition, exactly the classification members in their
+stated vertex range, the one 36-vertex member being supplied separately
+(`missing_polytope.py`). The transverse identity, the local trichotomy and
+census, and every assertion about an explicitly displayed polytope are
+unconditional.
 
 ## Code (`src/`)
 
@@ -81,6 +95,8 @@ every run:
   590-polytope census, fully asserted), `both_sides_search.py`,
   `both_sides_chain.sh` (the full-database driver), `b1_*.py`,
   `mirror_check.py` — the both-sides-unit scans for paper 3.
+- `paper3_node_relations.py` — the node subsystem of the mirror X°: exact
+  rank and coloops of its 26 diagonal relations.
 - `face_data.py` — the named 2-faces printed in paper 3, each re-derived
   from the vertex list exactly as it appears in the text.
 
