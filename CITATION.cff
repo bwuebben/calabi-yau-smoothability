@@ -3,6 +3,6 @@ message: "If you use this code or data, please cite it as below."
 title: "Smoothability of Batyrev Calabi-Yau threefolds: code and data"
 authors:
   - family-names: Wuebben
-    given-names: Bernd J.
+    given-names: Bernd Johannes
 repository-code: "https://github.com/bwuebben/calabi-yau-smoothability"
 year: 2026

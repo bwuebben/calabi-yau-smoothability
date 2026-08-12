@@ -5,7 +5,7 @@ smoothability of Calabi–Yau threefolds arising as anticanonical
 hypersurfaces in Gorenstein toric Fano fourfolds, and on what
 smoothability means for their Batyrev mirrors.
 
-**Author:** Bernd J. Wuebben (wuebben@gmail.com)
+**Author:** Bernd Johannes Wuebben (wuebben@gmail.com)
 
 ## The papers
 
@@ -135,4 +135,4 @@ Each paper builds from its directory with `latexmk -pdf main.tex`.
 
 The code (`src/`) and data files (`output/`) are released under the MIT
 License (see `LICENSE`). The paper sources and PDFs (`paper*/`) are
-© Bernd J. Wuebben; all rights reserved pending journal publication.
+© Bernd Johannes Wuebben; all rights reserved pending journal publication.
