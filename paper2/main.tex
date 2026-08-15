@@ -1,3 +1,4 @@
+\pdfoutput=1
 \documentclass[11pt]{amsart}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[margin=1.2in]{geometry}
@@ -40,7 +41,7 @@ threefolds\\ in Gorenstein toric Fano fourfolds}
 \keywords{Calabi--Yau threefolds, smoothings, deformations of toric
 pairs, reflexive polytopes, anticanonical hypersurfaces, Batyrev
 construction}
-\date{August 2, 2026}
+\date{August 15, 2026}
 
 \begin{document}
 
@@ -1258,19 +1259,30 @@ $k - 3 \ge 1$, and these local classes are realized by algebraic
 divisors on $X$: under the chart identification of the planting
 proposition, the closures of the intersections of $X$ with the toric
 divisors of $\PP_\Delta$ through the point restrict to the toric
-divisors of $C(F)$, which generate its class group.  A class of
-infinite order in $\operatorname{Cl}(C(F))$ stays of infinite order in
-the analytic local class group at the point: divisor classes on the
-punctured germ are computed on the $\CC^\ast$-bundle
-$(\text{total space of } \omega_S) \smallsetminus S$ over the del
-Pezzo surface $S$, whose Picard group is
-$\operatorname{Pic}(S)/\ZZ K_S$ in the algebraic and the analytic
-category alike, the same group as $\operatorname{Cl}(C(F))$; analytically,
-this follows from the exponential sequence, using
-$H^1(S,\mathcal O_S)=H^2(S,\mathcal O_S)=0$, and the Gysin sequence for
-the associated $\CC^\ast$-bundle.  Such a
-class is therefore represented by an algebraic divisor that is
-not $\mathbb{Q}$-Cartier at the point, so $X$ is not
+divisors of $C(F)$, which generate its class group.
+
+We now verify directly that one of these globally realized classes remains
+non-torsion analytically.  Let
+\[
+ U=\operatorname{Tot}(\omega_S)\smallsetminus S.
+\]
+Contraction of the zero section identifies $U$ with the punctured analytic
+germ of $C(F)$.  The Gysin sequence of the associated circle bundle gives
+\[
+ H^2(U,\mathbb{Q})\cong
+ H^2(S,\mathbb{Q})/\mathbb{Q} c_1(K_S),
+\]
+because $H^1(S,\mathbb{Q})=0$.  The exponential sequence on $S$, together
+with $H^1(S,\mathcal O_S)=H^2(S,\mathcal O_S)=0$, identifies
+$\operatorname{Pic}(S)_{\mathbb{Q}}$ with $H^2(S,\mathbb{Q})$.  Since $S$ is
+a smooth toric del Pezzo surface with $\rho(S)\ge2$, its toric boundary
+classes generate this vector space, and at least one of the boundary classes
+realized by a divisor on $X$ has first Chern class not in
+$\mathbb{Q}c_1(K_S)$.  Its pullback to $U$ consequently has nonzero rational
+first Chern class and is not torsion as an analytic line bundle.  If the
+corresponding divisor on $X$ were $\mathbb Q$-Cartier at the point, a positive
+multiple would be locally principal and its restriction to $U$ would be
+trivial, a contradiction.  Thus $X$ is not
 $\mathbb{Q}$-factorial.  (The germ computation alone would not suffice:
 a generic one-nodal quintic threefold is $\mathbb{Q}$-factorial although
 its node is analytically non-factorial.)  Thus
@@ -1335,8 +1347,11 @@ the files contain without repetition exactly the classification members in
 their stated vertex range.  Under this database hypothesis, for
 each reflexive $4$-polytope we test every two-dimensional face for being
 a standard triangle or a unit parallelogram, and compute $\ell(F^\circ)$
-as the lattice length of the edge of $\Delta^\circ$ dual to it.  Our
-enumeration finds exactly $198{,}849$ reflexive $4$-polytopes in the
+as the lattice length of the edge of $\Delta^\circ$ dual to it.  The
+ancillary input manifest pins these files to the revision and SHA-256
+digests specified in \cite[\S6.1]{paper1}; this makes the finite input
+reproducible but leaves the database hypothesis in force.  Our enumeration
+finds exactly $198{,}849$ reflexive $4$-polytopes in the
 Batyrev--Kreuzer class: every two-dimensional face a standard triangle
 or a unit
 parallelogram, and at least one parallelogram, so that $X$ is nodal with

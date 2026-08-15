@@ -93,12 +93,22 @@ every run:
 - `bk_check.py` — the Batyrev–Kreuzer all-conifold census.
 - `both_sides_ks.py`, `both_sides_fast.py`, `both_sides_census.py` (the
   590-polytope census, fully asserted), `both_sides_search.py`,
-  `both_sides_chain.sh` (the full-database driver), `b1_*.py`,
-  `mirror_check.py` — the both-sides-unit scans for paper 3.
+  `both_sides_chain.sh` (the full-database driver: downloads each input
+  from the pinned dataset revision, verifies its digest, validates an
+  existing result before skipping it, writes new results atomically and
+  records a transcript), `verify_both_sides_artifact.py` (the resumption
+  gate: input digest, result schema and row count, and every recorded
+  positive hit re-checked exactly), `b1_*.py`, `mirror_check.py` — the
+  both-sides-unit scans for paper 3.
 - `paper3_node_relations.py` — the node subsystem of the mirror X°: exact
   rank and coloops of its 26 diagonal relations.
 - `face_data.py` — the named 2-faces printed in paper 3, each re-derived
   from the vertex list exactly as it appears in the text.
+
+All predicates and invariants — including the cyclic ordering of the
+vertices of a planar face, which uses an exact half-plane and
+cross-product comparator — are computed in integer or rational arithmetic;
+no floating-point operation enters any classification.
 
 ## Data (`output/`)
 
@@ -111,7 +121,12 @@ The polytope data itself is the Kreuzer–Skarke classification, republished
 as parquet at
 [huggingface.co/datasets/calabi-yau-data/polytopes-4d](https://huggingface.co/datasets/calabi-yau-data/polytopes-4d)
 (not redistributed here); the scanners download per-vertex-count files into
-`data/ks/`.
+`data/ks/`. `manifests/ks_polytopes_4d_sha256.tsv` pins that dataset to the
+immutable repository revision `60c0e119a03608418df538191f65da3f43b5b819` and
+records the byte size and SHA-256 digest of every per-vertex-count file
+(5–33 vertices and the separate 36-vertex file), so the finite input of every
+scan is identified exactly; `verify_both_sides_artifact.py` checks a
+downloaded file against it.
 
 ## Reproducing
 
@@ -127,12 +142,17 @@ python3 src/cascade_check.py       # cascade bookkeeping          (~1 s)
 ./venv/bin/python src/ks_sweep.py data/ks/polytopes-4d-06-vertices.parquet
 ./venv/bin/python src/bk_check.py data/ks/polytopes-4d-0*-vertices.parquet
 ./venv/bin/python src/both_sides_fast.py data/ks/polytopes-4d-09-vertices.parquet --procs 8
+./venv/bin/python src/verify_both_sides_artifact.py \
+  --input data/ks/polytopes-4d-09-vertices.parquet \
+  --manifest manifests/ks_polytopes_4d_sha256.tsv \
+  --result output/both_sides_v0809_fast.json
+./src/both_sides_chain.sh 8              # the full pinned, verifying, resumable scan
 ```
 
 Each paper builds from its directory with `latexmk -pdf main.tex`.
 
 ## License
 
-The code (`src/`) and data files (`output/`) are released under the MIT
-License (see `LICENSE`). The paper sources and PDFs (`paper*/`) are
+The code (`src/`), data files (`output/`) and manifest (`manifests/`) are
+released under the MIT License (see `LICENSE`). The paper sources and PDFs (`paper*/`) are
 © Bernd Johannes Wuebben; all rights reserved pending journal publication.

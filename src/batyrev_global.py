@@ -40,12 +40,13 @@ targets are polytopes whose bad 2-face is a rigid NON-simplicial polygon
 """
 from fractions import Fraction
 from itertools import combinations
-from math import atan2, gcd
+from math import gcd
 import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from toric_census import rigid, smoothing_components   # noqa: E402
+from toric_census import (ccw_sort_points, rigid,      # noqa: E402
+                          smoothing_components)
 
 # ---------------- exact linear algebra helpers ----------------
 def dot(u, v):
@@ -203,9 +204,7 @@ def face_lattice_polygon(V, face_idx, u1, u2):
     assert len(ker) == 2
     p0 = pts[0]
     coords = [solve_int_coords(ker, vsub(p, p0)) for p in pts]
-    cx = Fraction(sum(c[0] for c in coords), len(coords))
-    cy = Fraction(sum(c[1] for c in coords), len(coords))
-    coords.sort(key=lambda c: atan2(c[1] - cy, c[0] - cx))
+    coords = ccw_sort_points(coords)
     k = len(coords)
     evs, lens = [], []
     for i in range(k):
@@ -275,9 +274,8 @@ def analyze(name, V, verbose=True):
         ker = int_kernel([list(u1), list(u2)])
         p0 = pts[0]
         cs = [(solve_int_coords(ker, vsub(p, p0)), p) for p in pts]
-        cx = Fraction(sum(c[0][0] for c in cs), len(cs))
-        cy = Fraction(sum(c[0][1] for c in cs), len(cs))
-        cs.sort(key=lambda c: atan2(c[0][1] - cy, c[0][0] - cx))
+        point_at = {c: p for c, p in cs}
+        cs = [(c, point_at[c]) for c in ccw_sort_points(point_at)]
         k = len(cs)
         for i in range(k):
             p, q = cs[i][1], cs[(i + 1) % k][1]

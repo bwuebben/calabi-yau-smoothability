@@ -1,3 +1,4 @@
+\pdfoutput=1
 \documentclass[11pt]{amsart}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[margin=1.2in]{geometry}
@@ -43,7 +44,7 @@ pairs\\ and non-smoothable Calabi--Yau threefolds}
 \keywords{Mirror symmetry, Batyrev duality, reflexive polytopes,
 Kreuzer--Skarke classification, Calabi--Yau threefolds, isolated
 singularities, smoothability}
-\date{August 2, 2026}
+\date{August 15, 2026}
 
 \begin{document}
 
@@ -283,8 +284,8 @@ landscape.
 
 All mathematical predicates and reported invariants in the scan, the exact
 re-verification of all $590$ polytopes, and the mirror-pair calculation use
-integer or rational arithmetic; the sole floating-point ordering operation
-is disclosed in \S\ref{subsec:method}.  The programs build on those of
+integer or rational arithmetic, including the cyclic ordering of planar
+faces.  The programs build on those of
 \cite{paper1} and are included as ancillary files;
 \texttt{both\_sides\_census.py} re-derives every number and
 theorem in this note from the scan results.  The
@@ -457,10 +458,19 @@ the per-vertex-count copy of the Kreuzer--Skarke classification used in
 scan.  Subject to the database hypothesis in the introduction, this covers
 the complete classification.  All facet incidences, lattice lengths,
 determinants, and final predicates are checked in exact integer arithmetic,
-with no heuristic pruning.  The implementation uses floating-point
-\texttt{atan2} only to choose a cyclic ordering of the vertices of an
-already identified planar face; the ensuing edge and lattice tests are
-integral.  Implementation correctness is controlled in three complementary ways.
+with no heuristic pruning.  Planar vertices are ordered by an exact
+half-plane and cross-product comparator, so this step also uses no
+floating-point arithmetic.  For reproducibility, the ancillary manifest
+pins the database repository at revision
+\texttt{60c0e119a036} (with the full identifier in the manifest) and gives
+the byte size and SHA-256 digest of every input file.  The resumable driver
+verifies those digests and validates the row count, result schema, and every
+recorded positive hit before accepting an existing result; new results are
+written atomically, and every invocation records a transcript.  These
+controls fix the identity and integrity of the finite input and saved
+artifacts, but do not remove the database hypothesis or independently
+recheck every negative row.  Implementation correctness is controlled in
+three complementary ways.
 (i) Before scanning each file of the database, the implementation was
 re-checked against an
 independently written reference implementation on random samples from that

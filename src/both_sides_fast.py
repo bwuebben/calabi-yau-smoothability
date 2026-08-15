@@ -18,9 +18,11 @@ Run:  ./venv/bin/python src/both_sides_fast.py data/ks/polytopes-4d-10-vertices.
 from itertools import combinations
 from multiprocessing import Pool
 import argparse
+import hashlib
 import json
 import os
 import sys
+import tempfile
 import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -96,6 +98,36 @@ def iter_range(path, chunk, start, stop):
         yield verts[max(0, start - lo): min(verts.shape[0], stop - lo)]
 
 
+def file_sha256(path):
+    digest = hashlib.sha256()
+    with open(path, "rb") as stream:
+        for block in iter(lambda: stream.read(8 * 1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def write_json_atomic(path, payload):
+    """Publish a complete JSON artifact or leave the previous one untouched."""
+    target = os.path.abspath(path)
+    directory = os.path.dirname(target) or "."
+    os.makedirs(directory, exist_ok=True)
+    fd, temporary = tempfile.mkstemp(
+        prefix=f".{os.path.basename(target)}.", suffix=".tmp", dir=directory)
+    try:
+        with os.fdopen(fd, "w") as stream:
+            json.dump(payload, stream, indent=1)
+            stream.write("\n")
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary, target)
+    except BaseException:
+        try:
+            os.unlink(temporary)
+        except FileNotFoundError:
+            pass
+        raise
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("files", nargs="+")
@@ -103,6 +135,8 @@ def main():
     ap.add_argument("--json", default=None)
     ap.add_argument("--start", type=int, default=0, help="first row (segmented runs)")
     ap.add_argument("--stop", type=int, default=None, help="one past last row")
+    ap.add_argument("--dataset-revision", default=None,
+                    help="immutable source revision recorded in the result")
     args = ap.parse_args()
     import numpy as np
     import threading
@@ -133,9 +167,15 @@ def main():
         key = os.path.basename(path)
         if args.start or stop < nrows:
             key += f"[{args.start}:{stop}]"
+        input_digest = file_sha256(path)
         out[key] = dict(
             n=total, both_sides_any=len(hits), asymmetric_hits=n_asym,
-            hits=verified, secs=round(time.time() - t0, 1))
+            hits=verified, secs=round(time.time() - t0, 1),
+            input_sha256=input_digest, input_bytes=os.path.getsize(path),
+            dataset_revision=args.dataset_revision,
+            row_start=args.start, row_stop=stop,
+            complete=(args.start == 0 and stop == nrows),
+            scanner_version=2)
         print(f"{key}: n={total}  both-sides-any={len(hits)}"
               f"  ASYMMETRIC(=counterexample)={n_asym}"
               f"  [{time.time()-t0:.0f}s]", flush=True)
@@ -144,8 +184,7 @@ def main():
                   ("COUNTEREXAMPLE!" if v["asymmetric"] else "(conjecture ok)"),
                   flush=True)
         if args.json:
-            with open(args.json, "w") as f:
-                json.dump(out, f, indent=1)
+            write_json_atomic(args.json, out)
     print("BOTH-SIDES-FAST-DONE", flush=True)
 
 

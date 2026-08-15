@@ -44,7 +44,7 @@ component; cone over P^2 = (1/3)(1,1,1) rigid; cone over dP6 (hexagon)
 smoothable with exactly 2 smoothing components (3 segments / 2 triangles —
 Altmann's example); the T+segment pentagon deformable-but-non-smoothable.
 """
-from math import atan2, pi
+from functools import cmp_to_key
 from itertools import combinations
 
 # ---------- lattice helpers ----------
@@ -57,18 +57,82 @@ def ext_gcd(a, b):
 def primitive(v):
     return v != (0, 0) and ext_gcd(v[0], v[1])[0] == 1
 
-def ccw_sort(edges):
-    return sorted(edges, key=lambda e: atan2(e[1], e[0]))
+def _direction_cmp(a, b):
+    """Compare nonzero integer vectors by counterclockwise angle, exactly."""
+    def sector(v):
+        # Match atan2's conventional branch (-pi, pi] exactly: the open lower
+        # half-plane comes first, then angles [0, pi), and the negative
+        # horizontal axis (angle pi) comes last.  Retaining this cut, rather
+        # than merely a cyclic order, matters to callers that integrate an
+        # ordered edge list from the fixed initial vertex (0, 0).
+        if v[1] < 0:
+            return 0
+        if v[1] == 0 and v[0] < 0:
+            return 2
+        return 1
+
+    ha, hb = sector(a), sector(b)
+    if ha != hb:
+        return ha - hb
+    cross = a[0] * b[1] - a[1] * b[0]
+    if cross:
+        return -1 if cross > 0 else 1
+    # Collinear vectors in the same half-plane point in the same direction.
+    # The norm and then the coordinates make the order deterministic even when
+    # callers supply non-primitive vectors.
+    na, nb = a[0] * a[0] + a[1] * a[1], b[0] * b[0] + b[1] * b[1]
+    if na != nb:
+        return -1 if na < nb else 1
+    return -1 if a < b else (1 if a > b else 0)
+
+
+def ccw_sort(vectors):
+    """Sort nonzero integer vectors counterclockwise without floating point."""
+    if any(v == (0, 0) for v in vectors):
+        raise ValueError("the zero vector has no angular order")
+    return sorted(vectors, key=cmp_to_key(_direction_cmp))
+
+
+def ccw_sort_points(points):
+    """Sort integer points around their centroid, using exact arithmetic.
+
+    Multiplying each displacement from the centroid by ``len(points)`` makes
+    the comparison integral.  A cyclic rotation of the returned order is
+    immaterial to every polygon predicate used in this project.
+    """
+    points = list(points)
+    if not points:
+        return []
+    n = len(points)
+    sx, sy = sum(p[0] for p in points), sum(p[1] for p in points)
+
+    def cmp_points(p, q):
+        vp = (n * p[0] - sx, n * p[1] - sy)
+        vq = (n * q[0] - sx, n * q[1] - sy)
+        if vp == (0, 0) or vq == (0, 0):
+            raise ValueError("a polygon vertex cannot equal its centroid")
+        result = _direction_cmp(vp, vq)
+        if result:
+            return result
+        return -1 if p < q else (1 if p > q else 0)
+
+    return sorted(points, key=cmp_to_key(cmp_points))
 
 def valid_polygon(edges):
     """distinct primitive directions, sum zero, not contained in a half-plane."""
+    if len(edges) < 3 or not all(primitive(e) for e in edges):
+        return False
     if sum(e[0] for e in edges) != 0 or sum(e[1] for e in edges) != 0:
         return False
     if len(set(edges)) != len(edges):
         return False
-    angs = sorted(atan2(e[1], e[0]) for e in edges)
-    gaps = [(angs[(i + 1) % len(angs)] - angs[i]) % (2 * pi) for i in range(len(angs))]
-    return max(gaps) < pi - 1e-9
+    ordered = ccw_sort(edges)
+    # Every successive angular gap is strictly less than pi exactly when its
+    # oriented cross product is positive.  Equality detects a closed
+    # half-plane boundary, with no numerical tolerance required.
+    return all(ordered[i][0] * ordered[(i + 1) % len(ordered)][1]
+               - ordered[i][1] * ordered[(i + 1) % len(ordered)][0] > 0
+               for i in range(len(ordered)))
 
 def verts_from_edges(edges):
     V = [(0, 0)]
@@ -187,6 +251,12 @@ def _dump(name, edges):
           f"terminal={interior_points(edges)==0}")
 
 def main():
+    # Exact angular comparison must preserve atan2's historical branch cut,
+    # not merely its cyclic order: verts_from_edges anchors the first vertex
+    # at (0, 0), and embedded examples depend on that translation.
+    assert ccw_sort([(-1, 0), (0, 1), (1, 0), (1, -1),
+                     (0, -1), (-1, -1)]) == \
+        [(-1, -1), (0, -1), (1, -1), (1, 0), (0, 1), (-1, 0)]
     print("VALIDATION — anchors")
     conifold = ccw_sort([(1, 0), (0, 1), (-1, 0), (0, -1)])
     P2tri    = ccw_sort([(-1, 1), (-1, -2), (2, 1)])

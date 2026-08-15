@@ -37,7 +37,6 @@ SINGLE deformable-but-never-smoothable point (the paper's sharpened Q2).
 Run:  ./venv/bin/python src/ks_sweep.py data/ks/polytopes-4d-06-vertices.parquet
       ./venv/bin/python src/ks_sweep.py data/ks/*.parquet --procs 8
 """
-from fractions import Fraction
 from itertools import combinations
 from multiprocessing import Pool
 import argparse
@@ -48,13 +47,14 @@ import sys
 import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from toric_census import rigid, smoothing_components                       # noqa: E402
+from toric_census import (ccw_sort_points, rigid,                         # noqa: E402
+                          smoothing_components)
 from batyrev_global import (dot, vsub, vgcd, hyperplane_normal,            # noqa: E402
                             int_kernel, solve_int_coords)
 from plant_search import nonsmoothable_classes                             # noqa: E402
 from hodge_numbers import hodge_numbers                                    # noqa: E402
 
-from math import atan2, gcd                                                # noqa: E402
+from math import gcd                                                       # noqa: E402
 
 
 # ---------------- exact facet/face machinery (n up to ~14 vertices) -------
@@ -89,9 +89,7 @@ def polygon_of_face(V, idx, u1, u2):
     ker = int_kernel([list(u1), list(u2)])
     p0 = pts[0]
     coords = [solve_int_coords(ker, vsub(p, p0)) for p in pts]
-    cx = Fraction(sum(c[0] for c in coords), len(coords))
-    cy = Fraction(sum(c[1] for c in coords), len(coords))
-    coords.sort(key=lambda c: atan2(c[1] - cy, c[0] - cx))
+    coords = ccw_sort_points(coords)
     k = len(coords)
     evs, lens = [], []
     for i in range(k):
@@ -129,27 +127,6 @@ def two_faces_of(V, facs):
 #     both engines on random rows of every file before sweeping it.
 
 COORD_BOUND = 5000
-
-def ccw_sorted_int(coords):
-    """Exact ccw sort of distinct integer points around their centroid
-    (quadrant + cross product; no floats)."""
-    from functools import cmp_to_key
-    k = len(coords)
-    cx = sum(c[0] for c in coords)
-    cy = sum(c[1] for c in coords)
-    def vec(p):
-        return (k * p[0] - cx, k * p[1] - cy)
-    def half(v):
-        return 0 if (v[1] > 0 or (v[1] == 0 and v[0] > 0)) else 1
-    def cmp(p, q):
-        vp, vq = vec(p), vec(q)
-        hp, hq = half(vp), half(vq)
-        if hp != hq:
-            return hp - hq
-        cr = vp[0] * vq[1] - vp[1] * vq[0]
-        return -1 if cr > 0 else (1 if cr < 0 else 0)
-    return sorted(coords, key=cmp_to_key(cmp))
-
 
 _KERNEL_CACHE = {}
 
@@ -195,7 +172,7 @@ def polygon_of_face_int(V, idx, u1, u2):
         # hence p - p0 is in the saturated kernel span by construction; the
         # per-file engine selftest guards the implementation end to end)
         coords.append((x, y))
-    coords = ccw_sorted_int(coords)
+    coords = ccw_sort_points(coords)
     k = len(coords)
     evs, lens = [], []
     for a in range(k):
