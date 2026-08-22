@@ -139,7 +139,7 @@ over each cone point $p$.  For a singular point $p$ let $L_p$ denote
 its link.  A \emph{one-parameter deformation} of $X$ is a flat proper
 analytic family $\cX\to\Disk$ over a disk $\Disk$ with
 $\cX_0\cong X$, and it is a \emph{one-parameter smoothing} if $X_s$ is
-smooth for all $s\neq0$.  Such a family induces at each singular
+smooth for all $s\neq0$.  Such a smoothing induces at each singular
 point a smoothing of the local germ, with Milnor fiber $M_p$, and we
 set
 \[
@@ -182,7 +182,8 @@ the Gorenstein Fano toric fourfold associated with the polar of
 $\Delta_{\mathbb F_1}$.  Then $X^{\circ}$ admits no one-parameter
 smoothing.  Moreover no fiber of a small representative of the
 miniversal deformation of $X^{\circ}$ is smooth, and no formal
-deformation of $X^{\circ}$ meets all thirty local smoothing loci.
+arc in the miniversal deformation of $X^{\circ}$ meets all thirty
+local smoothing loci.
 \end{theorem}
 
 The mirror partner $X_{\Delta}$ of $X^{\circ}$ in the doubly isolated
@@ -1422,10 +1423,10 @@ $h^1(\cO_{X_{\Delta}})=0$, and every germ is analytically the cone
 over its face because every dual edge has lattice length one.  The
 last germ
 is reduced-rigid, so $X_{\Delta}$ admits no smoothing \cite{PaperI}.
-Theorem~\ref{thm:main} and that rigidity together suggest a division
-of labour, $X_{\Delta}$ failing to smooth locally and $X^{\circ}$
-globally.  The division does not hold up: the obstruction of this
-paper is present on $X_{\Delta}$ as well, in the form
+Theorem~\ref{thm:main} and the reduced-rigidity of this germ together
+suggest a division of labour, $X_{\Delta}$ failing to smooth locally
+and $X^{\circ}$ globally.  The division does not hold up: the
+obstruction of this paper is present on $X_{\Delta}$ as well, in the form
 Theorem~\ref{thm:partial} gives it, and it does not use the
 $\mathbb F_1$ germ.
 
@@ -1523,10 +1524,11 @@ below.
 Table~\ref{tab:partnersurf} records the two exceptional surfaces.  The
 lattice $K^{\perp}(\mathbb F_1)$ is a line spanned by a primitive
 class of square $-8$, and it contains no $(-2)$-class, consistently
-with the rigidity of that germ.  No condition is imposed at that point
-in any case: by Lemma~\ref{lem:rigid} it lies in $\Sigma$ for every
-deformation, so no Milnor fiber and no $R_p$ is defined there.  Stacking the twenty circuit rows, the
-three hexagon rows and the single $\mathbb F_1$ row gives an integral
+with the reduced-rigidity of that germ.  No condition is imposed at
+that point in any case: by Lemma~\ref{lem:rigid} it lies in $\Sigma$
+for every deformation, so no Milnor fiber and no $R_p$ is defined
+there.  Stacking the twenty circuit rows, the three hexagon rows and
+the single $\mathbb F_1$ row gives an integral
 matrix $B_{\Delta}\in\operatorname{Mat}_{24\times24}(\ZZ)$, the
 columns being indexed by the divisors of the twenty-four boundary
 lattice points, which span $\Pic$ of the resolution without being a
@@ -1556,16 +1558,17 @@ $\ker(B_{\Delta}^{\mathsf T})$ is used.
 \begin{theorem}\label{thm:partner}
 No one-parameter deformation of $X_{\Delta}$ has nearby fiber smooth
 at the node $n_9=\conv\{v_5,v_{11},v_{17},v_{21}\}$, and none has
-nearby fiber smooth at $n_{10}=\conv\{v_6,v_{10},v_{16},v_{20}\}$.  In
-particular no deformation of $X_{\Delta}$ smooths all twenty nodes and
-the $\dP_6$ point, whatever it does at the $\mathbb F_1$ point.  By
-item~(2) and Theorem~\ref{thm:partial}, the same argument applied to
-the $A_1$ coordinate shows that no deformation of $X_{\Delta}$ smooths
-its $\dP_6$ point through the one-parameter component of its
-miniversal base.  The
-rigidity of the $\mathbb F_1$ germ excludes the smoothings of
-$X_{\Delta}$; the deformations excluded here are ones that it leaves
-available.
+nearby fiber smooth at $n_{10}=\conv\{v_6,v_{10},v_{16},v_{20}\}$.
+The same two conclusions hold for deformations over arbitrary analytic
+base germs.  In particular no analytic deformation of $X_{\Delta}$
+smooths all twenty nodes and the $\dP_6$ point, whatever it does at the
+$\mathbb F_1$ point.  By item~(2) and
+Theorem~\ref{thm:partial}, the same argument applied to the $A_1$
+coordinate shows that no analytic deformation of $X_{\Delta}$ smooths
+its $\dP_6$ point through the one-parameter component of its miniversal
+base.  The reduced-rigidity of the $\mathbb F_1$ germ excludes the
+smoothings of $X_{\Delta}$; the deformations excluded here are ones
+that it leaves available.
 \end{theorem}
 
 \begin{proof}
@@ -1576,6 +1579,23 @@ But $K^{\flat}(X_{\Delta};\Sigma)$ is contained in
 $\ker(B_{\Delta}^{\mathsf T})$ for every $\Sigma$, read in the
 coordinates above, and the $n_9$ coordinate vanishes identically
 there.  The argument for $n_{10}$ is the same.
+
+For the $\dP_6$ assertion, suppose first that the base is a disk and
+that the local classifying arc lies in the one-parameter component of
+the miniversal base.  Theorem~\ref{thm:partial} then gives a class whose
+$A_1$ coordinate is nonzero, contrary to item~(2).
+
+Now let the deformation have an arbitrary analytic base germ $(S,0)$.
+Since the assertions concern actual nearby fibers, we may replace $S$
+by $S_{\mathrm{red}}$.  If one of the excluded local smoothings occurred
+arbitrarily close to the origin, the curve-selection argument used in
+Corollary~\ref{cor:def}, applied to the complement of the inverse image
+of the relevant local discriminant, would give a holomorphic disk
+through the origin whose punctured fibers have the same local smoothing
+property.  For the $\dP_6$ assertion, apply curve selection inside the
+inverse image of the one-parameter component and outside its
+discriminant.  Pullback to the resulting disk contradicts the
+one-parameter conclusions just proved.
 \end{proof}
 
 \begin{corollary}\label{cor:pair}
@@ -1583,11 +1603,11 @@ Both members of the unique doubly isolated mixed mirror pair carry the
 obstruction of this paper: on $X^{\circ}$, in the form of
 Theorem~\ref{thm:necessity}, it excludes every smoothing; on
 $X_{\Delta}$, in the form of Theorem~\ref{thm:partial}, it excludes
-every deformation smoothing $n_9$ or $n_{10}$.  On $X_{\Delta}$ the
-two mechanisms are independent: by item~(3) the forcing is computed
-from the twenty nodes and the hexagon alone, with the
-$\mathbb F_1$ data discarded, whereas the rigidity of that germ is a
-statement about it alone.
+every analytic deformation smoothing $n_9$ or $n_{10}$.  On
+$X_{\Delta}$ the two mechanisms are independent: by item~(3) the
+forcing is computed from the twenty nodes and the hexagon alone, with the
+$\mathbb F_1$ data discarded, whereas the reduced-rigidity of that germ
+is a statement about it alone.
 \end{corollary}
 
 \begin{table}\centering
