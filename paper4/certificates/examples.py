@@ -399,6 +399,15 @@ try:
 except Exception:
     pass
 
+# Delta_20 (paper, Section 8): 20 vertices; the generic hypersurface has
+# 17 nodes and one dP7-cone point, and its nodal subsystem has NO coloop,
+# so no purely nodal argument can obstruct it.  The mixed test obstructs.
+V_20 = [(1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1),
+        (1, -1, -1, -1), (-1, 1, 1, 1), (0, 0, 0, -1), (0, 0, -1, 0),
+        (0, -1, 0, 0), (-1, 1, 0, 1), (0, 0, -1, -1), (-1, 1, 0, 0),
+        (-1, 0, 1, 1), (0, -1, 0, -1), (-1, 0, 1, 0), (0, -1, -1, -1),
+        (-1, 0, 0, 1), (-1, 0, -1, 0), (-1, -1, 0, 0), (-1, -1, 1, 0)]
+
 V_F1 = [(1, 0, 0, 0), (0, 1, 0, 0), (1, -1, 0, 0), (0, 0, 1, 0),
         (0, 0, 0, 1), (0, 0, 1, -1), (0, 0, -1, 1), (0, 0, 0, -1),
         (0, 0, -1, 0), (-1, 1, 0, 0), (0, -1, 0, 0), (-1, 1, -1, 1),
@@ -424,5 +433,29 @@ if __name__ == "__main__":
     ok("validation: the pipeline reproduces NONSMOOTHABLE for X-degree", v0)
     verdict = run_example("Delta_19 hypersurface (14 nodes + 1 dP7)",
                           [tuple(v) for v in V_19])
+    ok("Delta_19: the test is silent (no covered coordinate is forced)",
+       not verdict)
+    # Delta_20: the test fires with NO nodal coloop, so the obstruction is
+    # entirely divisorial and no purely nodal criterion can see it.
+    v20 = run_example("Delta_20 hypersurface (17 nodes + 1 dP7)", V_20)
+    # the nodal subsystem of Delta_20, recomputed here: rank 11, no coloop
+    sq20, _ = analyze_faces(V_20)
+    ray20 = {}
+    nrows20 = []
+    for a, b, c, d in sq20:
+        for v in (a, b, c, d):
+            ray20.setdefault(tuple(v), len(ray20))
+        row = [F(0)] * 24
+        row[ray20[tuple(a)]] = row[ray20[tuple(c)]] = F(-1)
+        row[ray20[tuple(b)]] = row[ray20[tuple(d)]] = F(1)
+        nrows20.append(row)
+    r20 = rank(nrows20)
+    colo20 = [i for i in range(len(nrows20))
+              if rank(nrows20[:i] + nrows20[i + 1:]) == r20 - 1]
+    ok("Delta_20: the nodal subsystem has rank 11 and NO coloop, so no "
+       "purely nodal relation argument obstructs it",
+       len(nrows20) == 17 and r20 == 11 and colo20 == [])
+    ok("Delta_20: the mixed test nevertheless obstructs, through the "
+       "dP7 root direction alone", v20)
     print(f"ALL CHECKS PASSED ({PASS} assertions); "
-          f"Delta_19 nonsmoothable: {verdict}")
+          f"Delta_19 nonsmoothable: {verdict}; Delta_20 nonsmoothable: {v20}")
