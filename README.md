@@ -1,6 +1,6 @@
 # Smoothability of Batyrev Calabi–Yau threefolds
 
-Code, data, and paper sources for a series of three papers on the
+Code, data, and paper sources for a series of four papers on the
 smoothability of Calabi–Yau threefolds arising as anticanonical
 hypersurfaces in Gorenstein toric Fano fourfolds, and on what
 smoothability means for their Batyrev mirrors.
@@ -70,6 +70,25 @@ stated vertex range, the one 36-vertex member being supplied separately
 census, and every assertion about an explicitly displayed polytope are
 unconditional.
 
+4. **A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds**
+   (`paper4/`) — the necessity theory for the mixed case: any one-parameter
+   smoothing of a Calabi–Yau threefold whose singular points are nodes and
+   anticanonical del Pezzo cones (degrees 6 and 7) produces a rational
+   homology class on the singularity links that dies on a crepant
+   resolution, lies in canonical root subspaces at the cone points, and is
+   nonzero at every node, every dP₇ point, and every line-smoothed dP₆
+   point. The engine is a vanishing-period identity (the period of the
+   holomorphic 3-form over a vanishing cycle equals the local smoothing
+   parameter times a unit); in the purely nodal case this recovers the
+   necessity half of Friedman's criterion at all orders, without
+   unobstructedness. The criterion is a finite linear-algebra test, and it
+   obstructs: the X° member of paper 3's unique mirror pair (26 nodes, two
+   dP₇ and two dP₆ cone points, every germ locally smoothable) admits **no
+   smoothing**, so both members of the pair are non-smoothable, one for
+   local and one for global reasons. On a second, 19-vertex example (14
+   nodes and one dP₇ point) the test is silent, and its smoothability is
+   posed as an open problem.
+
 ## Code (`src/`)
 
 Exact-arithmetic Python (stdlib only for the core; `numpy` + `pyarrow`
@@ -110,6 +129,19 @@ vertices of a planar face, which uses an exact half-plane and
 cross-product comparator — are computed in integer or rational arithmetic;
 no floating-point operation enters any classification.
 
+Paper 4's certificate programs live in `paper4/` (they are also the arXiv
+ancillary files of that paper): the pure-python exact-rational checkers
+`necessity/milnor_kernels.py` (lattice package), `necessity/global_kernel.py`
+(matrix package), `necessity/dp_periods.py` (period package) and
+`necessity/examples.py` (the finite test, including the 19-vertex example),
+which recompute every finite claim of the paper from its printed tables; the
+Sage certifiers `resolution_fan.sage`, `restriction_data.sage`,
+`mixed_candidate.sage`, `global_section.sage`, `local_models.sage` with
+`fixed_example.py`, which certify the fixed crepant subdivision, the
+restriction lattices, the 36×26 matrix, Δ-regularity, and the local
+deformation bases; and the data documents (`paper4/*.md`) they derive and
+check.
+
 ## Data (`output/`)
 
 JSON results of every scan, so all counts can be checked without redoing
@@ -137,6 +169,10 @@ python3 src/hodge_numbers.py       # Hodge numbers, asserted      (~1 s)
 python3 src/missing_polytope.py    # the 36-vertex polytope       (~2 s)
 python3 src/paper2_check.py        # paper-2 machine checks       (~2 s)
 python3 src/cascade_check.py       # cascade bookkeeping          (~1 s)
+python3 paper4/necessity/milnor_kernels.py   # paper 4: lattice package (~1 s)
+python3 paper4/necessity/global_kernel.py    # paper 4: matrix package  (~1 s)
+python3 paper4/necessity/dp_periods.py       # paper 4: period package  (~1 s)
+python3 paper4/necessity/examples.py         # paper 4: finite test     (~1 s)
 
 # database scans (need: pip install numpy pyarrow; and the parquet files)
 ./venv/bin/python src/ks_sweep.py data/ks/polytopes-4d-06-vertices.parquet

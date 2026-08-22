@@ -8,7 +8,7 @@ the text, and every printed quantity is asserted:
 
   * the F_1 quadrilateral of Delta_{F_1}          (Theorem 5.1)
   * the dP_6 hexagon of Delta_{F_1}               (Theorem 5.1)
-  * the dP_7 pentagon of Delta_19                 (section 4.3)
+  * the dP_7 pentagon of Delta_19                 (section 5.3)
 
 For each face this module derives
 
@@ -52,7 +52,7 @@ V_F1 = [(1, 0, 0, 0), (0, 1, 0, 0), (1, -1, 0, 0), (0, 0, 1, 0),
         (-1, 0, -1, 1), (-1, -1, 0, -1), (-2, 1, -1, 1), (-2, 1, -1, 0),
         (-1, -1, -1, 0), (-2, 0, -1, 0)]
 
-# Delta_19, exactly as printed in section 4.3 (the smallest counterexample).
+# Delta_19, exactly as printed in section 5.3 (the smallest counterexample).
 V_19 = [(1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, -1, 0),
         (0, -1, 0, 0), (1, -1, -1, 0), (0, 0, 0, 1), (-1, 1, 1, -1),
         (0, -1, 0, 1), (0, 0, -1, 1), (-1, 1, 0, -1), (-1, 0, 1, -1),
