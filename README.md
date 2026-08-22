@@ -23,7 +23,10 @@ the distinguished example the census singles out.
 
 Each `paperN/` directory holds the LaTeX source (`main.tex`) and the
 compiled PDF under the name above. The supporting code lives in `src/`
-(papers 1–3) and `paper4/certificates/` (paper 4, self-contained);
+(papers 1–3 and shared exact toric modules) and
+`paper4/certificates/` (paper 4). The three core Paper 4 checkers are
+standalone; its general census, fixed-example, and fan programs reuse
+modules in `src/`;
 scan results in `output/`; the pinned Kreuzer–Skarke input manifest in
 `manifests/`. Every paper builds from its directory with
 `latexmk -pdf main.tex`, and every quantitative claim is recomputed by
@@ -153,9 +156,11 @@ no floating-point operation enters any classification.
 
 ### Paper 4's certificates (`paper4/certificates/`)
 
-The certificate programs named in paper 4's Appendix A, self-contained
-and runnable in place (they are also the arXiv ancillary files of that
-paper). Pure python over exact rationals, no dependencies:
+The certificate programs named in paper 4's Appendix A are runnable in
+the repository layout. The first three Python programs below are
+standalone; `examples.py`, `fixed_example.py`, and the Sage fan programs
+reuse exact modules in `src/`, so the arXiv ancillary layout preserves
+both directories:
 
 - `milnor_kernels.py` — the lattice package: the link lattices and root
   subspaces, the (−2)-enumerations with rigorous bounds, and the

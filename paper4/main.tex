@@ -5,6 +5,7 @@
 \usepackage[margin=1.2in]{geometry}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{flafter}
 \usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \hypersetup{pdfauthor={Bernd Johannes Wuebben},
@@ -215,7 +216,8 @@ in $H_3(X_s;\QQ)$.
 
 The two statements collide (Lemma~\ref{lem:P} forbids exactly this),
 and that collision is the proof of Theorem~\ref{thm:A-intro}.  A
-second, independent proof runs through a degree-$7$ point instead of
+complementary second proof, with a different period input, runs
+through a degree-$7$ point instead of
 the nodes (Section~\ref{sec:proofs}).
 
 Finally, the criterion is sharp in the sense that it does not obstruct
@@ -249,7 +251,7 @@ homology classes.  \emph{Finite input}: for $X^{\circ}$, an exact
 integral computation on a fixed crepant resolution shows that on the
 relevant restricted kernels the coordinates of the two coloop nodes
 and of the degree-$7$ directions vanish identically
-(Section~\ref{sec:example}); all decisive finite data are printed, and
+(Section~\ref{sec:example}); all decisive matrix data are printed, and
 every computation is reproduced by the ancillary programs
 (Appendix~\ref{app:cert}).
 
@@ -459,25 +461,46 @@ only in the sharper form of Theorem~\ref{thm:necessity}(3).
 This section contains the analytic mechanism.  Throughout,
 $\cX\to\Delta$ is a one-parameter smoothing of a compact complex
 threefold $X$ with $\omega_X\cong\cO_X$, $h^1(\cO_X)=0$ and isolated
-singularities.
+singularities of the types in Theorem~\ref{thm:B-intro}.
 
 \subsection{A relative holomorphic \texorpdfstring{$3$}{3}-form}\label{sec:relform}
-After shrinking the disk all fibers are Gorenstein, so the relative
-dualizing sheaf $\omega_{\cX/\Delta}$ is invertible and compatible
-with base change \cite{Conrad00}.  We claim $h^0(\omega_{X_s})=1$ for
-all small $s$.  For $s=0$ this is $\omega_X\cong\cO_X$.  For
-$s\neq0$, triviality of $\omega_{X_s}$ is proved, not assumed: the
-total space deformation-retracts onto $X_0$, so
-$c_1(\omega_{\cX/\Delta})$ restricts to zero on every fiber;
-semicontinuity gives $h^1(\cO_{X_s})=0$; the exponential sequence then
-embeds $\Pic(X_s)$ into $H^2(X_s;\ZZ)$, and $c_1(\omega_{X_s})=0$
-forces $\omega_{X_s}\cong\cO_{X_s}$.  (The hypothesis
+Flatness and the Gorenstein property of all fibers make
+$\cX\to\Delta$ a Gorenstein morphism after shrinking the disk, so the
+relative dualizing sheaf $\omega_{\cX/\Delta}$ is invertible and
+compatible with base change \cite{Conrad00}.  We first prove
+$c_1(\omega_{X_s})=0$ integrally.  Choose the disjoint good
+representatives and exterior $W$ of Section~\ref{sec:decomp}.  Over a
+neighborhood of $W$ the family is a smooth proper submersion with
+boundary and hence is $C^\infty$-trivial.  Since
+$\omega_X|_W\cong\cO_W$, the restriction of
+$c_1(\omega_{\cX/\Delta})$ to the corresponding exterior in $X_s$
+vanishes.  On each Milnor piece $M_p$, it also vanishes: the invertible
+sheaf $\omega_{\cX/\Delta}$ is trivial on a sufficiently small
+total-space neighborhood of $(p,0)$.
+
+For every boundary link in this paper, $H^1(L_p;\ZZ)=0$.  This is
+immediate for the nodal link $S^2\times S^3$.  For a cone point, $L_p$
+is the circle bundle of $\cO_S(K_S)$ over the simply connected del
+Pezzo surface $S$; the homotopy sequence shows that $\pi_1(L_p)=0$
+because its connecting map $\pi_2(S)\to\pi_1(S^1)=\ZZ$ is evaluation
+against the primitive Euler class $K_S$ and hence is surjective.  The Mayer--Vietoris
+sequence for $X_s=W\cup\bigsqcup_pM_p$ therefore injects
+\[
+ H^2(X_s;\ZZ)\lhook\joinrel\longrightarrow
+ H^2(W;\ZZ)\oplus\bigoplus_pH^2(M_p;\ZZ).
+\]
+The preceding local vanishings give $c_1(\omega_{X_s})=0$.
+Semicontinuity gives $h^1(\cO_{X_s})=0$; the exponential sequence then
+embeds $\Pic(X_s)$ into $H^2(X_s;\ZZ)$ and forces
+$\omega_{X_s}\cong\cO_{X_s}$.  (The hypothesis
 $h^1(\cO_X)=0$ cannot be dropped: the cone over a smooth quadric
 surface in $\PP^4$ is a one-node threefold smoothed by the family of
 quadric threefolds, and the vanishing cycle of that smoothing
 \emph{is} null-homologous; the example is excluded here exactly
-because its $\omega$ is nontrivial.)  By Grauert's base-change
-theorem \cite{Grauert60}, $\pi_*\omega_{\cX/\Delta}$ is then a line bundle on the shrunk
+because its $\omega$ is nontrivial.)  Constants and upper
+semicontinuity give $h^0(\cO_{X_s})=1$ after shrinking, hence
+$h^0(\omega_{X_s})=1$.  By Grauert's base-change theorem
+\cite{Grauert60}, $\pi_*\omega_{\cX/\Delta}$ is then a line bundle on the shrunk
 disk; we fix a trivializing section $\Omega$, whose restriction
 $\Omega_s$ is a nowhere-vanishing holomorphic $3$-form on $X_s$ for
 $s\neq0$ and a generator of $\omega_X$ near each singular point at
@@ -557,7 +580,12 @@ Pezzo surface with $[\Sb]=-\tfrac12K_V$, and
 is the generator of $\omega(V\smallsetminus\Sb)\cong\cO$, unique up to
 scale: the order of \eqref{eq:omegaM} along a boundary divisor $D_v$
 is $\langle m,v\rangle-2\min(\langle m,v\rangle,0)-1=0$, and along
-$\Sb$ it is $-2$.  (These statements, the slice combinatorics below,
+$\Sb$ it is $-2$.  Here uniqueness is algebraic.  If
+$f\in\cO(V\smallsetminus\Sb)^\times$, then
+$\operatorname{div}_V(f)=n\Sb$ for some $n\in\ZZ$; since
+$\Pic(V)$ is torsion-free and $[\Sb]\neq0$, one has $n=0$, and a
+rational function without zeros or poles on the projective variety
+$V$ is constant.  (These statements, the slice combinatorics below,
 and the constancy claim in the next proof are certified by the
 ancillary programs.)
 
@@ -635,16 +663,18 @@ channels in the statement is one of the complements of
 Lemma~\ref{lem:D1}.  The component carries Pinkham's
 $\CC^*$-equivariant swept family with parameters of weight one
 (Section~\ref{sec:miniversal}: $T^1$ sits in the Gorenstein degree);
-let $\Omega^{\mathrm{loc}}$ be an equivariant generator of its
-relative dualizing sheaf, homogeneous of some integral weight $a$.
-(Such a generator exists: the relative dualizing sheaf of the swept
-family is invertible and $\CC^*$-equivariant; decomposing any local
-generator into isotypic components, some homogeneous component
-generates at the vertex by Nakayama, hence on a $\CC^*$-invariant
-neighborhood.  Its restriction to the fiber $b=1$ is a unit multiple
-of $\Omega_M$, and units on $M$ are constants by the uniqueness
-remark after \eqref{eq:omegaM}, so we normalize
-$\Omega^{\mathrm{loc}}|_{b=1}=\Omega_M$.)
+let $\Omega^{\mathrm{loc}}$ be an equivariant algebraic generator of
+its relative dualizing sheaf, homogeneous of some integral weight
+$a$.  To construct it, work in the graded local ring at the vertex.
+The relative dualizing module is invertible, and graded Nakayama
+selects from any algebraic local generator a homogeneous component
+that still generates.  Its $\CC^*$-saturation contains the entire
+fiber $b=1$: every point of that fiber tends to the vertex when the
+positive-weight cone coordinates and the weight-one parameter are
+scaled to zero.  Thus its restriction to $b=1$ is an algebraic
+generator of $\omega_M$, hence a constant multiple of $\Omega_M$ by
+the unit calculation following \eqref{eq:omegaM}; rescale it so that
+$\Omega^{\mathrm{loc}}|_{b=1}=\Omega_M$.
 For a horizontal family $\nu$ of classes in $H_3(M;\QQ)$,
 \[
 \int_{\nu(b)}\Omega^{\mathrm{loc}}_b\;=\;c(\nu)\cdot\chi(b),
@@ -655,16 +685,22 @@ $\CC^*$-action is a group action on the total space with parameter
 weight one, so transport once around the base circle is the identity;
 and $c(\cdot)$ is linear.  Writing
 $\Omega=g\cdot\Omega^{\mathrm{loc}}$ near $p$ with $g$ a unit as in
-Section~\ref{sec:relform}, and using that all cone coordinates have
-positive weights, so that on the rescaled vanishing cycles the
-coordinates are $O(|s|^{\theta})$ for some $\theta>0$, the global
-period along the arc is
-$\int_{\nu(s)}\Omega_s=\chi(s)\bigl(c(\nu)\,g(p,0)+o(1)\bigr)$.
+Section~\ref{sec:relform}, let $b=b(s)$ be the actual parameter of the
+component.  The cycle obtained from the fixed compact cycle of
+Lemma~\ref{lem:D1} by the $\CC^*$-action lies in the local Milnor
+piece and converges uniformly to $p$, because all cone coordinates
+have positive weights.  Hence $g|_{\nu(s)}=g(p,0)+o(1)$ uniformly,
+while homogeneity factors the same monomial $\chi(b(s))$ from the main
+term and the error.  The global period is therefore
+\[
+\int_{\nu(s)}\Omega_s
+=\chi(b(s))\bigl(c(\nu)\,g(p,0)+o(1)\bigr).
+\]
 
 If $\nu\neq0$ in $H_3(M;\QQ)$ had $\nu_*=0$ in $H_3(X_s;\QQ)$ for
 arbitrarily small $s\neq0$, then a rational multiple of $\nu(s)$
 would bound and the closed form $\Omega_s$ would have zero period,
-while $\chi(s)\neq0$ off the discriminant; letting $s\to0$ along such
+while $\chi(b(s))\neq0$ off the discriminant; letting $s\to0$ along such
 values gives $c(\nu)\,g(p,0)=0$ and, since $g(p,0)\neq0$,
 $c(\nu)=0$, contradicting the injectivity of the period pairing in
 Lemma~\ref{lem:D1}.  (That $H_3(M;\QQ)$ has rank one is what converts
@@ -732,9 +768,9 @@ $\Sb\subset V$), while the map to $H_2(\Xh)$ and all coordinates in
 Section~\ref{sec:example} use the \emph{resolution-side} description
 (the Seifert projection $L_p\to E_p$ of the cone link).  These are a
 priori different identifications of $H_2(L_p;\QQ)$ with
-$K^{\perp}$, and since every automorphism of $H_2$ of these links is
-realized by a diffeomorphism, their compatibility is a statement,
-not a formality.  It appears not to be available in the literature:
+$K^{\perp}$, and an arbitrary boundary diffeomorphism need not preserve
+either marking.  Their compatibility is therefore a statement, not a
+formality.  It appears not to be available in the literature:
 the identification of the germ Milnor fiber with the sweep complement
 is standard as \emph{open} manifolds
 (\cite[Proposition~4.2]{PP15}), but the manifold-with-boundary form,
@@ -756,39 +792,88 @@ Proposition~\ref{prop:kernels}.
 \end{lemma}
 
 \begin{proof}
-Realize the induced local family inside the $\CC^*$-equivariant
-miniversal family of the germ restricted to $c$, with an
-$S^1$-invariant Milnor ball for the weighted metric.  The sphere
-boundaries $\mathcal Y_b\cap S_\varepsilon$ form a $C^\infty$-trivial
-family over the \emph{full} contractible parameter germ, discriminant
-included, since the boundary family is smooth there; at $b=0$ the
-boundary is $L_p$ with the Seifert fibration equal to the
-$\CC^*$-orbit fibration of the punctured cone.  On the sweep side,
-negative weight leaves the top graded piece of the homogeneous
-coordinate ring untouched, so every fiber of the projective sweep
-family compactifies by the same $\Sb\cong S$, and Ehresmann for the pair,
-with the trivializing vector fields chosen through a $C^{\infty}$
-family of tubular neighborhoods of the $\Sb$-fibers so that the
-trivialization respects the normal disk bundles, identifies the tube
-boundaries $\partial\,\mathrm{Tube}(\Sb\subset V_b)$ with
-$\partial\,\mathrm{Tube}(S_\infty\subset\text{projective cone})$
-preserving the normal circle fibrations.  Both identifications of $\partial M_b$ with
-$L_p$ are thus given by transport to $b=0$, where the two circle
-fibrations in question are the two ends of the punctured cone,
-carrying the \emph{same} $\CC^*$-orbit fibration over $S$.  On that
-central fiber, the only $\CC^*$-invariant one, the radial rescaling
-flow is tame for the quasi-homogeneous cone: the weighted radius
-scales monotonically along orbits, both boundary hypersurfaces are
-transverse to them, and the $S^1$-action commutes with the flow, so
-the flow-out identifies the radius-$\varepsilon$ boundary with the
-large-radius tube boundary fibration-compatibly.  Assembling, the two projections
-agree through a diffeomorphism covering an isomorphism
-$(E_p,-K)\cong(\Sb,-K)$.  The subspaces $A_1$, $A_2$ and the
-$(-2)$-line are intrinsic to the polarized lattice (the orthogonal
-root decomposition is unique), so they correspond.  Finally, the
-kernel $R_p$ is defined by the actual inclusion $L_p\subset M_p$
-arising from the family, so any model compatible with that inclusion
-computes it.
+Let $\mathcal Y_c\to B_c$ be the $\CC^*$-equivariant
+Altmann--Pinkham family on the reduced component $c$, and let
+$\overline{\mathcal Y}_c\to B_c$ be its projective sweep
+compactification.  All component parameters have weight one, all
+affine cone coordinates have positive weights, and the divisor at
+infinity is the fixed family $S\times B_c$: negative weight does not
+change the top graded piece.  Choose an equivariant affine embedding,
+write $w_1,\dots,w_N>0$ for the coordinate weights and, for a common
+multiple $d$ of them, use the weighted radius
+\[
+ \rho(z)=\left(\sum_{i=1}^N|z_i|^{2d/w_i}\right)^{1/(2d)},
+ \qquad \rho(r\cdot z)=r\rho(z)\quad(r>0).
+\]
+Fix a sufficiently small weighted Milnor radius $\varepsilon$ and a
+small sphere of radius $\eta$ in $B_c$.  Every sufficiently small
+parameter $\beta\in c$ off the discriminant is uniquely
+$\beta=t b$ with $t>0$ and $\lVert b\rVert=\eta$.  The discriminant is
+homogeneous, so $b$ is also off it.  The action by $t^{-1}$ gives a
+diffeomorphism of pairs
+\begin{equation}\label{eq:compactcore}
+ \left(\mathcal Y_\beta\cap\{\rho\leq\varepsilon\},
+       \mathcal Y_\beta\cap\{\rho=\varepsilon\}\right)
+ \ \cong\
+ \left(K_{t,b},\Sigma_{t,b}\right),
+ \quad
+ K_{t,b}:=\mathcal Y_b\cap\{\rho\leq\varepsilon/t\}.
+\end{equation}
+The pair on the left is the actual compact Milnor fiber and its
+boundary, not merely its interior.
+
+We next identify the pair on the right with the sweep compact core.
+Near the fixed divisor $S\subset\overline{\mathcal Y}_b$, choose a
+normal coordinate $q$, and pass to the real oriented blowup along
+$S$.  An affine coordinate of weight $w_i$ has the form
+\[
+ z_i=q^{-w_i}\bigl(a_i(y,b)+O(q)\bigr),
+\]
+where $y\in S$ and the leading coefficients do not vanish
+simultaneously.  Consequently
+\begin{equation}\label{eq:radiusatinfinity}
+ \rho=|q|^{-1}A(y,\arg q,|q|,b)
+\end{equation}
+with $A$ smooth and strictly positive on the oriented boundary.  For
+$t$ small, the equation $\rho=\varepsilon/t$ therefore has a unique
+solution for $|q|$ and is a smooth radial graph over the unit normal
+circle bundle of $S$.  Normal radial flow identifies this graph with
+the boundary of a fixed tube of $S$, preserving the projection to
+$S$, and extends across the intervening collar.  Thus
+\eqref{eq:compactcore} continues to a diffeomorphism of pairs
+\[
+ (M_p,\partial M_p)\ \cong\
+ \bigl(\overline{\mathcal Y}_b\smallsetminus
+       \operatorname{int}\mathrm{Tube}(S),
+       \partial\mathrm{Tube}(S)\bigr)
+\]
+that carries the actual boundary inclusion to the tube-boundary
+inclusion.
+
+By the sweep description of Section~\ref{sec:sweeps}, the compactified
+smooth pair $(\overline{\mathcal Y}_b,S)$ is the corresponding
+polarized sweep pair $(V,\Sb)$; along a connected smooth channel the
+pair identifications may be transported by Ehresmann with the
+trivializing vector field chosen to vanish on the fixed divisor $S$.
+
+It remains to identify the marking of that boundary.  Apply the same
+construction to the radial family $\mathcal Y_{\tau b}$ for
+$0<\tau\leq t$.  Formula~\eqref{eq:radiusatinfinity} shows, on the
+real oriented blowup, that the rescaled boundary graphs extend
+smoothly to $\tau=0$.  Their limiting projection sends a nonzero point
+of the central cone to its projective class in $S$, while the normal
+circle is its $S^1$-orbit.  It is therefore exactly the Seifert
+projection $L_p\to S$ of the cone link.  We choose the boundary
+trivialization in the surgery decomposition to be this radial
+transport.  The sweep-side tube projection and the resolution-side
+Seifert projection then induce the same map on $H_2$, after the
+polarized identification $(E_p,-K)\cong(S,-K)\cong(\Sb,-K)$.
+
+Finally the $A_1$ and $A_2$ summands for $\dP_6$ and the unique
+$(-2)$-line for $\dP_7$ are intrinsic to the polarized lattice, so
+they correspond.  Since the displayed diffeomorphism is one of pairs,
+it computes the kernel of the actual inclusion
+$H_2(\partial M_p)\to H_2(M_p)$, as required.
 \end{proof}
 
 \section{The distinguished hypersurface and its finite data}
@@ -943,7 +1028,8 @@ s_{1},s_{2},s_{3}\text{ at }E_{6,2};\ \alpha_1,\beta_1;\
 \]
 The following statements are exact integral
 computations, reproduced independently by the ancillary programs from
-the printed data of Tables~\ref{tab:rays} and~\ref{tab:kperp} (see
+the printed data of Tables~\ref{tab:rays} and~\ref{tab:kperp} together
+with the subdivision data document (see
 Appendix~\ref{app:cert}):
 \begin{enumerate}
 \item $\rk B=21$ and $\dim\ker(B^{\mathsf T})=15$; the node
@@ -1217,11 +1303,16 @@ parameter.  This will be taken up elsewhere.
 
 \section{Computational certificates}\label{app:cert}
 
-Every finite claim in this paper is reproduced by four short,
-self-contained computer programs that recompute all data from
-the printed inputs (Tables~\ref{tab:rays} and~\ref{tab:kperp}, the
-diagonal list, the polytope of \cite[Section~5.3]{PaperIII}) in exact
-rational arithmetic, independently of any computer-algebra system:
+The exact lattice and matrix claims used in the proofs are reproduced by
+two short, self-contained Python programs in exact rational arithmetic,
+independently of any computer-algebra system.  A third self-contained
+program combines exact integral checks with a floating-point diagnostic
+of the period parametrization, whose underlying identity is proved
+exactly in Lemma~\ref{lem:D1}.  The general test program reuses the
+companion repository's exact toric source modules.  The inputs are
+Tables~\ref{tab:rays} and~\ref{tab:kperp}, the ancillary subdivision
+and restriction data documents, and the polytope of
+\cite[Section~5.3]{PaperIII}:
 \begin{itemize}
 \item the lattice package (\texttt{milnor\_kernels.py}): the boundary structure of the exceptional
 surfaces, the norms and pairings of the $K^{\perp}$ rows, the root
@@ -1231,12 +1322,12 @@ and the isometries to the standard del Pezzo markings;
 the printed data, the ranks, coloops, kernels, the four profiles and
 the enlarged profile with their forced-zero lists, and the
 criticality statement of Section~\ref{sec:kernelcomp}(3);
-\item the period package (\texttt{dp\_periods.py}): the fan combinatorics behind
+\item the period package (\texttt{dp\_periods.py}): the exact fan combinatorics behind
 \eqref{eq:omegaM} (the $\pm1$ pairings on all rays, the divisor
 computation, the slice self-intersection patterns), the corner-chart
 transitions, and the constancy of the pullback in
 Lemma~\ref{lem:D1}, verified to machine precision at random points;
-\item the test package (\texttt{examples.py}): the general implementation of
+\item the repository-integrated test package (\texttt{examples.py}): the general implementation of
 Section~\ref{sec:test}, validated end-to-end by reproducing every
 number of Section~\ref{sec:kernelcomp} for $X^{\circ}$ from scratch,
 and the $\Delta_{19}$ computation.
@@ -1249,9 +1340,10 @@ certified at an integral witness (\texttt{resolution\_fan.sage} and
 \texttt{global\_section.sage}, with five further Sage certificates
 and the face-data module \texttt{fixed\_example.py}).
 
-All programs are included as ancillary files with the arXiv
-submission and are public, together with the programs and data of the
-companion papers, at
+The arXiv ancillary bundle includes this directory together with the
+shared exact toric modules imported by the repository-integrated
+programs.  The same files are public, together with the programs and
+data of the companion papers, at
 \begin{center}
 \url{https://github.com/bwuebben/calabi-yau-smoothability}\,.
 \end{center}
