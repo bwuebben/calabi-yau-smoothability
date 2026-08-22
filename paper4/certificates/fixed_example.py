@@ -6,10 +6,7 @@ then re-derives reflexivity, polarity, face inventories, Hodge numbers, all
 30 singular faces, the 26 nodal diagonal relations, and the two coloop rows.
 Every calculation is integral or rational; there is no floating-point path.
 
-Run from cy_smoothing or from paper4:
-
-    python3 paper4/fixed_example.py
-    python3 fixed_example.py
+Run:  python3 fixed_example.py
 """
 
 from __future__ import annotations
@@ -21,7 +18,7 @@ from pathlib import Path
 import sys
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 from batyrev_global import (  # noqa: E402

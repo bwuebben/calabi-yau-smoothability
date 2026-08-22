@@ -8,10 +8,7 @@ each of the 26 exceptional node curves.  The final rank calculation is a
 numerical input for a possible mixed Friedman--Gross comparison; it is not
 itself such a comparison theorem.
 
-Run from cy_smoothing or paper4:
-
-    sage paper4/restriction_data.sage
-    sage restriction_data.sage
+Run:  sage restriction_data.sage
 """
 
 from pathlib import Path
@@ -20,7 +17,7 @@ import sys
 
 
 PAPER4_ROOT = Path(__file__).resolve().parent
-PROJECT_ROOT = PAPER4_ROOT.parent
+PROJECT_ROOT = PAPER4_ROOT.parent.parent
 sys.path.insert(0, str(PAPER4_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 

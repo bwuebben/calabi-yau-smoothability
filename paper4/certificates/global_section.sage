@@ -9,11 +9,10 @@ exact facewise specializations to prove that every one of the 189 face
 nondegeneracy opens is nonempty.  Hence their finite intersection contains
 the generic point of the irreducible coefficient chart.
 
-Run from cy_smoothing or paper4:
+Run:
 
-    sage paper4/global_section.sage
-    sage paper4/global_section.sage --verify-common-witness
     sage global_section.sage
+    sage global_section.sage --verify-common-witness
 
 The optional common-witness gate is substantially more expensive than the
 standard facewise proof: it checks that the distinct-prime coefficient
@@ -27,7 +26,7 @@ import sys
 
 
 PAPER4_ROOT = Path(__file__).resolve().parent
-PROJECT_ROOT = PAPER4_ROOT.parent
+PROJECT_ROOT = PAPER4_ROOT.parent.parent
 GLOBAL_SECTION_QUIET = globals().get("GLOBAL_SECTION_QUIET", False)
 GLOBAL_SECTION_VERIFY_FACES = globals().get(
     "GLOBAL_SECTION_VERIFY_FACES", True

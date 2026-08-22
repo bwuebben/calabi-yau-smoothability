@@ -1,11 +1,33 @@
-# Smoothability of Batyrev Calabi–Yau threefolds
+# Smoothability of Calabi–Yau threefolds
 
-Code, data, and paper sources for a series of four papers on the
-smoothability of Calabi–Yau threefolds arising as anticanonical
-hypersurfaces in Gorenstein toric Fano fourfolds, and on what
-smoothability means for their Batyrev mirrors.
+Code, data, and paper sources for a series of four papers on when a
+singular Calabi–Yau threefold admits a smoothing. The setting is
+Batyrev's: anticanonical hypersurfaces in Gorenstein toric Fano
+fourfolds, whose singular points are cones over the two-dimensional
+faces of a reflexive 4-polytope. Paper 1 classifies the local germs and
+exhibits non-smoothable threefolds; paper 2 constructs smoothings;
+paper 3 takes the census of mirror pairs in which both members have
+isolated singularities; paper 4 proves a global obstruction, a
+vanishing-cycle necessity criterion valid for any projective Calabi–Yau
+threefold with nodes and del Pezzo cone points, and uses it to settle
+the distinguished example the census singles out.
 
 **Author:** Bernd Johannes Wuebben (wuebben@gmail.com)
+
+| paper | directory | compiled PDF |
+|---|---|---|
+| 1. Non-smoothable Calabi–Yau threefolds from reflexive polytopes | `paper1/` | `cy-non-smoothable.pdf` |
+| 2. Smoothing Calabi–Yau threefolds in Gorenstein toric Fano fourfolds | `paper2/` | `cy-smoothing.pdf` |
+| 3. Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau threefolds | `paper3/` | `cy-mirror-pairs.pdf` |
+| 4. A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds | `paper4/` | `cy-vanishing-cycle.pdf` |
+
+Each `paperN/` directory holds the LaTeX source (`main.tex`) and the
+compiled PDF under the name above. The supporting code lives in `src/`
+(papers 1–3) and `paper4/certificates/` (paper 4, self-contained);
+scan results in `output/`; the pinned Kreuzer–Skarke input manifest in
+`manifests/`. Every paper builds from its directory with
+`latexmk -pdf main.tex`, and every quantitative claim is recomputed by
+a script listed below.
 
 ## The papers
 
@@ -60,16 +82,6 @@ smoothability means for their Batyrev mirrors.
    relation with every coefficient non-zero: any smoothing of X° would have
    to couple them to its four del Pezzo-cone directions.
 
-The counts taken over the whole Kreuzer–Skarke classification — the 8.27%,
-the 3,774 / 26,467 split, the 590 both-sides unit polytopes and the
-uniqueness of the mirror pair — are stated in the papers under an explicit
-hypothesis on the database copy scanned: that the per-vertex-count files
-contain, without repetition, exactly the classification members in their
-stated vertex range, the one 36-vertex member being supplied separately
-(`missing_polytope.py`). The transverse identity, the local trichotomy and
-census, and every assertion about an explicitly displayed polytope are
-unconditional.
-
 4. **A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds**
    (`paper4/`) — the necessity theory for the mixed case: any one-parameter
    smoothing of a Calabi–Yau threefold whose singular points are nodes and
@@ -88,6 +100,16 @@ unconditional.
    local and one for global reasons. On a second, 19-vertex example (14
    nodes and one dP₇ point) the test is silent, and its smoothability is
    posed as an open problem.
+
+The classification-wide counts of papers 1–3 (the 8.27%, the
+3,774 / 26,467 split, the 590 both-sides unit polytopes and the
+uniqueness of the mirror pair) are stated in the papers under an explicit
+hypothesis on the database copy scanned: that the per-vertex-count files
+contain, without repetition, exactly the classification members in their
+stated vertex range, the one 36-vertex member being supplied separately
+(`missing_polytope.py`). The transverse identity, the local trichotomy and
+census, and every assertion about an explicitly displayed polytope are
+unconditional.
 
 ## Code (`src/`)
 
@@ -129,18 +151,31 @@ vertices of a planar face, which uses an exact half-plane and
 cross-product comparator — are computed in integer or rational arithmetic;
 no floating-point operation enters any classification.
 
-Paper 4's certificate programs live in `paper4/` (they are also the arXiv
-ancillary files of that paper): the pure-python exact-rational checkers
-`necessity/milnor_kernels.py` (lattice package), `necessity/global_kernel.py`
-(matrix package), `necessity/dp_periods.py` (period package) and
-`necessity/examples.py` (the finite test, including the 19-vertex example),
-which recompute every finite claim of the paper from its printed tables; the
-Sage certifiers `resolution_fan.sage`, `restriction_data.sage`,
-`mixed_candidate.sage`, `global_section.sage`, `local_models.sage` with
-`fixed_example.py`, which certify the fixed crepant subdivision, the
+### Paper 4's certificates (`paper4/certificates/`)
+
+The certificate programs named in paper 4's Appendix A, self-contained
+and runnable in place (they are also the arXiv ancillary files of that
+paper). Pure python over exact rationals, no dependencies:
+
+- `milnor_kernels.py` — the lattice package: the link lattices and root
+  subspaces, the (−2)-enumerations with rigorous bounds, and the
+  isometries to the standard del Pezzo markings (49 assertions).
+- `global_kernel.py` — the matrix package: the 36×26 matrix rebuilt from
+  the paper's printed tables; ranks, coloops, kernels, the four profiles
+  and the forced-zero lists (27 assertions).
+- `dp_periods.py` — the period package: the fan combinatorics and the
+  constancy of the pulled-back holomorphic 3-form behind the 4π² period
+  (37 assertions).
+- `examples.py` — the finite test of the paper's Section 7, run on both
+  the 22-vertex and the 19-vertex examples (8 assertions).
+
+On Sage: `resolution_fan.sage`, `restriction_data.sage`,
+`mixed_candidate.sage`, `global_section.sage` (loads `cox_data.sage`),
+`local_models.sage` and `chart_characters.sage`, with the face-data
+module `fixed_example.py`, certify the fixed crepant subdivision, the
 restriction lattices, the 36×26 matrix, Δ-regularity, and the local
-deformation bases; and the data documents (`paper4/*.md`) they derive and
-check.
+deformation bases. The `*.md` files in the same directory are the data
+documents these programs derive and check.
 
 ## Data (`output/`)
 
@@ -169,10 +204,10 @@ python3 src/hodge_numbers.py       # Hodge numbers, asserted      (~1 s)
 python3 src/missing_polytope.py    # the 36-vertex polytope       (~2 s)
 python3 src/paper2_check.py        # paper-2 machine checks       (~2 s)
 python3 src/cascade_check.py       # cascade bookkeeping          (~1 s)
-python3 paper4/necessity/milnor_kernels.py   # paper 4: lattice package (~1 s)
-python3 paper4/necessity/global_kernel.py    # paper 4: matrix package  (~1 s)
-python3 paper4/necessity/dp_periods.py       # paper 4: period package  (~1 s)
-python3 paper4/necessity/examples.py         # paper 4: finite test     (~1 s)
+python3 paper4/certificates/milnor_kernels.py  # paper 4: lattice package (~1 s)
+python3 paper4/certificates/global_kernel.py   # paper 4: matrix package  (~1 s)
+python3 paper4/certificates/dp_periods.py      # paper 4: period package  (~1 s)
+python3 paper4/certificates/examples.py        # paper 4: finite test     (~1 s)
 
 # database scans (need: pip install numpy pyarrow; and the parquet files)
 ./venv/bin/python src/ks_sweep.py data/ks/polytopes-4d-06-vertices.parquet

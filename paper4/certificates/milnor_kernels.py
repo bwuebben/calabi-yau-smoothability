@@ -492,7 +492,7 @@ print()
 print("Union over the component choices at the two dP6 points = the four")
 print("restricted profiles LL, LP, PL, PP of Section 5.3 of the paper.")
 print("Parent-certified forced-zero lists on those restricted kernels")
-print("(checker: sage ../mixed_candidate.sage):")
+print("(checker: sage mixed_candidate.sage):")
 FORCED = {"LL": ["u9", "u11", "beta1", "beta2"],
           "LP": ["u9", "u11", "beta1", "beta2", "s3_1"],
           "PL": ["u9", "u11", "beta1", "beta2", "s3_2"],
@@ -501,7 +501,7 @@ for prof, lst in FORCED.items():
     assert "u9" in lst and "u11" in lst
     print(f"  {prof}: {', '.join(lst)}")
 print("  note: the forced-zero lists above are EXTERNAL INPUT (certified "
-      "by sage ../mixed_candidate.sage,\n        independently "
+      "by sage mixed_candidate.sage,\n        independently "
       "recomputed by global_kernel.py); they are not re-derived here.")
 print()
 print("Hence (paper, Theorem 6.5): any smoothing class kappa would lie in")

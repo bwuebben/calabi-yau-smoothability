@@ -10,10 +10,7 @@ This is the exact numerical matrix in cyclic-difference coordinates.  The
 identification of its branch-avoidance result with the intrinsic statement
 on the singularity links is Section 2.4 and Lemma 4.2 of the paper.
 
-Run from cy_smoothing or paper4:
-
-    sage paper4/mixed_candidate.sage
-    sage mixed_candidate.sage
+Run:  sage mixed_candidate.sage
 """
 
 from itertools import product

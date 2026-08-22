@@ -7,10 +7,7 @@ identify all three reduced smoothing-component families with Cayley-cone
 toric varieties, and check representative smooth and discriminant fibres by
 the Jacobian criterion through Singular.
 
-Run from cy_smoothing or paper4:
-
-    sage paper4/local_models.sage
-    sage local_models.sage
+Run:  sage local_models.sage
 """
 
 from sage.interfaces.singular import singular

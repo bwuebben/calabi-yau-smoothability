@@ -6,11 +6,10 @@ points.  The four two-face interior points are lowered enough to induce the
 full star subdivision on every dP6 and dP7 face.  An explicit strictly
 convex integral support function certifies projectivity.
 
-Run from cy_smoothing or paper4:
+Run:
 
-    sage paper4/resolution_fan.sage
-    sage paper4/resolution_fan.sage --verbose-cones
     sage resolution_fan.sage
+    sage resolution_fan.sage --verbose-cones
 """
 
 from collections import Counter
@@ -21,7 +20,7 @@ import sys
 
 
 PAPER4_ROOT = Path(__file__).resolve().parent
-PROJECT_ROOT = PAPER4_ROOT.parent
+PROJECT_ROOT = PAPER4_ROOT.parent.parent
 sys.path.insert(0, str(PAPER4_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
