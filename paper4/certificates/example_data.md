@@ -6,7 +6,7 @@ This file fixes the notation and finite geometric input for Paper 4. Every
 enumerative statement below is asserted by
 [`fixed_example.py`](fixed_example.py), which uses exact integer or rational
 arithmetic. The source theorem is [Paper 3, Section
-6](../paper3/main.tex).
+6](../../paper3/main.tex).
 
 ## 1. Lattice and polarity conventions
 
@@ -143,7 +143,7 @@ standard $dP_6$ and $dP_7$ polygons by explicit unimodular matrices in
 assertions in `fixed_example.py`. Their ambient Hilbert-character pullbacks
 are checked by [`chart_characters.sage`](chart_characters.sage), while the
 global Cox grading and all pairwise singular-chart intersections are recorded
-in [`cox_data.md`](cox_data.md).
+in [`cox_data.md`](../attic/cox_data.md).
 
 ## 5. The 26 nodal faces
 

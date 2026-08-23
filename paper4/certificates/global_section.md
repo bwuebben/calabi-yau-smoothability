@@ -198,7 +198,7 @@ later local expansions.
 The 30 dual edges are distinct.  Each root is nonzero over \(K\), and the
 edge direction is primitive.  This both locates every marked germ in the
 generic fibre and supplies the invertible orbit derivative used in the graph
-argument of [`global_map.md`](global_map.md), Lemma 2.1.
+argument of [`global_map.md`](../attic/global_map.md), Lemma 2.1.
 
 ## 5. What this settles and what it does not
 
@@ -211,7 +211,7 @@ The computation now fixes, without an unnamed genericity assumption:
    torus orbits.
 
 It therefore removes the defining equation as an ambiguity in Route A of
-[`global_map.md`](global_map.md).  The next missing object is an affine-cover
+[`global_map.md`](../attic/global_map.md).  The next missing object is an affine-cover
 model of the coarse toric ambient space and of this Cartier equation, with
 enough syzygies and overlap maps to compute
 \(\operatorname{Ext}^1(L_{X^\circ},\mathcal O_{X^\circ})\), its localization,

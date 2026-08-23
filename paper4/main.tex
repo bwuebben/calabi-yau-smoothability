@@ -26,17 +26,27 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
+\theoremstyle{plain}
+\newtheorem{thmletter}{Theorem}
+\renewcommand{\thethmletter}{\Alph{thmletter}}
+\newtheorem{corletter}[thmletter]{Corollary}
+
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\PP}{\mathbb{P}}
 \newcommand{\cO}{\mathcal{O}}
+\newcommand{\Rsm}{\mathcal{R}}   % smoothing subspace of the link homology
+\newcommand{\Mil}{\mathcal{M}}  % Milnor fibre
 \newcommand{\cX}{\mathcal{X}}
 \newcommand{\conv}{\operatorname{conv}}
 \newcommand{\Cone}{\operatorname{Cone}}
 \newcommand{\Sing}{\operatorname{Sing}}
 \newcommand{\Pic}{\operatorname{Pic}}
+\newcommand{\Proj}{\operatorname{Proj}}
+\newcommand{\AAf}{\mathbb{A}}
+\newcommand{\TV}{\operatorname{TV}}
 \newcommand{\Cl}{\operatorname{Cl}}
 \newcommand{\Def}{\operatorname{Def}}
 \newcommand{\rk}{\operatorname{rank}}
@@ -50,6 +60,8 @@
 \title[A vanishing-cycle smoothing obstruction]{A vanishing-cycle
 obstruction to smoothing\\ Calabi--Yau threefolds}
 \author{Bernd Johannes Wuebben}
+
+\date{23 August 2026}
 \subjclass[2020]{14J32 (primary); 14B07, 14M25, 32S30, 32S55 (secondary)}
 \keywords{Calabi--Yau threefolds, smoothing of singularities, vanishing
 cycles, del Pezzo cones, ordinary double points, Milnor fibers,
@@ -58,35 +70,38 @@ reflexive polytopes}
 \begin{document}
 
 \begin{abstract}
-A projective Calabi--Yau threefold whose singular points all admit
-local smoothings need not admit a global one.  For threefolds whose
-singularities are ordinary double points and anticanonical cones over
-del Pezzo surfaces of degrees~$6$ and~$7$, we prove a necessity
-criterion: any one-parameter smoothing produces a rational homology
-class on the disjoint union of the singularity links that vanishes on
-a crepant resolution, lies in a canonical root subspace of
-$K^{\perp}$ at each del Pezzo cone point, and is nonzero at every
-node, at every degree-$7$ point, and at every degree-$6$ point
-smoothed through its one-parameter component.  The engine is a period
-computation: the integral of the holomorphic $3$-form over a
-vanishing cycle equals the local smoothing parameter times a unit, so
-a smoothed germ cannot have rationally trivial vanishing homology.
-In the purely nodal case the criterion recovers the necessity half of
-Friedman's relation for arbitrary one-parameter smoothings, without
-appeal to unobstructedness.  The criterion is a finite linear-algebra
-test, and it obstructs: the $\Delta$-regular anticanonical
-hypersurface of the unique doubly isolated Batyrev mirror pair, with
-$26$ nodes, two degree-$7$ and two degree-$6$ cone points, and every
-germ locally smoothable, admits no smoothing.  The same argument
-applies to deformations that leave a germ with no smoothing in place,
-and shows that the mirror partner of that hypersurface, already
-non-smoothable because one of its germs admits no smoothing, carries
-the global obstruction as well.  It also obstructs a
-hypersurface with $17$ nodes and one degree-$7$ point whose nodal
-configuration satisfies the classical relation condition, so that the
-nodal theory alone finds nothing wrong.  On a further hypersurface, with $14$ nodes and one
-degree-$7$ point, the test is silent; we pose its smoothability, a
-genuinely mixed nodal and divisorial smoothing if it exists, as an
+A projective Calabi--Yau threefold whose singular points all admit local
+smoothings need not admit a global one, and when the singularities are not all
+nodes no known criterion decides the question.  For threefolds whose
+singularities are ordinary double points and anticanonical cones over del Pezzo
+surfaces of degrees~$6$ and~$7$ we prove a necessity criterion.  A one-parameter
+smoothing produces a rational homology class on the disjoint union of the
+singularity links which vanishes on a crepant resolution, lies at each cone
+point in the part of $K^{\perp}\subset H_2$ of the exceptional del Pezzo that
+dies in the Milnor fibre, and is nonzero at every node, at every degree-$7$
+point, and at a degree-$6$ point smoothed through the one-parameter component of
+its miniversal base.  The two-parameter component is not reached, and we say
+what is missing.  The engine is a period computation: the integral of the
+holomorphic $3$-form over a vanishing cycle is the local smoothing parameter
+times a unit.  In the nodal case this recovers the necessity half of Friedman's
+relation; what is new is that the argument needs neither unobstructedness nor a
+smooth total space, and so reaches germs that are not local complete
+intersections.
+
+The criterion is a finite linear-algebra test, finite because the degree-$6$
+points contribute finitely many choices of component.  It obstructs the
+anticanonical hypersurface of the Batyrev mirror pair both of whose members have
+only isolated singularities, unique as such in the class swept here, with $26$
+nodes and four cone points, every germ locally smoothable; it obstructs the
+mirror partner too, whose own locally obstructed germ turns out not to be the
+reason; and of the $77$ polytopes of that class with at most nine vertices and a
+pentagonal $2$-face it obstructs $76$, of which $67$ have a single singular
+point.  These subspaces are canonical rather than auxiliary: $K^{\perp}$ is the
+$T^1$ of the germ and they are its smoothing directions, and a germ at which the
+associated functionals do not all vanish certifies that $X$ is not
+$\QQ$-factorial, reconciling the criterion with Gross's smoothing theorem for
+primitive contractions.  On one hypersurface, with $14$ nodes and a degree-$7$
+point, the test gives no obstruction; whether it is smoothable we pose as an
 open problem.
 \end{abstract}
 
@@ -120,14 +135,19 @@ dual-edge-length invariant is at least two, and isolated a unique
 Batyrev mirror pair, associated with a $22$-vertex reflexive
 $4$-polytope $\Delta_{\mathbb F_1}$ and its polar, for which both
 members have only isolated singularities and the remaining smoothing
-question is genuinely mixed: one member carries a cone singularity
+question is genuinely \emph{mixed}, meaning that nodes and del Pezzo cone
+points occur together on one threefold so that any smoothing must move both
+kinds at once: one member carries a cone singularity
 with no smoothing and is locally obstructed, while the other, denoted
 $X^{\circ}$ throughout, has $26$ ordinary double points, two
 anticanonical cones over the del Pezzo surface of degree~$7$, and two
 over the del Pezzo surface of degree~$6$: thirty germs, every one of
 them locally smoothable.  A purely nodal analysis cannot decide
-$X^{\circ}$: the node relation matrix has two coloops, so any smoothing
-would have to recruit the divisorial deformation directions.
+$X^{\circ}$: two of its twenty-six nodes are \emph{coloops} of the relation
+matrix, meaning that their coordinate vanishes on every relation among the
+classes of the exceptional curves of a small resolution, so no nodal relation is
+nonzero there and any smoothing would have to recruit the divisorial
+deformation directions.
 
 \subsection{Results}
 Fix the following setting.  $X$ is a compact complex threefold with
@@ -140,19 +160,22 @@ its link.  A \emph{one-parameter deformation} of $X$ is a flat proper
 analytic family $\cX\to\Disk$ over a disk $\Disk$ with
 $\cX_0\cong X$, and it is a \emph{one-parameter smoothing} if $X_s$ is
 smooth for all $s\neq0$.  Such a smoothing induces at each singular
-point a smoothing of the local germ, with Milnor fiber $M_p$, and we
+point a smoothing of the local germ, with Milnor fiber $\Mil_p$, and we
 set
 \[
-R_p\ :=\ \ker\bigl(H_2(L_p;\QQ)\longrightarrow H_2(M_p;\QQ)\bigr),
+\Rsm_p\ :=\ \ker\bigl(H_2(L_p;\QQ)\longrightarrow H_2(\Mil_p;\QQ)\bigr),
 \]
-the part of the link homology that bounds in the local Milnor fiber.
+the part of the link homology that bounds in the local Milnor fiber.  By
+Altmann's computation, recalled in Section~\ref{sec:miniversal}, the miniversal
+base of a node or of a degree-$7$ cone germ has one reduced component, and that
+of a degree-$6$ cone germ has two, of dimensions $1$ and $2$; a smoothing sends
+the germ into one of them, and $\Rsm_p$ depends on which.
 
-\begin{theorem}[mixed necessity; Theorem~\ref{thm:necessity}]
-\label{thm:B-intro}
+\begin{thmletter}[mixed necessity; $=$ Theorem~\ref{thm:necessity}]\label{thm:necessity-intro}
 Suppose $X$ as above admits a one-parameter smoothing.  Then the space
 \[
 K(X)\ :=\ \Bigl\{\kappa\in\ker\Bigl(\bigoplus_pH_2(L_p;\QQ)
-\to H_2(\Xh;\QQ)\Bigr)\ :\ \kappa_p\in R_p
+\to H_2(\Xh;\QQ)\Bigr)\ :\ \kappa_p\in \Rsm_p
 \text{ at every cone point }p\Bigr\}
 \]
 contains, for every node $q$, for every degree-$7$ cone point $q$, and
@@ -160,10 +183,10 @@ for every degree-$6$ cone point $q$ whose induced local smoothing lies
 in the one-parameter component of its miniversal base, a class
 $\kappa$ with $\kappa_q\neq0$.  Here the maps are induced by the
 inclusions $L_p\subset X\smallsetminus\Sing X\subset\Xh$.
-\end{theorem}
+\end{thmletter}
 
-The subspaces $R_p$ are computed in closed form
-(Proposition~\ref{prop:kernels}): at a degree-$7$ point $R_p$ is the
+The subspaces $\Rsm_p$ are computed in closed form
+(Proposition~\ref{prop:kernels}): at a degree-$7$ point $\Rsm_p$ is the
 unique line spanned by a $(-2)$-class of
 $K^{\perp}\subset H_2(E_p;\QQ)$, and at a degree-$6$ point it is the
 $A_1$ or the $A_2$ summand of the root lattice
@@ -173,21 +196,29 @@ subspaces coincide with the lattices $\Xi(V)$ attached by
 Kuznetsov--Prokhorov~\cite[Theorem~1.9]{KP23} to the del Pezzo
 threefolds $V$ that sweep out the local smoothings.
 
-Theorem~\ref{thm:B-intro} is a finite linear-algebra test on any
-concrete $X$, and on the distinguished hypersurface it obstructs.
+Theorem~\ref{thm:necessity-intro} is a finite linear-algebra test on any
+concrete $X$.  It is finite although $\Rsm_p$ refers to a smoothing whose
+existence is in question, because the degree-$6$ points contribute only finitely
+many choices of component: one runs the test on each, as
+Section~\ref{sec:thetest} does.  On the distinguished hypersurface every choice
+obstructs.
 
-\begin{theorem}[Theorem~\ref{thm:main}]\label{thm:A-intro}
-Let $X^{\circ}$ be a $\Delta$-regular anticanonical hypersurface in
-the Gorenstein Fano toric fourfold associated with the polar of
-$\Delta_{\mathbb F_1}$.  Then $X^{\circ}$ admits no one-parameter
+\begin{thmletter}[$=$ Theorem~\ref{thm:main} and Corollary~\ref{cor:def}]\label{thm:xcirc-intro}
+Let $X^{\circ}$ be an anticanonical hypersurface, regular in Batyrev's sense
+\cite[Def.~3.1.1]{Batyrev94}, in the Gorenstein Fano toric fourfold associated
+with the polar of $\Delta_{\mathbb F_1}$, the $22$-vertex reflexive polytope
+printed in Table~\ref{tab:partnerrays} whose polar is printed in
+Table~\ref{tab:rays}.  Then $X^{\circ}$ admits no one-parameter
 smoothing.  Moreover no fiber of a small representative of the
 miniversal deformation of $X^{\circ}$ is smooth, and no formal
 arc in the miniversal deformation of $X^{\circ}$ meets all thirty
 local smoothing loci.
-\end{theorem}
+\end{thmletter}
 
-The mirror partner $X_{\Delta}$ of $X^{\circ}$ in the doubly isolated
-pair carries an anticanonical cone over $\mathbb F_1$, a germ with no
+Call a Batyrev mirror pair \emph{doubly isolated} when both members have only
+isolated singularities; $X^{\circ}$ and $X_{\Delta}$ form one, and within the
+class swept in \cite{PaperV} it is the only one.  The mirror partner
+$X_{\Delta}$ carries an anticanonical cone over $\mathbb F_1$, a germ with no
 smoothing~\cite{PaperI,PaperIII}, so both members of the pair are
 non-smoothable.  The criterion says more.  Extended to deformations
 that leave such a germ in place (Section~\ref{sec:partner}), it shows
@@ -200,8 +231,8 @@ a purely local reason.  The two members of the pair are therefore not
 an instance of one obstruction seen locally and globally; each fails
 globally, and one of them fails locally in addition.
 
-Two by-products deserve separate statement.  First, the mechanism
-behind Theorem~\ref{thm:B-intro} is elementary and quantitative: the
+Two by-products stand on their own.  First, the mechanism
+behind Theorem~\ref{thm:necessity-intro} is elementary and quantitative: the
 period of the holomorphic $3$-form of the nearby fiber over the
 vanishing cycle of a node equals the local smoothing parameter times a
 unit (Lemma~\ref{lem:P}), and an analogous nonvanishing holds for the
@@ -217,9 +248,13 @@ For a compact complex threefold with $\omega\cong\cO$,
 $h^1(\cO)=0$ and only ordinary double points, any one-parameter
 smoothing forces, for every node $q$, the existence of a relation
 among the exceptional curve classes of a small resolution that is
-nonzero at $q$.  This is the necessity half of Friedman's criterion,
-for arbitrary one-parameter smoothings, obtained without
-unobstructedness of the deformation space.
+nonzero at $q$.  This is the necessity half of Friedman's criterion.  It is not new in the
+nodal case: \cite[Theorem~2.5]{Namikawa02} proves the equivalence for
+threefolds with terminal singularities, and \cite[\S4]{Collins25} gives a
+differential-geometric proof of necessity.  What the method adds is that it
+needs no unobstructedness and no hypothesis of a smooth total space, and
+that it survives at germs which are not local complete intersections, where
+those two literatures stop.
 \end{corollary}
 
 Second, on $X^{\circ}$ the argument localizes the obstruction
@@ -233,10 +268,70 @@ in $H_3(X_s;\QQ)$.
 \end{proposition}
 
 The two statements collide (Lemma~\ref{lem:P} forbids exactly this),
-and that collision is the proof of Theorem~\ref{thm:A-intro}.  A
+and that collision is the proof of Theorem~\ref{thm:xcirc-intro}.  A
 complementary second proof, with a different period input, runs
 through a degree-$7$ point instead of
 the nodes (Section~\ref{sec:proofs}).
+
+The test applies to any $X$ in the class, and its other end is
+instructive for being trivial.  With a single germ the criterion reduces to whether the germ's root
+subspace survives in $H_2(\Xh;\QQ)$, a rank computation that
+Section~\ref{sec:qfact} settles affirmatively across the framework:
+
+\begin{corletter}[$=$ Corollary~\ref{cor:onegerm}]\label{cor:onegerm-intro}
+Let $X$ be as above with exactly one singular point $p$, an
+anticanonical $\dP_7$ cone.  Here $\Rsm_p\subset H_2(L_p;\QQ)$ is a line, the
+one spanned by the unique $(-2)$-class of $K^{\perp}$ up to sign
+(Proposition~\ref{prop:kernels}).  If $\Rsm_p$ maps injectively into
+$H_2(\Xh;\QQ)$, then $X$ admits no one-parameter smoothing.
+\end{corletter}
+
+This may appear to contradict \cite[Thm.~5.8]{Gross97}, which smooths the
+target of a primitive type~II contraction with $\dP_7$ exceptional divisor.  The two
+statements do not conflict, because primitivity supplies $\QQ$-factoriality of the target, and
+Proposition~\ref{prop:qfact} shows that at a divisorial germ of a
+$\QQ$-factorial $X$ the $K^{\perp}$ functionals cut out by the ambient divisor
+classes all vanish, which is exactly the case in which the criterion says
+nothing.  No $X$ in the class treated here is $\QQ$-factorial
+(Section~\ref{sec:qfact}); that class, all of whose $2$-faces are unimodular
+triangles, unit squares, unit-edge pentagons or unit-edge hexagons with dual
+edge of lattice length one, is fixed in Definition~\ref{def:admissible}.
+
+
+The hypothesis is satisfied on the smallest polytope in the class
+carrying a del Pezzo cone point at all: the seven-vertex reflexive
+$\Delta_7$ of Section~\ref{sec:onegerm}, whose hypersurface has one
+singular point, an anticanonical $\dP_7$ cone, and $h^{1,1}=4$,
+$h^{2,1}=214$.  This case uses none of the machinery of
+Theorem~\ref{thm:xcirc-intro}: nothing cancels, there is no choice of
+miniversal component to make, and no two germ types interact, which is why the
+theorem here is stated for $X^{\circ}$.  It is also not isolated: a
+sweep of the Kreuzer--Skarke classification finds exactly $77$
+polytopes of that class with at most nine vertices carrying a pentagonal
+$2$-face, and the criterion obstructs $76$ of them, $67$ with a single
+singular point and $9$ with two (Proposition~\ref{prop:census}).  On the
+remaining one the criterion is silent, and that case is settled in the
+companion paper~\cite{PaperV}.
+
+Section~\ref{sec:measures} makes the criterion computable by pairing the link
+classes against ambient divisor classes.  This produces, at each singular point,
+one linear functional on $K^{\perp}$ for each such divisor; we assemble them
+into an integer matrix and call the functionals contributed by a single germ its
+\emph{rows}.  Three statements about that construction are proved there.  The
+rows at a germ are canonically $T^1$ of that germ, so the lattice $K^{\perp}$,
+which enters as a substitute for the exceptional curve class a cone point does
+not have, is the tangent space to the germ's deformation functor
+(Proposition~\ref{prop:T1channels}).  Batyrev's correction term for $h^{1,1}$
+vanishes on the whole class, so the kernel computed from the ambient Picard
+group is the topological kernel and not merely contained in it
+(Proposition~\ref{prop:kernelequal}).  And $\QQ$-factoriality of $X$ forces the
+rows at a divisorial germ to vanish, so a germ whose rows do not all vanish
+certifies that $X$ is not $\QQ$-factorial
+(Proposition~\ref{prop:qfact}).  The last of these is what reconciles
+the criterion with Gross's theorem that a primitive contraction of a
+$\dP_7$ divisor to a point has smoothable target
+\cite[Theorem~5.8]{Gross97}: primitivity supplies $\QQ$-factoriality,
+which is exactly the case in which the criterion says nothing.
 
 Finally, the criterion is sharp in the sense that it does not obstruct
 indiscriminately.  Applying the same finite test to the anticanonical
@@ -256,13 +351,13 @@ no purely nodal mechanism can produce.
 The proof has three independent inputs.  \emph{Membership}: a surgery
 decomposition of the nearby fiber along the links, together with
 Mayer--Vietoris, places the boundary of every $3$-cycle of $X_s$ into
-the space $K(X)$ of Theorem~\ref{thm:B-intro}; the computation of the
-subspaces $R_p$ rests on the classification of del Pezzo threefolds of
-degrees~$6$ and~$7$ (Fujita~\cite{Fujita80a}) and on an identification,
-apparently not available in the literature in the form needed, of the
-germ Milnor fiber with a del Pezzo threefold complement \emph{as a
+the space $K(X)$ of Theorem~\ref{thm:necessity-intro}; the computation of the
+subspaces $\Rsm_p$ rests on the classification of del Pezzo threefolds of
+degrees~$6$ and~$7$ (Fujita~\cite{Fujita80a}) and on an identification of
+the germ Milnor fiber with a del Pezzo threefold complement \emph{as a
 manifold with boundary}, compatibly with the two natural circle
-fibrations of the link (Lemma~\ref{lem:boundary}).  \emph{Periods}:
+fibrations of the link, which we prove in the form needed
+(Lemma~\ref{lem:boundary}).  \emph{Periods}:
 the vanishing-period computations of Section~\ref{sec:periods} convert
 nonvanishing of local smoothing parameters into nonvanishing of
 homology classes.  \emph{Finite input}: for $X^{\circ}$, an exact
@@ -270,10 +365,9 @@ integral computation on a fixed crepant resolution shows that on the
 relevant restricted kernels the coordinates of the two coloop nodes
 and of the degree-$7$ directions vanish identically
 (Section~\ref{sec:example}); all decisive matrix data are printed, and
-every computation is reproduced by the ancillary programs
-(Appendix~\ref{app:cert}).
+Appendix~\ref{app:cert} lists the programs that recompute them.
 
-We emphasize what the argument does \emph{not} use.  It does not use
+The argument does \emph{not} use
 the first-order deformation theory of $X$ beyond motivation: the
 localization map, its image, and the comparison of coordinate systems
 on local deformation spaces never enter.  It is insensitive to the
@@ -290,10 +384,22 @@ Friedman~\cite{Friedman86} proved the nodal criterion;
 Rollenske--Thomas~\cite{RT09} gave a topological proof and the
 higher-dimensional statement, in both cases for first-order data, with
 the passage to actual smoothings supplied by unobstructedness
-(Kawamata, Tian, Ran) in the nodal case.  Friedman--Laza
+(Kawamata, Tian, Ran) in the nodal case.  Namikawa
+\cite[Theorem~2.5]{Namikawa02} proved the nodal statement as an
+equivalence, for terminal singularities, and Collins
+\cite[\S4]{Collins25} proves necessity there by a differential-geometric
+argument.  In the opposite direction, Aguilar \cite{Aguilar26} shows that
+in the log Fano setting the analogous balancing conditions vanish and
+local smoothings of nodes lift independently, so no relation is forced;
+the contrast marks how much of the present obstruction is Calabi--Yau
+specific.  Ning \cite{Ning26} extends the local-freeness theorem of
+Friedman--Laza beyond the local complete intersection case, which is the
+direction from which the barrier
+recorded in Section~\ref{sec:sufficiency} would be lifted, though that work
+states no smoothing criterion.  Friedman--Laza
 \cite{FL22a,FL22b} identify the first-order localization data of
 threefolds with isolated singularities in terms of link homology; our
-Section~\ref{sec:example} consumes only the resolution-side avatar of
+Section~\ref{sec:example} uses only the resolution-side avatar of
 that picture, in the form of an integral matrix.
 Gross~\cite{Gross97} determined the smoothing components of the del
 Pezzo cone germs; Altmann~\cite{Altmann95,Altmann97} computed their
@@ -302,14 +408,13 @@ Kaloghiros--Petracci~\cite{KP21} give modern treatments, the latter
 computing the Betti numbers of the degree-$6$ Milnor fibers, in
 agreement with Section~\ref{sec:germs}.  The classification of the
 sweeping del Pezzo threefolds is due to Fujita~\cite{Fujita80a}; we
-follow the caution recorded there (Supplementary notes) that the
-degree-$6$ case of Iskovskikh's earlier list omits
-$\PP(T_{\PP^2})$, and cite Fujita, with
+follow Fujita in recording that the degree-$6$ case of Iskovskikh's earlier list
+omits $\PP(T_{\PP^2})$, and cite Fujita, with
 Kuznetsov--Prokhorov~\cite{KP23} as the modern reference.  On the
 constructive side, multi-parameter deformations of toric varieties in
 a single character degree were built by
 Ilten--Vollmert~\cite{IV12}; the sufficiency counterpart of
-Theorem~\ref{thm:B-intro}, in particular Question~\ref{q:X19}, is the
+Theorem~\ref{thm:necessity-intro}, in particular Question~\ref{q:X19}, is the
 subject of work in progress and is not addressed here.
 
 \begin{convention}\label{conv:dp}
@@ -347,14 +452,12 @@ of rank $3$ for $\dP_6$ and $2$ for $\dP_7$.  For a node,
 $L\cong S^2\times S^3$ and $H_2(L;\QQ)=\QQ$.  The lattice
 $K^{\perp}(\dP_6)$ is the root lattice $A_1\oplus A_2$ (discriminant
 $6$); $K^{\perp}(\dP_7)$ has discriminant $7$ and contains exactly one
-pair $\pm$ of primitive classes of square $-2$.  Both facts are
-elementary and are certified by the ancillary programs together with
-everything else in this section that is finite.
+pair $\pm$ of primitive classes of square $-2$.
 
 \subsection{Miniversal deformations}\label{sec:miniversal}
 By Altmann's theorems, the deformation theory of these germs is
 completely explicit.  $T^1$ is concentrated in the Gorenstein
-character degree, of dimension $N-3$ for an $N$-gon
+character degree, of dimension $n-3$ for an $n$-gon
 \cite[(6.5) and the subsequent Remark]{Altmann95}; the versal family
 in that degree, constructed in \cite{Altmann97}, is therefore a versal
 deformation of the affine cone, with base ring computed there:
@@ -374,7 +477,7 @@ one reduced component, the line $\{s_1=0\}$; the hexagon decomposes as
 a sum of two triangles (the line $\{s_1=s_2=0\}$) and as a sum of
 three segments (the plane $\{s_3=0\}$).
 
-Three standard supplements, used later, deserve explicit statement.
+We record three standard supplements used later.
 First, \emph{minimality}: the Kodaira--Spencer map of Altmann's family
 is an isomorphism onto $T^1$ \cite[(6.2),\,(6.3)]{Altmann97}, so the
 versal family is miniversal.  Second, \emph{the germ}: $T^1$ and $T^2$
@@ -406,37 +509,37 @@ degree-$7$ smoothing is $V_7\smallsetminus\Sb$ with
 $V_7=\Bl_{pt}\PP^3$; the general fiber of the hexagon's one-parameter
 (line) component is $(\PP^1)^3\smallsetminus\Sb$; and that of its
 two-parameter (plane) component is
-$W\smallsetminus\Sb$ with $W=\PP(T_{\PP^2})$ the divisor of bidegree
+$W_6\smallsetminus\Sb$ with $W_6=\PP(T_{\PP^2})$ the divisor of bidegree
 $(1,1)$ in $\PP^2\times\PP^2$.  In each case $V$ is a del Pezzo
 threefold of the same degree with $\Sb\in|H|$ a copy of $S$, embedded
 by $-K_S=H|_{\Sb}$; the classification of the possible $V$
 (Fujita~\cite[(5.8),\,(5.16)]{Fujita80a}) shows there are no others.
-For the record, the open Milnor fibers of the three channels have
+For the record, the open Milnor fibers of the three branches have
 $(b_2,b_3)=(1,1)$, $(2,1)$ and $(1,2)$ respectively; the degree-$6$
 values agree with \cite[Proposition~3.5]{KP21}.
 
 \begin{proposition}\label{prop:kernels}
-Let $M=V\smallsetminus\Sb$ be one of the three sweep complements.
+Let $\Mil=V\smallsetminus\Sb$ be one of the three sweep complements.
 Under the identification~\eqref{eq:linkH2} of $H_2$ of the link
 $L=\partial(\text{tube around }\Sb)$ with $K^{\perp}_{S}$,
 \[
-\ker\bigl(H_2(L;\QQ)\to H_2(M;\QQ)\bigr)
+\ker\bigl(H_2(L;\QQ)\to H_2(\Mil;\QQ)\bigr)
 =\ker\bigl(K^{\perp}_S\to H_2(V;\QQ)\bigr)=
 \begin{cases}
 \text{the }(-2)\text{-line} & V=V_7,\\
 A_1 & V=(\PP^1)^3,\\
-A_2 & V=W,
+A_2 & V=W_6,
 \end{cases}
 \]
 where the map is the restriction to $K^\perp$ of the pushforward
 $H_2(S;\QQ)\to H_2(V;\QQ)$.  For a node,
-$\ker(H_2(L;\QQ)\to H_2(M;\QQ))=H_2(L;\QQ)=\QQ$.
+$\ker(H_2(L;\QQ)\to H_2(\Mil;\QQ))=H_2(L;\QQ)=\QQ$.
 \end{proposition}
 
 \begin{proof}
 Since $\Sb$ is an ample divisor with $H_1(\Sb)=0$, the Thom
-isomorphism gives $H_3(V,M)\cong H_1(\Sb)=0$, so
-$H_2(M)\hookrightarrow H_2(V)$, and the inclusion $L\subset M$
+isomorphism gives $H_3(V,\Mil)\cong H_1(\Sb)=0$, so
+$H_2(\Mil)\hookrightarrow H_2(V)$, and the inclusion $L\subset \Mil$
 composed with this injection factors, up to homotopy through the
 tube, as the projection $L\to\Sb$ followed by $\Sb\subset V$; the two
 kernels therefore coincide.  The pushforward is computed in the
@@ -448,10 +551,10 @@ $(2,1),(1,1),(1,1)$ on $(\ell,e_1,e_2)$ and kernel
 $\langle e_1-e_2\rangle$, which is the $(-2)$-line.  For
 $(\PP^1)^3$: the three projections restrict to the conic pencils
 $|\ell-e_i|$, the rows are $(1,1,1)$ and the unit vectors, and the
-kernel is $\langle\ell-e_1-e_2-e_3\rangle=A_1$.  For $W$: the two
+kernel is $\langle\ell-e_1-e_2-e_3\rangle=A_1$.  For $W_6$: the two
 contractions restrict to $\ell$ and $2\ell-e_1-e_2-e_3$, and the
 kernel is $\langle e_1-e_2,\,e_2-e_3\rangle=A_2$.  For the node,
-$M\simeq T^*S^3$ has $H_2=0$.
+$\Mil\simeq T^*S^3$ has $H_2=0$.
 \end{proof}
 
 \begin{remark}\label{rem:xi}
@@ -459,21 +562,21 @@ The three kernels are the lattices $\Xi(V)$ of
 Kuznetsov--Prokhorov: \cite[Theorem~1.9(i)]{KP23} states
 $\Cl(V)\cong\Xi(V)^{\perp}\subset\Cl(\Sb)$ with $\Xi(V)$ negative
 definite of rank $10-d-\rho(V)$, giving $A_1$, $A_1$, $A_2$ for
-$V_7$, $(\PP^1)^3$, $W$, an independent confirmation.
+$V_7$, $(\PP^1)^3$, $W_6$, an independent confirmation.
 \end{remark}
 
 \subsection{Which sweep for which component}\label{sec:match}
 The one-parameter (line) component of the hexagon base sweeps to
-$(\PP^1)^3$ and the two-parameter (plane) component to $W$: this is
+$(\PP^1)^3$ and the two-parameter (plane) component to $W_6$: this is
 stated in \cite[Proposition~2.2]{Petracci20}, follows from
 \cite[(7.1.5)]{Altmann95} (the total spaces over the two components are
 the cones over $(\PP^1)^3$ and over $\PP^2\times\PP^2$, whose
-anticanonical hyperplane slice is $W$), and is confirmed numerically
+anticanonical hyperplane slice is $W_6$), and is confirmed numerically
 by the Betti numbers quoted above against
 \cite[Proposition~3.5]{KP21}.  The results of
 Sections~\ref{sec:periods}--\ref{sec:proofs} are stated so that only
-the degree-$7$ channel and the fact that each degree-$6$ kernel is
-$A_1$ or $A_2$ are consumed by the main theorem; the matching enters
+the degree-$7$ branch and the fact that each degree-$6$ kernel is
+$A_1$ or $A_2$ enter the main theorem; the matching is used
 only in the sharper form of Theorem~\ref{thm:necessity}(3).
 
 \section{Vanishing periods}\label{sec:periods}
@@ -481,7 +584,7 @@ only in the sharper form of Theorem~\ref{thm:necessity}(3).
 This section contains the analytic mechanism.  Throughout,
 $\cX\to\Disk$ is a one-parameter smoothing of a compact complex
 threefold $X$ with $\omega_X\cong\cO_X$, $h^1(\cO_X)=0$ and isolated
-singularities of the types in Theorem~\ref{thm:B-intro}.
+singularities of the types in Theorem~\ref{thm:necessity-intro}.
 
 \subsection{A relative holomorphic \texorpdfstring{$3$}{3}-form}\label{sec:relform}
 Flatness and the Gorenstein property of all fibers make
@@ -510,10 +613,10 @@ $H^1(L_p;\ZZ)=\operatorname{Hom}(\ZZ/d,\ZZ)=0$ for every del Pezzo
 cone point, whether or not $K_S$ is primitive.  (It is primitive for
 $\dP_6$, $\dP_7$ and $\mathbb F_1$, where $L_p$ is simply connected,
 but not for $\PP^1\times\PP^1$.)  The Mayer--Vietoris
-sequence for $X_s=W\cup\bigsqcup_pM_p$ therefore injects
+sequence for $X_s=W\cup\bigsqcup_p\Mil_p$ therefore injects
 \[
  H^2(X_s;\ZZ)\lhook\joinrel\longrightarrow
- H^2(W;\ZZ)\oplus\bigoplus_pH^2(M_p;\ZZ).
+ H^2(W;\ZZ)\oplus\bigoplus_pH^2(\Mil_p;\ZZ).
 \]
 The preceding local vanishings give $c_1(\omega_{X_s})=0$.
 Semicontinuity gives $h^1(\cO_{X_s})=0$; the exponential sequence then
@@ -595,14 +698,14 @@ For the cone germs the same strategy applies, with the local model
 family replaced by the sweep and the explicit period computed on the
 sweep complement.  Both relevant complements admit a uniform toric
 description.  Let $V$ be $(\PP^1)^3$ or $\Bl_{pt}\PP^3$ with its fan
-in $N\cong\ZZ^3$, and let $m\in M$ be the character $(1,1,1)$,
+in $N\cong\ZZ^3$, and let $m\in N^{\vee}$ be the character $(1,1,1)$,
 respectively $(1,1,-1)$ in the basis where the fan of
 $\Bl_{pt}\PP^3$ has rays $e_1,e_2,e_3$, $r=-e_1-e_2-e_3$ and
 $e_1+e_2+e_3$.  In both cases $\langle m,v\rangle=\pm1$ on every ray,
 the closure $\Sb$ of $\{\chi^m=1\}$ is a copy of the appropriate del
 Pezzo surface with $[\Sb]=-\tfrac12K_V$, and
 \begin{equation}\label{eq:omegaM}
-\Omega_M=\frac{w}{(w-1)^2}\,
+\Omega_\Mil=\frac{w}{(w-1)^2}\,
 \frac{dx}{x}\wedge\frac{dy}{y}\wedge\frac{dz}{z},
 \qquad w=\chi^m,
 \end{equation}
@@ -614,64 +717,67 @@ $f\in\cO(V\smallsetminus\Sb)^\times$, then
 $\operatorname{div}_V(f)=n\Sb$ for some $n\in\ZZ$; since
 $\Pic(V)$ is torsion-free and $[\Sb]\neq0$, one has $n=0$, and a
 rational function without zeros or poles on the projective variety
-$V$ is constant.  (These statements, the slice combinatorics below,
-and the constancy claim in the next proof are certified by the
-ancillary programs.)
+$V$ is constant.
 
 \begin{lemma}\label{lem:D1}
-In each of the two complements $M=V\smallsetminus\Sb$ above there is a
-closed $3$-cycle $T\subset M$ with $\int_T\Omega_M=\pm4\pi^2$.
-Consequently $[\Omega_M]\neq0$ in $H^3(M;\CC)$, and since
-$b_3(M)=1$, the period pairing
-$H_3(M;\QQ)\to\CC$, $\nu\mapsto\int_\nu\Omega_M$, is injective.
+In each of the two complements $\Mil=V\smallsetminus\Sb$ above there is a
+closed $3$-cycle $T\subset \Mil$ with $\int_T\Omega_\Mil=\pm4\pi^2$.
+Consequently $[\Omega_\Mil]\neq0$ in $H^3(\Mil;\CC)$, and since
+$b_3(\Mil)=1$, the period pairing
+$H_3(\Mil;\QQ)\to\CC$, $\nu\mapsto\int_\nu\Omega_\Mil$, is injective.
 \end{lemma}
 
 \begin{proof}
 Choose an edge $\langle v_+,v_-\rangle$ of the fan with
 $\langle m,v_\pm\rangle=\pm1$ and an adjacent maximal cone
-$\langle v_+,v_-,n_0\rangle$ with $\gamma:=\langle m,n_0\rangle=+1$;
-such pairs exist in both cases, any admissible choice works, and the
-transitions printed below arise from
-$(v_+,v_-,n_0;n_1)=(e_1,-e_2,e_3;-e_3)$ for $(\PP^1)^3$ and
-$(e_1,r,e_2;e_3)$ for $\Bl_{pt}\PP^3$.  In the unimodular chart with coordinates
-$(p,q,z)$ dual to $(v_+,v_-,n_0)$ one has $w=pq^{-1}z^{\gamma}$,
-$\Sb=\{t=0\}$ with $t=q-pz^{\gamma}$, and
-$\Omega_M=\pm z^{\gamma-1}\,dp\wedge dq\wedge dz/t^{2}$.
+$\langle v_+,v_-,n_0\rangle$ with $\langle m,n_0\rangle=+1$; such pairs exist in
+both cases and any admissible choice works.  The two cases are
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+$V$ & $(v_+,v_-,n_0;n_1)$ & transition to the $n_1$ chart & $c$\\
+\midrule
+$(\PP^1)^3$ & $(e_1,-e_2,e_3;-e_3)$ & $(p,\,q,\,1/z)$ & $0$\\
+$\Bl_{pt}\PP^3$ & $(e_1,r,e_2;e_3)$ & $(p/z,\,q/z,\,1/z)$ & $-1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+where $c$ is the $z$-exponent of the transition monomial for $p'$.  In the
+unimodular chart with coordinates $(p,q,z)$ dual to $(v_+,v_-,n_0)$ one has
+$w=pq^{-1}z$, $\Sb=\{t=0\}$ with $t=q-pz$, and
+$\Omega_\Mil=\pm\,dp\wedge dq\wedge dz/t^{2}$.
 Fix $\varepsilon>0$, $R>1$ and set
 \begin{align*}
-T_1&=\{p=0,\ q=\varepsilon R^{\gamma}e^{i\psi},\ |z|\le R\},\\
+T_1&=\{p=0,\ q=\varepsilon Re^{i\psi},\ |z|\le R\},\\
 T_2&=\{p=r\varepsilon e^{i\theta},\
-q=-(1-r)\varepsilon R^{\gamma}e^{i(\theta+\gamma\varphi)},\
+q=-(1-r)\varepsilon Re^{i(\theta+\varphi)},\
 z=Re^{i\varphi}\},\qquad r\in[0,1],\\
 T_3&=\{p'=\varepsilon R^{c}e^{i\psi},\ q'=0,\ |z'|\le 1/R\}
 \quad\text{in the chart at the opposite corner }n_1,
 \end{align*}
-where $(p',q',z')$ are the dual coordinates of
-$(v_+,v_-,n_1)$ and $c$ is the $z$-exponent of the transition
-monomial for $p'$ ($c=0$ for $(\PP^1)^3$, where the transition is
-$(p,q,1/z)$, and $c=-1$ for $\Bl_{pt}\PP^3$, where it is
-$(p/z,\,q/z,\,1/z)$).  The corner-chart cap is necessary: in the
+where $(p',q',z')$ are the dual coordinates of $(v_+,v_-,n_1)$ and $c$ is as in
+the table.  The corner-chart cap is necessary: in the
 $\Bl_{pt}\PP^3$ case the naive closure of
 $\{|p|=\varepsilon,q=0,|z|\ge R\}$ collapses onto the torus-fixed
 point of the corner chart, which \emph{lies on} $\Sb=\{p'=q'z'\}$;
 the cap $T_3$ instead keeps $|p'-q'z'|=\varepsilon R^{c}>0$.  On
-$T_2$, $t=-\varepsilon R^{\gamma}e^{i(\theta+\gamma\varphi)}$ has
+$T_2$, $t=-\varepsilon Re^{i(\theta+\varphi)}$ has
 constant modulus; the $r=0$ boundary is the boundary torus of $T_1$
 and the $r=1$ boundary maps under the transition onto
 $\partial T_3$, so with orientations of the caps chosen to cancel
-$\partial T_2$, $T=T_1+T_2+T_3$ is a closed $3$-cycle in $M$.
+$\partial T_2$, $T=T_1+T_2+T_3$ is a closed $3$-cycle in $\Mil$.
 
-The pullback of $\Omega_M$ to $T_1$ and $T_3$ vanishes identically
-($dp\mapsto0$, respectively $dq'\mapsto0$, while $\Omega_M$ is
+The pullback of $\Omega_\Mil$ to $T_1$ and $T_3$ vanishes identically
+($dp\mapsto0$, respectively $dq'\mapsto0$, while $\Omega_\Mil$ is
 regular there), and on $T_2$ the pullback of
-$z^{\gamma-1}dp\wedge dq\wedge dz/t^2$ is the \emph{constant} form
+$dp\wedge dq\wedge dz/t^2$ is the \emph{constant} form
 $dr\wedge d\theta\wedge d\varphi$: writing it out, the complex
-Jacobian of the parametrization equals $t^2z^{1-\gamma}$ exactly.
-Hence $\int_T\Omega_M=\int_0^1\!\int_0^{2\pi}\!\int_0^{2\pi}
+Jacobian of the parametrization equals $t^2$ exactly.
+Hence $\int_T\Omega_\Mil=\int_0^1\!\int_0^{2\pi}\!\int_0^{2\pi}
 dr\,d\theta\,d\varphi=4\pi^2$ up to the orientation sign.
 
-Finally $b_3(M)=1$: from the pair sequence of $(V,M)$ and
-$H^3(V)=0$, $b_3(M)$ is the corank of the restriction
+Finally $b_3(\Mil)=1$: from the pair sequence of $(V,\Mil)$ and
+$H^3(V)=0$, $b_3(\Mil)$ is the corank of the restriction
 $H^2(V;\QQ)\to H^2(\Sb;\QQ)$, which is one in both cases.
 \end{proof}
 
@@ -679,7 +785,7 @@ $H^2(V;\QQ)\to H^2(\Sb;\QQ)$, which is one in both cases.
 Let $p$ be a singular point of $X$ whose germ is the anticanonical
 cone over $\dP_7$, or over $\dP_6$ with the induced local smoothing
 through the one-parameter component.  Then
-$H_3(M_p;\QQ)\;(\cong\QQ)\to H_3(X_s;\QQ)$ is injective for all small
+$H_3(\Mil_p;\QQ)\;(\cong\QQ)\to H_3(X_s;\QQ)$ is injective for all small
 $s\neq0$.
 \end{lemma}
 
@@ -688,7 +794,7 @@ By Section~\ref{sec:miniversal} the induced arc lies in a single
 reduced component $c$ of the miniversal base of the germ, off the
 local discriminant for $s\neq0$, and by Section~\ref{sec:sweeps} the
 Milnor fiber is the corresponding sweep complement, which for the two
-channels in the statement is one of the complements of
+branches in the statement is one of the complements of
 Lemma~\ref{lem:D1}.  The component carries Pinkham's
 $\CC^*$-equivariant swept family with parameters of weight one
 (Section~\ref{sec:miniversal}: $T^1$ sits in the Gorenstein degree);
@@ -697,19 +803,24 @@ its relative dualizing sheaf, homogeneous of some integral weight
 $a$.  To construct it, work in the graded local ring at the vertex.
 The relative dualizing module is invertible, and graded Nakayama
 selects from any algebraic local generator a homogeneous component
-that still generates.  Its $\CC^*$-saturation contains the entire
-fiber $b=1$: every point of that fiber tends to the vertex when the
-positive-weight cone coordinates and the weight-one parameter are
-scaled to zero.  Thus its restriction to $b=1$ is an algebraic
-generator of $\omega_M$, hence a constant multiple of $\Omega_M$ by
+that still generates.  Call $U$ the open locus on which that homogeneous
+generator generates; $U$ is $\CC^*$-stable, being the nonvanishing locus of a
+homogeneous section, and it contains the vertex.  Then $U$ contains the whole
+fiber $b=1$.  Let $x$ be a point of that fiber.  Scaling the positive-weight
+cone coordinates and the weight-one parameter to zero carries $x$ to the vertex,
+so the vertex lies in the closure of $\CC^*\cdot x$; since $U$ is open and
+contains the vertex, some $\lambda\cdot x$ lies in $U$, and since $U$ is
+$\CC^*$-stable, $x$ does.  Thus the restriction to $b=1$ is an
+algebraic
+generator of $\omega_\Mil$, hence a constant multiple of $\Omega_\Mil$ by
 the unit calculation following \eqref{eq:omegaM}; rescale it so that
-$\Omega^{\mathrm{loc}}|_{b=1}=\Omega_M$.
-For a horizontal family $\nu$ of classes in $H_3(M;\QQ)$,
+$\Omega^{\mathrm{loc}}|_{b=1}=\Omega_\Mil$.
+For a horizontal family $\nu$ of classes in $H_3(\Mil;\QQ)$,
 \[
 \int_{\nu(b)}\Omega^{\mathrm{loc}}_b\;=\;c(\nu)\cdot\chi(b),
 \]
 with $\chi$ the weight-$a$ monomial in the component parameter and
-$c(\nu)=\int_\nu\Omega_M$: single-valuedness holds because the
+$c(\nu)=\int_\nu\Omega_\Mil$: single-valuedness holds because the
 $\CC^*$-action is a group action on the total space with parameter
 weight one, so transport once around the base circle is the identity;
 and $c(\cdot)$ is linear.  Writing
@@ -726,15 +837,15 @@ term and the error.  The global period is therefore
 =\chi(b(s))\bigl(c(\nu)\,g(p,0)+o(1)\bigr).
 \]
 
-If $\nu\neq0$ in $H_3(M;\QQ)$ had $\nu_*=0$ in $H_3(X_s;\QQ)$ for
+If $\nu\neq0$ in $H_3(\Mil;\QQ)$ had $\nu_*=0$ in $H_3(X_s;\QQ)$ for
 arbitrarily small $s\neq0$, then a rational multiple of $\nu(s)$
 would bound and the closed form $\Omega_s$ would have zero period,
 while $\chi(b(s))\neq0$ off the discriminant; letting $s\to0$ along such
 values gives $c(\nu)\,g(p,0)=0$ and, since $g(p,0)\neq0$,
 $c(\nu)=0$, contradicting the injectivity of the period pairing in
-Lemma~\ref{lem:D1}.  (That $H_3(M;\QQ)$ has rank one is what converts
+Lemma~\ref{lem:D1}.  (That $H_3(\Mil;\QQ)$ has rank one is what converts
 this class-by-class exclusion into injectivity for all small $s$; a
-higher-rank channel would require a uniform argument.)
+higher-rank branch would require a uniform argument.)
 \end{proof}
 
 \section{Surgery membership}\label{sec:surgery}
@@ -749,58 +860,59 @@ arbitrary isolated singularities
 and for small $s$ the family is smooth, hence $C^\infty$-trivial, over
 a neighborhood of $W$; therefore
 \[
-X_s\ \cong\ W\ \cup_{\bigsqcup L_p}\ \bigsqcup_pM_p,
+X_s\ \cong\ W\ \cup_{\bigsqcup L_p}\ \bigsqcup_p\Mil_p,
 \qquad
 \Xh\ \cong\ W\ \cup_{\bigsqcup L_p}\ \bigsqcup_pN_p,
 \]
-where $M_p$ is the Milnor fiber of the induced local smoothing and
+where $\Mil_p$ is the Milnor fiber of the induced local smoothing and
 $N_p$ a neighborhood of the exceptional set of the fixed crepant
 resolution.  Both gluings are along the same links.  Only the
 $C^\infty$-triviality over a neighborhood of $W$ is used here, so the
 same decomposition of $X_s$ along $\bigsqcup_pL_p$ holds for an
 arbitrary one-parameter deformation, with $X_s\cap U_p$ in place of
-$M_p$ at any point whose germ is not smoothed; this is the form
+$\Mil_p$ at any point whose germ is not smoothed; this is the form
 Section~\ref{sec:partialmem} uses.
 
 \begin{lemma}[membership]\label{lem:M}
 For every $\gamma\in H_3(X_s;\QQ)$, the Mayer--Vietoris boundary
 $\partial\gamma\in\bigoplus_pH_2(L_p;\QQ)$ lies in the space $K(X)$
-of Theorem~\ref{thm:B-intro}: its components die in every
-$H_2(M_p;\QQ)$, and their sum dies in $H_2(W;\QQ)$, hence in
+of Theorem~\ref{thm:necessity-intro}: its components die in every
+$H_2(\Mil_p;\QQ)$, and their sum dies in $H_2(W;\QQ)$, hence in
 $H_2(\Xh;\QQ)$.  Moreover, at a node $q$ the $L_q$-component of
 $\partial\gamma$ is a fixed nonzero multiple of
 $(\gamma\cdot\delta_q)$ times the generator, and at a cone point $p$
 the boundary map identifies
-$H_3(M_p,L_p;\QQ)\xrightarrow{\ \sim\ }R_p$.
+$H_3(\Mil_p,L_p;\QQ)\xrightarrow{\ \sim\ }\Rsm_p$.
 \end{lemma}
 
 \begin{proof}
 The first statement is Mayer--Vietoris exactness for
-$X_s=W\cup\bigsqcup M_p$, together with $W\subset\Xh$.  At a node,
-$M\simeq T^*S^3$: $H_3(M,L;\QQ)\cong H^3(M;\QQ)=\QQ$ is generated by
+$X_s=W\cup\bigsqcup \Mil_p$, together with $W\subset\Xh$.  At a node,
+$\Mil\simeq T^*S^3$: $H_3(\Mil,L;\QQ)\cong H^3(\Mil;\QQ)=\QQ$ is generated by
 a cotangent fiber $F$ with $\partial F$ the $S^2$-generator of
 $H_2(S^2\times S^3)$ and $F\cdot\delta=1$; excision identifies the
 $L_q$-component of $\partial\gamma$ with
-$\partial$ of the image of $\gamma$ in $H_3(M_q,L_q)$, which equals
+$\partial$ of the image of $\gamma$ in $H_3(\Mil_q,L_q)$, which equals
 $(\gamma\cdot\delta_q)F$ by the perfect pairing.  At a cone point, exactness of the pair sequence makes the image of
-$\partial\colon H_3(M,L;\QQ)\to H_2(L;\QQ)$ equal to
-$\ker(H_2(L;\QQ)\to H_2(M;\QQ))=R_p$, while Lefschetz duality gives
-$\dim H_3(M,L;\QQ)=b_3(M)$, which by Section~\ref{sec:sweeps} equals
-$1$, $1$, $2$ in the three channels, the rank of $R_p$ computed in
+$\partial\colon H_3(\Mil,L;\QQ)\to H_2(L;\QQ)$ equal to
+$\ker(H_2(L;\QQ)\to H_2(\Mil;\QQ))=\Rsm_p$, while Lefschetz duality gives
+$\dim H_3(\Mil,L;\QQ)=b_3(\Mil)$, which by Section~\ref{sec:sweeps} equals
+$1$, $1$, $2$ in the three branches, the rank of $\Rsm_p$ computed in
 Proposition~\ref{prop:kernels}.  A surjection between spaces of equal
 finite dimension is an isomorphism, so $\partial$ is injective with
-image $R_p$; equivalently $H_3(M)\to H_3(M,L)$ is zero, $H_3(L)\to
-H_3(M)$ is surjective, and the skew intersection form of $H_3(M;\QQ)$
+image $\Rsm_p$; equivalently $H_3(\Mil)\to H_3(\Mil,L)$ is zero, $H_3(L)\to
+H_3(\Mil)$ is surjective, and the skew intersection form of $H_3(\Mil;\QQ)$
 vanishes.
 \end{proof}
 
 \subsection{Boundary compatibility}\label{sec:boundary}
 Lemma~\ref{lem:M} uses the subspaces
-$R_p\subset H_2(L_p)$ through the \emph{sweep-side} description of
+$\Rsm_p\subset H_2(L_p)$ through the \emph{sweep-side} description of
 Proposition~\ref{prop:kernels} (the unit normal circle bundle of
 $\Sb\subset V$), while the map to $H_2(\Xh)$ and all coordinates in
 Section~\ref{sec:example} use the \emph{resolution-side} description
-(the Seifert projection $L_p\to E_p$ of the cone link).  These are a
+(the projection $L_p\to E_p$ of the cone link onto the exceptional del Pezzo,
+the circle-bundle projection recalled after Lemma~\ref{lem:boundary}).  These are a
 priori different identifications of $H_2(L_p;\QQ)$ with
 $K^{\perp}$, and an arbitrary boundary diffeomorphism need not preserve
 either marking.  Their compatibility is therefore a statement, not a
@@ -815,28 +927,42 @@ following lemma supplies.
 Let $(X,p)$ be analytically isomorphic to the anticanonical cone over
 the del Pezzo surface $S$, smoothed by a one-parameter family through
 the component $c$ with sweep $V\supset\Sb$.  Then the boundary
-identification $\partial M_p\cong L_p$ arising from the surgery
-decomposition can be chosen so that the sweep-side projection
-$H_2(L_p;\QQ)\to H_2(\Sb;\QQ)$ and the Seifert projection
-$H_2(L_p;\QQ)\to H_2(E_p;\QQ)$ agree up to an isomorphism of
-anticanonically polarized surfaces $(E_p,-K)\cong(\Sb,-K)$.  In
-particular the comparison is a lattice isometry, and $R_p$, read in
-resolution-side coordinates, is the root subspace of
+identification $\partial \Mil_p\cong L_p$ arising from the surgery
+decomposition is such that the sweep-side projection
+$H_2(L_p;\QQ)\to H_2(\Sb;\QQ)$ and the circle-bundle projection
+$H_2(L_p;\QQ)\to H_2(E_p;\QQ)$ agree up to an isometry of
+$\bigl(H_2(E_p;\QQ),\cdot\bigr)$ carrying $K$ to $K$.  Consequently $\Rsm_p$,
+read in resolution-side coordinates, is the root subspace of
 Proposition~\ref{prop:kernels}.
 \end{lemma}
 
+Here the germ-local crepant resolution of $C(S)$ is the blowup of the
+vertex, its exceptional divisor is the zero section $E_p\cong S$ of the
+total space of $\cO_S(K_S)$, the link $L_p$ is the unit circle bundle of
+that line bundle, and the \emph{circle-bundle projection} is the bundle
+projection $L_p\to E_p$; this is the identification used in
+\eqref{eq:linkH2}.
+
 \begin{proof}
 Let $\mathcal Y_c\to B_c$ be the $\CC^*$-equivariant
-Altmann--Pinkham family on the reduced component $c$, and let
-$\overline{\mathcal Y}_c\to B_c$ be its projective sweep
-compactification.  All component parameters have weight one, all
-affine cone coordinates have positive weights, and the divisor at
-infinity is the fixed family $S\times B_c$: negative weight does not
-change the top graded piece.  Choose an equivariant affine embedding,
-write $w_1,\dots,w_N>0$ for the coordinate weights and, for a common
+Altmann--Pinkham family on the reduced component $c$.  All component
+parameters have weight one and all affine cone coordinates have positive
+weights, so an equivariant closed embedding
+$\mathcal Y_c\hookrightarrow\AAf^N\times B_c$ with fibre coordinate weights
+$w_1,\dots,w_k>0$ exists, and we let $\overline{\mathcal Y}_c\to B_c$ be the
+fibrewise closure of $\mathcal Y_c$ in
+$\PP(1,w_1,\dots,w_k)\times B_c$.  This is Pinkham's sweeping out of the cone
+\cite[(4.2),\,(5.1)]{Pinkham74} carried out in families over $B_c$: the
+divisor at infinity is cut by the weight-zero coordinate and is
+$\Proj$ of the graded coordinate ring of the cone, hence the fixed family
+$\Sb\times B_c$, independent of $b$ because the parameters have positive
+weight.  For $b$ off the discriminant the pair
+$(\overline{\mathcal Y}_b,\Sb)$ is the polarized sweep pair $(V,\Sb)$ of
+Proposition~\ref{prop:kernels}, which is where its smoothness comes from.  Choose an equivariant affine embedding,
+write $w_1,\dots,w_k>0$ for the coordinate weights and, for a common
 multiple $d$ of them, use the weighted radius
 \[
- \rho(z)=\left(\sum_{i=1}^N|z_i|^{2d/w_i}\right)^{1/(2d)},
+ \rho(z)=\left(\sum_{i=1}^k|z_i|^{2d/w_i}\right)^{1/(2d)},
  \qquad \rho(r\cdot z)=r\rho(z)\quad(r>0).
 \]
 Fix a sufficiently small weighted Milnor radius $\varepsilon$ and a
@@ -876,7 +1002,7 @@ the boundary of a fixed tube of $S$, preserving the projection to
 $S$, and extends across the intervening collar.  Thus
 \eqref{eq:compactcore} continues to a diffeomorphism of pairs
 \[
- (M_p,\partial M_p)\ \cong\
+ (\Mil_p,\partial \Mil_p)\ \cong\
  \bigl(\overline{\mathcal Y}_b\smallsetminus
        \operatorname{int}\mathrm{Tube}(S),
        \partial\mathrm{Tube}(S)\bigr)
@@ -886,7 +1012,7 @@ inclusion.
 
 By the sweep description of Section~\ref{sec:sweeps}, the compactified
 smooth pair $(\overline{\mathcal Y}_b,S)$ is the corresponding
-polarized sweep pair $(V,\Sb)$; along a connected smooth channel the
+polarized sweep pair $(V,\Sb)$; along a connected smooth branch the
 pair identifications may be transported by Ehresmann with the
 trivializing vector field chosen to vanish on the fixed divisor $S$.
 
@@ -896,22 +1022,56 @@ $0<\tau\leq t$.  Formula~\eqref{eq:radiusatinfinity} shows, on the
 real oriented blowup, that the rescaled boundary graphs extend
 smoothly to $\tau=0$.  Their limiting projection sends a nonzero point
 of the central cone to its projective class in $S$, while the normal
-circle is its $S^1$-orbit.  It is therefore exactly the Seifert
-projection $L_p\to S$ of the cone link.  We choose the boundary
-trivialization in the surgery decomposition to be this radial
-transport.  The sweep-side tube projection and the resolution-side
-Seifert projection then induce the same map on $H_2$, after the
-polarized identification $(E_p,-K)\cong(S,-K)\cong(\Sb,-K)$.
+circle is its $S^1$-orbit.  It is therefore exactly the circle-bundle
+projection $L_p\to S$ of the cone link.
+
+It remains to compare this radial transport with the identification
+$\partial \Mil_p\cong L_p$ that Section~\ref{sec:decomp} fixes, which is not a
+free choice.  The two live over different parameter spaces, so name the map
+between them: let $\beta\colon(\Disk,0)\to(B_c,0)$ classify the induced
+local deformation, so that after shrinking the local family is
+$\beta^{*}\mathcal Y_c$, and take the good representative $U_p$ of
+Section~\ref{sec:decomp} with $\partial U_p$ corresponding to
+$\{\rho=\varepsilon\}$.  The comparison is in three steps: the boundary is a
+locally trivial bundle over the whole base, discriminant included; two
+trivializations of it over the disc induce the same map on $H_2$; and the
+radial transport is one such trivialization.
+
+First, $\{\rho=\varepsilon\}\cap\mathcal Y_b$, for $b\in B_c$, is a locally
+trivial $C^\infty$ bundle over all of $B_c$, discriminant included.  The
+relative singular locus is proper over the compact ball
+$\{\rho\le\varepsilon\}$ and meets the central fiber only at the vertex, so
+for small $b$ it stays inside $\{\rho<\varepsilon\}$; the total space is
+smooth near $\{\rho=\varepsilon\}$; and $\mathcal Y_b$ meets
+$\{\rho=\varepsilon\}$ transversally, which holds at $b=0$ by
+$\rho(r\cdot z)=r\rho(z)$ and is open in $b$ by compactness.  Ehresmann
+applies.
+
+Second, fix a trivialization $T$ of that bundle.  Then $\beta^{*}T$ and the
+trivialization of Section~\ref{sec:decomp} are two trivializations of the
+same bundle over $\Disk$.  Two such identify a fiber with the fiber over
+$0$ by maps differing by $g(0)^{-1}g(s)$ for some $g$ into the
+diffeomorphism group of $L_p$; a path from $0$ to $s$ makes
+$t\mapsto g(\gamma(t))$ an isotopy from $g(0)$ to $g(s)$, so the
+discrepancy is isotopic to the identity and acts trivially on $H_2$.  Only
+path-connectedness is used.
+
+Third, the radial transport trivializes the same bundle over the ray
+through $\beta(s)$, so on that ray it agrees with $T$ on $H_2$ for the same
+reason.  The sweep-side tube projection and the resolution-side
+circle-bundle projection therefore induce the same map on $H_2$, up to the
+isometry of
+the statement.
 
 Finally the $A_1$ and $A_2$ summands for $\dP_6$ and the unique
 $(-2)$-line for $\dP_7$ are intrinsic to the polarized lattice, so
 they correspond.  Since the displayed diffeomorphism is one of pairs,
 it computes the kernel of the actual inclusion
-$H_2(\partial M_p)\to H_2(M_p)$, as required.
+$H_2(\partial \Mil_p)\to H_2(\Mil_p)$, as required.
 \end{proof}
 
 \subsection{Deformations that leave germs singular}\label{sec:partialmem}
-Theorem~\ref{thm:B-intro} concerns smoothings.  A threefold carrying a
+Theorem~\ref{thm:necessity-intro} concerns smoothings.  A threefold carrying a
 germ with no smoothing at all admits none, but it may still admit
 deformations that smooth its other germs, and the surgery argument
 constrains those as well.  We record the form of Lemma~\ref{lem:M}
@@ -953,7 +1113,7 @@ product decomposition.
 
 \begin{lemma}[membership, with germs left singular]\label{lem:Mpartial}
 Let $X$ and $\Xh$ be as in the setting fixed in
-Section~\ref{sec:intro} before Theorem~\ref{thm:B-intro}, except that
+Section~\ref{sec:intro} before Theorem~\ref{thm:necessity-intro}, except that
 $X$ may carry in addition finitely many anticanonical cones over
 $\mathbb F_1$, with an exceptional $\mathbb F_1$ over each of them on
 $\Xh$; no smoothing of $X$ is assumed to exist.  Let $\cX\to\Disk$ be
@@ -966,7 +1126,7 @@ a set independent of $s$ for small $s\neq0$, because each local
 classifying arc either lies in the local discriminant or meets it
 only at the origin.  Put
 \[
-X_s^{\flat}=W\cup\bigsqcup_{p\notin\Sigma}M_p ,
+X_s^{\flat}=W\cup\bigsqcup_{p\notin\Sigma}\Mil_p ,
 \]
 a compact oriented $6$-manifold with boundary
 $\bigsqcup_{p\in\Sigma}L_p$ contained in the smooth locus of $X_s$.
@@ -975,14 +1135,14 @@ there is a class $\kappa\in\bigoplus_pH_2(L_p;\QQ)$ with
 \[
 \kappa\in\ker\Bigl(\bigoplus_pH_2(L_p;\QQ)\to H_2(\Xh;\QQ)\Bigr),
 \qquad
-\kappa_p\in R_p\quad(p\notin\Sigma\text{ a cone point}),
+\kappa_p\in \Rsm_p\quad(p\notin\Sigma\text{ a cone point}),
 \]
 whose component at a node $q\notin\Sigma$ is a fixed nonzero multiple
 of $(\gamma\cdot\delta_q)$ times the generator, and whose component at
 a cone point $p\notin\Sigma$ is the image of $\gamma$ under the
 composite
-$H_3(X_s^{\flat},\partial X_s^{\flat};\QQ)\to H_3(M_p,L_p;\QQ)
-\xrightarrow{\ \partial,\ \sim\ }R_p$.  Here $\gamma\cdot\delta_q$ is
+$H_3(X_s^{\flat},\partial X_s^{\flat};\QQ)\to H_3(\Mil_p,L_p;\QQ)
+\xrightarrow{\ \partial,\ \sim\ }\Rsm_p$.  Here $\gamma\cdot\delta_q$ is
 the Poincar\'e--Lefschetz pairing of $X_s^{\flat}$.  No \emph{local}
 condition is imposed on $\kappa_p$ for $p\in\Sigma$; those coordinates
 are of course still coupled to the others by the displayed kernel
@@ -995,7 +1155,7 @@ $\Sigma$, so a cone point $p\notin\Sigma$ is a $\dP_6$- or
 $\dP_7$-cone point and the local computations of Lemma~\ref{lem:M}
 apply to it.  Apply Mayer--Vietoris for the pair
 $(X_s^{\flat},\partial X_s^{\flat})$ with $A=W$,
-$B=\bigsqcup_{p\notin\Sigma}M_p$ and
+$B=\bigsqcup_{p\notin\Sigma}\Mil_p$ and
 $\partial X_s^{\flat}\subset A$, the couple being made excisive by the
 standard collar thickening:
 \[
@@ -1004,9 +1164,9 @@ H_3(X_s^{\flat},\partial X_s^{\flat};\QQ)
 \bigoplus_{p\notin\Sigma}H_2(L_p;\QQ)
 \longrightarrow
 H_2\bigl(W,\partial X_s^{\flat};\QQ\bigr)\oplus
-\bigoplus_{p\notin\Sigma}H_2(M_p;\QQ).
+\bigoplus_{p\notin\Sigma}H_2(\Mil_p;\QQ).
 \]
-The second summand gives $(\partial\gamma)_p\in R_p$ at the cone
+The second summand gives $(\partial\gamma)_p\in \Rsm_p$ at the cone
 points $p\notin\Sigma$.  For the first, let $x\in H_2(W;\QQ)$ be the
 image of $\partial\gamma$.  It dies in
 $H_2(W,\partial X_s^{\flat};\QQ)$, so by exactness of
@@ -1022,17 +1182,17 @@ $\kappa_p=-y_p$ for $p\in\Sigma$.  Then $\kappa$ dies in $H_2(W;\QQ)$,
 hence in $H_2(\Xh;\QQ)$ because $W\subset\Xh$.
 
 For the local statements, fix a node $q\notin\Sigma$.  Since
-$\partial X_s^{\flat}\subset W$ is disjoint from $M_q$, excision gives
+$\partial X_s^{\flat}\subset W$ is disjoint from $\Mil_q$, excision gives
 a restriction
 $H_3(X_s^{\flat},\partial X_s^{\flat};\QQ)\to
-H_3(M_q,L_q;\QQ)$, and under Poincar\'e--Lefschetz duality on
+H_3(\Mil_q,L_q;\QQ)$, and under Poincar\'e--Lefschetz duality on
 $X_s^{\flat}$ it is dual to the inclusion
-$H_3(M_q;\QQ)\to H_3(X_s^{\flat};\QQ)$.  With $F\cdot\delta_q=1$ as in
+$H_3(\Mil_q;\QQ)\to H_3(X_s^{\flat};\QQ)$.  With $F\cdot\delta_q=1$ as in
 the proof of Lemma~\ref{lem:M}, the restriction of $\gamma$ is
 therefore $(\gamma\cdot\delta_q)F$, and $\kappa_q$ is
 $(\gamma\cdot\delta_q)\,\partial F$.  The same excision at a cone
 point $p\notin\Sigma$, followed by the isomorphism
-$\partial\colon H_3(M_p,L_p;\QQ)\to R_p$ of Lemma~\ref{lem:M},
+$\partial\colon H_3(\Mil_p,L_p;\QQ)\to \Rsm_p$ of Lemma~\ref{lem:M},
 gives the second statement.
 \end{proof}
 
@@ -1040,7 +1200,7 @@ gives the second statement.
 The construction of $\Omega$ in Section~\ref{sec:relform} is unchanged
 in this setting.  It uses the decomposition
 \[
-X_s\ =\ W\ \cup\ \bigsqcup_{p\notin\Sigma}M_p\ \cup\
+X_s\ =\ W\ \cup\ \bigsqcup_{p\notin\Sigma}\Mil_p\ \cup\
 \bigsqcup_{p\in\Sigma}\bigl(X_s\cap U_p\bigr)
 \]
 along all the links, the vanishing $H^1(L_p;\ZZ)=0$ of
@@ -1062,7 +1222,8 @@ the smooth locus of $X_s$, the period arguments of Lemmas~\ref{lem:P}
 and~\ref{lem:D} apply verbatim with $H_3(X_s;\QQ)$ replaced by
 $H_3(X_s^{\flat};\QQ)$: requiring a bounding $4$-chain to lie in
 $X_s^{\flat}$ is a stronger demand than requiring it in $X_s$, so the
-conclusions are stronger, and the cycles involved lie in
+nonvanishing concluded is the weaker of the two and is what
+Section~\ref{sec:partner} uses; the cycles involved lie in
 $X_s^{\flat}$ by construction.  Poincar\'e--Lefschetz duality on the
 compact oriented manifold with boundary $X_s^{\flat}$, which pairs
 $H_3(X_s^{\flat};\QQ)$ perfectly with
@@ -1080,7 +1241,7 @@ $\Delta^{\vee}$ its polar, with the $26$ vertices
 $q_1,\dots,q_{26}$ listed in Table~\ref{tab:rays}.  The generic
 anticanonical hypersurface
 $X^{\circ}\subset\PP_{\Delta^{\vee}}$ has, for every
-$\Delta$-regular choice of equation, exactly $26$ ordinary double
+Batyrev-regular choice of equation, exactly $26$ ordinary double
 points (one for each unit-square $2$-face of $\Delta^\vee$), two
 anticanonical $\dP_7$-cone points (the two pentagon faces with one
 interior point) and two $\dP_6$-cone points (the two hexagon faces)
@@ -1088,7 +1249,7 @@ interior point) and two $\dP_6$-cone points (the two hexagon faces)
 the cones: the ambient chart at the $3$-dimensional cone over a
 $2$-face $F$ splits as $C(F)\times\CC^{*}$, the restriction of the
 defining section to the one-dimensional orbit is
-$t^{k}(c_a+c_bt)$ with $c_a,c_b\neq0$ by $\Delta$-regularity because
+$t^{k}(c_a+c_bt)$ with $c_a,c_b\neq0$ by Batyrev regularity because
 the dual edge $F^{\circ}$ has lattice length one, and Weierstrass
 preparation in the orbit coordinate exhibits the germ as a graph over
 $(C(F),0)$.  In particular each face contributes exactly one singular
@@ -1132,6 +1293,34 @@ $q_{29}=(0,0,-1,-1)$ & $q_{30}=(0,0,-1,0)$ &&\\
 \end{table}
 
 \subsection{The resolution and the matrix}\label{sec:matrix}
+Four words recur in what follows, and we fix them here.
+
+A \emph{branch} at a singular point is a reduced irreducible component of the
+germ's miniversal base: a node has one, a $\dP_7$ point one (the reduced line of
+Section~\ref{sec:miniversal}), and a $\dP_6$ point two, the $A_1$ line and the
+$A_2$ plane.  A one-parameter smoothing of $X$ induces at each point an arc into
+one branch, and $\Rsm_p$ depends on which.  A \emph{profile} for $X$ is a choice
+of branch at every $\dP_6$ point at once; the other germ types offer no choice,
+so $X$ with $k$ del Pezzo sextic points has $2^{k}$ profiles, and a criterion
+that must hold for every smoothing is evaluated on each.
+
+A coordinate of $\bigoplus_pH_2(L_p;\QQ)$ is \emph{covered} when
+Theorem~\ref{thm:necessity} asserts nonvanishing there: every node coordinate,
+the $(-2)$-line at every $\dP_7$ point, and the $A_1$ summand at a $\dP_6$ point
+on a profile that sends it to the line branch.  The $A_2$ plane is not covered,
+which is the gap recorded in Section~\ref{sec:open}.
+
+The \emph{root subspace} of a cone point is $\Rsm_p$ read in $K^{\perp}$ through
+Proposition~\ref{prop:kernels}: the $(-2)$-line at a $\dP_7$ point, and the
+$A_1$ or the $A_2$ summand of $K^{\perp}\cong A_1\oplus A_2$ at a $\dP_6$ point.
+The name records that at degree $6$ these are the root sublattices of
+$K^{\perp}$.  At degree $7$ the lattice $K^{\perp}$ has discriminant $7$ and is
+not generated by its roots, and the subspace is the line spanned by its unique
+$(-2)$-class up to sign.
+
+We call the rows of $B$ at a germ its \emph{relation rows};
+Proposition~\ref{prop:T1channels} shows they are canonically the germ's $T^1$.
+
 Fix the crepant resolution $\Xh\to X^{\circ}$ obtained from the
 projective simplicial subdivision of the face fan of $\Delta^\vee$
 using all thirty boundary lattice points, with the star subdivision at
@@ -1148,12 +1337,15 @@ the four face-interior points and the twenty-six square diagonals
 \end{aligned}
 \]
 labeled $N_1,\dots,N_{26}$ in this order; the subdivision is smooth
-and projective (certified).  Over the nodes $\pi$ is small with
+and projective.  Over the nodes $\pi$ is small with
 exceptional curves $\Gamma_i$, and over the cone points the
 exceptional divisors are toric surfaces
 $E_{6,1},E_{6,2}\cong\dP_6$ and $E_{7,1},E_{7,2}\cong\dP_7$.
 
-We record the two families of functionals on $\Pic(Y_{\widehat\Sigma})$
+Write $\widehat\Sigma$ for that subdivided fan and $\PP_{\widehat\Sigma}=\Xh$'s
+ambient fourfold $\TV(\widehat\Sigma)$; the letter $Y$ stays with the cone germ
+of Section~\ref{sec:germs}.  We record the two families of functionals on
+$\Pic(\PP_{\widehat\Sigma})$
 (equivalently, by restriction, on $\Pic(\Xh)\otimes\QQ$, though only
 one containment is used below) whose kernel computation is the finite
 input.  \emph{Node rows}: for each square with cyclic vertices
@@ -1162,7 +1354,7 @@ of $\Gamma_i$, with values $-1$ at $D_a,D_c$, $+1$ at $D_b,D_d$ and
 $0$ otherwise; it annihilates principal divisors because
 $q_a+q_c=q_b+q_d$.  \emph{Divisorial rows}: for each exceptional
 surface, the composition of the restriction
-$\Pic(Y)\to\Pic(E)$ ($D_j\mapsto$ the boundary curve of $E$ for the
+$\Pic(\PP_{\widehat\Sigma})\to\Pic(E)$ ($D_j\mapsto$ the boundary curve of $E$ for the
 rays of the face, $D_{\mathrm{int}}\mapsto K_E$, all other rays
 $\mapsto0$) with a basis of the rank-$2$ or $3$ lattice
 $K^{\perp}\subset\Pic(E)^{\vee}$.  In the bases of
@@ -1213,30 +1405,45 @@ $\begin{aligned}\varphi_{\alpha}&=(-2,0,1)\\
 \end{tabular}
 \end{table}
 
-\subsection{The certified kernel computation}\label{sec:kernelcomp}
+\subsection{The ambient kernel computation}\label{sec:kernelcomp}
 Write coordinates on $\QQ^{36}$ as
 \[
 (u_1,\dots,u_{26};\ s_{1},s_{2},s_{3}\text{ at }E_{6,1};\
 s_{1},s_{2},s_{3}\text{ at }E_{6,2};\ \alpha_1,\beta_1;\
 \alpha_2,\beta_2).
 \]
-The following statements are exact integral
-computations, reproduced independently by the ancillary programs from
-the printed data of Tables~\ref{tab:rays} and~\ref{tab:kperp} together
-with the subdivision data document (see
-Appendix~\ref{app:cert}):
+The labels $s_1,s_2,s_3$ are chosen to match those of
+Section~\ref{sec:miniversal}: there $\{s_1=s_2=0\}$ cuts out the line
+component of the miniversal base and $\{s_3=0\}$ the plane component, and here
+the same two equations cut out the $A_1$ line and the $A_2$ plane of
+$K^{\perp}$.  These are different spaces and the coincidence of equations is a
+choice of labelling, not an identification.
+The following statements are exact integral computations from the data of
+Tables~\ref{tab:rays} and~\ref{tab:kperp} and the subdivision of
+Section~\ref{sec:matrix}:
 \begin{enumerate}
 \item $\rk B=21$ and $\dim\ker(B^{\mathsf T})=15$; the node
 subsystem has rank $18$, with coloops exactly $N_9$ and $N_{11}$; the
 unique row coloop of the full matrix is the $\beta_1$-row, i.e.\
-$\beta_1$ vanishes identically on $\ker(B^{\mathsf T})$.
+$\beta_1$ vanishes identically on $\ker(B^{\mathsf T})$.  This last
+statement is read in the basis of Table~\ref{tab:kperp}: replacing
+$\varphi_\alpha$ by $\varphi_\alpha+c\varphi_\beta$ shears the kernel
+coordinates and can destroy it.  What is basis-free is the restricted
+statement of item~(2), since once $\alpha=0$ the coordinate $\beta$ does
+not depend on the choice of complement to the $(-2)$-line, and it is the
+restricted statement that the second proof of Theorem~\ref{thm:main}
+uses.
 \item On the \emph{enlarged restricted kernel}
 $\ker(B^{\mathsf T})\cap\{\alpha_1=\alpha_2=0\}$, of dimension $13$,
 the four coordinates $u_9,u_{11},\beta_1,\beta_2$ vanish identically.
 The four finer profiles obtained by additionally restricting each
 $\dP_6$ block to its $A_1$ line ($s_1=s_2=0$) or its $A_2$ plane
 ($s_3=0$) have dimensions $9,10,10,12$ and force the same four
-coordinates (and one $s_3$ on each mixed profile).
+coordinates, together with one $s_3$ on each mixed profile.  The last dimension
+is $12$ and not $11$ because the two $s_3$-coordinates are proportional on the
+enlarged restricted kernel: imposing either alone drops the dimension by one,
+and imposing the second drops it no further.  That proportionality is also why
+a mixed profile, which deletes one $s_3$, forces the other.
 \item The forcing is critical in the $\dP_7$ data: releasing either
 $\alpha$-coordinate destroys it.
 \end{enumerate}
@@ -1246,11 +1453,14 @@ coordinates: the node generators map to $\pm[\Gamma_i]$ and the
 divisorial classes to their pushforwards from
 $K^{\perp}\subset H_2(E_p)$, and each row is the pairing with an
 ambient divisor class.  Only this containment is used: if the ambient
-Picard group under-detected $H_2(\Xh;\QQ)$, the certified kernel
+Picard group under-detected $H_2(\Xh;\QQ)$, the ambient kernel
 would be larger than the topological one and every forced-zero
-statement would still bind.  (In fact equality holds:
-$(-K_Y)^4=94\neq0$ and $h^{1,1}(\Xh)=26$; but the proofs below do not
-consume this.)
+statement would still bind.  Equality in fact holds here
+($h^{1,1}(\Xh)=26$, the thirty boundary lattice points of $\Delta^{\vee}$ less
+four),
+and holds for every
+polytope in the class considered in this paper, by
+Proposition~\ref{prop:kernelequal}.
 
 \section{Proofs of the main results}\label{sec:proofs}
 
@@ -1260,11 +1470,11 @@ $h^1(\cO_X)=0$ whose singular points are ordinary double points and
 anticanonical cones over $\dP_6$ or $\dP_7$, let
 $\Xh\to X$ be a crepant resolution as in
 Section~\ref{sec:intro}, and suppose $X$ admits a one-parameter
-smoothing.  With $R_p=\ker(H_2(L_p;\QQ)\to H_2(M_p;\QQ))$ for the
+smoothing.  With $\Rsm_p=\ker(H_2(L_p;\QQ)\to H_2(\Mil_p;\QQ))$ for the
 actual Milnor fibers of the induced local smoothings, set
 \[
 K(X)=\Bigl\{\kappa\in\ker\Bigl(\bigoplus_pH_2(L_p;\QQ)
-\to H_2(\Xh;\QQ)\Bigr)\ :\ \kappa_p\in R_p
+\to H_2(\Xh;\QQ)\Bigr)\ :\ \kappa_p\in \Rsm_p
 \text{ at every cone point }p\Bigr\}.
 \]
 Then:
@@ -1272,10 +1482,10 @@ Then:
 \item for every node $q$ there is $\kappa\in K(X)$ with
 $\kappa_q\neq0$;
 \item for every $\dP_7$ point $q$ there is $\kappa\in K(X)$ whose
-$q$-component is a nonzero element of the $(-2)$-line $R_q$;
+$q$-component is a nonzero element of the $(-2)$-line $\Rsm_q$;
 \item for every $\dP_6$ point $q$ smoothed through the one-parameter
 component of its miniversal base there is $\kappa\in K(X)$ whose
-$q$-component is a nonzero element of $R_q$ (the $A_1$ summand).
+$q$-component is a nonzero element of $\Rsm_q$ (the $A_1$ summand).
 \end{enumerate}
 \end{theorem}
 
@@ -1286,10 +1496,10 @@ choose $\gamma$ with $\gamma\cdot\delta_q\neq0$; by
 Lemma~\ref{lem:M}, $\kappa=\partial\gamma$ lies in $K(X)$ and its
 $q$-component is a nonzero multiple of $\gamma\cdot\delta_q$.
 (2),(3)~By Lemma~\ref{lem:D} the generator $\nu$ of
-$H_3(M_q;\QQ)$ survives in $H_3(X_s;\QQ)$; choose $\gamma$ with
+$H_3(\Mil_q;\QQ)$ survives in $H_3(X_s;\QQ)$; choose $\gamma$ with
 $\gamma\cdot\nu_*\neq0$; by Lemma~\ref{lem:M} the $q$-component of
 $\partial\gamma$ is the image of a nonzero element of
-$H_3(M_q,L_q;\QQ)$ under the isomorphism onto $R_q$, and $R_q$ is
+$H_3(\Mil_q,L_q;\QQ)$ under the isomorphism onto $\Rsm_q$, and $\Rsm_q$ is
 identified with the stated root subspace by
 Proposition~\ref{prop:kernels}, Section~\ref{sec:match} and
 Lemma~\ref{lem:boundary}.
@@ -1351,7 +1561,7 @@ $\ker(B^{\mathsf T})$ (Section~\ref{sec:kernelcomp}, item~(1)).
 
 \begin{remark}\label{rem:independence}
 The two proofs are independent in the period lemma and in the
-certified fact consumed (Lemma~\ref{lem:P} with
+fact used (Lemma~\ref{lem:P} with
 Section~\ref{sec:kernelcomp}(2), versus Lemma~\ref{lem:D} with
 Section~\ref{sec:kernelcomp}(1)), and share the membership and
 boundary-compatibility inputs (Lemmas~\ref{lem:M}
@@ -1360,15 +1570,17 @@ Table~\ref{tab:kperp}.
 \end{remark}
 
 \begin{corollary}\label{cor:def}
-No fiber of a small representative of the miniversal deformation of
-$X^{\circ}$ is smooth; consequently $X^{\circ}$ is not smoothable over
-any base germ, and neither is any small deformation of $X^{\circ}$.
-Likewise, no formal arc in the miniversal deformation of
-$X^{\circ}$ meets all thirty local smoothing loci.
+Let $X$ satisfy the standing hypotheses of Theorem~\ref{thm:necessity} and
+admit no one-parameter smoothing.  Then no fiber of a small representative
+of the miniversal deformation of $X$ is smooth; consequently $X$ is not
+smoothable over any base germ, and neither is any small deformation of $X$.
+Likewise, no formal arc in the miniversal deformation of $X$ meets all the
+local smoothing loci.  In particular this holds for $X^{\circ}$, by
+Theorem~\ref{thm:main}.
 \end{corollary}
 
 \begin{proof}
-The miniversal deformation of the compact $X^{\circ}$ exists
+The miniversal deformation of the compact $X$ exists
 \cite{Grauert74} and its discriminant is a closed analytic subset of
 the base.  If some fiber arbitrarily close to the origin were smooth,
 the curve selection lemma \cite{Milnor68} would produce a
@@ -1376,19 +1588,19 @@ real-analytic arc through the origin with smooth generic fiber;
 complexifying (a real-analytic function vanishing on a real segment
 of a disk vanishes identically, and the discriminant preimage of the
 complexified arc is discrete) gives a holomorphic disk, that is, a
-one-parameter smoothing, contradicting Theorem~\ref{thm:main}.  Small
+one-parameter smoothing, contrary to hypothesis.  Small
 deformations are covered by openness of versality.  For the formal
 statement: by Artin approximation \cite{Artin68} applied to the
 analytic miniversal deformation, a formal arc whose local components
-avoid all thirty local discriminants would be approximated, to any
+avoid every local discriminant would be approximated, to any
 jet order beyond the vanishing orders of those components, by an
 analytic arc with the same property.  Since the singular locus of the
 fibers is closed in the total space and meets the central fiber only
-in the thirty points, the fibers of the approximating arc are, for
-small $t$, singular at most inside the thirty Milnor-ball
-neighborhoods; avoidance of the local discriminants makes them smooth
+in $\Sing X$, the fibers of the approximating arc are, for
+small $t$, singular at most inside the Milnor-ball
+neighborhoods of those points; avoidance of the local discriminants makes them smooth
 there, hence smooth everywhere, so the arc is a one-parameter
-smoothing, contradicting Theorem~\ref{thm:main}.  (The local
+smoothing, again contrary to hypothesis.  (The local
 components are read
 through choices of local classifying maps; avoidance of the local
 discriminants is choice-independent, being smoothness of the local
@@ -1404,211 +1616,6 @@ Section~\ref{sec:kernelcomp} say the divisorial directions cannot
 supply what is needed at any order.  The mirror partner of
 $X^{\circ}$ is treated in Section~\ref{sec:partner}.
 \end{remark}
-
-\section{The mirror partner}\label{sec:partner}
-The polytope $\Delta$ itself carries a Calabi--Yau hypersurface, the
-mirror partner of $X^{\circ}$ in the doubly isolated pair.  Write
-$X_{\Delta}\subset\PP_{\Delta}$ for a $\Delta$-regular anticanonical
-hypersurface and $v_1,\dots,v_{22}$ for the vertices of $\Delta$ in
-the order of \cite[Theorem~6.1]{PaperIII}, reproduced in
-Table~\ref{tab:partnerrays}.  By that theorem $X_{\Delta}$ has twenty
-ordinary double points, one $\dP_6$-cone point over the hexagonal face
-$\conv\{v_9,v_{14},v_{15},v_{20},v_{21},v_{22}\}$, and one point whose
-germ is the anticanonical cone over $\mathbb F_1$, over the
-quadrilateral face $\conv\{v_4,v_{18},v_{19},v_{22}\}$.  As in
-Section~\ref{sec:X0}, $X_{\Delta}$ is an anticanonical Cartier divisor
-in a Gorenstein Fano toric fourfold, so
-$\omega_{X_{\Delta}}\cong\cO_{X_{\Delta}}$ and
-$h^1(\cO_{X_{\Delta}})=0$, and every germ is analytically the cone
-over its face because every dual edge has lattice length one.  The
-last germ
-is reduced-rigid, so $X_{\Delta}$ admits no smoothing \cite{PaperI}.
-Theorem~\ref{thm:main} and the reduced-rigidity of this germ together
-suggest a division of labour, $X_{\Delta}$ failing to smooth locally
-and $X^{\circ}$ globally.  The division does not hold up: the
-obstruction of this paper is present on $X_{\Delta}$ as well, in the form
-Theorem~\ref{thm:partial} gives it, and it does not use the
-$\mathbb F_1$ germ.
-
-\begin{theorem}[necessity with germs left singular]\label{thm:partial}
-Let $X$ be a compact complex threefold with $\omega_X\cong\cO_X$ and
-$h^1(\cO_X)=0$ whose singular points are ordinary double points,
-anticanonical cones over $\dP_6$ or $\dP_7$, and anticanonical cones
-over $\mathbb F_1$; let $\Xh\to X$ be a crepant resolution as in
-Section~\ref{sec:intro}.  Let $\cX\to\Disk$ be any one-parameter
-deformation of $X$ and let $\Sigma$ be the set of points at which the
-nearby fiber is singular, a set containing every $\mathbb F_1$-cone
-point by Lemma~\ref{lem:rigid}.  Put
-\[
-K^{\flat}(X;\Sigma)=
-\Bigl\{\kappa\in\ker\Bigl(\bigoplus_pH_2(L_p;\QQ)\to H_2(\Xh;\QQ)
-\Bigr)\ :\ \kappa_p\in R_p\text{ at every cone point }p\notin\Sigma
-\Bigr\}.
-\]
-Then $K^{\flat}(X;\Sigma)$ contains a class nonzero at $q$ for every
-node $q\notin\Sigma$, for every $\dP_7$ point $q\notin\Sigma$, and for
-every $\dP_6$ point $q\notin\Sigma$ smoothed through the one-parameter
-component of its miniversal base.  For $\Sigma=\varnothing$ this is
-Theorem~\ref{thm:necessity}.
-\end{theorem}
-
-\begin{proof}
-The proof of Theorem~\ref{thm:necessity} applies with
-Remark~\ref{rem:partialform} and Lemma~\ref{lem:Mpartial} in place of
-Lemma~\ref{lem:M}.  At a node $q\notin\Sigma$, Lemma~\ref{lem:P}
-gives $\delta_q\neq0$ in $H_3(X_s^{\flat};\QQ)$, since a bounding
-$4$-chain in $X_s^{\flat}$ would make the period of the closed form
-$\Omega_s$ vanish; Poincar\'e--Lefschetz duality on the compact
-oriented manifold with boundary $X_s^{\flat}$ produces
-$\gamma\in H_3(X_s^{\flat},\partial X_s^{\flat};\QQ)$ with
-$\gamma\cdot\delta_q\neq0$; and Lemma~\ref{lem:Mpartial} converts
-$\gamma$ into a class $\kappa\in K^{\flat}(X;\Sigma)$ with
-$\kappa_q\neq0$.  At the cone points $q\notin\Sigma$ in the two
-covered channels the same substitution is made in the argument of
-Theorem~\ref{thm:necessity}(2),(3), with Lemma~\ref{lem:D} read in
-$H_3(X_s^{\flat};\QQ)$.
-\end{proof}
-
-Whatever the deformation and whatever $\Sigma$, the space
-$K^{\flat}(X;\Sigma)$ is by definition contained in
-$\ker\bigl(\bigoplus_pH_2(L_p;\QQ)\to H_2(\Xh;\QQ)\bigr)$, so a
-coordinate that vanishes identically on the latter is forced in every
-case.  On $X_{\Delta}$ that is what happens.
-
-Fix the smooth projective crepant subdivision of the face fan of
-$\Delta$ that uses all twenty-four boundary lattice points, with the
-star subdivision at $v_{23}$ and $v_{24}$ and the twenty square
-diagonals
-\[
-\begin{aligned}
-&(v_2,v_7),(v_2,v_9),(v_3,v_8),(v_3,v_9),(v_{10},v_{12}),
-(v_{10},v_{15}),(v_{11},v_{13}),(v_{11},v_{14}),(v_{11},v_{17}),\\
-&(v_{10},v_{16}),(v_9,v_{12}),(v_{12},v_{17}),(v_{14},v_{17}),
-(v_9,v_{13}),(v_{13},v_{16}),(v_{15},v_{16}),(v_{15},v_{19}),
-(v_{14},v_{18}),\\
-&(v_{18},v_{20}),(v_{19},v_{21}),
-\end{aligned}
-\]
-labeled $n_1,\dots,n_{20}$; the subdivision is smooth, with $94$
-maximal cones, and projective (certified).  The corresponding circuit
-relations are
-\[
-\begin{aligned}
-&v_1{+}v_{12}=v_2{+}v_7,\ \
-v_1{+}v_{15}=v_2{+}v_9,\ \
-v_1{+}v_{13}=v_3{+}v_8,\ \
-v_1{+}v_{14}=v_3{+}v_9,\\
-&v_2{+}v_{19}=v_{10}{+}v_{12},\ \
-v_2{+}v_{20}=v_{10}{+}v_{15},\ \
-v_3{+}v_{18}=v_{11}{+}v_{13},\ \
-v_3{+}v_{21}=v_{11}{+}v_{14},\\
-&v_5{+}v_{21}=v_{11}{+}v_{17},\ \
-v_6{+}v_{20}=v_{10}{+}v_{16},\ \
-v_7{+}v_{15}=v_9{+}v_{12},\ \
-v_7{+}v_{19}=v_{12}{+}v_{17},\\
-&v_7{+}v_{21}=v_{14}{+}v_{17},\ \
-v_8{+}v_{14}=v_9{+}v_{13},\ \
-v_8{+}v_{18}=v_{13}{+}v_{16},\ \
-v_8{+}v_{20}=v_{15}{+}v_{16},\\
-&v_{12}{+}v_{20}=v_{15}{+}v_{19},\ \
-v_{13}{+}v_{21}=v_{14}{+}v_{18},\ \
-v_{16}{+}v_{22}=v_{18}{+}v_{20},\ \
-v_{17}{+}v_{22}=v_{19}{+}v_{21},
-\end{aligned}
-\]
-in the order $n_1,\dots,n_{20}$; in each of them the right-hand pair
-is the chosen diagonal, so the circuit row of
-Section~\ref{sec:matrix} is $-1$ there and $+1$ on the left-hand pair.
-Choosing the other diagonal negates the row and changes nothing
-below.
-Table~\ref{tab:partnersurf} records the two exceptional surfaces.  The
-lattice $K^{\perp}(\mathbb F_1)$ is a line spanned by a primitive
-class of square $-8$, and it contains no $(-2)$-class, consistently
-with the reduced-rigidity of that germ.  No condition is imposed at
-that point in any case: by Lemma~\ref{lem:rigid} it lies in $\Sigma$
-for every deformation, so no Milnor fiber and no $R_p$ is defined
-there.  Stacking the twenty circuit rows, the three hexagon rows and
-the single $\mathbb F_1$ row gives an integral
-matrix $B_{\Delta}\in\operatorname{Mat}_{24\times24}(\ZZ)$, the
-columns being indexed by the divisors of the twenty-four boundary
-lattice points, which span $\Pic$ of the resolution without being a
-basis.  The
-following are exact integral computations, reproduced by the ancillary
-programs from the printed data of
-Tables~\ref{tab:partnerrays} and~\ref{tab:partnersurf}:
-\begin{enumerate}
-\item $\rk B_{\Delta}=16$ and $\dim\ker(B_{\Delta}^{\mathsf T})=8$;
-the node subsystem has rank $14$, with coloops exactly $n_9$ and
-$n_{10}$;
-\item on the unrestricted kernel $\ker(B_{\Delta}^{\mathsf T})$ the
-coordinates of $n_9$, of $n_{10}$, of the $\mathbb F_1$ row and of the
-$A_1$ row of the hexagon vanish identically, so no branch restriction
-is needed;
-\item the column of $B_{\Delta}$ at the divisor of $v_{24}$ is
-identically zero, the node rows having no entry there and the
-divisorial rows having entry $\langle\varphi,K_E\rangle=0$; the same
-holds at $v_{23}$.  Discarding the $\mathbb F_1$ row and that column
-altogether leaves a system on which $n_9$ and $n_{10}$ are still
-forced.
-\end{enumerate}
-As in Section~\ref{sec:kernelcomp}, only the containment of
-$\ker(\bigoplus_pH_2(L_p;\QQ)\to H_2(\Xh;\QQ))$ in
-$\ker(B_{\Delta}^{\mathsf T})$ is used.
-
-\begin{theorem}\label{thm:partner}
-No one-parameter deformation of $X_{\Delta}$ has nearby fiber smooth
-at the node $n_9=\conv\{v_5,v_{11},v_{17},v_{21}\}$, and none has
-nearby fiber smooth at $n_{10}=\conv\{v_6,v_{10},v_{16},v_{20}\}$.
-The same two conclusions hold for deformations over arbitrary analytic
-base germs.  In particular no analytic deformation of $X_{\Delta}$
-smooths all twenty nodes and the $\dP_6$ point, whatever it does at the
-$\mathbb F_1$ point.  By item~(2) and
-Theorem~\ref{thm:partial}, the same argument applied to the $A_1$
-coordinate shows that no analytic deformation of $X_{\Delta}$ smooths
-its $\dP_6$ point through the one-parameter component of its miniversal
-base.  The reduced-rigidity of the $\mathbb F_1$ germ excludes the
-smoothings of $X_{\Delta}$; the deformations excluded here are ones
-that it leaves available.
-\end{theorem}
-
-\begin{proof}
-Suppose the nearby fiber is smooth at $n_9$, so $n_9\notin\Sigma$.  By
-Theorem~\ref{thm:partial} there is
-$\kappa\in K^{\flat}(X_{\Delta};\Sigma)$ with $\kappa_{n_9}\neq0$.
-But $K^{\flat}(X_{\Delta};\Sigma)$ is contained in
-$\ker(B_{\Delta}^{\mathsf T})$ for every $\Sigma$, read in the
-coordinates above, and the $n_9$ coordinate vanishes identically
-there.  The argument for $n_{10}$ is the same.
-
-For the $\dP_6$ assertion, suppose first that the base is a disk and
-that the local classifying arc lies in the one-parameter component of
-the miniversal base.  Theorem~\ref{thm:partial} then gives a class whose
-$A_1$ coordinate is nonzero, contrary to item~(2).
-
-Now let the deformation have an arbitrary analytic base germ $(S,0)$.
-Since the assertions concern actual nearby fibers, we may replace $S$
-by $S_{\mathrm{red}}$.  If one of the excluded local smoothings occurred
-arbitrarily close to the origin, the curve-selection argument used in
-Corollary~\ref{cor:def}, applied to the complement of the inverse image
-of the relevant local discriminant, would give a holomorphic disk
-through the origin whose punctured fibers have the same local smoothing
-property.  For the $\dP_6$ assertion, apply curve selection inside the
-inverse image of the one-parameter component and outside its
-discriminant.  Pullback to the resulting disk contradicts the
-one-parameter conclusions just proved.
-\end{proof}
-
-\begin{corollary}\label{cor:pair}
-Both members of the unique doubly isolated mixed mirror pair carry the
-obstruction of this paper: on $X^{\circ}$, in the form of
-Theorem~\ref{thm:necessity}, it excludes every smoothing; on
-$X_{\Delta}$, in the form of Theorem~\ref{thm:partial}, it excludes
-every analytic deformation smoothing $n_9$ or $n_{10}$.  On
-$X_{\Delta}$ the two mechanisms are independent: by item~(3) the
-forcing is computed from the twenty nodes and the hexagon alone, with the
-$\mathbb F_1$ data discarded, whereas the reduced-rigidity of that germ
-is a statement about it alone.
-\end{corollary}
 
 \begin{table}\centering
 \caption{The $24$ boundary lattice points of $\Delta=\Delta_{\mathbb
@@ -1664,22 +1671,647 @@ $(v_{18},v_4,v_{19},v_{22})$ & $K=(-3,-2)$ &\\
 \end{tabular}
 \end{table}
 
+\section{The mirror partner}\label{sec:partner}
+The polytope $\Delta$ itself carries a Calabi--Yau hypersurface, the
+mirror partner of $X^{\circ}$ in the doubly isolated pair.  Write
+$X_{\Delta}\subset\PP_{\Delta}$ for a Batyrev-regular anticanonical
+hypersurface and $v_1,\dots,v_{22}$ for the vertices of $\Delta$ in
+the order of \cite[Theorem~6.1]{PaperIII}, reproduced in
+Table~\ref{tab:partnerrays}.  By that theorem $X_{\Delta}$ has twenty
+ordinary double points, one $\dP_6$-cone point over the hexagonal face
+$\conv\{v_9,v_{14},v_{15},v_{20},v_{21},v_{22}\}$, and one point whose
+germ is the anticanonical cone over $\mathbb F_1$, over the
+quadrilateral face $\conv\{v_4,v_{18},v_{19},v_{22}\}$.  As in
+Section~\ref{sec:X0}, $X_{\Delta}$ is an anticanonical Cartier divisor
+in a Gorenstein Fano toric fourfold, so
+$\omega_{X_{\Delta}}\cong\cO_{X_{\Delta}}$ and
+$h^1(\cO_{X_{\Delta}})=0$, and every germ is analytically the cone
+over its face because every dual edge has lattice length one.  The
+last germ
+is reduced-rigid, so $X_{\Delta}$ admits no smoothing \cite{PaperI}.
+Theorem~\ref{thm:main} and the reduced-rigidity of this germ together
+suggest a division of labour, $X_{\Delta}$ failing to smooth locally
+and $X^{\circ}$ globally.  The division does not hold up: the
+obstruction of this paper is present on $X_{\Delta}$ as well, in the form
+Theorem~\ref{thm:partial} gives it, and it does not use the
+$\mathbb F_1$ germ.
+
+\begin{theorem}[necessity with germs left singular]\label{thm:partial}
+Let $X$ be a compact complex threefold with $\omega_X\cong\cO_X$ and
+$h^1(\cO_X)=0$ whose singular points are ordinary double points,
+anticanonical cones over $\dP_6$ or $\dP_7$, and anticanonical cones
+over $\mathbb F_1$; let $\Xh\to X$ be a crepant resolution as in
+Section~\ref{sec:intro}.  Let $\cX\to\Disk$ be any one-parameter
+deformation of $X$ and let $\Sigma$ be the set of points at which the
+nearby fiber is singular, a set containing every $\mathbb F_1$-cone
+point by Lemma~\ref{lem:rigid}.  Put
+\[
+K^{\flat}(X;\Sigma)=
+\Bigl\{\kappa\in\ker\Bigl(\bigoplus_pH_2(L_p;\QQ)\to H_2(\Xh;\QQ)
+\Bigr)\ :\ \kappa_p\in \Rsm_p\text{ at every cone point }p\notin\Sigma
+\Bigr\}.
+\]
+Then $K^{\flat}(X;\Sigma)$ contains a class nonzero at $q$ for every
+node $q\notin\Sigma$, for every $\dP_7$ point $q\notin\Sigma$, and for
+every $\dP_6$ point $q\notin\Sigma$ smoothed through the one-parameter
+component of its miniversal base.  For $\Sigma=\varnothing$ this is
+Theorem~\ref{thm:necessity}.
+\end{theorem}
+
+\begin{proof}
+The proof of Theorem~\ref{thm:necessity} applies with
+Remark~\ref{rem:partialform} and Lemma~\ref{lem:Mpartial} in place of
+Lemma~\ref{lem:M}.  At a node $q\notin\Sigma$, Lemma~\ref{lem:P}
+gives $\delta_q\neq0$ in $H_3(X_s^{\flat};\QQ)$, since a bounding
+$4$-chain in $X_s^{\flat}$ would make the period of the closed form
+$\Omega_s$ vanish; Poincar\'e--Lefschetz duality on the compact
+oriented manifold with boundary $X_s^{\flat}$ produces
+$\gamma\in H_3(X_s^{\flat},\partial X_s^{\flat};\QQ)$ with
+$\gamma\cdot\delta_q\neq0$; and Lemma~\ref{lem:Mpartial} converts
+$\gamma$ into a class $\kappa\in K^{\flat}(X;\Sigma)$ with
+$\kappa_q\neq0$.  At the cone points $q\notin\Sigma$ in the two
+covered branches the same substitution is made in the argument of
+Theorem~\ref{thm:necessity}(2),(3), with Lemma~\ref{lem:D} read in
+$H_3(X_s^{\flat};\QQ)$.
+\end{proof}
+
+Whatever the deformation and whatever $\Sigma$, the space
+$K^{\flat}(X;\Sigma)$ is by definition contained in
+$\ker\bigl(\bigoplus_pH_2(L_p;\QQ)\to H_2(\Xh;\QQ)\bigr)$, so a
+coordinate that vanishes identically on the latter is forced in every
+case.  On $X_{\Delta}$ that is what happens.
+
+Fix the smooth projective crepant subdivision of the face fan of
+$\Delta$ that uses all twenty-four boundary lattice points, with the
+star subdivision at $v_{23}$ and $v_{24}$ and the twenty square
+diagonals
+\[
+\begin{aligned}
+&(v_2,v_7),(v_2,v_9),(v_3,v_8),(v_3,v_9),(v_{10},v_{12}),
+(v_{10},v_{15}),(v_{11},v_{13}),(v_{11},v_{14}),(v_{11},v_{17}),\\
+&(v_{10},v_{16}),(v_9,v_{12}),(v_{12},v_{17}),(v_{14},v_{17}),
+(v_9,v_{13}),(v_{13},v_{16}),(v_{15},v_{16}),(v_{15},v_{19}),
+(v_{14},v_{18}),\\
+&(v_{18},v_{20}),(v_{19},v_{21}),
+\end{aligned}
+\]
+labeled $n_1,\dots,n_{20}$; the subdivision is smooth, with $94$
+maximal cones, and projective.  The corresponding circuit
+relations are
+\[
+\begin{aligned}
+&v_1{+}v_{12}=v_2{+}v_7,\ \
+v_1{+}v_{15}=v_2{+}v_9,\ \
+v_1{+}v_{13}=v_3{+}v_8,\ \
+v_1{+}v_{14}=v_3{+}v_9,\\
+&v_2{+}v_{19}=v_{10}{+}v_{12},\ \
+v_2{+}v_{20}=v_{10}{+}v_{15},\ \
+v_3{+}v_{18}=v_{11}{+}v_{13},\ \
+v_3{+}v_{21}=v_{11}{+}v_{14},\\
+&v_5{+}v_{21}=v_{11}{+}v_{17},\ \
+v_6{+}v_{20}=v_{10}{+}v_{16},\ \
+v_7{+}v_{15}=v_9{+}v_{12},\ \
+v_7{+}v_{19}=v_{12}{+}v_{17},\\
+&v_7{+}v_{21}=v_{14}{+}v_{17},\ \
+v_8{+}v_{14}=v_9{+}v_{13},\ \
+v_8{+}v_{18}=v_{13}{+}v_{16},\ \
+v_8{+}v_{20}=v_{15}{+}v_{16},\\
+&v_{12}{+}v_{20}=v_{15}{+}v_{19},\ \
+v_{13}{+}v_{21}=v_{14}{+}v_{18},\ \
+v_{16}{+}v_{22}=v_{18}{+}v_{20},\ \
+v_{17}{+}v_{22}=v_{19}{+}v_{21},
+\end{aligned}
+\]
+in the order $n_1,\dots,n_{20}$; in each of them the right-hand pair
+is the chosen diagonal, so the circuit row of
+Section~\ref{sec:matrix} is $-1$ there and $+1$ on the left-hand pair.
+Choosing the other diagonal negates the row and changes nothing
+below.
+Table~\ref{tab:partnersurf} records the two exceptional surfaces.  The
+lattice $K^{\perp}(\mathbb F_1)$ is a line spanned by a primitive
+class of square $-8$, and it contains no $(-2)$-class, consistently
+with the reduced-rigidity of that germ.  No condition is imposed at
+that point in any case: by Lemma~\ref{lem:rigid} it lies in $\Sigma$
+for every deformation, so no Milnor fiber and no $\Rsm_p$ is defined
+there.  Stacking the twenty node rows, the three hexagon rows and
+the single $\mathbb F_1$ row gives an integral
+matrix $B_{\Delta}\in\operatorname{Mat}_{24\times24}(\ZZ)$, the
+columns being indexed by the divisors of the twenty-four boundary
+lattice points, which span $\Pic$ of the resolution without being a
+basis.  The
+following are exact integral computations, reproduced by the ancillary
+programs from the printed data of
+Tables~\ref{tab:partnerrays} and~\ref{tab:partnersurf}:
+\begin{enumerate}
+\item $\rk B_{\Delta}=16$ and $\dim\ker(B_{\Delta}^{\mathsf T})=8$;
+the node subsystem has rank $14$, with coloops exactly $n_9$ and
+$n_{10}$;
+\item on the unrestricted kernel $\ker(B_{\Delta}^{\mathsf T})$ the
+coordinates of $n_9$, of $n_{10}$, of the $\mathbb F_1$ row and of the
+$A_1$ row of the hexagon vanish identically, so no branch restriction
+is needed;
+\item the column of $B_{\Delta}$ at the divisor of $v_{24}$ is
+identically zero, the node rows having no entry there and the
+divisorial rows having entry $\langle\varphi,K_E\rangle=0$; the same
+holds at $v_{23}$.  Discarding the $\mathbb F_1$ row and that column
+altogether leaves a system on which $n_9$ and $n_{10}$ are still
+forced.
+\end{enumerate}
+\begin{theorem}\label{thm:partner}
+No one-parameter deformation of $X_{\Delta}$ has nearby fiber smooth
+at the node $n_9=\conv\{v_5,v_{11},v_{17},v_{21}\}$, and none has
+nearby fiber smooth at $n_{10}=\conv\{v_6,v_{10},v_{16},v_{20}\}$.
+The same two conclusions hold for deformations over arbitrary analytic
+base germs.  In particular no analytic deformation of $X_{\Delta}$
+smooths all twenty nodes and the $\dP_6$ point, whatever it does at the
+$\mathbb F_1$ point.  By item~(2) and
+Theorem~\ref{thm:partial}, the same argument applied to the $A_1$
+coordinate shows that no analytic deformation of $X_{\Delta}$ smooths
+its $\dP_6$ point through the one-parameter component of its miniversal
+base.  The reduced-rigidity of the $\mathbb F_1$ germ excludes the
+smoothings of $X_{\Delta}$; the deformations excluded here are ones
+that it leaves available.
+\end{theorem}
+
+\begin{proof}
+Suppose the nearby fiber is smooth at $n_9$, so $n_9\notin\Sigma$.  By
+Theorem~\ref{thm:partial} there is
+$\kappa\in K^{\flat}(X_{\Delta};\Sigma)$ with $\kappa_{n_9}\neq0$.
+But $K^{\flat}(X_{\Delta};\Sigma)$ is contained in
+$\ker(B_{\Delta}^{\mathsf T})$ for every $\Sigma$, read in the
+coordinates above, and the $n_9$ coordinate vanishes identically
+there.  The argument for $n_{10}$ is the same.
+
+For the $\dP_6$ assertion, suppose first that the base is a disk and
+that the local classifying arc lies in the one-parameter component of
+the miniversal base.  Theorem~\ref{thm:partial} then gives a class whose
+$A_1$ coordinate is nonzero, contrary to item~(2).
+
+Now let the deformation have an arbitrary analytic base germ $(S,0)$.
+Since the assertions concern actual nearby fibers, we may replace $S$
+by $S_{\mathrm{red}}$.  If one of the excluded local smoothings occurred
+arbitrarily close to the origin, the curve-selection argument used in
+Corollary~\ref{cor:def}, applied to the complement of the inverse image
+of the relevant local discriminant, would give a holomorphic disk
+through the origin whose punctured fibers have the same local smoothing
+property.  For the $\dP_6$ assertion, apply curve selection inside the
+inverse image of the one-parameter component and outside its
+discriminant.  Pullback to the resulting disk contradicts the
+one-parameter conclusions just proved.
+\end{proof}
+
+\begin{corollary}\label{cor:pair}
+Both members of the unique doubly isolated mixed mirror pair carry the
+obstruction of this paper: on $X^{\circ}$, in the form of
+Theorem~\ref{thm:necessity}, it excludes every smoothing; on
+$X_{\Delta}$, in the form of Theorem~\ref{thm:partial}, it excludes
+every analytic deformation smoothing $n_9$ or $n_{10}$.  On
+$X_{\Delta}$ the two mechanisms are independent: by item~(3) the
+forcing is computed from the twenty nodes and the hexagon alone, with the
+$\mathbb F_1$ data discarded, whereas the reduced-rigidity of that germ
+is a statement about it alone.
+\end{corollary}
+
+
+\section{What the criterion measures}\label{sec:measures}
+
+The rows of Section~\ref{sec:matrix} were introduced as a device: the
+$K^{\perp}$ functionals stand in for the exceptional curve class that a
+del Pezzo cone point does not have.  This section identifies them, and the identification is the reason the device
+is the right one: the rows at a germ are canonically its $T^1$.  It also makes
+the finite test of Section~\ref{sec:test} readable and locates the criterion
+against the smoothing theorems of Gross~\cite{Gross97}.
+
+\subsection{The combinatorial setting}\label{sec:combsetting}
+Throughout this section and the next, $\Pi\subset N_{\RR}\cong\RR^4$ is a
+reflexive $4$-polytope with polar $\Pi^{*}$, $\PP_{\Pi}$ is the Gorenstein
+Fano toric fourfold of its face fan, and $X\subset\PP_{\Pi}$ is an
+anticanonical hypersurface regular in Batyrev's sense
+\cite[Definition~3.1.1]{Batyrev94}.  (The letter $\Delta$ stays reserved
+for the fixed $\Delta_{\mathbb F_1}$ of Section~\ref{sec:X0}; the
+polytope relevant to $X^{\circ}$ is $\Pi=\Delta^{\vee}$, and the
+polytope relevant to $X_{\Delta}$ is $\Pi=\Delta$.)
+
+For a $2$-face $G$ of $\Pi$ with dual edge $G^{*}\subset\Pi^{*}$ of
+lattice length $\ell(G^{*})$, the hypersurface meets the closed orbit
+of $\Cone(G)$ in $\ell(G^{*})$ points, and at each of them the germ of
+$X$ is the affine toric threefold of $\Cone(G)$, exactly as in
+Section~\ref{sec:X0} \cite{Batyrev94,PaperIII}.  The germ is singular
+unless $G$ is a unimodular triangle, and it is isolated when every edge
+of $G$ has lattice length one; we call such a $G$ a \emph{singular
+$2$-face} and write $(Y_G,0)$ for the germ.  A unit square gives a node;
+a pentagon with one interior lattice point gives $C(\dP_7)$ and a hexagon
+with one interior lattice point gives $C(\dP_6)$, the interior point
+being the origin of the fan of the exceptional surface in each case.
+
+\begin{definition}\label{def:admissible}
+$\Pi$ is \emph{admissible} if every edge of $\Pi$ has lattice length
+one; every $2$-face of $\Pi$ has either three vertices and no interior
+lattice point, or four vertices and no interior lattice point, or five or
+six vertices and exactly one interior lattice point; and $\ell(G^{*})=1$
+for every singular $2$-face $G$.
+\end{definition}
+
+The four types are the unimodular triangle, the unit square, the pentagon
+and the hexagon listed above: with unit edges, a quadrilateral
+without interior points has normalized area $2$ by Pick's formula and so
+is a unimodular parallelogram.  Note that a quadrilateral with unit edges
+and \emph{one} interior point is a different face, giving a cone point over
+a smooth toric del Pezzo surface of degree $8$, either $\mathbb F_1$ or
+$\PP^1\times\PP^1$; both are excluded here, and the $\mathbb F_1$ case is the
+one that occurs on $\Delta$ and is treated in Section~\ref{sec:partner}.
+
+For admissible $\Pi$ the hypersurface $X$ satisfies the standing
+hypotheses of Theorem~\ref{thm:necessity}, by the argument of
+Section~\ref{sec:X0}: $\Sing X$ is finite with one point per singular
+$2$-face, and every germ is a node or an anticanonical $\dP_6$ or
+$\dP_7$ cone.  The polytope $\Delta^{\vee}$ of Section~\ref{sec:X0} is
+admissible, its $68$ two-faces being $38$ unimodular triangles, $26$ unit
+squares, two pentagons and two hexagons; $\Delta_{19}$ and $\Delta_{20}$
+of Section~\ref{sec:test} are admissible; $\Delta$ itself is not, because
+the quadrilateral face carrying its $\mathbb F_1$-cone point is neither a
+square nor a triangle, but it satisfies the weaker hypothesis of
+Proposition~\ref{prop:kernelequal} below.
+
+\subsection{The relation rows are the germ's \texorpdfstring{$T^1$}{T1}}
+\label{sec:channelsT1}
+
+\begin{proposition}\label{prop:T1channels}
+Let $G$ be a singular $2$-face of $\Pi$ with vertices $v_1,\dots,v_n$ in
+cyclic order.  There is a canonical isomorphism
+\[
+T^1_{(Y_G,0)}\ \cong\
+\Bigl\{a\in\QQ^{\,n}\ :\ \textstyle\sum_j a_jv_j=0\Bigr\},
+\]
+of rank $n-3$, and the rows of Section~\ref{sec:matrix} at $G$, read in
+the coordinates of the rays of $G$, are a basis of the right-hand space.
+When $G$ is a pentagon or hexagon, so that the crepant resolution has an
+exceptional surface $E$ over the germ, that space is
+$K^{\perp}\subset\Pic(E)^{\vee}_{\QQ}$; when $G$ is a unit square it is
+the line spanned by the intersection vector of the exceptional curve of a
+small resolution.
+\end{proposition}
+
+\begin{proof}
+Altmann computes $T^1$ of the germ, concentrated in the Gorenstein
+degree, as the space of dilations of the edges of $G$ satisfying the
+closing condition, modulo the homothety
+\cite[(6.5) and the subsequent Remark]{Altmann95}; its dimension is
+$(n-2)-1$.  Send a dilation $t$, with $t_j$ the dilation of the edge
+$(v_j,v_{j+1})$, to its jump $a_j:=t_j-t_{j-1}$ across the vertex $v_j$.
+Then
+\[
+\sum_j a_jv_j=\sum_j t_jv_j-\sum_j t_jv_{j+1}
+=-\sum_j t_j\,(v_{j+1}-v_j)=0
+\]
+by the closing condition; the kernel of $t\mapsto a$ is the constants,
+and both sides have dimension $n-3$ because $\Cone(G)$ is
+three-dimensional.  For the last two clauses, note first that $G$ lies in
+the affine hyperplane $\langle u_F,\cdot\rangle=-1$ for either facet
+$F\supset G$, so $\sum_ja_jv_j=0$ forces $\sum_ja_j=0$.  If $G$ is a
+pentagon or hexagon, the $v_j$ are the rays of the fan of $E$ seen from
+the interior lattice point, and dualizing
+$0\to M_E\to\QQ^{\,n}\to\Pic(E)_{\QQ}\to0$ identifies
+$\{a:\sum_ja_jv_j=0\text{ in the plane of }G\}$ with
+$\Pic(E)^{\vee}_{\QQ}$; since $K_E=-\sum_jD_j$ the extra condition
+$\sum_ja_j=0$ is orthogonality to $K_E$, and a divisorial row of
+Section~\ref{sec:matrix} is $\varphi\mapsto(\langle\varphi,D_j\rangle)_j$
+for $\varphi$ in a basis of $K^{\perp}$, which is that identification.
+If $G$ is a unit square with cyclic vertices $(a,b,c,d)$, the space is
+one-dimensional and spanned by $(-1,1,-1,1)$, because
+$v_a+v_c=v_b+v_d$; that is the node row of Section~\ref{sec:matrix}, the
+intersection functional of $\Gamma$.
+\end{proof}
+
+So the $K^{\perp}$ lattice introduced in Section~\ref{sec:matrix} as a
+substitute for the missing exceptional curve class is the tangent space
+to the germ's deformation functor, so the substitute was canonical.  A
+linear relation among the rays of a cone is the combinatorial avatar of a
+curve class, with $a_j$ the intersection number against the invariant
+divisor $D_j$; at a node the square's relation $v_a+v_c=v_b+v_d$ is the
+class of the exceptional curve of a small resolution, and the row
+$(-1,1,-1,1)$ of Section~\ref{sec:matrix} is its vector of intersection
+numbers.  The proposition says that this reading survives at a del Pezzo
+cone point, where the curve is not there to be read.  Two consequences
+follow.  The interior lattice point of a pentagon or hexagon
+carries coefficient $\langle\varphi,K\rangle=0$ in every row, so the rows
+are supported on the vertices of the face; and the total number of
+relation rows equals $\dim H^0(\mathcal T^1_X)$, which is $36$ for $X^{\circ}$
+and $16$ for $X_{19}$.
+
+\subsection{The ambient kernel is the topological kernel}
+\label{sec:kernelequal}
+
+\begin{proposition}\label{prop:kernelequal}
+Suppose every $2$-face of $\Pi$ is either a unimodular triangle or has
+dual edge of lattice length one; admissible polytopes, and also
+$\Delta$ itself, satisfy this.  Then the correction term
+$\sum_{G}\ell^{*}(G)\bigl(\ell(G^{*})-1\bigr)$, summed over $2$-faces $G$
+of $\Pi$, in Batyrev's formula \cite[Corollary~4.5.1]{Batyrev94} for
+$h^{1,1}$ vanishes.  Consequently $h^{1,1}(\Xh)$ is purely toric, the
+ambient divisor classes span $H^{1,1}(\Xh;\QQ)$, and the ambient kernel
+$\ker(B^{\mathsf T})$ of Section~\ref{sec:kernelcomp} is equal to, not
+merely contains,
+$\ker\bigl(\bigoplus_pH_2(L_p;\QQ)\to H_2(\Xh;\QQ)\bigr)$.
+\end{proposition}
+
+\begin{proof}
+The spanning statement is not the vanishing restated; what connects them is
+the proof of \cite[Theorem~4.4.2]{Batyrev94}, where the components of
+$D_{\rho}\cap\Xh$ over a $2$-face $G$ are counted by
+$\ell^{*}(G)\ell^{*}(G^{*})$.  When that count vanishes each such
+intersection is irreducible, so the classes coming from the ambient
+torus-invariant divisors exhaust $H^{1,1}(\Xh;\QQ)$.  We use also
+$h^{2,0}(\Xh)=0$, which holds since $\Xh$ is crepant over a Calabi--Yau
+with rational singularities.  Granting these:
+
+A singular $2$-face has $\ell(G^{*})=1$ by hypothesis, so its factor
+$\ell(G^{*})-1$ vanishes; a non-singular $2$-face is a unimodular
+triangle, so its factor $\ell^{*}(G)$ vanishes.  Every term dies for one
+of the two reasons.  For the last clause, a row of $B$ records the
+pairings of a class with the ambient divisors, so a combination of rows
+vanishes exactly when the corresponding total class pairs to zero against
+every ambient divisor.  Since $h^{2,0}(\Xh)=0$ we have
+$H^2(\Xh;\QQ)=H^{1,1}(\Xh;\QQ)$, so the Poincar\'e pairing
+$H_2\times H^2\to\QQ$ is perfect; the ambient divisor classes span
+$H^{1,1}$ by the first part, and therefore the total class pairs to zero
+against all of them exactly when it vanishes in $H_2(\Xh;\QQ)$.
+\end{proof}
+
+Section~\ref{sec:kernelcomp} uses only the containment, which is the safe
+direction for a necessity statement: a ambient kernel larger than the
+topological one makes every forced-zero conclusion stronger.  The
+proposition upgrades it to equality for the whole class at once, which
+matters in the converse direction, where the containment runs the wrong
+way and a sufficiency statement phrased in terms of the computable test
+would otherwise not be well posed; that is taken up in the companion
+paper~\cite{PaperV}.  Note that this vanishing is not the one that
+empties Mavlyutov's mechanism of non-polynomial deformations
+\cite{Mav04}: that is the mirror correction, summed over $2$-faces of
+$\Pi^{*}$, and it follows from the unit edges of $\Pi$.  Both hold here,
+for related but distinct reasons.
+
+\subsection{\texorpdfstring{$\QQ$}{Q}-factoriality, and what the kernel
+is a defect of}\label{sec:qfact}
+
+Gross classifies the contractions of a smooth Calabi--Yau threefold that
+cannot be factored, and proves that a primitive contraction of a divisor
+to a point has smoothable target unless the exceptional divisor is
+$\PP^2$ or $\mathbb F_1$ \cite[Theorem~5.8]{Gross97}; degrees $6$ and
+$7$ are allowed.  This appears to collide with
+Theorem~\ref{thm:necessity}, which at a threefold with a single del Pezzo
+cone point has nothing for a relation to cancel against and so forbids a
+smoothing.  It does not collide, and the reason identifies what the
+kernel measures.
+
+\begin{proposition}\label{prop:qfact}
+Let $X$ be $\QQ$-factorial and let $\pi\colon\Xh\to X$ be a projective
+crepant resolution each of whose exceptional divisors is contracted to a
+point.  Then the exceptional locus is exactly those divisors, and the rows
+of Section~\ref{sec:matrix} at each of the corresponding germs vanish
+identically.
+\end{proposition}
+
+\begin{proof}
+Because $X$ is $\QQ$-factorial and $\pi$ is projective and birational, the
+exceptional locus of $\pi$ has pure codimension one
+\cite[Cor.~2.63]{KollarMori}.  Let $E_1,\dots,E_r$ be its components and
+assume each is contracted to a point, which is the situation of the
+divisorial germs of this paper; distinct $E_i$ are then contracted to
+distinct points, since a connected exceptional divisor over one point is
+irreducible here.
+
+$\QQ$-factoriality also makes $\pi^{*}$ defined on $\Cl(X)_{\QQ}$, and
+then $\Cl(\Xh)_{\QQ}=\pi^{*}\Cl(X)_{\QQ}\oplus\bigoplus_i\QQ E_i$, with
+$\Cl(\Xh)=\Pic(\Xh)$ since $\Xh$ is smooth.  Fix $i$ and write $E=E_i$.
+A pullback $\pi^{*}D$ restricts trivially to $E$ because $\pi(E)$ is a
+point, and $E_j|_E=0$ for $j\neq i$ because $E_j$ and $E$ lie over
+distinct points, so the image of $\Pic(\Xh)_\QQ\to\Pic(E)_{\QQ}$ is
+spanned by $E|_E$.  That class is $K_E$: adjunction gives
+$K_E=(K_{\Xh}+E)|_E$, and $K_{\Xh}|_E=(\pi^{*}K_X)|_E=0$ by crepancy and
+the same observation.  Every divisor class therefore pairs to zero
+against $K_E^{\perp}$, and the rows, which are those pairings, vanish.
+\end{proof}
+
+In the $\QQ$-factorial case, then, the rows at every divisorial germ are
+zero, the kernel there is all of $K^{\perp}$, and the test of
+Section~\ref{sec:test} is silent, as it must be, since
+\cite[Theorem~5.8]{Gross97} produces a smoothing.  The proposition also
+says that a $\QQ$-factorial $X$ admits no \emph{projective} crepant
+resolution with an exceptional curve; it does not say that $X$ has no
+nodes, and indeed a general one-nodal quintic threefold is factorial.
+Contrapositively:
+
+\begin{corollary}\label{cor:defect}
+If the block of rows at a divisorial germ has positive rank, then $X$ is not
+$\QQ$-factorial.  Since primitivity in \cite[Theorem~5.8]{Gross97}
+supplies $\QQ$-factoriality of the target, that theorem is silent on
+every $X$ carrying such a germ, and the two statements never
+disagree. \qed
+\end{corollary}
+
+The condition in Proposition~\ref{prop:qfact} and its contrapositive are
+\emph{global}: $\QQ$-factoriality of $X$, in the sense
+$\operatorname{rank}\bigl(\Cl(X)/\Pic(X)\bigr)=0$, and not the condition
+that a germ be $\QQ$-factorial in its own right.  The distinction is not
+idle.  The germs here are never locally $\QQ$-factorial: at a cone over a
+del Pezzo surface $E$ the local class group is $\Pic(E)/\ZZ K_E$, of rank
+$\rho(E)-1$, which is Namikawa's invariant $\sigma$ \cite{Namikawa97}.  For
+the toric del Pezzos of the framework that rank is also $\dim T^1$
+(Section~\ref{sec:channelsT1}), the two agreeing because Namikawa's other
+invariant $\mu$ vanishes on a toric germ; for a non-toric cone they differ.
+A threefold can carry a germ that is not locally $\QQ$-factorial and still
+be globally $\QQ$-factorial: the target of a primitive type~II contraction
+is the example that matters here, and a general one-nodal quintic is the
+familiar one.
+
+So a positive block rank witnesses the failure of $\QQ$-factoriality.  It is
+the block rank and not the relation kernel that plays the part of the
+classical defect.  On the examples here
+$\operatorname{rank}(\Cl(X)/\Pic(X))=\rk B$, which on $X_7$ is $2$ while the
+kernel there is zero, and on a general
+one-nodal quintic is $0$ while the kernel is one-dimensional.  The kernel
+and the defect are different invariants and they are not interchangeable in
+either direction.  On $X^{\circ}$
+every block has the maximal rank, $2$ at each $\dP_7$ point and $3$ at each
+$\dP_6$ point.
+
+Within the admissible framework the witness never fires negatively, and
+this is a theorem rather than an observation.  The exceptional divisor $E$
+over a singular $2$-face is a toric surface whose boundary divisors are the
+restrictions of the ambient toric divisors, so
+$\Pic(\PP_{\widehat\Sigma})_\QQ\to\Pic(E)_\QQ$ is surjective and the block
+at that germ has the full rank $n-3$ of
+Proposition~\ref{prop:T1channels}, which is $2$ at a pentagon and $3$ at a
+hexagon.  Since $n-3>0$ at every singular $2$-face, no admissible $X$ carrying one is
+$\QQ$-factorial; the argument is about the divisorial germs, a node
+contributing no exceptional divisor to which it could be applied.  The census bears this out at every one of the $77$
+polytopes of Proposition~\ref{prop:census} and at $\Delta_{19}$,
+$\Delta_{20}$ and $X^\circ$, but it is not the evidence for it.
+Proposition~\ref{prop:qfact} therefore functions here as a consistency
+check against \cite[Theorem~5.8]{Gross97} rather than as a discriminating
+invariant.  In the purely
+nodal case the defect is exactly what Friedman's criterion is about, and
+a $\QQ$-factorial nodal threefold has no small projective resolution and
+no relation to exploit; the generic one-nodal quintic, where the
+exceptional curve class dies in $H_2$ of the small resolution, is the
+standard example, and the test is silent on it
+(Section~\ref{sec:test}).  The mixed criterion inherits that shape, with
+$K^{\perp}$ in place of the curve class.
+
 \section{The criterion as a finite test, and an open problem}
 \label{sec:test}
 
+\subsection{The test}\label{sec:thetest}
 Theorem~\ref{thm:necessity} is a finite test for any concrete
 candidate: compute the matrix of Section~\ref{sec:matrix} from the
-polytope (node circuit rows; $K^{\perp}$ bases of the star fans of
+polytope (node rows; $K^{\perp}$ bases of the star fans of
 the pentagon and hexagon faces), restrict to the branch subspaces,
 and check whether some covered coordinate is forced to vanish.  A
 forced node coordinate contradicts Lemma~\ref{lem:P}; a forced
 $\dP_7$ root coordinate contradicts Lemma~\ref{lem:D}; a forced
 $s_3$-coordinate contradicts Lemma~\ref{lem:D} on profiles through
-the line component.  The test consumes nothing about the example
-beyond $\Delta$-regularity and its face inventory.
+the line component.  The test uses nothing about the example beyond Batyrev regularity and its face inventory.
 
-The test fires on threefolds that no purely nodal argument can reach.
-Let $\Delta_{20}$ be the $20$-vertex reflexive polytope
+Applied across the admissible polytopes of
+Definition~\ref{def:admissible} the test has a wide range, and the two
+ends of that range are worth separating.  At the small end it is nearly immediate: with a single germ the criterion
+asks only whether the germ's root subspace survives in $H_2(\Xh;\QQ)$, which
+is a two-row rank computation.  That case is
+Section~\ref{sec:onegerm}, and Section~\ref{sec:census} shows it is not
+isolated: among admissible polytopes with at most nine vertices
+carrying a pentagonal $2$-face, seventy-six of seventy-seven are
+obstructed, sixty-seven of them with one singular point.  The interest
+of $X^{\circ}$ is that it is at the other end: thirty germs of three
+kinds, both $\dP_6$ branch profiles, and a $36\times26$ matrix of rank
+$21$ whose $15$-dimensional kernel forces nothing at a node, and where the
+four coordinates that decide the question appear once the $\dP_7$ branch
+restriction is imposed.  Sections~\ref{sec:X20} and~\ref{sec:X19}
+sit between the two, one where the obstruction is carried entirely by
+the divisorial direction and one where the test is silent.
+
+\subsection{One singular point}\label{sec:onegerm}
+The smallest case the criterion decides is nearly trivial, and it
+isolates what the test says when there
+is nothing to cancel.
+
+\begin{corollary}\label{cor:onegerm}
+Let $X$ be as in Theorem~\ref{thm:necessity} with exactly one singular
+point $p$, an anticanonical $\dP_7$ cone, and suppose the $(-2)$-line
+$\Rsm_p\subset H_2(L_p;\QQ)$ maps injectively into $H_2(\Xh;\QQ)$.  Then
+$X$ admits no one-parameter smoothing.
+\end{corollary}
+
+\begin{proof}
+With one singular point $K(X)=\{\kappa\in \Rsm_p:\kappa\mapsto0$ in
+$H_2(\Xh;\QQ)\}$, which is $0$ by hypothesis.  A one-parameter smoothing
+would produce, by Theorem~\ref{thm:necessity}(2), a
+$\kappa\in K(X)$ whose $p$-component is a nonzero element of $\Rsm_p$.
+\end{proof}
+
+The hypothesis is a finite check: it suffices, and this is the safe
+direction of the containment used throughout
+Section~\ref{sec:kernelcomp}, that the $(-2)$-row of
+Section~\ref{sec:matrix} be nonzero, since a class pairing nontrivially
+with an ambient divisor does not die in $H_2(\Xh;\QQ)$.
+
+Such an $X$ exists, and the smallest polytope producing one is the
+smallest polytope in the whole class with a del Pezzo cone point at all.
+Let
+\[
+\begin{gathered}
+\Delta_7=\conv\{(1,0,0,0),(0,1,0,0),(0,0,1,0),(-6,-4,-1,0),\\
+(0,0,0,1),(-6,-4,0,-1),(-3,-2,1,-1)\},
+\end{gathered}
+\]
+reflexive with seven vertices, seven facets and sixteen edges, all of
+lattice length one.  Of its sixteen $2$-faces, fifteen are unimodular
+triangles and one is a pentagon with a single interior lattice point and
+dual edge of lattice length one, so $\Delta_7$ is admissible and
+$X_7\subset\PP_{\Delta_7}$ has \emph{exactly one} singular point, an
+anticanonical $\dP_7$ cone, which is smoothable as a germ.  As in
+Section~\ref{sec:X0}, $\omega_{X_7}\cong\cO_{X_7}$ and
+$h^1(\cO_{X_7})=0$, and $\Xh_7$ has $h^{1,1}=4$ and $h^{2,1}=214$.  The
+two divisorial rows are linearly independent, so the channel block has
+rank $2$, the maximum, the ambient kernel is zero, and
+Corollary~\ref{cor:onegerm} applies: \emph{$X_7$ admits no one-parameter
+smoothing.}
+
+Since the block has positive rank,
+Corollary~\ref{cor:defect} says $X_7$ is not $\QQ$-factorial, so
+\cite[Theorem~5.8]{Gross97} does not speak to it and there is
+no conflict with the smoothability of primitive type~II contractions
+with $\dP_7$ exceptional divisor.  And $X_7$ illustrates the criterion without testing it: no cancellation
+occurs, no branch profile is consulted beyond discarding $\alpha$, and both
+divisorial rows do all the work.
+
+\subsection{A census of the admissible polytopes with a pentagonal
+$2$-face, at up to nine vertices}
+\label{sec:census}
+The test is mechanical, so it can be applied to every polytope of a
+classification in turn.
+
+\begin{proposition}\label{prop:census}
+Among the $3\,905\,789$ reflexive $4$-polytopes with at most nine vertices
+in the Kreuzer--Skarke classification \cite{KS00}, a count read from the
+published database rather than from \cite{KS00} itself, exactly $77$ are
+admissible and carry
+a pentagonal $2$-face, one pentagon apiece: one at seven vertices, thirteen
+at eight, sixty-three at nine.  No pentagonal $2$-face occurs below seven
+vertices.  None of the $77$ carries a hexagonal $2$-face, so each of the
+corresponding $X$ has exactly one $\dP_7$ cone point and no $\dP_6$ point;
+the search records that each has at most two nodes, the inventories being
+$67$ with the cone point alone, $9$ with one node in addition, and $1$ with
+two nodes.  The test of Theorem~\ref{thm:necessity} obstructs all but one of
+them, so those $76$ admit no one-parameter smoothing, and by
+Corollary~\ref{cor:def} they are not smoothable over any base germ.  On the remaining polytope, which
+has nine vertices and two nodes, the test is silent.
+\end{proposition}
+
+\begin{proof}
+Each such $X$ satisfies the standing hypotheses of
+Theorem~\ref{thm:necessity} by Section~\ref{sec:combsetting}, with a
+crepant resolution obtained by restricting a maximal projective crepant
+partial desingularization of $\PP_{\Pi}$ \cite[\S2.2]{Batyrev94}: small
+over the nodes, with exceptional divisor $\dP_7$ over the cone point.
+The verdicts are the outcome of the test of Section~\ref{sec:thetest},
+recomputed for each of the $77$ from its vertex list
+(Appendix~\ref{app:cert}).  Since no $\dP_6$ point occurs, the only
+branch restriction is $\alpha=0$ at the pentagon, and a forced node or
+$(-2)$-coordinate is contradicted by Lemma~\ref{lem:P} or
+Lemma~\ref{lem:D}.
+\end{proof}
+
+The enumeration itself is the admissibility-restricted extract of a
+sweep reported in the companion paper~\cite{PaperV}; the germ inventory, the
+matrix and the verdict are recomputed here from each stored vertex list.  The
+$67$ single-germ
+cases are instances of Corollary~\ref{cor:onegerm}, and the $9$ cases
+with one node in addition are barely more than instances of it.  The
+reason so many fire is structural rather than accidental: the criterion
+detects a failure of cancellation, and with one or two germs there is
+almost nothing available to cancel.  Section~\ref{sec:proofs} exhibits
+one non-smoothable Calabi--Yau threefold by hand; the same criterion run
+mechanically over this range produces seventy-six more, none of them
+$X^{\circ}$, $X_{20}$ or $X_{19}$, whose polytopes have $26$, $20$
+and $19$ vertices and lie outside it.
+
+Among the $77$, the single silent polytope is the only one where the
+converse question can be posed, which is why the range is swept and not only
+counted.  That case is settled in \cite{PaperV}; nothing in this paper
+depends on how.
+
+The census is restricted to polytopes with a pentagonal $2$-face, and that
+restriction is not vacuous: admissible polytopes in the same range carry
+hexagonal $2$-faces, hence $\dP_6$ cone points, the smallest at eight
+vertices being $\Delta_7$ with the single extra vertex $(-3,-2,-1,1)$.  On
+such an $X$ Theorem~\ref{thm:necessity} constrains the one-parameter $\dP_6$
+branch and says nothing about the $A_2$ branch, so the verdicts above do not
+extend to them and we do not claim them.
+
+\subsection{An obstruction the nodal theory cannot see}\label{sec:X20}
+The test also obstructs threefolds that no purely nodal argument can
+reach.  Let $\Delta_{20}$ be the $20$-vertex reflexive polytope
 \[
 \begin{gathered}
 \conv\{(1,0,0,0),(0,1,0,0),(0,0,1,0),(0,0,0,1),(1,-1,-1,-1),
@@ -1702,9 +2334,10 @@ $\Delta_{20}$ has $22$ lattice points and no facet with an interior
 point, so Batyrev's formulas give
 $h^{1,1}(\Xh_{20})=22-5=17=\operatorname{rank}\Pic$ of the ambient
 toric fourfold: the ambient divisor classes span
-$H^2(\Xh_{20};\QQ)$, and the certified kernel of
+$H^2(\Xh_{20};\QQ)$, and the ambient kernel of
 Section~\ref{sec:kernelcomp} coincides with the topological one rather
-than merely containing it.  The certified outcome is:
+than merely containing it, as Proposition~\ref{prop:kernelequal} also
+gives.  The outcome is:
 \begin{enumerate}
 \item the nodal subsystem has rank $11$ of $17$ and \emph{no coloop},
 so, the two kernels agreeing, every exceptional curve of a small
@@ -1721,10 +2354,22 @@ entirely by the divisorial direction, and a reader applying
 $X^{\circ}$, by contrast, the two nodal coloops already signal that
 the nodal theory is insufficient.
 
+\subsection{Where the test is silent}\label{sec:X19}
 We also ran the test on the anticanonical hypersurface $X_{19}$ of the
-$19$-vertex reflexive polytope $\Delta_{19}$ printed in
-\cite[Section~5.3]{PaperIII}, whose generic member has fourteen nodes
-and one $\dP_7$-cone point, all isolated.  The certified outcome is
+$19$-vertex reflexive polytope $\Delta_{19}$, whose generic member has fourteen
+nodes and one $\dP_7$-cone point, all isolated.  Since this is the case the
+paper leaves open, we print the polytope rather than cite it: the vertices of
+$\Delta_{19}\subset N\cong\ZZ^4$ are
+\[
+\begin{array}{llll}
+(1,0,0,0), & (0,1,0,0), & (0,0,1,0), & (0,0,-1,0),\\
+(0,-1,0,0), & (1,-1,-1,0), & (0,0,0,1), & (-1,1,1,-1),\\
+(0,-1,0,1), & (0,0,-1,1), & (-1,1,0,-1), & (-1,0,1,-1),\\
+(-1,0,1,0), & (-1,1,0,0), & (0,-1,-1,0), & (0,-1,-1,1),\\
+(-1,0,0,-1), & (-2,1,1,-1), & (-1,0,0,1). &
+\end{array}
+\]
+It is the polytope of \cite[Section~5.3]{PaperIII}.  The outcome is
 structurally opposite to $X^{\circ}$:
 \begin{enumerate}
 \item the node subsystem has rank $12$ with two coloops: as for
@@ -1744,30 +2389,30 @@ threefold is silent as well, as it must be: there the exceptional
 curve class vanishes in $H_2$ of the small resolution (the threefold
 is $\QQ$-factorial), the kernel is the whole line $H_2(L;\QQ)$, and
 the node coordinate is realized, the smoothable side of the nodal
-picture.  A smoothing, if it exists,
+picture.  A smoothing of $X_{19}$, if it exists,
 must recruit the $\dP_7$ direction; the natural construction tools
 are ambient toric degenerations in the sense of
-Ilten--Vollmert~\cite{IV12}, and we leave the question to future
-work.
+Ilten--Vollmert~\cite{IV12}, and that is where the companion
+paper~\cite{PaperV} takes the question up.
 
 \section{Discussion}\label{sec:discussion}
 
-\subsection{The two-parameter degree-6 channel}
+\subsection{The two-parameter degree-6 smoothing component}\label{sec:open}
 Theorem~\ref{thm:necessity} covers $\dP_6$ points smoothed through
 the one-parameter component.  For the two-parameter (plane)
 component the Milnor fiber has $b_3=2$, and the argument of
 Lemma~\ref{lem:D} reduces the analogous nonvanishing to the
-$\QQ$-linear independence of two periods of $\Omega_M$ on
-$W\smallsetminus\Sb$, a finer question than nonvanishing, which
+$\QQ$-linear independence of two periods of $\Omega_\Mil$ on
+$W_6\smallsetminus\Sb$, a finer question than nonvanishing, which
 the toric method above does not decide.  None of the results of this
 paper require it.
 
 \subsection{First-order theory}
-The tangent-level analogue of the test of
-Section~\ref{sec:kernelcomp} identifies
-$\ker(B^{\mathsf T})$ with the image of the localization map on
-first-order deformations, by the local-to-global comparison of
-Friedman--Laza~\cite{FL22a,FL22b}; from that viewpoint the content of
+The tangent-level analogue of the test of Section~\ref{sec:kernelcomp} should
+identify $\ker(B^{\mathsf T})$ with the image of the localization map on
+first-order deformations, through the local-to-global comparison of
+Friedman--Laza~\cite{FL22a,FL22b}; we do not prove this, and nothing below
+depends on it.  From that viewpoint the content of
 this paper is that the first-order forced-zero statements persist at
 every order of contact, which no first-order argument can deliver.
 The necessity statements of \cite{Friedman86,RT09} are of first-order
@@ -1775,7 +2420,7 @@ type, with the upgrade to actual smoothings supplied in the nodal
 case by unobstructedness; the present method needs neither, which is
 what allows it to reach the non-lci cone points.
 
-\subsection{Sufficiency}
+\subsection{Sufficiency}\label{sec:sufficiency}
 The converse direction, constructing mixed smoothings when the test
 is silent, is open even for $X_{19}$.  The purely nodal comparison is
 instructive: in dimension three the converse of Friedman's criterion
@@ -1789,22 +2434,66 @@ $\ell(F^{\circ})=1$ the polar vertices adjacent to $F$ give ambient
 deformation degrees whose slice polytopes are Minkowski-rigid, so any
 ambient construction must use degrees on the extension of the dual
 edge, the exact combinatorial locus of Altmann's local smoothing
-parameter.  This will be taken up elsewhere.
+parameter.  The companion paper~\cite{PaperV} pursues that line.
+
+Proposition~\ref{prop:kernelequal} is what would make a converse
+statable in terms of the computable test: for necessity the containment
+$K(X)\subseteq\ker(B^{\mathsf T})$ suffices and runs the right way,
+whereas a sufficiency statement asserting that silence of the test
+implies smoothability needs the two kernels to agree.  On the
+admissible class they do.  Proposition~\ref{prop:T1channels} says what
+such a converse would have to produce: an element of
+$\bigoplus_pT^1_{X,p}$, lying in the smoothing locus at each germ, whose
+total ray relation vanishes.  Whether that is enough is exactly the
+question left open here.
+
+The two directions stop for different reasons, and the reasons are
+structural.  The necessity argument of this paper is topological: it
+integrates the holomorphic $3$-form over vanishing cycles and never
+touches deformation theory, which is why the hypotheses that constrain
+the deformation-theoretic literature do not constrain it.  A sufficiency
+argument has to produce a family, and every route to one in the
+literature carries a hypothesis that the admissible class fails.
+
+There are two such routes and they fail differently.  The
+Hodge-theoretic route of Friedman--Laza produces a first order smoothing
+and then upgrades it by assuming $\Def(X)$ unobstructed, and their
+unobstructedness inputs require the singularities to be local complete
+intersections; a cone over a del Pezzo surface of degree $d>4$ is never
+one, the anticanonical model requiring more quadrics than its codimension
+allows \cite[(3.3)]{Gross97}.  The other route does reach non-lci germs:
+\cite[Theorem~5.8]{Gross97} smooths the target of a primitive type~II
+contraction, and \cite[Corollary~6]{Namikawa97} shows that a
+$\QQ$-factorial Calabi--Yau threefold with isolated toric Gorenstein
+singularities has surjective localization map, hence is smoothable when its
+germs are.  Both require $\QQ$-factoriality of the target, primitivity
+supplying it in the first case, and Section~\ref{sec:qfact} shows the
+admissible class has it nowhere.
+
+So the gap is not that no non-lci theorem exists.  It is that the
+available non-lci theorems are exactly the ones this class escapes.
+Either route could be closed.  The first needs an unobstructedness statement
+for isolated canonical Gorenstein singularities that are not complete
+intersections, which lies beyond the open problems listed in
+\cite[Summary and Outlook]{FL22a}; those stop at the local complete
+intersection case.  The second needs the $\QQ$-factoriality hypothesis
+weakened, and Section~\ref{sec:qfact} shows that is not a technicality
+here: the admissible class fails it at every germ.
 
 \appendix
 
 \section{Computational certificates}\label{app:cert}
 
-The exact lattice and matrix claims used in the proofs are reproduced by
-two short, self-contained Python programs in exact rational arithmetic,
-independently of any computer-algebra system.  A third self-contained
+The exact lattice and matrix claims used in the proofs are reproduced by the
+Python programs listed below, in exact rational arithmetic and independently of
+any computer-algebra system.  A third self-contained
 program combines exact integral checks with a floating-point diagnostic
 of the period parametrization, whose underlying identity is proved
-exactly in Lemma~\ref{lem:D1}.  The general test program reuses the
-companion repository's exact toric source modules.  The inputs are
+exactly in Lemma~\ref{lem:D1}.  The inputs are
 Tables~\ref{tab:rays} and~\ref{tab:kperp}, the ancillary subdivision
-and restriction data documents, and the polytope of
-\cite[Section~5.3]{PaperIII}:
+and restriction data documents, the polytope of
+\cite[Section~5.3]{PaperIII}, and the vertex lists of the $77$ polytopes
+of Proposition~\ref{prop:census}:
 \begin{itemize}
 \item the lattice package (\texttt{milnor\_kernels.py}): the boundary structure of the exceptional
 surfaces, the norms and pairings of the $K^{\perp}$ rows, the root
@@ -1819,11 +2508,32 @@ criticality statement of Section~\ref{sec:kernelcomp}(3);
 computation, the slice self-intersection patterns), the corner-chart
 transitions, and the constancy of the pullback in
 Lemma~\ref{lem:D1}, verified to machine precision at random points;
-\item the repository-integrated test package (\texttt{examples.py}): the general implementation of
-Section~\ref{sec:test}, validated end-to-end by reproducing every
-number of Section~\ref{sec:kernelcomp} for $X^{\circ}$ from scratch,
+\item \texttt{examples.py}, the general implementation of
+Section~\ref{sec:test}, which recomputes every number of
+Section~\ref{sec:kernelcomp} for $X^{\circ}$ from the polytope,
 and the $\Delta_{19}$ and $\Delta_{20}$ computations, including the
 absence of nodal coloops on $\Delta_{20}$;
+\item the one-germ package (\texttt{lone\_germ.py}): the reflexive
+$4$-polytope $\Delta_7$ of Section~\ref{sec:onegerm}, its face
+inventory and admissibility, the rank-$2$ channel block and zero
+kernel, and the Hodge numbers $(4,214)$;
+\item the census package (\texttt{classification.py}, reading the
+extract \texttt{framework\_77.json}): the germ inventory, the matrix and
+the verdict for each of the $77$ polytopes of
+Proposition~\ref{prop:census}, rebuilt from the stored vertex lists;
+\item the channel package (\texttt{relation\_class.py}): for
+$X^{\circ}$, $X_{20}$, $X_{19}$ and $X_7$, that every channel row
+satisfies $\sum_ja_jv_j=0$ and $\sum_ja_j=0$, carries coefficient zero
+at the interior lattice point, and that the rows at a germ span the
+whole ray-relation space of rank $n-3$
+(Proposition~\ref{prop:T1channels}); together with the per-germ block
+ranks of Corollary~\ref{cor:defect} and an independent reconstruction of
+$\rk B=21$ for $X^{\circ}$;
+\item the kernel-equality package (\texttt{kernel\_equality.py}): the
+vanishing of both Batyrev correction terms, and the reason each $2$-face
+contributes zero, for $\Delta^{\vee}$, $\Delta$, $\Delta_{20}$,
+$\Delta_{19}$, $\Delta_7$ and all $77$ census polytopes
+(Proposition~\ref{prop:kernelequal});
 \item the mirror-partner package (\texttt{mirror\_partner.py}): the
 reconstruction of the twenty-four rows of $B_{\Delta}$ from
 Tables~\ref{tab:partnerrays} and~\ref{tab:partnersurf}, including the
@@ -1837,7 +2547,7 @@ ranks, coloops and forced-zero lists of Section~\ref{sec:partner}.
 \end{itemize}
 The fixed subdivision of Section~\ref{sec:matrix} and its
 smoothness and projectivity are certified by an exact integral
-support function; the $\Delta$-regularity of the reference equation
+support function; the Batyrev regularity of the reference equation
 of $X^{\circ}$, including nondegeneracy along every face, is
 certified at an integral witness (\texttt{resolution\_fan.sage} and
 \texttt{global\_section.sage}, with five further Sage certificates
@@ -1847,7 +2557,7 @@ cones, the two stars and the twenty diagonals are certified the same
 way by \texttt{mirror\_partner\_fan.sage}.
 
 The arXiv ancillary bundle includes this directory together with the
-shared exact toric modules imported by the repository-integrated
+shared exact toric modules used by the
 programs.  The same files are public, together with the programs and
 data of the companion papers, at
 \begin{center}
@@ -1916,6 +2626,9 @@ Math.\ Phys.\ \textbf{4} (2000), 1209--1230.
 \bibitem[KP23]{KP23} A.~Kuznetsov and Yu.~Prokhorov, \emph{On
 higher-dimensional del Pezzo varieties}, Izv.\ Math.\ \textbf{87} (2023),
 no.~3, 488--561.
+\bibitem[Mav04]{Mav04} A.~R. Mavlyutov, \emph{Deformations of Calabi--Yau
+hypersurfaces arising from deformations of toric varieties}, Invent.\ Math.\
+\textbf{157} (2004), 621--633.
 \bibitem[Mil68]{Milnor68} J.~Milnor, \emph{Singular points of complex
 hypersurfaces}, Ann.\ of Math.\ Studies \textbf{61}, Princeton, 1968.
 \bibitem[Pet19]{Petracci19} A.~Petracci, \emph{On deformations of toric
@@ -1925,6 +2638,29 @@ symmetry for Fano threefolds}, in: Birational Geometry and Moduli Spaces,
 Springer INdAM Ser.\ \textbf{39} (2020), 173--188.
 \bibitem[Pin74]{Pinkham74} H.~Pinkham, \emph{Deformations of algebraic
 varieties with $G_m$ action}, Ast\'erisque \textbf{20} (1974).
+\bibitem[Nam02]{Namikawa02} Y.~Namikawa, \emph{Stratified local moduli of
+Calabi--Yau threefolds}, Topology \textbf{41} (2002), no.~6, 1219--1237.
+
+\bibitem[Nin26]{Ning26} H.~Ning, \emph{Deformations, local freeness, and base
+change for higher Du Bois singularities}, preprint, 2026;
+\texttt{arXiv:2608.07849}.
+
+\bibitem[Nam97]{Namikawa97} Y.~Namikawa, \emph{Deformation theory of
+Calabi--Yau threefolds and certain invariants of singularities}, J.\ Algebraic
+Geom.\ \textbf{6} (1997), 753--776.  (Not to be confused with the author's
+\emph{Smoothing Fano $3$-folds}, ibid.\ \textbf{6} (1997), 307--324, which some
+sources also cite as [Nam97].)
+
+\bibitem[Agu26]{Aguilar26} R.~Aguilar, \emph{Log conifold transitions},
+preprint, 2026; \texttt{arXiv:2606.31072}.
+
+\bibitem[Col25]{Collins25} T.~C. Collins, \emph{An introduction to conifold
+transitions}, lecture notes, 2025; \texttt{arXiv:2509.01002}.
+
+\bibitem[KM98]{KollarMori} J.~Koll\'ar and S.~Mori, \emph{Birational
+geometry of algebraic varieties}, Cambridge Tracts in Mathematics 134,
+Cambridge University Press, Cambridge, 1998.
+
 \bibitem[PP15]{PP15} P.~Popescu-Pampu, \emph{On the smoothings of
 non-normal isolated surface singularities}, J.\ Singul.\ \textbf{12}
 (2015), 164--179.
@@ -1933,12 +2669,18 @@ Calabi--Yau $n$-folds}, J.\ Topol.\ \textbf{2} (2009), 405--421.
 \bibitem[Wue26a]{PaperI} B.~J. Wuebben, \emph{Non-smoothable Calabi--Yau
 threefolds from reflexive polytopes}, preprint, 2026; available at
 \url{https://github.com/bwuebben/calabi-yau-smoothability}.
-\bibitem[Wue26b]{PaperII} B.~J. Wuebben, \emph{Smoothing Calabi--Yau
-threefolds in Gorenstein toric Fano fourfolds}, preprint, 2026; available
+\bibitem[Wue26b]{PaperII} B.~J. Wuebben, \emph{A per-face smoothing
+criterion for Batyrev Calabi--Yau threefolds}, preprint, 2026; available
 at \url{https://github.com/bwuebben/calabi-yau-smoothability}.
 \bibitem[Wue26c]{PaperIII} B.~J. Wuebben, \emph{Doubly isolated Batyrev
 mirror pairs and non-smoothable Calabi--Yau threefolds}, preprint, 2026;
 available at \url{https://github.com/bwuebben/calabi-yau-smoothability}.
+\bibitem[Wue26d]{PaperV} B.~J. Wuebben, \emph{Smoothing Calabi--Yau
+threefolds with nodes and del Pezzo cone points}, preprint, 2026;
+available at \url{https://github.com/bwuebben/calabi-yau-smoothability}.
+The companion to the present paper, treating the converse direction:
+which admissible threefolds with the criterion silent do admit
+smoothings.
 \end{thebibliography}
 
 \bigskip
