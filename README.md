@@ -25,7 +25,7 @@ separates them is integrability.
 | paper | directory | compiled PDF |
 |---|---|---|
 | 1. Non-smoothable Calabi–Yau threefolds from reflexive polytopes | `paper1/` | `cy-non-smoothable.pdf` |
-| 2. Smoothing Calabi–Yau threefolds in Gorenstein toric Fano fourfolds | `paper2/` | `cy-smoothing.pdf` |
+| 2. Deformations of toric pairs and the smoothing of Batyrev Calabi–Yau threefolds | `paper2/` | `cy-smoothing.pdf` |
 | 3. Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau threefolds | `paper3/` | `cy-mirror-pairs.pdf` |
 | 4. A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds | `paper4/` | `cy-vanishing-cycle.pdf` |
 | 5. Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points | `paper5/` | `cy-mixed-smoothing.pdf` |
@@ -57,8 +57,8 @@ a script listed below.
    classification: **8.27% (39,175,536)** carry a unit-edge non-smoothable
    2-face, so their generic anticanonical hypersurfaces admit no smoothing.
 
-2. **Smoothing Calabi–Yau threefolds in Gorenstein toric Fano fourfolds**
-   (`paper2/`) — the positive direction: an explicit deformation of the
+2. **Deformations of toric pairs and the smoothing of Batyrev Calabi–Yau
+   threefolds** (`paper2/`) — the positive direction: an explicit deformation of the
    ambient toric pair, cut out by trinomials in Cox coordinates (a
    codimension-two transplant of Petracci's homogeneous deformations of
    toric pairs), smooths the points over a type-(S) face whenever the dual
