@@ -1,25 +1,10 @@
-"""The last check: does the general member miss the rest of Sing(P_t)?
+"""Inventory the cells changed by the Delta_9 deformation.
 
-Local structure of a complexity-one T-variety (Suess, Canonical divisors on
-T-varieties, Thm 3.3): over a point P the germ is analytically the toric
-singularity of the cone
-
-    delta_P(Delta) = closure of Q_{>=0} . ({1} x Delta)  in  Q x N',
-
-one for each cell Delta of the slice S_P.  A cell of dimension d gives a cone
-of dimension d+1 and hence a stratum of dimension 3-d in the fourfold.  So
-
-  d = 3  ->  points.  A globally generated system misses these (Piece 3), so
-             the general member never meets them.
-  d = 2  ->  curves.  The general member meets each in finitely many points,
-             and is singular there exactly when delta_P is singular.  THIS is
-             where the germs of X live.
-  d = 1  ->  surfaces, cut in curves;  d = 0  ->  threefolds, cut in surfaces.
-             delta_P is then a cone of dimension 2 resp. 1.
-
-So X_t is smooth as soon as every cell of dimension 1 and 2, in every slice,
-has a smooth cone -- and the count of singular 2-cells on the SPECIAL fibre
-must come out as the three germs of X_9, which is the control.
+This script does *not* infer orbit-stratum dimension from cell dimension.  The
+Süß affine-locus dictionary cannot be used that way on complete-locus charts;
+that was defect D-H.  The global singular-locus statement is certified by
+charts.sage.  Here we only check which cells split nontrivially and verify the
+three bounded germ cells against Ilten--Vollmert Corollary 2.12.
 
 Run:  sage final_check.sage     (from paper5/)
 """
@@ -175,37 +160,23 @@ for S, d, nr, sa, sb in sorted(changed, key=lambda x: (x[1], x[0])):
     print(f"        cone {S}: cell dim {d}, {nr} tail rays, summand cones "
           f"{'smooth' if sa else 'SINGULAR'} / {'smooth' if sb else 'SINGULAR'}")
 
-# A cell of dimension d gives a stratum of dimension 3-d in the fourfold, so
-# the changed 3-cells give POINT strata.  The general member misses those,
-# because the anticanonical system is globally generated (Piece 3) and there
-# are finitely many of them.  Only changed cells of dimension at most 2 can
-# meet the general member.
 low = [(S, d, nr, sa, sb) for S, d, nr, sa, sb in changed if d <= 2]
-pts = [(S, d) for S, d, _, _, _ in changed if d == 3]
-ok(f"the {len(pts)} changed 3-cells give point strata, missed by the general "
-   "member because the system is globally generated", len(pts) == 4)
 SING = [[2, 3, 6, 7], [2, 4, 5, 7], [3, 4, 5, 6, 8]]
 ok(f"the changed cells of dimension at most 2 are exactly the three germs of "
    f"X_9, {sorted(S for S, _, _, _, _ in low)}",
    sorted(S for S, _, _, _, _ in low) == sorted(SING))
 ok("each of them is bounded, so its polyhedral divisor has affine locus and "
    "Ilten-Vollmert Corollary 2.12 applies", all(nr == 0 for _, _, nr, _, _ in low))
-ok("and both summand cones are smooth for each, so the general fibre is "
-   "smooth along every positive-dimensional stratum the deformation touches",
+ok("and both summand cones are smooth at each of those three affine germ cells",
    all(sa and sb for _, _, _, sa, sb in low))
 
 print("""
-    Away from those three, the p-divisors are unchanged up to the equivalence
-    of Suess Thm 1.8, so the general fibre has exactly the singularities the
-    special fibre had.  X_9 was smooth along all of them -- its singular locus
-    is precisely the three germ points -- so the general member is too.""")
+    No stratum conclusion is drawn for the four changed higher-dimensional
+    cells.  They belong to complete-locus charts, and charts.sage performs the
+    required maximal-chart singular-locus computation.""")
 
 print(f"\n{CH[0]} checks passed.")
 print("""
-CONCLUSION.  Piece 1 gives the intended local deformation at each of the three
-germs; Piece 2 extends the equation of X_9 over the family; Piece 3 makes the
-system globally generated, so Bertini applies and the zero-dimensional strata
-are missed; and the check above says the deformation touches nothing else.
-The general member is therefore a SMOOTH Calabi-Yau threefold, and the family
-is a smoothing of X_9 -- which has two nodes, both coloops, and one dP7 point,
-so no purely nodal mechanism could have produced it.""")
+CONCLUSION.  Exactly seven cells change.  The three changed cells belonging to
+the hypersurface germs have affine locus and smooth summand cones.  Use
+charts.sage, not this inventory, for the global ambient singular locus.""")

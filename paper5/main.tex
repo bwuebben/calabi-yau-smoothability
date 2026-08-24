@@ -43,6 +43,8 @@
 \newcommand{\cX}{\mathcal{X}}
 \newcommand{\cP}{\mathcal{P}}
 \newcommand{\cD}{\mathcal{D}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cA}{\mathcal{A}}
 \newcommand{\cS}{\mathcal{S}}
 \newcommand{\conv}{\operatorname{conv}}
 \newcommand{\Cone}{\operatorname{Cone}}
@@ -64,7 +66,7 @@
 nodes and del Pezzo cone points}
 \author{Bernd Johannes Wuebben}
 
-\date{23 August 2026}
+\date{24 August 2026}
 \subjclass[2020]{14J32 (primary); 14B07, 14M25, 14J45, 52B20 (secondary)}
 \keywords{Calabi--Yau threefolds, smoothing of singularities, del Pezzo cones,
 ordinary double points, Minkowski decomposition, $T$-varieties, reflexive
@@ -81,10 +83,12 @@ Gorenstein toric Fano fourfolds we give a combinatorial condition under which
 the ambient toric mechanism cannot smooth such a threefold, and settle every
 polytope with at most nine vertices.
 
-The obstruction is combinatorial and degree-independent: we give a condition on
-a facet, called locking, that depends only on the face lattice, and show that a
-locked facet admits no deformation moving the given germ at any of the
-infinitely many degrees available.  Against it we place a nine-vertex reflexive
+The obstruction combines a local grading theorem with a combinatorial
+extension test.  Altmann's calculation reduces all one-sided degrees that can
+move a degree-$7$ cone to its Gorenstein-degree affine line; a condition on a
+facet, called locking, depends only on the face lattice and blocks that line.
+The remaining mixed-sign degrees retain a singular curve, which every
+anticanonical Cartier divisor must meet.  Against this obstruction we place a nine-vertex reflexive
 polytope whose hypersurface has two nodes, neither of which lies in any
 relation among the nodal exceptional curve classes, and one degree-$7$ cone
 point, and which we prove
@@ -189,35 +193,37 @@ Informally: a facet carries an \emph{edge-forcing propagation}, a closure rule
 on its edge graph that reads only the face lattice and which of its $2$-faces
 are triangles, and Definition~\ref{def:locked} makes it precise.  A set of edges
 tied together by the propagation is called \emph{locked}, and a facet is locked
-when its whole edge set is.  When the edges of a singular $2$-face $G$ are
-locked, no Minkowski decomposition can move $G$, and Theorem~\ref{thm:Aintro} says this
-survives quantification over the infinitely many degrees at which the mechanism
-could act.
+when its whole edge set is.  For a pentagonal face $G$, Altmann's grading theorem
+first reduces the infinite degree lattice to the affine line on which every ray
+of $G$ has height one.  When the two containing facets are locked and their
+positive ranges cover this line, no admissible Minkowski decomposition can move
+$G$.
 
 \begin{thmletter}[$=$ Theorems~\ref{thm:Aprime} and \ref{thm:A}]\label{thm:Aintro}
-Let $\Delta$ be a reflexive $4$-polytope in the admissible framework and $G$ a
-singular $2$-face of it, contained in the facets $F_1,F_2$.  A \emph{degree} is
-an element $R$ of the dual lattice $M$; it is \emph{one-sided} on the cone
-$\sigma_G=\Cone(G)$ when $\langle R,\cdot\rangle$ has constant sign on the rays
-of $\sigma_G$, and its \emph{crosscut} is the cross-section
-$\sigma_G\cap[R=1]$.  Suppose that for every degree $R$ one-sided on $\sigma_G$
-whose crosscut admits a decomposition into a point, lattice segments and
-unimodular simplices, the propagation of Definition~\ref{def:locked}, run on one
-of $F_1,F_2$ using only the $2$-faces all of whose vertices pair positively with
-$R$, ties together all the edges of $G$.  Then for \emph{every} primitive degree
-$R\in M$, the general fibre of the single-degree family at $R$ still carries the
-germ of $G$.  The hypothesis is decidable.
+Let $\Delta$ be a reflexive $4$-polytope in the admissible framework and let $G$
+be a unit-edge pentagonal $2$-face, contained in facets $F_1,F_2$.  Let
+\[
+ \cA_G=\{r\in M:\langle r,v\rangle=1\text{ for every }v\in V(G)\}.
+\]
+Suppose both facets are locked and every $r\in\cA_G$ is positive on every
+vertex of $F_1$ or on every vertex of $F_2$.  Then for every primitive degree
+$R\in M$ the general ambient fibre of every single-degree family at $R$ has a
+singular curve.  Consequently no relative anticanonical effective Cartier
+family inside such a single-degree ambient family has smooth general fibre.
+The hypothesis is decidable.
 
 The criterion applies to the reflexive polytope $\Delta_{19}$ with $19$
 vertices recorded in \eqref{eq:V19}, whose generic anticanonical hypersurface
 $X_{19}$ has fourteen nodes and one $\dP_7$ cone point, all isolated.  So no
-single-degree family deforms the $\dP_7$ germ of $X_{19}$.
+single-degree family smooths $X_{19}$ through the relative anticanonical
+system.
 \end{thmletter}
 
-Since the node relation system of $X_{19}$ has two coloops
-\cite[\S9.5]{PaperIV}, no purely nodal mechanism can smooth $X_{19}$ either; the
-$\dP_7$ direction has to be recruited, and Theorem~\ref{thm:Aintro} says the
-ambient will not supply it one degree at a time.
+The node relation system of $X_{19}$ has two coloops
+\cite[\S9.5]{PaperIV}, so any first-order smoothing must recruit the $\dP_7$
+direction.  Theorem~\ref{thm:Aintro} proves more for the toric mechanism: every
+single-degree ambient fibre retains a singular curve that traps its
+anticanonical divisors.
 
 \begin{thmletter}[$=$ Theorem~\ref{thm:B}]\label{thm:Bintro}
 Let
@@ -243,8 +249,9 @@ Part (iii) is the point.  The two nodes being coloops means that no relation
 \eqref{eq:friedman} exists among the exceptional curves of a small resolution
 of the nodes alone; whatever smooths $X_9$ must move the $\dP_7$ point at the
 same time.  One family does, and one can watch it do so: at the two nodes the
-cross-section splits as segment~$+$~segment, at the $\dP_7$ point as
-segment~$+$~triangle, which is Altmann's unique nontrivial lattice decomposition
+cross-section splits as primitive segment~$+$~primitive segment, at the $\dP_7$
+point as primitive segment~$+$~unimodular triangle, which is Altmann's unique
+nontrivial lattice decomposition
 of the pentagon \cite[(7.1.4)]{Altmann95}.
 
 Restricting to the admissible framework makes the range small enough to settle
@@ -287,11 +294,10 @@ part of the link homology that dies in the Milnor fibre.  Then $X$ admits a
 first order smoothing.
 \end{thmletter}
 
-Unlike Theorems~\ref{thm:Aintro}--\ref{thm:Cintro}, which are proved in full
-here and whose finite parts are machine-checked, Theorem~\ref{thm:Dintro} is
-proved by reduction to \cite{FL22a}, and three steps of that reduction are given
-in outline rather than written out; Remark~\ref{rem:sketchgaps} lists them.  We state it as a theorem because it is the half of the criterion this paper
-contributes.
+Theorem~\ref{thm:Dintro} is proved by a local-to-global support sequence.  The
+local Hodge comparison is established separately for nodes and del Pezzo cones,
+and an equivariant calculation identifies the smoothing branches with the
+prescribed link-homology subspaces.
 
 That hypothesis is exactly the criterion of \cite{PaperIV}, so the criterion and
 its converse meet at first order and the gap between them is integrability
@@ -322,17 +328,18 @@ the relation kernel is everything.  The block in question is the set of rows of
 functional, which by Section~\ref{sec:structural} is a basis of the germ's
 $T^1$; we call it that germ's \emph{channel block}.  It has maximal rank at
 every polytope of Theorem~\ref{thm:Cintro} and at $\Delta_{19}$ as well, so no
-$X$ in the admissible framework is $\QQ$-factorial and that case, although
-settled, is empty here.  The open content of the conjecture is the framework
-itself.  Applied to $\Delta_{19}$, whose criterion is silent,
+singular $X$ in the admissible framework carrying one of these germs is
+$\QQ$-factorial and that case, although settled, is empty here.  The open
+content of the conjecture is the singular part of the framework itself.
+Applied to $\Delta_{19}$, whose criterion is silent,
 Theorem~\ref{thm:Dintro} says $X_{19}$ has a first order smoothing that
 Theorem~\ref{thm:Aintro} shows no single-degree family of the ambient can
 produce.
 
 \subsection{Why the criterion has to be combinatorial}
 The mechanism is indexed by a degree $R \in M = \Hom(N,\ZZ)$, and $M$ is
-infinite.  A statement quantified over all of it needs either a structural
-argument or a bound; a criterion checked on a line of degrees says nothing about
+infinite.  A statement quantified over all of it needs a structural reduction;
+without one, checking the familiar Gorenstein-degree line says nothing about
 the rest.
 
 The direct repair is to compute, for each degree, the dimension of the summand
@@ -344,7 +351,12 @@ dimension $1$ at other cross-sections of the same $\sigma_{12}$
 (Remark~\ref{rem:dimmoves}).  A criterion phrased in that language is
 degree-dependent by nature.
 
-What is degree-independent is combinatorial.  A cross-section of a pointed cone
+The first reduction is local and deformation-theoretic.  Altmann's calculation
+of $T^1$ shows that every one-sided degree off the Gorenstein-degree line gives
+a trivial admissible deformation of the $\dP_7$ chart
+(Lemma~\ref{lem:degreegate}); complete-locus degrees retain a singular curve by
+Lemma~\ref{lem:reach}.  What remains on the line is degree-independent and
+combinatorial.  A cross-section of a pointed cone
 by a transversal hyperplane is a polytope combinatorially isomorphic to the base
 (Lemma~\ref{lem:crosssection}); the edge directions move, but the three forcing
 rules of Proposition~\ref{prop:rules} use only that the edge vectors of a
@@ -353,18 +365,11 @@ independent.  Both survive rescaling.  A facet on which those rules propagate to
 all edges is called \emph{locked}, and a locked facet has rigid cell at every
 degree at once.  Theorem~\ref{thm:Aprime} is the resulting criterion.
 
-Two lemmas make the criterion checkable.  The area bound
-(Lemma~\ref{lem:area}) says that a decomposition into unimodular simplices,
-segments and points forces the crosscut to have normalised area at least one;
-since the crosscut of a pentagon depends on $R$ only through the pairing vector
-$p = (\langle R,v\rangle)_{v \in P}$, and its vertices are the rescaled points
-$v/p_v$, triangle area is decreasing in each pairing, so the region is bounded
-and enumerable (Lemma~\ref{lem:finite}).  The sign lemma
-(Lemma~\ref{lem:sign}) then says that along each resulting line the two facets
-containing the pentagon have complementary ranges of boundedness, which reduces
-the check on that line to finitely many sign patterns.  The sign lemma is a
-statement about reflexive polytopes with a three-line proof, and it does not
-mention deformation theory.
+The sign lemma (Lemma~\ref{lem:sign}) says that along the resulting affine line
+the two facets containing the pentagon have complementary monotone ranges of
+positivity.  Their thresholds are finite data.  On $\Delta_{19}$ the check is
+especially sharp: the line is $(-1,s,-1-s,0)$, and the two ranges are
+$s\ge0$ and $s\le-1$.
 
 \subsection{How special the two phenomena are}
 Neither theorem would mean much if its polytope were a curiosity.
@@ -372,13 +377,11 @@ Section~\ref{sec:census} runs the combinatorial core of both over the
 Kreuzer--Skarke classification of reflexive $4$-polytopes \cite{KS00}.  Two
 findings.
 
-The criterion's hypothesis is common but not automatic.  Of the $12\,508$
-pentagonal $2$-faces occurring in reflexive $4$-polytopes with at most nine
-vertices, $9\,466$ are locked, a little over three
-quarters, and $3\,005$ sit in a facet that decomposes, and there
-Theorem~\ref{thm:Aprime} says nothing.  So what obstructs $X_{19}$ is a feature
-of how its pentagon is glued into its two facets, and it is a feature most
-pentagons share.
+The locking half of the criterion is common but not automatic.  Of the
+$12\,508$ pentagonal $2$-faces occurring in reflexive $4$-polytopes with at most
+nine vertices, $9\,466$ are locked, a little over three quarters, and $3\,005$
+sit in a facet that decomposes, where Theorem~\ref{thm:Aprime} says nothing.
+The census does not test the separate line-coverage condition~{\rm(C)}.
 
 The combination Theorem~\ref{thm:Bintro} needs is, by contrast, rare.  Among
 nine-vertex polytopes there are $11\,596$ pentagonal $2$-faces; $63$ lie in a
@@ -409,16 +412,8 @@ Theorem~\ref{thm:Dintro} gives a first order smoothing and nothing more.  We do
 not prove that it integrates, and integration is not a formality here, although
 the example usually cited against it does not reach our germs: Gross's
 non-reduced deformation space \cite[Ex.~2.19]{Gross97rev} is built from cones
-over $\mathbb F_1$, which do not smooth at all.  We also record
-plainly that its proof, in Section~\ref{sec:reach}, is given as a reduction to
-results of Friedman--Laza \cite{FL22a} rather than written out from first
-principles; three of its inputs (the Bott vanishing that makes $T^1$ of the
-germ isomorphic to the graded piece of the link cohomology that
-\cite{FL22a} attaches to it, the five-lemma comparison that removes their
-hypothesis $\mathcal Ext^2(\Omega^1_X,\cO_X)=0$, and the claim that every germ
-in the framework is $1$-Du Bois) deserve fuller treatment than they receive
-here.  Theorems~\ref{thm:Aintro}, \ref{thm:Bintro} and \ref{thm:Cintro} are
-proved in full and machine-certified.
+over $\mathbb F_1$, which do not smooth at all.  The remaining gap is the
+unobstructedness statement isolated in Remark~\ref{rem:whatsleft}.
 
 \subsection{Verification}
 Every numerical assertion below is produced by a script in the accompanying
@@ -603,10 +598,11 @@ pentagon this is $2$, and the versal base is a line with an embedded component
 \cite[(7.1.4)]{Altmann95}.  The pentagon has, up to translation, exactly one
 nontrivial decomposition into lattice polyhedra, namely
 \begin{equation}\label{eq:pentdecomp}
-  \text{pentagon} \;=\; \text{segment} \;+\; \text{unimodular triangle},
+  \text{pentagon} \;=\; \text{primitive segment} \;+\; \text{unimodular triangle},
 \end{equation}
 and the corresponding one-parameter deformation smooths $\Cone(\dP_7)$, because
-the cones over a segment and over a unimodular triangle are both smooth.
+the cones over a primitive segment and over a unimodular triangle are both
+smooth.
 
 \subsection{The non-affine case: complexity-one $T$-varieties}
 Our ambient $\PP_\Delta$ is complete and, for the polytopes we need, not
@@ -633,24 +629,36 @@ the cell is empty when all are negative.  We call the union $\cS := \cS^+ \sqcup
 complex} at $R$.
 
 \begin{definition}[{\cite[Def.~2.1, 2.2, 4.1]{IV12}}]\label{def:iv}
-A \emph{Minkowski decomposition of the slice complex} assigns to every cell
-$C \in \cS$ a decomposition $C = C^0 + C^1$ into polyhedra with the same tail
-cone as $C$, subject to
+A \emph{Minkowski decomposition of the slice complex} assigns, separately on
+each of the subdivisions $\cS^+$ and $\cS^-$, to every cell $C$ a decomposition
+$C=C^0+C^1$ into polyhedra with the same tail cone as $C$, subject to
 \begin{enumerate}
 \item[(D1)] both summands carry the full tail cone, and $C^0 + C^1 = C$;
 \item[(D2)] \emph{admissibility}: for each lattice character in the dual of the
   tail cone, at most one of the corresponding faces of the summands fails to
   contain a lattice point;
-\item[(D3)] $(C \cap D)^i = C^i \cap D^i$ for cells $C, D$;
-\item[(D4)] if $\kappa \prec \lambda$ is a face relation of cells, then
-  $\kappa^i \prec \lambda^i$.
+\item[(D3)] if $C\cap D\ne\varnothing$, then
+  $(C\cap D)^i=C^i\cap D^i$;
+\item[(D4)] for nonempty collections of cells
+  $\mathcal J\subseteq\mathcal I$ in the same subdivision and every
+  $A\subseteq\{0,1\}$,
+  \[
+    \sum_{i\in A}\bigcap_{C\in\mathcal I}C^i
+    \ \prec\
+    \sum_{i\in A}\bigcap_{C\in\mathcal J}C^i.
+  \]
+  The empty polyhedron is allowed as a face; the empty index set $A$ is
+  tautological.
 \end{enumerate}
 \end{definition}
 
-Condition (D4) is the one that does the work in Theorem~\ref{thm:A}: it
-says the decomposition induced on a face is a face of the decomposition of the
-cell above it.  In particular, if a cell admits only homothetic summands, then
-so does every face of it.
+The pairwise consequence of (D4) is the one that does the work in
+Theorem~\ref{thm:A}: take $\mathcal J=\{\lambda\}$,
+$\mathcal I=\{\kappa,\lambda\}$ and $A=\{i\}$ when
+$\kappa\prec\lambda$.  Together with (D3), this says that the decomposition
+induced on a face is a face of the decomposition of the cell above it.  In
+particular, if a cell admits only homothetic summands, then so does every face
+of it.
 
 \begin{theorem}[{\cite[Thm.~4.4]{IV12}}]\label{thm:iv44}
 A Minkowski decomposition of the slice complex in the sense of
@@ -672,21 +680,75 @@ dilations.
 Suppose the polyhedral divisor at a germ has \emph{affine locus}.  Then the
 singularities of the general fibre at that germ are the cones over the summands
 $C^0$, $C^1$.  In particular the germ is smoothed if and only if each summand
-cone is smooth, i.e.\ each summand is a point, a lattice segment, or a
-unimodular simplex.
+cone is smooth; for the bounded summands used below, this means a point or a
+unimodular simplex, in particular a primitive segment in dimension one.
 \end{theorem}
 
 \begin{theorem}[{\cite[Rem.~2.13]{IV12}}]\label{thm:rem213}
-If the polyhedral divisor at a germ has \emph{complete locus} and the germ is
-singular, the general fibre still carries that singularity: no smoothing occurs
-there.
+If a polyhedral divisor has \emph{complete locus} and its associated affine
+$T$-variety is singular, no $T$-deformation obtained by decomposing that
+polyhedral divisor is a smoothing.  Thus the general fibre is singular; the
+remark does not assert that its analytic germ is unchanged.
 \end{theorem}
 
+Two elementary consequences will let us pass honestly from singular ambient
+fibres to their anticanonical hypersurfaces.
+
+\begin{proposition}[The relative Fano package]\label{prop:relativefano}
+Let $\pi\colon\cP\to B$ be a single-degree family of $\PP_\Delta$, with
+$\Delta$ reflexive and $B$ a curve germ.  After shrinking $B$, the morphism
+$\pi$ is proper and Gorenstein of relative dimension $4$, and
+\[
+  \cL:=\omega_{\cP/B}^{-1}
+\]
+is $\pi$-ample and satisfies
+$\cL|_{\cP_b}\cong\omega_{\cP_b}^{-1}$ for every $b\in B$.
+\end{proposition}
+
+\begin{proof}
+The divisorial fan of the special fibre is complete, so
+\cite[Thm.~3.2]{HI11} makes $\pi$ proper; flatness is
+Theorem~\ref{thm:iv44}.  The special fibre $\PP_\Delta$ is Gorenstein.  The
+fibrewise Gorenstein locus of a flat morphism of finite presentation is open
+\cite[Tag~0C09]{Stacks}; it contains the whole proper fibre $\cP_0$, so
+properness permits us to shrink $B$ until every fibre is Gorenstein.  Thus
+$\pi$ is Gorenstein, and relative duality gives the asserted invertible
+dualizing sheaf and its base-change isomorphisms \cite{Conrad00}.  Finally,
+$\cL_0\cong\cO_{\PP_\Delta}(-K_{\PP_\Delta})$ is ample because $\Delta$ is
+reflexive.  Relative ampleness is open for a line bundle under a proper
+morphism, so another shrinking makes $\cL$ relatively ample
+\cite[Tag~0D2S]{Stacks}.
+\end{proof}
+
+\begin{lemma}[A singular curve traps every ample Cartier section]
+\label{lem:singcurve}
+Let $Z$ be a normal projective variety, let $L$ be ample, and suppose
+$\Sing(Z)$ contains a complete curve $C$.  Every effective Cartier divisor
+$D\in|L|$ is singular.
+\end{lemma}
+
+\begin{proof}
+Pass to the normalization $\widetilde C$ of an irreducible component of $C$.
+If the section defining $D$ vanishes identically on $C$, then $D$ contains
+$C$.  Otherwise it restricts to a nonzero section of the positive-degree line
+bundle $L|_{\widetilde C}$, and hence has a zero.  In either case choose a
+closed point $x\in C\cap D$.
+
+Put $A=\cO_{Z,x}$ and let $g\in A$ define $D$.  Since $D$ is Cartier, $g$ is a
+nonzerodivisor.  If $A/(g)$ were regular, then $A$ would be regular: indeed,
+if $g\notin\mathfrak m_A^2$, both embedding dimension and dimension rise by
+one from $A/(g)$ to $A$; while if $g\in\mathfrak m_A^2$, regularity of
+$A/(g)$ would give
+$\operatorname{edim}A=\dim(A/(g))=\dim A-1$, impossible.  This contradicts
+$x\in\Sing(Z)$, so $D$ is singular at $x$.
+\end{proof}
+
 For a cone $\sigma_G$ in the face fan the dichotomy is combinatorial.  The
-locus is affine when $\langle R, \cdot\rangle$ has a constant sign on the rays
-of $\sigma_G$ (we then say $\sigma_G$ is \emph{one-sided} at $R$), and complete
-when $\sigma_G$ has rays strictly on both sides of $R^\perp$.  This is the
-content of the reachability lemma below.
+locus is affine when $\langle R, \cdot\rangle$ is nonnegative or nonpositive
+on the rays of $\sigma_G$ (we then say $\sigma_G$ is \emph{one-sided} at
+$R$), and complete when $\sigma_G$ has rays strictly on both sides of
+$R^\perp$.  If $R$ vanishes on the whole cone, neither slice acts on its
+chart.  This is the content of the reachability lemma below.
 
 \section{Reachability and locking}\label{sec:obstructions}
 
@@ -697,8 +759,8 @@ singular $2$-face.
 
 \begin{lemma}[Reachability]\label{lem:reach}
 Let $R \in M$ be primitive.  If $\sigma_G$ has rays strictly on both sides of
-$R^{\perp}$, then the general fibre of every single-degree family at $R$ still
-carries the germ of $G$.
+$R^{\perp}$, then the corresponding affine chart of the general fibre of every
+single-degree family at $R$ has positive-dimensional singular locus.
 \end{lemma}
 
 \begin{proof}
@@ -707,21 +769,48 @@ takes both signs on them, then in the downgrade along $R$ the polyhedral divisor
 attached to $\sigma_G$ has nonempty coefficients at both $0$ and $\infty$, hence
 complete locus.  By Definition~\ref{def:framework} the germ is a node or a del
 Pezzo cone, in particular singular, so Theorem~\ref{thm:rem213} applies.
+
+It remains to justify the asserted dimension.  The tail cone
+$\tau=\sigma_G\cap R^\perp$ has dimension $2$ in the rank-three acting lattice
+$N\cap R^\perp$.  Choose a nonzero character $u$ annihilating $\tau$.  Both
+$u$ and $-u$ lie in $\tau^\vee$.  For the proper polyhedral divisor $\cD_b$ of
+the general fibre, semiampleness gives
+$\deg\cD_b(u),\deg\cD_b(-u)\ge0$.  Coefficient by coefficient,
+\[
+ \min_{v\in(\cD_b)_y}\langle u,v\rangle
+ +\min_{v\in(\cD_b)_y}\langle-u,v\rangle\le0,
+\]
+so both degrees are zero, equality holds at every coefficient, and
+$\cD_b(-u)=-\cD_b(u)$.  After multiplying $u$ to clear denominators, this
+degree-zero semiample divisor on $\PP^1$ is principal.  The coordinate ring
+therefore contains a nonconstant homogeneous unit $f\chi^u$ and its inverse.
+No point can be fixed by the acting torus while this unit is nonzero there.
+The singular locus is torus-invariant, so every one of its nonempty orbits has
+positive dimension.
 \end{proof}
 
 \begin{corollary}\label{cor:reach}
 If for every primitive $R \in M$ some singular $2$-face of $\Delta$ is
-two-sided at $R$, then no single-degree family smooths all of
-$\Sing(X)$ simultaneously.
+two-sided at $R$, then no relative anticanonical effective Cartier divisor in
+any single-degree family has smooth general fibre.
 \end{corollary}
+
+\begin{proof}
+By Lemma~\ref{lem:reach}, the singular locus of the general ambient fibre has
+a positive-dimensional irreducible component.  Its closure in the projective
+fibre is a positive-dimensional projective subvariety contained in the
+singular locus, and hence contains a complete curve.  Apply
+Proposition~\ref{prop:relativefano} and Lemma~\ref{lem:singcurve}.
+\end{proof}
 
 \begin{remark}\label{rem:reachscope}
 The quantifier in Corollary~\ref{cor:reach} must range over \emph{all} primitive
 degrees, not over the degrees $R = u_F$ dual to a facet $F$.  With the
 normalisation $\langle u_F,v\rangle=-1$ these are exactly the vertices of the
 polar polytope $\Delta^\circ$, and we call them \emph{vertex degrees} for that
-reason; at such an $R$ the cell of $F$ is the bounded cell of the level-$(-1)$
-slice, and is $F$ itself, which is why we call it the \emph{lattice facet}.  On
+reason; at such an $R$ the cell of $F$ is the unique maximal bounded cell of
+the level-$(-1)$ slice, and is $F$ itself, which is why we call it the
+\emph{lattice facet}.  On
 $\Delta_{19}$ the vertex degrees leave at most $13$ of the $15$ singular
 $2$-faces one-sided, while a general primitive degree, for instance
 $R = (-3,0,0,1)$, leaves all $15$ one-sided.  So reachability does \emph{not}
@@ -737,78 +826,79 @@ leaves more than $10$ of the $12$ singular $2$-faces one-sided, so
 Corollary~\ref{cor:reach} rules it out.
 \end{remark}
 
-\subsection{The crosscut and its area}
+\subsection{The local degree gate}
 
-Fix a singular $2$-face $G$ and a primitive $R$ one-sided on $\sigma_G$; after
-replacing $R$ by $-R$ we may assume $\langle R,v\rangle > 0$ for every vertex
-$v$ of $G$.  Set $p_v := \langle R,v\rangle$.
+Fix a unit-edge pentagonal $2$-face $G$ and put
+\[
+ L_G=N\cap\operatorname{span}_{\RR}(\sigma_G),\qquad
+ Y_G=\TV_{L_G}(\sigma_G).
+\]
+Then $L_G$ is saturated of rank $3$, $Y_G$ is the isolated Gorenstein
+threefold cone over $\dP_7$, and a choice of splitting gives
+\[
+ U_{\sigma_G}\cong Y_G\times\mathbb G_m.
+\]
+Let $R_G^*\in L_G^\vee$ be the Gorenstein degree, characterized by
+$\langle R_G^*,v\rangle=1$ on every ray of $\sigma_G$.
 
 \begin{definition}\label{def:crosscut}
-The crosscut is the cross-section of $\sigma_G$, in the sense already used for
-the maximal cones, and we give it a name because it is the cell whose summand
-cone the criterion tests.  The \emph{crosscut} of $G$ at $R$ is
-$Q(R) := \sigma_G \cap [R = 1] = \conv\{\, v/p_v : v \in G \,\}$,
-a polygon in the affine plane $[R=1]$ inside the rank-three lattice
-$N_G := \mathrm{span}(G) \cap N$.  We write $\vol$ for normalised area in
-$N_G \cap R^\perp$, so that a unimodular triangle has $\vol = 1$ and a lattice
-parallelogram has $\vol \ge 2$.
+If $r\in M$ is nonnegative and nonzero on $\sigma_G$, its \emph{crosscut} is
+\[
+ Q_G(r):=\sigma_G\cap[r=1].
+\]
+It is a polyhedron with tail $\sigma_G\cap r^\perp$.  When $r$ is positive on
+all five rays it is the rational polygon
+$\conv\{v/\langle r,v\rangle:v\in V(G)\}$.
 \end{definition}
 
-Note $Q(R)$ depends on $R$ only through the pairing vector
-$p = (p_v)_{v \in G}$; and if $G$ has $k$ vertices spanning $N_G$, then the
-restriction map $M \to M_G := \Hom(N_G,\ZZ)$ is surjective with kernel of rank
-one, so each occurring $p$ is realised by a line of degrees in $M$.
-
-\begin{lemma}[Area bound]\label{lem:area}
-Suppose the crosscut $Q(R)$ admits a Minkowski decomposition into summands each
-of which is a point, a lattice segment, or a unimodular simplex.  Then
-$\vol Q(R) \ge 1$.
-\end{lemma}
-
-The point summand is not required to be a lattice point, and it is what makes
-the condition satisfiable: $Q(R)=\conv\{v/p_v\}$ is a rational polygon, not a
-lattice one, so the condition says that $Q(R)$ is, up to a rational
-translation, a Minkowski sum of lattice segments and unimodular simplices.
-Cones over such summands are smooth, which is the form in which
-Theorem~\ref{thm:cor212} uses it.
-
-\begin{proof}
-$Q(R)$ is two-dimensional, so the summands cannot all be points.  If some
-summand is a unimodular triangle $T$, then $Q(R) = T + T'$ for the sum $T'$ of
-the others, and $\vol$ is monotone under Minkowski summation of polytopes
-containing a point, so $\vol Q(R) \ge \vol T = 1$.  Otherwise every summand is a
-point or a segment, so $Q(R)$ is a lattice zonotope; being two-dimensional it
-contains a parallelogram spanned by two linearly independent lattice vectors,
-whence $\vol Q(R) \ge 2 \ge 1$.
-\end{proof}
-
-\begin{lemma}[Finiteness]\label{lem:finite}
-Let $G$ be a pentagon with vertices $v_1,\dots,v_5$.  The set of pairing
-vectors $p \in \ZZ_{>0}^5$ for which $\vol Q(R) \ge 1$ is finite, and is
-computed by the following terminating procedure: enumerate triples
-$\{a,b,c\} \subset \{1,\dots,5\}$ and values $p_a,p_b,p_c \le \Lambda$ for which
-the triangle $\conv\{v_a/p_a, v_b/p_b, v_c/p_c\}$ has $\vol \ge 1/3$,
-increasing $\Lambda$ until no solution attains the bound.
+\begin{lemma}[Local degree gate]\label{lem:degreegate}
+Let $R\in M$ be primitive and suppose $\sigma_G$ is one-sided at $R$ but
+$R|_{L_G}\ne0$.  Choose $\epsilon\in\{1,-1\}$ so that
+$r=\epsilon R$ is nonnegative on $\sigma_G$.  For every single-degree family
+at $R$:
+\begin{enumerate}
+\item if $r|_{L_G}\ne R_G^*$, the induced deformation of
+  $U_{\sigma_G}$ is trivial;
+\item if $r|_{L_G}=R_G^*$, then
+  $\langle r,v\rangle=1$ for all $v\in V(G)$ and every admissible induced
+  decomposition of $G=Q_G(r)$ is a decomposition into lattice polygons.
+  If that decomposition is trivial, the induced deformation of
+  $U_{\sigma_G}$ is trivial.
+\end{enumerate}
+Thus a one-sided single-degree family can move the transverse $\dP_7$ cone only
+on the affine lattice
+\[
+ \cA_G:=\{r\in M:\langle r,v\rangle=1\text{ for every }v\in V(G)\}.
+\]
 \end{lemma}
 
 \begin{proof}
-A pentagon is triangulated by three triangles on its own vertices, so
-$\vol Q(R) \ge 1$ forces some triple of the five rescaled points to span a
-triangle of normalised area at least $1/3$.  Such a triple is in particular
-affinely independent in $[R=1]$, so $v_a,v_b,v_c$ are linearly independent in
-$N_G$, and the three pairings $p_a,p_b,p_c$ determine $R|_{M_G}$, hence the
-whole pairing vector.  Finally, the area of $\conv\{v_a/p_a,v_b/p_b,v_c/p_c\}$
-is strictly decreasing in each of $p_a,p_b,p_c$, so the solution set of
-$\vol \ge 1/3$ is bounded; when a value of $\Lambda$ produces no solution on the
-boundary of the box, the enumeration is complete.
-\end{proof}
+The deformation datum lives in the cone
+$\sigma_G\subset (L_G)_\RR$.  After choosing the splitting
+$U_{\sigma_G}=Y_G\times\mathbb G_m$, the restriction of the
+Ilten--Vollmert construction to this chart is the Laurent extension of the
+homogeneous Altmann deformation of $Y_G$ associated with the same crosscut
+\cite[\S3]{IV12}.  Its Kodaira--Spencer class in $T^1(Y_G)$ has degree
+$-r|_{L_G}$ \cite[(5.3)]{Altmann95}.  Altmann's theorem for an isolated
+three-dimensional Gorenstein toric singularity says that $T^1(Y_G)$ is
+concentrated in degree $-R_G^*$ \cite[Thm.~(6.5)]{Altmann95}.  Hence the
+Kodaira--Spencer map is zero unless $r|_{L_G}=R_G^*$.
 
-\begin{remark}\label{rem:notabox}
-A search over a fixed box is not a substitute for Lemma~\ref{lem:finite}.  The
-box $|a|\le6$, for instance, returns six positive pairing vectors on
-$\Delta_{19}$ where the bound returns fifteen, and no search establishes that
-the ones it missed cannot matter.
-\end{remark}
+Zero Kodaira--Spencer class is enough here, although it is not enough for an
+arbitrary deformation.  Altmann's classification of the transverse admissible
+deformation datum with zero Kodaira--Spencer map gives only types A and B
+\cite[Prop.~(5.6)]{Altmann95}.  Type A yields a trivial family
+\cite[(5.7)]{Altmann95}; and a nontrivial type B datum does not exist when the
+toric variety is smooth in codimension two \cite[(5.8)]{Altmann95}.
+The transverse variety $Y_G$ is smooth in codimension two because its
+singularity is isolated.  Thus its Altmann family is trivial, and so is its
+Laurent extension to $U_{\sigma_G}$.  This proves (1).
+
+In the remaining degree the crosscut is $G$ itself.  Altmann's Gorenstein
+specialization says precisely that admissibility is equivalent to all
+summands being lattice polytopes \cite[Thm.~(6.6)]{Altmann95}.  A trivial
+decomposition is type A, so (5.7) again makes the induced family trivial.
+\end{proof}
 
 \subsection{Locking: a combinatorial rigidity criterion}
 
@@ -928,7 +1018,7 @@ termination all of $E$ lies in a single class; that a facet $F$ is
 \emph{locked} if its whole edge set is locked in $(F,V(F))$; and that a
 $2$-face $G$ lying in the facets $F_1,F_2$ is \emph{locked} if both $F_1$ and
 $F_2$ are locked.  This last is hypothesis~{\rm(L)} of
-Corollary~\ref{cor:Aclean}, and it is what the census of
+Theorem~\ref{thm:Aprime}, and it is what the census of
 Section~\ref{sec:census} counts.
 \end{definition}
 
@@ -955,51 +1045,33 @@ is a valid deduction about any solution of the edge-cycle system, so all
 $t_e$ are equal and the Minkowski summand cone has dimension one.
 \end{proof}
 
-For degrees whose cell is unbounded we need the relative form, and here the
-following observation is what makes the statement correct.
-
-\begin{lemma}\label{lem:unbounded}
-Let $C = \sigma_F \cap [R=1]$ and let $C = C^0 + C^1$ be a decomposition with
-$\tail C^i = \tail C$.  Then the closing condition \eqref{eq:closing} holds on
-the bounded $2$-faces of $C$ and imposes no condition on the unbounded ones.
-The bounded $2$-faces of $C$ are exactly the cross-sections of the $2$-faces of
-$F$ all of whose vertices $v$ satisfy $\langle R,v\rangle > 0$.
-\end{lemma}
-
-\begin{proof}
-An unbounded $2$-face of $C$ is a chain of bounded edges between two rays of
-$\tail C$.  The corresponding faces of $C^0$ and $C^1$ have the same two rays,
-since the tail cones agree, and their chains are convex chains between those
-two directions whose Minkowski sum is the chain of $C$; any pair of convex
-chains summing to it satisfies (D2), so no linear condition on the $t_e$ arises.
-The identification of the bounded $2$-faces is Lemma~\ref{lem:crosssection}
-applied to each $2$-face cone of $\sigma_F$, which has bounded cross-section
-precisely when $R$ is positive on its rays.
-\end{proof}
-
 \begin{corollary}\label{cor:lockedrel}
-Let $G$ be a singular $2$-face of $\Delta$ contained in a facet $F$, let $R$ be
-one-sided positive on $\sigma_G$, and put
-$S_R(F) = \{ v \in V(F) : \langle R,v\rangle > 0 \}$.  If the edge set of $G$ is
-locked in $(F, S_R(F))$, then every Minkowski decomposition of the slice complex
-induces on the crosscut $Q(R)$ only $Q(R)^i = \lambda_i Q(R)$ up to translation,
-with $\lambda_0 + \lambda_1 = 1$; consequently, by Theorem~\ref{thm:cor212}, the
-general fibre still carries the germ of $G$.
+Let $G$ be a unit-edge pentagonal $2$-face, let $r\in\cA_G$, and let $F$ be a
+facet containing $G$.  If $r$ is positive on every vertex of $F$ and $F$ is
+locked, then every decomposition of the slice complex induces the trivial
+lattice Minkowski decomposition on $G$.  Consequently the induced deformation
+of $U_{\sigma_G}$ is trivial.
 \end{corollary}
 
 \begin{proof}
-By Lemma~\ref{lem:unbounded} the propagation of Definition~\ref{def:locked},
-restricted to $2$-faces inside $S_R(F)$, is a valid deduction about the cell of
-$F$.  It puts the five edges of $Q(R)$ in one class, so their dilations are a
-common $\lambda_i$, which is the assertion.  The cones over the summands are
-then $\Cone(\lambda_i Q(R)) = \sigma_G$, which is singular by hypothesis.
+Proposition~\ref{prop:locked} makes
+$C=\sigma_F\cap[r=1]$ Minkowski-rigid, so in a decomposition
+$C=C^0+C^1$ we have $C^i=\lambda_iC+t_i$ with
+$\lambda_0+\lambda_1=1$.  Condition (D3) and the pairwise consequence of (D4)
+then give
+$G^i=\lambda_iG+t'_i$.  Lemma~\ref{lem:degreegate} says that both $G^i$ are
+lattice polytopes.  Every edge of $G$ is primitive, so the lattice length of a
+corresponding edge of $G^i$ is $\lambda_i$; hence
+$\lambda_i\in\ZZ_{\ge0}$.  Their sum is one, so one summand is a translate of
+$G$ and the other is a point.  This is the trivial decomposition, and the last
+assertion is Lemma~\ref{lem:degreegate}(2).
 \end{proof}
 
 \subsection{The sign lemma}
 
-The relative criterion is quantified over degrees, and the following makes that
-quantifier finite in a usable way.  It is a statement about reflexive polytopes
-and does not involve the deformation theory at all.
+The affine lattice $\cA_G$ is a line.  The following determines how the two
+facets containing $G$ behave along it; it is a statement about reflexive
+polytopes and does not involve deformation theory.
 
 \begin{lemma}[Sign lemma]\label{lem:sign}
 Let $\Delta$ be reflexive, $G$ a $2$-face, and $F_1, F_2$ the two facets
@@ -1037,54 +1109,46 @@ along the line.
 We can now state the obstruction for a class of polytopes rather than for one.
 
 \begin{theorem}\label{thm:Aprime}
-Let $\Delta$ be a reflexive $4$-polytope in the admissible framework and $G$ a
-singular $2$-face with facets $F_1, F_2$.  Suppose that for every primitive
-$R \in M$ such that
+Let $\Delta$ be a reflexive $4$-polytope in the admissible framework and let
+$G$ be a unit-edge pentagonal $2$-face, with containing facets $F_1,F_2$.
+Suppose that
 \begin{enumerate}
-\item[\rm(i)] $\sigma_G$ is one-sided at $R$, and
-\item[\rm(ii)] the crosscut $Q(R)$ admits a Minkowski decomposition into
-  points, lattice segments and unimodular simplices,
+\item[\rm(L)] both $F_1$ and $F_2$ are locked;
+\item[\rm(C)] for every $r\in\cA_G$, the functional $r$ is positive on every
+  vertex of $F_1$ or on every vertex of $F_2$.
 \end{enumerate}
-there is an $i \in \{1,2\}$ for which the edge set of $G$ is locked in
-$(F_i, S_R(F_i))$.  Here $R$ and $-R$ give the same crosscut, so the hypothesis
-need only be checked on the representative that is positive on $G$; on the other
-one $S_R(F_i)$ misses $G$ and the condition is vacuous.  Then for every primitive $R \in M$ the general fibre of
-every single-degree family at $R$ still carries the germ of $G$.
+Then, for every primitive $R\in M$, the general ambient fibre of every
+single-degree family at $R$ has positive-dimensional singular locus.  After
+shrinking the base, no relative anticanonical effective Cartier divisor in
+such a family has smooth general fibre.
 
-The hypothesis is decidable.  When $G$ is a pentagon, the degrees satisfying
-{\rm(i)} and {\rm(ii)} lie on finitely many explicitly computable lines by
-Lemmas~\ref{lem:area} and \ref{lem:finite}, and on each line the hypothesis has
-to be checked for only finitely many sign patterns by
+The hypothesis is decidable: $\cA_G$ is an affine lattice line, and condition
+{\rm(C)} is a finite comparison of the thresholds in
 Corollary~\ref{cor:thresholds}.
 \end{theorem}
 
 \begin{proof}
 Let $R$ be primitive.  If $\sigma_G$ is two-sided at $R$, Lemma~\ref{lem:reach}
-applies.  Otherwise, replacing $R$ by $-R$ if necessary (which exchanges the
-two slices and leaves the crosscut unchanged, since
-$v/(-\langle R,v\rangle) = v/\langle -R,v\rangle$), assume $R$ positive on
-$G$.  If $Q(R)$ admits no decomposition into points, segments and unimodular
-simplices, then by Theorem~\ref{thm:cor212} the general fibre is singular at
-that germ, and the germ is $\Cone(Q(R))$, that is, the germ of $G$.  Otherwise
-$R$ satisfies (i) and (ii), so by hypothesis some $F_i$ locks the edges of $G$
-within $S_R(F_i)$, and Corollary~\ref{cor:lockedrel} applies.
+already gives a singular curve in the corresponding chart.  If $R$ vanishes
+on $L_G$, neither slice changes $U_{\sigma_G}$, so its singular locus remains
+$\Sing(Y_G)\times\mathbb G_m$.
+
+It remains to consider the one-sided case with nonzero restriction.  Choose
+$r=R$ or $-R$ nonnegative on $\sigma_G$.  If
+$r|_{L_G}\ne R_G^*$, Lemma~\ref{lem:degreegate}(1) makes the local family
+trivial.  If $r|_{L_G}=R_G^*$, then $r\in\cA_G$; by (C), one containing facet
+is positive at $r$, and by (L) it is locked.  Corollary~\ref{cor:lockedrel}
+again makes the local family trivial.  Thus in every one-sided case the general
+fibre contains the singular curve $\Sing(Y_G)\times\mathbb G_m$ in this chart.
+
+Its closure in the proper ambient fibre is a complete curve contained in the
+singular locus in the one-sided case.  In the two-sided case,
+Lemma~\ref{lem:reach} gives a positive-dimensional singular subvariety; its
+projective closure contains a complete curve in the singular locus, as in
+Corollary~\ref{cor:reach}.  Proposition~\ref{prop:relativefano} and
+Lemma~\ref{lem:singcurve} now give the assertion about anticanonical Cartier
+divisors.
 \end{proof}
-
-Note where the two lemmas of Section~\ref{sec:obstructions} sit in this
-argument.  The area bound is not part of the criterion; it is what makes the
-hypothesis a finite check, by confining condition (ii) to a bounded region of
-pairing vectors.  A cleaner sufficient hypothesis, which is what one checks
-first in practice, is:
-
-\begin{corollary}\label{cor:Aclean}
-Suppose
-\begin{enumerate}
-\item[\rm(L)] $F_1$ and $F_2$ are both locked, and
-\item[\rm(P)] every $R$ satisfying {\rm(i)} and {\rm(ii)} has
-$\langle R,\cdot\rangle > 0$ on all of $V(F_1)$ or on all of $V(F_2)$.
-\end{enumerate}
-Then the conclusion of Theorem~\ref{thm:Aprime} holds.
-\end{corollary}
 
 \subsection{$X_{19}$}
 Let
@@ -1097,28 +1161,30 @@ Let
 &(-2,1,1,-1),\,(-1,0,0,1)\bigr\},
 \end{aligned}
 \end{equation}
+and label the displayed vertices $v_0,\ldots,v_{18}$ in that order.  This is
 a reflexive polytope with $19$ vertices, $27$ facets and $64$ edges, all of
 lattice length one.  It lies in the admissible framework: its singular
 $2$-faces are fourteen unit squares and one pentagon
 $P = \{v_{14},v_{15},v_{16},v_{17},v_{18}\}$ with one interior point, each with
 dual edge of length one.  So $X_{19}$ has fourteen nodes and one $\dP_7$ cone
 point, all isolated.  The pentagon lies in exactly two facets, which we call $F_{21}$ and $F_{24}$
-after their position in the ordering the certificates use.  Their inner normals
-and vertex sets are
+after their zero-based position in the ordering the certificates use.  Their
+supporting equations $\langle u,\cdot\rangle=1$ and vertex sets are
 \[
 \begin{aligned}
-F_{21}&:\ u=(-1,0,-1,0), &&\{v_4,v_{10},v_{11},v_{14},v_{15},v_{16},v_{17},v_{18},v_{19}\},\\
-F_{24}&:\ u=(-1,-1,0,0), &&\{v_5,v_9,v_{12},v_{13},v_{15},v_{16},v_{17},v_{18},v_{19}\},
+F_{21}&:\ u=(-1,0,-1,0), &&\{v_3,v_9,v_{10},v_{13},v_{14},v_{15},v_{16},v_{17},v_{18}\},\\
+F_{24}&:\ u=(-1,-1,0,0), &&\{v_4,v_8,v_{11},v_{12},v_{14},v_{15},v_{16},v_{17},v_{18}\},
 \end{aligned}
 \]
 and the facet $F_{12}$ of Remark~\ref{rem:dimmoves} is
-$u=(0,1,1,1)$ on $\{v_2,v_3,v_7,v_8,v_{13},v_{14},v_{18},v_{19}\}$.
+$u=(0,1,1,1)$ on $\{v_1,v_2,v_6,v_7,v_{12},v_{13},v_{17},v_{18}\}$.
 
 \begin{theorem}\label{thm:A}
 $\Delta_{19}$ satisfies the hypothesis of Theorem~\ref{thm:Aprime} at $P$.
-Consequently, for every primitive $R \in M$ the general fibre of every
-single-degree family of $\PP_{\Delta_{19}}$ at $R$ carries a $\dP_7$ cone point
-at the germ of $P$, and $X_{19}$ is not smoothed by any single-degree family.
+Consequently, for every primitive $R\in M$ the general fibre of every
+single-degree family of $\PP_{\Delta_{19}}$ at $R$ has a singular curve.  No
+relative anticanonical effective Cartier divisor in such a single-degree
+ambient family, with central fibre $X_{19}$, has smooth general fibre.
 \end{theorem}
 
 \begin{proof}
@@ -1126,39 +1192,16 @@ Both facets are locked: each has $9$ vertices, $16$ edges and nine $2$-faces,
 of degrees $(3,3,3,3,3,4,4,4,5)$ summing to $32=2\cdot16$, and the propagation
 of Definition~\ref{def:locked} closes on all $16$ edges.
 
-Next, the degrees satisfying (i) and (ii).  Condition (ii) forces
-$\vol Q(R) \ge 1$ by Lemma~\ref{lem:area}, and by Lemma~\ref{lem:finite} the
-enumeration of such pairing vectors terminates: the cap stabilises with $15$
-vectors passing the triple bound, of which exactly six have
-$\vol Q(R) \ge 1$, namely
+It remains to check (C), and here there is no enumeration.  Solving
+$\langle r,v_i\rangle=1$ for $i=14,\ldots,18$ gives exactly
 \[
-  (1,1,1,1,1),\ (2,2,2,2,2),\ (1,1,2,3,2),\ (1,2,1,2,3),\ (2,1,3,3,1),\
-  (2,3,1,1,3),
+  \cA_P=\{r_s=(-1,s,-1-s,0):s\in\ZZ\}.
 \]
-with crosscut areas $5$, $5/4$, $7/6$, $7/6$, $19/18$, $19/18$.  The other nine
-candidates have areas $17/35$, $41/75$ twice, $5/9$, $3/5$ twice, $13/18$ twice
-and $11/12$, all below one.  The kernel of $M \to M_P$ has rank one, spanned by
-$d = (0,1,-1,0)$, so these are six lines.
-
-On four of the six lines every degree has $\langle R,\cdot\rangle > 0$ on all of
-$V(F_{21})$ or on all of $V(F_{24})$, and Corollary~\ref{cor:Aclean} applies:
-by Lemma~\ref{lem:sign} the cell of $F_{21}$ is bounded for $t$ below a
-threshold and that of $F_{24}$ for $t$ above one, and on those four lines the
-two ranges overlap.
-
-On the lines of $(2,1,3,3,1)$ and $(2,3,1,1,3)$ the two ranges meet only at an
-endpoint, and at the single integer degree there, $R = (-2,-3,1,-1)$ and
-$R = (-2,-3,1,1)$ respectively, both cells are unbounded and neither facet locks
-$P$ within its positive part.  Those two degrees fail condition (ii): their
-crosscuts admit no decomposition into points, lattice segments and unimodular
-simplices, so they are not in the scope of the hypothesis and
-Theorem~\ref{thm:Aprime} disposes of them in its second case.
-
-Every degree satisfying (i) and (ii) is therefore covered, and the hypothesis
-holds.  For the last sentence, the node relation system of $X_{19}$ has two
-coloops \cite[\S9.5]{PaperIV}, so no purely nodal mechanism smooths $X_{19}$
-either; but in fact the surviving $\dP_7$ point already prevents any
-single-degree family from smoothing $X_{19}$.
+The five pentagon vertices pair to $1$.  Each of the other four vertices of
+$F_{21}$ pairs to $s+1$, and each of the other four vertices of $F_{24}$ pairs
+to $-s$.  Hence $r_s$ is positive on every vertex of $F_{21}$ when $s\ge0$ and
+on every vertex of $F_{24}$ when $s\le-1$.  These two ranges cover every
+integer $s$, proving (C).  Theorem~\ref{thm:Aprime} completes the proof.
 \end{proof}
 
 \begin{remark}\label{rem:notnonsmoothable}
@@ -1171,16 +1214,15 @@ expected answer is that $X_{19}$ is smoothable; see Section~\ref{sec:friedman}.
 \end{remark}
 
 \begin{remark}\label{rem:whatfailedfirst}
-The degrees pairing $-1$ with the whole pentagon do form an affine line, since
-the pentagon spans a rank-three sublattice, but nothing confines $R$ to pair
-$-1$, so that line is not the list of degrees to check.  Quantification over all
-of $M$ is what Theorem~\ref{thm:Aprime} handles, and the area bound is what
-makes the remaining case finite.
+The affine line in the proof really is the complete list of one-sided degrees
+that can move the transverse cone.  The reason is not an a priori restriction
+on $R$: it is Altmann's concentration of $T^1$ in the Gorenstein degree,
+together with his classification of zero Kodaira--Spencer deformation data.
 
-The triple condition of Lemma~\ref{lem:finite} is necessary and not sufficient,
-and the gap is visible on $\Delta_{19}$: fifteen pairing vectors pass it, of
-which six have a crosscut of area at least one.  Those six are what a direct
-search over a box returns.
+An earlier proof instead enumerated rational crosscuts whose summand cones
+contained smooth cones.  That test omitted admissibility (D2), so it produced
+false positives and did not prove necessity.  Neither that enumeration nor its
+area cutoff is used in Theorems~\ref{thm:Aprime} or \ref{thm:A}.
 \end{remark}
 
 \section{A census: how special is the obstruction?}\label{sec:census}
@@ -1244,11 +1286,9 @@ $9\,466+37=9\,503$.
 
 So $9\,466$ of the $12\,508$ pentagonal $2$-faces occurring at up to nine
 vertices are locked, that is, satisfy hypothesis~{\rm(L)} of
-Corollary~\ref{cor:Aclean}, a little over three quarters of them, and the cell
-is rigid at $9\,503$.  Note that {\rm(L)} is stronger than what
-Theorem~\ref{thm:Aprime} needs, which is only that the edges of $G$ be tied
-within the $R$-positive part of one containing facet; the sweep measures the
-stronger, simpler condition.  Locking is common but not automatic: at nine vertices
+Theorem~\ref{thm:Aprime}, a little over three quarters of them, and the cell is
+rigid at $9\,503$.  The sweep measures hypothesis~{\rm(L)} only; it does not
+test the affine-line coverage condition~{\rm(C)}.  Locking is common but not automatic: at nine vertices
 $2\,886$ pentagons, just under a quarter, sit in a facet that decomposes, and
 there Theorem~\ref{thm:Aprime} has nothing to say.  What obstructs $X_{19}$ is a
 feature of how its pentagon is glued into its two facets, and it is a feature
@@ -1508,43 +1548,53 @@ this induces on the three singular $2$-faces is:
 \toprule
 $2$-face & germ & induced decomposition \\
 \midrule
-$\{v_2,v_3,v_6,v_7\}$ & node & segment $+$ segment \\
-$\{v_2,v_4,v_5,v_7\}$ & node & segment $+$ segment \\
-$\{v_3,v_4,v_5,v_6,v_8\}$ & $\Cone(\dP_7)$ & segment $+$ unimodular triangle \\
+$\{v_2,v_3,v_6,v_7\}$ & node & primitive segment $+$ primitive segment \\
+$\{v_2,v_4,v_5,v_7\}$ & node & primitive segment $+$ primitive segment \\
+$\{v_3,v_4,v_5,v_6,v_8\}$ & $\Cone(\dP_7)$ & primitive segment $+$ unimodular triangle \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{proposition}\label{prop:admissible}
-The assignment above is a Minkowski decomposition of the slice complex in the
-sense of Definition~\ref{def:iv}.  All four conditions hold: over the $69$
-cells there are no failures of (D1); admissibility (D2) is immediate since
-the summands are lattice polytopes; (D3) holds on every pair of cells; and
-(D4) holds on all $346$ pairs in which one cell is a face of the other, and also
-on the $1\,284$ disjoint pairs, of which $1\,028$ have nonempty summand
-intersection even though the cells do not meet, so that the face-relation form
-of (D4) says nothing about them and they are tested directly.  The $69$ cells
-give $\binom{69}{2}=2\,346$ pairs, split as $346$ face pairs, $1\,284$ disjoint
-pairs, and $716$ that meet without either containing the other; the last group
-is covered by (D3).
+The assignment above is a Minkowski decomposition of the two-sided slice
+complex in the sense of Definition~\ref{def:iv}.  On the decomposed
+level-$(-1)$ slice there are $69$ nonempty cells and no failures of (D1) or
+(D2), and (D3) holds on every nonempty cell intersection.  For the full
+arbitrary-collection axiom (D4), the summand-intersection semilattice has $86$
+states, and the required face relation holds on all $5\,934$ one-cell
+extensions and for all three nonempty subsets of $\{0,1\}$.  As pairwise
+diagnostics, these include all $346$ face pairs and all $1\,284$ disjoint
+pairs, of which $1\,028$ have nonempty summand intersection even though the
+original cells do not meet.  The undecomposed level-$(+1)$ slice has $29$
+nonempty cells; its trivial decomposition satisfies (D1)--(D4), with $29$
+intersection states and $841$ one-cell extensions.
 \end{proposition}
 
 \begin{proof}
-Condition (D2) needs no computation: the bounded cell of the level-$(-1)$ slice
-is the lattice facet $F_{11}$, and $\varphi_0,\varphi_1$ send its vertices to
+Condition (D2) on the level-$(-1)$ slice needs no computation: the unique
+maximal bounded cell is the lattice facet $F_{11}$, and
+$\varphi_0,\varphi_1$ send its vertices to
 lattice points because the dilations $t_e$ are integers, so both summands are
 lattice polytopes and every lattice character takes integer values on them.  The
-other three are finite checks: (D1) cell by cell over the $69$ cells, (D3) over
-all $2\,346$ pairs, and (D4) over the $346$ face pairs together with the
-$1\,284$ disjoint pairs that no face relation covers.  The enumeration and the
-checks are \texttt{slice\_admissible.sage}.
+other three are finite checks: (D1) cell by cell over the $69$ cells and (D3)
+on every nonempty pairwise intersection.  For (D4), a state records the two
+intersections of summand cells over a nonempty collection.  Adding one cell
+gives an inclusion of collections; checking that the three corresponding
+partial sums are faces on every such extension proves the axiom for arbitrary
+inclusions by transitivity of the face relation.  This gives the $86$ states and
+$5\,934$ extensions above.  On the level-$(+1)$ slice we use
+$C=C+\tail(C)$.  The tail summand contains the lattice point zero in every
+minimizing face, so (D2) is automatic there; the same exact semilattice check
+gives $29$ states and $841$ extensions.  The two enumerations and all checks are
+\texttt{slice\_admissible.sage}.
 \end{proof}
 
 \begin{corollary}\label{cor:ambientsmooth}
 By Theorem~\ref{thm:iv44} the decomposition determines a flat family
 $\pi \colon \cP \to B$ with $\cP_0 = \PP_{\Delta_9}$, and by
 Theorem~\ref{thm:cor212} the general fibre $\cP_b$ is smooth at all three germs
-of $X_9$: the cones over a segment and over a unimodular simplex are smooth.
+of $X_9$: the cones over a primitive segment and over a unimodular simplex are
+smooth.
 \end{corollary}
 
 All three cones $\sigma_G$ are one-sided at $R$ with bounded cells, so
@@ -1567,10 +1617,36 @@ which is the precedent for Section~\ref{sec:h0}.
 For the hypersurface to follow the ambient we need the anticanonical system to
 be constant in the family.
 
+\begin{proposition}\label{prop:relativecanonical}
+After shrinking the curve germ $B$, the proper flat morphism
+$\pi\colon\cP\to B$ is Gorenstein of relative dimension $4$.  Its relative
+dualizing sheaf is therefore invertible and compatible with base change.  In
+particular
+\[
+ \cL:=\omega_{\cP/B}^{-1}
+ \qquad\text{satisfies}\qquad
+ \cL|_{\cP_b}\cong\omega_{\cP_b}^{-1}
+ =\cO_{\cP_b}(-K_{\cP_b})
+\]
+for every $b$ near $0$.
+\end{proposition}
+
+\begin{proof}
+The special fibre $\cP_0=\PP_{\Delta_9}$ is Gorenstein because $\Delta_9$ is
+reflexive.  For a flat morphism of finite presentation, the locus in the total
+space where the fibre is Gorenstein is open
+\cite[Tag~0C09]{Stacks}.  This open set contains the whole proper fibre
+$\cP_0$.  The image of its closed complement is closed because $\pi$ is proper
+and does not contain $0$; deleting that image from $B$ makes every fibre
+Gorenstein.  Thus $\pi$ is a Gorenstein morphism.  Relative duality now gives an
+invertible $\omega_{\cP/B}$ whose formation commutes with base change
+\cite{Conrad00}.
+\end{proof}
+
 \begin{proposition}\label{prop:h0}
-$h^0(\cP_b, -K) = 162 = h^0(\cP_0, -K)$.  Consequently $\pi_*\cO(-K_{\cP/B})$ is
-locally free and $H^0(\cP,-K) \to H^0(\cP_b,-K)$ is surjective for all $b$
-near $0$.
+$h^0(\cP_b,\cL_b) = 162 = h^0(\cP_0,\cL_0)$.  Consequently $\pi_*\cL$ is
+locally free and $H^0(\cP,\cL) \to H^0(\cP_b,\cL_b)$ is surjective for all
+$b$ near $0$.
 \end{proposition}
 
 The computation is not the toric one, because the general fibre is not toric:
@@ -1640,42 +1716,37 @@ fibre's value is computed with three different degree-$(-2)$ representatives of
 $K_{\PP^1}$, all agreeing.
 
 \begin{proof}[Proof of Proposition~\ref{prop:h0}]
-The displayed formula gives $162$ on both fibres.  Upper semicontinuity then
-forces $h^0$ to be constant near $0$, and Grauert's theorem gives local freedom
-of $\pi_*\cO(-K_{\cP/B})$ together with the surjection onto each fibre's
-sections.
+The displayed formula gives $162$ on the special fibre and on every nonzero
+fibre: the latter divisorial fans differ only by moving the third marked point
+of $\PP^1$, and are isomorphic after rescaling the base coordinate.  Upper
+semicontinuity therefore makes $h^0$ constant after shrinking $B$.  Grauert's
+theorem gives local freedom of $\pi_*\cL$ and base change.  Shrinking once more,
+we may trivialise this vector bundle; evaluation of its constant sections then
+gives the asserted surjection onto every fibre.
 \end{proof}
 
 \subsection{Global generation}
 \begin{proposition}\label{prop:gg}
-$-K$ is globally generated on $\cP_0$ and on $\cP_b$.
+$\cL_b\cong\cO_{\cP_b}(-K_{\cP_b})$ is globally generated on $\cP_0$ and on
+$\cP_b$.
 \end{proposition}
 
 \begin{proof}
-By \cite[Thm.~3.27]{PS11}, $D_h$ is semiample if and only if every $h_y$ is
-concave and $-h|_\sigma(0)$ is semiample.  The Cartier condition already imposed
-makes $h|_\sigma(0)$ of degree zero on $\PP^1$, hence principal, so the second
-condition is automatic and only concavity is at issue.  Building each $h_y$ from
-its vertex values and the tail data and testing it against every affine piece
-gives, with no cell left under-determined:
-
-\begin{center}
-\begin{tabular}{llll}
-\toprule
-fibre & slice & maximal cells & verdict \\
-\midrule
-special & at $0$ & $8$ & concave \\
-special & at $\infty$ & $12$ & concave \\
-general & at $0$ & $8$ & concave \\
-general & at $\infty$ & $8$ & concave \\
-general & at $p_\lambda$ & $10$ & concave \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-So $-K$ is semiample on both fibres.  Since the base curve is $\PP^1$,
-semiample implies globally generated: see \cite[\S5]{IS11} and the proof of
-\cite[Thm.~3.27]{PS11}.
+On the toric special fibre, $\cL_0\cong\cO_{\PP_{\Delta_9}}(-K)$ is generated
+by its monomial sections: it is the ample Cartier line bundle associated with
+the reflexive polytope $\Delta_9$.  By Proposition~\ref{prop:h0},
+$E:=\pi_*\cL$ is locally free and formation of $E$ commutes with base change.
+Consider the relative evaluation map
+\[
+  \mathrm{ev}\colon \pi^*E\longrightarrow\cL.
+\]
+Its restriction to $\cP_0$ is the usual evaluation map
+$H^0(\cP_0,\cL_0)\otimes\cO_{\cP_0}\to\cL_0$, hence is surjective.  The support
+of $\operatorname{coker}(\mathrm{ev})$ is closed in $\cP$ and misses the whole
+proper fibre $\cP_0$.  Since $\pi$ is proper, its image in $B$ is closed and
+misses $0$.  After deleting that image and shrinking the curve germ once more,
+$\mathrm{ev}$ is surjective on all of $\cP$.  Restricting to each fibre proves
+the assertion.
 \end{proof}
 
 \subsection{The general member}
@@ -1703,35 +1774,64 @@ facets $5$, $6$, $8$ and $11$.
 \end{proof}
 
 \begin{theorem}\label{thm:B}
-$X_9$ is smoothable.  Precisely, let $g \in H^0(\cP,-K_{\cP/B})$ be general and
+$X_9$ is smoothable.  Precisely, let $g \in H^0(\cP,\cL)$ be general and
 $\cX := \{g = 0\}$.  Then $\cX \to B$ is flat, $\cX_0$ is a generic
 anticanonical hypersurface of $\PP_{\Delta_9}$, and $\cX_b$ is a smooth
 Calabi--Yau threefold for general $b\in B$.
 \end{theorem}
 
 \begin{proof}
-Flatness holds because algebraic families of divisors are flat.
+Use the trivialisation of $\pi_*\cL$ from Proposition~\ref{prop:h0}, and choose
+$g$ from a general constant vector in its $162$-dimensional fibre.  A nonzero
+constant vector restricts to a nonzero section $g_b$ on every fibre.  The
+fibres $\cP_b$ are integral normal $T$-varieties, so $g_b$ is a
+nonzerodivisor.  The fibrewise regular-section criterion therefore makes
+$\cX$ a relative effective Cartier divisor: locally, multiplication by $g$
+gives an exact sequence
+\[
+ 0\longrightarrow\cL^{-1}\xrightarrow{\ g\ }\cO_{\cP}
+ \longrightarrow\cO_{\cX}\longrightarrow0
+\]
+which remains exact after restriction to every fibre.  Since the first two
+terms are flat over $B$, the local criterion for flatness shows that
+$\cO_{\cX}$ is flat over $B$.
 
 $\cX_0$ is a general member of $|-K_{\PP_{\Delta_9}}|$: by
-Proposition~\ref{prop:h0} the restriction $H^0(\cP,-K) \to H^0(\cP_0,-K)$ is
+Proposition~\ref{prop:h0} the restriction
+$H^0(\cP,\cL) \to H^0(\cP_0,\cL_0)$ is
 surjective, so a general $g$ restricts to a general section on the special
 fibre.  Hence $\cX_0$ has the singularities of Proposition~\ref{prop:sing9}.
 
-For general $b$: let $W \subset H^0(\cP,-K) \times B$ be the locus where the
-fibre of $\{g=0\}$ over $b$ is singular; $W$ is closed.  By
-Proposition~\ref{prop:gg} the system $-K$ is globally generated on $\cP_b$, so
-by Bertini, in the form ``the general member of a globally generated system on
-a complex variety is smooth away from the ambient's singular locus", via the
-morphism to projective space and generic smoothness in characteristic zero,
-the general member of $|-K_{\cP_b}|$ is smooth away from $\Sing(\cP_b)$.  By
-Proposition~\ref{prop:charts} that locus is a finite set of torus-fixed points,
-and a globally generated system separates them from its general member.  So
-$W_b \subsetneq H^0(\cP,-K)$ for every $b \ne 0$, the complement of $W$ is dense
-open over $B \smallsetminus \{0\}$, and a general $g$ has a nonempty open set of
-good $b$.
+Fix one $b_1\ne0$.  By Proposition~\ref{prop:gg} the system $\cL_{b_1}$ is
+globally generated, so Bertini makes its general member smooth away from
+$\Sing(\cP_{b_1})$.  Proposition~\ref{prop:charts} says that this singular
+locus is finite; global generation also makes a general section nonzero at
+each of its points.  Thus smooth sections form a nonempty open subset of
+$H^0(\cP_{b_1},\cL_{b_1})$.  Under the trivialisation of $\pi_*\cL$, its inverse
+image in the constant section space $V\cong\CC^{162}$ is open and nonempty.
+The sections whose restriction to $\cP_0$ is generic form another nonempty
+open subset of the same irreducible space $V$, so a general $g$ has both
+properties.  Smoothness is open in the flat family $\cX\to B$; hence
+$\cX_b$ is smooth for $b$ in a nonempty open subset of $B$.
 
-Finally $\cX_b$ is Calabi--Yau: it is an anticanonical member of a Gorenstein
-fibre, and $K_{\cX_b}$ is trivial by adjunction.
+Finally relative adjunction gives
+\[
+ \omega_{\cX/B}
+ \cong(\omega_{\cP/B}\otimes\cL)|_{\cX}
+ \cong\cO_{\cX}.
+\]
+On the special fibre the sequence is
+\[
+ 0\longrightarrow\omega_{\cP_0}\longrightarrow\cO_{\cP_0}
+ \longrightarrow\cO_{\cX_0}\longrightarrow0.
+\]
+A complete toric variety has $H^i(\cP_0,\cO_{\cP_0})=0$ for $i>0$; Serre
+duality gives the corresponding vanishings for $\omega_{\cP_0}$ below degree
+$4$.  The long exact sequence therefore gives
+$H^1(\cX_0,\cO_{\cX_0})=H^2(\cX_0,\cO_{\cX_0})=0$.  Upper semicontinuity for
+the proper flat family $\cX\to B$ gives the same vanishings on nearby fibres.
+Thus every smooth good fibre has trivial canonical bundle and
+$h^1(\cO)=h^2(\cO)=0$, so it is a Calabi--Yau threefold.
 \end{proof}
 
 \begin{remark}\label{rem:whygeneral}
@@ -1745,9 +1845,12 @@ general section of the total space and reads off both ends.
 
 \begin{remark}\label{rem:sevencells}
 The deformation is small in a precise sense: of the cells of the slice complex,
-only seven change.  Four of these are three-dimensional and give point strata;
-the remaining three are two-dimensional and are exactly the three germs, where
-by Table~\ref{tab:decomp} the cones over the summands are smooth.
+only seven change.  Three are the cells of the singular $2$-faces, where
+Table~\ref{tab:decomp} and Corollary~\ref{cor:ambientsmooth} show that the cones
+over the summands are smooth.  The other four are higher-dimensional cells.
+Their orbit strata cannot be inferred from cell dimension in a complete-locus
+chart; their contribution to the singular locus is covered instead by the
+twelve-chart computation of Proposition~\ref{prop:charts}.
 \end{remark}
 
 \subsection{What Theorem B does and does not add}
@@ -1957,7 +2060,8 @@ admissible $X$ carrying one is $\QQ$-factorial, a conclusion the census bears
 out at all $77$ polytopes of Theorem~\ref{thm:C} and at $\Delta_{19}$, without
 resting on them.  The $\QQ$-factorial case is
 therefore consistent, and settled by Theorem~\ref{thm:namikawa}, but it appears
-to be empty here; the open content of the conjecture is the whole framework.
+to be empty on the singular locus considered here; the open content of the
+conjecture is the singular part of the framework.
 
 \begin{remark}\label{rem:namikawaprov}
 We have not read the printed \cite{Namikawa97} directly; that volume of the
@@ -2019,15 +2123,144 @@ sequence.  At each singular point let $\mathrm{Sm}_p\subseteq T^1_{X,p}$ be the
 \emph{smoothing locus}: the tangent cone to the smoothing components of the
 germ's versal base.  By \eqref{eq:pentdecomp} and Altmann this is the whole line
 at a node, a line at a $\dP_7$ point, and the union of the $A_1$ line with the
-$A_2$ plane at a $\dP_6$ point; each component is smooth.  This is a subspace of
-the deformation space, whereas the $\Rsm_p$ of Section~\ref{sec:germs} is a
-subspace of the link homology; the second reduction in the proof below
-identifies the two ambient spaces, and under that identification $\mathrm{Sm}_p$
-corresponds to $\Rsm_p$.  That it does, which \cite{PaperIV} derives from its
-period computation and then imposes as a hypothesis, is checked here directly: the jump vector of every nontrivial lattice Minkowski decomposition of
-a unit-edge reflexive pentagon spans the $(-2)$-line, verified on all $154$
-pentagon channels of the census, and at a hexagon the eight decompositions split
-between the $A_1$ and $A_2$ summands without mixing.
+$A_2$ plane at a $\dP_6$ point; each component is smooth.  The next two lemmas
+identify this deformation-theoretic locus with the subspace $\Rsm_p$ of the
+link homology.  This is the local input needed in the global argument.
+
+\begin{lemma}[local Hodge comparison]\label{lem:localhodge}
+Let $(Y,p)$ be a three-dimensional ordinary double point or the anticanonical
+cone over the toric del Pezzo surface $E$ of degree $6$ or $7$.  Let
+$\pi_p\colon\widehat Y_p\to Y$ be the small resolution at a node and
+$\widehat Y_p=\operatorname{Tot}(K_E)$ at a cone point, let $Z_p$ be its
+exceptional locus, and put $U_p=\widehat Y_p\smallsetminus Z_p$.  Then the
+connecting homomorphism gives an isomorphism
+\begin{equation}\label{eq:localhodge}
+ T^1_{Y,p}\;\xrightarrow{\ \sim\ }\;
+ K_p^{\mathrm{cr}}:=
+ \ker\!\left\{H^2_{Z_p}(\widehat Y_p;\Omega^2_{\widehat Y_p})
+ \longrightarrow H^2(\widehat Y_p;\Omega^2_{\widehat Y_p})\right\}.
+\end{equation}
+There is also a natural isomorphism
+\begin{equation}\label{eq:linklocalhodge}
+ H_2(L_p;\CC)\cong H^3(L_p;\CC)
+ \xrightarrow{\ \sim\ }K_p^{\mathrm{cr}},
+\end{equation}
+and the two isomorphisms are compatible with the local Gysin map to any global
+crepant resolution containing $\widehat Y_p$.
+\end{lemma}
+
+\begin{proof}
+The identifications
+$T^1_{Y,p}\cong H^1(U_p;\Theta_{U_p})\cong H^1(U_p;\Omega^2_{U_p})$
+are Schlessinger's comparison and contraction with a local crepant volume
+form.  The comparison applies to the non-lci cones: the hypothesis in
+\cite[Lem.~1.17 and Lem.~4.1]{FL22a} is weakened in
+\cite[Rem.~4.2]{FL22a} to an isolated singularity of depth at least $3$.
+
+For a node,
+$\widehat Y_p=\operatorname{Tot}_{\PP^1}(\cO(-1)\oplus\cO(-1))$.
+The projection is affine, and the tangent sequence together with
+$H^1(\PP^1,\cO(m))=0$ for $m\ge-1$ gives
+$H^1(\widehat Y_p;\Theta_{\widehat Y_p})=0$.  The local cohomology sequence
+therefore identifies the one-dimensional space $T^1_{Y,p}$ with
+$K_p^{\mathrm{cr}}$.  The residue calculation for the node identifies this
+class with the generator of $H^3(L_p)$; equivalently, this is the local
+Gysin identification in Friedman's construction \cite{Friedman86}.
+
+Now suppose $\widehat Y_p=\operatorname{Tot}(K_E)$, with projection
+$\rho\colon\widehat Y_p\to E$ and zero section again denoted $E$.  Contraction
+with the crepant volume form identifies
+\[
+ \Omega^2_{\widehat Y_p}(\log E)(-E)
+ \cong \Theta_{\widehat Y_p}(-\log E),
+\]
+and the logarithmic tangent sequence is
+\[
+ 0\longrightarrow\cO_{\widehat Y_p}\longrightarrow
+ \Theta_{\widehat Y_p}(-\log E)\longrightarrow\rho^*\Theta_E
+ \longrightarrow0.
+\]
+Since $\rho$ is affine and
+$\rho_*\cO_{\widehat Y_p}=\bigoplus_{k\ge0}\cO_E(-kK_E)$, Kodaira vanishing
+and toric Bott vanishing give
+\begin{align*}
+ H^1(\widehat Y_p;\cO_{\widehat Y_p})
+   &=\bigoplus_{k\ge0}H^1(E;\cO_E(-kK_E))=0,\\
+ H^1(\widehat Y_p;\rho^*\Theta_E)
+   &=\bigoplus_{k\ge0}H^1
+      \bigl(E;\Omega^1_E\otimes\cO_E(-(k+1)K_E)\bigr)=0.
+\end{align*}
+Thus
+$H^1(\widehat Y_p;\Omega^2(\log E)(-E))=0$.  The exact sequence of
+\cite[Thm.~2.1(v)]{FL22a}, whose theorem explicitly allows every
+three-dimensional isolated canonical Gorenstein germ, now gives
+\eqref{eq:localhodge}.  Moreover \cite[Thm.~2.1(vi)]{FL22a} gives a natural
+inclusion
+\[
+ H^3(L_p;\CC)=\operatorname{Gr}^2_FH^3(L_p;\CC)
+ \lhook\joinrel\longrightarrow K_p^{\mathrm{cr}}
+\]
+and a decomposition of $K_p^{\mathrm{cr}}$ with this as one summand.  If the
+boundary polygon has $n$ vertices, Altmann's calculation gives
+$\dim T^1_{Y,p}=n-3$.  The circle-bundle Gysin sequence gives
+$\dim H^3(L_p)=9-\deg E=n-3$.  Hence the other summand is zero and the displayed
+inclusion is an isomorphism.  Its construction in local cohomology is
+compatible with the Gysin map, which proves the final assertion.
+\end{proof}
+
+\begin{lemma}[the smoothing branches]\label{lem:branchhodge}
+Under the isomorphism
+$T^1_{Y,p}\cong H_2(L_p;\CC)$ of Lemma~\ref{lem:localhodge}, the tangent cone
+$\mathrm{Sm}_p$ to each smoothing component is exactly the corresponding
+subspace $\Rsm_p$: the whole line at a node, the unique root line at a
+$\dP_7$ cone, and respectively the $A_1$ line and the $A_2$ plane at a
+$\dP_6$ cone.
+\end{lemma}
+
+\begin{proof}
+Only the cone points require an identification.  For a unit-edge polygon
+$P=(v_0,\ldots,v_{n-1})$, put $e_i=v_{i+1}-v_i$.  Altmann identifies the
+degree of the versal tangent space used here with
+\begin{equation}\label{eq:altmanntangent}
+ \mathcal M(P)=
+ \left\{(t_i)\in\CC^n:\ \sum_i t_i e_i=0\right\}
+ \big/\CC(1,\ldots,1),
+\end{equation}
+and a lattice Minkowski decomposition gives the class of its edge-dilation
+vector $(t_i)$.  The Hodge isomorphism of Lemma~\ref{lem:localhodge} is natural
+under lattice automorphisms of $P$, with one necessary character: contraction
+with the crepant volume form twists equivariance by the determinant of the
+induced automorphism of the three-dimensional cone lattice.
+
+There is one unit-edge reflexive pentagon up to $\operatorname{GL}_2(\ZZ)$.  Take
+\[
+ P_7=\bigl((-1,-1),(0,-1),(1,0),(0,1),(-1,0)\bigr).
+\]
+Its nontrivial decomposition has dilation vector
+$t=(0,1,0,1,0)$, up to replacing $t$ by $1-t$, and spans the reduced versal
+base.  The reflection $s(x,y)=(y,x)$ fixes $[t]\in\mathcal M(P_7)$ and has
+determinant $-1$.  On
+$H_2(L_p)=K_E^\perp$ it acts by $-1$ on the unique root line and by $+1$ on
+the complementary line.  The determinant twist therefore forces the Hodge
+image of $[t]$ to be the root line.
+
+Likewise there is one unit-edge reflexive hexagon.  Take
+\[
+ P_6=\bigl((1,0),(1,1),(0,1),(-1,0),(-1,-1),(0,-1)\bigr).
+\]
+The determinant-one rotation $r(x,y)=(x-y,x)$ cyclically permutes its vertices.
+On $\mathcal M(P_6)$ its characteristic polynomial is
+$(\lambda+1)(\lambda^2+\lambda+1)$.  The $(-1)$-eigenspace is spanned by the
+alternating dilation $(0,1,0,1,0,1)$, the triangle-plus-triangle decomposition
+which gives Altmann's one-dimensional smoothing component; the complementary
+plane is spanned by the coarsenings of the three-segment decomposition and is
+the two-dimensional component.  On
+$K_E^\perp\cong A_1\oplus A_2$, the same rotation is $-1$ on $A_1$ and a
+Coxeter element, with characteristic polynomial $\lambda^2+\lambda+1$, on
+$A_2$.  Equivariance now identifies the line with $A_1$ and the plane with
+$A_2$.  These finite divisor and edge calculations are also reproduced by
+\texttt{branch\_locus.py}.
+\end{proof}
 
 \begin{theorem}\label{thm:D}
 Let $X$ be in the admissible framework, with $\omega_X\cong\cO_X$,
@@ -2046,60 +2279,58 @@ $\kappa_p\neq0$ is its nonvanishing.  So Theorem~\ref{thm:D} is the converse of
 \cite[Thm.~6.1]{PaperIV} at first order, and by \cite[Rem.~6.2]{PaperIV} its
 hypothesis is equivalent to the criterion being silent.
 
-\begin{proof}[Sketch; see Remark~\ref{rem:sketchgaps} for the three steps given in outline]
-\emph{Every germ is $1$-liminal in the sense of \cite[Def.~2.6]{FL22a}.}  For a
-reader outside Hodge theory: $1$-Du Bois and $1$-liminal are conditions on how
-far the germ's first two graded pieces of the Du Bois complex are from those of
-a smooth point, and what they buy here is that the local-to-global comparison of
-\cite{FL22a} degenerates in the range we need, so that a class in the link
-homology is a class in $T^1$ with nothing to lift.  They hold for a toric
-Gorenstein cone over a del Pezzo of degree at least $6$ because Bott vanishing
-does, which is the content of the next two paragraphs.  A node
-is an ordinary double point, hence $1$-liminal by \cite[Cor.~2.13]{FL22a}; and a
-$\dP_d$ cone with $d\in\{6,7\}$ is $1$-Du Bois and $1$-irrational, because Bott
-vanishing on the toric del Pezzo gives
-$H^1(\widehat X_p;\Omega^2(\log E_p)(-E_p))=0$ and then
-$\dim T^1=n_p-3=9-d$ forces $K'_p=0$ in \cite[Thm.~2.1(vi)]{FL22a}.  So the
-subset of strongly $1$-irrational points is empty, which removes the auxiliary
-class and the pencil from the argument of \cite[Thm.~5.8]{FL22a} and turns its
-hypothesis into outright vanishing.
+\begin{proof}
+Let $E=\operatorname{Exc}(\Xh\to X)$ and
+$V=\Xh\smallsetminus E=X_{\mathrm{reg}}$.  Excision and the local cohomology
+sequence give
+\begin{equation}\label{eq:globalsupport}
+ H^1(V;\Omega^2_V)\longrightarrow
+ \bigoplus_p H^2_{E_p}(\widehat X_p;\Omega^2_{\widehat X_p})
+ \longrightarrow H^2(\Xh;\Omega^2_{\Xh}).
+\end{equation}
+By Lemma~\ref{lem:localhodge}, $\kappa$ determines a class
+$\widetilde\kappa\in\bigoplus_pK_p^{\mathrm{cr}}$ in the middle term.
 
-\emph{$T^1_{X,p}\to K_p$ is an isomorphism.}  The same vanishing kills the left
-term of the first exact sequence of \cite[Thm.~2.1(v)]{FL22a}, and Schlessinger
-identifies the middle term with $T^1_{X,p}$.  Hence
-$T^1_{X,p}\cong K_p\cong\mathrm{Gr}_F^2H^3(L_p)\cong H_2(L_p;\QQ)$, so a class in
-the link homology is a class in $T^1$ with nothing to lift.
+The compatibility assertion in that lemma gives the commutative square
+\[
+\begin{array}{ccc}
+ \displaystyle\bigoplus_p H_2(L_p;\CC) &\longrightarrow&
+ H_2(\Xh;\CC)\\
+ \downarrow && \downarrow\operatorname{PD}\\
+ \displaystyle\bigoplus_p K_p^{\mathrm{cr}} &\longrightarrow&
+ H^4(\Xh;\CC),
+\end{array}
+\]
+where the lower arrow is the map in \eqref{eq:globalsupport} followed by the
+de Rham map, and the upper arrow is induced by the inclusions of the links.
+The hypothesis on $\kappa$ therefore says that the de Rham image of
+$\widetilde\kappa$ is zero.  The $\partial\bar\partial$-lemma makes
+$H^2(\Xh;\Omega^2_{\Xh})\to H^4(\Xh;\CC)$ injective, so
+$\widetilde\kappa$ already maps to zero in the last term of
+\eqref{eq:globalsupport}.  Exactness supplies
+$\eta\in H^1(V;\Omega^2_V)$ mapping to $\widetilde\kappa$.
 
-Given these, \cite[Lem.~5.6(iii)]{FL22a} puts
-$\ker\bigl(K\to H^2(\Xh;\Omega^2_{\Xh})\bigr)$ inside the image of $\alpha$; its
-proof uses excision, the diagram of \cite[Lem.~4.3]{FL22a}, and the
-identification $\mathbb T^1_X\cong H^1(V;\Omega^2_V)$, which holds here by a
-five-lemma comparison of the sequence above with the local cohomology sequence
-of $\Theta_X$, using only $\operatorname{depth}\ge3$ and Schlessinger.  Poincar\'e
-duality identifies that kernel with the kernel in the statement.  Choose $\theta$
-mapping to $\kappa$; its component at $p$ is $\kappa_p$, which lies in $\Rsm_p$,
-hence in $\mathrm{Sm}_p$, which is tangent to a smooth component of the versal base.
+A global trivialisation of $\omega_X$ identifies
+$H^1(V;\Omega^2_V)$ with $H^1(V;\Theta_V)$.  Schlessinger's global comparison,
+in the depth-$3$ form of \cite[Rem.~4.2]{FL22a}, identifies the latter with
+$\mathbb T^1_X$.  Let $\theta$ be the class corresponding to $\eta$.
+Restricting \eqref{eq:globalsupport} to a neighborhood of $p$ shows that the
+local component of $\theta$ and the class corresponding to $\kappa_p$ have the
+same image in $K_p^{\mathrm{cr}}$; the local connecting map is injective by
+Lemma~\ref{lem:localhodge}, so they are equal.  Lemma~\ref{lem:branchhodge} and
+the assumptions $\kappa_p\in\Rsm_p\smallsetminus\{0\}$ now put every local
+component of $\theta$ in
+$\mathrm{Sm}_p\smallsetminus\{0\}$.  Thus $\theta$ is a first order smoothing.
 \end{proof}
-
-\begin{remark}\label{rem:sketchgaps}
-These are the three inputs flagged in Section~\ref{sec:intro}.  The Bott vanishing
-$H^1(\widehat X_p;\Omega^2(\log E_p)(-E_p))=0$ is where toricity enters and is
-available precisely because $d\ge6$.  That every germ is $1$-Du Bois is here
-obtained by comparing $\dim T^1=n_p-3$ with the link invariant $9-d$, a
-dimension count where a direct argument would be better.  And the five-lemma
-comparison that removes the hypothesis
-$\mathcal Ext^2(\Omega^1_X,\cO_X)=0$ turns on the commutativity of its
-right-hand square, which is naturality of restriction against Schlessinger's
-isomorphism and deserves to be displayed.
-\end{remark}
 
 \begin{remark}\label{rem:whatsleft}
 What Theorem~\ref{thm:D} does not give is integrability.  Locally there is no
 obstruction, since the smoothing components are smooth; what is not automatic is
 that $\theta$ lifts to a one-parameter deformation of $X$.
 Theorem~\ref{thm:namikawa} settles the $\QQ$-factorial case, but no $X$ in the
-admissible framework is $\QQ$-factorial, so that settles nothing here and the
-question is the whole framework.  Nor is the usual counterexample decisive:
+admissible framework carrying one of the prescribed singular faces is
+$\QQ$-factorial, so that settles nothing for the singular case and the question
+is the singular part of the framework.  Nor is the usual counterexample decisive:
 \cite[Ex.~2.19]{Gross97rev} is built from a germ that does not smooth at all,
 and so lies outside the framework.  What is missing is an unobstructedness
 theorem for isolated canonical Gorenstein singularities that are not complete
@@ -2122,11 +2353,15 @@ Write $\mathbb T^1_X=\mathrm{Ext}^1(\Omega^1_X,\cO_X)$ and let
 be the low-degree exact sequence of the local-to-global $\mathrm{Ext}$ spectral
 sequence, and let $\Phi\colon\bigoplus_iT^1_{X,x_i}\to\Cl(\PP_\Delta)^*_{\QQ}$ be
 the map of \cite[Prop.~8.2]{PaperIV}, whose kernel is the relation space.
-Exactness gives $\operatorname{im}\alpha=\ker\mathrm{ob}$, so the sufficiency half of
-Conjecture~\ref{conj:mixed} is exactly the identification $\mathrm{ob}=\Phi$: a
-section of $\mathcal T^1_X$ lifts to a first-order deformation of $X$ if and
-only if the total curve class it determines vanishes.  What then remains is
-integrability, and that is not a formality.  Gross obtains unobstructedness only
+Exactness gives $\operatorname{im}\alpha=\ker\mathrm{ob}$.  The two maps
+$\mathrm{ob}$ and $\Phi$ have different targets, so the precise comparison is
+an equality of kernels, not a literal equality of maps.  Theorem~\ref{thm:D}
+proves $\ker\Phi\subseteq\ker\mathrm{ob}$ through the support sequence, while
+naturality of the same sequence sends every global first-order class to zero
+under the topological map, giving the reverse inclusion.  Thus a section of
+$\mathcal T^1_X$ lifts to a first-order deformation of $X$ if and only if the
+total curve class it determines vanishes.  What then remains is integrability,
+and that is not a formality.  Gross obtains unobstructedness only
 when $T^2_{\mathrm{loc}}=0$, which for an isolated singularity means complete
 intersection, and a cone over a del Pezzo surface of degree $d>4$ is never one
 \cite[(3.3)]{Gross97}.
@@ -2279,22 +2514,16 @@ certify.
 \toprule
 statement & script & checks \\
 \midrule
-Lemma~\ref{lem:reach}, Rem.~\ref{rem:reachscope}, \ref{rem:reachbites}
+Rem.~\ref{rem:reachscope}, \ref{rem:reachbites}
   & \texttt{one\_facet.py} & $7$ \\
 Prop.~\ref{prop:rules}, Def.~\ref{def:locked}, Rem.~\ref{rem:dimmoves}
   & \texttt{locking.py} & $13$ \\
-Thm.~\ref{thm:Aprime} on $\Delta_{19}$; Lemma~\ref{lem:sign}
-  & \texttt{criterion\_sweep.py} & $10$ \\
-Thm.~\ref{thm:A}, cell rigidity by the chain
+Thm.~\ref{thm:A}, the line $\cA_P$, its two ranges, and cell rigidity
   & \texttt{slice\_rigidity.py} & $49$ \\
 \quad independent reimplementation
   & \texttt{slice\_rigidity.sage} & $24$ \\
-\quad passage to the germ, Corollary~\ref{cor:lockedrel}
+\quad face compatibility in Corollary~\ref{cor:lockedrel}
   & \texttt{def41\_check.sage} & $16$ \\
-Thm.~\ref{thm:A}, Lemmas~\ref{lem:area} and \ref{lem:finite}, the trichotomy
-  & \texttt{gate1\_final.sage} & $3$ \\
-Thm.~\ref{thm:A}, case (C) over $\QQ(t)$
-  & \texttt{gate1\_caseC.sage} & $13$ \\
 Prop.~\ref{prop:globalindec}
   & \texttt{global\_decomp.py} & $12$ \\
 Section~\ref{sec:census}, the sweep
@@ -2306,19 +2535,19 @@ Appendix~\ref{sec:mpcp}
 Props.~\ref{prop:sing9}, \ref{prop:mixed9}
   & \texttt{v09\_candidate.py}, \texttt{sing\_locus.py} & $6$ \\
 Prop.~\ref{prop:admissible}, Cor.~\ref{cor:ambientsmooth}
-  & \texttt{slice\_admissible.sage} & $20$ \\
+  & \texttt{slice\_admissible.sage} & $36$ \\
 Cor.~\ref{cor:ambientsmooth}, completeness of the general fibre
   & \texttt{general\_fibre.sage} & $6$ \\
-Props.~\ref{prop:h0} and \ref{prop:gg}
+Prop.~\ref{prop:h0}; independent semiampleness diagnostic
   & \texttt{hzero.sage} & n/a \\
 Prop.~\ref{prop:nottoric}
   & \texttt{toric\_fibre.sage} & $5$ \\
 Prop.~\ref{prop:charts}
   & \texttt{charts.sage} & $3$ \\
 Rem.~\ref{rem:sevencells}
-  & \texttt{final\_check.sage} & $4$ \\
+  & \texttt{final\_check.sage} & $3$ \\
 $\mathrm{Sm}_p$ corresponds to $\Rsm_p$, both germ types
-  & \texttt{branch\_locus.py} & $10$ \\
+  & \texttt{branch\_locus.py} & $17$ \\
 \quad and why the cyclic criterion fails here
   & \texttt{smoothing\_locus.py} & $13$ \\
 Thm.~\ref{thm:C}, and \cite[Prop.~9.2]{PaperIV}
@@ -2330,6 +2559,15 @@ the relation classes of $X_9$ and $X_{19}$
 \bottomrule
 \end{tabular}
 \end{center}
+
+The older scripts \texttt{gate1\_final.sage} and
+\texttt{gate1\_caseC.sage} are deliberately not listed as certificates.  They
+test smoothness of cones over candidate summands but do not impose
+admissibility (D2), so they cannot certify a necessary list of degrees.
+The diagnostic \texttt{gate1\_admissible.sage} exhibits this failure on the
+candidate pairing vectors.  The proof now uses Lemma~\ref{lem:degreegate}
+instead; its only finite calculation is the exact line and the two pairing
+formulas certified by \texttt{slice\_rigidity.py}.
 
 The two marked $\dagger$ certify statements of \cite{PaperIV} as well as
 statements here, and live in that paper's certificate directory of the shared
@@ -2393,6 +2631,8 @@ symmetry for Calabi--Yau hypersurfaces in toric varieties}, J.\ Algebraic Geom.\
 \bibitem[CLS11]{CoxLittleSchenck} D.~A. Cox, J.~B. Little and H.~K. Schenck,
 \emph{Toric varieties}, Grad.\ Stud.\ Math.\ \textbf{124}, Amer.\ Math.\ Soc.,
 2011.
+\bibitem[Con00]{Conrad00} B.~Conrad, \emph{Grothendieck duality and base
+change}, Lecture Notes in Math.\ \textbf{1750}, Springer, 2000.
 \bibitem[FL24]{FL22b} R.~Friedman and R.~Laza, \emph{Deformations of some local
 Calabi--Yau manifolds}, \'Epijournal G\'eom.\ Alg\'ebrique, volume in honour of
 C.~Voisin (2024); arXiv:2203.11738.
@@ -2454,6 +2694,8 @@ Israel J.\ Math.\ \textbf{182} (2011), 481--504; arXiv:0811.0517.
 Calabi--Yau $n$-folds}, J.\ Topol.\ \textbf{2} (2009), 405--421.
 \bibitem[S\"u08]{Suess08} H.~S\"u\ss, \emph{Canonical divisors on
 $T$-varieties}, arXiv:0811.0626.
+\bibitem[Stacks]{Stacks} The Stacks Project Authors, \emph{The Stacks Project},
+\url{https://stacks.math.columbia.edu}.
 \bibitem[Wue26a]{PaperII} B.~J. Wuebben, \emph{Deformations of toric pairs and the
 smoothing of Batyrev Calabi--Yau threefolds}, preprint, 2026; available at
 \url{https://github.com/bwuebben/calabi-yau-smoothability}.

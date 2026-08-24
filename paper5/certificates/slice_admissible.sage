@@ -7,9 +7,11 @@ runs on the 9-vertex census candidate.
 At R = -u_F one has <R,v> >= -1 with equality exactly on F, so the vertices of
 negative pairing are exactly F's, every cell of the level-(-1) slice is
 conv(G cap F) + tail, and the decomposition extends cellwise by
-cell(G)^i = conv(phi_i(G cap F)) + tail.  With r = 1 and the other slice left
-undecomposed, Definition 4.1(ii) reduces to: kappa^i is a FACE of lambda^i for
-every pair of cells kappa < lambda.
+cell(G)^i = conv(phi_i(G cap F)) + tail.  Definition 4.1(ii) quantifies over
+arbitrary collections of cells, not only pairs.  The exact finite check below
+builds the intersection semilattice of the two summand subdivisions and tests
+every one-cell extension; transitivity of the face relation then covers every
+inclusion of collections.  The pairwise counts are retained as diagnostics.
 """
 import os, sys, itertools, json
 HERE = os.path.dirname(os.path.abspath(__file__)) if "__file__" in globals() else os.getcwd()
@@ -122,6 +124,11 @@ def run(name, Vt, FI, T):
     # the reduction of (ii) does not cover families whose cells are DISJOINT
     # -- and their summands can still meet.  Those cases are tested directly.
     def is_face(P, Q):
+        # The empty polyhedron is allowed as a face in Definition 4.1(ii).
+        if P.is_empty():
+            return True
+        if Q.is_empty():
+            return False
         if P == Q:
             return True
         for d in range(Q.dim() + 1):
@@ -129,6 +136,63 @@ def run(name, Vt, FI, T):
                 if f.as_polyhedron() == P:
                     return True
         return False
+
+    def poly_key(P):
+        if P.is_empty():
+            return ("empty",)
+        vec = lambda v: tuple(QQ(x) for x in v)
+        return (tuple(sorted(vec(v) for v in P.vertices_list())),
+                tuple(sorted(vec(v) for v in P.rays_list())),
+                tuple(sorted(vec(v) for v in P.lines_list())))
+
+    def exact_collection_check(label, data):
+        """Check IV Definition 4.1(ii) for every collection of cells.
+
+        A state is the pair of intersections of the 0- and 1-summands over a
+        nonempty collection B of cells.  Adding one cell produces the state for
+        A = B union {cell}.  For each of the three nonempty subsets of summand
+        indices, Definition 4.1(ii) says that the corresponding sum for A is a
+        face of the sum for B.  Every inclusion B subset A factors into such
+        additions, and face relations are transitive.
+        """
+        summands = [(x[1], x[2]) for x in data.values()]
+        states, queue = {}, []
+
+        def add_state(pair):
+            key = (poly_key(pair[0]), poly_key(pair[1]))
+            if key not in states:
+                states[key] = pair
+                queue.append(key)
+
+        def selected_sum(pair, mask):
+            if mask == 1:
+                return pair[0]
+            if mask == 2:
+                return pair[1]
+            return pair[0] + pair[1]
+
+        for pair in summands:
+            add_state(pair)
+
+        bad, transitions, head = [], 0, 0
+        while head < len(queue):
+            old_key = queue[head]
+            head += 1
+            old = states[old_key]
+            for cell_no, cell in enumerate(summands):
+                new = (old[0] & cell[0], old[1] & cell[1])
+                transitions += 1
+                for mask in (1, 2, 3):
+                    if not is_face(selected_sum(new, mask),
+                                   selected_sum(old, mask)):
+                        bad.append((old_key, cell_no, mask,
+                                    (poly_key(new[0]), poly_key(new[1]))))
+                add_state(new)
+
+        ok(f"{label} Definition 4.1(ii), arbitrary cell collections: "
+           f"{len(states)} intersection states, {transitions} one-cell "
+           f"extensions, {len(bad)} violations", not bad)
+        return len(states), transitions
     bad_ii, pairs, notface = [], 0, []
     for S, T2 in itertools.permutations(list(cells), int(2)):
         if not (S < T2):
@@ -171,6 +235,91 @@ def run(name, Vt, FI, T):
     ok(f"Definition 4.1(ii) on DISJOINT pairs, which (i) cannot reach: "
        f"{dis_pairs} disjoint pairs, {dis_hit} with a nonempty summand "
        f"intersection, {dis_bad} violations", dis_bad == 0)
+    exact_collection_check("level-(-1)", cells)
+
+    # The level-(+1) slice is deliberately left undecomposed.  Earlier
+    # versions merely said this and never constructed that half of the slice
+    # complex (defect D-G).  Build it and check the trivial decomposition
+    # C = C + tail(C) against the same compatibility conditions.
+    Hp = Polyhedron(eqns=[[-1] + list(R)], base_ring=QQ)
+    pcells = {}
+    for S in seen:
+        if S == frozenset(range(n)):
+            continue
+        C = Polyhedron(rays=[list(V[i]) for i in sorted(S)], base_ring=QQ) & Hp
+        if C.is_empty():
+            continue
+        Tcone = Polyhedron(vertices=[[0, 0, 0, 0]],
+                           rays=[list(r) for r in C.rays()], base_ring=QQ)
+        pcells[S] = (C, C, Tcone)
+    print(f"    {len(pcells)} nonempty cells in the level-(+1) slice")
+
+    pbad_sum = [S for S, (C, S0, S1) in pcells.items() if S0 + S1 != C]
+    ok(f"level-(+1) Definition 2.1: the trivial decomposition adds up on "
+       f"all {len(pcells)} cells ({len(pbad_sum)} failures)", not pbad_sum)
+
+    # Definition 2.2 allows at most one non-lattice face in each evaluated
+    # pair.  In C + tail(C), the second summand always contains the lattice
+    # point 0 in every character-minimising face, so the condition is
+    # automatic even when C has rational vertices.
+    pbad_adm = [S for S, (_, _, S1) in pcells.items()
+                if vector(QQ, [0, 0, 0, 0]) not in S1]
+    ok(f"level-(+1) Definition 2.2: the tail summand contains the lattice "
+       f"point 0 on all {len(pcells)} cells ({len(pbad_adm)} failures)",
+       not pbad_adm)
+
+    pbad_i = []
+    for S, T2 in itertools.combinations(list(pcells), int(2)):
+        CS, S0, S1 = pcells[S]; CT, T0, T1 = pcells[T2]
+        inter = CS & CT
+        if inter.is_empty():
+            continue
+        key = S & T2
+        if key not in pcells or pcells[key][0] != inter or \
+           (S0 & T0) != pcells[key][1] or (S1 & T1) != pcells[key][2]:
+            pbad_i.append((sorted(S), sorted(T2)))
+    ok(f"level-(+1) Definition 4.1(i) on every nonempty cell "
+       f"intersection ({len(pbad_i)} failures)", not pbad_i)
+
+    pbad_ii, ppairs, pnotface = [], 0, []
+    for S, T2 in itertools.permutations(list(pcells), int(2)):
+        if not (S < T2):
+            continue
+        CS, S0, S1 = pcells[S]; CT, T0, T1 = pcells[T2]
+        if not is_face(CS, CT):
+            pnotface.append((sorted(S), sorted(T2)))
+            continue
+        ppairs += 1
+        if not is_face(S0, T0):
+            pbad_ii.append((0, sorted(S), sorted(T2)))
+        if not is_face(S1, T1):
+            pbad_ii.append((1, sorted(S), sorted(T2)))
+    ok(f"level-(+1): no contained cell fails to be a face "
+       f"({len(pnotface)} failures)", not pnotface)
+    ok(f"level-(+1) Definition 4.1(ii) on all {ppairs} face pairs "
+       f"({len(pbad_ii)} failures)", not pbad_ii)
+
+    pdis_pairs = pdis_hit = pdis_bad = 0
+    for a, b in itertools.combinations(list(pcells), int(2)):
+        Ca, A0, A1 = pcells[a]; Cb, B0, B1 = pcells[b]
+        if not (Ca & Cb).is_empty():
+            continue
+        pdis_pairs += 1
+        I0, I1 = A0 & B0, A1 & B1
+        if I0.is_empty() and I1.is_empty():
+            continue
+        pdis_hit += 1
+        for (P0, P1, Q0, Q1) in ((I0, I1, A0, A1), (I0, I1, B0, B1)):
+            for pair in ((P0, Q0), (P1, Q1)):
+                if not pair[0].is_empty() and not is_face(pair[0], pair[1]):
+                    pdis_bad += 1
+            if not P0.is_empty() and not P1.is_empty() and \
+               not is_face(P0 + P1, Q0 + Q1):
+                pdis_bad += 1
+    ok(f"level-(+1) Definition 4.1(ii) on {pdis_pairs} disjoint pairs, "
+       f"{pdis_hit} with a nonempty summand intersection "
+       f"({pdis_bad} violations)", pdis_bad == 0)
+    exact_collection_check("level-(+1)", pcells)
 
     print("\n  == Corollary 2.12 on the singular cells ==")
     def cone_smooth(P, KB):

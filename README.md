@@ -114,27 +114,27 @@ a script listed below.
    posed as an open problem.
 
 5. **Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points**
-   (`paper5/`) — the sufficiency side. The obstruction to the ambient toric
-   mechanism is combinatorial and degree-independent: a condition on a facet
-   called *locking*, decided by a closure rule on its edge graph that reads
-   only the face lattice, and a locked facet admits no deformation moving the
-   given germ at **any** of the infinitely many degrees available. Against it
-   the paper places a nine-vertex reflexive polytope whose hypersurface has two
-   nodes, neither in any relation among the nodal exceptional curve classes,
-   and one degree-7 cone point, and proves it **smoothable** — so no purely
-   nodal mechanism produces that smoothing. Between them these settle the
-   range: of the reflexive 4-polytopes with at most nine vertices whose
-   hypersurface has only nodes and degree-6 or degree-7 cone points, all
+   (`paper5/`) — the sufficiency side. For the 19-vertex example, Altmann's
+   homogeneous deformation theory and a combinatorial condition called
+   *locking* show that every primitive single-degree ambient family retains a
+   singular curve. This is deliberately not a non-smoothability theorem:
+   multi-degree and non-ambient deformations remain outside its scope. Against
+   it the paper places a nine-vertex reflexive polytope whose hypersurface has
+   two nodes, neither in any relation among the nodal exceptional curve
+   classes, and one degree-7 cone point, and constructs an actual smoothing —
+   so no purely nodal mechanism produces that smoothing. Between them these
+   settle the range: of the reflexive 4-polytopes with at most nine vertices
+   whose hypersurface has only nodes and degree-6 or degree-7 cone points, all
    isolated, exactly **77** carry a pentagonal 2-face; paper 4's criterion
    leaves **76** non-smoothable and the exception is the polytope above. A
-   sweep of the Kreuzer–Skarke classification puts the locking condition in
-   context: of the **12,508** pentagonal 2-faces occurring at up to nine
-   vertices, **9,466** are locked, **37** more have a rigid cell that the
-   closure rule does not certify, and **3,005** lie in a facet that decomposes.
-   The paper also records a first-order converse to paper 4's obstruction, so
-   that the two halves of the criterion meet and what separates them is
-   integrability; that converse is proved by reduction to Friedman–Laza, with
-   three of its inputs given in outline.
+   sweep of the Kreuzer–Skarke classification puts locking in context: of the
+   **12,508** pentagonal 2-faces occurring at up to nine vertices, **9,466**
+   are locked, **37** more have a rigid cell that the closure rule does not
+   certify, and **3,005** lie in a facet that decomposes. Finally, a support-
+   sequence and Hodge-theoretic argument proves the converse to paper 4's
+   obstruction at first order, including the degree-6 and degree-7 branch
+   identifications. Integrating that class in the non-ℚ-factorial case remains
+   open.
 
 The classification-wide counts of papers 1–3 (the 8.27%, the
 3,774 / 26,467 split, the 590 both-sides unit polytopes and the
@@ -241,9 +241,9 @@ must be present.
 - `slice_rigidity.py` and `slice_rigidity.sage` — cell rigidity by the forcing
   chain, implemented twice, in pure Python with an integer chain and in Sage
   with convex hulls over ℚ and ℚ(s) (49 and 24 checks).
-- `criterion_sweep.py` — the criterion on Δ₁₉, and the sign lemma (10 checks).
-- `gate1_final.sage`, `gate1_caseC.sage` — the area bound, the finiteness
-  lemma, and the remaining case over ℚ(t) (3 and 13 checks).
+- `gate1_admissible.sage` — a diagnostic showing why the retired area search
+  did not certify Theorem A: its canonical candidate decompositions fail
+  Ilten–Vollmert admissibility (D2).
 - `def41_check.sage` — the passage from the cell to the germ (16 checks).
 - `global_decomp.py` — Δ₁₉ and Δ₂₀ are Minkowski-indecomposable, so a global
   decomposition is not available either (12 checks).
@@ -252,16 +252,18 @@ must be present.
   2-face of every reflexive 4-polytope with at most nine vertices. Results in
   `dp7_sweep_all.json` (the 3,005 decomposing candidates) and
   `dp7_framework_77.json` (the 77 framework pentagons).
-- `slice_admissible.sage`, `general_fibre.sage` — the Minkowski decomposition
-  of the slice complex over 69 cells, and completeness of the general fibre
-  (20 and 6 checks).
+- `slice_admissible.sage`, `general_fibre.sage` — the full two-sided
+  Ilten–Vollmert axioms, including the arbitrary-collection face condition,
+  and completeness of the general fibre (36 and 6 checks).
 - `hzero.sage`, `charts.sage`, `toric_fibre.sage`, `final_check.sage` — the
   relative anticanonical system, the chart-by-chart smoothness of the general
   fibre, its non-toricity, and the seven cells that change (n/a, 3, 5 and
-  4 checks).
+  3 checks).
 - `branch_locus.py`, `smoothing_locus.py` — the smoothing locus in T¹ agrees
   with paper 4's branch subspace at both germ types, and why the cyclic
-  criterion does not apply here (10 and 13 checks).
+  criterion does not apply here; the first script also checks the local Hodge
+  and equivariance identifications used in the first-order converse (17 and 13
+  checks).
 - `theoremB_class.py` — the relation class of the family constructed in
   Theorem B, computed from the deformation rather than read off the matrix
   (10 checks).
@@ -306,6 +308,7 @@ python3 paper5/certificates/slice_rigidity.py  # paper 5: cell rigidity   (~2 s)
 python3 paper5/certificates/global_decomp.py   # paper 5: indecomposability (~2 s)
 python3 paper5/certificates/branch_locus.py    # paper 5: the smoothing locus (~2 s)
 python3 paper5/certificates/theoremB_class.py  # paper 5: the relation class (~1 s)
+sage paper5/certificates/slice_admissible.sage # paper 5: full two-sided axioms
 
 # database scans (need: pip install numpy pyarrow; and the parquet files)
 ./venv/bin/python src/ks_sweep.py data/ks/polytopes-4d-06-vertices.parquet

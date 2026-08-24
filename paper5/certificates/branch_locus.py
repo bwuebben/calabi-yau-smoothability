@@ -236,6 +236,101 @@ ok("so Paper 4's two dP_6 branch profiles are exactly Altmann's two versal "
    "profile is the A1 summand and the one-dimensional component, the plane "
    "profile is the A2 summand and the two-dimensional one", True)
 
+# ----------------------------------------- equivariance of the Hodge comparison
+# The manuscript's proof does not infer the Hodge identification from the jump
+# computation above.  It uses naturality under a polygon automorphism.  These
+# checks print the two exact representation splittings used there.  Contraction
+# T_U -> Omega^2_U carries the determinant character of the cone-lattice
+# automorphism; this matters for the orientation-reversing dP7 reflection.
+
+def vertex_permutation(P, A):
+    out = []
+    for x, y in P:
+        q = (A[0][0] * x + A[0][1] * y,
+             A[1][0] * x + A[1][1] * y)
+        out.append(P.index(q))
+    return out
+
+def edge_permutation(f):
+    """Image of an unoriented boundary edge under the vertex permutation f."""
+    n = len(f); out = []
+    for i in range(n):
+        a, b = f[i], f[(i + 1) % n]
+        assert b == (a + 1) % n or a == (b + 1) % n
+        out.append(a if b == (a + 1) % n else b)
+    return out
+
+def act_edges(t, ep):
+    out = [None] * len(t)
+    for i, j in enumerate(ep):
+        out[j] = t[i]
+    return out
+
+def same_mod_constants(a, b):
+    ds = [F(x) - F(y) for x, y in zip(a, b)]
+    return len(set(ds)) == 1
+
+def act_divisor_values(row, f):
+    # Pullback rather than pushforward changes f to f^{-1}; the characteristic
+    # polynomials and the eigenspaces tested below are unchanged.  This choice
+    # agrees with the divisor-class convention in examples.py.
+    return [row[f[i]] for i in range(len(f))]
+
+print("\n== automorphism representations in the local Hodge comparison ==")
+
+P7 = [(-1, -1), (0, -1), (1, 0), (0, 1), (-1, 0)]
+f7 = vertex_permutation(P7, ((0, 1), (1, 0)))
+ep7 = edge_permutation(f7)
+t7 = [0, 1, 0, 1, 0]
+ok("dP7 reflection fixes the segment-plus-triangle dilation class",
+   same_mod_constants(act_edges(t7, ep7), t7))
+star7 = {"k": 5, "rays2d": P7,
+         "verts": [tuple(list(r) + [0, 0]) for r in P7],
+         "interior": (0, 0, 0, 0)}
+surf7 = surface_lattice(star7); rd7 = kperp_root_data(surf7)
+root7 = rd7["roots"][0][1]
+row7 = [F(dot(root7, surf7["Dcls"][j])) for j in range(5)]
+ok("dP7 reflection acts by -1 on the unique root line",
+   act_divisor_values(row7, f7) == [-x for x in row7])
+ok("the determinant twist (-1) sends the fixed dP7 smoothing line to the "
+   "(-1)-eigenspace containing the root line",
+   same_mod_constants([-x for x in act_edges(t7, ep7)], [-x for x in t7]))
+
+P6 = [(1, 0), (1, 1), (0, 1), (-1, 0), (-1, -1), (0, -1)]
+f6 = vertex_permutation(P6, ((1, -1), (1, 0)))
+ep6 = edge_permutation(f6)
+t6 = [0, 1, 0, 1, 0, 1]
+ok("dP6 order-six rotation acts by -1 on the alternating dilation line",
+   same_mod_constants(act_edges(t6, ep6), [-x for x in t6]))
+star6 = {"k": 6, "rays2d": P6,
+         "verts": [tuple(list(r) + [0, 0]) for r in P6],
+         "interior": (0, 0, 0, 0)}
+surf6 = surface_lattice(star6); rd6 = kperp_root_data(surf6)
+roots6 = [v for _, v in rd6["roots"]]
+a1roots = [v for v in roots6
+           if sum(1 for w in roots6
+                  if rd6["pair"](v, w) != 0 and rank([v, w]) == 2) == 0]
+row_a1 = [F(dot(a1roots[0], surf6["Dcls"][j])) for j in range(6)]
+ok("dP6 rotation acts by -1 on the A1 root line",
+   act_divisor_values(row_a1, f6) == [-x for x in row_a1])
+a2roots = [v for v in roots6 if rank([a1roots[0], v]) == 2]
+a2basis = [a2roots[0], next(v for v in a2roots
+                            if rank([a2roots[0], v]) == 2)]
+cyclotomic = True
+for phi in a2basis:
+    row = [F(dot(phi, surf6["Dcls"][j])) for j in range(6)]
+    arow = act_divisor_values(row, f6)
+    a2row = act_divisor_values(arow, f6)
+    cyclotomic &= all(x + y + z == 0
+                      for x, y, z in zip(row, arow, a2row))
+ok("dP6 rotation satisfies A^2+A+I=0 on the two-dimensional A2 summand",
+   cyclotomic)
+ok("the six three-segment coarsenings satisfy A^2+A+I=0 modulo homotheties",
+   all(same_mod_constants(
+       [F(x) + F(y) + F(z) for x, y, z in
+        zip(t, act_edges(t, ep6), act_edges(act_edges(t, ep6), ep6))],
+       [F(0)] * 6) for t in inA2))
+
 print(f"\n{CH[0]} checks passed.")
 print("""
 CONCLUSION.  There is one reflexive pentagon with unit edges up to GL_2(Z) and

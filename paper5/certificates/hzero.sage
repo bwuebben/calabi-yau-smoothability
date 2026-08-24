@@ -246,7 +246,7 @@ for KYgen in ({"0": -1, "oo": -1, "p": 0},
     hzero(f"Delta_9 GENERAL fibre, K_P1 = {KYgen}", tail_max,
           {"0": dedupe(S_0), "oo": S_a, "p": S_b}, KYgen)
 
-# ---------------------------------------------------------------- Piece 3
+# -------------------------------- independent support-function positivity check
 # PS Thm 3.27: D_h is semiample iff every h_P is concave and -h|_sigma(0) is
 # semiample.  We imposed sum_P a_P(sigma) = 0 (Cartier, PS Def 3.8), so
 # h|_sigma(0) has degree 0 on P^1, hence is principal -- the second condition
@@ -323,8 +323,9 @@ for lab, cl, ky, ht in [
     okc, npc, sk = concave(lab, cl, ky, ht)
     allc = allc and okc; tot_sk += sk
 if allc and tot_sk == 0:
-    print("    => every h_P is concave, so -K is SEMIAMPLE on both fibres;")
-    print("       on Y = P^1 semiample implies globally generated "
-          "(Ilten-Suess Sec. 5), which is Piece 3.")
+    print("    => every h_P is concave, so -K is SEMIAMPLE on both fibres.")
+    print("       This does not by itself prove that -K is globally generated;")
+    print("       the paper proves relative global generation from Grauert, base")
+    print("       change, and generation on the proper toric central fibre.")
 else:
     print(f"    => NOT established ({tot_sk} cells under-determined)")

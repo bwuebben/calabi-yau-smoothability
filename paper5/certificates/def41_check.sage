@@ -128,10 +128,8 @@ for fi, others in [(21, [3, 9, 10, 13]), (24, [4, 8, 11, 12])]:
 print(f"""
 {CH[0]} checks passed.
 
-The only decompositions Definition 4.1 permits at the pentagon are
-pentagon^i = lambda_i * pentagon (translated), lambda_0 + lambda_1 = 1.  At
-least one lambda_i is positive, and the cone over a positive multiple of the
-pentagon IS the cone over the pentagon, so by Ilten-Vollmert Corollary 2.12
--- the general fibre of the deformation has exactly the analytic
-singularities of the cones over the summands -- the general fibre still
-carries a dP7 cone point.  The dP7 germ is not smoothed, at any degree.""")
+At every tested exact specialization, the face condition restricts a
+homothetic locked-cell decomposition to homothets of the pentagon.  The
+all-degree conclusion in the paper comes from the locking proposition; at the
+Gorenstein degree, Altmann's lattice-summand theorem and the primitive edges
+then force the two dilation factors to be 0 and 1.""")

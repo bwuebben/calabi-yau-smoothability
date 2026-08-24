@@ -2,9 +2,11 @@
 """Independent Sage cross-check of slice_rigidity.py.
 
 Uses Sage's convex hull (not the combinatorics of Delta_19) to build the
-slice cells, and settles the all-degrees statement a second way: over the
-function field Q(s), where s = 1/(1-t) for facet 21 and s = 1/t for facet
-24 parametrises the rescaling of the off-pentagon vertices.
+slice cells, checks several exact specializations, and computes the generic
+rank over the function field Q(s), where s = 1/(1-t) for facet 21 and
+s = 1/t for facet 24 parametrises the rescaling of the off-pentagon vertices.
+The all-specialization statement comes from the locking proof in main.tex;
+generic rank over Q(s) alone would not exclude exceptional specializations.
 
 Run:  sage slice_rigidity.sage     (from paper5/)
 """
@@ -102,6 +104,6 @@ for fi, others in [(21, [3, 9, 10, 13]), (24, [4, 8, 11, 12])]:
         sym.append(vector(Fs, [s * x for x in V[i]]) if kind == 's'
                    else vector(Fs, [Fs(x) for x in V[i]]))
     d = summand_dim_from(sym, ee, ff, field=Fs)
-    ok(f"facet {fi}: summand dim over Q(s) is {d}, i.e. rigid at every degree", d == 1)
+    ok(f"facet {fi}: generic summand dim over Q(s) is {d}", d == 1)
 
 print(f"\n{CH[0]} checks passed.")
