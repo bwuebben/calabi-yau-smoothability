@@ -26,8 +26,8 @@ WHY THIS DOES NOT CONFLICT WITH GROSS.  His Theorem 5.8 needs the contraction
 primitive, which supplies Q-factoriality.  If X were Q-factorial then
 Pic(Xhat) = pullbacks + QE, pullbacks restrict trivially to E because E goes to
 a point, so the image in Pic(E) is spanned by E|E = K_E and every divisor pairs
-to zero against K-perp: the channel rows would VANISH.  Here they have rank 2,
-the maximum.  So X_7 is as far from Q-factorial at its germ as it can be, and
+to zero against K-perp: the relation rows would VANISH.  Here they have rank 2,
+the maximum.  Thus they witness that X_7 is not Q-factorial, and
 Theorem 5.8 never applied.  The two results agree wherever both speak, and this
 file checks the rank that separates them.
 
@@ -71,17 +71,17 @@ print("\n== the criterion ==")
 B, labels, nn, dps = relation_matrix(V7)
 r = rank(B)
 K = kernel([[B[i][c] for i in range(len(B))] for c in range(len(B[0]))])
-ok(f"channels {labels}, block rank {r} of {len(B)}, kernel dimension {len(K)}",
+ok(f"relation rows {labels}, block rank {r} of {len(B)}, kernel dimension {len(K)}",
    r == 2 and len(K) == 0)
 ok("with one germ there is nothing to cancel against, so the covered "
    "coordinate is forced to zero and Paper 4's criterion certifies X_7 "
    "NON-SMOOTHABLE", len(K) == 0)
 
 print("\n== and Gross's Theorem 5.8 does not apply, because the rank is 2 ==")
-ok("Q-factoriality would force the channel rows to vanish, since pullbacks "
+ok("Q-factoriality would force the relation rows to vanish, since pullbacks "
    "restrict trivially to a divisor contracted to a point and every class "
    f"would then pair to zero against K-perp.  The rows have rank {r}, so X_7 "
-   "is not Q-factorial at its germ and the primitivity hypothesis of "
+   "is not Q-factorial and the primitivity hypothesis of "
    "Theorem 5.8 fails", r > 0)
 
 print("\n== the general statement this instantiates ==")

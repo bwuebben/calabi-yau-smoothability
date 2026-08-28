@@ -106,12 +106,19 @@ a script listed below.
    parameter times a unit); in the purely nodal case this recovers the
    necessity half of Friedman's criterion at all orders, without
    unobstructedness. The criterion is a finite linear-algebra test, and it
-   obstructs: the X° member of paper 3's unique mirror pair (26 nodes, two
-   dP₇ and two dP₆ cone points, every germ locally smoothable) admits **no
-   smoothing**, so both members of the pair are non-smoothable, one for
-   local and one for global reasons. On a second, 19-vertex example (14
-   nodes and one dP₇ point) the test is silent, and its smoothability is
-   posed as an open problem.
+   obstructs the X° member of paper 3's unique mirror pair (26 nodes, two
+   dP₇ and two dP₆ cone points, every germ locally smoothable), which admits
+   **no smoothing**. A version allowing rigid germs shows independently
+   that no deformation of the mirror partner smooths either of two specified
+   nodes; its rigid F₁-cone point is not the source of that global
+   obstruction. The relation rows give a rational form of each toric germ's
+   T¹, the ambient matrix kernel equals the topological kernel on the
+   admissible class, and positive cone-point block rank certifies failure of
+   ℚ-factoriality. The seven-vertex bottom of the pentagonal census has one
+   dP₇-cone point and no smoothing. Among all 77 admissible polytopes with at
+   most nine vertices and a pentagonal face, the criterion obstructs 76. On a
+   separate hypersurface with 14 nodes and one dP₇ point the test is silent,
+   and its smoothability is posed as an open problem.
 
 5. **Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points**
    (`paper5/`) — the sufficiency side. For the 19-vertex example, Altmann's
@@ -203,21 +210,25 @@ both directories:
 - `dp_periods.py` — the period package: the fan combinatorics and the
   constancy of the pulled-back holomorphic 3-form behind the 4π² period
   (37 assertions).
-- `examples.py` — the finite test of the paper's Section 7, run on both
-  the 22-vertex and the 19-vertex examples (8 assertions).
-- `relation_class.py` — the channel rows are exactly the ray relations at
-  each singular 2-face, checked row by row on four polytopes, together with
-  the per-germ block ranks and an exhibited relation class where the test
-  gives no obstruction (36 checks).
-- `kernel_equality.py` — the ambient kernel equals the topological one across
-  the whole class (26 checks).
-- `classification.py` — the criterion evaluated over the 77 polytopes of the
-  small range (10 checks).
-- `lone_germ.py` — the single-germ corollary (8 checks).
+- `mirror_partner.py` — the mirror-partner package: its face inventory,
+  crepant resolution data, reduced-rigidity test, relation matrix, and the
+  two forced node coordinates (31 assertions).
+- `examples.py` — the finite test of Section 9, including the 22-vertex,
+  19-vertex, and 20-vertex examples (13 assertions).
+- `fixed_example.py` — an independent reconstruction of the distinguished
+  mirror pair and its node relations.
+- `relation_class.py` — the ray-relation interpretation of the local rows,
+  their rational T¹ forms, the block ranks, and an independent reconstruction
+  of the rank-21 matrix (36 checks).
+- `kernel_equality.py` — the vanishing of the Batyrev correction terms on the
+  named examples and all 77 census members (26 checks).
+- `lone_germ.py` — the seven-vertex one-germ example (8 checks).
+- `classification.py` — the 77-member census, rebuilt from
+  `framework_77.json` (10 checks).
 
 On Sage: `resolution_fan.sage`, `restriction_data.sage`,
 `mixed_candidate.sage`, `global_section.sage` (loads `cox_data.sage`),
-`local_models.sage` and `chart_characters.sage`, with the face-data
+`local_models.sage`, `mirror_partner_fan.sage`, and `chart_characters.sage`, with the face-data
 module `fixed_example.py`, certify the fixed crepant subdivision, the
 restriction lattices, the 36×26 matrix, Δ-regularity, and the local
 deformation bases. The `*.md` files in the same directory are the data
@@ -299,9 +310,13 @@ python3 src/cascade_check.py       # cascade bookkeeping          (~1 s)
 python3 paper4/certificates/milnor_kernels.py  # paper 4: lattice package (~1 s)
 python3 paper4/certificates/global_kernel.py   # paper 4: matrix package  (~1 s)
 python3 paper4/certificates/dp_periods.py      # paper 4: period package  (~1 s)
+python3 paper4/certificates/mirror_partner.py  # paper 4: mirror partner  (~1 s)
 python3 paper4/certificates/examples.py        # paper 4: finite test     (~1 s)
-python3 paper4/certificates/relation_class.py  # paper 4: the ray relations (~1 s)
+python3 paper4/certificates/fixed_example.py   # paper 4: fixed geometry  (~2 s)
+python3 paper4/certificates/relation_class.py  # paper 4: ray relations   (~1 s)
 python3 paper4/certificates/kernel_equality.py # paper 4: kernel equality (~2 s)
+python3 paper4/certificates/lone_germ.py        # paper 4: one-germ case   (~2 s)
+python3 paper4/certificates/classification.py  # paper 4: 77-member census (~3 s)
 python3 paper5/certificates/sing_locus.py      # paper 5: Sing(X_9)       (~1 s)
 python3 paper5/certificates/locking.py         # paper 5: the closure rule (~1 s)
 python3 paper5/certificates/slice_rigidity.py  # paper 5: cell rigidity   (~2 s)

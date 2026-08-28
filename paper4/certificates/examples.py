@@ -21,7 +21,7 @@ Verdict logic (necessity direction only): on the branch-restricted
 kernel, a forced-to-zero node coordinate contradicts Lemma P, and a
 forced-to-zero dP7 (-2)-coordinate contradicts Lemma D; either way the
 hypersurface admits no one-parameter smoothing.  For dP6 points the
-line channel is covered by Lemma D and the plane channel is open, so
+line branch is covered by Lemma D and the plane branch is open, so
 profiles over dP6 components are reported per choice.
 
 First target: Delta_19 (Paper 3, Section 5.3): 14 nodes + one dP7 point.
@@ -370,7 +370,7 @@ def run_example(name, V, dp6_profiles=("L", "P")):
         tag = "".join(choice) if choice else "-"
         print(f"  profile {tag}: dim {d}; forced: {sorted(f)}")
         verdicts.append((tag, req_nodes, req_dp7, f))
-    # verdict: covered channels are nodes (Lemma P) and dP7 (Lemma D);
+    # verdict: covered directions are nodes (Lemma P) and dP7 (Lemma D);
     # a dP6 line-profile is covered by Lemma D, the plane profile is open.
     all_covered = all(rn or rd for _, rn, rd, _ in verdicts)
     if all_covered:

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Exact and numerical checker for the period lemmas of the paper (Section 3).
 
-Verifies, for the two rank-one Milnor-fiber channels:
+Verifies, for the two rank-one Milnor-fiber branches:
 
   A. (P^1)^3 minus the closure of {xyz = 1}      (dP6 line component)
   B. Bl_pt P^3 minus the closure of {xy/z = 1}   (dP7 unique component)

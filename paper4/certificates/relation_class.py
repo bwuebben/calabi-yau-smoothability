@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""The channel rows ARE the ray relations, and the relation class exhibited.
+"""The relation rows are the ray relations, and the relation class exhibited.
 
 Certifies Proposition 8.2 and Corollary 8.5 of the paper.  At each singular
-2-face the channel rows are checked, row by row, to be linear relations among
+2-face the relation rows are checked, row by row, to be linear relations among
 the rays of the cone over that face, to carry coefficient zero at the interior
-lattice point, and to SPAN the whole relation space, of rank n-3, which is
-Altmann's dim T^1 of the germ.  Run on X-circ, Delta_20, Delta_19 and the
+lattice point, and to SPAN the whole rational relation space, of rank n-3,
+whose complexification is Altmann's T^1 of the germ.  Run on X-circ, Delta_20, Delta_19 and the
 companion's Delta_9.  The per-germ block ranks of Corollary 8.5 are computed at
 the same time, and rank B = 21 for X-circ is reproduced from an independent
 construction of the rows.
@@ -50,7 +50,7 @@ def ok(label, cond):
 
 
 def relation_matrix(V):
-    """The mixed relation matrix of Paper 4: rows are germ channels, columns
+    """The mixed relation matrix of Paper 4: relation rows are indexed by germs, and columns
     are the rays appearing in the germ supports."""
     squares, dps = analyze_faces(V)
     ray_of = {}
@@ -149,9 +149,10 @@ d19, c19, n19, cov19 = report("Delta_19, where the test is silent and the "
                               "ambient cannot deliver", V_19)
 
 def t1_identification(name, V):
-    """Prop.: at each singular 2-face the channel rows span, exactly, the space
-    of linear relations among the rays of the cone over that face, which has
-    rank n-3 and is T^1 of the germ.  Checked row by row, not by counting."""
+    """Prop.: at each singular 2-face the relation rows span, exactly, the space
+    of rational linear relations among the rays of the cone over that face,
+    which has rank n-3 and complexifies to T^1 of the germ.  Checked row by
+    row, not by counting."""
     squares, dps = analyze_faces(V)
     germs = []
     for a, b, c, d in squares:
@@ -190,9 +191,9 @@ def t1_identification(name, V):
     print(f"\n  {name}: {len(germs)} germs {inv}")
     ok(f"{name}: at every germ the interior ray carries coefficient zero, so "
        "the rows are supported on the vertices of the 2-face", not bad_int)
-    ok(f"{name}: every channel row is a linear relation among the rays of its "
+    ok(f"{name}: every relation row is a linear relation among the rays of its "
        f"germ, sum_j a_j v_j = 0 (failures {bad_rel})", not bad_rel)
-    ok(f"{name}: every channel row has coefficient sum zero, which is "
+    ok(f"{name}: every relation row has coefficient sum zero, which is "
        "orthogonality to K (failures {})".format(bad_sum), not bad_sum)
     ok(f"{name}: at every germ the rows SPAN the full ray-relation space, of "
        f"rank n-3, computed independently (failures {bad_span})", not bad_span)
@@ -202,7 +203,7 @@ def t1_identification(name, V):
     return germs
 
 
-print("\n== the channel rows ARE the ray relations, germ by germ ==")
+print("\n== the relation rows are the ray relations, germ by germ ==")
 # Altmann, Tohoku 47 (1995) Thm 6.5: for an isolated Gorenstein toric threefold
 # germ given by a lattice polygon with n vertices, T^1 is concentrated in the
 # single degree -R* and has dimension n - 3.  The jump map a_j = t_j - t_{j-1}
@@ -213,12 +214,12 @@ for nm, V in (("X-circ (polar Delta_F1)", polar(V_F1)),
               ("Delta_20", V_20), ("Delta_19", V_19), ("Delta_9", V9)):
     t1_identification(nm, V)
 
-print("\n== the block rank at a germ, which is its failure of Q-factoriality ==")
-# If X were Q-factorial at a germ whose crepant exceptional locus is a single
+print("\n== positive cone-point block rank witnesses global non-Q-factoriality ==")
+# If X were Q-factorial and a germ's crepant exceptional locus were a single
 # divisor E contracted to a point, every ambient class would restrict to E in
 # the span of E|E = K_E, hence pair to zero against K-perp, and the whole block
 # of rows at that germ would VANISH.  So a positive block rank certifies the
-# failure of Q-factoriality there, and Gross's Theorem 5.8, which needs
+# failure of global Q-factoriality, and Gross's Theorem 5.8, which needs
 # primitivity and hence Q-factoriality, does not reach the example.
 V7 = [(1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-6, -4, -1, 0),
       (0, 0, 0, 1), (-6, -4, 0, -1), (-3, -2, 1, -1)]
@@ -230,17 +231,17 @@ for nm, V in (("X-circ (polar Delta_F1)", polar(V_F1)), ("Delta_20", V_20),
         idx = [i for i, lb in enumerate(labels) if lb.startswith(f"dp{t}:")]
         blocks.append(({5: "dP7", 6: "dP6"}[d["k"]], rank([B[i] for i in idx]),
                        len(idx)))
-    ok(f"{nm}: every cone-point block has the MAXIMAL rank {blocks}, so X is "
-       "Q-factorial at none of its cone points", all(r == m for _, r, m in blocks))
+    ok(f"{nm}: every cone-point block has the MAXIMAL rank {blocks}, so each "
+       "block witnesses that X is not Q-factorial", all(r == m for _, r, m in blocks))
 Bc, labc, nnc, dpc = relation_matrix(polar(V_F1))
 ok(f"X-circ: the full matrix has {len(Bc)} rows and rank {rank(Bc)}, "
    "reproducing rank B = 21 of Section 5.3(1) from an independent "
    "construction of the rows", len(Bc) == 36 and rank(Bc) == 21)
 
-print("\n== the channels ARE T^1 ==")
+print("\n== the relation rows give rational forms of T^1 ==")
 # Altmann, Tohoku 47 (1995) Thm 6.5: for an isolated Gorenstein toric threefold
 # germ given by a lattice polygon with n vertices, T^1 is concentrated in the
-# single degree -R* and has dimension n - 3.  Paper 4 indexes its channels at
+# single degree -R* and has dimension n - 3.  Paper 4 indexes its relation rows at
 # such a germ by a basis of K^perp inside the Picard lattice of the toric
 # surface.  For a smooth complete toric surface with n rays, Pic has rank n - 2,
 # so K^perp has rank n - 3.  The two counts agree, germ by germ.
@@ -257,7 +258,7 @@ for nm, V in (("Delta_9", V9), ("Delta_19", V_19)):
     tot_channels = len(labels)
     tot_t1 = sum(t for _, t, _ in per)
     rows.append((nm, tot_channels, tot_t1, per))
-    ok(f"{nm}: {tot_channels} channels in the Paper 4 matrix, and "
+    ok(f"{nm}: {tot_channels} relation rows in the Paper 4 matrix, and "
        f"dim H^0(T^1_X) = {tot_t1} = sum over germs of (vertices - 3) "
        f"[{', '.join(f'{k}:{t}' for k, t, k2 in per)}]",
        tot_channels == tot_t1)
