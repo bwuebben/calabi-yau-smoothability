@@ -4,9 +4,11 @@
 
 This note fixes the anticanonical hypersurface used throughout Paper 4.  Its
 companion checker is [`global_section.sage`](global_section.sage).  The
-calculation supplies the defining-section input for a future
-cotangent-complex computation; it does not compute the abstract global
-deformation ring or any quadratic Kuranishi map.
+calculation supplies the defining-section input for the finite geometry.
+The earlier cotangent-complex programme is archived; the all-orders
+nonsmoothability result is proved by periods in [Paper 4](../main.tex).
+This calculation does not determine the abstract global deformation ring
+or a quadratic Kuranishi map.
 
 ## 1. The coefficient chart
 
@@ -197,8 +199,8 @@ later local expansions.
 
 The 30 dual edges are distinct.  Each root is nonzero over \(K\), and the
 edge direction is primitive.  This both locates every marked germ in the
-generic fibre and supplies the invertible orbit derivative used in the graph
-argument of [`global_map.md`](../attic/global_map.md), Lemma 2.1.
+generic fibre and supplies the invertible orbit derivative in the local
+implicit-function description near each marked orbit.
 
 ## 5. What this settles and what it does not
 
@@ -210,10 +212,10 @@ The computation now fixes, without an unnamed genericity assumption:
 4. the location of all 30 marked singularities on their one-dimensional
    torus orbits.
 
-It therefore removes the defining equation as an ambiguity in Route A of
-[`global_map.md`](../attic/global_map.md).  The next missing object is an affine-cover
-model of the coarse toric ambient space and of this Cartier equation, with
-enough syzygies and overlap maps to compute
+It therefore removes the defining equation as an ambiguity in the finite
+geometry used by [Paper 4](../main.tex). The earlier programme sought an
+affine-cover calculation of
 \(\operatorname{Ext}^1(L_{X^\circ},\mathcal O_{X^\circ})\), its localization,
-and the five Picard-paired quadratic classes.  Nothing in the present
+and Picard-paired quadratic classes. Those computations are not prerequisites
+for the completed period proof. Nothing in the present
 calculation supplies those brackets or decides the formal smoothing question.

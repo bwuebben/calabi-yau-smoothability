@@ -7,8 +7,9 @@ in this note are derived and checked by
 [`resolution_data.md`](resolution_data.md). They are numerical geometry on a
 fixed crepant resolution. Section 5 proves that the ambient Picard space is
 the full Picard space of the resolved Calabi--Yau over $\mathbb Q$ and
-$\mathbb C$. The deformation-theoretic comparison is treated in Section 2.4 and
-Lemma 4.2 of the paper (`main.tex`).
+$\mathbb C$. The current deformation-theoretic comparison is in
+[Paper 4, Sections 8.2–8.3](../main.tex) and
+[Paper 5, Section 2](../../paper5/main.tex).
 
 ## 1. Ambient Picard basis
 
@@ -288,5 +289,5 @@ smaller $K_E^\perp$ subspaces relevant to local deformation parameters.
 It does **not** by itself identify Altmann's chosen deformation coordinates
 with the canonical link classes in the local-to-global sequence. The
 topological comparison and the branch-preserving normalization are now
-Section 2.4 and Lemma 4.2 of the paper (`main.tex`), whose vanishing-period
+proved in Paper 4, Sections 8.2–8.3, and Paper 5, Section 2; Paper 4's vanishing-period
 route settles the verdict at all orders of contact.

@@ -1,11 +1,13 @@
 # Local deformation spaces at the four del Pezzo-cone points
 
-**Status:** WP1 reduced-component equations established. The four face
-polygons are matched to Altmann's coordinates, the $dP_6$ versal family and
-all reduced smoothing-component families are explicit, and their
-discriminants are normalized. Their Hilbert characters have also been pulled
-back to the four ambient affine charts. The nilpotent $dP_7$ lifting and the
-global Cox-graded compatibility problem remain open.
+**Current reference status, 5 September 2026.** The local equations,
+coordinate markings and discriminants below are established finite inputs.
+[Paper 4](../main.tex) uses them in its all-orders nonsmoothability proof.
+[Paper 5](../../paper5/main.tex) proves the marked local-to-global comparison,
+the exact A₂ discriminant condition and analytic integrability on the
+selected bases under its stated hypotheses. The exploratory embedded
+nilpotent calculations listed at the end are not prerequisites for these
+results and do not assert smoothness of every unrestricted global base.
 
 This note records the local deformation theory that the global localization
 map must see. Its main point is that the local target is not a vector space
@@ -578,7 +580,7 @@ reduced smoothing parameters with named binomial perturbations in the
 canonical cone presentations, and Section 2.2 realizes those presentations
 on all four ambient toric charts.
 
-## 8. Open WP1 tasks
+## 8. Historical embedded-calculation tasks and current scope
 
 1. Construct an embedded lifting of the nilpotent $dP_7$ coordinate
    $\alpha=s_1$, through the relations $\alpha^2=\alpha\beta=0$.
@@ -590,10 +592,10 @@ on all four ambient toric charts.
    localization map; the Cox-chart character dictionaries themselves are
    complete.
 
-[`mixed_candidate.md`](mixed_candidate.md) now tests all four reduced profiles
-against the fixed-resolution numerical candidate and finds none. Turning that
-conditional result into a theorem is a global comparison problem, not a
-missing local-coordinate calculation. A direct multi-face homogeneous
-compatibility problem has not been justified by an available gluing theorem.
-Task 1 is needed when the global map is retained through second order, but not
-for stating the reduced smoothing loci.
+The matrix in [`mixed_candidate.md`](mixed_candidate.md) excludes every
+transverse profile for the fixed example. Its intrinsic interpretation and
+the all-orders nonsmoothability conclusion are now proved in Papers 4–5.
+The four exploratory tasks above describe an embedded and unrestricted-base
+calculation, which is distinct from those completed results. In particular,
+the reduced smoothing loci and the selected-base theorem do not require a
+second-order embedded lift of the nilpotent degree-seven coordinate.

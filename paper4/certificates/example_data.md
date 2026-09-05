@@ -142,8 +142,8 @@ standard $dP_6$ and $dP_7$ polygons by explicit unimodular matrices in
 [`local_deformations.md`](local_deformations.md). The same matches are exact
 assertions in `fixed_example.py`. Their ambient Hilbert-character pullbacks
 are checked by [`chart_characters.sage`](chart_characters.sage), while the
-global Cox grading and all pairwise singular-chart intersections are recorded
-in [`cox_data.md`](../attic/cox_data.md).
+global Cox grading and all pairwise singular-chart intersections are computed
+by [`cox_data.sage`](cox_data.sage).
 
 ## 5. The 26 nodal faces
 
@@ -255,7 +255,7 @@ deformation problem does not require that uniqueness claim.
 From `cy_smoothing/`:
 
 ```bash
-python3 paper4/fixed_example.py
+python3 paper4/certificates/fixed_example.py
 python3 src/paper3_node_relations.py
 python3 src/face_data.py
 ```
@@ -271,4 +271,4 @@ now frozen. Any later change must be accompanied by:
 1. an update to `fixed_example.py`;
 2. a successful exact rerun;
 3. an update to every Paper 4 research note using the labels; and
-4. an entry in `proof_status.md` explaining why the change was necessary.
+4. an explanation in the corresponding data note of why the change was necessary.

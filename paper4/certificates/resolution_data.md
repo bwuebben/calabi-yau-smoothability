@@ -4,9 +4,9 @@
 one smooth projective crepant subdivision of the face fan of
 $\Delta^\vee$. The rays, all maximal cones, the projectivity certificate,
 and all 26 square diagonals are checked by
-[`resolution_fan.sage`](resolution_fan.sage). The choice makes the
-resolution-theoretic route concrete; it does not yet determine the global
-deformation obstruction map.
+[`resolution_fan.sage`](resolution_fan.sage). The choice fixes the resolution used by
+[Paper 4](../main.tex). Its global relation-map interpretation is proved
+there in Sections 8.2–8.3 and in [Paper 5, Section 2](../../paper5/main.tex).
 
 ## 1. Rays
 
@@ -316,5 +316,7 @@ $$
 
 The resolution is now fixed strongly enough to compute divisor relations,
 curve classes, restrictions to the four exceptional surfaces, and the
-resolution-theoretic boundary map. None of those maps is inferred merely
-from the existence of the fan; they are the next Route C calculations.
+resolution-theoretic boundary map. These are computed in
+[`restriction_data.md`](restriction_data.md) and
+[`mixed_candidate.md`](mixed_candidate.md), with their intrinsic comparison
+in Papers 4–5; they do not follow merely from the existence of the fan.
