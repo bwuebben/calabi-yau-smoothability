@@ -72,8 +72,9 @@ At $\ell(F^\circ)=1$ the germs over a face with one interior
 lattice point are the anticanonical cones over $\PP^1{\times}\PP^1$,
 $\mathrm{dP}_7$ and $\mathrm{dP}_6$; we show their toric crepant
 resolutions are \emph{never} primitive contractions and that $X$ is not
-$\mathbb{Q}$-factorial there, so neither Friedman's criterion nor Gross's
-smoothing theorems decide them, and they remain open.  Finally we compare
+$\mathbb{Q}$-factorial there.  If such a cone is the only singular point,
+its relation kernel is zero, and the later mixed smoothing criterion
+rules out a smoothing.  Finally we compare
 the resulting per-face criterion with the census of Batyrev--Kreuzer,
 whose criterion constrains only the $\ell(F^\circ)=1$ faces.  Subject to
 the database-copy completeness hypothesis stated in \S\ref{sec:bk}, exactly
@@ -270,9 +271,8 @@ model is the simplest smoothable singularity there is.  The obstruction
 is Friedman's: the maximal projective crepant partial resolution of $X_N$
 is a \emph{projective small} resolution, so the exceptional curve class
 cannot vanish, while a one-node Calabi--Yau threefold is smoothable only
-if it does.  By contrast, for germs whose crepant resolution is
-divisorial, Friedman's obstruction has no analogue, and no other is
-known:
+if it does.  For the following divisorial germs, the later mixed
+criterion of \cite{paper5} also gives a nonsmoothability result:
 
 \begin{proposition}[= Proposition~\ref{prop:C2}]\label{prop:C}
 Let $\Delta$ be reflexive with unit edges whose unique non-smooth
@@ -289,8 +289,8 @@ $\mathbb{Q}$-factorial at the point.  In particular neither Gross's
 theorem on primitive type~II contractions
 \textup{\cite[Thm.~5.8]{Gross97}} nor his smoothing theorem for
 $\mathbb{Q}$-factorial contractions \textup{\cite[Thm.~4.3]{Gross97}}
-applies, and the smoothability of $X$ is open
-(Question~\ref{q:ell1}).
+applies.  Nevertheless, the mixed criterion of \cite{paper5}
+shows that $X$ is not smoothable.
 \end{proposition}
 
 The statements assemble into a germ-dependent picture of the
@@ -307,9 +307,9 @@ lattice point ($i(F)=1$) the resolution is
 divisorial, but, in contrast to the primitive type~II contractions
 analyzed by Gross, Proposition~\ref{prop:C} shows the toric
 contraction always has relative Picard number $\ge 2$ and $X$ is not
-$\mathbb{Q}$-factorial, so the two known mechanisms (Friedman's
-obstruction; Gross's smoothing theorems) both fall silent and the case
-is open.  At the level of germs the alignment is still pleasant: Gross's
+$\mathbb{Q}$-factorial.  Its relation kernel is zero, so the mixed
+criterion of \cite{paper5} rules out a smoothing.  At the level of
+germs, Gross's
 theorem for primitive realizations fails exactly when the exceptional
 surface is $\PP^2$ or $\FF_1$, and these are precisely the two classes with one
 interior point that are \emph{rigid} in the trichotomy
@@ -327,7 +327,7 @@ unit square (node; crepant res.\ small) &
 \textbf{non-smoothable} (Thm~\ref{thm:B}) &
 smoothable (Thm~\ref{thm:A})\\
 $i(F)=1$ (cone over $\PP^1{\times}\PP^1,\mathrm{dP}_7,\mathrm{dP}_6$; divisorial) &
-open: never primitive torically (Prop.~\ref{prop:C}) & smoothable (Thm~\ref{thm:A})\\
+non-smoothable (Prop.~\ref{prop:C}; \cite{paper5}) & smoothable (Thm~\ref{thm:A})\\
 $i(F)\ge2$ type (S) (divisorial, reducible exceptional locus) &
 open & smoothable (Thm~\ref{thm:A})\\
 \bottomrule
@@ -1175,7 +1175,7 @@ found such an example in the literature: \cite{BK10} tabulate the polytopes
 their criterion shows to be smoothable and do not discuss the complement.
 \end{remark}
 
-\section{The $\ell(F^\circ) = 1$ germs: where Friedman's and Gross's
+\section{The \texorpdfstring{$\ell(F^\circ) = 1$}{dual-edge length one} germs: where Friedman's and Gross's
 criteria fall silent}
 \label{sec:germ}
 
@@ -1195,8 +1195,8 @@ $\mathbb{Q}$-factorial at the point.  In particular neither Gross's
 theorem on primitive type~II contractions
 \textup{\cite[Thm.~5.8]{Gross97}} nor his smoothing theorem for
 $\mathbb{Q}$-factorial contractions \textup{\cite[Thm.~4.3]{Gross97}}
-applies, and the smoothability of $X$ is open
-(Question~\ref{q:ell1}).
+applies.  Nevertheless, the mixed criterion of \cite{paper5}
+shows that $X$ is not smoothable.
 \end{proposition}
 
 \begin{proof}
@@ -1288,6 +1288,14 @@ a generic one-nodal quintic threefold is $\mathbb{Q}$-factorial although
 its node is analytically non-factorial.)  Thus
 the hypotheses of both \cite[Thm.~5.8]{Gross97} (primitivity) and
 \cite[Thm.~4.3]{Gross97} ($\mathbb{Q}$-factoriality of $X$) fail.
+
+The same restriction calculation also determines smoothability.
+The boundary divisor classes above span $H^2(S;\mathbb Q)$, so
+$H_2(S;\mathbb Q)\to H_2(\widehat X;\mathbb Q)$ is injective.
+There is only one singular point.  Every selected root space is a
+subspace of $H_2(S;\mathbb Q)$, hence its global relation kernel is
+zero.  The criterion of \cite[Thm.~A]{paper5} therefore rules out a
+smoothing for each local component.
 \end{proof}
 
 \begin{remark}\label{rem:germalign}
@@ -1302,12 +1310,10 @@ exceptional surface is $\PP^2$ or $\FF_1$, which are precisely the two
 classes with one interior point that
 are \emph{rigid} in the trichotomy (Theorem~\ref{thm:trich}): the germ
 classification and the global smoothing problem see the same dichotomy.
-Proposition~\ref{prop:C2} says the Batyrev hypersurfaces never provide
-the primitive realization: at $\ell(F^\circ)=1$ the toric mechanism of
-\S\ref{sec:datum} produces no face datum, Friedman's obstruction has no
-known analogue for these germs, and Gross's theorems do not apply:
-the smoothability of these $X$ is genuinely open
-(Question~\ref{q:ell1}).
+Proposition~\ref{prop:C2} shows that these Batyrev hypersurfaces do
+not provide the primitive realization.  Their nonsmoothability follows
+from the zero relation kernel and the mixed criterion of
+\cite{paper5}, even though each possible germ is locally smoothable.
 \end{remark}
 
 \section{Conifold configurations and the Batyrev--Kreuzer census}
@@ -1387,28 +1393,23 @@ for the Calabi--Yau hypersurface, of the admissible Minkowski data of
 \section{Open questions}\label{sec:open}
 
 \begin{question}\label{q:ell1}
-Is a Calabi--Yau threefold whose unique singular point has germ $C(F)$
-with $F$ of type \textup{(S)}, $i(F)\geq1$, and
-$\ell(F^\circ) = 1$ ever smoothable?  The nodal case $i(F)=0$ is answered
-negatively by Theorem~\ref{thm:B2}.
-For $i(F) = 1$ (the anticanonical cones over $\PP^1{\times}\PP^1$,
-$\mathrm{dP}_7$, $\mathrm{dP}_6$) Proposition~\ref{prop:C2} shows the
-toric resolution is never a primitive contraction and $X$ is not
-$\mathbb{Q}$-factorial, so Gross's theorems do not apply; for $i(F) \ge 2$
-the crepant resolution contracts a reducible divisor, a maximal crepant
-subdivision inserting one exceptional prime divisor per interior lattice
-point of $F$.  In neither case
-is a Friedman-type obstruction known, and the construction of
-\S\ref{sec:datum} supplies no deformation datum.
+Is a Batyrev Calabi--Yau threefold whose unique singular point has
+germ $C(F)$, with $F$ of type \textup{(S)}, $i(F)\ge2$, and
+$\ell(F^\circ)=1$, ever smoothable?
+The case $i(F)=0$ is excluded by Theorem~\ref{thm:B2}; the case
+$i(F)=1$ is excluded by Proposition~\ref{prop:C2} and the criterion
+of \cite{paper5}.  For $i(F)\ge2$ the crepant resolution has a
+reducible exceptional divisor, and these exact germs are not covered
+by that criterion.
 \end{question}
 
 \begin{question}\label{q:multi}
-Is Theorem~\ref{thm:Amulti}(ii) unconditional?  Equivalently: can the
+Is Theorem~\ref{thm:Amulti}(ii) unconditional?  Can the
 face families of several type-\textup{(S)} faces be realized
 simultaneously (a codimension-two analogue of the admissible Minkowski
-data of \cite{CHP24}), or is the semiuniversal base of a Batyrev
+data of \cite{CHP24})?  Separately, is the semiuniversal base of a Batyrev
 hypersurface with only type-\textup{(S)} faces always irreducible?  The
-fibres of a face family are not toric, so the construction cannot be
+fibres of a face family need not be toric, so the construction cannot be
 iterated naively (Remark~\ref{rem:noiterate}).
 \end{question}
 
@@ -1418,7 +1419,10 @@ two-dimensional face is of type \textup{(S)} and the exceptional classes
 over the $\ell(F^\circ)=1$ faces admit a Friedman-type rescue?  Together
 with \cite{paper1} this would decide smoothability for all unit-edge
 Batyrev hypersurfaces, and the resulting criterion is fast enough to
-run over the full Kreuzer--Skarke list.
+run over the full Kreuzer--Skarke list.  The later criterion of
+\cite{paper5} answers this question for nodes and its specified smooth
+del Pezzo cone germs, with the full local discriminant nonvanishing
+conditions.
 \end{question}
 
 \begin{thebibliography}{CHP24}
@@ -1482,6 +1486,8 @@ nodal Calabi--Yau $n$-folds}, J.\ Topol.\ \textbf{2} (2009), 405--421.
 \bibitem[Wue26a]{paper1} B.~J. Wuebben, \emph{Non-smoothable Calabi--Yau
 threefolds from reflexive polytopes}, preprint, 2026; available at
 \url{https://github.com/bwuebben/calabi-yau-smoothability}.
+\bibitem[Wue26e]{paper5} B.~J. Wuebben, \emph{Smoothing Calabi--Yau threefolds with nodes and del Pezzo cone points},
+preprint, 2026, revised 5 September 2026.
 \end{thebibliography}
 
 \bigskip

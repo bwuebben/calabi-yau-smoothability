@@ -1,0 +1,257 @@
+{
+  "scope": "local exact checks; global theorem is a separate proof",
+  "polygon": [
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      -1,
+      0
+    ],
+    [
+      -1,
+      -1
+    ],
+    [
+      0,
+      -1
+    ]
+  ],
+  "rays": [
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      -1,
+      0,
+      1
+    ],
+    [
+      -1,
+      -1,
+      1
+    ],
+    [
+      0,
+      -1,
+      1
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "A1_cells": [
+    {
+      "rays": [
+        0,
+        1,
+        5,
+        6
+      ],
+      "kind": "ordinary_double_point",
+      "area": "1"
+    },
+    {
+      "rays": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "kind": "ordinary_double_point",
+      "area": "1"
+    },
+    {
+      "rays": [
+        1,
+        2,
+        6
+      ],
+      "kind": "smooth",
+      "area": "1/2"
+    },
+    {
+      "rays": [
+        4,
+        5,
+        6
+      ],
+      "kind": "smooth",
+      "area": "1/2"
+    }
+  ],
+  "A2_cells": [
+    {
+      "rays": [
+        0,
+        1,
+        5,
+        6
+      ],
+      "kind": "ordinary_double_point",
+      "area": "1"
+    },
+    {
+      "rays": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "kind": "ordinary_double_point",
+      "area": "1"
+    },
+    {
+      "rays": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "kind": "ordinary_double_point",
+      "area": "1"
+    }
+  ],
+  "boundary_classes": [
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      -1,
+      -1,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      -1,
+      -1
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      0,
+      -1
+    ]
+  ],
+  "canonical_class": [
+    -3,
+    1,
+    1,
+    1
+  ],
+  "A1_root": [
+    1,
+    -1,
+    -1,
+    -1
+  ],
+  "A2_coefficients": [
+    "a-c",
+    "c-b",
+    "b-a"
+  ],
+  "A2_discriminant": "(a-b)(b-c)(c-a)=0, modulo common translation",
+  "A2_matrix": [
+    [
+      "z+c",
+      "z1",
+      "z2"
+    ],
+    [
+      "z4",
+      "z+b",
+      "z3"
+    ],
+    [
+      "z5",
+      "z6",
+      "z+a"
+    ]
+  ],
+  "checks": [
+    "[0, 3]: node relation [0, 1, 5, 6]",
+    "[0, 3]: node lattice area [0, 1, 5, 6]",
+    "[0, 3]: node saturated lattice [0, 1, 5, 6]",
+    "[0, 3]: node relation [2, 3, 4, 6]",
+    "[0, 3]: node lattice area [2, 3, 4, 6]",
+    "[0, 3]: node saturated lattice [2, 3, 4, 6]",
+    "[0, 3]: triangle [1, 2, 6] is smooth",
+    "[0, 3]: triangle area",
+    "[0, 3]: triangle [4, 5, 6] is smooth",
+    "[0, 3]: triangle area",
+    "[0, 3]: support covers original cone",
+    "[0, 3]: six original boundary two-cones survive",
+    "[0, 2, 4]: node relation [0, 1, 5, 6]",
+    "[0, 2, 4]: node lattice area [0, 1, 5, 6]",
+    "[0, 2, 4]: node saturated lattice [0, 1, 5, 6]",
+    "[0, 2, 4]: node relation [1, 2, 3, 6]",
+    "[0, 2, 4]: node lattice area [1, 2, 3, 6]",
+    "[0, 2, 4]: node saturated lattice [1, 2, 3, 6]",
+    "[0, 2, 4]: node relation [3, 4, 5, 6]",
+    "[0, 2, 4]: node lattice area [3, 4, 5, 6]",
+    "[0, 2, 4]: node saturated lattice [3, 4, 5, 6]",
+    "[0, 2, 4]: support covers original cone",
+    "[0, 2, 4]: six original boundary two-cones survive",
+    "all six boundary curves have self-intersection -1",
+    "all six boundary curves have canonical degree -1",
+    "cyclic boundary intersection matrix",
+    "opposite contracted curves differ by the A1 root",
+    "A1 root is canonical-orthogonal with square -2",
+    "three alternating curves are pairwise disjoint",
+    "A2 roots are orthogonal to A1",
+    "rotation sends each boundary curve to the next",
+    "reflection reverses the boundary order",
+    "rotation acts by minus one on A1",
+    "rotation has the stated action on A2 coefficients",
+    "reflection has the stated action on A2 coefficients",
+    "A2 coefficient sum zero",
+    "Hodge map commutes with rotation",
+    "Hodge map has determinant twist under reflection",
+    "three coefficient hyperplanes are the three coincidence lines",
+    "A2 family is exactly Altmann's nine equations",
+    "central fibre dimension three",
+    "total space is rank-one matrix cone times translation line",
+    "generic discriminant point is a node"
+  ],
+  "passed": 43
+}

@@ -1,0 +1,335 @@
+\subsection{The degree-five discriminant and boundary periods}\label{sec03:degree5}
+
+The degree-five cone has a smooth local deformation base, so it will
+remain unchanged on the global partial resolution.  Its discriminant
+requires five separate nonvanishing conditions.
+
+\begin{proposition}\label{prop03:degree5family}
+The full semiuniversal deformation base of $C_5$ is a smooth
+four-dimensional germ.  It admits linear coordinates in which the
+reduced discriminant is the union of five distinct hyperplanes.
+Every noncentral singular fibre has only ordinary double points,
+one for each discriminant hyperplane containing its parameter.
+\end{proposition}
+
+\begin{proof}
+Let $V=\CC^5$, $A=\bigwedge^2V$, and
+\[
+ D=\{p\in A:p\wedge p=0\}=\Cone(\operatorname{Gr}(2,V)).
+\]
+Choose a general six-dimensional subspace $W\subset A$.
+The surface $E=\operatorname{Gr}(2,V)\cap\PP(W)$ is smooth by
+Bertini.  Adjunction gives $K_E=-H$, and its degree is five.
+All smooth degree-five del Pezzo surfaces over $\CC$ are isomorphic,
+so its anticanonical cone is the required germ.  Put
+$U=W^\perp\subset A^*$ and $B=A/W=U^*$.  The quotient map
+\begin{equation}\label{eq03:degree5family}
+ L:D\longrightarrow B
+\end{equation}
+varies the four cutting linear forms by constants and has central
+fibre $C_5$.
+
+The Grassmannian cone is Cohen--Macaulay of dimension seven.
+For example, its five quadratic Pfaffians have the graded resolution
+\[
+ 0\longrightarrow S(-5)\longrightarrow S(-3)^5
+ \longrightarrow S(-2)^5\longrightarrow S
+ \longrightarrow\cO_D\longrightarrow0,
+ \qquad S=\operatorname{Sym}(A^*).
+\]
+The four components of $L$ cut a three-dimensional central fibre
+and hence form a regular sequence at the vertex.  Miracle flatness
+over the smooth four-dimensional base proves flatness there.
+Homogeneity then proves flatness everywhere: scaling transports
+each point into this neighborhood and acts compatibly on $B$.
+
+We check the full Kodaira--Spencer map.  A constant vector $c\in A$
+gives the perturbation $p\wedge c$ of the Pfaffian equations on $W$,
+up to the common factor two.  If this abstract first-order class is
+zero, the cotangent presentation of the embedded germ shows that
+its homogeneous degree-$-1$ part comes from a constant translation
+$w\in W$.  The quadratic ideal has no linear elements, so
+\[
+ p\wedge(c-w)=0\quad\hbox{for every }p\in W.
+\]
+Write $a=c-w$.  If $a$ has rank four, the map
+$a\wedge-:\bigwedge^2V\to\bigwedge^4V$ has rank five; its
+kernel cannot contain the six-dimensional space $W$.
+If $a$ has rank two with support $P$, its kernel is
+$P\wedge V$, of dimension seven.  The decomposable bivectors in
+$\PP(P\wedge V)$ form the four-dimensional Schubert variety of
+two-planes meeting $P$: choose a line in $P$ and then a second
+direction modulo that line.  A hyperplane $\PP(W)$ in this
+$\PP^6$ would meet the Schubert variety in dimension at least
+three, contradicting $\dim E=2$.  Thus $a=0$.
+The Kodaira--Spencer map $B\to T^1_{C_5}$ is injective and is
+an isomorphism because $\dim T^1_{C_5}=4$
+\cite[\S5.5]{Gross97rev}.  This also shows that all of $T^1_{C_5}$
+has degree $-1$.
+
+Embed a semiuniversal base minimally with ring
+$\CC\{z_1,\ldots,z_4\}/I$, $I\subset(z_1,\ldots,z_4)^2$.
+The classifying map of~\eqref{eq03:degree5family} pulls the $z_i$
+back to four functions with independent linear terms.  They are
+analytic coordinates on $B$.  Hence the map from the ambient
+convergent power-series ring is injective, forcing $I=0$.
+The family is therefore semiuniversal for the full germ, including
+its scheme structure; local prorepresentability is not required.
+
+For a nonzero decomposable $p$ with support $P_p$, one has
+$T_pD=P_p\wedge V$.  An alternating form $\alpha\in A^*$
+annihilates this tangent space precisely when
+$P_p\subset\ker\alpha$.  Such a nonzero form has rank two.
+Thus the dual Grassmannian is the rank-two locus in $\PP(A^*)$.
+It meets $\PP(U)$ transversely in five points
+$[\alpha_1],\ldots,[\alpha_5]$.  Indeed, for a rank-two
+$\alpha\in U$, failure of transversality is equivalent to
+\[
+ W\cap\bigwedge^2\ker\alpha\ne0.
+\]
+Every nonzero bivector in this intersection is decomposable and
+would be a nonvertex singular point of $C_5$, contrary to the
+smoothness of $E$.  The same argument excludes a positive-dimensional
+intersection.  Its length is the degree five of the Grassmannian.
+
+Set $K_i=\ker\alpha_i$ and $H_i=\ker(\alpha_i:B\to\CC)$.
+The critical locus of $L$ away from the vertex is the union of
+the punctured three-dimensional vector spaces $\bigwedge^2K_i$.
+The maps
+\[
+ L:\bigwedge^2K_i\longrightarrow H_i
+\]
+are isomorphisms: their kernels are the intersections just excluded,
+and both dimensions are three.  Thus a point $b\in H_i\setminus0$
+has one associated critical point $p_i(b)$, linear in $b$.
+Two such points cannot coincide for $b\ne0$.  Otherwise every
+form in the pencil spanned by $\alpha_i,\alpha_j$ would vanish
+on the same two-plane and hence have rank at most two, giving a
+line in the finite dual intersection.  The complete reduced
+discriminant is consequently $\bigcup_iH_i$.
+
+Finally, near a nonzero $p_i(b)$ choose a Grassmannian chart in
+which $\alpha_i=e_4^*\wedge e_5^*$ and the varying plane is
+spanned by
+\[
+ e_1+x_3e_3+x_4e_4+x_5e_5,\qquad
+ e_2+y_3e_3+y_4e_4+y_5e_5.
+\]
+With the nonzero cone coordinate $r$, the function $\alpha_i$
+is $r(x_4y_5-x_5y_4)$.  Three other components of $L$ restrict
+to coordinates on its critical locus, by the preceding isomorphism.
+Eliminate them.  The remaining equation has nondegenerate quadratic
+part in $x_4,x_5,y_4,y_5$, so the holomorphic Morse lemma gives
+an ordinary double point with transverse smoothing parameter
+$\alpha_i(b)$, up to a unit.
+\end{proof}
+
+\begin{lemma}\label{lem03:degree5marking}
+Under the local Hodge comparison and the conic-pencil coordinates
+\eqref{eq:degree5coordinates}, the discriminant of
+Proposition~\ref{prop03:degree5family} is
+\begin{equation}\label{eq03:degree5discriminant}
+ \prod_{i=1}^5\lambda_i=0,
+ \qquad \sum_{i=1}^5\lambda_i=0.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Permuting the four blown-up points gives the $S_4$ action on the
+first four conic pencils.  The quadratic Cremona involution at
+the first three points lifts to an automorphism of $E$ and
+interchanges the fourth and fifth pencils, fixing the first three.
+These automorphisms generate $S_5$.  On
+$\operatorname{Tot}(K_E)$ their canonical lifts preserve the
+tautological two-form $\eta$ and the volume form $d\eta$.
+The local Hodge comparison is therefore equivariant and realizes
+$T^1_{C_5}$ as the standard sum-zero representation on the five
+coordinates $\lambda_i$.
+
+The tangent cone of the discriminant is intrinsic to the
+deformation functor.  An automorphism of the central germ induces
+a classifying map on a semiuniversal base; its invertible derivative
+is the natural action on $T^1$.  It preserves the discriminant
+because it preserves the isomorphism classes of the fibres.
+Hence $S_5$ permutes the five hyperplanes in
+Proposition~\ref{prop03:degree5family}.  This permutation action
+is faithful.  A nontrivial kernel would contain $A_5$ and make
+each normal line invariant under $A_5$.  As $A_5$ has no
+nontrivial characters and no invariants in the standard
+four-dimensional representation, this is impossible.
+
+The image of this faithful action has order $120$, so it is the
+full symmetric group on the five hyperplanes.  The stabilizer
+of one hyperplane has order $24$.  In its action
+on the five conic pencils it must fix a pencil: without a fixed
+point its orbits would have sizes $2+3$, giving order at most
+$2!3!=12$, while a size-five orbit cannot divide $24$.
+It is thus the $S_4$ stabilizing one pencil.  The restriction
+of the standard representation to this subgroup is the sum
+of a trivial line and its three-dimensional standard representation.
+The unique invariant normal line is generated by the corresponding
+$\lambda_i$.  This identifies all five hyperplanes.
+
+For a global volume form $g\,d\eta$, multiplication by the
+analytic unit $g$ acts on $T^1_{C_5}$ by $g(0)$: its degree-$-1$
+concentration gives $\mathfrak m_0T^1_{C_5}=0$.
+Thus the fixed global normalization changes the comparison by
+one nonzero scalar and preserves the five hyperplanes.
+\end{proof}
+
+\begin{lemma}\label{lem03:degree5milnor}
+For a smooth Milnor fibre $M$ of $C_5$ with boundary link $L$,
+\[
+ H_2(M;\QQ)=0,\qquad \dim H_3(M;\QQ)=4.
+\]
+Both maps
+\begin{equation}\label{eq03:degree5boundary}
+ H_3(L;\QQ)\longrightarrow H_3(M;\QQ),\qquad
+ H_3(M,L;\QQ)\longrightarrow H_2(L;\QQ)
+\end{equation}
+are isomorphisms.
+\end{lemma}
+
+\begin{proof}
+For $b$ outside the discriminant the affine fibre compactifies as
+\[
+ V_b=\operatorname{Gr}(2,V)\cap\PP(L^{-1}(\CC b)),
+ \qquad X_b=V_b\setminus E.
+\]
+This is a smooth three-hyperplane section of the Grassmannian.
+It is smooth at $E$ because the four-hyperplane section $E$ is
+smooth, and away from $E$ by Proposition~\ref{prop03:degree5family}.
+Near the compact smooth divisor $E$, the squared affine norm is
+$F/|s|^2$, where $s$ is a local equation for $E$ and $F$ is
+smooth and positive.  Its normal derivative does not vanish
+sufficiently close to $E$.  Thus every sufficiently large
+Euclidean truncation of $X_b$ removes only a collar at infinity
+and has its homotopy type.  Scaling by $\varepsilon$ identifies
+$X_b\cap\{\|p\|\le R\}$ with
+$X_{\varepsilon b}\cap\{\|p\|\le\varepsilon R\}$.
+Fix the latter radius and take $R$ large.  This gives a small
+Milnor fibre; transport in the smooth local family gives the
+assertion for every nearby smooth parameter.
+
+Lefschetz gives $b_1(V_b)=0$ and $b_2(V_b)=1$.
+For completeness the middle Betti number follows from the Chern
+calculation.  Write $H=c_1(\mathcal S^*)$ and
+$P=c_2(\mathcal S^*)$ for the tautological bundle on the
+Grassmannian.  Its tangent bundle is $\mathcal S^*\otimes\mathcal Q$,
+so
+\[
+ c_1=5H,\qquad c_2=11H^2+P,\qquad c_3=15H^3.
+\]
+Dividing by $(1+H)^3$ gives $c_3(TV_b)=2H^3-3HP$.
+Pieri's rule gives
+$\int_{V_b}H^3=5$ and $\int_{V_b}HP=2$; hence
+$\chi(V_b)=4$ and $b_3(V_b)=0$.
+The Gysin sequence for $E\subset V_b$ gives
+$H^2(X_b;\QQ)=0$ and
+\[
+ H^3(X_b;\QQ)\cong
+ \ker\{H^2(E;\QQ)\longrightarrow H^4(V_b;\QQ)\},
+\]
+of dimension four.  The link circle-bundle sequence likewise
+gives $b_2(L)=b_3(L)=4$.  Lefschetz duality and the pair sequence
+make the second map in~\eqref{eq03:degree5boundary} a surjection
+between four-dimensional spaces.  It is an isomorphism.  Exactness
+then makes the first map surjective and hence an isomorphism as well.
+\end{proof}
+
+\begin{lemma}[degree-five boundary periods]\label{lem03:degree5periods}
+There are rational classes $\beta_1,\ldots,\beta_5\in H_3(L;\QQ)$
+whose pairings with the local Hodge classes are nonzero multiples
+of the five functionals $\lambda_i$.
+For any convergent smoothing arc of $C_5$, equipped with a relative
+volume form generating its dualizing sheaf, the periods of the
+images of all five classes in the smooth fibre are nonzero for
+every sufficiently small noncentral parameter.
+\end{lemma}
+
+\begin{proof}
+Use the semiuniversal family~\eqref{eq03:degree5family}.
+The boundary family of a small representative is a smooth
+proper submersion over the entire small base $B$, including $0$;
+its homology local system is therefore trivial.
+By~\eqref{eq03:degree5boundary}, every absolute Milnor cycle
+has a unique boundary class.  Near a general point of the
+discriminant hyperplane $H_i$, choose the class $\beta_i$
+whose image is the nodal vanishing sphere, and transport it in
+the boundary family over $B$.
+
+The Pfaffian resolution above shows that the Grassmannian cone
+has a homogeneous dualizing generator of weight five.  Dividing
+by the four base differentials gives a nowhere vanishing
+relative generator $\Omega_b^0$ of weight one.
+Integration on transported compact boundary cycles gives
+holomorphic functions on the whole base,
+\[
+ P_i(b)=\int_{\beta_{i,b}}\Omega_b^0.
+\]
+Holomorphic dependence uses only the smooth locus near the
+boundary, so it holds also at parameters with a singular interior.
+Scaling changes the boundary radius; compare the two boundaries
+through their annular collars, whose central radial isotopy fixes
+the homology marking.  The connected scaling action then preserves
+transported classes and gives $P_i(cb)=cP_i(b)$.  Thus $P_i$ is linear.
+Near a general point of $H_i$, it equals the nodal vanishing
+period and has a simple zero along $H_i$.  Consequently
+\begin{equation}\label{eq03:degree5linearperiod}
+ P_i(b)=c_i\alpha_i(b),\qquad c_i\ne0.
+\end{equation}
+
+We verify that its derivative is the claimed Hodge functional.
+Choose first-order product trivializations on the punctured
+central germ, with Kodaira--Spencer cocycle $\theta_{jk}$.
+Differentiating the relative three-form gives
+\[
+ \dot\Omega_k-\dot\Omega_j
+       =d(\iota_{\theta_{jk}}\Omega_0^0).
+\]
+The \v{C}ech--de Rham representative for the derivative of a
+period therefore has overlap term
+$\iota_{\theta_{jk}}\Omega_0^0$, precisely the contraction
+cocycle defining Lemma~\ref{lem:localhodge}.
+In the logarithmic de Rham model of the circle bundle, this is
+the natural comparison underlying \cite[Theorem~2.1(vi)]{FL22a}.
+The link has $H^3(L;\CC)$ of pure Hodge type $(2,2)$, so its
+$F^3$ is zero and this comparison determines the entire class.
+Thus $dP_i|_0$ pairs $\beta_i$ with the local Hodge class,
+up to the one common convention for Gysin maps and orientation.
+There is no ambiguity from the chosen extension of the volume
+form: a difference with the same overlap cocycle is a global
+form $a\Omega_0^0$.  Normality extends $a$ across the vertex,
+and contraction with the Euler vector field makes this form
+exact, since all its homogeneous weights are strictly positive.
+The same identity applies to a convergent series after shrinking.
+Lemma~\ref{lem03:degree5marking} and
+\eqref{eq03:degree5linearperiod} identify its kernel with
+$\lambda_i=0$.
+
+Finally let $b=b(t)$ be an arbitrary smoothing arc.  Its actual
+relative volume form is $g(p,t)\Omega^0$, where $g$ is an
+analytic unit on the pulled-back family.  Lift $g$ to a holomorphic
+function of the ambient coordinates $(p,t)$; after shrinking it
+is a unit and defines the same multiplier over $B\times\Delta$.
+The boundary periods are holomorphic functions $P_i^g(b,t)$.
+They vanish on $H_i\times\Delta$, by the nodal vanishing-cycle
+calculation at its general points and analytic continuation.
+Hence
+\[
+ P_i^g(b,t)=\alpha_i(b)u_i(b,t).
+\]
+To compute its linear term without expanding $g$ term by term,
+fix a smooth direction $b_*$ and a compact cycle $\delta$
+representing $\beta_i$ in $X_{b_*}$.  Scaling this cycle gives
+\[
+ P_i^g(sb_*,t)
+ =s\int_\delta g(sp,t)\Omega_{b_*}^0
+ =s\,g(0,t)c_i\alpha_i(b_*)+O(s^2).
+\]
+The estimate is uniform on the fixed compact cycle.  Smooth
+directions form a dense open set, so
+$d_bP_i^g(0,t)=g(0,t)c_i\alpha_i$.  Thus
+$u_i(0,0)=g(0,0)c_i\ne0$.  Restricting to $b(t)$ proves
+nonvanishing, whatever its contact order with $H_i$.
+\end{proof}

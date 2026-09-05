@@ -1,0 +1,680 @@
+\section{A nonsmoothable threefold and its deformation space}
+\label{sec05:counterexample}
+
+The three separate nonvanishing conditions on an $A_2$ summand cannot be
+replaced by nonvanishing of the vector in that summand.  The example below
+also shows that changing the choices of local components does not repair
+this weaker condition.
+
+\begin{theorem}\label{thm05:counterexample}
+There is a normal projective Calabi--Yau threefold $X$ with exactly thirty
+ordinary double points and two anticanonical $\dP_6$ cone points such that
+$K_S$ contains a relation nonzero at every singular point for each of the
+two mixed profiles $S=LP,PL$, but $X$ has no smoothing.  A smooth projective
+crepant resolution $Y_0$ has
+\[
+ (h^{1,1}(Y_0),h^{2,1}(Y_0))=(23,21).
+\]
+\end{theorem}
+
+Here $L$ denotes the $A_1$ line and $P$ the $A_2$ plane, in the order of
+the two cone points.  We prove the nonsmoothability assertion directly
+from nodal necessity and the simultaneous partial resolution of the
+$A_2$ family.  Its proof is independent of the sufficiency assertion in
+Theorem~\ref{thm04:criterion}.
+
+\subsection{The threefold and its relation matrix}
+
+Let $P\subset\ZZ^4\otimes\RR$ be the convex hull of the following
+vertices.  All indices in this section start at zero.
+\begin{equation}\label{eq05:vertices}
+\begin{gathered}
+\begin{adjustbox}{max width=\textwidth,center}
+\begin{tabular}{r@{\quad}c@{\qquad}r@{\quad}c@{\qquad}r@{\quad}c}
+\toprule
+$i$&$v_i$&$i$&$v_i$&$i$&$v_i$\\
+\midrule
+0&$(1,0,0,0)$&1&$(0,1,0,0)$&2&$(0,0,1,0)$\\
+3&$(0,0,0,1)$&4&$(1,-1,1,-1)$&5&$(0,0,1,-1)$\\
+6&$(1,-1,0,0)$&7&$(-1,1,0,0)$&8&$(0,0,-1,1)$\\
+9&$(-1,1,-1,1)$&10&$(0,0,0,-1)$&11&$(0,0,-1,0)$\\
+12&$(-1,1,-1,0)$&13&$(0,-1,1,0)$&14&$(-1,0,1,0)$\\
+15&$(0,-1,0,1)$&16&$(-1,0,0,1)$&17&$(-1,0,1,-1)$\\
+18&$(0,-1,1,-1)$&19&$(-1,0,-1,1)$&20&$(0,-1,-1,1)$\\
+21&$(0,-1,-1,0)$&22&$(0,-1,0,-1)$&23&$(-1,0,0,-1)$\\
+24&$(-1,0,-1,0)$&&&&\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{gathered}
+\end{equation}
+This is the fan polytope: the ambient fan consists of the cones over its
+proper faces, and the anticanonical Newton polytope is $P^\circ$.
+The polytope $P$ is reflexive.  It has $23$ facets, $71$ primitive edges,
+and $69$ two-faces: $37$ unimodular triangles, $30$ unit parallelograms,
+and two unit-edge hexagons.  The latter have cyclic orders
+\begin{equation}\label{eq05:hexagons}
+ F_0=(13,15,20,21,22,18),\qquad
+ F_1=(14,16,19,24,23,17)
+\end{equation}
+and centres $(0,-1,0,0)$ and $(-1,0,0,0)$.  These two centres and the
+origin are the only lattice points of $P$ other than its vertices.
+Every parallelogram and hexagon has dual edge of lattice length one.
+The complete list of parallelograms, in the cyclic orders used below, is
+\begin{equation}\label{eq05:nodes}
+\begin{gathered}
+\begin{adjustbox}{max width=\textwidth,center}
+\begin{tabular}{r@{\quad}c@{\qquad}r@{\quad}c@{\qquad}r@{\quad}c}
+\toprule
+$j$&node face&$j$&node face&$j$&node face\\
+\midrule
+0&$(0,1,5,4)$&1&$(0,1,9,8)$&2&$(0,1,12,11)$\\
+3&$(0,3,15,6)$&4&$(0,6,20,8)$&5&$(0,6,21,11)$\\
+6&$(1,2,14,7)$&7&$(1,5,17,7)$&8&$(2,3,15,13)$\\
+9&$(2,3,16,14)$&10&$(2,5,17,14)$&11&$(3,8,20,15)$\\
+12&$(4,5,17,18)$&13&$(4,6,15,13)$&14&$(4,6,21,22)$\\
+15&$(5,10,23,17)$&16&$(7,9,16,14)$&17&$(7,12,23,17)$\\
+18&$(8,9,12,11)$&19&$(8,9,19,20)$&20&$(8,11,21,20)$\\
+21&$(9,12,24,19)$&22&$(10,11,21,22)$&23&$(11,12,24,21)$\\
+24&$(13,14,16,15)$&25&$(13,14,17,18)$&26&$(15,16,19,20)$\\
+27&$(17,18,22,23)$&28&$(19,20,21,24)$&29&$(21,22,23,24)$\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{gathered}
+\end{equation}
+All these lattice assertions follow by computing the supporting
+hyperplanes and their face incidences from \eqref{eq05:vertices}; the
+listed singular faces also specify the local lattice tests.  In
+particular, each parallelogram has primitive three-dimensional cone
+lattice, and each triangle in the central subdivision of a hexagon is
+unimodular.
+
+Let $X$ be a general anticanonical hypersurface in the projective
+Gorenstein toric Fano fourfold defined by this fan.  Nondegeneracy and
+the dual-edge lengths give one node for each face in
+\eqref{eq05:nodes} and one anticanonical $\dP_6$ cone for each face in
+\eqref{eq05:hexagons}.  There are no other singularities.  The hypersurface
+avoids the torus fixed points, and
+\[
+ \omega_X\cong\cO_X,\qquad H^1(X,\cO_X)=H^2(X,\cO_X)=0.
+\]
+Insert the two centre rays and choose a projective crepant simplicial
+refinement retaining the central subdivisions of the hexagons.  Its
+restriction gives a smooth projective crepant resolution $f:Y_0\to X$;
+the remaining possible ambient singularities lie over torus fixed
+points and do not meet $Y_0$.  These are the standard hypersurface and
+resolution constructions of \cite[\S\S4.1--4.2]{Batyrev94}.  This choice
+selects a small resolution at each node; independent arbitrary choices
+of all thirty diagonals are not needed.
+
+Write $E_i\cong\operatorname{Bl}_3\PP^2$ for the exceptional divisor over
+$F_i$.  In each of the cyclic orders \eqref{eq05:hexagons}, mark its
+boundary curves by
+\begin{equation}\label{eq05:boundary}
+ (C_0,\ldots,C_5)=
+ (e_1,h-e_1-e_2,e_2,h-e_2-e_3,e_3,h-e_1-e_3).
+\end{equation}
+The intersection form on $(h,e_1,e_2,e_3)$ is
+$\operatorname{diag}(1,-1,-1,-1)$.  With the root basis fixed in
+Section~\ref{sec:deformation},
+\[
+ \ell=-h+e_1+e_2+e_3,\qquad A=-e_1+e_3,\qquad B=e_2-e_3,
+\]
+the boundary intersection rows are
+\begin{equation}\label{eq05:rootrows}
+\begin{aligned}
+ r_\ell&=(-1,1,-1,1,-1,1),\\
+ r_A&=(1,-1,0,1,-1,0),\\
+ r_B&=(0,1,-1,0,1,-1).
+\end{aligned}
+\end{equation}
+All three classes are perpendicular to $K_{E_i}$.
+
+Define a $36\times25$ matrix $M$ as follows.  Its first thirty rows are
+indexed by \eqref{eq05:nodes}: a cyclic square $(i,j,k,l)$ gives entries
+$(1,-1,1,-1)$ in those columns and zero elsewhere.  These rows fix signed
+generators $\gamma_j$ of the corresponding nodal link homology; replacing
+a small resolution reverses the relevant sign.  The last six rows are
+$r_\ell,r_A,r_B$ on $F_0$, followed by $r_\ell,r_A,r_B$ on $F_1$, placed
+in the six vertex columns in the orders \eqref{eq05:hexagons}.  Equations
+\eqref{eq05:nodes}--\eqref{eq05:rootrows} specify every entry of $M$.
+The two additional columns for the centre rays are zero, because the
+root classes pair trivially with $K_{E_i}$.
+
+The ambient divisor intersections detect precisely the homological
+relations.  Indeed, $P$ has $28$ lattice points and no facet-interior
+lattice points.  The only two-faces with interior points are the two
+hexagons, and their dual edges have no interior lattice points.
+Batyrev's divisor formula therefore has zero correction term and gives
+\begin{equation}\label{eq05:h11}
+ h^{1,1}(Y_0)=28-5=23.
+\end{equation}
+The same construction of the divisor classes shows that the $27$ ambient
+boundary divisors span $H^2(Y_0,\QQ)$
+\cite[Theorem~4.4.2 and Corollary~4.5.1]{Batyrev94}.  Thus, writing a
+tuple of local classes as
+\[
+ w=(n_0,\ldots,n_{29},\lambda_0,a_0,b_0,\lambda_1,a_1,b_1),
+\]
+its total class
+\begin{equation}\label{eq05:totalclass}
+ \sum_{j=0}^{29}n_j\gamma_j+
+ \sum_{i=0}^1(\lambda_i\ell_i+a_i A_i+b_i B_i)
+\end{equation}
+vanishes in $H_2(Y_0,\QQ)$ if and only if $wM=0$.
+Consequently
+\[
+ K=\{w\in\QQ^{36}:wM=0\}
+\]
+is the full homological relation space.  Its restriction to a profile
+$S$ is $K_S$.  Whenever these coefficients are used as tangent
+coordinates, they are normalized by the fixed global volume form and
+Lemma~\ref{lem:localhodge}; independent choices of raw local equation
+parameters are not implicit in $M$.
+
+\subsection{A nonzero relation and the obstruction to smooth fibres}
+
+For the profile $LP$, take
+\begin{equation}\label{eq05:weakwitness}
+\begin{aligned}
+ (\lambda_0,a_0,b_0,\lambda_1,a_1,b_1)&=(3,0,0,0,1,0),\\
+ (n_0,\ldots,n_{29})={}&(-2,-1,2,2,-2,1,1,-2,2,2,\\
+ &\hphantom{(}-3,6,-1,1,-2,-4,-3,2,2,-4,\\
+ &\hphantom{(}5,-4,-4,6,3,3,1,1,-1,4).
+\end{aligned}
+\end{equation}
+Multiplication by the explicitly defined matrix gives $wM=0$.
+Every nodal coefficient is nonzero, and the two cone components are
+$3\ell$ on $E_0$ and $A$ on $E_1$, both nonzero.  By
+\eqref{eq05:totalclass}, this is a
+homological relation, so the weaker nonvanishing condition holds.  An
+explicit relation on $PL$ has cone coordinates $(0,1,0,3,0,0)$; its nodal
+coordinates agree with \eqref{eq05:weakwitness} for $0\leq j\leq24$ and
+are
+\[
+ (n_{25},n_{26},n_{27},n_{28},n_{29})=(-1,5,2,-2,7).
+\]
+It too annihilates $M$ and is nonzero at every singular point.
+
+Let $D_i$ be the ambient divisor associated with $v_i$, restricted to
+$Y_0$, and set
+\begin{equation}\label{eq05:divisors}
+\begin{aligned}
+ H_L&=-\sum_{i\in\{0,1,2,4,5,6,7,13,14,17,18\}}D_i,\\
+ H_M&=\sum_{i\in\{2,3,13,14,15,16\}}D_i,\\
+ H_P&=\sum_{i\in\{0,1,2,3,4,5,6,7,13,14,15,16,17,18\}}D_i.
+\end{aligned}
+\end{equation}
+Pairing \eqref{eq05:totalclass} with these three divisors gives, for
+every $w\in K$,
+\begin{equation}\label{eq05:identities}
+\begin{aligned}
+ n_{13}-a_0+b_0-a_1+b_1&=0,\\
+ b_0+b_1&=0,\\
+ n_{16}+\lambda_0+\lambda_1&=0.
+\end{aligned}
+\end{equation}
+These equalities can be checked directly from the four-entry nodal rows
+and the six-entry rows \eqref{eq05:rootrows}.  In particular they are
+identities on the full relation space, before any local component is
+selected.  They imply the following restrictions:
+\begin{equation}\label{eq05:forced}
+ \left.n_{13}\right|_{K_{LL}}=0,\qquad
+ \left.b_1\right|_{K_{LP}}=0,\qquad
+ \left.b_0\right|_{K_{PL}}=0,\qquad
+ \left.n_{16}\right|_{K_{PP}}=0.
+\end{equation}
+For a plane component the interpretation of $b_i$ is intrinsic to the
+marking:
+\begin{equation}\label{eq05:threecoefficients}
+ a_iA_i+b_iB_i=-a_i e_1+b_i e_2+(a_i-b_i)e_3.
+\end{equation}
+It is the coefficient of the second of the three nodal curves in the
+simultaneous partial resolution.
+
+\begin{proof}[Proof of the nonsmoothability assertion in
+Theorem~\ref{thm05:counterexample}]
+Suppose that $X$ has a convergent one-parameter smoothing.  At each cone
+point the classifying map from the disc factors through one of the two
+local components: in the domain $\CC\{t\}$, the equations
+$\lambda_i a_i=\lambda_i b_i=0$ force either $\lambda_i=0$ or
+$a_i=b_i=0$.  Hence the smoothing has one of the four profiles.
+
+We use the following form of nodal necessity.  A smoothing and a chosen
+ordinary double point produce a homological relation on a crepant
+resolution whose coefficient at that node is nonzero; at the remaining
+cone points its components belong to the selected branch subspaces.
+To recall the argument, the local vanishing sphere has a nonzero period
+of the Calabi--Yau volume form, and so is nonzero in the homology of a
+smooth fibre.  A dual global three-cycle has a boundary tuple on the
+links.  The boundary exact sequence makes its total class zero on the
+resolution, and its component at the chosen node is nonzero.  The
+boundary classes of the other local fillings give the stated branch
+restrictions.  This is Friedman's nodal period argument
+\cite{Friedman86}, with the cone boundary description of
+\cite[Theorem~6.1]{PaperIV}; it concerns the given smoothing, without a
+condition on its Kodaira--Spencer class.
+
+For $LL$, apply this argument to node $13$.  The first identity in
+\eqref{eq05:identities} forces its coefficient to be zero, a contradiction.
+For $PP$, apply it to node $16$ and use the third identity.
+
+For $LP$ or $PL$, apply the simultaneous modification of
+Proposition~\ref{prop03:a2family} at the cone assigned to $P$.  More
+explicitly, its local family consists of rank-at-most-one matrices with
+diagonal entries $z+d_1,z+d_2,z+d_3$.  Remembering the column line and
+writing the matrix as $\xi\eta^{\mathsf T}$ gives, on $\xi_k=1$,
+\[
+ \xi_i\eta_i-\xi_j\eta_j=d_i-d_j,
+ \qquad \{i,j,k\}=\{1,2,3\}.
+\]
+The modification is proper and flat over the two-dimensional base.  Its
+central fibre replaces the cone by three nodes with small-resolution
+curves $e_1,e_2,e_3$.  It is an isomorphism over every noncentral base
+point, since the zero matrix can occur only when all diagonal differences
+vanish.  Pulling it back along the hypothetical smoothing and gluing to
+the identity off the central cone point therefore gives a proper flat
+family with the same smooth noncentral fibres.  Its central threefold
+$Z$ has the thirty old nodes, these three new nodes, and the remaining
+cone on its $L$ branch.  Crepancy and rationality give
+$\omega_Z\cong\cO_Z$ and $H^1(Z,\cO_Z)=0$.
+
+Apply nodal necessity to the new node represented by $e_2$.  The resulting
+boundary relation on $Y_0$ has a nonzero coefficient at $e_2$.  However,
+$H_M$ pairs trivially with every old nodal curve and with the remaining
+$A_1$ root.  On the modified exceptional surface,
+\[
+ H_M|_{E_i}=e_1+(h-e_1-e_2)=h-e_2,
+ \qquad (H_M\cdot e_1,H_M\cdot e_2,H_M\cdot e_3)=(0,1,0).
+\]
+Pairing the relation with $H_M$ forces its $e_2$ coefficient to vanish.
+This contradiction excludes both mixed profiles.  The argument applies
+also to smoothing arcs with arbitrarily high contact with the local
+discriminant.  Together with \eqref{eq05:weakwitness}, it proves the
+claimed failure of the weaker condition.  The Hodge numbers are
+\eqref{eq05:h11} and Lemma~\ref{lem05:locallytrivial} below.
+\end{proof}
+
+\subsection{Tangent dimensions and the four selected deformation spaces}
+
+\begin{lemma}\label{lem05:locallytrivial}
+For this threefold,
+\[
+ h^1(X,\Theta_X)=h^{2,1}(Y_0)=21.
+\]
+\end{lemma}
+
+\begin{proof}
+The polar $P^\circ$ has $26$ lattice points and no facet-interior lattice
+points.  Every edge of $P$ is primitive, so the correction term in
+Batyrev's formula for $h^{2,1}$ vanishes.  Thus
+\[
+ h^{2,1}(Y_0)=26-5=21
+\]
+by \cite[Corollary~4.5.1]{Batyrev94}.  The counts may be obtained directly
+from $\langle m,v_i\rangle\geq-1$ using \eqref{eq05:vertices}.
+
+We verify the tangent-sheaf comparison needed for the first equality.
+A vector field at an isolated cone point vanishes at the vertex, and
+its local flow preserves the vertex ideal.  It therefore lifts to the
+vertex blow-up $\operatorname{Tot}(K_E)$.  At a node the local flow lifts
+to the blow-up and preserves each of the two ruling components of its
+exceptional quadric: a one-parameter flow cannot interchange these
+discrete choices.  It consequently lifts to the chosen small
+resolution.  Conversely a vector field on the resolution descends on
+the regular locus and extends across the point by normality, or
+equivalently by reflexivity of the tangent sheaf.  Hence
+\begin{equation}\label{eq05:pushforwardtheta}
+ f_*\Theta_{Y_0}=\Theta_X.
+\end{equation}
+This is the equivariant-resolution comparison of
+\cite[Definition~1.11 and Lemma~1.15]{FL22a} in these local models.
+
+We also have $R^1f_*\Theta_{Y_0}=0$.  At a degree-six point use the
+filtration by powers of the zero-section ideal.  The tangent bundle
+restricts as $\Theta_E\oplus K_E$, so its graded terms are
+\begin{equation}\label{eq05:gradedtheta}
+ \Theta_E\otimes\cO_E(-kK_E),\qquad
+ K_E\otimes\cO_E(-kK_E),\qquad k\geq0.
+\end{equation}
+The second term has vanishing $H^1$: use Serre duality and rationality
+for $k=0$, rationality for $k=1$, and Kodaira vanishing for $k\geq2$.
+For the first term, twist the toric Euler sequence
+\[
+ 0\longrightarrow\cO_E^{\oplus4}
+ \longrightarrow\bigoplus_{j=0}^5\cO_E(C_j)
+ \longrightarrow\Theta_E\longrightarrow0.
+\]
+At $k=0$, the sequence
+$0\to\cO_E\to\cO_E(C_j)\to\cO_{C_j}(-1)\to0$ gives
+$H^1(E,\cO_E(C_j))=0$.  For $k\geq1$, the divisor $C_j-kK_E$ is nef:
+its intersections with the six generators \eqref{eq05:boundary} of
+the effective cone of curves are nonnegative, since $C_j^2=-1$ and
+$(-K_E)\cdot C_l=1$ for every $l$.  Toric vanishing gives
+$H^1(E,\cO_E(C_j-kK_E))=0$.  Finally
+$H^2(E,\cO_E(-kK_E))=0$ for every $k\geq0$, so the twisted Euler
+sequence proves the other $H^1$ vanishing in \eqref{eq05:gradedtheta}.
+
+At a nodal small resolution the exceptional curve has normal bundle
+$\cO_{\PP^1}(-1)^{\oplus2}$, and the corresponding graded tangent
+terms are sums of $\cO_{\PP^1}(k+2)$ and
+$\cO_{\PP^1}(k-1)$ for $k\geq0$.  Their $H^1$ groups also vanish.
+Induction on the infinitesimal neighbourhoods of the exceptional sets
+and the theorem on formal functions now give
+$R^1f_*\Theta_{Y_0}=0$; these ideal filtrations are cofinal with the
+pullbacks of the maximal-ideal filtrations at the singular points.
+Leray, \eqref{eq05:pushforwardtheta}, and contraction with the crepant
+volume form yield
+\[
+ H^1(X,\Theta_X)\cong H^1(Y_0,\Theta_{Y_0})
+ \cong H^1(Y_0,\Omega^2_{Y_0}),
+\]
+which proves the assertion.
+\end{proof}
+
+Row reduction of the matrix specified above gives
+\begin{equation}\label{eq05:fullranks}
+ \rk M=20,\qquad \dim K=16,\qquad
+ \rk M_{\mathrm{nodes}}=19.
+\end{equation}
+Here $M_{\mathrm{nodes}}$ consists of the first thirty rows.  Its relation
+space has dimension $11$, so projection of $K$ to the six cone
+coordinates has dimension $16-11=5$.  The second identity in
+\eqref{eq05:identities} therefore describes its entire image:
+\begin{equation}\label{eq05:coneimage}
+ \operatorname{im}(K\longrightarrow\QQ^6)
+ =\{(\lambda_0,a_0,b_0,\lambda_1,a_1,b_1):b_0+b_1=0\}.
+\end{equation}
+
+For a profile $S$, let $M_S$ consist of the nodal rows and the selected
+root rows, and let $\rho_i:K_S\to R_{i,S_i}$ be its projection to the
+$i$th cone summand.  The ranks and resulting dimensions are
+\begin{table}[htbp]
+\caption{Relation spaces and selected deformation spaces of $X$.}
+\label{tab05:profiles}
+\begin{adjustbox}{max width=\textwidth,center}
+\begin{tabular}{c r r r c c r}
+\toprule
+$S$&rows of $M_S$&$\rk M_S$&$\dim K_S$&$\rk\rho_0$&$\rk\rho_1$
+ &$\dim\Def^S(X)$\\
+\midrule
+$LL$&32&19&13&1&1&34\\
+$LP$&33&20&13&1&1&34\\
+$PL$&33&20&13&1&1&34\\
+$PP$&34&20&14&2&2&35\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+In particular both cone projections are nonzero on every profile.
+Theorem~\ref{thm04:smoothbase} applies and proves that all four selected
+deformation spaces are smooth, with the dimensions in the final column.
+These dimensions use Lemma~\ref{lem05:locallytrivial} and the exact
+sequence of Theorem~\ref{thm:D}.
+
+For the unrestricted deformation space the same theorem gives
+\begin{equation}\label{eq05:globaltangent}
+ 0\longrightarrow H^1(X,\Theta_X)
+ \longrightarrow T_0\Def(X)
+ \longrightarrow K\otimes_\QQ\CC\longrightarrow0.
+\end{equation}
+Thus $\dim T_0\Def(X)=37$.  The kernel of its projection to the two
+cone tangent spaces has dimension $21+11=32$.  The second summand in
+this count consists of global tangent directions whose local
+components are supported at the old nodes.
+
+\subsection{The unrestricted analytic deformation germ}
+
+\begin{theorem}\label{thm05:germ}
+For the threefold of Theorem~\ref{thm05:counterexample} there is an
+isomorphism of convergent local rings
+\begin{equation}\label{eq05:normalform}
+ \cO_{\Def(X),0}\cong
+ \frac{\CC\{z_1,\ldots,z_{32},x,y,u,v,b\}}
+ {(xy,xb,uv,ub)}.
+\end{equation}
+The completed local ring has the same presentation with formal power
+series.  The four selected deformation spaces are precisely its
+irreducible components.  They are smooth, and their ideals in the
+ambient smooth germ are
+\begin{equation}\label{eq05:componentideals}
+ \begin{aligned}
+ P_{LL}&=(y,v,b),& P_{LP}&=(y,b,u),\\
+ P_{PL}&=(x,v,b),& P_{PP}&=(x,u).
+ \end{aligned}
+\end{equation}
+In particular the full deformation germ is reduced, although its
+deformation functor is obstructed.
+\end{theorem}
+
+\begin{proof}
+Choose coordinates on the two analytic local bases so that
+\begin{equation}\label{eq05:localbases}
+ \cO_{\Def(X,p_i),0}=
+ \CC\{\lambda_i,a_i,b_i\}/(\lambda_i a_i,\lambda_i b_i)
+\end{equation}
+and their differentials are the Hodge-normalized coordinates used in
+$M$.  This normalization is possible by an invertible linear change
+on the line and on the plane separately; it preserves the displayed
+ideal.  Fix the local classifying maps used to define $\Def^S(X)$.
+
+By \eqref{eq05:coneimage} and \eqref{eq05:globaltangent}, the pulled-back
+functions
+\[
+ x=\lambda_0,\quad y=a_0,\quad u=\lambda_1,\quad v=a_1,\quad b=b_0
+\]
+have independent differentials.  Complete them to a minimal analytic
+embedding with $32$ further coordinates $z_1,\ldots,z_{32}$, and write
+\[
+ \cO_{\Def(X),0}=R/I,\qquad
+ R=\CC\{z_1,\ldots,z_{32},x,y,u,v,b\},\qquad
+ I\subseteq\mathfrak m^2,
+\]
+where $\mathfrak m$ is the maximal ideal of $R$.
+Choose a representative $H\in R$ for the negative of the pullback of
+$b_1$.  Equation~\eqref{eq05:coneimage} says exactly that
+$H=b+O(\mathfrak m^2)$.  The local equations
+\eqref{eq05:localbases} imply
+\begin{equation}\label{eq05:localideal}
+ F:=(xy,xb,uv,uH)\subseteq I.
+\end{equation}
+We will prove equality and then remove the higher terms of $H$ by a
+convergent change of coordinates.
+
+Let $\operatorname{in}(I)$ denote the ideal of lowest nonzero homogeneous
+parts of elements of $I$ in
+$\operatorname{gr}_{\mathfrak m}R=\CC[z_1,\ldots,z_{32},x,y,u,v,b]$.
+The four elements in \eqref{eq05:localideal} give
+\[
+ J:=(xy,xb,uv,ub)\subseteq\operatorname{in}(I).
+\]
+On the other hand, each of the four selected germs is a smooth closed
+subgerm of $\Def(X)$, by Table~\ref{tab05:profiles} and
+Theorem~\ref{thm04:smoothbase}.  Its tangent space has the corresponding
+ideal in \eqref{eq05:componentideals}; this follows from
+\eqref{eq05:globaltangent} and the linear relation $b_1=-b_0$.
+If $g\in I$, substitute a regular local parametrization of one of these
+smooth germs into $g$.  Since the result vanishes, the lowest homogeneous
+part of $g$ vanishes on its tangent space.  Therefore
+\[
+ \operatorname{in}(I)\subseteq
+ P_{LL}\cap P_{LP}\cap P_{PL}\cap P_{PP}.
+\]
+The elementary monomial-ideal identity
+\begin{equation}\label{eq05:primeintersection}
+ (y,v,b)\cap(y,b,u)\cap(x,v,b)\cap(x,u)
+ =(xy,xb,uv,ub)
+\end{equation}
+now proves
+\begin{equation}\label{eq05:initialideal}
+ \operatorname{in}(I)=J.
+\end{equation}
+For example, \eqref{eq05:primeintersection} can be checked monomial by
+monomial: membership in all four coordinate primes forces divisibility
+by at least one of $xy,xb,uv,ub$, and each of those four monomials
+belongs to every prime.
+
+Since $J$ is an intersection of prime ideals, the associated graded
+ring of $R/I$ is reduced.  Its maximal-ideal filtration is separated by
+Krull's intersection theorem.  A nonzero nilpotent would have a nonzero
+initial form, and a power of that initial form would be zero, which is
+impossible.  The same argument applies to the completion, whose
+associated graded ring is unchanged.  Thus both local rings are
+reduced.  This step uses the full equality \eqref{eq05:initialideal};
+smoothness of the four selected germs by itself would not exclude an
+additional nilpotent structure.
+
+Equation~\eqref{eq05:initialideal} also proves $I=F$ in the convergent
+ring.  Indeed, for $g\in I$, express its lowest homogeneous part as a
+homogeneous polynomial combination of $xy,xb,uv,ub$.  Subtract the same
+polynomial combination of $xy,xb,uv,uH$.  The remainder is in $I$ and
+has strictly higher order.  For every integer $N$ a finite iteration
+therefore gives $g\in F+\mathfrak m^N$.  Krull intersection in the
+Noetherian local ring $R/F$ implies $g\in F$.  Hence
+\begin{equation}\label{eq05:exactideal}
+ I=(xy,xb,uv,uH).
+\end{equation}
+No convergence of an infinite sequence of correcting coefficients is
+needed for this ideal equality.
+
+It remains to straighten $H$.  The scheme-theoretic $LL$ restriction
+imposes $y=b=v=H=0$.  By \eqref{eq05:exactideal}, its local ring is
+\[
+ R/(y,b,v,H)\cong
+ \CC\{z_1,\ldots,z_{32},x,u\}/(H|_{y=b=v=0}).
+\]
+This selected germ has dimension $34$, equal to the dimension of the
+convergent power-series ring on the right.  That ring is a domain, so
+the displayed restricting function must vanish identically.  It follows
+that
+\begin{equation}\label{eq05:Hdecomposition}
+ H=cb+py+qv,\qquad c(0)=1,\quad p(0)=q(0)=0,
+\end{equation}
+with convergent coefficient functions $c,p,q$.  In particular $c$ is a
+unit.  Put $b'=cb+py=H-qv$.  Its linear part is $b$, so the analytic
+inverse function theorem allows $b'$ to replace $b$ as an ambient
+coordinate, with the other $36$ coordinates fixed.  The identities
+\[
+\begin{aligned}
+ xb'&=c(xb)+p(xy),& ub'&=uH-q(uv),\\
+ c(xb)&=xb'-p(xy),& uH&=ub'+q(uv)
+\end{aligned}
+\]
+give
+\[
+ (xy,xb,uv,uH)=(xy,xb',uv,ub').
+\]
+Renaming $b'$ as $b$ proves \eqref{eq05:normalform} by a convergent
+coordinate change.
+
+The change also identifies the scheme-theoretic profile restrictions.
+Their ideals before the change are
+\[
+ (y,b,v,H),\quad(y,b,u),\quad(x,v,H),\quad(x,u),
+\]
+in the order $LL,LP,PL,PP$.  Equation~\eqref{eq05:Hdecomposition} and the
+invertibility of $c$ send these ideals to those in
+\eqref{eq05:componentideals}.  The four coordinate primes are pairwise
+incomparable, and \eqref{eq05:primeintersection} is their intersection.
+They are therefore exactly the irreducible components.
+Finally a tangent with $x=y=1$ and $u=v=b=0$ cannot extend to second
+order, because $xy$ has a nonzero coefficient of $t^2$.  Thus the full
+deformation functor is obstructed.
+\end{proof}
+
+The $32$-dimensional smooth factor in \eqref{eq05:normalform} is not the
+locally trivial deformation space of $X$.  Its tangent space is the
+kernel of localization at the two cone points; it contains the $21$
+locally trivial directions and $11$ additional independent directions
+with local components at the old nodes.  The final coordinate change
+has identity linear part, so this tangent interpretation is preserved.
+
+\begin{corollary}\label{cor05:intersections}
+All scheme-theoretic intersections of the components in
+Theorem~\ref{thm05:germ} are smooth.  The pairwise dimensions are
+\begin{center}
+\begin{adjustbox}{max width=\textwidth,center}
+\begin{tabular}{c c c c c c c}
+\toprule
+pair&$LL,LP$&$LL,PL$&$LL,PP$&$LP,PL$&$LP,PP$&$PL,PP$\\
+\midrule
+dimension&33&33&32&32&33&33\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+Every intersection of three or four distinct components is the same
+smooth $32$-dimensional germ $x=y=u=v=b=0$.
+\end{corollary}
+
+\begin{proof}
+Add the corresponding coordinate ideals in
+\eqref{eq05:componentideals}.  Each sum is generated by a subset of the
+five coordinates, giving the dimensions stated.  No reduction of these
+intersection schemes is required.
+\end{proof}
+
+\begin{corollary}\label{cor05:integrability}
+A global first-order deformation of $X$ is the tangent of a convergent
+curve in $\Def(X)$ if and only if its five coordinates in
+\eqref{eq05:normalform} satisfy
+\[
+ xy=xb=uv=ub=0.
+\]
+Equivalently, existence of a second-order extension of a tangent is
+sufficient for existence of a convergent deformation with that tangent.
+Each of the four components also contains a curve whose sufficiently
+small noncentral fibres have exactly one ordinary double point and no
+other singularities.
+\end{corollary}
+
+\begin{proof}
+The quadratic equations give the necessity for a tangent by taking the
+coefficients of $t^2$.  Conversely, a vector satisfying them belongs to
+one of the four linear components in \eqref{eq05:componentideals}.
+Its straight line in the convergent coordinates of
+\eqref{eq05:normalform} integrates it.
+
+For the last assertion, on each $K_S$ the coefficient in
+\eqref{eq05:forced} is the only identically vanishing functional among
+the old nodal coefficients, the selected line coefficients, and the
+three separate plane coefficients \eqref{eq05:threecoefficients}.
+This follows by row reduction of $M_S$ using the printed rows.
+Avoiding the kernels of the other finitely many functionals gives a
+tangent on the smooth selected germ with all these other coefficients
+nonzero.  Integrate it there.  Every other local singularity then
+smooths for sufficiently small nonzero parameter.  On $LL$ the remaining
+point is old node $13$, and on $PP$ it is old node $16$.  On $LP$ or $PL$
+the remaining plane parameter is noncentral; its only possible
+singularity is the ordinary node on the corresponding discriminant
+line, as in Proposition~\ref{prop03:a2family}.  Were the final point also
+to smooth, the resulting curve would give a smoothing of $X$, contrary
+to Theorem~\ref{thm05:counterexample}.  Compactness and openness of
+smoothness exclude additional singularities away from the original
+ones.
+\end{proof}
+
+The assertion about a prescribed tangent does not say that every
+prescribed higher jet extends.  For example, $x=y=t^2$ and
+$u=v=b=z_1=\cdots=z_{32}=0$ gives a deformation over
+$\CC[t]/(t^4)$ which has no extension with those coefficients over
+$\CC[t]/(t^5)$, since $xy=t^4$.  Its zero tangent nevertheless integrates.
+Likewise, the four minimal equations in \eqref{eq05:normalform} do not
+assert that $\operatorname{Ext}^2(\Omega_X^1,\cO_X)$ has dimension four.
+
+The finite calculations used in this section are the face and lattice
+counts for \eqref{eq05:vertices}, the divisor intersections
+\eqref{eq05:identities}, and the ranks of the matrices specified by
+\eqref{eq05:nodes}--\eqref{eq05:rootrows}.  Reproduction files and exact
+rational outputs are supplied with the paper.\footnote{The geometric
+data and intersection calculations are in
+\texttt{a2\_branch\_selection\_counterexample.py}; the Hodge and selected
+kernel calculations are in \texttt{branch\_smoothness\_inputs.py}; and
+the unrestricted kernel and ideal calculations are in
+\texttt{counterexample\_deformation\_germ.py}, all under
+\texttt{certificates/}.  The independent standard-library calculation
+\texttt{a2\_counterexample\_rational\_replay.py} reproduces the rational
+matrix identities and ranks.}
+The analytic ideal equality and coordinate change are proved above;
+they do not follow from a finite truncation of the deformation equations.

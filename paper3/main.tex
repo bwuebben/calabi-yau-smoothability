@@ -244,11 +244,10 @@ all-nodal threefold with a projective small resolution.  The actual
 $X^\circ$, however, also has four divisorial del Pezzo-cone points, so
 Friedman's nodal criterion does not apply to the mixed singularity
 configuration: their local deformation directions may participate in the
-global obstruction map.  Its del Pezzo-cone germs are precisely those that
-\cite[\S6]{paper2} places beyond Gross's theorems and for which no
-Friedman-type obstruction is known.  Thus any smoothing would have to be
-genuinely mixed, and whether one exists remains open
-(Question~\ref{q:mirror-smooth}).
+global obstruction map.  The later mixed necessity theorem of \cite{paper4} treats this
+configuration and proves that $X^\circ$ has no smoothing.
+The divisorial directions do not supply the cancellation required
+at the two nodal coloops (Remark~\ref{q:mirror-smooth}).
 
 Theorems~\ref{thm:class}, \ref{thm:dichot} and~\ref{thm:pair} answer the
 mirror question of
@@ -295,7 +294,7 @@ count in this note is recomputable from
 \texttt{src/both\_sides\_census.py}.
 
 \subsection*{Acknowledgements}
-This note completes the series \cite{paper1,paper2}; the question of
+This note continues the series \cite{paper1,paper2}; the question of
 smoothing canonical Calabi--Yau singularities was posed to the author by
 Mark Gross many years ago.
 
@@ -681,7 +680,7 @@ only one whose generic anticanonical hypersurface and mirror are
 \emph{both} smooth.
 \end{example}
 
-\section{The unique $\FF_1$ mirror pair}\label{sec:pair}
+\section{The unique \texorpdfstring{$\FF_1$}{F1} mirror pair}\label{sec:pair}
 
 \begin{theorem}\label{thm:pairbody}
 Let
@@ -781,22 +780,17 @@ non-smoothable face on any both-sides unit polytope.
 
 \begin{remark}[a threefold with no smoothing whose mirror has only
 locally smoothable singularities]\label{rem:frozen}
-Theorem~\ref{thm:pairbody} pairs a Calabi--Yau threefold that
-cannot be smoothed (its $\FF_1$-cone point is rigid, with reduced
-miniversal base a point,
-the local model of Gross's exceptional case) with a mirror all of whose
-singular points move locally.  Whether these local deformations assemble
-to a global smoothing of $X^\circ$ is
-exactly the frontier of \cite{paper2}: all $26+2+2$ of its singular points
-sit over faces with $\ell(F^\circ) = 1$, so the single-face smoothing
-techniques of \cite{paper2} do not apply.  The node subsystem fails the
-all-nonzero relation of the nodal problem (Remark~\ref{rem:node-subsystem}),
-while the four del Pezzo-cone points are the $\ell = 1$ germs that
-\cite[Prop.~6.1, Rem.~6.2]{paper2} place beyond Gross's theorems, with no
-Friedman-type obstruction known.  The mixed local-to-global problem remains
-open.  The pair thus concentrates,
-on two mirror-dual threefolds, every open smoothability phenomenon of this
-series.
+Theorem~\ref{thm:pairbody} pairs a Calabi--Yau threefold that cannot
+be smoothed with a mirror all of whose singularities are locally
+smoothable.  All $26+2+2$ singular points of the mirror lie over faces
+with $\ell(F^\circ)=1$, beyond the single-face construction of
+\cite{paper2}.  The node subsystem has no relation with every
+coefficient nonzero (Remark~\ref{rem:node-subsystem}).
+The subsequent mixed necessity theorem of \cite{paper4} shows that
+the four del Pezzo-cone directions cannot compensate for this
+defect: $X^\circ$ is nonsmoothable.  Thus both members of the pair
+are nonsmoothable, although every singularity of $X^\circ$ is
+locally smoothable.
 \end{remark}
 
 \begin{remark}[the node subsystem]\label{rem:node-subsystem}
@@ -849,16 +843,13 @@ answer is subtler than the star of the face; the appearance of exactly the
 polar-duality-symmetric problem.
 \end{question}
 
-\begin{question}\label{q:mirror-smooth}
-Is the mirror $X^\circ$ of Theorem~\ref{thm:pairbody} smoothable?  All its
-germs are of type \textup{(S)} with $\ell(F^\circ)=1$.  A positive answer
-would exhibit a Batyrev mirror pair with one member rigid against smoothing
-and the other smoothable --- a maximally asymmetric pair for the
-deformation--resolution exchange of mirror symmetry.  The node subsystem
-alone admits no all-nonzero relation (Remark~\ref{rem:node-subsystem}); can
-the four del Pezzo deformation directions supply the required mixed
-local-to-global cancellation?
-\end{question}
+\begin{remark}\label{q:mirror-smooth}
+The smoothability question for the mirror $X^\circ$ of
+Theorem~\ref{thm:pairbody} has a negative answer: \cite{paper4}
+proves that no mixed smoothing exists.  Its four del Pezzo
+deformation directions cannot supply the cancellation required
+by the two nodal coloops.
+\end{remark}
 
 \begin{question}\label{q:mutable}
 Corti--Filip--Petracci conjecturally relate smoothing components of $C(Q)$ to $0$-mutable
@@ -925,6 +916,8 @@ Batyrev Calabi--Yau threefolds},
 preprint, 2026; available at
 \url{https://github.com/bwuebben/calabi-yau-smoothability}.
 
+\bibitem[Wue26d]{paper4} B.~J. Wuebben, \emph{A vanishing-cycle obstruction to smoothing Calabi--Yau threefolds},
+preprint, 2026, revised 5 September 2026.
 \end{thebibliography}
 
 \bigskip

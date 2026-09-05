@@ -1,0 +1,106 @@
+\subsection{Scope among del Pezzo cones}\label{sec01:degree-scope}
+
+The degree-seven and degree-six cases arise from the pentagonal and
+hexagonal faces in the toric examples.  Both associated cones are smoothable and are
+not complete intersections.  Their local deformation spaces exhibit
+the two phenomena treated here: distinct smoothing components in
+degree six, and a nonreduced structure transverse to the smoothing
+line in degree seven.  Theorems~\ref{thm:criterionintro}
+and~\ref{thm:smoothintro} also allow the degree-five cone and the
+anticanonical cone over $\PP^1\times\PP^1$, of degree eight.
+These hypotheses specify the
+local comparisons established below; smoothable del Pezzo cones also
+occur in the other degrees.
+
+For a smooth del Pezzo surface $E$, the anticanonical cone means
+\[
+ \operatorname{Spec}\bigoplus_{m\geq0}H^0(E,-mK_E).
+\]
+This convention includes the weighted
+anticanonical models in degrees one and two.  The classical local
+facts in Table~\ref{tab01:degree-scope} are recalled in
+\cite[\S\S3.3, 5.5 and Example~2.19]{Gross97rev}; the branch structures
+in degrees six and seven follow from \cite{Altmann97}.
+Proposition~\ref{prop03:degree5family} proves the full local-base
+and discriminant statements in degree five.
+
+% Canonical degree-scope table.  Keep its final column synchronized with
+% the theorem statements and the degree-five/degree-eight research TODO.
+% Local smoothability and an established global criterion are distinct.
+\begin{table}[htbp]
+\centering
+\caption{Anticanonical cones over smooth del Pezzo surfaces and the
+scope of the present results.  The local assertions alone do not imply
+smoothability of a compact threefold containing these germs.}
+\label{tab01:degree-scope}
+\small
+\renewcommand{\arraystretch}{1.14}
+\begin{adjustbox}{max width=\textwidth, center}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.17\textwidth}
+                  >{\raggedright\arraybackslash}p{0.41\textwidth}
+                  >{\raggedright\arraybackslash}p{0.32\textwidth}@{}}
+\toprule
+Degree / surface & Local deformation behavior & Role in the present results \\
+\midrule
+$1$--$3$
+  & Hypersurfaces; smoothable, with smooth local bases.
+  & Classical complete-intersection cases; outside the stated mixed criterion. \\
+\addlinespace
+$4$
+  & Intersection of two quadrics; smoothable, with smooth local base.
+  & As in degrees one to three. \\
+\addlinespace
+$5$
+  & Smooth four-dimensional base; five discriminant hyperplanes.
+  & Covered by Theorems~\ref{thm:criterionintro}
+    and~\ref{thm:smoothintro}; five nonzero conic-pencil pairings. \\
+\addlinespace
+$6$
+  & A smoothing line and a smoothing plane; three discriminant lines in the plane.
+  & Both components covered by Theorems~\ref{thm:criterionintro}
+    and~\ref{thm:smoothintro}. \\
+\addlinespace
+$7$
+  & One reduced smoothing line, with an obstructed transverse tangent.
+  & Covered by Theorems~\ref{thm:criterionintro}
+    and~\ref{thm:smoothintro}. \\
+\addlinespace
+$8$, $\PP^1\!\times\!\PP^1$
+  & Smooth one-dimensional local base; noncentral fibres smooth.
+  & Covered by Theorems~\ref{thm:criterionintro}
+    and~\ref{thm:smoothintro}; coefficient on the ruling difference. \\
+\addlinespace
+$8$, $\mathbb F_1$
+  & No smoothing; local base $\operatorname{Spec}\CC[t]/(t^2)$.
+  & Excluded by local nonsmoothability. \\
+\addlinespace
+$9$, $\PP^2$
+  & Rigid.
+  & Excluded by local nonsmoothability. \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+The degree-eight cone over $\PP^1\times\PP^1$ already occurs as the
+partial resolution of a degree-seven point.
+Lemma~\ref{lem03:quadric} proves smoothness of its full local base and
+identifies its tangent line with the difference of the ruling classes.
+When such points occur on the original threefold, the partial
+modification is the identity near them.  Their Milnor fibres retract
+to $\mathbb{RP}^3$; the descended nodal period supplies the necessity
+argument in Lemma~\ref{lem04:periodnecessity}.  Thus they require one
+nonzero coefficient on the ruling difference, with no additional
+hypothesis in the selected-base smoothness theorem.
+
+The degree-five surface is not toric.  Totaro's Bott vanishing
+theorem \cite{totaro2020} supplies its local Hodge comparison.
+The four-parameter family of Grassmannian sections and its
+boundary periods identify the five conic-pencil conditions and
+prove necessity at every order.  Degree-five points also remain
+unchanged on the partial model.  Thus the present criterion covers
+all locally smoothable anticanonical cones over smooth del Pezzo
+surfaces that are not complete intersections.
+For degrees one to four, the existing complete-intersection theory
+does not by itself give the stated criterion for mixtures with the
+non-complete-intersection cones considered in this paper.

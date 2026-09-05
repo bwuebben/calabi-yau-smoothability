@@ -94,15 +94,15 @@ def smooth_cone(gens):
 
 def sing_at_most_a_point(gens):
     """Is the singular locus of the affine toric variety of this cone at most
-    the fixed point?  Equivalently: is every PROPER face of the cone smooth?
-    A general anticanonical member misses isolated points (global generation),
-    so this is what actually has to hold -- not smoothness of the chart."""
+    a point in the ambient rank-four lattice? Proper faces must be smooth.
+    If the full cone has dimension below four, it must also be smooth:
+    otherwise its closed orbit has a positive-dimensional torus factor."""
     if not gens:
         return True, 0
     C = Polyhedron(rays=[list(g) for g in gens], base_ring=QQ)
     if C.dim() == 0:
         return True, 0
-    bad = 0
+    bad = int(C.dim() < 4 and not smooth_cone(gens))
     for d in range(C.dim()):                       # PROPER faces only
         for f in C.faces(d):
             rr = [list(r) for r in f.as_polyhedron().rays()]

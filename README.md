@@ -1,45 +1,38 @@
 # Smoothability of Calabi–Yau threefolds
 
-Code, data, and paper sources for a series of five papers on when a
-singular Calabi–Yau threefold admits a smoothing. The setting is
-Batyrev's: anticanonical hypersurfaces in Gorenstein toric Fano
-fourfolds, whose singular points are cones over the two-dimensional
-faces of a reflexive 4-polytope. Paper 1 classifies the local germs and
-exhibits non-smoothable threefolds; paper 2 constructs smoothings;
-paper 3 takes the census of mirror pairs in which both members have
-isolated singularities; paper 4 proves a global obstruction, a
-vanishing-cycle necessity criterion valid for any projective Calabi–Yau
-threefold with nodes and del Pezzo cone points, and uses it to settle
-the distinguished example the census singles out; paper 5 takes the
-opposite direction, giving a combinatorial obstruction to the toric
-smoothing mechanism, a threefold that is smoothable although no purely
-nodal mechanism reaches it, and the resulting classification of the
-range with at most nine vertices.
+Paper sources, exact computations, and census data for five papers on
+smoothings of singular Calabi–Yau threefolds. Papers 1–3 study
+anticanonical hypersurfaces in Gorenstein toric Fano fourfolds: local
+singularity types, ambient smoothing constructions, and isolated mirror
+pairs. Paper 4 develops a global obstruction using vanishing periods.
+Paper 5 proves a necessary and sufficient mixed smoothing criterion and
+convergent integrability for its specified deformation spaces.
 
-The two directions meet: paper 4's criterion is necessary for a
-smoothing to exist, paper 5 proves its converse at first order, and what
-separates them is integrability.
+**Updated 5 September 2026.** Paper 5 now covers nodes and exact
+anticanonical cones over smooth del Pezzo surfaces of degrees 5, 6 and 7,
+and over P¹×P¹. Integrability is proved under the hypotheses stated in
+its theorems. The distinction between smooth deformation bases and the
+existence of smooth fibres is essential: the paper also constructs a
+nonsmoothable example with four smooth deformation components.
+The degree-by-degree scope table is in the introduction.
 
 **Author:** Bernd Johannes Wuebben (wuebben@gmail.com)
 
 | paper | directory | compiled PDF |
 |---|---|---|
-| 1. Non-smoothable Calabi–Yau threefolds from reflexive polytopes | `paper1/` | `cy-non-smoothable.pdf` |
-| 2. Deformations of toric pairs and the smoothing of Batyrev Calabi–Yau threefolds | `paper2/` | `cy-toric-pairs.pdf` |
-| 3. Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau threefolds | `paper3/` | `cy-mirror-pairs.pdf` |
-| 4. A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds | `paper4/` | `cy-vanishing-cycle.pdf` |
-| 5. Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points | `paper5/` | `cy-mixed-smoothing.pdf` |
+| 1. Non-smoothable Calabi–Yau threefolds from reflexive polytopes | `paper1/` | [cy-non-smoothable.pdf](paper1/cy-non-smoothable.pdf) |
+| 2. Deformations of toric pairs and the smoothing of Batyrev Calabi–Yau threefolds | `paper2/` | [cy-toric-pairs.pdf](paper2/cy-toric-pairs.pdf) |
+| 3. Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau threefolds | `paper3/` | [cy-mirror-pairs.pdf](paper3/cy-mirror-pairs.pdf) |
+| 4. A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds | `paper4/` | [cy-vanishing-cycle.pdf](paper4/cy-vanishing-cycle.pdf) |
+| 5. Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points | `paper5/` | [cy-mixed-smoothing.pdf](paper5/cy-mixed-smoothing.pdf) |
 
-Each `paperN/` directory holds the LaTeX source (`main.tex`) and the
-compiled PDF under the name above. The supporting code lives in `src/`
-(papers 1–3 and shared exact toric modules), `paper4/certificates/`
-and `paper5/certificates/`. The three core Paper 4 checkers are
-standalone; its general census, fixed-example, and fan programs, and all
-of paper 5's, reuse modules in `src/` and in `paper4/certificates/`;
-scan results in `output/`; the pinned Kreuzer–Skarke input manifest in
-`manifests/`. Every paper builds from its directory with
-`latexmk -pdf main.tex`, and every quantitative claim is recomputed by
-a script listed below.
+Each `paperN/` directory holds `main.tex` and its compiled PDF. Paper 5's
+source also includes `sections/`. Supporting computations are in `src/`
+(papers 1–3 and shared exact toric modules), `paper4/certificates/`,
+`paper5/certificates/`, and `paper5/figures/code/`. Saved scan results are
+in `output/`; the pinned Kreuzer–Skarke input manifest is in `manifests/`.
+The reproduction commands below distinguish standard Python from SageMath.
+Every paper builds from its directory with `latexmk -pdf main.tex`.
 
 ## The papers
 
@@ -65,8 +58,11 @@ a script listed below.
    edge has lattice length ≥ 2; the threshold is sharp — no unit-edge
    Batyrev hypersurface whose singular locus is a single ordinary double
    point admits a smoothing, and a 7-vertex polytope realizes this;
-   the ℓ = 1 del Pezzo-cone cases lie outside both Friedman's criterion and
-   Gross's theorems and are open. Comparison with the Batyrev–Kreuzer
+   the single ℓ = 1 cone cases covered by Paper 5 (degree 6, degree 7,
+   and P¹×P¹) are also nonsmoothable, because their relation kernel is zero.
+   The general simultaneous ambient construction retains its stated
+   irreducibility hypothesis on the deformation space. Comparison with the
+   Batyrev–Kreuzer
    all-conifold census: their criterion constrains only the dual-length-1
    faces, so of their 30,241 Namikawa-certified smoothable polytopes
    exactly 3,774 — one in eight — are explained per-face, and the
@@ -91,8 +87,9 @@ a script listed below.
    guess holds for all 395,406,329 polytopes with at most 18 vertices and
    fails from 19 on. An exact row reduction of the 26 node relations of the
    mirror X° gives rank 18 with two coloops, so the nodes alone admit no
-   relation with every coefficient non-zero: any smoothing of X° would have
-   to couple them to its four del Pezzo-cone directions.
+   relation with every coefficient non-zero. Paper 4 further proves that
+   coupling them to the four del Pezzo-cone directions cannot give a
+   smoothing either.
 
 4. **A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds**
    (`paper4/`) — the necessity theory for the mixed case: any one-parameter
@@ -117,31 +114,48 @@ a script listed below.
    ℚ-factoriality. The seven-vertex bottom of the pentagonal census has one
    dP₇-cone point and no smoothing. Among all 77 admissible polytopes with at
    most nine vertices and a pentagonal face, the criterion obstructs 76. On a
-   separate hypersurface with 14 nodes and one dP₇ point the test is silent,
-   and its smoothability is posed as an open problem.
+   separate hypersurface X₁₉ with 14 nodes and one dP₇ point the test is
+   silent; Paper 5 now proves that it is smoothable and that its full
+   deformation base is smooth of dimension 30.
 
 5. **Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points**
-   (`paper5/`) — the sufficiency side. For the 19-vertex example, Altmann's
-   homogeneous deformation theory and a combinatorial condition called
-   *locking* show that every primitive single-degree ambient family retains a
-   singular curve. This is deliberately not a non-smoothability theorem:
-   multi-degree and non-ambient deformations remain outside its scope. Against
-   it the paper places a nine-vertex reflexive polytope whose hypersurface has
-   two nodes, neither in any relation among the nodal exceptional curve
-   classes, and one degree-7 cone point, and constructs an actual smoothing —
-   so no purely nodal mechanism produces that smoothing. Between them these
-   settle the range: of the reflexive 4-polytopes with at most nine vertices
-   whose hypersurface has only nodes and degree-6 or degree-7 cone points, all
-   isolated, exactly **77** carry a pentagonal 2-face; paper 4's criterion
-   leaves **76** non-smoothable and the exception is the polytope above. A
-   sweep of the Kreuzer–Skarke classification puts locking in context: of the
-   **12,508** pentagonal 2-faces occurring at up to nine vertices, **9,466**
-   are locked, **37** more have a rigid cell that the closure rule does not
-   certify, and **3,005** lie in a facet that decomposes. Finally, a support-
-   sequence and Hodge-theoretic argument proves the converse to paper 4's
-   obstruction at first order, including the degree-6 and degree-7 branch
-   identifications. Integrating that class in the non-ℚ-factorial case remains
-   open.
+   (`paper5/`) — a necessary and sufficient smoothing criterion for connected
+   normal projective complex threefolds with trivial dualizing sheaf,
+   H¹(O_X) = 0, and only nodes and the exact cone germs specified above.
+   For a chosen profile of local deformation branches, a homological
+   relation must be nonzero at each rank-one summand, have all three
+   degree-six A₂ coefficients nonzero, and have all five conic-pencil
+   pairings nonzero at each degree-five point. At a P¹×P¹ cone the
+   coefficient is the difference of the two rulings. These conditions
+   characterize actual analytic smoothings. The selected deformation
+   base is smooth when the relation space projects nontrivially to every
+   degree-six summand, and every tangent on that base integrates to a
+   convergent curve. No additional projection hypothesis is imposed at
+   the other covered germs.
+
+   A threefold with **30 nodes and two degree-six cone points** disproves
+   the weaker condition that merely asks for a nonzero vector at each
+   germ. Its full analytic deformation ring is
+   C{z₁,…,z₃₂,x,y,u,v,b}/(xy,xb,uv,ub), with four smooth components of
+   dimensions 34, 34, 34 and 35, but no smoothing.
+
+   The toric applications distinguish intrinsic smoothability from the
+   specified ambient constructions. **X₁₉ is smoothable**, with full
+   deformation base smooth of dimension 30, although each primitive
+   single-degree ambient construction considered in the paper retains a
+   singular curve. An explicit ambient family smooths **X₉**, whose two
+   nodes lie in no purely nodal relation. Its general ambient fibre is
+   toric: the paper prints a fan with seven rays, ten maximal cones and
+   one singular fixed point. This corrects the former non-toricity claim.
+
+   Among reflexive 4-polytopes with at most nine vertices in the stated
+   framework (only isolated nodes and degree-six/seven cone points,
+   **one singular point per singular two-face**), exactly **77** have a
+   pentagonal face: X₉ is smoothable and the other **76** are not. The
+   larger facet-rigidity census has **12,508** pentagonal faces:
+   **9,466** locked, **37** additional unlocked cases with both containing
+   lattice facets rigid, and **3,005** with a decomposable containing facet. These are
+   counts of facet conditions, not an unrestricted smoothability census.
 
 The classification-wide counts of papers 1–3 (the 8.27%, the
 3,774 / 26,467 split, the 590 both-sides unit polytopes and the
@@ -236,16 +250,16 @@ documents these programs derive and check.
 
 ### Paper 5's certificates (`paper5/certificates/`)
 
-The programs named in paper 5's Appendix C. They reuse the exact toric modules
-in `src/` and the lattice data in `paper4/certificates/`, so both directories
-must be present.
+The toric programs in Appendix B reuse exact modules in `src/` and lattice
+data in `paper4/certificates/`, so both directories must be present. The
+additional local and deformation-space computations are listed below.
 
 - `v09_candidate.py` — the nine-vertex polytope Δ₉: reflexivity, its face
   inventory, and that it lies in the admissible framework.
 - `sing_locus.py` — the singular locus of X₉ is exactly the three germ points,
   with both provisos of the Batyrev statement checked rather than assumed
   (6 checks).
-- `locking.py` — the forcing rules and the locking closure of Definition 4.14,
+- `locking.py` — the forcing rules and the locking closure,
   including the cube counterexample that shows why the adjacent-pair rule needs
   consecutive edges (13 checks).
 - `one_facet.py` — the reachability lemma and its scope (7 checks).
@@ -266,19 +280,47 @@ must be present.
 - `slice_admissible.sage`, `general_fibre.sage` — the full two-sided
   Ilten–Vollmert axioms, including the arbitrary-collection face condition,
   and completeness of the general fibre (36 and 6 checks).
-- `hzero.sage`, `charts.sage`, `toric_fibre.sage`, `final_check.sage` — the
-  relative anticanonical system, the chart-by-chart smoothness of the general
-  fibre, its non-toricity, and the seven cells that change (n/a, 3, 5 and
-  3 checks).
+- `hzero.sage` — an independent invariant-divisor calculation of the
+  anticanonical sections.
+- `charts.sage` — smoothness of the proper faces and lower-dimensional
+  full chart cones (3 checks).
+- `toric_fibre.sage` — the complete marked slices of the general ambient
+  fibre, its toric fan, its unique singular fixed point, and its 162
+  anticanonical lattice points (20 checks).
+- `final_check.sage` — the relative canonical and local smoothing
+  comparisons (3 checks).
 - `branch_locus.py`, `smoothing_locus.py` — the smoothing locus in T¹ agrees
   with paper 4's branch subspace at both germ types, and why the cyclic
   criterion does not apply here; the first script also checks the local Hodge
-  and equivariance identifications used in the first-order converse (17 and 13
-  checks).
-- `theoremB_class.py` — the relation class of the family constructed in
-  Theorem B, computed from the deformation rather than read off the matrix
-  (10 checks).
+  and equivariance identifications used in the global comparison (17 and
+  13 checks).
+- `theoremB_class.py` — the relation class of the explicit X₉ family,
+  computed from its local deformation parameters (10 checks).
 - `candidates.sage` — what the census survivors induce on their pentagons.
+
+### Paper 5's local and deformation-space computations
+
+The six principal programs verify **507 exact assertions**:
+
+| Program in `paper5/certificates/` | Finite calculation | Assertions |
+|---|---|---:|
+| `a2_simultaneous_partial_resolution.py` | Incidence charts, nodal Hessians and inverse maps | 33 |
+| `dp6_nodal_partial_resolutions.py` | Degree-six subdivisions, root classes and parameter maps | 43 |
+| `a2_branch_selection_counterexample.py` | Counterexample polytope, divisor identities and four relation kernels | 272 |
+| `branch_smoothness_inputs.py` | Hodge data, local projections and nodal replacements | 52 |
+| `counterexample_deformation_germ.py` | Component tangent ideals and their intersection | 57 |
+| `a2_counterexample_rational_replay.py` | Independent rational linear algebra and Hodge calculation | 50 |
+
+The first five run with `sage -python`; the rational replay uses Python's
+standard library. Their saved JSON results are included, so the replay
+has its required input immediately after cloning.
+
+`d19_quadric_partial_resolution.py` additionally checks the X₁₉ fan,
+quadric-cone cohomology, Hodge data and relation matrices. The two standard
+Python scripts in `paper5/figures/code/` check the degree-five pencil
+lattice, permutations, intersection numbers and exterior-product ranks,
+and the degree-eight Cayley and ruling-difference lattices. The analytic
+lifting and period arguments are proved in the paper.
 
 ## Data (`output/`)
 
@@ -324,6 +366,17 @@ python3 paper5/certificates/global_decomp.py   # paper 5: indecomposability (~2 
 python3 paper5/certificates/branch_locus.py    # paper 5: the smoothing locus (~2 s)
 python3 paper5/certificates/theoremB_class.py  # paper 5: the relation class (~1 s)
 sage paper5/certificates/slice_admissible.sage # paper 5: full two-sided axioms
+sage paper5/certificates/toric_fibre.sage      # general X9 fan and marked slices
+sage paper5/certificates/charts.sage           # chart smoothness
+sage -python paper5/certificates/a2_simultaneous_partial_resolution.py
+sage -python paper5/certificates/dp6_nodal_partial_resolutions.py
+sage -python paper5/certificates/a2_branch_selection_counterexample.py
+sage -python paper5/certificates/branch_smoothness_inputs.py
+sage -python paper5/certificates/counterexample_deformation_germ.py
+python3 paper5/certificates/a2_counterexample_rational_replay.py
+sage -python paper5/certificates/d19_quadric_partial_resolution.py
+python3 paper5/figures/code/compute01_degree5_local.py
+python3 paper5/figures/code/compute01_degree8_local.py
 
 # database scans (need: pip install numpy pyarrow; and the parquet files)
 ./venv/bin/python src/ks_sweep.py data/ks/polytopes-4d-06-vertices.parquet

@@ -1,0 +1,86 @@
+\begin{corollary}\label{cor:x19smooth}
+The full semiuniversal deformation space of a $\Delta_{19}$-regular
+anticanonical hypersurface $X_{19}$ is smooth of dimension $30$.
+The threefold $X_{19}$ has a convergent smoothing.
+\end{corollary}
+
+\begin{proof}
+We give the finite relation calculation explicitly.  Order its nodal
+faces by the following vertex sets, using \eqref{eq:V19}:
+\[
+\begin{array}{rrrr@{\qquad}rrrr@{\qquad}rrrr}
+0&1&3&5&0&2&4&5&6&8&9&15\\
+7&10&11&16&1&6&13&18&1&7&13&17\\
+2&6&12&18&2&7&12&17&3&9&10&13\\
+4&8&11&12&3&9&14&15&3&10&14&16\\
+4&8&14&15&4&11&14&16&&&&
+\end{array}
+\]
+For each set take the primitive relation on its four rays whose
+first nonzero coefficient is positive, and extend it by zero on the
+other rays.  Let $N$ be the resulting $14\times19$ matrix.  The
+degree-seven root has divisor row
+\[
+ r=(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,-1,1,-1).
+\]
+Exact row reduction gives
+\[
+ \rk N=12,\qquad \rk\begin{pmatrix}N\\r\end{pmatrix}=12.
+\]
+A relation in the latter matrix, nonzero in all fifteen coordinates, is
+\[
+ (-2,2,-1,1,1,-3,-2,4,-2,2,3,1,-1,-3,-1).
+\]
+Replace $r$ by a basis of the full two-dimensional relation space
+on the pentagon rays $v_{14},\ldots,v_{18}$.  The resulting
+$16\times19$ matrix has rank $13$.  Thus both the selected and the
+full local relation kernels have dimension three; they are equal.
+These matrices are reconstructed from the printed vertices and face
+sets in the exact computation listed in Appendix~\ref{app:cert}.
+
+The rows detect homology relations.  Indeed, the correction term for
+non-toric divisor classes on a smooth crepant resolution vanishes:
+every singular two-face has a dual edge of lattice length one and
+every other two-face is a unimodular triangle.  Toric divisors
+therefore span $H^2$ by Batyrev's formula \cite{Batyrev94}.  The
+inserted divisor over the pentagon pairs to zero with $K_E^\perp$.
+Consequently the full link kernel $K$ is already $K_S$, and the
+displayed vector proves smoothing by Theorem~\ref{thm04:criterion}.
+
+For the dimension, the polar has $32$ lattice points, no
+facet-interior lattice points, and zero correction term in Batyrev's
+$h^{2,1}$ formula, since the original edges are primitive.  Hence
+$h^{2,1}(Y_0)=32-5=27$.  One also has
+\[
+ f_{0*}\Theta_{Y_0}=\Theta_{X_{19}},\qquad
+ R^1f_{0*}\Theta_{Y_0}=0.
+\]
+Vector fields lift to the vertex blow-up of a cone and to a chosen
+nodal small resolution.  For the higher direct image, formal
+functions reduces the degree-seven assertion to
+\[
+ H^1(E,\Theta_E\otimes\cO_E(-kK_E))=
+ H^1(E,\cO_E((1-k)K_E))=0\qquad(k\ge0).
+\]
+The first equality follows from
+$\Theta_E\cong\Omega^1_E\otimes\cO_E(-K_E)$ and toric Bott
+vanishing.  The second follows from rationality and Serre duality
+for $k=0,1$, and Kodaira vanishing for $k\ge2$.  At a node the
+graded terms are copies of $\cO(k+2)$ and $\cO(k-1)$ on $\PP^1$,
+whose first cohomology vanishes.  Leray and contraction with the
+volume form give $h^1(X_{19},\Theta_{X_{19}})=27$.
+Theorem~\ref{thm:D} now gives $\dim\mathbb T^1_{X_{19}}=27+3=30$.
+
+The construction in the proof of Theorem~\ref{thm04:smoothbase}
+gives a smooth formal source whose blow-down differential covers
+$V_S$.  Here $V_S=\mathbb T^1_{X_{19}}$ because $K_S=K$.
+The same independent-coordinate argument therefore makes the
+\emph{full} deformation ring regular, not only its selected
+quotient.  Regularity of the completed analytic ring implies
+smoothness of the analytic germ, with the dimension just computed.
+\end{proof}
+
+Theorem~\ref{thm:A} and Corollary~\ref{cor:x19smooth} thus concern
+different deformation constructions: $X_{19}$ is smoothable, while
+every single-degree ambient family in the stated class retains a
+singular anticanonical fibre.

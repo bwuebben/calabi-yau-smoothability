@@ -73,8 +73,7 @@ reflexive polytopes}
 
 \begin{abstract}
 A projective Calabi--Yau threefold whose singular points all admit local
-smoothings need not admit a global one, and when the singularities are not all
-nodes no general criterion is available.  For threefolds whose
+smoothings need not admit a global one.  For threefolds whose
 singularities are ordinary double points and anticanonical cones over del Pezzo
 surfaces of degrees~$6$ and~$7$ we prove a necessity criterion.  A one-parameter
 smoothing produces a rational homology class on the disjoint union of the
@@ -83,8 +82,8 @@ point in the subspace of $K^{\perp}\subset H_2$ of the exceptional del Pezzo
 that dies in the Milnor fibre, where $K$ is the canonical class, and is
 nonzero at every node, at every degree-$7$
 point, and at a degree-$6$ point smoothed through the one-parameter component of
-its miniversal base.  The argument does not treat the two-parameter component;
-the missing period-theoretic input is stated explicitly.
+its miniversal base.  The two-parameter component and the converse
+are treated in the companion paper on mixed smoothings.
 
 The proof has two principal inputs.  A period computation shows that the
 integral of the holomorphic $3$-form over a distinguished vanishing cycle is
@@ -103,7 +102,7 @@ locally rigid cone germ.  Further applications obstruct a seven-vertex
 hypersurface with one degree-$7$ cone point and $76$ cases in a bounded census
 of reflexive $4$-polytopes with a pentagonal $2$-face.  For a
 hypersurface with $14$ nodes and one degree-$7$ point the criterion is silent;
-its smoothability remains open.
+the companion paper proves its smoothability.
 \end{abstract}
 
 \maketitle
@@ -323,6 +322,9 @@ Is $X_{19}$ smoothable?  Any smoothing of $X_{19}$ would be a
 simultaneous smoothing of nodal and del Pezzo cone singularities that
 no purely nodal mechanism can produce.
 \end{question}
+The companion paper~\cite{PaperV} answers this question affirmatively
+and proves that the full deformation space of $X_{19}$ is smooth of
+dimension $30$.
 
 \subsection{Method}
 The general necessity theorem has two inputs.  First, the vanishing-period computations of
@@ -343,24 +345,21 @@ and of the degree-$7$ directions vanish identically
 (Section~\ref{sec:example}); all decisive matrix data are printed, and
 Appendix~\ref{app:cert} lists the programs that recompute them.
 
-The argument does \emph{not} use
-the first-order deformation theory of $X$ beyond motivation: the
-localization map, its image, and the comparison of coordinate systems
-on local deformation spaces never enter.  It is insensitive to the
-order of tangency of the smoothing family with the local
-discriminants, the phenomenon that blocks first-order methods: the
-necessity statements of \cite{Friedman86,RT09} concern the first-order
-data of a deformation class, and their proofs are specific to nodes
-(one-dimensional local $T^1$, quadric exceptional geometry), whereas
-the periods above see the actual arc.  Neither does it use
-unobstructedness, which is unavailable for the non-lci cone germs.
+The argument does not use the first-order deformation theory of $X$:
+the localization map and the comparison of coordinates on local
+deformation spaces do not enter.  The periods apply directly to the
+smoothing arc, including arbitrary orders of contact with the local
+discriminants.  For nodes, the existence criterion for an actual
+smoothing is already stated in \cite[Thm.~1.3]{RT09}.  The point here is
+to obtain the mixed necessity statement directly from periods, without
+assuming unobstructedness of the deformation space of $X$.
 
 \subsection{Relation to prior work}
-Friedman~\cite{Friedman86} proved the nodal criterion;
-Rollenske--Thomas~\cite{RT09} gave a topological proof and the
-higher-dimensional statement, in both cases for first-order data, with
-the passage to actual smoothings supplied by unobstructedness
-(Kawamata, Tian, Ran) in the nodal case.  Namikawa
+Friedman~\cite{Friedman86} established the relation criterion for
+first-order smoothings of nodal Calabi--Yau threefolds.
+Rollenske--Thomas~\cite[Thms.~1.2--1.3]{RT09} recall both that statement
+and the criterion for actual smoothings obtained using unobstructedness,
+and develop its higher-dimensional counterpart.  Namikawa
 \cite[Theorem~2.5]{Namikawa02} proved the nodal statement as an
 equivalence, for terminal singularities, and Collins
 \cite[\S4]{Collins25} proves necessity there by a differential-geometric
@@ -368,14 +367,14 @@ argument.  In the opposite direction, Aguilar \cite{Aguilar26} shows that
 in the log Fano setting the analogous balancing conditions vanish and
 local smoothings of nodes lift independently, so no relation is forced;
 the contrast marks how much of the present obstruction is Calabi--Yau
-specific.  Ning \cite{Ning26} extends the local-freeness theorem of
-Friedman--Laza beyond the local complete intersection case, which is the
-direction from which the barrier
-recorded in Section~\ref{sec:sufficiency} would be lifted, though that work
-states no smoothing criterion.  Friedman's recent unobstructedness theorem
-allows isolated Du Bois singularities under broad analytic hypotheses, but its
-unobstructedness conclusion still assumes that the singularities are local
-complete intersections \cite{Friedman25}.  Friedman--Laza
+specific.  Ning~\cite{Ning26} extends local-freeness results beyond the local
+complete intersection case.  Friedman's generalized $T^1$ lifting
+theorem likewise permits isolated Du Bois singularities that are not
+local complete intersections \cite[Thm.~3.10]{Friedman25}.
+The companion paper~\cite{PaperV} combines that theorem with crepant
+partial models and analytic blow-down to prove integrability of the
+selected deformation spaces under its stated projection hypothesis.
+Friedman--Laza
 \cite{FL22a,FL22b} identify the first-order localization data of
 threefolds with isolated singularities in terms of link homology; our
 Section~\ref{sec:example} uses only the resolution-side avatar of
@@ -392,9 +391,9 @@ omits $\PP(T_{\PP^2})$, and cite Fujita, with
 Kuznetsov--Prokhorov~\cite{KP23} as the modern reference.  On the
 constructive side, multi-parameter deformations of toric varieties in
 a single character degree were built by
-Ilten--Vollmert~\cite{IV12}; the sufficiency counterpart of
-Theorem~\ref{thm:necessity-intro}, in particular Question~\ref{q:X19}, is the
-subject of work in progress and is not addressed here.
+Ilten--Vollmert~\cite{IV12}.  The companion paper~\cite{PaperV}
+proves the mixed smoothing criterion, including the two-parameter
+degree-six component, and answers Question~\ref{q:X19} affirmatively.
 
 \begin{convention}\label{conv:dp}
 $\dP_d$ denotes a del Pezzo \emph{surface} of degree $d=K^2$; thus
@@ -1287,7 +1286,7 @@ A coordinate of $\bigoplus_pH_2(L_p;\QQ)$ is \emph{covered} when
 Theorem~\ref{thm:necessity} asserts nonvanishing there: every node coordinate,
 the $(-2)$-line at every $\dP_7$ point, and the $A_1$ summand at a $\dP_6$ point
 on a profile that sends it to the line branch.  The $A_2$ plane is not covered,
-which is the gap recorded in Section~\ref{sec:open}.
+whose later treatment is described in Section~\ref{sec:open}.
 
 The \emph{root subspace} of a cone point is $\Rsm_p$ read in $K^{\perp}$ through
 Proposition~\ref{prop:kernels}: the $(-2)$-line at a $\dP_7$ point, and the
@@ -2026,10 +2025,8 @@ Section~\ref{sec:kernelcomp} uses only the containment, which is the safe
 direction for a necessity statement: an ambient kernel larger than the
 topological one makes every forced-zero conclusion stronger.  The
 proposition upgrades it to equality for the whole class at once, which
-matters in the converse direction, where the containment runs the wrong
-way and a sufficiency statement phrased in terms of the computable test
-would otherwise not be well posed; that is taken up in the companion
-paper~\cite{PaperV}.  Note that this vanishing is not the one that
+is needed when applying the converse criterion of the companion
+paper~\cite{PaperV} to the computable matrix kernel.  Note that this vanishing is not the one that
 empties Mavlyutov's mechanism of non-polynomial deformations
 \cite{Mav04}: that is the mirror correction, summed over $2$-faces of
 $\Pi^{*}$, and it follows from the unit edges of $\Pi$.  Both hold here,
@@ -2137,7 +2134,7 @@ standard example, and the test is silent on it
 (Section~\ref{sec:test}).  The mixed criterion inherits that shape, with
 $K^{\perp}$ in place of the curve class.
 
-\section{The criterion as a finite test, and an open problem}
+\section{The criterion as a finite test}
 \label{sec:test}
 
 \subsection{The test}\label{sec:thetest}
@@ -2333,8 +2330,8 @@ the nodal theory is insufficient.
 \subsection{Where the test is silent}\label{sec:X19}
 We also ran the test on the anticanonical hypersurface $X_{19}$ of the
 $19$-vertex reflexive polytope $\Delta_{19}$, whose generic member has fourteen
-nodes and one $\dP_7$-cone point, all isolated.  Since this is the case the
-paper leaves open, we print the polytope rather than cite it: the vertices of
+nodes and one $\dP_7$-cone point, all isolated.  The present necessity test is silent on this example, which the
+companion paper~\cite{PaperV} proves smoothable.  The vertices of
 $\Delta_{19}\subset N\cong\ZZ^4$ are
 \[
 \begin{array}{llll}
@@ -2360,105 +2357,71 @@ nonzero in all fourteen node coordinates and in the $(-2)$-coordinate
 simultaneously.
 \end{enumerate}
 The necessity theory of this paper is therefore silent on $X_{19}$,
-which motivates Question~\ref{q:X19}.  As a control in the opposite
+and the companion paper~\cite{PaperV} proves the required mixed
+smoothing exists.  As a control in the opposite
 direction, the test applied to the generic one-nodal quintic
 threefold is silent as well, as it must be: there the exceptional
 curve class vanishes in $H_2$ of the small resolution (the threefold
 is $\QQ$-factorial), the kernel is the whole line $H_2(L;\QQ)$, and
 the node coordinate is realized, the smoothable side of the nodal
-picture.  A smoothing of $X_{19}$, if it exists,
-must recruit the $\dP_7$ direction; the natural construction tools
-are ambient toric degenerations in the sense of
-Ilten--Vollmert~\cite{IV12}, and that is where the companion
-paper~\cite{PaperV} takes the question up.
+picture.  Every smoothing of $X_{19}$ must use the $\dP_7$ direction.
+The companion paper~\cite{PaperV} proves its existence by the mixed
+deformation criterion and also studies the limitations of deformations
+induced by a toric ambient space.
 
 \section{Discussion}\label{sec:discussion}
 
-\subsection{The two-parameter degree-6 smoothing component}\label{sec:open}
-Theorem~\ref{thm:necessity} covers $\dP_6$ points smoothed through
-the one-parameter component.  For the two-parameter (plane)
-component the Milnor fiber has $b_3=2$, and the argument of
-Lemma~\ref{lem:D} reduces the analogous nonvanishing to the
-$\QQ$-linear independence of two periods of $\Omega_\Mil$ on
-$W_6\smallsetminus\Sb$, a finer question than nonvanishing, which
-the toric method above does not decide.  None of the results of this
-paper require it.
+\subsection{The two-parameter degree-six smoothing component}\label{sec:open}
+Theorem~\ref{thm:necessity} treats $\dP_6$ points smoothed through
+the one-parameter component.  The companion paper~\cite{PaperV}
+treats the two-parameter component by an explicit simultaneous partial
+resolution that replaces the central cone by three nodes and is an
+isomorphism on every noncentral fibre.  In the marking
+\[
+R_{A_2}=\left\{\mu_1e_1+\mu_2e_2+\mu_3e_3:
+\mu_1+\mu_2+\mu_3=0\right\},
+\]
+the required condition is $\mu_1\mu_2\mu_3\ne0$.
+It is stronger than requiring a nonzero vector in $R_{A_2}$ and holds
+for arbitrary smoothing arcs.  None of the proofs in the present
+paper require that extension.
 
 \subsection{First-order theory}
-The tangent-level analogue of the test of Section~\ref{sec:kernelcomp} should
-identify $\ker(B^{\mathsf T})$ with the image of the localization map on
-first-order deformations, through the local-to-global comparison of
-Friedman--Laza~\cite{FL22a,FL22b}; we do not prove this, and nothing below
-depends on it.  From that viewpoint the content of
-this paper is that the first-order forced-zero statements persist at
-every order of contact, which no first-order argument can deliver.
-The necessity statements of \cite{Friedman86,RT09} are of first-order
-type, with the upgrade to actual smoothings supplied in the nodal
-case by unobstructedness; the present method needs neither, which is
-what allows it to reach the non-lci cone points.
+The companion paper~\cite{PaperV} identifies the image of the
+localization map on first-order deformations with the topological
+relation kernel, using the local-to-global comparison of
+Friedman--Laza~\cite{FL22a,FL22b}.  Under
+Proposition~\ref{prop:kernelequal}, this is the matrix kernel used here.
+The period argument of the present paper gives necessity directly for
+an actual smoothing arc and does not assume that its first derivative
+smooths each germ.  In the purely nodal case, the criterion for actual
+smoothings is already \cite[Thm.~1.3]{RT09}.
 
 \subsection{Sufficiency}\label{sec:sufficiency}
-The converse direction, constructing mixed smoothings when the test
-is silent, is open even for $X_{19}$.  The purely nodal comparison is
-instructive: in dimension three the converse of Friedman's criterion
-holds for projective nodal Calabi--Yau threefolds, by the first-order
-relation together with the unobstructedness theorems of Kawamata and
-Tian, while in higher odd dimensions Rollenske and Thomas prove a
-converse for nodal hypersurfaces in projective space and explain why
-a general converse should not be expected \cite[Section~5]{RT09}.  We record one
-structural observation from the toric side: for a face $F$ with
-$\ell(F^{*})=1$ the polar vertices adjacent to $F$ give ambient
-deformation degrees whose slice polytopes admit no nontrivial Minkowski
-decomposition, so any
-ambient construction must use degrees on the extension of the dual
-edge, the exact combinatorial locus of Altmann's local smoothing
-parameter.  The companion paper~\cite{PaperV} pursues that line.
+The companion paper~\cite[Thms.~A--B]{PaperV} proves an exact
+converse for connected normal projective threefolds with trivial
+dualizing sheaf, $H^1(X,\cO_X)=0$, and the prescribed analytic germs:
+nodes and anticanonical cones over smooth del Pezzo surfaces of degrees
+five, six and seven, or over $\PP^1\times\PP^1$.
+For each choice of local components, the relation kernel must avoid
+every local discriminant: a nonzero coefficient in each one-dimensional
+local summand, three nonzero coefficients in each $A_2$ summand, and five
+nonzero conic-pencil pairings at each degree-five point.
+Thus silence of the test in the present paper gives the converse only
+when it includes all the nonvanishing conditions for the chosen
+components.
 
-Proposition~\ref{prop:kernelequal} is what would make a converse
-statable in terms of the computable test: for necessity the containment
-$K(X)\subseteq\ker(B^{\mathsf T})$ suffices and runs the right way,
-whereas a sufficiency statement asserting that silence of the test
-implies smoothability needs the two kernels to agree.  On the
-admissible class they do.  Proposition~\ref{prop:T1channels} says what
-such a converse would have to produce: an element of
-$\bigoplus_pT^1_{X,p}$, lying in the smoothing locus at each germ, whose
-total ray relation vanishes.  Whether that is enough is exactly the
-question left open here.
-
-The two directions stop for different reasons, and the reasons are
-structural.  The necessity argument of this paper is topological: it
-integrates the holomorphic $3$-form over vanishing cycles and never
-touches deformation theory, which is why the hypotheses that constrain
-the deformation-theoretic literature do not constrain it.  A sufficiency
-argument has to produce a family, and every route to one in the
-literature carries a hypothesis that the admissible class fails.
-
-There are two such routes and they fail differently.  The
-Hodge-theoretic route of Friedman--Laza produces a first order smoothing
-and then upgrades it by assuming $\Def(X)$ unobstructed, and their
-unobstructedness inputs, including Friedman's recent extension to isolated
-Du Bois singularities, require the singularities to be local complete
-intersections; a cone over a del Pezzo surface of degree $d>4$ is never
-one, the anticanonical model requiring more quadrics than its codimension
-allows \cite{Friedman25}; see also \cite[(3.3)]{Gross97}.  The other route does
-reach non-lci germs:
-\cite[Theorem~5.8]{Gross97} smooths the target of a primitive type~II
-contraction, and \cite[Corollary~6]{Namikawa97} shows that a
-$\QQ$-factorial Calabi--Yau threefold with isolated toric Gorenstein
-singularities has surjective localization map, hence is smoothable when its
-germs are.  Both require $\QQ$-factoriality of the target, primitivity
-supplying it in the first case, and Section~\ref{sec:qfact} shows that an
-admissible member carrying a cone point is not $\QQ$-factorial.
-
-So the gap is not that no non-lci theorem exists.  It is that the
-available non-lci theorems are exactly the ones this class escapes.
-Either route could be closed.  The first needs an unobstructedness statement
-for isolated canonical Gorenstein singularities that are not complete
-intersections, which lies beyond the open problems listed in
-\cite[Summary and Outlook]{FL22a}; those stop at the local complete
-intersection case.  The second needs the $\QQ$-factoriality hypothesis
-weakened, and Section~\ref{sec:qfact} shows that is not a technicality
-here: every cone-point block in the admissible class witnesses its failure.
+The proof replaces the degree-six and degree-seven cones by proper
+crepant partial models whose full local deformation bases are smooth.
+Friedman's generalized $T^1$ lifting theorem, together with marked
+local lifting, makes the partial model unobstructed; analytic
+blow-down then gives smoothness of the selected base of $X$ whenever
+its relation kernel projects nontrivially to every degree-six
+summand.  No $\QQ$-factoriality assumption is imposed on $X$, and the
+partial model need not be projective.  The criterion also answers
+Question~\ref{q:X19} affirmatively.  The separate issue of which
+deformations can be induced by a toric ambient family is studied in
+\cite{PaperV}.
 
 \appendix
 
@@ -2569,9 +2532,8 @@ deformation theory of rational surface singularities with reduced
 fundamental cycle}, J.\ Algebraic Geom.\ \textbf{3} (1994), 117--172.
 \bibitem[Fri86]{Friedman86} R.~Friedman, \emph{Simultaneous resolution of
 threefold double points}, Math.\ Ann.\ \textbf{274} (1986), 671--689.
-\bibitem[Fri25]{Friedman25} R.~Friedman, \emph{Unobstructed deformations for
-singular Calabi--Yau varieties}, preprint, 2025, revised 2026;
-arXiv:2506.09857.
+\bibitem[Fri26]{Friedman25} R.~Friedman, \emph{Unobstructed deformations for
+singular Calabi--Yau varieties}, arXiv:2506.09857v3, 13 February 2026.
 \bibitem[FL24]{FL22b} R.~Friedman and R.~Laza, \emph{Deformations of some
 local Calabi--Yau manifolds}, \'Epijournal G\'eom.\ Alg\'ebrique,
 volume in honour of C.~Voisin (2024); arXiv:2203.11738.
@@ -2659,11 +2621,9 @@ at \url{https://github.com/bwuebben/calabi-yau-smoothability}.
 \bibitem[Wue26c]{PaperIII} B.~J. Wuebben, \emph{Doubly isolated Batyrev
 mirror pairs and non-smoothable Calabi--Yau threefolds}, preprint, 2026;
 available at \url{https://github.com/bwuebben/calabi-yau-smoothability}.
-\bibitem[Wue26d]{PaperV} B.~J. Wuebben, \emph{Smoothing Calabi--Yau
-threefolds with nodes and del Pezzo cone points}, preprint, 2026.
-The companion to the present paper, treating the converse direction:
-which admissible threefolds with the criterion silent do admit
-smoothings.
+\bibitem[Wue26e]{PaperV} B.~J. Wuebben, \emph{Smoothing Calabi--Yau
+threefolds with nodes and del Pezzo cone points}, preprint, 2026,
+revised 5 September 2026.
 \end{thebibliography}
 
 \bigskip

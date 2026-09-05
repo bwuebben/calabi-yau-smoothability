@@ -1,0 +1,676 @@
+\section{The smoothing criterion}\label{sec04:smoothing}
+
+Throughout this section, $X$ is a connected normal projective complex
+threefold with $\omega_X\cong\cO_X$ and $H^1(X,\cO_X)=0$, whose
+singularities are isolated ordinary double points and the specified analytic
+anticanonical cones over $\dP_5$, $\dP_6$, $\dP_7$, and
+$\PP^1\times\PP^1$.  Fix a local component $S_p$
+at every cone point, and write $S=(S_p)$.  We retain the entire nodal base
+and the entire degree-five and $\PP^1\times\PP^1$ cone bases, and use the reduced
+component at a degree-seven point.  The smooth crepant
+resolution $Y_0\to X$, the link subspaces $R_{p,S_p}$, and their relation
+space
+\begin{equation}\label{eq04:relations}
+ K_S=\ker\left(\bigoplus_p R_{p,S_p}
+                   \longrightarrow H_2(Y_0;\QQ)\right)
+\end{equation}
+are as in Section~\ref{sec:deformation}.  All tangent identifications below
+use contraction with one fixed generator of $H^0(X,\omega_X)$.  In
+particular, coefficients in~\eqref{eq04:relations} are the resulting
+homological coordinates; they are not independently normalized local
+equation parameters.
+
+Choose an analytic semiuniversal deformation of $X$, analytic local
+semiuniversal deformations of its singularities, and analytic classifying
+maps from the first base to the latter bases.  We denote by $\Def^S(X)$
+the scheme-theoretic inverse image of the product of the selected local
+components.  These choices specify the analytic subgerm and its completed
+local ring.  We use $\mathbf{Def}_X$ for the functor of marked deformations
+over local Artin $\CC$-algebras, and $\Def(X)$ for an analytic
+semiuniversal base.
+
+\subsection{Global partial resolutions}
+
+\begin{proposition}\label{prop04:globalmodel}
+The local morphisms of Proposition~\ref{prop03:localmodels}, together
+with the identity near degree-five and original
+$\PP^1\times\PP^1$ cones, determine a
+proper crepant analytic modification $\pi:Z\to X$.  Its singularities are
+the original nodes, two or three nodes over each degree-six point according
+to its selected component, and one anticanonical
+$\PP^1\times\PP^1$ cone over each degree-seven point, together with
+the original degree-five and $\PP^1\times\PP^1$ cones.  Moreover,
+\begin{equation}\label{eq04:cy}
+ R\pi_*\cO_Z\simeq\cO_X,\qquad
+ \omega_Z\cong\cO_Z,\qquad H^1(Z,\cO_Z)=0.
+\end{equation}
+Every smooth resolution of $Z$ is Moishezon and satisfies the
+$\partial\bar\partial$-lemma.
+\end{proposition}
+
+\begin{proof}
+Choose mutually disjoint sufficiently small neighborhoods $U_p$ of the
+degree-six and degree-seven cone points, and restrict the local morphisms to proper morphisms
+$W_p\to U_p$.  Glue the $W_p$ to the unchanged complement of these
+degree-six and degree-seven points using their specified isomorphisms
+over $U_p\setminus\{p\}$.  This complement includes every original
+degree-five and $\PP^1\times\PP^1$ cone.
+The images of these charts are open.  Two points with different images in
+$X$ are separated by inverse images of disjoint neighborhoods in $X$;
+two distinct points over the same cone point are separated in the
+Hausdorff space $W_p$.  Thus the glued space is Hausdorff.  The map is
+proper over every $U_p$ and over the complement of these points,
+and properness is local on the target.  This proves properness globally,
+and hence compactness of $Z$.
+
+The local models are Gorenstein and canonical.  In particular, $X$ and
+$Z$ have rational singularities.  If $g:\widetilde Z\to Z$ is a
+resolution, then $\pi g$ is a resolution of $X$ and
+$Rg_*\cO_{\widetilde Z}\simeq\cO_Z$,
+$R(\pi g)_*\cO_{\widetilde Z}\simeq\cO_X$.  Composition gives the
+first assertion of~\eqref{eq04:cy}, and Leray gives its last assertion.
+Local crepancy means that the pullback of the chosen volume form extends
+to a generator of the dualizing sheaf on every local model.  These
+generators agree on the overlaps, giving $\omega_Z\cong\cO_Z$.
+
+A smooth resolution is compact and bimeromorphic to projective $X$, hence
+Moishezon.  A smooth projective modification of it exists, and the
+$\partial\bar\partial$-lemma descends under a proper bimeromorphic map
+between compact complex manifolds
+\cite[Theorem~5.22 and Corollary~5.23]{dgms1975}.
+\end{proof}
+
+Let $Y\to Z$ be the smooth crepant resolution obtained by resolving the
+new nodes on the sides specified in Proposition~\ref{prop03:localmodels}
+and resolving the degree-five and quadric cones by their vertex blowups.
+At a degree-six
+point this recovers the original neighborhood in $\operatorname{Tot}K_E$.
+At a degree-seven point it differs from $Y_0$ by the described flop.
+Near a degree-five or original $\PP^1\times\PP^1$ cone the two
+resolutions agree.
+Removing a smooth curve from a smooth threefold does not change $H_2$:
+the relative groups in degrees two and three vanish by the real
+codimension-four Thom isomorphism.  The common complements therefore
+identify $H_2(Y_0;\QQ)$ and $H_2(Y;\QQ)$.  The degree-seven root is
+represented on that complement by the difference of the two ruling
+classes, so the identifications preserve the local substitutions used
+in~\eqref{eq04:relations}.
+
+\subsection{Blowing down Artin deformations analytically}
+
+The following lemma supplies a morphism of deformation functors even
+when $Z$ is not algebraic.  Its sheaf-theoretic part is the construction
+in \cite[Proposition~2.12 and Corollary~2.13]{sano2017}; we include the
+analytic realization.
+
+\begin{lemma}[analytic blow-down]\label{lem04:blowdown}
+Let $f:Z\to X$ be a proper holomorphic morphism of complex spaces with
+$f_*\cO_Z=\cO_X$ and $R^1f_*\cO_Z=0$.  A flat deformation $Z_A$ over
+a local Artin $\CC$-algebra $A$ determines a flat analytic deformation
+\[
+ X_A=(|X|,f_*\cO_{Z_A})
+\]
+and a proper morphism $f_A:Z_A\to X_A$ deforming $f$.  This construction
+is natural in marked deformations and commutes with every Artin base
+change.
+\end{lemma}
+
+\begin{proof}
+The marking identifies the underlying topological space of $Z_A$ with
+$|Z|$, so the displayed pushforward is defined as a sheaf of $A$-algebras.
+Let $U\subset X$ be a sufficiently small Stein open subset and put
+$V=f^{-1}(U)$, $\mathcal F=\cO_{Z_A}|_V$.  Leray and Cartan's theorem~B
+give $H^1(V,\cO_Z)=0$.  For every finite $A$-module $M$ we claim
+\begin{equation}\label{eq04:modulevanish}
+ H^1(V,\mathcal F\otimes_A M)=0.
+\end{equation}
+Indeed, a composition series of $M$ has successive quotients $\CC$.
+Flatness of $\mathcal F$ preserves its short exact sequences under
+tensor product.  The long cohomology sequences, starting from
+$\mathcal F\otimes_A\CC=\cO_Z|_V$, prove
+\eqref{eq04:modulevanish} by induction.
+
+It follows that $M\mapsto H^0(V,\mathcal F\otimes_A M)$ is exact on
+finite $A$-modules.  Applying it to a finite presentation of $M$ by free
+modules gives the natural isomorphism
+\begin{equation}\label{eq04:modulebc}
+ H^0(V,\mathcal F)\otimes_A M
+       \xrightarrow{\ \sim\ }H^0(V,\mathcal F\otimes_A M).
+\end{equation}
+Consequently $H^0(V,\mathcal F)$ is $A$-flat: exactness on finite
+modules suffices over the Noetherian ring $A$.  Passing to stalks on
+$X$ proves flatness of $f_*\cO_{Z_A}$ and the corresponding sheaf
+version of~\eqref{eq04:modulebc}.  In particular its reduction modulo
+the maximal ideal $\mathfrak m_A$ is $\cO_X$.
+
+To prove analyticity, take $U$ small enough to be a closed analytic
+subspace of a polydisc $D$.  Equation~\eqref{eq04:modulebc}, with
+$M=\CC$, lifts its embedding coordinates to global sections of
+$\mathcal F$.  Together with the structure morphism to
+$\operatorname{Spec}_{\mathrm{an}}A$ these sections define a holomorphic
+map
+\[
+ g_A:V_A\longrightarrow D\times\operatorname{Spec}_{\mathrm{an}}A.
+\]
+Its underlying continuous map is the proper composite
+$V\to U\hookrightarrow D$, hence $g_A$ is proper.  Grauert's direct
+image theorem for complex spaces, including nonreduced spaces,
+implies that $g_{A*}\cO_{V_A}$ is coherent on the polydisc thickening
+\cite[\S6, Hauptsatz~I]{grauert1960}.  The natural algebra map
+\[
+ \cO_{D\times\operatorname{Spec}_{\mathrm{an}}A}
+                   \longrightarrow g_{A*}\cO_{V_A}
+\]
+is surjective modulo $\mathfrak m_A$, since its reduction is
+$\cO_D\to\cO_U$.  Its coherent cokernel $\mathcal C$ therefore
+satisfies $\mathcal C=\mathfrak m_A\mathcal C$, and nilpotence gives
+$\mathcal C=0$.  Its kernel is a coherent ideal.  The resulting closed
+analytic subspace has underlying ringed space
+$(U,f_*\cO_{Z_A}|_U)$.
+
+This ringed space is independent of the lifted coordinates.  Thus the
+local analytic realizations glue, and the adjunction counit induces
+$f_A$.  Locally this is the holomorphic map to the closed subspace just
+constructed; its central restriction is $f$ and its underlying map is
+proper.  Finally, if $A\to A'$ is any homomorphism of local Artin
+$\CC$-algebras, then $A'$ is a finite $A$-module.  The sheaf version
+of~\eqref{eq04:modulebc} identifies the blow-down of
+$Z_A\times_A A'$ with $X_A\times_A A'$.  These natural tensor
+identifications respect composition.  An isomorphism of marked source
+deformations pushes forward to an isomorphism of the constructed target
+deformations, proving the functorial assertion.
+\end{proof}
+
+\subsection{Unobstructedness of the partial resolution}
+
+\begin{lemma}\label{lem04:unobstructed}
+The functor $\mathbf{Def}_Z$ is unobstructed.  Both
+$\mathbf{Def}_Z$ and $\mathbf{Def}_X$ are prorepresentable, and
+Lemma~\ref{lem04:blowdown} induces a morphism of their formal bases
+\begin{equation}\label{eq04:beta}
+ \beta:\widehat{\Def}(Z)\longrightarrow\widehat{\Def}(X).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By Proposition~\ref{prop04:globalmodel}, $Z$ is compact, normal and
+Gorenstein with trivial dualizing sheaf, $H^1(Z,\cO_Z)=0$, and isolated
+rational, hence Du Bois, singularities.  A resolution satisfies the
+$\partial\bar\partial$-lemma.  Friedman's theorem
+\cite[Theorem~3.10]{friedman2026} gives the generalized $T^1$ lifting
+property.  We explain why here it gives ordinary $T^1$ lifting.
+
+Set $A_k=\CC[t]/(t^{k+1})$ and
+$B_k=A_k[\epsilon]/(\epsilon^2)$.  For a deformation $Z_k/A_k$ let
+$Z_{k-1}$ denote its restriction.  Relative first-order deformations,
+with an identification over $\epsilon=0$, form $T^1(Z_k/A_k)$.
+There is an exact sequence and its local counterpart
+\[
+ \begin{aligned}
+ T^1(Z_k/A_k)&\longrightarrow T^1(Z_{k-1}/A_{k-1})
+       \xrightarrow{\delta}\mathbb T^2_Z,\\
+ T^1_{\mathrm{loc}}(Z_k/A_k)&\longrightarrow
+ T^1_{\mathrm{loc}}(Z_{k-1}/A_{k-1})
+       \xrightarrow{\delta_{\mathrm{loc}}}
+       H^0(Z,\mathcal T^2_Z).
+ \end{aligned}
+\]
+Here $\mathbb T^2_Z=\operatorname{Ext}^2(\Omega^1_Z,\cO_Z)$ and
+$\mathcal T^2_Z=\mathcal{E}xt^2(\Omega^1_Z,\cO_Z)$ are the global
+and local obstruction spaces used in the lifting theorem.
+Localization $\ell:\mathbb T^2_Z\to H^0(Z,\mathcal T^2_Z)$
+commutes with the connecting maps.  Generalized lifting means that
+$\ell$ is injective on $\operatorname{im}\delta$ for every $k$ and
+every $Z_k$.
+
+The full local deformation bases of $Z$ are smooth: this is the usual
+nodal calculation, Proposition~\ref{prop03:degree5family}, and
+Lemma~\ref{lem03:quadric}.  This implies
+surjectivity of the displayed local $T^1$ map with its markings, as
+follows.  For a fixed local deformation over $A_k$ and a marked relative
+deformation over $B_{k-1}$, use the specified identification over
+$A_{k-1}$ to glue them over
+\[
+ D_k=A_k\times_{A_{k-1}}B_{k-1}.
+\]
+The deformation category of analytic spaces has the
+Rim--Schlessinger gluing property: the local structure sheaves are
+formed by the fibre product over the common restriction, and the
+result comes with compatible identifications on both factors.  This
+is gluing with a specified identification, not merely a choice of
+isomorphism classes; see also the categorical formulation in
+\cite[\S1]{Gross97rev}.  The natural map
+$B_k\to D_k$ is surjective with kernel $(\epsilon t^k)$.
+Smoothness of the local deformation functor lifts the glued object to
+$B_k$.  Choose an isomorphism from its restriction to $D_k$ to that
+object, and restrict this same isomorphism to the two factors.
+The resulting identifications agree over $A_{k-1}$ and give exactly
+the required relative first-order lift.  Infinitesimal automorphisms
+can change these choices but do not prevent their existence; local
+prorepresentability is not used.
+
+Thus $\delta_{\mathrm{loc}}=0$, so $\ell\delta=0$ and injectivity
+on $\operatorname{im}\delta$ gives $\delta=0$.  Ordinary $T^1$
+lifting proves unobstructedness
+\cite[Theorem~3.3]{friedman2026}.  In particular this argument concerns
+the full base, including its nilpotent structure; it does not infer
+smoothness from a statement about reduced supports.
+
+For completeness, the vanishing of infinitesimal automorphisms follows
+for both $T=X$ and $T=Z$ from the same argument.  Choose an equivariant
+resolution $h:\widetilde T\to T$.  Canonical singularities allow the
+volume form to pull back holomorphically, and contraction gives an
+injection $\Theta_{\widetilde T}\to\Omega^2_{\widetilde T}$.
+Rationality, Hodge symmetry on the Moishezon resolution, and Serre
+duality give
+\[
+ h^0(\widetilde T,\Omega^2_{\widetilde T})
+ =h^2(\widetilde T,\cO_{\widetilde T})
+ =h^2(T,\cO_T)=h^1(T,\cO_T)=0.
+\]
+Since $h_*\Theta_{\widetilde T}=\Theta_T$, this proves
+$H^0(T,\Theta_T)=0$, and the deformation functors are
+prorepresentable; compare \cite[Lemma~3.2]{friedman2026}.
+The natural Artin transformation supplied by
+Lemma~\ref{lem04:blowdown} therefore gives~\eqref{eq04:beta}.
+\end{proof}
+
+\subsection{Lifting the entire selected tangent space}
+
+\begin{lemma}\label{lem04:globaltangent}
+Put $V_S=T_0\Def^S(X)$.  There is an exact sequence
+\begin{equation}\label{eq04:tangent}
+ 0\longrightarrow H^1(X,\Theta_X)\longrightarrow V_S
+       \longrightarrow K_S\otimes_{\QQ}\CC\longrightarrow0,
+\end{equation}
+and every vector in $V_S$ belongs to the image of $d\beta$.
+\end{lemma}
+
+\begin{proof}
+The exact sequence is the restriction of Theorem~\ref{thm:D} to the
+selected local tangent subspaces.  We construct lifts through $d\beta$,
+including lifts of its locally trivial kernel.
+
+Let $\kappa\in K_S\otimes\CC$.  At a degree-six $A_1$ point set
+$C_0=e_1$, $C_3=h-e_2-e_3$.  Since the convention of
+Section~\ref{sec:deformation} is $\ell=C_0-C_3$, replace the
+coefficient $\lambda\ell$ by nodal coefficients
+$(\lambda,-\lambda)$ at $(C_0,C_3)$.  At an $A_2$ point replace
+$\sum_i\mu_i e_i$, $\sum_i\mu_i=0$, by the three nodal coefficients
+$\mu_i$.  At a degree-seven point use the same multiple of the
+quadric ruling difference.  Retain the old nodal coefficients and
+the ruling-difference coefficients at original $\PP^1\times\PP^1$
+cones, and retain the whole local vector at each degree-five point.  The
+curve identifications of Proposition~\ref{prop03:localmodels} and the
+common complements identify the sum of this tuple $\nu$ with the
+sum of $\kappa$ in $H_2(Y;\CC)$; it is therefore zero.
+
+Write $F$ for the exceptional locus of $Y\to Z$, with local pieces
+$F_q\subset Y_q$.  The local Hodge comparisons identify the components
+of $\nu$ with local tangent classes and with their images in
+$H^2_{F_q}(Y_q,\Omega^2_{Y_q})$.  In the support sequence
+\begin{equation}\label{eq04:support}
+ H^1(Y\setminus F,\Omega^2)
+ \longrightarrow\bigoplus_q H^2_{F_q}(Y_q,\Omega^2)
+ \longrightarrow H^2(Y,\Omega^2_Y),
+\end{equation}
+their image in the last group is the class of the corresponding
+curves.  Under the injection
+$H^2(Y,\Omega^2_Y)\hookrightarrow H^4(Y;\CC)$ supplied by the
+$\partial\bar\partial$-lemma it is the Poincar\'e dual of their
+homological sum, hence zero.  Exactness gives a class on
+$Y\setminus F$.  Contraction with the volume form and the
+depth-three comparison of deformations with the regular locus give
+a tangent $\eta\in\mathbb T^1_Z$ with local tuple $\nu$, as in the
+proof of Theorem~\ref{thm:D}.
+
+Let $E'$ be the full exceptional set of $Y\to X$.  Restriction from
+$Y\setminus F$ to $Y\setminus E'$ commutes with the boundary maps
+in~\eqref{eq04:support} and the inclusion of supports
+$H^2_F(Y,\Omega^2_Y)\to H^2_{E'}(Y,\Omega^2_Y)$.  At a degree-six
+point this sends the nodal tuple to its sum of curve classes in $E$;
+at a degree-seven point it sends the ruling difference to the original
+root; at a degree-five or original $\PP^1\times\PP^1$ cone
+it is the identity.
+These are exactly the local components of $\kappa$.
+The construction of blow-down agrees with restriction on the common
+regular locus.  Thus $d\beta(\eta)$ has the prescribed local
+tangent on $X$, including at points where its coefficient is zero.
+
+Given any desired vector $v\in V_S$ over $\kappa$, its difference
+from $d\beta(\eta)$ belongs to $H^1(X,\Theta_X)$.  Choose a Stein
+cover $\{U_i\}$ with exactly one member containing each singular
+point and all other members avoiding the singular set.  Every overlap
+lies in the locus where $\pi$ is an isomorphism.  Represent the
+difference by a \v{C}ech cocycle $\{\xi_{ij}\}$ of vector fields.
+Glue the trivial deformations of $\pi^{-1}(U_i)$ by the
+automorphisms $1+\epsilon\xi_{ij}$ on the overlaps.  The additive
+cocycle condition gives the gluing identity modulo $\epsilon^2$.
+Pushing forward these trivial local deformations and their transitions
+recovers the original cocycle on $X$.  Hence this locally trivial
+global tangent also lifts, and adding its lift to $\eta$ gives $v$.
+\end{proof}
+
+\Needspace{7\baselineskip}
+\subsection{Smoothness of a selected deformation base}
+
+\begin{theorem}\label{thm04:smoothbase}
+Suppose the projection $K_S\to R_{p,S_p}$ is nonzero at every
+degree-six point $p$.  Then $\Def^S(X)$ is smooth, of dimension
+\[
+ h^1(X,\Theta_X)+\dim_{\QQ}K_S.
+\]
+Every tangent in $T_0\Def^S(X)$ is realized by a convergent curve in
+this germ.  No nonzero-projection assumption is required at nodes,
+degree-five or degree-seven points, or $\PP^1\times\PP^1$ cones.
+\end{theorem}
+
+\begin{proof}
+Let $B$ be the completed local ring of $\Def(Z)$.  By
+Lemma~\ref{lem04:unobstructed} it is a formal power-series ring, in
+particular a domain.  At a degree-seven point the local base is
+$\CC[[s,v]]/(v^2,sv)$, so the pullback of $v$ to $B$ vanishes.
+At a degree-six point the local base is
+$\CC[[s,u,v]]/(su,sv)$, with $A_1$ component $u=v=0$ and
+$A_2$ component $s=0$.  If $A_1$ was selected, the nonzero
+projection hypothesis and Lemma~\ref{lem04:globaltangent} imply
+that the pullback of $s$ has a nonzero linear term.  It is nonzero in
+$B$, and the two equations force the pullbacks of $u,v$ to vanish.
+For a selected $A_2$ component, one of $u,v$ has a nonzero linear
+term, forcing the pullback of $s$ to vanish.  Thus $\beta$ factors
+through the full selected formal subspace.  Nodes, degree-five
+cones, and original $\PP^1\times\PP^1$ cones impose no branch equations, since their
+entire local bases are retained.  Its differential onto
+that subspace is surjective by Lemma~\ref{lem04:globaltangent}.
+
+Write its completed target ring minimally as
+$A=\CC[[x_1,\ldots,x_r]]/I$, with $I\subset(x_1,\ldots,x_r)^2$.
+Surjectivity of the differential means that the images of the $x_i$
+in $B$ have independent linear terms.  Extend them to a formal
+coordinate system of $B$.  The composite
+$\CC[[x_1,\ldots,x_r]]\to B$ is injective, whereas every element
+of $I$ maps to zero.  Hence $I=0$.  Equation~\eqref{eq04:tangent}
+gives the dimension.  An analytic local ring is regular if its
+completion is regular, so the analytic subgerm $\Def^S(X)$ is
+smooth.  Analytic coordinates on that germ realize every tangent by
+a convergent curve.  This last step does not require convergence of
+the formal map $\beta$.
+\end{proof}
+
+\subsection{Necessity from local periods}
+
+We recall the form of the period argument that will be used after a
+simultaneous partial resolution.  Its hypotheses require compactness;
+the intermediate space need not be projective.
+
+\begin{lemma}[period necessity]\label{lem04:periodnecessity}
+Let $T$ be a connected compact normal Gorenstein threefold with
+$\omega_T\cong\cO_T$, $H^1(T,\cO_T)=0$, and a smooth crepant
+resolution $\widetilde T\to T$.  Suppose its singularities are nodes
+and anticanonical cones over $\dP_5$, $\dP_6$, $\dP_7$, or
+$\PP^1\times\PP^1$, and that it has a
+convergent proper smoothing which uses the $A_1$ component at every
+degree-six point.  Then the relation space of its selected local
+subspaces in $H_2(\widetilde T;\QQ)$ contains a vector nonzero
+on every rank-one summand and satisfying
+$\prod_{i=1}^5\lambda_i\ne0$ at every degree-five point.
+\end{lemma}
+
+\begin{proof}
+We give the argument in a form applicable to the possibly nonprojective
+space $T$; the local period computations and link markings are those
+of \cite[\S\S3--4]{PaperIV}, with the
+$\PP^1\times\PP^1$ case supplied below and the degree-five
+case supplied by Lemma~\ref{lem03:degree5periods}.
+Write $T_t$ for a smooth nearby fibre.
+Remove disjoint small singular neighborhoods and let $W$ be the
+common exterior with boundary $\bigsqcup_pL_p$.  Smooth local
+triviality along $W$ gives decompositions
+\[
+ T_t=W\cup\bigsqcup_p M_p,\qquad
+ \widetilde T=W\cup\bigsqcup_p N_p,
+\]
+where $M_p$ is the local Milnor fibre and $N_p$ a resolution
+neighborhood, with the canonical common link identifications.
+
+The smoothing has a relative holomorphic volume form after shrinking
+the disc.  Here are the details needed without a polarization.  The
+relative dualizing sheaf is invertible because the family is flat
+with Gorenstein central fibre, and is compatible with base change.
+Its first Chern class restricts to zero on $W$, by smooth triviality
+and $\omega_T\cong\cO_T$, and on each $M_p$, by a local
+trivialization near the central singularity.  The links satisfy
+$H^1(L_p;\ZZ)=0$: for nodes this follows from
+$L_p\cong S^2\times S^3$, and for the cone links it follows from
+the homotopy sequence of the circle bundle with nonzero Euler class
+$K_E$ over the simply connected del Pezzo surface.  Mayer--Vietoris
+therefore injects $H^2(T_t;\ZZ)$ into the sum of the corresponding
+groups of the pieces, so $c_1(\omega_{T_t})=0$.  Semicontinuity gives
+$H^1(T_t,\cO_{T_t})=0$; the exponential sequence implies
+$\omega_{T_t}\cong\cO_{T_t}$.  Connectedness and Grauert base
+change now give a relative section $\Omega$ generating the canonical
+sheaf on every fibre.  Its restriction to a smooth fibre is closed.
+
+At a node with local equation $xy-zw=b(t)$, the period of the
+residue form on the vanishing sphere is $c\,b(t)$, where $c\ne0$.
+Indeed, after writing the quadratic form as $\sum_i z_i^2$, the
+sphere is $\sqrt b\,S^3$ and the residue form scales by $b$;
+its period at $b=1$ is $\pi^2$ up to orientation and the linear
+change of coordinates.  The global form is a holomorphic unit times
+this residue form.  Uniformly on the shrinking sphere its period is
+therefore
+\[
+ b(t)\bigl(c\,g(p,0)+o(1)\bigr),\qquad g(p,0)\ne0,
+\]
+which is nonzero for every sufficiently small $t\ne0$, regardless
+of the vanishing order of $b(t)$.
+
+At a $\PP^1\times\PP^1$ cone, Lemma~\ref{lem03:quadric}
+identifies the local smoothing with a pullback of
+\eqref{eq03:quadfamily}, say with parameter $b(t)$.
+The nodal residue form on its double cover is invariant under the
+involution.  The total quotient $\AAA^4/\boldsymbol\mu_2$ is
+Gorenstein because $-I\in\operatorname{SL}_4$; adjunction for its
+parameter function shows that the descended residue generates the
+relative dualizing sheaf, including at the central vertex.
+This remains true after pullback along $b(t)$.
+On the noncentral fibre the covering
+is free, and the antipodal involution preserves the orientation of
+the vanishing $3$-sphere.  Thus the period on the quotient cycle
+$\sqrt{b(t)}\,S^3/\boldsymbol\mu_2$ is half its period on the
+sphere.  The global volume form differs from the descended residue
+form by a holomorphic unit $g$, and the cycle contracts to the
+central vertex.  Consequently its period is
+\[
+ b(t)\bigl(\tfrac12 c\,g(p,0)+o(1)\bigr),\qquad c\ne0.
+\]
+It is nonzero for all sufficiently small $t\ne0$, for any
+vanishing order of $b(t)$.  Lemma~\ref{lem03:quadricmilnor}
+identifies this cycle with a generator of $H_3(M_p;\QQ)$ and
+identifies the local boundary map with the ruling-difference line.
+The link has $H^1(L_p;\ZZ)=0$ even though its fundamental group
+is $\ZZ/2$, as required in the preceding canonical-bundle argument.
+
+For the degree-six and degree-seven branches in the lemma, the smooth affine fibre is
+$M=V\setminus E$, with $V=(\PP^1)^3$ for degree six and
+$V=\operatorname{Bl}_{\mathrm{pt}}\PP^3$ for degree seven, and
+$E\in|-\tfrac12K_V|$.  The comparison with a compact local Milnor
+fibre, including its boundary marking, is
+\cite[Lem.~4.2]{PaperIV}.  Weak Lefschetz makes
+$H^2(V;\QQ)\to H^2(E;\QQ)$ injective; the respective Picard
+ranks are $(3,4)$ and $(2,3)$.  Since $H^3(V;\QQ)=0$, the pair
+sequence gives $b_3(M)=1$.  More explicitly, take the character
+$w=\chi^m$ with $m=(1,1,1)$ on $(\PP^1)^3$, and $m=(1,1,-1)$
+on the blowup fan with rays $e_1,e_2,e_3,-e_1-e_2-e_3,e_1+e_2+e_3$.
+The closure of $w=1$ is $E$, and
+\[
+ \Omega_M=\frac{w}{(w-1)^2}
+      \frac{dx}{x}\wedge\frac{dy}{y}\wedge\frac{dz}{z}
+\]
+has order zero at each toric boundary divisor: the order is
+$\langle m,v\rangle-2\min(\langle m,v\rangle,0)-1=0$, since
+$\langle m,v\rangle=\pm1$.  Its only pole is the double pole at
+$E$, so it generates $\omega_M$.  In adjacent toric charts it is
+$\pm dp\wedge dq\wedge dz/(q-pz)^2$.  The transitions are
+\[
+ (p',q',z')=(pz^c,qz^c,z^{-1}),\qquad
+ c=0\ \text{or}\ -1
+\]
+in the two respective cases.  Fix $\varepsilon>0$ and $R>1$.
+A closed three-cycle consists of the two caps
+\[
+ \{p=0,\ q=\varepsilon R e^{i\psi},\ |z|\le R\},\qquad
+ \{p'=\varepsilon R^c e^{i\psi},\ q'=0,\ |z'|\le R^{-1}\}
+\]
+and the intervening chain
+\[
+ p=r\varepsilon e^{i\theta},\quad
+ q=-(1-r)\varepsilon R e^{i(\theta+\varphi)},\quad
+ z=R e^{i\varphi},\qquad 0\le r\le1.
+\]
+The boundaries agree under the stated transition, with opposite
+orientations.  On the chain $q-pz=-\varepsilon R
+e^{i(\theta+\varphi)}$, so it misses $E$; the caps also miss $E$.
+The form vanishes on the caps and pulls back on the chain to
+$\pm dr\wedge d\theta\wedge d\varphi$.  Its period is consequently
+$\pm4\pi^2$, in particular nonzero.
+
+The one-dimensional local smoothing is equivariant with positive
+weights on the cone coordinates and weight one on its parameter
+$b$.  Graded Nakayama gives a homogeneous generator of its relative
+canonical sheaf near the vertex.  Its nonvanishing locus is invariant
+and contains the vertex, hence contains the entire fibre $b=1$:
+every orbit in that fibre contracts to the vertex.  Its restriction
+is therefore a constant multiple of the preceding form.
+The multiplier is constant because an algebraic unit on $V\setminus E$
+has divisor supported on $E$, and $\operatorname{Pic}(V)$ is
+torsion-free with $[E]\ne0$.  Scaling the fixed compact cycle into
+the fibre over $b(t)$ contracts it to the vertex.  If the homogeneous
+form has weight $a$, its global period is
+\[
+ b(t)^a\bigl(c\,g(p,0)+o(1)\bigr),\qquad c\ne0.
+\]
+It is again nonzero for small $t\ne0$.
+At a degree-five point, Lemma~\ref{lem03:degree5periods}
+provides five classes $\nu_{p,i}$, the images of its boundary
+classes $\beta_i$, with nonzero periods.  Their dual link
+functionals are the five $\lambda_i$.
+Every one of these specified local cycles survives in
+$H_3(T_t;\QQ)$: otherwise it would bound a rational chain and
+have zero period against the closed form $\Omega_t$.
+
+By Poincar\'e duality choose, for each specified local cycle, a
+rational class $\gamma\in H_3(T_t;\QQ)$ pairing nontrivially
+with it.
+Its Mayer--Vietoris boundary belongs to
+\[
+ \ker\left\{\bigoplus_q H_2(L_q;\QQ)
+ \longrightarrow H_2(W;\QQ)\oplus\bigoplus_qH_2(M_q;\QQ)\right\}.
+\]
+It therefore gives a relation in $H_2(\widetilde T;\QQ)$ and
+belongs at each point to the selected local subspace.
+Lefschetz duality identifies the local restriction of $\gamma$
+with its pairing against $H_3(M_p;\QQ)$.  At a rank-one germ,
+the boundary map
+$H_3(M_p,L_p;\QQ)\to H_2(L_p;\QQ)$ is an isomorphism onto the
+root line: its image is that line by the local Milnor-fibre
+calculation, and its domain has dimension one.  The corresponding
+coefficient is therefore nonzero.  At a degree-five point,
+\eqref{eq03:degree5boundary} is an isomorphism onto the full
+link space.  Compatibility of the boundary with the Lefschetz
+pairing identifies its pairing with $\beta_i$ with the preceding
+nonzero pairing against $\nu_{p,i}$.  By
+Lemma~\ref{lem03:degree5periods} this is a nonzero multiple of
+$\lambda_i$ on the resulting local relation vector.
+Thus each required scalar functional is nonzero on some rational
+global relation.  Avoiding the finitely many proper kernels gives
+one relation on which all of them are nonzero.
+\end{proof}
+
+\subsection{The exact criterion}
+
+\begin{theorem}\label{thm04:criterion}
+The threefold $X$ has a convergent one-parameter smoothing inducing
+$S$ if and only if $K_S$ contains a vector nonzero on every
+rank-one summand, satisfying $\prod_{i=1}^5\lambda_i(\kappa_p)\ne0$
+at every degree-five point, and, at every $A_2$-assigned point, with
+\[
+ \kappa_p=\mu_1e_1+\mu_2e_2+\mu_3e_3,\qquad
+ \mu_1+\mu_2+\mu_3=0,\qquad \mu_1\mu_2\mu_3\ne0.
+\]
+Equivalently, none of these individual scalar functionals vanishes
+identically on $K_S$.
+\end{theorem}
+
+\begin{proof}
+Suppose first that such a relation exists.  It gives a vector of
+$V_S$ by~\eqref{eq04:tangent} and implies the nonzero-projection
+hypothesis of Theorem~\ref{thm04:smoothbase}.  Realize that tangent
+by a convergent curve in $\Def^S(X)$.  At each rank-one point the
+local smoothing parameter has nonzero derivative.  At each $A_2$
+point all three local discriminant factors have nonzero derivatives,
+by the normalized identifications of
+Proposition~\ref{prop03:localmodels}.  At each degree-five point
+the five discriminant factors have nonzero derivatives by
+Lemma~\ref{lem03:degree5marking}.  Thus the local fibres are
+smooth for every sufficiently small nonzero parameter.  Properness
+and openness of smoothness exclude additional singularities outside
+neighborhoods of the finitely many original singularities.  The
+curve therefore gives a smoothing of $X$.
+
+Conversely, let $\mathcal X\to\Delta$ be any convergent proper
+smoothing inducing $S$.  At each $A_2$ point pull back the
+simultaneous incidence modification of
+Proposition~\ref{prop03:a2family} along its actual analytic
+classifying arc.  Since this arc is a smoothing, it meets the
+central point of the local base only at $t=0$, after shrinking.
+The pulled-back modification is proper and flat over $\Delta$,
+is an isomorphism off the central cone point, and is an isomorphism
+over every noncentral fibre.  Glue these morphisms to the identity
+on the complement of those central points in $\mathcal X$.  The
+Hausdorffness and properness argument of
+Proposition~\ref{prop04:globalmodel} applies to this cover of the
+total space; flatness is local on the source.  We obtain a proper
+flat family $\mathcal T\to\Delta$ with $T_t\cong X_t$ for
+$t\ne0$.
+
+Its central fibre $T$ replaces each $A_2$ point by three nodes and
+leaves all other germs unchanged.  Its smooth crepant resolution is
+$Y_0$: the three new exceptional curves are $e_1,e_2,e_3$ in the
+original del Pezzo surface.  Rationality and crepancy, as in
+\eqref{eq04:cy}, give $\omega_T\cong\cO_T$ and
+$H^1(T,\cO_T)=0$.  The remaining degree-six points use $A_1$.
+Lemma~\ref{lem04:periodnecessity} therefore supplies a relation
+nonzero at every node and every remaining rank-one cone subspace,
+and with all five $\lambda_i$ nonzero at each degree-five point.  In
+particular, the three new nodes over any one $A_2$ point have
+nonzero coefficients $\mu_1,\mu_2,\mu_3$.
+
+Pair this relation with the original exceptional divisor $E$ in
+$Y_0$.  Every term belonging to another original singular point has
+zero intersection with $E$, whereas
+$E\cdot e_i=K_E\cdot e_i=-1$.  Hence
+$\mu_1+\mu_2+\mu_3=0$.  Replacing the three nodal terms by
+$\sum_i\mu_i e_i$ reconstructs a vector in $K_S$ with all the
+required nonvanishing conditions.  This argument uses the entire
+classifying arc; it imposes no assumption on its first nonzero order
+and excludes an escape from a discriminant line at any higher order.
+Finally, a finite-dimensional rational vector space is not a union
+of finitely many proper linear subspaces, which proves the last
+equivalence.
+\end{proof}
+
+In particular, when no degree-six points occur, every selected base
+is smooth, even if a coordinate at a node, a degree-seven point,
+or a $\PP^1\times\PP^1$ cone vanishes
+identically on its tangent image.  Smoothness of a deformation base
+and existence of a smooth fibre are distinct conclusions.  For a
+degree-six point assigned $A_2$, a nonzero local vector alone does
+not ensure a smoothing: each of its three scalar coefficients is
+required by Theorem~\ref{thm04:criterion}.
+
+If the singularities are only nodes and anticanonical cones over
+$\dP_5$ or $\PP^1\times\PP^1$, the selected local bases are the entire
+local bases.  Thus $\Def^S(X)=\Def(X)$ is smooth, of dimension
+$h^1(X,\Theta_X)+\dim_\QQ K$.  Existence of a smoothing still
+requires the nonzero relation of Theorem~\ref{thm04:criterion}.

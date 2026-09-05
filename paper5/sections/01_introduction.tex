@@ -1,0 +1,212 @@
+\section{Introduction}\label{sec:intro}
+
+A projective Calabi--Yau threefold can have only locally smoothable
+singularities and nevertheless admit no smoothing.  For ordinary double
+points, the obstruction is expressed by the exceptional curves of a small
+resolution: a smoothing exists precisely when their classes satisfy a
+relation
+\begin{equation}\label{eq:friedman}
+ \sum_j\lambda_j[C_j]=0,\qquad \lambda_j\ne0\quad\text{for every }j.
+\end{equation}
+This is Friedman's criterion, together with the unobstructedness and
+necessity results discussed in \cite{Friedman86,Namikawa94,RT09};
+\cite[Thm.~1.3]{RT09} states the smoothing criterion itself.
+We prove an analogous criterion when nodes occur together with
+anticanonical cones over smooth del Pezzo surfaces of degrees five, six and seven,
+and over $\PP^1\times\PP^1$, of degree eight.
+The degree-six cone has a two-dimensional smoothing component, and a
+nonzero vector on that component need not be a smoothing direction.
+Three separate nonvanishing conditions are necessary.  An explicit
+nonsmoothable threefold shows that they cannot be replaced by a single
+nonzero-vector condition, even if the local components may be chosen anew.
+
+\subsection{The smoothing criterion}
+Let $X$ be a connected normal projective complex threefold with
+$\omega_X\cong\cO_X$ and $H^1(X,\cO_X)=0$.  Suppose every singularity is
+an ordinary double point or is analytically isomorphic to the
+anticanonical cone over a smooth del Pezzo surface of degree five, six or seven,
+or over $\PP^1\times\PP^1$.
+The assumption concerns these exact analytic germs.
+Let $Y_0\to X$ be the smooth crepant analytic resolution obtained from
+chosen small resolutions of the nodes and the standard divisorial
+resolutions of the cones.  It is compact and Moishezon.
+
+A \emph{branch profile} $S$ chooses a reduced local deformation component
+at each singular point.  At a node or a $\PP^1\times\PP^1$ cone the base
+is a line; at a degree-five point it is a smooth four-dimensional germ;
+at a degree-seven
+point there is one reduced line; at a degree-six point there are a line
+and a plane, denoted $A_1$ and $A_2$.  These names agree with the root
+subspaces in the del Pezzo lattice.  For the link $L_p$ of a cone point,
+the circle-bundle projection identifies
+\[
+ H_2(L_p;\QQ)\cong K_{E_p}^{\perp}\subset H_2(E_p;\QQ).
+\]
+Write $R_{p,S_p}$ for the nodal line or the selected root subspace, and set
+\begin{equation}\label{eq:relationkernel}
+ K_S=\ker\left\{\bigoplus_pR_{p,S_p}
+                         \longrightarrow H_2(Y_0;\QQ)\right\}.
+\end{equation}
+At a $\PP^1\times\PP^1$ cone the selected subspace is the entire
+link-homology line $\QQ(f_1-f_2)$, where $f_1,f_2$ are the ruling
+classes on the exceptional surface.
+At a degree-six point, mark $E_p=\mathrm{Bl}_3\PP^2$ by the line class
+$h$ and exceptional classes $e_1,e_2,e_3$.  Its $A_2$ subspace is
+\[
+R_{p,A_2}=\left\{\mu_1e_1+\mu_2e_2+\mu_3e_3:
+                                  \mu_1+\mu_2+\mu_3=0\right\}.
+\]
+At a degree-five point mark $E_p=\operatorname{Bl}_4\PP^2$
+by $h,e_1,\ldots,e_4$.  The selected subspace is the entire
+$K_{E_p}^\perp$, and its five conic-pencil classes are
+\[
+ f_i=h-e_i\ (1\le i\le4),\qquad
+ f_5=2h-e_1-e_2-e_3-e_4.
+\]
+Put $\lambda_i(\kappa_p)=\kappa_p\cdot f_i$.  Their sum is
+zero because $\sum_i f_i=-2K_{E_p}$.
+
+\begin{thmletter}[smoothing criterion]\label{thm:criterionintro}
+The threefold $X$ has a convergent one-parameter smoothing inducing $S$
+if and only if $K_S$ contains a vector nonzero at every rank-one summand
+and satisfying $\mu_1\mu_2\mu_3\ne0$ at every $A_2$ summand
+and $\prod_{i=1}^5\lambda_i\ne0$ at every degree-five point.
+\end{thmletter}
+
+Equivalently, none of the stated scalar functionals vanishes identically
+on $K_S$.  Thus the criterion is a finite linear-algebra test for each
+of the finitely many profiles.  When neither degree-five nor degree-six
+points occur, its form is the same as the nodal criterion.  At an $A_2$
+point the three excluded lines are precisely the local discriminant.
+Necessity holds for arbitrary smoothing arcs, including arcs tangent to
+that discriminant to higher order.
+At degree five, the five excluded hyperplanes are likewise the
+exact local discriminant, and necessity holds for arbitrary arcs.
+
+The integrability statement is stronger than the existence assertion.
+Fix analytic local classifying maps for a semiuniversal deformation of
+$X$, and let $\Def^S(X)$ be the scheme-theoretic inverse image of the
+chosen local branches.  Denote the tangent sheaf by $\Theta_X$.
+
+\begin{thmletter}[smooth selected deformation spaces]\label{thm:smoothintro}
+If $K_S\to R_{p,S_p}$ is nonzero at every degree-six point, then
+$\Def^S(X)$ is smooth, of dimension
+\[
+ h^1(X,\Theta_X)+\dim_{\QQ}K_S.
+\]
+Every tangent vector to this space is the tangent of a convergent
+one-parameter deformation on the selected branches.
+\end{thmletter}
+
+No nonzero-projection hypothesis is required at nodes, degree-five or degree-seven
+points, or $\PP^1\times\PP^1$ cones in this theorem.  The hypothesis
+is automatic when the smoothing
+criterion holds.  Smoothness of a selected base does not, by itself,
+assert the existence of a smooth fibre.
+
+\input{sections/01_degree_scope}
+
+\Needspace{18\baselineskip}
+\subsection{A nonsmoothable example and its deformation space}
+The distinction between a nonzero local vector and a smoothing direction
+cannot be removed by changing the branch profile.
+
+\begin{samepage}
+\begin{thmletter}\label{thm:counterintro}
+There is a projective Calabi--Yau threefold with thirty nodes and two
+degree-six cone points such that a relation in $K_S$ is nonzero at every
+singular point for either mixed profile, but the threefold has no
+smoothing on any profile.  Its semiuniversal analytic local ring is
+\[
+ \CC\{z_1,\ldots,z_{32},x,y,u,v,b\}/(xy,xb,uv,ub).
+\]
+It is reduced, has tangent dimension $37$, and has four smooth
+irreducible components of dimensions $34,34,34,35$.  All their
+scheme-theoretic intersections are smooth.
+\end{thmletter}
+\end{samepage}
+
+The example is a general anticanonical hypersurface in the toric
+fourfold associated with an explicit reflexive polytope with $25$
+vertices.  Three divisor identities prove nonsmoothability independently
+of the sufficiency argument.  They force an old nodal coefficient to
+vanish on each uniform profile and one of the three $A_2$ coefficients
+to vanish on each mixed profile.  The full deformation ring then follows
+from Theorem~\ref{thm:smoothintro}, the local branch equations, and a
+convergent change of coordinates.  A prescribed tangent integrates
+precisely when the four displayed quadratic expressions vanish.
+
+\subsection{The geometric argument}
+The first-order comparison identifies the image of the global tangent
+space in the sum of the local tangent spaces with the kernel of the
+link-homology map.  Contraction with one global volume form, local
+cohomology with supports, and the $\partial\bar\partial$-lemma give this
+comparison for the full local tangent spaces, including the transverse
+infinitesimal direction at a degree-seven cone.
+
+To integrate the selected directions, we replace the cone points by
+proper crepant partial resolutions.  The degree-seven cone is replaced
+by the anticanonical cone over $\PP^1\times\PP^1$; the $A_1$ and $A_2$
+choices at a degree-six cone are replaced by two and three nodes,
+respectively.  Degree-five and original $\PP^1\times\PP^1$
+cones remain unchanged.
+Each resulting singularity has a smooth full local
+deformation base.  Friedman's generalized $T^1$ lifting theorem
+\cite[Thm.~3.10]{friedman2026} therefore proves unobstructedness of the
+partial model.  An analytic blow-down lemma and a lift of locally
+trivial global tangents transfer this smoothness to the selected
+deformation space of $X$.  The partial model need not be projective;
+compact Moishezon resolutions supply the required Hodge theory.
+
+For necessity at an $A_2$ point, an explicit simultaneous partial
+resolution of the rank-one matrix family is an isomorphism over every
+noncentral fibre.  Pulling it back along an arbitrary smoothing arc
+replaces the central cone by three nodes without changing the smooth
+fibres.  Nodal necessity then supplies three nonzero coefficients;
+intersection with the exceptional del Pezzo surface makes their sum
+zero.  This proves the stronger $A_2$ condition at every order.
+At a $\PP^1\times\PP^1$ cone, the vanishing cycle is the quotient
+of the nodal sphere by the antipodal involution; its nonzero period
+gives the corresponding rank-one necessity condition.
+At degree five, the four-parameter Grassmannian section family
+has five discriminant hyperplanes.  Its boundary carries every
+absolute Milnor cycle.  The resulting holomorphic boundary periods
+identify the five conditions and prove necessity along arbitrary arcs.
+
+\subsection{Toric constructions and their limits}
+The general theorems also distinguish abstract deformations from
+deformations induced by a toric ambient space.  For Batyrev
+hypersurfaces \cite{Batyrev94}, we study the ambient families obtained
+from an admissible Minkowski decomposition at one primitive lattice
+degree, using Altmann's local theory and the global construction of
+Ilten--Vollmert \cite{Altmann97,IV12}.  Definition~\ref{def:singledegree}
+specifies these families.
+
+The hypersurface $X_{19}$ has fourteen nodes and one degree-seven cone
+point.  Corollary~\ref{cor:x19smooth} proves that its full deformation
+space is smooth of dimension $30$ and that it is smoothable.
+Nevertheless, Theorem~\ref{thm:A} excludes a smoothing by every
+single-degree ambient family through the relative anticanonical system.
+Its proof combines Altmann's grading calculation with a propagation
+rule on the edges of the two facets containing the pentagonal face.
+Definition~\ref{def:locked} calls a facet \emph{locked} when this rule
+forces all its edge-dilation parameters to agree.  The obstruction is
+uniform over the entire degree lattice.
+
+The complementary construction is $X_9$, with two nodes and one
+degree-seven cone point.  Theorem~\ref{thm:B} gives an explicit ambient
+smoothing at degree $(0,1,-1,-1)$.  Theorem~\ref{thm:C} classifies all
+$77$ admissible polytopes with at most nine vertices and a pentagonal
+face: $76$ give nonsmoothable hypersurfaces, and the remaining one is
+$X_9$.  The larger edge-propagation census describes the frequency of
+the ambient obstruction, without asserting that its separate
+degree-coverage condition holds throughout that census.
+
+Sections~\ref{sec:deformation}--\ref{sec04:smoothing} prove the general
+theorems, and Section~\ref{sec05:counterexample} gives the counterexample
+and its full deformation ring.  Sections~\ref{sec:germs}--\ref{sec:thmB}
+develop the toric applications.  Appendix~\ref{app:cert} records the
+exact computations and the data from which they can be reproduced.
+The results leave open smoothness of selected bases whose degree-six
+projection vanishes, and the structure of unrestricted deformation
+bases in general, including possible degree-seven nilpotents.

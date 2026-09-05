@@ -1,0 +1,73 @@
+{
+  "construction": "M=x*y^T, x nonzero, modulo (x,y)~(lambda*x,lambda^-1*y)",
+  "vector_bundle": "O_P2(-1) direct-sum O_P2(-1) direct-sum O_P2(-1)",
+  "base": "diagonal differences, modulo common translation",
+  "charts": [
+    {
+      "projective_chart": 0,
+      "other_indices": [
+        1,
+        2
+      ],
+      "equation": "x2*y2 - x3*y3 - d2 + d3",
+      "node_parameter": "d2 - d3",
+      "hessian_determinant": 1
+    },
+    {
+      "projective_chart": 1,
+      "other_indices": [
+        0,
+        2
+      ],
+      "equation": "x1*y1 - x3*y3 - d1 + d3",
+      "node_parameter": "d1 - d3",
+      "hessian_determinant": 1
+    },
+    {
+      "projective_chart": 2,
+      "other_indices": [
+        0,
+        1
+      ],
+      "equation": "x1*y1 - x2*y2 - d1 + d2",
+      "node_parameter": "d1 - d2",
+      "hessian_determinant": 1
+    }
+  ],
+  "checks": [
+    "factorization annihilates all rank-two minors",
+    "chart 0: diagonal k identity",
+    "chart 0: diagonal-difference equation",
+    "chart 0: all rank-two minors remain zero",
+    "chart 0: central singularity is a node",
+    "chart 0: critical ideal is coordinate origin",
+    "chart 0: discriminant is the other diagonal coincidence",
+    "chart 0: zero section occurs only over the branch origin",
+    "chart 1: diagonal k identity",
+    "chart 1: diagonal-difference equation",
+    "chart 1: all rank-two minors remain zero",
+    "chart 1: central singularity is a node",
+    "chart 1: critical ideal is coordinate origin",
+    "chart 1: discriminant is the other diagonal coincidence",
+    "chart 1: zero section occurs only over the branch origin",
+    "chart 2: diagonal k identity",
+    "chart 2: diagonal-difference equation",
+    "chart 2: all rank-two minors remain zero",
+    "chart 2: central singularity is a node",
+    "chart 2: critical ideal is coordinate origin",
+    "chart 2: discriminant is the other diagonal coincidence",
+    "chart 2: zero section occurs only over the branch origin",
+    "inverse incidence chart (0,0)",
+    "inverse incidence chart (0,1)",
+    "inverse incidence chart (0,2)",
+    "inverse incidence chart (1,0)",
+    "inverse incidence chart (1,1)",
+    "inverse incidence chart (1,2)",
+    "inverse incidence chart (2,0)",
+    "inverse incidence chart (2,1)",
+    "inverse incidence chart (2,2)",
+    "three nodal parameters sum to zero",
+    "three distinct discriminant lines"
+  ],
+  "passed": 33
+}

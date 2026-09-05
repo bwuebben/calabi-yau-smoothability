@@ -1,0 +1,382 @@
+\section{Local branches and global first-order deformations}
+\label{sec:deformation}
+
+\subsection{The analytic setting and the local lattices}
+Throughout Sections~\ref{sec:deformation}--\ref{sec04:smoothing}, $X$
+satisfies the projective Calabi--Yau hypotheses of the introduction.
+All its singularities are isolated nodes or the exact anticanonical
+cones over $E=\dP_5$, $\dP_6$, $\dP_7$, or $\PP^1\times\PP^1$.
+The degree-five, degree-six and degree-seven surfaces are unique up
+to isomorphism over $\CC$.  The degree-five surface is not toric;
+the other three surfaces are toric.  Fix a nowhere-vanishing
+section $\Omega$ of $\omega_X$.
+
+At a node choose a small resolution; at a cone use the zero-section
+contraction $\operatorname{Tot}(K_E)\to\Cone(E)$.  These proper analytic
+maps are isomorphisms off the singular points and glue to a smooth
+crepant analytic resolution $f_0:Y_0\to X$.  The gluing is Hausdorff
+because two points over the same singular point lie in one proper
+local model; points with distinct images can be separated on $X$.
+Properness is local on the target.  Thus $Y_0$ is compact, and it is
+Moishezon because it is bimeromorphic to the projective variety $X$.
+The $\partial\bar\partial$-lemma holds on $Y_0$
+\cite[Thm.~5.22 and Cor.~5.23]{dgms1975}.
+
+Let $L_p$ be a small link of a singularity.  At a cone point the
+circle-bundle Gysin sequence identifies
+\[
+ H_2(L_p;\QQ)=K_{E_p}^{\perp}\subset H_2(E_p;\QQ).
+\]
+For $E=\mathrm{Bl}_r\PP^2$, use the usual marking $h,e_1,\ldots,e_r$.
+Its intersection form and canonical class are
+\[
+ \operatorname{diag}(1,-1,\ldots,-1),\qquad K_E=-3h+\sum_i e_i.
+\]
+At degree seven the selected line is
+$\QQ(e_1-e_2)$.  For $E=\PP^1\times\PP^1$, the ruling classes
+satisfy $f_1^2=f_2^2=0$, $f_1\cdot f_2=1$, and
+$K_E=-2f_1-2f_2$; the selected line is the entire space
+$K_E^\perp=\QQ(f_1-f_2)$.  At degree six set
+\begin{equation}\label{eq:rootcoordinates}
+ \ell=-h+e_1+e_2+e_3,\qquad A=-e_1+e_3,\qquad B=e_2-e_3.
+\end{equation}
+Then $K_E^\perp=\QQ\ell\oplus\langle A,B\rangle_\QQ$, the orthogonal
+decomposition into the $A_1$ and $A_2$ root subspaces.  In the plane,
+\begin{equation}\label{eq:a2coefficients}
+ aA+bB=-a e_1+b e_2+(a-b)e_3.
+\end{equation}
+At a node the chosen resolution identifies its link-homology line
+with the span of the exceptional curve.  Changing the small resolution
+changes its generator by a sign and does not change any nonvanishing test.
+
+At degree five the selected subspace is all of $K_E^\perp$.
+For $E=\operatorname{Bl}_4\PP^2$ its five conic-pencil classes are
+\begin{equation}\label{eq:degree5pencils}
+ f_i=h-e_i\quad(1\le i\le4),\qquad
+ f_5=2h-e_1-e_2-e_3-e_4,\qquad \sum_{i=1}^5f_i=-2K_E.
+\end{equation}
+For $\gamma=xh+\sum_i y_i e_i\in K_E^\perp$, define
+\begin{equation}\label{eq:degree5coordinates}
+ \lambda_i(\gamma)=\gamma\cdot f_i=x+y_i\quad(i\le4),
+ \qquad \lambda_5(\gamma)=-x,\qquad \sum_i\lambda_i=0.
+\end{equation}
+These coordinates identify the integral perpendicular lattice with
+the negative $A_4$ lattice: the inverse is
+$x=-\lambda_5$, $y_i=\lambda_i+\lambda_5$, and
+$\gamma^2=-\sum_i\lambda_i^2$.
+
+\begin{definition}\label{def:branchprofile}
+A branch profile $S$ selects the entire line at each node and each
+$\PP^1\times\PP^1$ cone, the entire four-dimensional base at
+each degree-five point, the unique reduced
+degree-seven branch, and one of the two reduced branches at every
+degree-six point.  Write $R_{p,S_p}$ for the corresponding subspace of
+$H_2(L_p;\QQ)$ described above, and $K_S$ for \eqref{eq:relationkernel}.
+We also write
+\begin{equation}\label{eq:fullrelationkernel}
+ K=\ker\left\{\bigoplus_pH_2(L_p;\QQ)\longrightarrow H_2(Y_0;\QQ)\right\}.
+\end{equation}
+\end{definition}
+
+These subspaces are also
+$R_{p,S_p}=\ker\{H_2(L_p;\QQ)\to H_2(\Mil_{p,S_p};\QQ)\}$, where
+$\Mil_{p,S_p}$ is a smooth Milnor fibre on the chosen component
+\cite[Prop.~2.1 and Lem.~4.2]{PaperIV}.  For the
+$\PP^1\times\PP^1$ and degree-five cones the same assertion follows
+from $H_2(\Mil_{p,S_p};\QQ)=0$, proved in
+Lemmas~\ref{lem03:quadricmilnor} and~\ref{lem03:degree5milnor}.
+When a profile is fixed, we
+occasionally abbreviate $R_{p,S_p}$ to $\Rsm_p$.
+
+The scheme-theoretic local bases are, in analytic coordinates,
+\begin{equation}\label{eq:localbases}
+ \begin{array}{c|c}
+ \text{germ}&\text{local base ring}\\ \hline
+ \text{node}&\CC\{t\}\\
+ \Cone(\PP^1\times\PP^1)&\CC\{t\}\\
+ \Cone(\dP_5)&\CC\{b_1,b_2,b_3,b_4\}\\
+ \Cone(\dP_7)&\CC\{s,w\}/(w^2,sw)\\
+ \Cone(\dP_6)&\CC\{s,u,v\}/(su,sv).
+ \end{array}
+\end{equation}
+The degree-five entry is proved in
+Proposition~\ref{prop03:degree5family}; the other cone entries are
+Altmann's calculations.  At degree six the $A_1$ branch is $u=v=0$ and the $A_2$ branch is
+$s=0$ \cite[\S\S5--8]{Altmann97}.  Fix analytic classifying maps from
+a semiuniversal base $\Def(X)$ to these local bases.  Their
+scheme-theoretic inverse image of the selected components is denoted
+$\Def^S(X)$; the chosen maps form part of this notation.  Write
+$V_S=T_0\Def^S(X)$.  The line and plane are smooth, but the plane's
+smoothing locus excludes the three lines
+$ab(a-b)=0$ in the marking \eqref{eq:a2coefficients}.  In particular,
+the condition of being a nonzero tangent in the plane is weaker than
+being a first-order smoothing direction.
+At degree five the smoothing locus excludes the five hyperplanes
+$\lambda_i=0$, as proved in Lemma~\ref{lem03:degree5marking}.
+
+\subsection{The full local Hodge comparison}
+Write $\mathbb T^i_X=\operatorname{Ext}^i(L_X,\cO_X)$, where $L_X$ is
+the cotangent complex.  The following comparison permits the use of
+K\"ahler differentials in the low-degree local-to-global sequence.
+
+\begin{lemma}\label{lem:omegaL}
+Let $X$ be a normal Gorenstein threefold whose non-lci locus is finite.  Then
+\[
+  \mathrm{Ext}^i(\Omega^1_X,\cO_X)\;\cong\;\mathrm{Ext}^i(L_X,\cO_X)
+  \qquad(i\le2),
+\]
+both as sheaves and globally, compatibly with the local-to-global spectral
+sequence.
+\end{lemma}
+
+\begin{proof}
+The cohomology sheaves $\mathcal H^{-q}(L_X)$ for $q\ge1$ vanish where $X$ is a
+local complete intersection, so they are supported on a finite set and have
+finite length.  A finite-length module on a Cohen--Macaulay threefold has grade
+$3$, so $\mathcal Ext^p(-,\cO_X)$ and $\mathrm{Ext}^p(-,\cO_X)$ vanish on it for
+$p<3$.  In the spectral sequence
+$E_2^{p,q}=\mathrm{Ext}^p(\mathcal H^{-q}(L_X),\cO_X)\Rightarrow
+\mathrm{Ext}^{p+q}(L_X,\cO_X)$ a term with $q\ge1$ contributing in total degree
+$\le2$ has $p\le1<3$, hence vanishes.  Only $q=0$ survives in degrees $\le2$, and
+$\mathcal H^0(L_X)=\Omega^1_X$.
+\end{proof}
+
+The local-to-global sequence begins
+\[
+ 0\longrightarrow H^1(X,\Theta_X)\longrightarrow\mathbb T^1_X
+ \xrightarrow{\alpha}\bigoplus_pT^1_{X,p}
+ \xrightarrow{\mathrm{ob}}H^2(X,\Theta_X).
+\]
+We use contraction with the restriction of the fixed global volume
+form $\Omega$ in every local comparison below. Thus numerical local
+parameters are Hodge-normalized; independently chosen equation
+coordinates may differ by nonzero scalar factors.
+
+\begin{lemma}[local Hodge comparison]\label{lem:localhodge}
+Let $(Y,p)$ be a three-dimensional ordinary double point or the anticanonical
+cone over $E=\dP_5$, $\dP_6$, $\dP_7$, or $\PP^1\times\PP^1$.  Let
+$\pi_p\colon\widehat Y_p\to Y$ be the small resolution at a node and
+$\widehat Y_p=\operatorname{Tot}(K_E)$ at a cone point, let $Z_p$ be its
+exceptional locus, and put $U_p=\widehat Y_p\smallsetminus Z_p$.  Then the
+connecting homomorphism gives an isomorphism
+\begin{equation}\label{eq:localhodge}
+ T^1_{Y,p}\;\xrightarrow{\ \sim\ }\;
+ K_p^{\mathrm{cr}}:=
+ \ker\!\left\{H^2_{Z_p}(\widehat Y_p;\Omega^2_{\widehat Y_p})
+ \longrightarrow H^2(\widehat Y_p;\Omega^2_{\widehat Y_p})\right\}.
+\end{equation}
+There is also a natural isomorphism
+\begin{equation}\label{eq:linklocalhodge}
+ H_2(L_p;\CC)\cong H^3(L_p;\CC)
+ \xrightarrow{\ \sim\ }K_p^{\mathrm{cr}},
+\end{equation}
+and the two isomorphisms are compatible with the local Gysin map to any global
+crepant resolution containing $\widehat Y_p$.
+\end{lemma}
+
+\begin{proof}
+The identifications
+$T^1_{Y,p}\cong H^1(U_p;\Theta_{U_p})\cong H^1(U_p;\Omega^2_{U_p})$
+are Schlessinger's comparison and contraction with the prescribed crepant volume
+form.  The comparison applies to the non-lci cones: the hypothesis in
+\cite[Lem.~1.17 and Lem.~4.1]{FL22a} is weakened in
+\cite[Rem.~4.2]{FL22a} to an isolated singularity of depth at least $3$.
+
+For a node,
+$\widehat Y_p=\operatorname{Tot}_{\PP^1}(\cO(-1)\oplus\cO(-1))$.
+The projection is affine, and the tangent sequence together with
+$H^1(\PP^1,\cO(m))=0$ for $m\ge-1$ gives
+$H^1(\widehat Y_p;\Theta_{\widehat Y_p})=0$.  The local cohomology sequence
+therefore identifies the one-dimensional space $T^1_{Y,p}$ with
+$K_p^{\mathrm{cr}}$.  The residue calculation for the node identifies this
+class with the generator of $H^3(L_p)$; equivalently, this is the local
+Gysin identification in Friedman's construction \cite{Friedman86}.
+
+Now suppose $\widehat Y_p=\operatorname{Tot}(K_E)$, with projection
+$\rho\colon\widehat Y_p\to E$ and zero section again denoted $E$.  Contraction
+with the crepant volume form identifies
+\[
+ \Omega^2_{\widehat Y_p}(\log E)(-E)
+ \cong \Theta_{\widehat Y_p}(-\log E),
+\]
+and the logarithmic tangent sequence is
+\[
+ 0\longrightarrow\cO_{\widehat Y_p}\longrightarrow
+ \Theta_{\widehat Y_p}(-\log E)\longrightarrow\rho^*\Theta_E
+ \longrightarrow0.
+\]
+Since $\rho$ is affine and
+$\rho_*\cO_{\widehat Y_p}=\bigoplus_{k\ge0}\cO_E(-kK_E)$, Kodaira vanishing
+and Bott vanishing give
+\begin{align*}
+ H^1(\widehat Y_p;\cO_{\widehat Y_p})
+   &=\bigoplus_{k\ge0}H^1(E;\cO_E(-kK_E))=0,\\
+ H^1(\widehat Y_p;\rho^*\Theta_E)
+   &=\bigoplus_{k\ge0}H^1
+      \bigl(E;\Omega^1_E\otimes\cO_E(-(k+1)K_E)\bigr)=0.
+\end{align*}
+For the degree-five surface, the Bott vanishing used here is
+Totaro's theorem \cite[Theorem~2.1]{totaro2020}; the twist
+$-(k+1)K_E$ is ample for every $k\ge0$.  For the other surfaces
+it is the usual toric Bott vanishing.
+Thus
+$H^1(\widehat Y_p;\Omega^2(\log E)(-E))=0$.  The exact sequence of
+\cite[Thm.~2.1(v)]{FL22a}, whose theorem explicitly allows every
+three-dimensional isolated canonical Gorenstein germ, now gives
+\eqref{eq:localhodge}.  Moreover \cite[Thm.~2.1(vi)]{FL22a} gives a natural
+inclusion
+\[
+ H^3(L_p;\CC)=\operatorname{Gr}^2_FH^3(L_p;\CC)
+ \lhook\joinrel\longrightarrow K_p^{\mathrm{cr}}
+\]
+and a decomposition of $K_p^{\mathrm{cr}}$ with this as one summand.
+If $E$ is toric and its boundary polygon has $n$ vertices, Altmann's calculation gives
+$\dim T^1_{Y,p}=n-3$.  The circle-bundle Gysin sequence gives
+$\dim H^3(L_p)=9-\deg E=n-3$.  Hence the other summand is zero and the displayed
+inclusion is an isomorphism.  At degree five the same dimension
+comparison uses $\dim T^1=4$ \cite[\S5.5]{Gross97rev} and
+$\dim H^3(L_p)=9-5=4$.  Its construction in local cohomology is
+compatible with the Gysin map, which proves the final assertion.
+\end{proof}
+
+\begin{lemma}[the local branches]\label{lem:branchhodge}
+Under the isomorphism
+$T^1_{Y,p}\cong H_2(L_p;\CC)$ of Lemma~\ref{lem:localhodge}, the tangent space
+to each reduced local component is exactly the corresponding
+subspace $\Rsm_p$: the whole line at a node or a
+$\PP^1\times\PP^1$ cone, the entire $K_E^\perp$ at a degree-five
+cone, the unique root line at a
+$\dP_7$ cone, and respectively the $A_1$ line and the $A_2$ plane at a
+$\dP_6$ cone.
+\end{lemma}
+
+\begin{proof}
+At $E=\PP^1\times\PP^1$ both spaces are one-dimensional, and
+$K_E^\perp=\CC(f_1-f_2)$ gives the assertion.  At degree five
+the assertion follows from the full four-dimensional
+comparison and the smooth irreducible base of
+Proposition~\ref{prop03:degree5family}.  For the degree-six and
+degree-seven points, consider a unit-edge polygon
+$P=(v_0,\ldots,v_{n-1})$, put $e_i=v_{i+1}-v_i$.  Altmann identifies the
+degree of the versal tangent space used here with
+\begin{equation}\label{eq:altmanntangent}
+ \mathcal M(P)=
+ \left\{(t_i)\in\CC^n:\ \sum_i t_i e_i=0\right\}
+ \big/\CC(1,\ldots,1),
+\end{equation}
+and a lattice Minkowski decomposition gives the class of its edge-dilation
+vector $(t_i)$.  The Hodge isomorphism of Lemma~\ref{lem:localhodge} is natural
+under lattice automorphisms of $P$, with one necessary character: contraction
+with the crepant volume form twists equivariance by the determinant of the
+induced automorphism of the three-dimensional cone lattice.
+This equivariance is computed with the standard toric volume form.
+The restriction of $\Omega$ is $g$ times that form, for an analytic
+unit $g$.  Altmann's concentration of $T^1$ in the single Gorenstein
+degree implies $\mathfrak m_pT^1_{X,p}=0$.  Multiplication by $g$
+therefore acts on $T^1_{X,p}$ through the scalar $g(p)$.
+The comparison determined by $\Omega$ differs only by this nonzero
+scalar, so the invariant subspaces identified below are unchanged.
+
+There is one unit-edge reflexive pentagon up to $\operatorname{GL}_2(\ZZ)$.  Take
+\[
+ P_7=\bigl((-1,-1),(0,-1),(1,0),(0,1),(-1,0)\bigr).
+\]
+Its nontrivial decomposition has dilation vector
+$t=(0,1,0,1,0)$, up to replacing $t$ by $1-t$, and spans the reduced versal
+base.  The reflection $s(x,y)=(y,x)$ fixes $[t]\in\mathcal M(P_7)$ and has
+determinant $-1$.  On
+$H_2(L_p)=K_E^\perp$ it acts by $-1$ on the unique root line and by $+1$ on
+the complementary line.  The determinant twist therefore forces the Hodge
+image of $[t]$ to be the root line.
+
+Likewise there is one unit-edge reflexive hexagon.  Take
+\[
+ P_6=\bigl((1,0),(1,1),(0,1),(-1,0),(-1,-1),(0,-1)\bigr).
+\]
+The determinant-one rotation $r(x,y)=(x-y,x)$ cyclically permutes its vertices.
+On $\mathcal M(P_6)$ its characteristic polynomial is
+$(\lambda+1)(\lambda^2+\lambda+1)$.  The $(-1)$-eigenspace is spanned by the
+alternating dilation $(0,1,0,1,0,1)$, the triangle-plus-triangle decomposition
+which gives Altmann's one-dimensional smoothing component; the complementary
+plane is spanned by the coarsenings of the three-segment decomposition and is
+the two-dimensional component.  On
+$K_E^\perp\cong A_1\oplus A_2$, the same rotation is $-1$ on $A_1$ and a
+Coxeter element, with characteristic polynomial $\lambda^2+\lambda+1$, on
+$A_2$.  Equivariance now identifies the line with $A_1$ and the plane with
+$A_2$.  The boundary classes and edge-dilation vectors above give finite
+intersection and representation calculations; Appendix~\ref{app:cert}
+records their exact verification.
+\end{proof}
+
+\subsection{The image of the global tangent space}
+The use of the full local spaces in Lemma~\ref{lem:localhodge} is
+essential: the comparison also accounts for tangent directions that
+do not belong to a reduced local component.
+
+\begin{theorem}\label{thm:D}
+Under the Hodge identifications determined by $\Omega$, localization
+gives exact sequences
+\begin{align}
+ 0&\longrightarrow H^1(X,\Theta_X)\longrightarrow\mathbb T^1_X
+                  \longrightarrow K\otimes_\QQ\CC\longrightarrow0,
+                  \label{eq:fulltangent}\\
+ 0&\longrightarrow H^1(X,\Theta_X)\longrightarrow V_S
+                  \longrightarrow K_S\otimes_\QQ\CC\longrightarrow0.
+                  \label{eq:selectedtangent}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Let $E=\operatorname{Exc}(f_0)$ and $U=Y_0\setminus E=X_{\mathrm{reg}}$.
+Excision and the local cohomology sequence give
+\begin{equation}\label{eq:globalsupport}
+ H^1(U;\Omega^2_U)\longrightarrow
+ \bigoplus_pH^2_{E_p}(\widehat X_p;\Omega^2_{\widehat X_p})
+ \longrightarrow H^2(Y_0;\Omega^2_{Y_0}).
+\end{equation}
+Here $\widehat X_p$ denotes the restriction of $Y_0$ over a sufficiently
+small neighborhood of $p$.  The algebraic cone calculations in
+Lemma~\ref{lem:localhodge} compute these analytic local groups as well:
+the vanishing statements are equivalent to the corresponding
+vanishing of completed higher direct images, by formal functions.
+The analytic local-support comparison itself is that of
+\cite[Thm.~2.1]{FL22a}.
+
+Under Lemma~\ref{lem:localhodge}, the map from
+$\bigoplus_pK_p^{\mathrm{cr}}$ to $H^2(Y_0;\Omega^2_{Y_0})$, followed by
+the de Rham map, is the topological link map followed by Poincar\'e
+duality.  In particular the square
+\[
+\begin{array}{ccc}
+ \displaystyle\bigoplus_pH_2(L_p;\CC)&\longrightarrow&H_2(Y_0;\CC)\\
+ \downarrow\cong&&\downarrow\operatorname{PD}\\
+ \displaystyle\bigoplus_pK_p^{\mathrm{cr}}&\longrightarrow&H^4(Y_0;\CC)
+\end{array}
+\]
+commutes.  The $\partial\bar\partial$-lemma makes
+$H^2(Y_0;\Omega^2_{Y_0})\to H^4(Y_0;\CC)$ injective.  Hence an element
+of the sum of local tangent spaces has zero image in
+$H^2(Y_0;\Omega^2_{Y_0})$ if and only if its link class lies in
+$K\otimes_\QQ\CC$.
+
+Contraction with $\Omega$ and Schlessinger's depth-three comparison
+identify
+\[
+ H^1(U;\Omega^2_U)\cong H^1(U;\Theta_U)\cong\mathbb T^1_X;
+\]
+see \cite[Rem.~4.2]{FL22a}.  Exactness of \eqref{eq:globalsupport}
+therefore gives every element of $K\otimes\CC$ as the localization
+of a global tangent.  Conversely, the localization of any global
+tangent has zero supported Gysin image, hence lies in that kernel.
+The kernel of localization is $H^1(X,\Theta_X)$ by the local-to-global
+sequence.  This proves \eqref{eq:fulltangent}.  Taking the inverse
+image of the chosen local tangent subspaces and applying
+Lemma~\ref{lem:branchhodge} proves \eqref{eq:selectedtangent}.
+\end{proof}
+
+At an $A_2$ point, \eqref{eq:selectedtangent} can supply a nonzero
+local vector on a discriminant line.  It asserts the existence of a
+global first-order deformation with those local components; it makes
+no smoothing assertion for such a vector.  The next two sections
+determine which directions integrate and which profiles contain
+smooth fibres.
