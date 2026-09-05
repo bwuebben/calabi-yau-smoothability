@@ -126,7 +126,7 @@ Every paper builds from its directory with `latexmk -pdf main.tex`.
    relation must be nonzero at each rank-one summand, have all three
    degree-six A₂ coefficients nonzero, and have all five conic-pencil
    pairings nonzero at each degree-five point. At a P¹×P¹ cone the
-   coefficient is the difference of the two rulings. These conditions
+   rank-one class is the difference of the two rulings. These conditions
    characterize actual analytic smoothings. The selected deformation
    base is smooth when the relation space projects nontrivially to every
    degree-six summand, and every tangent on that base integrates to a
