@@ -8,13 +8,18 @@ pairs. Paper 4 develops a global obstruction using vanishing periods.
 Paper 5 proves a necessary and sufficient mixed smoothing criterion and
 convergent integrability for its specified deformation spaces.
 
-**Updated 5 September 2026.** Paper 5 now covers nodes and exact
+**Updated 7 September 2026.** Paper 5 covers nodes and exact
 anticanonical cones over smooth del Pezzo surfaces of degrees 5, 6 and 7,
 and over P¹×P¹. Integrability is proved under the hypotheses stated in
 its theorems. The distinction between smooth deformation bases and the
 existence of smooth fibres is essential: the paper also constructs a
 nonsmoothable example with four smooth deformation components.
-The degree-by-degree scope table is in the introduction.
+The degree-by-degree scope table is in the introduction. The new scope
+explanation distinguishes the classical all-local-complete-intersection
+results from the stated mixed theorem. For a cubic cone, the full local
+deformation tangent has dimension 16 but link H₂ has dimension 6, so the
+current tangent–link identification cannot be reused in degrees 1–4.
+This does not rule out a different mixed criterion for those degrees.
 
 **Author:** Bernd Johannes Wuebben (wuebben@gmail.com)
 
@@ -377,6 +382,7 @@ python3 paper5/certificates/a2_counterexample_rational_replay.py
 sage -python paper5/certificates/d19_quadric_partial_resolution.py
 python3 paper5/figures/code/compute01_degree5_local.py
 python3 paper5/figures/code/compute01_degree8_local.py
+python3 paper5/figures/code/compute01_cubic_scope.py
 
 # database scans (need: pip install numpy pyarrow; and the parquet files)
 ./venv/bin/python src/ks_sweep.py data/ks/polytopes-4d-06-vertices.parquet
