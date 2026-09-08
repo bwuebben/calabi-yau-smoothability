@@ -1,0 +1,461 @@
+{
+  "coverage": "Only the five local files, 5 through 9 vertices; not the complete classification.",
+  "date": "2026-09-08",
+  "lattice_timing": {
+    "extrapolation_limit": "Larger polytopes and larger SQLite indexes are not benchmarked.",
+    "linear_full_database_hours": 6.6206852738421125,
+    "rows": 3905789,
+    "seconds": 196.48004750022665
+  },
+  "machine": {
+    "cpu": "Apple M5",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "pyarrow": "25.0.0",
+    "python": "3.11.15",
+    "sqlite": "3.53.3"
+  },
+  "resume_verified": {
+    "new_rows": 0,
+    "rows": 3905789,
+    "seconds": 1.4483272079378366
+  },
+  "runs": {
+    "benchmark": {
+      "checker_sha256": "1223ef300e385e95ccd229662c488371fc403b547ee20bb87e6172eac9c87529",
+      "classification_verified": false,
+      "command": "benchmark",
+      "inventory": {
+        "classification_verified": false,
+        "coverage_complete": false,
+        "dataset_revision": "60c0e119a03608418df538191f65da3f43b5b819",
+        "expected_bytes": 15773290651,
+        "expected_rows": 473800776,
+        "files": [
+          {
+            "bytes": 27519,
+            "name": "polytopes-4d-05-vertices.parquet",
+            "rows": 1561,
+            "sha256": "6d1ec8d2e6c2a6790415031e6b14ba9d1a460870f1e7c3a5290d5fff2b159b46",
+            "vertices": 5
+          },
+          {
+            "bytes": 404804,
+            "name": "polytopes-4d-06-vertices.parquet",
+            "rows": 24189,
+            "sha256": "d9708d4067a7ae145697e170bee67e46e9b482c525e8885efe039e417e70ab9c",
+            "vertices": 6
+          },
+          {
+            "bytes": 3328626,
+            "name": "polytopes-4d-07-vertices.parquet",
+            "rows": 177446,
+            "sha256": "1c501e3b1d659584f12cb25a253b181f9c4bcf481112120b3499f4bdfbe71f99",
+            "vertices": 7
+          },
+          {
+            "bytes": 16658549,
+            "name": "polytopes-4d-08-vertices.parquet",
+            "rows": 834638,
+            "sha256": "6b450d70c0c0461b5335d500e77bc663db5cbf5280abb6a8f3bcf2257f8e3a96",
+            "vertices": 8
+          },
+          {
+            "bytes": 63312966,
+            "name": "polytopes-4d-09-vertices.parquet",
+            "rows": 2867955,
+            "sha256": "ef5c8820282196c32b2fae96c2a2bc0c9e638bda4a0d96bf60eb774708f894a7",
+            "vertices": 9
+          }
+        ],
+        "manifest_sha256": "51a41c7e901792a9fdd98481fe781130a6bfeea2083ee9bbcb0b292fc74ea769",
+        "missing": [
+          "polytopes-4d-10-vertices.parquet",
+          "polytopes-4d-11-vertices.parquet",
+          "polytopes-4d-12-vertices.parquet",
+          "polytopes-4d-13-vertices.parquet",
+          "polytopes-4d-14-vertices.parquet",
+          "polytopes-4d-15-vertices.parquet",
+          "polytopes-4d-16-vertices.parquet",
+          "polytopes-4d-17-vertices.parquet",
+          "polytopes-4d-18-vertices.parquet",
+          "polytopes-4d-19-vertices.parquet",
+          "polytopes-4d-20-vertices.parquet",
+          "polytopes-4d-21-vertices.parquet",
+          "polytopes-4d-22-vertices.parquet",
+          "polytopes-4d-23-vertices.parquet",
+          "polytopes-4d-24-vertices.parquet",
+          "polytopes-4d-25-vertices.parquet",
+          "polytopes-4d-26-vertices.parquet",
+          "polytopes-4d-27-vertices.parquet",
+          "polytopes-4d-28-vertices.parquet",
+          "polytopes-4d-29-vertices.parquet",
+          "polytopes-4d-30-vertices.parquet",
+          "polytopes-4d-31-vertices.parquet",
+          "polytopes-4d-32-vertices.parquet",
+          "polytopes-4d-33-vertices.parquet",
+          "polytopes-4d-36-vertices.parquet"
+        ],
+        "present_bytes": 83732464,
+        "present_rows": 3905789
+      },
+      "palp": {
+        "sha256": "67207af3b6e895e41a0ce1a24b7ccfcdefbebd14df21bd641dd3ff087ef4d103"
+      },
+      "results": [
+        {
+          "lattice": {
+            "linear_full_database_days": 0.15549237721432285,
+            "rows_per_second": 35267.3576417137,
+            "seconds": 0.014177415985614061,
+            "sqlite_bytes_per_sample_row": 57.344
+          },
+          "name": "polytopes-4d-05-vertices.parquet",
+          "sample_read_seconds": 0.03510979190468788,
+          "samples": 500,
+          "stored": {
+            "linear_full_database_days": 0.045837297864646465,
+            "rows_per_second": 119636.31220084078,
+            "seconds": 0.004179333103820682,
+            "sqlite_bytes_per_sample_row": 57.344
+          }
+        },
+        {
+          "lattice": {
+            "linear_full_database_days": 0.16540527788401221,
+            "rows_per_second": 33153.75027889502,
+            "seconds": 0.015081250108778477,
+            "sqlite_bytes_per_sample_row": 65.536
+          },
+          "name": "polytopes-4d-06-vertices.parquet",
+          "sample_read_seconds": 0.005194708006456494,
+          "samples": 500,
+          "stored": {
+            "linear_full_database_days": 0.03205330169361007,
+            "rows_per_second": 171083.9441813569,
+            "seconds": 0.0029225419275462627,
+            "sqlite_bytes_per_sample_row": 65.536
+          }
+        },
+        {
+          "lattice": {
+            "linear_full_database_days": 0.17548360049124473,
+            "rows_per_second": 31249.673829500538,
+            "seconds": 0.01600016700103879,
+            "sqlite_bytes_per_sample_row": 65.536
+          },
+          "name": "polytopes-4d-07-vertices.parquet",
+          "sample_read_seconds": 0.016514457995072007,
+          "samples": 500,
+          "stored": {
+            "linear_full_database_days": 0.03596599782454212,
+            "rows_per_second": 152471.93486832146,
+            "seconds": 0.0032792920246720314,
+            "sqlite_bytes_per_sample_row": 65.536
+          }
+        },
+        {
+          "lattice": {
+            "linear_full_database_days": 0.19040731499729704,
+            "rows_per_second": 28800.391822423546,
+            "seconds": 0.01736087491735816,
+            "sqlite_bytes_per_sample_row": 73.728
+          },
+          "name": "polytopes-4d-08-vertices.parquet",
+          "sample_read_seconds": 0.07725170883350074,
+          "samples": 500,
+          "stored": {
+            "linear_full_database_days": 0.03999521453296869,
+            "rows_per_second": 137111.53551276465,
+            "seconds": 0.003646666184067726,
+            "sqlite_bytes_per_sample_row": 73.728
+          }
+        },
+        {
+          "lattice": {
+            "linear_full_database_days": 0.23041807071445664,
+            "rows_per_second": 23799.371554384423,
+            "seconds": 0.021008958108723164,
+            "sqlite_bytes_per_sample_row": 81.92
+          },
+          "name": "polytopes-4d-09-vertices.parquet",
+          "sample_read_seconds": 0.26396604208275676,
+          "samples": 500,
+          "stored": {
+            "linear_full_database_days": 0.04468752857646336,
+            "rows_per_second": 122714.44522591172,
+            "seconds": 0.0040744999423623085,
+            "sqlite_bytes_per_sample_row": 73.728
+          }
+        }
+      ],
+      "seconds": 0.8831113330088556,
+      "status": "sample_benchmark_passed"
+    },
+    "lattice": {
+      "checker_sha256": "1223ef300e385e95ccd229662c488371fc403b547ee20bb87e6172eac9c87529",
+      "classification_verified": false,
+      "command": "check",
+      "inventory": {
+        "classification_verified": false,
+        "coverage_complete": false,
+        "dataset_revision": "60c0e119a03608418df538191f65da3f43b5b819",
+        "expected_bytes": 15773290651,
+        "expected_rows": 473800776,
+        "files": [
+          {
+            "bytes": 27519,
+            "name": "polytopes-4d-05-vertices.parquet",
+            "rows": 1561,
+            "sha256": "6d1ec8d2e6c2a6790415031e6b14ba9d1a460870f1e7c3a5290d5fff2b159b46",
+            "vertices": 5
+          },
+          {
+            "bytes": 404804,
+            "name": "polytopes-4d-06-vertices.parquet",
+            "rows": 24189,
+            "sha256": "d9708d4067a7ae145697e170bee67e46e9b482c525e8885efe039e417e70ab9c",
+            "vertices": 6
+          },
+          {
+            "bytes": 3328626,
+            "name": "polytopes-4d-07-vertices.parquet",
+            "rows": 177446,
+            "sha256": "1c501e3b1d659584f12cb25a253b181f9c4bcf481112120b3499f4bdfbe71f99",
+            "vertices": 7
+          },
+          {
+            "bytes": 16658549,
+            "name": "polytopes-4d-08-vertices.parquet",
+            "rows": 834638,
+            "sha256": "6b450d70c0c0461b5335d500e77bc663db5cbf5280abb6a8f3bcf2257f8e3a96",
+            "vertices": 8
+          },
+          {
+            "bytes": 63312966,
+            "name": "polytopes-4d-09-vertices.parquet",
+            "rows": 2867955,
+            "sha256": "ef5c8820282196c32b2fae96c2a2bc0c9e638bda4a0d96bf60eb774708f894a7",
+            "vertices": 9
+          }
+        ],
+        "manifest_sha256": "51a41c7e901792a9fdd98481fe781130a6bfeea2083ee9bbcb0b292fc74ea769",
+        "missing": [
+          "polytopes-4d-10-vertices.parquet",
+          "polytopes-4d-11-vertices.parquet",
+          "polytopes-4d-12-vertices.parquet",
+          "polytopes-4d-13-vertices.parquet",
+          "polytopes-4d-14-vertices.parquet",
+          "polytopes-4d-15-vertices.parquet",
+          "polytopes-4d-16-vertices.parquet",
+          "polytopes-4d-17-vertices.parquet",
+          "polytopes-4d-18-vertices.parquet",
+          "polytopes-4d-19-vertices.parquet",
+          "polytopes-4d-20-vertices.parquet",
+          "polytopes-4d-21-vertices.parquet",
+          "polytopes-4d-22-vertices.parquet",
+          "polytopes-4d-23-vertices.parquet",
+          "polytopes-4d-24-vertices.parquet",
+          "polytopes-4d-25-vertices.parquet",
+          "polytopes-4d-26-vertices.parquet",
+          "polytopes-4d-27-vertices.parquet",
+          "polytopes-4d-28-vertices.parquet",
+          "polytopes-4d-29-vertices.parquet",
+          "polytopes-4d-30-vertices.parquet",
+          "polytopes-4d-31-vertices.parquet",
+          "polytopes-4d-32-vertices.parquet",
+          "polytopes-4d-33-vertices.parquet",
+          "polytopes-4d-36-vertices.parquet"
+        ],
+        "present_bytes": 83732464,
+        "present_rows": 3905789
+      },
+      "palp": {
+        "sha256": "67207af3b6e895e41a0ce1a24b7ccfcdefbebd14df21bd641dd3ff087ef4d103"
+      },
+      "results": [
+        {
+          "database_bytes": 65536,
+          "input_sha256": "6d1ec8d2e6c2a6790415031e6b14ba9d1a460870f1e7c3a5290d5fff2b159b46",
+          "mode": "lattice",
+          "name": "polytopes-4d-05-vertices.parquet",
+          "new_rows": 1561,
+          "rows_checked": 1561,
+          "seconds": 0.04258054192177951
+        },
+        {
+          "database_bytes": 905216,
+          "input_sha256": "d9708d4067a7ae145697e170bee67e46e9b482c525e8885efe039e417e70ab9c",
+          "mode": "lattice",
+          "name": "polytopes-4d-06-vertices.parquet",
+          "new_rows": 24189,
+          "rows_checked": 24189,
+          "seconds": 0.7027569159399718
+        },
+        {
+          "database_bytes": 7688192,
+          "input_sha256": "1c501e3b1d659584f12cb25a253b181f9c4bcf481112120b3499f4bdfbe71f99",
+          "mode": "lattice",
+          "name": "polytopes-4d-07-vertices.parquet",
+          "new_rows": 177446,
+          "rows_checked": 177446,
+          "seconds": 6.0302693750709295
+        },
+        {
+          "database_bytes": 39927808,
+          "input_sha256": "6b450d70c0c0461b5335d500e77bc663db5cbf5280abb6a8f3bcf2257f8e3a96",
+          "mode": "lattice",
+          "name": "polytopes-4d-08-vertices.parquet",
+          "new_rows": 834638,
+          "rows_checked": 834638,
+          "seconds": 36.16231641708873
+        },
+        {
+          "database_bytes": 151072768,
+          "input_sha256": "ef5c8820282196c32b2fae96c2a2bc0c9e638bda4a0d96bf60eb774708f894a7",
+          "mode": "lattice",
+          "name": "polytopes-4d-09-vertices.parquet",
+          "new_rows": 2867955,
+          "rows_checked": 2867955,
+          "seconds": 153.54212425020523
+        }
+      ],
+      "seconds": 196.83471508300863,
+      "status": "selected_files_passed"
+    },
+    "stored": {
+      "checker_sha256": "1223ef300e385e95ccd229662c488371fc403b547ee20bb87e6172eac9c87529",
+      "classification_verified": false,
+      "command": "check",
+      "inventory": {
+        "classification_verified": false,
+        "coverage_complete": false,
+        "dataset_revision": "60c0e119a03608418df538191f65da3f43b5b819",
+        "expected_bytes": 15773290651,
+        "expected_rows": 473800776,
+        "files": [
+          {
+            "bytes": 27519,
+            "name": "polytopes-4d-05-vertices.parquet",
+            "rows": 1561,
+            "sha256": "6d1ec8d2e6c2a6790415031e6b14ba9d1a460870f1e7c3a5290d5fff2b159b46",
+            "vertices": 5
+          },
+          {
+            "bytes": 404804,
+            "name": "polytopes-4d-06-vertices.parquet",
+            "rows": 24189,
+            "sha256": "d9708d4067a7ae145697e170bee67e46e9b482c525e8885efe039e417e70ab9c",
+            "vertices": 6
+          },
+          {
+            "bytes": 3328626,
+            "name": "polytopes-4d-07-vertices.parquet",
+            "rows": 177446,
+            "sha256": "1c501e3b1d659584f12cb25a253b181f9c4bcf481112120b3499f4bdfbe71f99",
+            "vertices": 7
+          },
+          {
+            "bytes": 16658549,
+            "name": "polytopes-4d-08-vertices.parquet",
+            "rows": 834638,
+            "sha256": "6b450d70c0c0461b5335d500e77bc663db5cbf5280abb6a8f3bcf2257f8e3a96",
+            "vertices": 8
+          },
+          {
+            "bytes": 63312966,
+            "name": "polytopes-4d-09-vertices.parquet",
+            "rows": 2867955,
+            "sha256": "ef5c8820282196c32b2fae96c2a2bc0c9e638bda4a0d96bf60eb774708f894a7",
+            "vertices": 9
+          }
+        ],
+        "manifest_sha256": "51a41c7e901792a9fdd98481fe781130a6bfeea2083ee9bbcb0b292fc74ea769",
+        "missing": [
+          "polytopes-4d-10-vertices.parquet",
+          "polytopes-4d-11-vertices.parquet",
+          "polytopes-4d-12-vertices.parquet",
+          "polytopes-4d-13-vertices.parquet",
+          "polytopes-4d-14-vertices.parquet",
+          "polytopes-4d-15-vertices.parquet",
+          "polytopes-4d-16-vertices.parquet",
+          "polytopes-4d-17-vertices.parquet",
+          "polytopes-4d-18-vertices.parquet",
+          "polytopes-4d-19-vertices.parquet",
+          "polytopes-4d-20-vertices.parquet",
+          "polytopes-4d-21-vertices.parquet",
+          "polytopes-4d-22-vertices.parquet",
+          "polytopes-4d-23-vertices.parquet",
+          "polytopes-4d-24-vertices.parquet",
+          "polytopes-4d-25-vertices.parquet",
+          "polytopes-4d-26-vertices.parquet",
+          "polytopes-4d-27-vertices.parquet",
+          "polytopes-4d-28-vertices.parquet",
+          "polytopes-4d-29-vertices.parquet",
+          "polytopes-4d-30-vertices.parquet",
+          "polytopes-4d-31-vertices.parquet",
+          "polytopes-4d-32-vertices.parquet",
+          "polytopes-4d-33-vertices.parquet",
+          "polytopes-4d-36-vertices.parquet"
+        ],
+        "present_bytes": 83732464,
+        "present_rows": 3905789
+      },
+      "results": [
+        {
+          "database_bytes": 61440,
+          "input_sha256": "6d1ec8d2e6c2a6790415031e6b14ba9d1a460870f1e7c3a5290d5fff2b159b46",
+          "mode": "stored",
+          "name": "polytopes-4d-05-vertices.parquet",
+          "new_rows": 1561,
+          "rows_checked": 1561,
+          "seconds": 0.013136000139638782
+        },
+        {
+          "database_bytes": 917504,
+          "input_sha256": "d9708d4067a7ae145697e170bee67e46e9b482c525e8885efe039e417e70ab9c",
+          "mode": "stored",
+          "name": "polytopes-4d-06-vertices.parquet",
+          "new_rows": 24189,
+          "rows_checked": 24189,
+          "seconds": 0.23736687493510544
+        },
+        {
+          "database_bytes": 7622656,
+          "input_sha256": "1c501e3b1d659584f12cb25a253b181f9c4bcf481112120b3499f4bdfbe71f99",
+          "mode": "stored",
+          "name": "polytopes-4d-07-vertices.parquet",
+          "new_rows": 177446,
+          "rows_checked": 177446,
+          "seconds": 2.0331517078448087
+        },
+        {
+          "database_bytes": 39952384,
+          "input_sha256": "6b450d70c0c0461b5335d500e77bc663db5cbf5280abb6a8f3bcf2257f8e3a96",
+          "mode": "stored",
+          "name": "polytopes-4d-08-vertices.parquet",
+          "new_rows": 834638,
+          "rows_checked": 834638,
+          "seconds": 11.950585749931633
+        },
+        {
+          "database_bytes": 152068096,
+          "input_sha256": "ef5c8820282196c32b2fae96c2a2bc0c9e638bda4a0d96bf60eb774708f894a7",
+          "mode": "stored",
+          "name": "polytopes-4d-09-vertices.parquet",
+          "new_rows": 2867955,
+          "rows_checked": 2867955,
+          "seconds": 52.75118320900947
+        }
+      ],
+      "seconds": 67.07906783302315,
+      "status": "selected_files_passed"
+    }
+  },
+  "stored_timing": {
+    "extrapolation_limit": "Larger polytopes and larger SQLite indexes are not benchmarked.",
+    "linear_full_database_hours": 2.257172740174353,
+    "rows": 3905789,
+    "seconds": 66.98542354186065
+  },
+  "tests_passed": 11
+}

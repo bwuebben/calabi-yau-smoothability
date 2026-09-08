@@ -39,6 +39,11 @@ in `output/`; the pinned Kreuzer–Skarke input manifest is in `manifests/`.
 The reproduction commands below distinguish standard Python from SageMath.
 Every paper builds from its directory with `latexmk -pdf main.tex`.
 
+[Checking the dataset copy](DATASET_CHECK.md) gives commands for verifying
+file integrity, detecting repetitions up to lattice equivalence, and
+benchmarking the complete Kreuzer–Skarke dataset check. It also records
+the scope and timings of the available-data verification.
+
 ## The papers
 
 1. **Non-smoothable Calabi–Yau threefolds from reflexive polytopes**
