@@ -88,8 +88,10 @@ print("2. Delta_N: reflexive, 10 facets, 21 faces, unique square face with"
 # subdivision of Cone(F) at the interior lattice point is unimodular —
 # the resolution used in Prop C's proof.  NOTE: Prop C concludes these
 # contractions are NEVER primitive and X is not Q-factorial, so Gross's
-# smoothing theorems (5.8 / 4.3) do not apply; the l(F*)=1 del Pezzo case
-# is genuinely open (paper 2, Remark after Prop C).
+# smoothing theorems (5.8 / 4.3) do not apply.  For a lone cone of these
+# three types, Prop C now obtains nonsmoothability from the injective
+# surface-homology map and Paper V's necessary link-homology condition.
+# This finite check establishes only the stated star subdivisions.
 from toric_census import verts_from_edges, interior_points, smoothing_components, rigid  # noqa
 
 

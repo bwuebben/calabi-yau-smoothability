@@ -8,28 +8,31 @@ pairs. Paper 4 develops a global obstruction using vanishing periods.
 Paper 5 proves a necessary and sufficient mixed smoothing criterion and
 convergent integrability for its specified deformation spaces.
 
-**Updated 7 September 2026.** Paper 5 covers nodes and exact
-anticanonical cones over smooth del Pezzo surfaces of degrees 5, 6 and 7,
-and over P¹×P¹. Integrability is proved under the hypotheses stated in
-its theorems. The distinction between smooth deformation bases and the
-existence of smooth fibres is essential: the paper also constructs a
-nonsmoothable example with four smooth deformation components.
-The degree-by-degree scope table is in the introduction. The new scope
-explanation distinguishes the classical all-local-complete-intersection
-results from the stated mixed theorem. For a cubic cone, the full local
-deformation tangent has dimension 16 but link H₂ has dimension 6, so the
-current tangent–link identification cannot be reused in degrees 1–4.
-This does not rule out a different mixed criterion for those degrees.
+**Updated 9 September 2026.** All five manuscripts are revised. Papers 1–3
+distinguish explicit examples and local classifications from database-wide
+counts, which retain the completeness hypothesis stated below. Paper 4
+specifies the singularity and resolution hypotheses for its homological
+matrix, and Paper 5 gives the precise slice hypotheses and threshold count
+in its ambient obstruction argument.
+
+Paper 5 covers nodes and exact anticanonical cones over smooth del Pezzo
+surfaces of degrees 5, 6 and 7, and over P¹×P¹. Its selected deformation
+bases are smooth under the stated nonzero degree-six projection hypothesis;
+this is distinct from the existence of smooth fibres. The degree-by-degree
+scope table is in the introduction. The paper also explains why the current
+full-tangent/link comparison does not extend directly to degrees 1–4: for a
+cubic cone those dimensions are 16 and 6. This does not rule out another
+mixed criterion for those degrees.
 
 **Author:** Bernd Johannes Wuebben (wuebben@gmail.com)
 
-| paper | directory | compiled PDF |
-|---|---|---|
-| 1. Non-smoothable Calabi–Yau threefolds from reflexive polytopes | `paper1/` | [cy-non-smoothable.pdf](paper1/cy-non-smoothable.pdf) |
-| 2. Deformations of toric pairs and the smoothing of Batyrev Calabi–Yau threefolds | `paper2/` | [cy-toric-pairs.pdf](paper2/cy-toric-pairs.pdf) |
-| 3. Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau threefolds | `paper3/` | [cy-mirror-pairs.pdf](paper3/cy-mirror-pairs.pdf) |
-| 4. A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds | `paper4/` | [cy-vanishing-cycle.pdf](paper4/cy-vanishing-cycle.pdf) |
-| 5. Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points | `paper5/` | [cy-mixed-smoothing.pdf](paper5/cy-mixed-smoothing.pdf) |
+| paper | guide | compiled PDF | pages |
+|---|---|---|---:|
+| 1. Non-smoothable Calabi–Yau threefolds from reflexive polytopes | [paper1/](paper1/README.md) | [cy-non-smoothable.pdf](paper1/cy-non-smoothable.pdf) | 18 |
+| 2. Deformations of toric pairs and the smoothing of Batyrev Calabi–Yau threefolds | [paper2/](paper2/README.md) | [cy-toric-pairs.pdf](paper2/cy-toric-pairs.pdf) | 19 |
+| 3. Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau threefolds | [paper3/](paper3/README.md) | [cy-mirror-pairs.pdf](paper3/cy-mirror-pairs.pdf) | 11 |
+| 4. A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds | [paper4/](paper4/README.md) | [cy-vanishing-cycle.pdf](paper4/cy-vanishing-cycle.pdf) | 32 |
+| 5. Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points | [paper5/](paper5/README.md) | [cy-mixed-smoothing.pdf](paper5/cy-mixed-smoothing.pdf) | 61 |
 
 Each `paperN/` directory holds `main.tex` and its compiled PDF. Paper 5's
 source also includes `sections/`. Supporting computations are in `src/`
@@ -47,90 +50,73 @@ the scope and timings of the available-data verification.
 ## The papers
 
 1. **Non-smoothable Calabi–Yau threefolds from reflexive polytopes**
-   (`paper1/`) — explicit compact Calabi–Yau threefolds that admit no
-   smoothing: threefolds whose singular points are anticanonical cones over
-   the Hirzebruch surface F₁ (down to a *single* such point), and — a new
-   phenomenon — threefolds all of whose singular points deform nontrivially
-   while no global smoothing exists. Includes a complete census of the
-   isolated Gorenstein toric threefold germs with small edge data —
-   exactly 217 classes, proved and not merely computed, sorted into the
-   trichotomy type (R) rigid / type (D) deformable but non-smoothable /
-   type (S) smoothable — and a sweep
-   of **all 473,800,776 reflexive 4-polytopes** of the Kreuzer–Skarke
-   classification: **8.27% (39,175,536)** carry a unit-edge non-smoothable
-   2-face, so their generic anticanonical hypersurfaces admit no smoothing.
+   ([paper1/](paper1/README.md)) — explicit projective examples with a
+   single F₁-cone point or a single locally deformable nonsmoothable
+   pentagon-cone point. Gross's earlier compact constructions are
+   distinguished from these explicit reflexive-polytope realizations.
+   The local census has **217** isolated singularity classes whose primitive
+   polygon edge vectors have coordinates in [−2,2] in some lattice basis:
+   **8 reduced-rigid**, **79 deformable nonsmoothable**, and **130 smoothable**,
+   including the ordinary double point. Reduced-rigid means that the reduced
+   miniversal base is a point; it does not assert vanishing of the first-order
+   deformation space. The smooth unimodular triangle is excluded.
+   Under the database hypothesis, **39,175,536** of the **473,800,776**
+   classification polytopes carry a nonsmoothable unit-edge two-face,
+   approximately **8.27%**. This is a sufficient local obstruction and gives
+   a lower bound for global nonsmoothability, not a complete count of it.
 
 2. **Deformations of toric pairs and the smoothing of Batyrev Calabi–Yau
-   threefolds** (`paper2/`) — the positive direction: an explicit deformation of the
-   ambient toric pair, cut out by trinomials in Cox coordinates (a
-   codimension-two transplant of Petracci's homogeneous deformations of
-   toric pairs), smooths the points over a type-(S) face whenever the dual
-   edge has lattice length ≥ 2; the threshold is sharp — no unit-edge
-   Batyrev hypersurface whose singular locus is a single ordinary double
-   point admits a smoothing, and a 7-vertex polytope realizes this;
-   the single ℓ = 1 cone cases covered by Paper 5 (degree 6, degree 7,
-   and P¹×P¹) are also nonsmoothable, because their relation kernel is zero.
-   The general simultaneous ambient construction retains its stated
-   irreducibility hypothesis on the deformation space. Comparison with the
-   Batyrev–Kreuzer
-   all-conifold census: their criterion constrains only the dual-length-1
-   faces, so of their 30,241 Namikawa-certified smoothable polytopes
-   exactly 3,774 — one in eight — are explained per-face, and the
-   remaining exactly 26,467 are cross-face rescues.
+   threefolds** ([paper2/](paper2/README.md)) — an explicit deformation of
+   the ambient toric pair, given by trinomials in Cox coordinates, smooths
+   the singularities over a chosen smoothable face when its dual edge has
+   an interior lattice point. It gives a global smoothing when this is the
+   only singular face. Simultaneous smoothing is unconditional for nodes
+   and otherwise assumes irreducibility of the semiuniversal deformation
+   space. A seven-vertex one-node example has no smoothing, showing the
+   dual-edge threshold is sharp. The lone length-one del Pezzo cases
+   (degrees 6 and 7, and P¹×P¹) are nonsmoothable by the surface-homology
+   injection and the explicitly recalled necessary condition from Paper 5.
+   Under the database hypothesis, **3,774** of the **30,241** smoothings in
+   the Batyrev–Kreuzer census meet the criterion face by face; the remaining
+   **26,467** require relations among exceptional curves from different faces.
 
 3. **Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau
-   threefolds** (`paper3/`) — the mirror-symmetric capstone: the dual-edge
-   length equals the transverse-cone multiplicity, so X and its Batyrev
-   mirror X° are both isolated-singular exactly on "both-sides unit"
-   polytopes. A complete scan of the classification shows there are
-   **exactly 590** such polytopes; every 2-face is a triangle, a zonotope,
-   or a reflexive polygon; the only non-smoothable germs occurring are the
-   cyclic quotients ⅓(1,1,1) and ⅕(1,1,3) and — exactly once — the
-   F₁-cone, giving a **unique mirror pair** (22 and 26 vertices,
-   resolution Hodge numbers (20,26) and (26,20)) in which X admits no
-   smoothing while every singular point of X° is locally smoothable. The
-   germs that deform but admit no smoothing never occur at all, so a
-   Calabi–Yau threefold carrying one never has a mirror with isolated
-   singularities; at the opposite extreme exactly one polytope, the
-   self-dual 24-cell, gives a mirror pair with both members smooth. The
-   paper also records two refuted conjectures: the natural low-vertex
-   guess holds for all 395,406,329 polytopes with at most 18 vertices and
-   fails from 19 on. An exact row reduction of the 26 node relations of the
-   mirror X° gives rank 18 with two coloops, so the nodes alone admit no
-   relation with every coefficient non-zero. Paper 4 further proves that
-   coupling them to the four del Pezzo-cone directions cannot give a
-   smoothing either.
+   threefolds** ([paper3/](paper3/README.md)) — under the database hypothesis,
+   exactly **590** reflexive four-polytopes have both associated Batyrev
+   hypersurfaces with at most isolated singularities. Their two-faces belong
+   to **twelve** lattice-isomorphism classes: triangles, zonotopes, and
+   reflexive polygons. The only nonsmoothable germs are ⅓(1,1,1), ⅕(1,1,3)
+   and the F₁ cone; type-(D) germs do not occur. The F₁ cone occurs in a
+   unique mirror pair in this classification, with **22 and 26 vertices**
+   and resolution Hodge numbers **(20,26)** and **(26,20)**. Its displayed
+   geometry is verified independently of database completeness. One member
+   is locally nonsmoothable; all germs of its mirror are smoothable, but
+   Paper 4 proves that the mirror has no global smoothing. The self-dual
+   **24-cell** is the unique smooth/smooth pair within the classification.
+   The transverse-multiplicity identity supplies the elementary geometric
+   interpretation of the enumeration predicate.
 
 4. **A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds**
-   (`paper4/`) — the necessity theory for the mixed case: any one-parameter
-   smoothing of a Calabi–Yau threefold whose singular points are nodes and
-   anticanonical del Pezzo cones (degrees 6 and 7) produces a rational
-   homology class on the singularity links that dies on a crepant
-   resolution, lies in canonical root subspaces at the cone points, and is
-   nonzero at every node, every dP₇ point, and every line-smoothed dP₆
-   point. The engine is a vanishing-period identity (the period of the
-   holomorphic 3-form over a vanishing cycle equals the local smoothing
-   parameter times a unit); in the purely nodal case this recovers the
-   necessity half of Friedman's criterion at all orders, without
-   unobstructedness. The criterion is a finite linear-algebra test, and it
-   obstructs the X° member of paper 3's unique mirror pair (26 nodes, two
-   dP₇ and two dP₆ cone points, every germ locally smoothable), which admits
-   **no smoothing**. A version allowing rigid germs shows independently
-   that no deformation of the mirror partner smooths either of two specified
-   nodes; its rigid F₁-cone point is not the source of that global
-   obstruction. The relation rows give a rational form of each toric germ's
-   T¹, the ambient matrix kernel equals the topological kernel on the
-   admissible class, and positive cone-point block rank certifies failure of
-   ℚ-factoriality. The seven-vertex bottom of the pentagonal census has one
-   dP₇-cone point and no smoothing. Among all 77 admissible polytopes with at
-   most nine vertices and a pentagonal face, the criterion obstructs 76. On a
-   separate hypersurface X₁₉ with 14 nodes and one dP₇ point the test is
-   silent; Paper 5 now proves that it is smoothable and that its full
-   deformation base is smooth of dimension 30.
+   ([paper4/](paper4/README.md)) — any smoothing with the stated nodes and
+   degree-six/seven anticanonical cone germs forces a relation among link
+   homology classes on a crepant resolution. The local classes must bound
+   in the chosen Milnor fibres; the relation is nonzero at every node,
+   degree-seven point and degree-six point using its one-dimensional local
+   component. The period argument applies to arbitrary contact order.
+   It obstructs the **26-node/four-cone** mirror member in Paper 3 even
+   though every germ is smoothable. A version allowing reduced-rigid germs
+   proves that two specified nodes on the other member cannot be smoothed.
+   The equality between the ambient matrix kernel and the topological
+   kernel has its precise isolated-germ and resolution hypotheses; the
+   general ambient-divisor spanning assertion is stated separately.
+   Among the **77** polytopes in the stated pentagonal framework with at
+   most nine vertices, the criterion obstructs **76**. Paper 5 constructs
+   the remaining smoothing and determines the smooth 30-dimensional
+   deformation base of the separate example X₁₉.
 
 5. **Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points**
-   (`paper5/`) — a necessary and sufficient smoothing criterion for connected
-   normal projective complex threefolds with trivial dualizing sheaf,
+   ([paper5/](paper5/README.md)) — a necessary and sufficient smoothing
+   criterion for connected normal projective complex threefolds with trivial dualizing sheaf,
    H¹(O_X) = 0, and only nodes and the exact cone germs specified above.
    For a chosen profile of local deformation branches, a homological
    relation must be nonzero at each rank-one summand, have all three
@@ -156,7 +142,7 @@ the scope and timings of the available-data verification.
    singular curve. An explicit ambient family smooths **X₉**, whose two
    nodes lie in no purely nodal relation. Its general ambient fibre is
    toric: the paper prints a fan with seven rays, ten maximal cones and
-   one singular fixed point. This corrects the former non-toricity claim.
+   one singular fixed point.
 
    Among reflexive 4-polytopes with at most nine vertices in the stated
    framework (only isolated nodes and degree-six/seven cone points,
@@ -180,9 +166,8 @@ unconditional.
 ## Code (`src/`)
 
 Exact-arithmetic Python (stdlib only for the core; `numpy` + `pyarrow`
-for the database scanners). Every quantitative claim in the papers is
-produced by one of these scripts, and the anchor examples are asserted on
-every run:
+for the database scanners). The scripts reconstruct the finite numerical
+data and test the named examples; the geometric and analytic arguments are given in the papers:
 
 - `toric_census.py` — the local classification engine: the type (R) /
   type (D) / type (S) trichotomy for cones over unit-edge lattice
@@ -334,8 +319,9 @@ lifting and period arguments are proved in the paper.
 
 ## Data (`output/`)
 
-JSON results of every scan, so all counts can be checked without redoing
-the compute (the full sweep is ≈ 60 h): per-vertex-count sweep results
+Saved JSON scan results allow the aggregate counts to be reconstructed
+without repeating the full scan. This reaggregation does not independently
+verify every discarded polytope. The files include per-vertex-count sweep results
 (`ks_v*.json`), the Batyrev–Kreuzer census (`bk_*.json`), planting results
 (`plant_*.json`), and the both-sides census (`both_sides_*.json`).
 

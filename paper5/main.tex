@@ -19,6 +19,7 @@
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{recollection}[theorem]{Recollection}
 \newtheorem{conjecture}[theorem]{Conjecture}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
@@ -93,9 +94,9 @@ tangent vectors integrate to convergent deformations. A nonsmoothable
 example with thirty nodes and two degree-six cone points shows why
 nonzero local parameters alone do not suffice. We determine its full
 analytic deformation ring, which is reduced with four smooth components.
-We also prove that a toric hypersurface with fourteen nodes and one
-degree-seven cone point is smoothable and has a smooth thirty-dimensional
-deformation base.
+An explicit toric hypersurface with fourteen nodes and one degree-seven
+cone point has a smoothing and a smooth thirty-dimensional deformation
+base.
 \end{abstract}
 
 \maketitle
@@ -120,7 +121,7 @@ statement because it suffices for the small-polytope classification.
 Theorem~\ref{thm04:criterion} supplies the stronger criterion at $A_2$
 points.
 
-\begin{theorem}[mixed necessity; {\cite[Thm.~6.1]{PaperIV}}]\label{thm:companion}
+\begin{recollection}[mixed necessity; {\cite[Thm.~6.1]{PaperIV}}]\label{thm:companion}
 Let $X$ be a compact complex threefold with $\omega_X\cong\cO_X$ and
 $h^1(\cO_X)=0$ whose singular points are ordinary double points and
 anticanonical cones over $\dP_6$ or $\dP_7$, and suppose $X$ admits a
@@ -134,18 +135,18 @@ every $\dP_7$ point $q$ there is $\kappa\in K(X)$ whose $q$-component is a
 nonzero element of the $(-2)$-line $\Rsm_q$; and for every $\dP_6$ point $q$
 smoothed through the one-parameter component there is $\kappa\in K(X)$ whose
 $q$-component is a nonzero element of the $A_1$ summand $\Rsm_q$.
-\end{theorem}
+\end{recollection}
 
 The step from ``no one-parameter smoothing'' to ``not smoothable'' is also the
 companion's, and we quote it because Theorem~\ref{thm:C} rests on it.
 
-\begin{theorem}[{\cite[Cor.~6.7]{PaperIV}}]\label{thm:noarc}
-Let $X$ be as in Theorem~\ref{thm:companion} and admit no one-parameter
+\begin{recollection}[{\cite[Cor.~6.7]{PaperIV}}]\label{thm:noarc}
+Let $X$ be as in Recollection~\ref{thm:companion} and admit no one-parameter
 smoothing.  Then no fibre of a small representative of the miniversal
 deformation of $X$ is smooth; consequently $X$ is not smoothable over any base
 germ, and neither is any small deformation of $X$.  Likewise no formal arc in
 the miniversal deformation meets all the local smoothing loci.
-\end{theorem}
+\end{recollection}
 
 The mechanism is that a smoothing over an arbitrary base germ would, by the
 curve selection lemma applied to the discriminant in the miniversal base,
@@ -153,7 +154,7 @@ produce a one-parameter one; ruling out the one-parameter case therefore rules
 out all of them.
 
 We say the criterion \emph{obstructs} $X$ when some coordinate at which
-Theorem~\ref{thm:companion} asserts nonvanishing vanishes identically on
+Recollection~\ref{thm:companion} asserts nonvanishing vanishes identically on
 $K(X)$, so that no such $\kappa$ exists and $X$ has no one-parameter smoothing;
 and that it is \emph{silent} when none does.  Theorem~\ref{thm04:criterion} strengthens this necessity statement
 to an equivalence by imposing all three scalar conditions at an $A_2$ point.
@@ -338,15 +339,15 @@ induced on a face is a face of the decomposition of the cell above it.  In
 particular, if a cell admits only homothetic summands, then so does every face
 of it.
 
-\begin{theorem}[{\cite[Thm.~4.4]{IV12}}]\label{thm:iv44}
+\begin{recollection}[{\cite[Thm.~4.4]{IV12}}]\label{thm:iv44}
 A Minkowski decomposition of the slice complex in the sense of
 Definition~\ref{def:iv} determines a flat family
 $\pi \colon \cP \to B$ over a curve germ $B$, with $\cP_0 = \PP_\Delta$ and
 with $T$-action on every fibre.
-\end{theorem}
+\end{recollection}
 
 \begin{definition}\label{def:singledegree}
-The family of Theorem~\ref{thm:iv44}, for a fixed primitive $R \in M$ and a
+The family of Recollection~\ref{thm:iv44}, for a fixed primitive $R \in M$ and a
 fixed decomposition of the slice complex at $R$, is the \emph{single-degree
 family at $R$}.  Its fibre over $b\in B$ is denoted $\cP_b$, and the base
 parameter is written $b$ throughout, the letter $t$ being reserved for edge
@@ -354,20 +355,20 @@ dilations.
 \end{definition}
 
 
-\begin{theorem}[{\cite[Cor.~2.12]{IV12}}]\label{thm:cor212}
+\begin{recollection}[{\cite[Cor.~2.12]{IV12}}]\label{thm:cor212}
 Suppose the polyhedral divisor at a germ has \emph{affine locus}.  Then the
 singularities of the general fibre at that germ are the cones over the summands
 $C^0$, $C^1$.  In particular the germ is smoothed if and only if each summand
 cone is smooth; for the bounded summands used below, this means a point or a
 unimodular simplex, in particular a primitive segment in dimension one.
-\end{theorem}
+\end{recollection}
 
-\begin{theorem}[{\cite[Rem.~2.13]{IV12}}]\label{thm:rem213}
+\begin{recollection}[{\cite[Rem.~2.13]{IV12}}]\label{thm:rem213}
 If a polyhedral divisor has \emph{complete locus} and its associated affine
 $T$-variety is singular, no $T$-deformation obtained by decomposing that
 polyhedral divisor is a smoothing.  Thus the general fibre is singular; the
 remark does not assert that its analytic germ is unchanged.
-\end{theorem}
+\end{recollection}
 
 The following two consequences pass from a singular ambient fibre to
 its anticanonical hypersurfaces.
@@ -386,7 +387,7 @@ $\cL|_{\cP_b}\cong\omega_{\cP_b}^{-1}$ for every $b\in B$.
 \begin{proof}
 The divisorial fan of the special fibre is complete, so
 \cite[Thm.~3.2 and Rem.~3.3]{HI11} makes $\pi$ proper; flatness is
-Theorem~\ref{thm:iv44}.  The special fibre $\PP_\Delta$ is Gorenstein.  The
+Recollection~\ref{thm:iv44}.  The special fibre $\PP_\Delta$ is Gorenstein.  The
 fibrewise Gorenstein locus of a flat morphism of finite presentation is open
 \cite[Tag~0C09]{Stacks}; it contains the whole proper fibre $\cP_0$, so
 properness permits us to shrink $B$ until every fibre is Gorenstein.  Thus
@@ -446,7 +447,7 @@ The rays of $\sigma_G$ are the vertices of $G$.  If $\langle R,\cdot\rangle$
 takes both signs on them, then in the downgrade along $R$ the polyhedral divisor
 attached to $\sigma_G$ has nonempty coefficients at both $0$ and $\infty$, hence
 complete locus.  By Definition~\ref{def:framework} the germ is a node or a del
-Pezzo cone, in particular singular, so Theorem~\ref{thm:rem213} applies.
+Pezzo cone, in particular singular, so Recollection~\ref{thm:rem213} applies.
 
 It remains to justify the asserted dimension.  The tail cone
 $\tau=\sigma_G\cap R^\perp$ has dimension $2$ in the rank-three acting lattice
@@ -765,15 +766,35 @@ $c\,d(w') = u_{F_1}(w') + 1 \ge 1$.
 \end{proof}
 
 \begin{corollary}\label{cor:thresholds}
-Fix a pairing vector on $G$ and let $R_\tau = R_0 + \tau\,d$ be the corresponding line
-of degrees.  Then the cell of $F_1$ is bounded exactly for $\tau < T_1$ and the
-cell of $F_2$ exactly for $\tau > T_2$, for thresholds $T_1, T_2$ computed from
-$R_0$ and $d$ by finitely many divisions.  In particular the sign pattern of
-$R_\tau$ on $V(F_1) \cup V(F_2)$ takes at most $\#(V(F_1) \cup V(F_2)) + 1$ values
-along the line.
+With the notation of Lemma~\ref{lem:sign}, suppose $R_0\in M_\RR$ is
+strictly positive on every vertex of $G$, and put
+$R_\tau=R_0+\tau d$ for $\tau\in\RR$.  The nonempty positive-slice cell
+$\sigma_{F_1}\cap[R_\tau=1]$ is bounded exactly when $\tau<T_1$, and
+$\sigma_{F_2}\cap[R_\tau=1]$ is bounded exactly when $\tau>T_2$, where
+\[
+ T_1=\min_{w\in V(F_1)\setminus V(G)}\frac{-R_0(w)}{d(w)},
+ \qquad
+ T_2=\max_{w\in V(F_2)\setminus V(G)}\frac{-R_0(w)}{d(w)}.
+\]
+If $m$ is the number of distinct thresholds $-R_0(w)/d(w)$ for
+$w\in(V(F_1)\cup V(F_2))\setminus V(G)$, then the sign pattern on
+$V(F_1)\cup V(F_2)$ takes at most $2m+1$ values, including the patterns
+at the thresholds.  On the complementary open intervals it takes at
+most $m+1$ values.
 \end{corollary}
 
-\section{The obstruction: a rigidity criterion, and \texorpdfstring{$X_{19}$}{X19}}\label{sec:thmA}
+\begin{proof}
+The pairings on $G$ are constant and positive.  Each slice is therefore
+nonempty, and it is bounded if and only if the functional is strictly
+positive on every ray of its facet cone.  Lemma~\ref{lem:sign} turns
+these inequalities into the two stated threshold inequalities.
+All signs are constant between successive thresholds.  The $m$
+threshold points can contribute $m$ additional patterns, giving the
+bound $2m+1$.  In particular, restricting to lattice degrees does not
+justify omitting the patterns with a zero pairing.
+\end{proof}
+
+\section{Obstructions to single-degree ambient smoothings}\label{sec:thmA}
 
 We can now state the obstruction for a class of polytopes rather than for one.
 
@@ -819,7 +840,7 @@ Lemma~\ref{lem:singcurve} now give the assertion about anticanonical Cartier
 divisors.
 \end{proof}
 
-\subsection{\texorpdfstring{$X_{19}$}{X19}}
+\subsection{The ambient obstruction for \texorpdfstring{$X_{19}$}{X19}}
 Let
 \begin{equation}\label{eq:V19}
 \begin{aligned}
@@ -858,8 +879,19 @@ ambient family, with central fibre $X_{19}$, has smooth general fibre.
 
 \begin{proof}
 Both facets are locked: each has $9$ vertices, $16$ edges and nine $2$-faces,
-of degrees $(3,3,3,3,3,4,4,4,5)$ summing to $32=2\cdot16$, and the propagation
-of Definition~\ref{def:locked} closes on all $16$ edges.
+of degrees $(3,3,3,3,3,4,4,4,5)$ summing to $32=2\cdot16$.
+For $F_{21}$, the five triangular faces, written by vertex indices, are
+\[
+ \{9,13,18\},\quad\{9,15,18\},\quad\{10,13,17\},\quad
+ \{10,16,17\},\quad\{13,17,18\}.
+\]
+Rule (T) ties their eleven edges to one another.  Rule (A) on
+$\{3,9,10,13\}$ then ties the edges $\{3,9\}$ and $\{3,10\}$ to this
+class.  Applying (A) on $\{3,9,14,15\}$ adds $\{3,14\}$ and
+$\{14,15\}$; applying (S) on $\{3,10,14,16\}$ adds $\{14,16\}$.
+These are all sixteen edges.  Interchanging the second and third
+coordinates preserves $\Delta_{19}$ and carries $F_{21}$ to $F_{24}$,
+so the same argument applies there.
 
 It remains to check (C), and here there is no enumeration.  Solving
 $\langle r,v_i\rangle=1$ for $i=14,\ldots,18$ gives exactly
@@ -1254,16 +1286,16 @@ and $841$ extensions on the positive slice.
 \end{proof}
 
 \begin{corollary}\label{cor:ambientsmooth}
-By Theorem~\ref{thm:iv44} the decomposition determines a flat family
+By Recollection~\ref{thm:iv44} the decomposition determines a flat family
 $\pi \colon \cP \to B$ with $\cP_0 = \PP_{\Delta_9}$, and by
-Theorem~\ref{thm:cor212} the general fibre $\cP_b$ is smooth at all three germs
+Recollection~\ref{thm:cor212} the general fibre $\cP_b$ is smooth at all three germs
 of $X_9$: the cones over a primitive segment and over a unimodular simplex are
 smooth.
 \end{corollary}
 
 All three cones $\sigma_G$ are one-sided at $R$ with bounded cells, so
 Lemma~\ref{lem:reach} does not intervene and the affine-locus hypothesis of
-Theorem~\ref{thm:cor212} is satisfied at each.
+Recollection~\ref{thm:cor212} is satisfied at each.
 
 \input{sections/07_x9_general_fibre}
 

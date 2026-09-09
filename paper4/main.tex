@@ -72,25 +72,24 @@ reflexive polytopes}
 \begin{document}
 
 \begin{abstract}
-We prove a homological obstruction to smoothing projective Calabi--Yau
-threefolds with ordinary double points and anticanonical cones over del
-Pezzo surfaces of degrees six and seven. Any one-parameter smoothing
-forces a relation among rational homology classes on the singularity
-links that vanishes on a crepant resolution. At cone points, the classes
-lie in subspaces determined by the local smoothing components. Its local
-component must be nonzero at every node and every degree-seven point, and
-at each degree-six point smoothed through its one-dimensional component.
-The proof combines vanishing periods, a comparison of local Milnor fibres
-with del Pezzo threefold complements, and the Mayer--Vietoris sequence.
-The period argument applies to smoothing arcs of arbitrary contact order,
-extending Friedman's nodal necessity criterion to these
-non-local-complete-intersection singularities. We apply the resulting
-linear-algebra test to a Batyrev hypersurface with 26 nodes and four del
-Pezzo cone points. Although every singularity is locally smoothable, the
-threefold has no smoothing, even along a formal arc. The mirror partner
-also carries a global obstruction: two of its nodes cannot be smoothed by
-any one-parameter deformation, independently of its locally rigid cone
-singularity.
+We establish a homological necessary condition for smoothing projective
+Calabi--Yau threefolds with ordinary double points and anticanonical del
+Pezzo cone singularities of degrees six and seven. On a crepant resolution
+that is small at the nodes and has an exceptional del Pezzo surface over
+each cone point, any smoothing forces a rational homology relation among
+classes from the singularity links. At cone points these classes belong
+to the subspaces that bound in the local Milnor fibres. The relation is
+nonzero at every node, every degree-seven point and every degree-six point
+smoothed through the one-dimensional component of its miniversal base.
+The proof combines explicit vanishing periods, a description of the Milnor
+fibres compatible with their link markings, and the Mayer--Vietoris
+sequence. It applies to smoothing arcs of arbitrary contact order,
+extending Friedman's nodal necessity condition to these cone singularities.
+As an application, we exhibit a Batyrev hypersurface with 26 nodes and
+four del Pezzo cone points whose germs are all smoothable but which has
+no smoothing, even along a formal arc. On its mirror partner, two nodes
+cannot be smoothed by any analytic deformation, independently of the
+locally nonsmoothable cone point.
 \end{abstract}
 
 \maketitle
@@ -118,7 +117,7 @@ divisorial smoothing data.
 The first three papers of this program~\cite{PaperI,PaperII,PaperIII}
 classified the isolated Gorenstein toric threefold germs arising on Batyrev
 hypersurfaces from unit-edge polygons and constructed global smoothings when a
-dual-edge-length invariant is at least two.  They also isolated a unique
+dual-edge-length invariant is at least two.  They also identified a
 Batyrev mirror pair, associated with a $22$-vertex reflexive $4$-polytope
 $\Delta_{\mathbb F_1}$ and its polar, for which both members have only isolated
 singularities.  The remaining smoothing question is \emph{mixed}: nodes and
@@ -207,9 +206,7 @@ is its application to the mixed Batyrev hypersurface that motivated the
 criterion.
 
 Call a Batyrev mirror pair \emph{doubly isolated} when both members have only
-isolated singularities.  The companion classification~\cite{PaperV} identifies
-$X^{\circ}$ and $X_{\Delta}$ as the unique such pair in the family it treats.
-The mirror partner
+isolated singularities.  The mirror partner
 $X_{\Delta}$ carries an anticanonical cone over $\mathbb F_1$, a germ with no
 smoothing~\cite{PaperI,PaperIII}, so both members of the pair are
 non-smoothable.  The criterion says more.  Extended to deformations
@@ -274,27 +271,20 @@ smoothing.  Among the $77$ admissible polytopes with at most nine vertices and
 a pentagonal $2$-face, the same test obstructs $76$
 (Proposition~\ref{prop:census}).
 
-Section~\ref{sec:measures} supplies structural interpretations of the finite
-test.  To compute the topological kernel, we pair the link classes against
-ambient divisor classes.  This produces, at each singular point,
-one linear functional on $K^{\perp}$ for each such divisor; we assemble them
-into an integer matrix and call the functionals contributed by a single germ its
-\emph{rows}.  Three statements about that construction are proved there.  The
-rows at a germ form a rational basis of $T^1$ after extension of scalars, so the
-lattice $K^{\perp}$, which enters as a substitute for the exceptional curve
-class a cone point does not have, is a rational form of the tangent space to
-the germ's deformation functor
-(Proposition~\ref{prop:T1channels}).  Batyrev's correction term for $h^{1,1}$
-vanishes on the whole class, so the kernel computed from the ambient Picard
-group is the topological kernel and not merely contained in it
-(Proposition~\ref{prop:kernelequal}).  And $\QQ$-factoriality of $X$ forces the
-rows at a divisorial germ to vanish, so a germ whose rows do not all vanish
-certifies that $X$ is not $\QQ$-factorial
-(Proposition~\ref{prop:qfact}).  The last of these is what reconciles
-the criterion with Gross's theorem that a primitive contraction of a
-$\dP_7$ divisor to a point has smoothable target
-\cite[Theorem~5.8]{Gross97}: primitivity supplies $\QQ$-factoriality,
-which is exactly the case in which the criterion says nothing.
+Section~\ref{sec:measures} interprets the matrix used in the finite test.
+Choose a basis of the link homology at each germ.  Each basis class defines
+a linear functional on the ambient Picard group by intersection with its
+image on the resolution; its values on ambient divisor classes form a
+\emph{row} of the matrix $B$.  Read in local ray coordinates, the rows at a
+germ form a rational basis whose complexification is $T^1$
+(Proposition~\ref{prop:T1channels}).  For the isolated hypersurfaces under
+consideration, vanishing of Batyrev's correction term implies that the
+ambient divisors detect the entire topological relation kernel
+(Proposition~\ref{prop:kernelequal}).  Finally, under the resolution
+hypotheses of Proposition~\ref{prop:qfact}, algebraic $\QQ$-factoriality of
+$X$ forces every divisorial row to vanish.  This explains compatibility
+with Gross's smoothing theorem for primitive type~II contractions
+\cite[Theorem~5.8]{Gross97}.
 
 The criterion does not obstruct every mixed example.  Applying the same finite
 test to the anticanonical
@@ -303,16 +293,14 @@ companion paper~\cite{PaperIII} (fourteen nodes and one degree-$7$
 cone point, again with two nodal coloops), the finite test is
 silent: no coordinate to which Theorem~\ref{thm:necessity-intro}'s
 nonvanishing conclusion applies is forced to vanish
-(Section~\ref{sec:test}), and we ask:
+(Section~\ref{sec:test}).
 
-\begin{question}\label{q:X19}
-Is $X_{19}$ smoothable?  Any smoothing of $X_{19}$ would be a
-simultaneous smoothing of nodal and del Pezzo cone singularities that
-no purely nodal mechanism can produce.
-\end{question}
-The companion paper~\cite{PaperV} answers this question affirmatively
-and proves that the full deformation space of $X_{19}$ is smooth of
-dimension $30$.
+\begin{example}\label{q:X19}
+The companion paper~\cite{PaperV} proves that $X_{19}$ is smoothable and
+that its full deformation space is smooth of dimension $30$.  Every
+smoothing must deform its degree-$7$ cone point as well as its nodes;
+the nodal relation space alone does not satisfy the necessity condition.
+\end{example}
 
 \subsection{Method}
 The general necessity theorem has two inputs.  First, the vanishing-period computations of
@@ -381,7 +369,8 @@ constructive side, multi-parameter deformations of toric varieties in
 a single character degree were built by
 Ilten--Vollmert~\cite{IV12}.  The companion paper~\cite{PaperV}
 proves the mixed smoothing criterion, including the two-parameter
-degree-six component, and answers Question~\ref{q:X19} affirmatively.
+degree-six component, and proves the smoothability of
+$X_{19}$ in Example~\ref{q:X19}.
 
 \begin{convention}\label{conv:dp}
 $\dP_d$ denotes a del Pezzo \emph{surface} of degree $d=K^2$; thus
@@ -1333,7 +1322,15 @@ $\langle\varphi_{s_3}\rangle$ is the $A_1$ summand and
 $\langle\varphi_{s_1},\varphi_{s_2}\rangle$ the $A_2$ summand; the
 two $\dP_7$ functionals satisfy $\varphi_\beta^2=-2$,
 $\varphi_\alpha^2=-4$, and $\varphi_\beta$ spans the unique
-$(-2)$-line.  Stacking the $26$ node rows and the ten divisorial rows
+$(-2)$-line.  Thus, if $e_{p,i}$ is a chosen basis class of $H_2(L_p;\QQ)$
+and $\iota_p\colon L_p\hookrightarrow\Xh$ is the inclusion, our convention is
+\[
+B_{(p,i),j}=D_j\cdot(\iota_p)_*e_{p,i}.
+\]
+Rows are indexed by local homology classes and columns by ambient divisor
+classes; a relation with coefficient vector $\kappa$ satisfies
+$B^{\mathsf T}\kappa=0$.
+Stacking the $26$ node rows and the ten divisorial rows
 gives an integral matrix
 $B\in\operatorname{Mat}_{36\times26}(\ZZ)$ in the dual basis of the
 $26$ divisor classes complementary to the unimodular cone
@@ -1418,8 +1415,9 @@ By construction $\ker(B^{\mathsf T})$ contains the kernel of
 $\bigoplus_pH_2(L_p;\QQ)\to H_2(\Xh;\QQ)$ written in these
 coordinates: the node generators map to $\pm[\Gamma_i]$ and the
 divisorial classes to their pushforwards from
-$K^{\perp}\subset H_2(E_p)$, and each row is the pairing with an
-ambient divisor class.  Only this containment is used: if the ambient
+$K^{\perp}\subset H_2(E_p)$, and the entries of each row are the pairings
+of its local homology class with the ambient divisor classes.
+Only this containment is used: if the ambient
 Picard group under-detected $H_2(\Xh;\QQ)$, the ambient kernel
 would be larger than the topological one and every forced-zero
 statement would still bind.  Equality in fact holds here
@@ -1825,7 +1823,7 @@ one-parameter conclusions just proved.
 \end{proof}
 
 \begin{corollary}\label{cor:pair}
-Both members of the unique doubly isolated mixed mirror pair carry the
+Both members of the doubly isolated mirror pair $(X^{\circ},X_{\Delta})$ carry the
 obstruction of this paper: on $X^{\circ}$, in the form of
 Theorem~\ref{thm:necessity}, it excludes every smoothing; on
 $X_{\Delta}$, in the form of Theorem~\ref{thm:partial}, it excludes
@@ -1901,19 +1899,20 @@ Proposition~\ref{prop:kernelequal} below.
 \label{sec:channelsT1}
 
 \begin{proposition}\label{prop:T1channels}
-Let $G$ be a singular $2$-face of $\Pi$ with vertices $v_1,\dots,v_n$ in
-cyclic order, and put
+Let $G$ be a singular $2$-face of $\Pi$ with unit edges and vertices
+$v_1,\dots,v_n$ in cyclic order, and put
 \[
 R_G:=\Bigl\{a\in\QQ^{\,n}\ :\ \textstyle\sum_j a_jv_j=0\Bigr\}.
 \]
 Then $R_G$ has dimension $n-3$, Altmann's model gives a natural isomorphism
 \[
-T^1_{(Y_G,0)}\ \cong\ R_G\otimes_{\QQ}\CC,
+T^1_{(Y_G,0)}\ \cong\ R_G\otimes_{\QQ}\CC.
 \]
-and the rows of Section~\ref{sec:matrix} at $G$, read in the coordinates of
-the rays of $G$, form a $\QQ$-basis of $R_G$.
-When $G$ is a pentagon or hexagon, so that the crepant resolution has an
-exceptional surface $E$ over the germ, $R_G$ is
+If $G$ is a unit square, or a pentagon or hexagon with one interior
+lattice point, the rows of Section~\ref{sec:matrix} at $G$, read in the
+coordinates of its rays, form a $\QQ$-basis of $R_G$.
+In the pentagon and hexagon cases, the crepant resolution has an
+exceptional surface $E$ over the germ, and $R_G$ is
 $K^{\perp}_{\QQ}\subset\Pic(E)^{\vee}_{\QQ}$; when $G$ is a unit square it is
 the line spanned by the intersection vector of the exceptional curve of a
 small resolution.
@@ -1973,65 +1972,79 @@ and $16$ for $X_{19}$.
 
 \begin{proposition}\label{prop:kernelequal}
 Suppose every $2$-face of $\Pi$ is either a unimodular triangle or has
-dual edge of lattice length one; admissible polytopes, and also
-$\Delta$ itself, satisfy this.  Write $\ell^{*}(G)$ for the number of lattice
+dual edge of lattice length one.  Let $\Xh\to X$ be a smooth hypersurface
+resolution induced by a maximal projective crepant partial
+desingularization of $\PP_{\Pi}$.  Write $\ell^{*}(G)$ for the number of lattice
 points in the relative interior of $G$, and $\ell(G^{*})$ for the lattice
 length of the dual edge.  Then the correction term
 $\sum_{G}\ell^{*}(G)\bigl(\ell(G^{*})-1\bigr)$, summed over $2$-faces $G$
 of $\Pi$, in Batyrev's formula \cite[Corollary~4.5.1]{Batyrev94} for
-$h^{1,1}$ vanishes.  Consequently $h^{1,1}(\Xh)$ is purely toric, the
-ambient divisor classes span $H^{1,1}(\Xh;\QQ)$, and the ambient kernel
-$\ker(B^{\mathsf T})$ of Section~\ref{sec:kernelcomp} is equal to, not
-merely contains,
-$\ker\bigl(\bigoplus_pH_2(L_p;\QQ)\to H_2(\Xh;\QQ)\bigr)$.
+$h^{1,1}$ vanishes, and the ambient divisor classes span
+$H^2(\Xh;\QQ)=H^{1,1}(\Xh;\QQ)$.
+
+Suppose in addition that $X$ has only isolated singularities, all nodes
+or anticanonical cones over $\dP_6$, $\dP_7$ or $\mathbb F_1$, and that
+$\Xh\to X$ is small over the nodes and has the corresponding exceptional
+del Pezzo surface over each cone point.  Define $B$ by the pairings of
+bases of $H_2(L_p;\QQ)$ with ambient divisor classes, as in
+Sections~\ref{sec:matrix} and~\ref{sec:partner}.  Then
+\[
+\ker(B^{\mathsf T})=
+\ker\Bigl(\bigoplus_pH_2(L_p;\QQ)\longrightarrow H_2(\Xh;\QQ)\Bigr).
+\]
+These additional hypotheses hold for admissible polytopes and for
+$\Delta$ with the resolution of Section~\ref{sec:partner}.
 \end{proposition}
 
 \begin{proof}
-The spanning statement is not the vanishing restated; what connects them is
-the proof of \cite[Theorem~4.4.2]{Batyrev94}, where the components of
-$D_{\rho}\cap\Xh$ over a $2$-face $G$ are counted by
-$\ell^{*}(G)\ell^{*}(G^{*})$.  When that count vanishes each such
-intersection is irreducible, so the classes coming from the ambient
-torus-invariant divisors exhaust $H^{1,1}(\Xh;\QQ)$.  We use also
-$h^{2,0}(\Xh)=0$, which holds since $\Xh$ is crepant over a Calabi--Yau
-with rational singularities.  Granting these:
+A unimodular triangle has $\ell^{*}(G)=0$; every other $2$-face has
+$\ell(G^{*})-1=0$ by hypothesis.  Hence every summand of the correction
+term vanishes.  In the proof of \cite[Theorem~4.4.2]{Batyrev94}, the
+divisor $D_{\rho}$ indexed by an interior lattice point of $G$ meets
+$\Xh$ in $\ell(G^{*})$ irreducible components.  Thus
+$\ell^{*}(G)\bigl(\ell(G^{*})-1\bigr)$ counts the additional components
+beyond one for each such ambient divisor.  When the correction vanishes,
+every nonempty restriction of a torus-invariant divisor is irreducible,
+and these divisor classes span $H^{1,1}(\Xh;\QQ)$ by the same proof.
+The smooth Calabi--Yau hypersurface $\Xh$ has $h^{2,0}(\Xh)=0$, so
+$H^2(\Xh;\QQ)=H^{1,1}(\Xh;\QQ)$.
 
-A singular $2$-face has $\ell(G^{*})=1$ by hypothesis, so its factor
-$\ell(G^{*})-1$ vanishes; a non-singular $2$-face is a unimodular
-triangle, so its factor $\ell^{*}(G)$ vanishes.  Every term dies for one
-of the two reasons.  For the last clause, a row of $B$ records the
+Under the additional isolated-germ hypotheses, a row of $B$ records the
 pairings of a class with the ambient divisors, so a combination of rows
 vanishes exactly when the corresponding total class pairs to zero against
-every ambient divisor.  Since $h^{2,0}(\Xh)=0$ we have
-$H^2(\Xh;\QQ)=H^{1,1}(\Xh;\QQ)$, so the Poincar\'e pairing
+every ambient divisor.  The evaluation pairing
 $H_2\times H^2\to\QQ$ is perfect; the ambient divisor classes span
-$H^{1,1}$ by the first part, and therefore the total class pairs to zero
+$H^2$ by the first part, and therefore the total class pairs to zero
 against all of them exactly when it vanishes in $H_2(\Xh;\QQ)$.
 \end{proof}
 
-Section~\ref{sec:kernelcomp} uses only the containment, which is the safe
-direction for a necessity statement: an ambient kernel larger than the
-topological one makes every forced-zero conclusion stronger.  The
-proposition upgrades it to equality for the whole class at once, which
-is needed when applying the converse criterion of the companion
-paper~\cite{PaperV} to the computable matrix kernel.  Note that this vanishing is not the one that
+The correction-term hypothesis alone does not imply that $X$ has isolated
+singularities; the additional assumptions are needed to interpret the
+matrix as the isolated-link pairing used in this paper.
+Section~\ref{sec:kernelcomp} uses only the containment: a coordinate
+vanishing on the ambient kernel also vanishes on the topological kernel.
+The proposition gives equality for the admissible class and the treated
+mirror partner.  This equality is needed when applying the converse
+criterion of the companion paper~\cite{PaperV} to the matrix kernel.
+The correction-term vanishing is distinct from the one that
 empties Mavlyutov's mechanism of non-polynomial deformations
 \cite{Mav04}: that is the mirror correction, summed over $2$-faces of
-$\Pi^{*}$, and it follows from the unit edges of $\Pi$.  Both hold here,
-for related but distinct reasons.
+$\Pi^{*}$, and it follows from the unit edges of $\Pi$.  Both vanishings
+hold for the admissible polytopes and for $\Delta$.
 
-\subsection{\texorpdfstring{$\QQ$}{Q}-factoriality, and what the kernel
-is a defect of}\label{sec:qfact}
+\subsection{\texorpdfstring{$\QQ$}{Q}-factoriality and primitive contractions}
+\label{sec:qfact}
 
 Gross classifies the contractions of a smooth Calabi--Yau threefold that
 cannot be factored, and proves that a primitive contraction of a divisor
 to a point has smoothable target unless the exceptional divisor is
 $\PP^2$ or $\mathbb F_1$ \cite[Theorem~5.8]{Gross97}; degrees $6$ and
-$7$ are allowed.  This appears to collide with
-Theorem~\ref{thm:necessity}, which at a threefold with a single del Pezzo
-cone point has nothing for a relation to cancel against and so forbids a
-smoothing.  It does not collide, and the reason identifies what the
-kernel measures.
+$7$ are allowed.  For a threefold with a single degree-$7$ cone point,
+Theorem~\ref{thm:necessity} obstructs smoothing when the root line maps
+injectively to $H_2(\Xh;\QQ)$, as stated in
+Corollary~\ref{cor:onegerm}.  Gross's primitive contractions have
+$\QQ$-factorial targets, for which the root line instead maps to zero.
+The following proposition explains the distinction.
 
 \begin{proposition}\label{prop:qfact}
 Let $X$ be $\QQ$-factorial and let $\pi\colon\Xh\to X$ be a projective
@@ -2060,10 +2073,12 @@ the same observation.  Every divisor class therefore pairs to zero
 against $K_E^{\perp}$, and the rows, which are those pairings, vanish.
 \end{proof}
 
-In the $\QQ$-factorial case, then, the rows at every divisorial germ are
-zero, the kernel there is all of $K^{\perp}$, and the test of
-Section~\ref{sec:test} is silent, as it must be, since
-\cite[Theorem~5.8]{Gross97} produces a smoothing.  The proposition also
+Under the hypotheses of Proposition~\ref{prop:qfact}, the rows at every
+divisorial germ are zero, so the kernel contains its entire
+$K^{\perp}$ and the test imposes no obstruction there.  In the primitive
+type~II case with exceptional divisor $\dP_6$ or $\dP_7$,
+\cite[Theorem~5.8]{Gross97} supplies the smoothing.
+The proposition also
 says that a $\QQ$-factorial $X$ admits no \emph{projective} crepant
 resolution with an exceptional curve; it does not say that $X$ has no
 nodes, and indeed a general one-nodal quintic threefold is factorial.
@@ -2077,50 +2092,48 @@ every $X$ carrying such a germ, and the two statements never
 disagree. \qed
 \end{corollary}
 
-The condition in Proposition~\ref{prop:qfact} and its contrapositive are
-\emph{global}: $\QQ$-factoriality of $X$, in the sense
-$\operatorname{rank}\bigl(\Cl(X)/\Pic(X)\bigr)=0$, and not the condition
-that a germ be $\QQ$-factorial in its own right.  The distinction is not
-idle.  The germs here are never locally $\QQ$-factorial: at a cone over a
-del Pezzo surface $E$ the local class group is $\Pic(E)/\ZZ K_E$, of rank
+Here $\QQ$-factoriality is algebraic: every algebraic Weil divisor on $X$
+is $\QQ$-Cartier, or equivalently
+$\bigl(\Cl(X)/\Pic(X)\bigr)\otimes\QQ=0$.  This must be distinguished
+from $\QQ$-factoriality of the analytic germ.  The analytic cone germs
+here are not $\QQ$-factorial: at a cone over a del Pezzo surface $E$
+the analytic local class group is $\Pic(E)/\ZZ K_E$, of rank
 $\rho(E)-1$, which is Namikawa's invariant $\sigma$ \cite{Namikawa97}.  For
 the toric del Pezzos of the framework that rank is also $\dim T^1$
 (Section~\ref{sec:channelsT1}), the two agreeing because Namikawa's other
-invariant $\mu$ vanishes on a toric germ; for a non-toric cone they differ.
-A threefold can carry a germ that is not locally $\QQ$-factorial and still
-be globally $\QQ$-factorial: the target of a primitive type~II contraction
+invariant $\mu$ vanishes on a toric germ; for a non-toric cone they need not agree.
+A threefold can be algebraically $\QQ$-factorial while its analytic germ
+is not: the target of a primitive type~II contraction
 is the example that matters here, and a general one-nodal quintic is the
 familiar one.
 
-Thus a positive block rank witnesses the failure of $\QQ$-factoriality; it
-serves as a defect test, whereas the relation kernel measures cancellation
+Thus a positive block rank witnesses the failure of $\QQ$-factoriality,
+whereas the relation kernel measures cancellation
 among the local classes.  The two quantities are not interchangeable: on
 $X_7$ the block rank is $2$ while the relation kernel is zero.  On $X^{\circ}$
 every block has the maximal rank, $2$ at each $\dP_7$ point and $3$ at each
 $\dP_6$ point.
 
-Within the admissible framework the witness never fires negatively, and
-this is a theorem rather than an observation.  The exceptional divisor $E$
+For admissible polytopes every divisorial block has positive rank.
+Indeed, the exceptional divisor $E$
 over a singular $2$-face is a toric surface whose boundary divisors are the
 restrictions of the ambient toric divisors, so
 $\Pic(\PP_{\widehat\Sigma})_\QQ\to\Pic(E)_\QQ$ is surjective and the block
 at that germ has the full rank $n-3$ of
 Proposition~\ref{prop:T1channels}, which is $2$ at a pentagon and $3$ at a
-hexagon.  Since $n-3>0$ at every singular $2$-face, no admissible $X$ carrying one is
-$\QQ$-factorial; the argument is about the divisorial germs, a node
-contributing no exceptional divisor to which it could be applied.  The census bears this out at every one of the $77$
+hexagon.  Thus no admissible $X$ carrying a pentagonal or hexagonal face is
+$\QQ$-factorial; a node contributes no exceptional divisor to which this
+argument could be applied.  The census bears this out at every one of the $77$
 polytopes of Proposition~\ref{prop:census} and at $\Delta_{19}$,
 $\Delta_{20}$ and $X^\circ$, but it is not the evidence for it.
 Proposition~\ref{prop:qfact} therefore functions here as a consistency
 check against \cite[Theorem~5.8]{Gross97} rather than as a discriminating
-invariant.  In the purely
-nodal case the defect is exactly what Friedman's criterion is about, and
-a $\QQ$-factorial nodal threefold has no small projective resolution and
-no relation to exploit; the generic one-nodal quintic, where the
-exceptional curve class dies in $H_2$ of the small resolution, is the
-standard example, and the test is silent on it
-(Section~\ref{sec:test}).  The mixed criterion inherits that shape, with
-$K^{\perp}$ in place of the curve class.
+invariant.  In the purely nodal case, a $\QQ$-factorial threefold has no
+small projective resolution.  On a small analytic resolution of a general
+one-nodal quintic, the exceptional curve class vanishes in $H_2$, so the
+entire local line belongs to the relation kernel and the necessity test
+does not obstruct smoothing (Section~\ref{sec:test}).  The mixed
+criterion uses $K^{\perp}$ in place of this local curve class.
 
 \section{The criterion as a finite test}
 \label{sec:test}
@@ -2172,9 +2185,7 @@ would produce, by Theorem~\ref{thm:necessity}(2), a
 $\kappa\in K(X)$ whose $p$-component is a nonzero element of $\Rsm_p$.
 \end{proof}
 
-The hypothesis is a finite check: it suffices, and this is the safe
-direction of the containment used throughout
-Section~\ref{sec:kernelcomp}, that the $(-2)$-row of
+The hypothesis is a finite check: it suffices that the $(-2)$-row of
 Section~\ref{sec:matrix} be nonzero, since a class pairing nontrivially
 with an ambient divisor does not die in $H_2(\Xh;\QQ)$.
 
@@ -2202,9 +2213,8 @@ Since the block has positive rank,
 Corollary~\ref{cor:defect} says $X_7$ is not $\QQ$-factorial, so
 \cite[Theorem~5.8]{Gross97} does not speak to it and there is
 no conflict with the smoothability of primitive type~II contractions
-with $\dP_7$ exceptional divisor.  And $X_7$ illustrates the criterion without testing it: no cancellation
-occurs, no branch profile is consulted beyond discarding $\alpha$, and both
-divisorial rows do all the work.
+with $\dP_7$ exceptional divisor.  For $X_7$, the obstruction requires only
+the rank calculation for its two divisorial rows.
 
 \subsection{A census of the admissible polytopes with a pentagonal
 \texorpdfstring{$2$}{2}-face, at up to nine vertices}
@@ -2235,7 +2245,7 @@ Theorem~\ref{thm:necessity} by Section~\ref{sec:combsetting}, with a
 crepant resolution obtained by restricting a maximal projective crepant
 partial desingularization of $\PP_{\Pi}$ \cite[\S2.2]{Batyrev94}: small
 over the nodes, with exceptional divisor $\dP_7$ over the cone point.
-The verdicts are the outcome of the test of Section~\ref{sec:thetest},
+The kernel calculations of Section~\ref{sec:thetest} are
 recomputed for each of the $77$ from its vertex list
 (Appendix~\ref{app:cert}).  Since no $\dP_6$ point occurs, the only
 branch restriction is $\alpha=0$ at the pentagon, and a forced node or
@@ -2244,30 +2254,26 @@ Lemma~\ref{lem:D}.
 \end{proof}
 
 The enumeration itself is the admissibility-restricted extract of a
-sweep reported in the companion paper~\cite{PaperV}; the germ inventory, the
-matrix and the verdict are recomputed here from each stored vertex list.  The
-$67$ single-germ
-cases are instances of Corollary~\ref{cor:onegerm}, and the $9$ cases
-with one node in addition are barely more than instances of it.  The
-reason so many fire is structural rather than accidental: the criterion
-detects a failure of cancellation, and with one or two germs there is
-almost nothing available to cancel.  Section~\ref{sec:proofs} exhibits
-one non-smoothable Calabi--Yau threefold by hand; the same criterion run
-mechanically over this range produces seventy-six more, none of them
+scan reported in the companion paper~\cite{PaperV}; the germ inventory and
+the matrix are recomputed here from each stored vertex list.  The
+$67$ single-germ cases are instances of Corollary~\ref{cor:onegerm}.
+For these cases and the $9$ cases with one node in addition, the full
+matrix has zero relation kernel, so the required relation cannot exist.
+Together with the distinguished example of Section~\ref{sec:proofs}, the
+census therefore gives seventy-six further nonsmoothable threefolds, none of them
 $X^{\circ}$, $X_{20}$ or $X_{19}$, whose polytopes have $26$, $20$
 and $19$ vertices and lie outside it.
 
-Among the $77$, the single silent polytope is the only one where the
-converse question can be posed, which is why the range is swept and not only
-counted.  That case is settled in \cite{PaperV}; nothing in this paper
-depends on how.
+The enumeration also identifies the single polytope among the $77$ for
+which the obstruction vanishes.  The companion paper~\cite{PaperV} proves
+that its hypersurface is smoothable.
 
 The census is restricted to polytopes with a pentagonal $2$-face, and that
 restriction is not vacuous: admissible polytopes in the same range carry
 hexagonal $2$-faces, hence $\dP_6$ cone points.  For example, an eight-vertex
 case is obtained from $\Delta_7$ by adjoining $(-3,-2,-1,1)$.  On
 such an $X$ Theorem~\ref{thm:necessity} constrains the one-parameter $\dP_6$
-branch and says nothing about the $A_2$ branch, so the verdicts above do not
+branch and says nothing about the $A_2$ branch, so the conclusions above do not
 extend to them and we do not claim them.
 
 \subsection{An obstruction the nodal theory cannot see}\label{sec:X20}
@@ -2406,8 +2412,8 @@ local lifting, makes the partial model unobstructed; analytic
 blow-down then gives smoothness of the selected base of $X$ whenever
 its relation kernel projects nontrivially to every degree-six
 summand.  No $\QQ$-factoriality assumption is imposed on $X$, and the
-partial model need not be projective.  The criterion also answers
-Question~\ref{q:X19} affirmatively.  The separate issue of which
+partial model need not be projective.  The criterion also proves the
+smoothability stated in Example~\ref{q:X19}.  The separate issue of which
 deformations can be induced by a toric ambient family is studied in
 \cite{PaperV}.
 
