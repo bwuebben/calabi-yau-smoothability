@@ -1,7 +1,6 @@
 # A fixed smooth projective crepant fan
 
-**Status:** exact WP2/WP0-resolution input, 20 August 2026. This note fixes
-one smooth projective crepant subdivision of the face fan of
+This note fixes a smooth projective crepant subdivision of the face fan of
 $\Delta^\vee$. The rays, all maximal cones, the projectivity certificate,
 and all 26 square diagonals are checked by
 [`resolution_fan.sage`](resolution_fan.sage). The choice fixes the resolution used by
@@ -296,7 +295,7 @@ These choices fix the signs of the exceptional curve classes once an
 orientation convention is imposed. In particular, the two coloop nodes use
 the diagonals $(q_9,q_{23})$ and $(q_{10},q_{15})$.
 
-## 5. What is fixed and what remains
+## 5. The resolved hypersurface
 
 Let
 
@@ -314,7 +313,7 @@ $$
 (h^{1,1},h^{2,1})(\widehat X^\circ)=(26,20).
 $$
 
-The resolution is now fixed strongly enough to compute divisor relations,
+The fixed resolution determines divisor relations,
 curve classes, restrictions to the four exceptional surfaces, and the
 resolution-theoretic boundary map. These are computed in
 [`restriction_data.md`](restriction_data.md) and

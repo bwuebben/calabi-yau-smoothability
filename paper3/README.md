@@ -1,6 +1,6 @@
 # Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau threefolds
 
-Paper 3 · Bernd Johannes Wuebben · revised 9 September 2026 · 11 pages
+Paper 3 · Bernd Johannes Wuebben · 11 pages
 
 [PDF](cy-mirror-pairs.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 

@@ -1,6 +1,6 @@
 # Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points
 
-Paper 5 · Bernd Johannes Wuebben · revised 9 September 2026 · 61 pages
+Paper 5 · Bernd Johannes Wuebben · 61 pages
 
 [PDF](cy-mixed-smoothing.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 

@@ -1,13 +1,12 @@
 # Divisor restrictions on the fixed resolution
 
-**Status:** exact resolution-level computation, 20 August 2026. The matrices
-in this note are derived and checked by
+The matrices in this note are derived and checked by
 [`restriction_data.sage`](restriction_data.sage) from the rays in
 [`example_data.md`](example_data.md) and the diagonals in
 [`resolution_data.md`](resolution_data.md). They are numerical geometry on a
 fixed crepant resolution. Section 5 proves that the ambient Picard space is
 the full Picard space of the resolved Calabi--Yau over $\mathbb Q$ and
-$\mathbb C$. The current deformation-theoretic comparison is in
+$\mathbb C$. The deformation-theoretic comparison is in
 [Paper 4, Sections 8.2–8.3](../main.tex) and
 [Paper 5, Section 2](../../paper5/main.tex).
 
@@ -277,7 +276,7 @@ An integral index could remain; it is irrelevant to the complex
 first-order obstruction map. In particular, the 26 ambient divisor
 functionals detect every class in $H_2(\widehat X,\mathbb C)$.
 
-## 6. What this does and does not prove
+## 6. Scope of the divisor calculation
 
 This calculation supplies the full complex Picard dual in which a mixed
 analogue of Friedman's relation lives. It also shows that the four surface
@@ -288,6 +287,6 @@ smaller $K_E^\perp$ subspaces relevant to local deformation parameters.
 
 It does **not** by itself identify Altmann's chosen deformation coordinates
 with the canonical link classes in the local-to-global sequence. The
-topological comparison and the branch-preserving normalization are now
+topological comparison and the branch-preserving normalization are
 proved in Paper 4, Sections 8.2–8.3, and Paper 5, Section 2; Paper 4's vanishing-period
 route settles the verdict at all orders of contact.

@@ -1,15 +1,14 @@
 # The mixed obstruction matrix
 
-**Current reference status, 5 September 2026.** The finite rows and ranks
-below are the exact data established on 20 August 2026.
-[`mixed_candidate.sage`](mixed_candidate.sage) derives them from the
-polygon coordinates and [`restriction_data.md`](restriction_data.md).
+The finite rows and ranks below are derived by
+[`mixed_candidate.sage`](mixed_candidate.sage) from the polygon coordinates
+and [`restriction_data.md`](restriction_data.md).
 Their intrinsic interpretation is in [Paper 4, Sections 8.2–8.3](../main.tex)
 and [Paper 5, Section 2](../../paper5/main.tex).
 Paper 4's Sections 3–6 prove that the distinguished threefold admits no
-smoothing, including arcs with higher-order contact. The earlier
-first-order limitation of this computation is explained below; it is no
-longer an unresolved smoothability question for that example.
+smoothing, including arcs with higher-order contact. The matrix calculation
+itself concerns first-order deformations; the period argument supplies the
+all-orders conclusion.
 
 ## 1. From Altmann edge parameters to $K_E^\perp$
 
@@ -182,7 +181,7 @@ $dP_6$ tangent directions can participate in relations that remove three of
 the eventual forced-zero conditions. Those tangent vectors do not belong to
 one reduced deformation component.
 
-## 5. Intrinsic interpretation and the remaining formal task
+## 5. Intrinsic interpretation and all-orders nonsmoothability
 
 Friedman--Laza's local theorem, the link Gysin sequence, and the exact
 dimension match prove that, at every $dP_6$ and $dP_7$ point, the canonical
@@ -197,14 +196,14 @@ image of tangent localization with the kernel of the map from all 30 link
 spaces to $H_2(\widehat X,\mathbb C)$. Section 5 of
 `restriction_data.md` proves that the ambient Picard basis is the full
 complex Picard space of $\widehat X$. These results establish the intrinsic
-topological target of the matrix; the current global comparison is in Paper 4, Sections 8.2–8.3,
+topological target of the matrix; the global comparison is in Paper 4, Sections 8.2–8.3,
 and Paper 5, Section 2.
 
 The two local isomorphisms need not agree in the printed coordinates. Put
 $C_p=D_p^{-1}\kappa_p$, where $D_p$ is cyclic difference and $\kappa_p$ is
 the canonical link map. The local marking comparison in Paper 5, Section 2, identifies the
-branch subspaces and their discriminants; the earlier coordinate argument
-used this invariance of every $C_p$. If $C=\bigoplus_p C_p$, then
+branch subspaces and their discriminants, giving the required invariance
+under every $C_p$. If $C=\bigoplus_p C_p$, then
 globally induced local vectors satisfy
 
 $$
@@ -214,15 +213,13 @@ $$
 Since $C$ preserves the union of the four transverse smoothing profiles, the
 forced-zero calculation is an unconditional first-order theorem: no image
 vector is transverse to all 30 reduced local smoothing discriminants. Exact
-LOCAL-NORM would identify the displayed coordinates more rigidly, but is not
-needed for this conclusion.
+coordinate-by-coordinate normalization is not needed for this conclusion.
 
 The tangent calculation alone excludes transverse first-order smoothings.
 An analytic arc can have local parameters beginning in different orders,
 so a tangent-space argument by itself does not settle smoothability.
 Paper 4 supplies the additional period and surgery argument in Sections 3–6,
-and proves that $X^\circ$ is nonsmoothable. In particular, the formerly
-separate order-of-contact problem is resolved for this example.
+and proves that $X^\circ$ is nonsmoothable.
 
 The distinction remains useful when interpreting the finite matrix:
 Gross's hull theorem alone does not exclude an equation of the form

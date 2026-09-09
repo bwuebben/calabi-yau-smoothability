@@ -1,6 +1,6 @@
 # Deformations of toric pairs and the smoothing of Batyrev Calabi–Yau threefolds
 
-Paper 2 · Bernd Johannes Wuebben · revised 9 September 2026 · 19 pages
+Paper 2 · Bernd Johannes Wuebben · 19 pages
 
 [PDF](cy-toric-pairs.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 

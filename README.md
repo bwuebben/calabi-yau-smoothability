@@ -8,9 +8,8 @@ pairs. Paper 4 develops a global obstruction using vanishing periods.
 Paper 5 proves a necessary and sufficient mixed smoothing criterion and
 convergent integrability for its specified deformation spaces.
 
-**Updated 9 September 2026.** All five manuscripts are revised. Papers 1–3
-distinguish explicit examples and local classifications from database-wide
-counts, which retain the completeness hypothesis stated below. Paper 4
+Papers 1–3 distinguish explicit examples and local classifications from
+database-wide counts, which retain the completeness hypothesis stated below. Paper 4
 specifies the singularity and resolution hypotheses for its homological
 matrix, and Paper 5 gives the precise slice hypotheses and threshold count
 in its ambient obstruction argument.
@@ -19,7 +18,7 @@ Paper 5 covers nodes and exact anticanonical cones over smooth del Pezzo
 surfaces of degrees 5, 6 and 7, and over P¹×P¹. Its selected deformation
 bases are smooth under the stated nonzero degree-six projection hypothesis;
 this is distinct from the existence of smooth fibres. The degree-by-degree
-scope table is in the introduction. The paper also explains why the current
+scope table is in the introduction. The paper also explains why the
 full-tangent/link comparison does not extend directly to degrees 1–4: for a
 cubic cone those dimensions are 16 and 6. This does not rule out another
 mixed criterion for those degrees.
@@ -261,9 +260,8 @@ additional local and deformation-space computations are listed below.
 - `slice_rigidity.py` and `slice_rigidity.sage` — cell rigidity by the forcing
   chain, implemented twice, in pure Python with an integer chain and in Sage
   with convex hulls over ℚ and ℚ(s) (49 and 24 checks).
-- `gate1_admissible.sage` — a diagnostic showing why the retired area search
-  did not certify Theorem A: its canonical candidate decompositions fail
-  Ilten–Vollmert admissibility (D2).
+- `gate1_admissible.sage` — a diagnostic showing that the candidate
+  decompositions in the area search fail Ilten–Vollmert admissibility (D2).
 - `def41_check.sage` — the passage from the cell to the germ (16 checks).
 - `global_decomp.py` — Δ₁₉ and Δ₂₀ are Minkowski-indecomposable, so a global
   decomposition is not available either (12 checks).

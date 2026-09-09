@@ -1,12 +1,10 @@
 # The fixed generic anticanonical section
 
-**Status:** exact global-equation record, 20 August 2026.
-
 This note fixes the anticanonical hypersurface used throughout Paper 4.  Its
 companion checker is [`global_section.sage`](global_section.sage).  The
 calculation supplies the defining-section input for the finite geometry.
-The earlier cotangent-complex programme is archived; the all-orders
-nonsmoothability result is proved by periods in [Paper 4](../main.tex).
+The all-orders nonsmoothability result is proved by periods in
+[Paper 4](../main.tex).
 This calculation does not determine the abstract global deformation ring
 or a quadratic Kuranishi map.
 
@@ -202,9 +200,9 @@ edge direction is primitive.  This both locates every marked germ in the
 generic fibre and supplies the invertible orbit derivative in the local
 implicit-function description near each marked orbit.
 
-## 5. What this settles and what it does not
+## 5. Scope of the computation
 
-The computation now fixes, without an unnamed genericity assumption:
+The computation fixes, without an unnamed genericity assumption:
 
 1. the 25 monomials and the 20 normalized coefficients;
 2. a homogeneous Cox equation in the printed grading;
@@ -212,10 +210,7 @@ The computation now fixes, without an unnamed genericity assumption:
 4. the location of all 30 marked singularities on their one-dimensional
    torus orbits.
 
-It therefore removes the defining equation as an ambiguity in the finite
-geometry used by [Paper 4](../main.tex). The earlier programme sought an
-affine-cover calculation of
-\(\operatorname{Ext}^1(L_{X^\circ},\mathcal O_{X^\circ})\), its localization,
-and Picard-paired quadratic classes. Those computations are not prerequisites
-for the completed period proof. Nothing in the present
-calculation supplies those brackets or decides the formal smoothing question.
+These data specify the defining equation used in the finite geometry of
+[Paper 4](../main.tex). This computation does not determine the abstract
+global deformation ring or its quadratic obstruction map. The
+nonsmoothability conclusion follows from the period proof in Paper 4.

@@ -94,9 +94,9 @@ large-index effects. In particular, samples from files with at most nine
 vertices do not measure the cost of the larger polytopes that dominate the
 complete classification.
 
-## Local verification, 8 September 2026
+## Recorded partial verification
 
-The initial local inventory contained only the 5–9 vertex files:
+The verification run of 8 September 2026 used only the 5–9 vertex files:
 
 | Vertices | Rows |
 |---:|---:|
@@ -109,7 +109,7 @@ The initial local inventory contained only the 5–9 vertex files:
 
 These files occupy 83,732,464 bytes (79.9 MiB), cover 0.82435% of the
 classification, and all match the pinned SHA-256 digests. The other 25 files
-require a further 15,689,558,187 bytes (15.69 GB) of downloads. All local
+were outside this run and total 15,689,558,187 bytes (15.69 GB). All tested
 coordinate sets were distinct; the stored-coordinate check took 66.99
 seconds and used 200.6 MB of SQLite files. This is a partial dataset result.
 
@@ -119,22 +119,22 @@ or facet counts. It took **196.48 seconds (3 minutes 16 seconds)** and used
 199.7 MB of SQLite files on an Apple M5. Eleven adversarial tests passed,
 including detection of a duplicate in a different lattice basis,
 non-reflexive and lower-dimensional input, and checkpoint rollback.
-Both modes together use about 400 MB of checkpoint files locally.
+Both modes together used about 400 MB of checkpoint files in this run.
 
 Scaling these complete local runs solely by row count gives **2.26 hours**
 for coordinate deduplication or **6.62 hours** for the lattice check across
 the full classification. These are provisional extrapolations, **not
-measurements of the complete dataset**: the 10–36 vertex inputs have not
-been timed, and their larger polytopes and disk indexes may take longer.
+measurements of the complete dataset**: this run did not time the 10–36
+vertex inputs, whose larger polytopes and disk indexes may take longer.
 Allow an overnight run initially, with additional time if those files
-benchmark more slowly; rerun the benchmark after downloading them. Download
-time for the missing 15.69 GB is additional and depends on the connection.
+benchmark more slowly; rerun the benchmark after downloading them. Time
+for any required downloads is additional and depends on the connection.
 The complete copy plus one lattice-check index should be budgeted at tens
 of GB, with additional disk headroom; current local index sizes cannot
 predict its exact size.
 
 [Recorded inputs, per-file results and timings](output/ks_dataset_check_2026-09-08.json)
-contain the reproducible evidence and sample benchmark. The incomplete
-coverage remains explicit. The abstracts report the database computations;
+contain the reproducible evidence and sample benchmark. The report covers
+only the stated 3,905,789 rows. The abstracts report the database computations;
 the body of each paper retains its database hypothesis until the complete
 check has actually passed.

@@ -1,6 +1,6 @@
 # A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds
 
-Paper 4 · Bernd Johannes Wuebben · revised 9 September 2026 · 32 pages
+Paper 4 · Bernd Johannes Wuebben · 32 pages
 
 [PDF](cy-vanishing-cycle.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 

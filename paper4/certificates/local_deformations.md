@@ -1,13 +1,12 @@
 # Local deformation spaces at the four del Pezzo-cone points
 
-**Current reference status, 5 September 2026.** The local equations,
-coordinate markings and discriminants below are established finite inputs.
+The local equations, coordinate markings and discriminants below are
+established finite inputs.
 [Paper 4](../main.tex) uses them in its all-orders nonsmoothability proof.
 [Paper 5](../../paper5/main.tex) proves the marked local-to-global comparison,
 the exact A₂ discriminant condition and analytic integrability on the
-selected bases under its stated hypotheses. The exploratory embedded
-nilpotent calculations listed at the end are not prerequisites for these
-results and do not assert smoothness of every unrestricted global base.
+selected bases under its stated hypotheses. These results do not assert
+smoothness of every unrestricted global deformation base.
 
 This note records the local deformation theory that the global localization
 map must see. Its main point is that the local target is not a vector space
@@ -580,22 +579,15 @@ reduced smoothing parameters with named binomial perturbations in the
 canonical cone presentations, and Section 2.2 realizes those presentations
 on all four ambient toric charts.
 
-## 8. Historical embedded-calculation tasks and current scope
-
-1. Construct an embedded lifting of the nilpotent $dP_7$ coordinate
-   $\alpha=s_1$, through the relations $\alpha^2=\alpha\beta=0$.
-2. Determine which components are controlled by abstract, embedded,
-   $\mathbb Q$-Gorenstein, and toric-pair deformation functors.
-3. Record the local obstruction spaces required to justify the displayed
-   Kuranishi equations intrinsically.
-4. Compare the four local coordinate systems with the intrinsic global
-   localization map; the Cox-chart character dictionaries themselves are
-   complete.
+## 8. Relation to the global smoothing criterion
 
 The matrix in [`mixed_candidate.md`](mixed_candidate.md) excludes every
-transverse profile for the fixed example. Its intrinsic interpretation and
-the all-orders nonsmoothability conclusion are now proved in Papers 4–5.
-The four exploratory tasks above describe an embedded and unrestricted-base
-calculation, which is distinct from those completed results. In particular,
-the reduced smoothing loci and the selected-base theorem do not require a
-second-order embedded lift of the nilpotent degree-seven coordinate.
+transverse profile for the fixed example. Papers 4–5 prove its intrinsic
+interpretation and the all-orders nonsmoothability conclusion. The local
+equations and discriminants here supply the finite data used in that
+comparison.
+
+The reduced smoothing loci and the selected-base theorem do not require a
+second-order embedded lift of the nilpotent degree-seven coordinate. They
+do not determine the unrestricted global deformation base of an arbitrary
+threefold with these local germs.

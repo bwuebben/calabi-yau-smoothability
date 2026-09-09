@@ -1,7 +1,5 @@
 # The fixed Paper 4 example
 
-**Status:** WP0 exact-data record, 20 August 2026.
-
 This file fixes the notation and finite geometric input for Paper 4. Every
 enumerative statement below is asserted by
 [`fixed_example.py`](fixed_example.py), which uses exact integer or rational
@@ -252,7 +250,7 @@ deformation problem does not require that uniqueness claim.
 
 ## 8. Reproduction
 
-From `cy_smoothing/`:
+From the repository root:
 
 ```bash
 python3 paper4/certificates/fixed_example.py
@@ -260,15 +258,12 @@ python3 src/paper3_node_relations.py
 python3 src/face_data.py
 ```
 
-The first command is the Paper 4 gate. The other two are independent
+The first command checks the fixed Paper 4 example. The other two are independent
 cross-checks inherited from Paper 3.
 
-## 9. Frozen notation rule
+## 9. Notation
 
-The labels $q_j$, $N_i$, $D_{k,a}$, $E_{k,a}$, and $\rho_i$ are
-now frozen. Any later change must be accompanied by:
-
-1. an update to `fixed_example.py`;
-2. a successful exact rerun;
-3. an update to every Paper 4 research note using the labels; and
-4. an explanation in the corresponding data note of why the change was necessary.
+The labels $q_j$, $N_i$, $D_{k,a}$, $E_{k,a}$, and $\rho_i$ agree with
+`fixed_example.py` and the companion resolution, restriction and local
+deformation data. These labels specify the rows and columns of the
+obstruction matrix.

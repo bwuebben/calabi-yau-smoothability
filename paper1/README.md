@@ -1,6 +1,6 @@
 # Non-smoothable Calabi–Yau threefolds from reflexive polytopes
 
-Paper 1 · Bernd Johannes Wuebben · revised 9 September 2026 · 18 pages
+Paper 1 · Bernd Johannes Wuebben · 18 pages
 
 [PDF](cy-non-smoothable.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 
