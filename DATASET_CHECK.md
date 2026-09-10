@@ -1,5 +1,17 @@
 # Checking the Kreuzer–Skarke dataset copy
 
+**Full verification passed.** All **473,800,776 entries** in the 30 pinned
+files passed the lattice check and final checkpoint validation, completing
+at 21:44:57 EDT on 9 September 2026. The
+[full result](output/ks_dataset_check_2026-09-09.json) reports
+`full_lattice_check_passed` and `classification_verified: true`.
+The final validation took 1,236.26 seconds (20 minutes 36 seconds); the
+complete SQLite index set occupies 40,721,313,792 bytes (40.72 GB).
+This validates the input database copy. It does not recompute the papers'
+singularity-subset counts or check the supplied Hodge-number columns.
+The reviewed manuscripts and existing arXiv archives retain their stated
+hypotheses; the result can be reported in a subsequent revision.
+
 `src/check_ks_dataset.py` checks the parquet files identified by
 `manifests/ks_polytopes_4d_sha256.tsv`. The manifest pins revision
 `60c0e119a03608418df538191f65da3f43b5b819` of
@@ -135,6 +147,6 @@ predict its exact size.
 
 [Recorded inputs, per-file results and timings](output/ks_dataset_check_2026-09-08.json)
 contain the reproducible evidence and sample benchmark. The report covers
-only the stated 3,905,789 rows. The abstracts report the database computations;
-the body of each paper retains its database hypothesis until the complete
-check has actually passed.
+only the stated 3,905,789 rows. The full verification reported at the top of
+this document supersedes that coverage limitation; the earlier report and
+timing extrapolations remain historical measurements.

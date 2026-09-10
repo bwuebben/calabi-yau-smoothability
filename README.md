@@ -41,10 +41,14 @@ in `output/`; the pinned Kreuzer–Skarke input manifest is in `manifests/`.
 The reproduction commands below distinguish standard Python from SageMath.
 Every paper builds from its directory with `latexmk -pdf main.tex`.
 
-[Checking the dataset copy](DATASET_CHECK.md) gives commands for verifying
-file integrity, detecting repetitions up to lattice equivalence, and
-benchmarking the complete Kreuzer–Skarke dataset check. It also records
-the scope and timings of the available-data verification.
+The full database-copy verification has passed for all **473,800,776 entries**
+in the **30 pinned files**, including reflexivity, lattice-equivalence
+uniqueness and final checkpoint validation. The
+[complete report](output/ks_dataset_check_2026-09-09.json) records the result;
+[checking the dataset copy](DATASET_CHECK.md) gives its scope and reproduction
+commands. This check validates the input copy; it does not recompute the
+papers' singularity-subset counts. The current manuscripts retain their
+stated database hypotheses.
 
 ## The papers
 
