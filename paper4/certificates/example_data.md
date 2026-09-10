@@ -232,7 +232,7 @@ $$
 (h^{1,1},h^{2,1})(\widehat X)=(20,26).
 $$
 
-## 7. Unconditional and conditional statements
+## 7. Fixed examples and the classification
 
 The following are unconditional finite consequences of the printed vertices:
 
@@ -244,9 +244,11 @@ The following are unconditional finite consequences of the printed vertices:
 - the nodal rank and coloop statements; and
 - local smoothability and the number of local smoothing components.
 
-Only the statement that this pair is unique in the complete
-Kreuzer–Skarke classification depends on the database hypothesis. Paper 4's
-deformation problem does not require that uniqueness claim.
+The uniqueness of this pair in the complete Kreuzer–Skarke classification
+uses Paper 3's enumeration. The full input-copy verification in Paper 1
+establishes database completeness and absence of repetitions up to lattice
+equivalence. It does not repeat the singularity enumeration. Paper 4's
+deformation problem does not require the uniqueness claim.
 
 ## 8. Reproduction
 

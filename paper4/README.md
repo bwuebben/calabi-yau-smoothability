@@ -17,6 +17,11 @@ the more general ambient-divisor spanning assertion is stated separately.
 Single-germ obstructions require injectivity into the resolution homology.
 The mathematical data accompanying the proofs are in [certificates/](certificates/).
 
+The bounded census uses the at-most-nine-vertex part of the fully verified
+database copy. [Input verification and provenance](../DATASET_CHECK.md)
+establish completeness and absence of repetitions up to lattice equivalence;
+the census counts remain the original computations.
+
 ## Build
 
 From this directory:

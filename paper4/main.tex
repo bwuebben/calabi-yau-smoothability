@@ -383,6 +383,10 @@ cone over a del Pezzo surface $S$ is
 $C(S)=\operatorname{Spec}\bigoplus_{k\ge0}H^0(S,-kK_S)$.
 \end{convention}
 
+\subsection*{Acknowledgements}
+I am grateful to Mark Gross for first drawing my attention, many years ago, to the problem of smoothing canonical singularities on Calabi--Yau threefolds.
+The author used LLMs during the development of this work for literature exploration, editorial and coding assistance and as an adversarial reader.
+
 \section{The germs: links, miniversal bases, Milnor fibers}
 \label{sec:germs}
 
@@ -2224,8 +2228,7 @@ polytope in a finite part of the Kreuzer--Skarke classification.
 
 \begin{proposition}\label{prop:census}
 Among the $3\,905\,789$ reflexive $4$-polytopes with at most nine vertices
-in the Kreuzer--Skarke classification \cite{KS00}, a count read from the
-published database rather than from \cite{KS00} itself, exactly $77$ are
+in the Kreuzer--Skarke classification \cite{KS00}, exactly $77$ are
 admissible and carry
 a pentagonal $2$-face, one pentagon apiece: one at seven vertices, thirteen
 at eight, sixty-three at nine.  No pentagonal $2$-face occurs below seven
@@ -2254,7 +2257,11 @@ Lemma~\ref{lem:D}.
 \end{proof}
 
 The enumeration itself is the admissibility-restricted extract of a
-scan reported in the companion paper~\cite{PaperV}; the germ inventory and
+scan reported in the companion paper~\cite{PaperV}.  The input files are
+the at-most-nine-vertex part of the complete database copy verified in
+\cite[\S6.1]{PaperI}: every entry is reflexive and the normal forms are
+pairwise distinct up to lattice equivalence.  The displayed input count
+is read from these files.  The germ inventory and
 the matrix are recomputed here from each stored vertex list.  The
 $67$ single-germ cases are instances of Corollary~\ref{cor:onegerm}.
 For these cases and the $9$ cases with one node in addition, the full

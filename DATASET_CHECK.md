@@ -9,8 +9,10 @@ The final validation took 1,236.26 seconds (20 minutes 36 seconds); the
 complete SQLite index set occupies 40,721,313,792 bytes (40.72 GB).
 This validates the input database copy. It does not recompute the papers'
 singularity-subset counts or check the supplied Hodge-number columns.
-The reviewed manuscripts and existing arXiv archives retain their stated
-hypotheses; the result can be reported in a subsequent revision.
+Papers I–III use this result to discharge their database-completeness and
+no-repetition hypotheses. Papers IV–V identify the verified inputs to their
+bounded censuses. The singularity counts remain the results of the original
+enumerations, with the implementation checks described in the papers.
 
 `src/check_ks_dataset.py` checks the parquet files identified by
 `manifests/ks_polytopes_4d_sha256.tsv`. The manifest pins revision
@@ -52,6 +54,43 @@ lattice check. It does not rerun the papers' singularity classifications,
 verify their counts, or validate the supplied Hodge-number columns.
 
 ## Commands
+
+### Connection to the original scans
+
+The upstream repository history consists of the initial commit and data
+upload on 18 February 2024, followed by a README edit on 23 February 2024.
+The upload and pinned revisions have identical Git-LFS SHA-256 identifiers
+and byte sizes for all 30 parquet files, matching our manifest and full
+verification report. Thus the published data objects were unchanged before
+and throughout the original July 2026 scans. The recorded source is
+[the upstream commit history](https://huggingface.co/datasets/calabi-yau-data/polytopes-4d/commits/60c0e119a03608418df538191f65da3f43b5b819);
+the identifiers and per-revision file objects are preserved in
+[`manifests/ks_upstream_history.json`](manifests/ks_upstream_history.json).
+
+The saved local-obstruction results match all 30 verified filenames and
+row counts. The saved both-sides results match the 29 files for 5–33
+vertices, with the 36-vertex polytope checked separately. The four saved
+Batyrev–Kreuzer groups match the corresponding verified row totals.
+[`src/reconcile_ks_inputs.py`](src/reconcile_ks_inputs.py) checks these
+agreements and records the saved result hashes in
+[`output/ks_scan_input_reconciliation_2026-09-09.json`](output/ks_scan_input_reconciliation_2026-09-09.json).
+
+The legacy scan outputs did not record their input digests at execution
+time. This reconciliation documents their source and coverage; it does not
+retroactively attest to the bytes read by those processes. Nor does it
+repeat the singularity tests. In particular, the 39,175,536 obstruction
+count and the 590-polytope classification are the original scan results;
+the 30,241 smoothings in Paper II are attributed to Batyrev–Kreuzer.
+The full dataset includes the 36-vertex file: it was outside the original
+scan range, not missing from the published copy.
+
+Run the reconciliation with the standard Python library:
+
+```bash
+python3 src/reconcile_ks_inputs.py
+```
+
+### Repeating the dataset verification
 
 Use Python with `pyarrow` installed. The project environment is
 `./venv/bin/python`; replace that interpreter path as needed. The lattice

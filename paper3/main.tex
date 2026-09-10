@@ -51,9 +51,9 @@ singularities, smoothability}
 \begin{abstract}
 We classify reflexive four-polytopes for which the generic
 anticanonical hypersurfaces associated with the face fans of the polytope
-and its polar both have at most isolated singularities. Assuming that
-the database files used contain the complete Kreuzer--Skarke
-classification without repetition, there are exactly 590 such polytopes.
+and its polar both have at most isolated singularities. There are exactly
+590 such polytopes up to lattice equivalence in the Kreuzer--Skarke
+classification.
 Their two-dimensional faces belong to twelve lattice-isomorphism
 classes, all triangles, zonotopes, or reflexive polygons. The only
 nonsmoothable local models are the cyclic quotients
@@ -134,22 +134,18 @@ call such $\Delta$ \emph{both-sides unit}.  The condition is self-dual:
 $\Delta$ is both-sides unit if and only if $\Delta^\circ$ is.
 \end{corollary}
 
-Our main results determine the both-sides unit polytopes, and the local
-models they carry, \emph{completely}, subject to one explicit input
-assumption.  We use the following \emph{database hypothesis}: the
-per-vertex-count files described in \S\ref{sec:census} contain, without
-repetition, exactly the members of the Kreuzer--Skarke classification in
-their stated vertex range; the unique remaining $36$-vertex member is
-included separately.  Under this hypothesis the scan covers all
-$473{,}800{,}776$ reflexive $4$-polytopes \cite{KreuzerSkarke00}.  Every
-polytope returned by the scan is then re-verified in exact arithmetic, so
-the classification statements below have finite computer-assisted proofs
-conditional only on that database hypothesis.  The transverse identity
-and the assertions about each explicitly displayed polytope are
-unconditional.
+Our main results determine the both-sides unit polytopes and the local
+models they carry by a finite computer-assisted classification.  The scan
+covers all $473{,}800{,}776$ reflexive $4$-polytopes
+\cite{KreuzerSkarke00}.  Reflexivity and absence of repetitions up to
+lattice equivalence have been verified for every entry of the input
+copy, so the published classification total establishes its completeness.
+Every polytope returned by the scan is also re-verified in exact arithmetic.
+The enumeration and the separate verification of its input are described
+in \S\ref{sec:census}.
 
 \begin{theorem}[classification of both-sides local models]\label{thm:class}
-Under the database hypothesis above, there are exactly $590$ both-sides
+There are exactly $590$ both-sides
 unit reflexive $4$-polytopes.  Every
 two-dimensional face of every one of them is
 \begin{itemize}
@@ -166,7 +162,7 @@ Table~\textup{\ref{tab:occ}}.
 
 \begin{theorem}[the non-smoothable germs of doubly isolated pairs]
 \label{thm:dichot}
-Under the database hypothesis, exactly three of the $590$ both-sides unit
+Exactly three of the $590$ both-sides unit
 polytopes carry a non-smoothable
 two-dimensional face.  Writing $[k,i]$ for a unit-edge polygon with $k$
 edges and $i$ interior lattice points, the germs occurring are:
@@ -183,7 +179,7 @@ In particular no deformable-but-non-smoothable
 \end{theorem}
 
 \begin{corollary}\label{cor:defonly}
-Assume the database hypothesis.  Let $X$ be a unit-edge Batyrev
+Let $X$ be a unit-edge Batyrev
 Calabi--Yau threefold with a singular point of
 type \textup{(D)}, for instance the pentagon-cone threefolds of
 \cite[Thms.~5.3, 5.8]{paper1}.  Then the Batyrev mirror $X^\circ$ is
@@ -197,7 +193,7 @@ For the remaining non-quotient case, write $\mathrm{dP}_d$ for the smooth
 toric del Pezzo surface of degree $d$, with $d=6,7$.
 
 \begin{theorem}[the unique $\FF_1$ mirror pair]\label{thm:pair}
-Under the database hypothesis, up to lattice isomorphism there is exactly
+Up to lattice isomorphism there is exactly
 one doubly isolated Batyrev mirror
 pair whose singularities are not all quotient points or smoothable: the pair
 $(\Delta_{\FF_1}, \Delta_{\FF_1}^\circ)$ of Theorem~\textup{\ref{thm:pairbody}},
@@ -234,8 +230,7 @@ $\FF_1$ \cite[Thm.~5.8]{Gross97}, admit doubly isolated mirror
 realizations, and the $\FF_1$-cone does so exactly once in the entire toric
 hypersurface landscape.
 
-Under the same database hypothesis, the opposite extreme of the
-classification carries a matching uniqueness.  Exactly eight of the $590$ polytopes have all two-dimensional faces smooth,
+At the opposite extreme of the classification, exactly eight of the $590$ polytopes have all two-dimensional faces smooth,
 so that $X$ itself is smooth; for exactly one of them the mirror is smooth
 as well: the self-dual $24$-cell, whose hypersurface is the classical
 self-mirror threefold with $(h^{1,1},h^{2,1}) = (20,20)$ \cite{Braun12}.
@@ -244,7 +239,7 @@ classification (Example~\ref{ex:24cell}).
 
 \subsection*{The first asymmetric faces}
 Call a polygon \emph{asymmetric} when it is neither a triangle nor
-centrally symmetric.  Under the database hypothesis, no such face occurs
+centrally symmetric.  No such face occurs
 on a both-sides unit polytope with at most $18$ vertices, a range
 containing $395{,}406{,}329$ reflexive $4$-polytopes
 ($83.5\%$ of the classification).  The first asymmetric face occurs at
@@ -270,6 +265,7 @@ count in this note is recomputable from
 This note continues the series \cite{paper1,paper2}; the question of
 smoothing canonical Calabi--Yau singularities was posed to the author by
 Mark Gross many years ago.
+The author used LLMs during the development of this work for literature exploration, editorial and coding assistance and as an adversarial reader.
 
 \section{Preliminaries}\label{sec:prelim}
 
@@ -436,8 +432,7 @@ and, by Lemma~\ref{lem:mult}, all dual edges of length one.  We tested it
 over
 the per-vertex-count copy of the Kreuzer--Skarke classification used in
 \cite[\S6.1]{paper1}, with the production implementation built for that
-scan.  Subject to the database hypothesis in the introduction, this covers
-the complete classification.  All facet incidences, lattice lengths,
+scan.  This covers the complete classification.  All facet incidences, lattice lengths,
 determinants, and final predicates are checked in exact integer arithmetic,
 with no heuristic pruning.  Planar vertices are ordered by an exact
 half-plane and cross-product comparator, so this step also uses no
@@ -449,8 +444,22 @@ verifies those digests and validates the row count, result schema, and every
 recorded positive hit before accepting an existing result; new results are
 written atomically, and every invocation records a transcript.  These
 controls fix the identity and integrity of the finite input and saved
-artifacts, but do not remove the database hypothesis or independently
-recheck every negative row.  Implementation correctness is controlled in
+artifacts; they do not independently recheck every negative row.
+The legacy results predate input-digest recording, but their filenames and
+row counts agree with the verified inventory, and the upstream history
+identifies the same data objects throughout the scan period.
+
+A separate PALP-based computation, described in \cite[\S6.1]{paper1},
+verifies dimension four, reflexivity, actual vertex and facet counts, and
+pairwise distinct normal forms under $\mathrm{GL}(4,\ZZ)$ for all
+$473{,}800{,}776$ entries.  The published total
+\cite{KreuzerSkarke00} then establishes completeness.  This computation
+includes the $36$-vertex file, which lay outside the original scan range
+and was checked separately for the both-sides condition.  The ancillary
+materials contain its checker, full report and input-provenance record.
+The singularity classification is the result of the original scan;
+the database verification does not repeat its face tests.
+Implementation correctness is controlled in
 three complementary ways.
 (i) Before scanning each file of the database, the implementation was
 re-checked against an
@@ -470,10 +479,9 @@ would generically fail for a false
 negative whose polar partner was detected.  An invariant collision
 (another member of the $590$ sharing its vertex count, facet count and
 face inventory) could in principle mask a miss, so this control is
-supporting evidence beside (i) and (ii), not an independent proof.  The one polytope
-missing from the copy of the database we used, which is organized by
-vertex count, is the $36$-vertex hexagon product (see
-\cite[\S6.1]{paper1}); it is included.
+supporting evidence beside (i) and (ii), not an independent proof.
+The separately checked $36$-vertex hexagon product
+(see \cite[\S6.1]{paper1}) is included in the classification.
 Every polytope passing the scan is then re-verified, and its faces
 classified, by the reference implementation; the
 ancillary scripts reproduce the full scan from the public database.  The
@@ -483,7 +491,7 @@ Theorems~\ref{thm:class}, \ref{thm:dichot} and~\ref{thm:pair} from them.
 
 \subsection{The classification}
 Tables~\ref{tab:dist} and~\ref{tab:occ} give the vertex distribution and
-face inventory under the database hypothesis.
+face inventory.
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrrrrrrrrrr}
@@ -528,7 +536,7 @@ $[8,4]$ & zonotope & $1$ & type (S), $3$ smoothing components \\
 \end{center}
 \medskip
 \caption{Every two-dimensional face of every both-sides unit polytope, by
-class, under the stated database hypothesis ($k$ = edges, $i$ = interior
+class ($k$ = edges, $i$ = interior
 points).  Type~\textup{(R)} means that the reduced miniversal base is a
 point, while type~\textup{(S)} means that the singular germ admits a
 smoothing.  ``Asymmetric'' = neither a
@@ -569,8 +577,8 @@ gives a singular curve on $X^\circ$.
 \end{proof}
 
 \subsection{The first asymmetric examples}\label{sec:refuted}
-Under the database hypothesis, Table~\ref{tab:occ} shows that
-\mbox{$88$ asymmetric faces occur, on $55$ polytopes}.
+Table~\ref{tab:occ} shows that
+$88$ asymmetric faces occur, on $55$ polytopes.
 The smallest example has $19$ vertices:
 \[
 \begin{gathered}
@@ -644,8 +652,9 @@ cone-over-$\PP^1{\times}\PP^1$ points.
 
 \begin{example}[the top of the classification]\label{ex:pair36}
 The $36$-vertex product $H \times H$ of two reflexive hexagons is the
-reflexive $4$-polytope with the most vertices and the one polytope absent
-from the copy of the Kreuzer--Skarke database used in \cite{paper1}.  It is
+reflexive $4$-polytope with the most vertices.  Its database file lies
+outside the original scan range of \cite{paper1}, and it was checked
+separately.  It is
 both-sides unit; its faces are $36$ unit squares and $12$ $\mathrm{dP}_6$
 hexagons, so its hypersurface has $48$ singular points, all of type
 \textup{(S)}, while its polar, the $12$-vertex free sum
@@ -654,7 +663,7 @@ hypersurface.
 \end{example}
 
 \begin{example}[the smooth mirror pair]\label{ex:24cell}
-Under the database hypothesis, exactly eight of the $590$ polytopes have every two-dimensional face
+Exactly eight of the $590$ polytopes have every two-dimensional face
 smooth, so that $X$ itself is smooth.  For exactly one of them is the polar
 of the same kind: the $24$-cell, self-dual, with $24$ octahedral facets,
 $96$ unimodular triangular faces, and no lattice points besides the origin
@@ -662,7 +671,7 @@ and its $24$ vertices.  Its generic anticanonical hypersurface is the
 classical self-mirror Calabi--Yau threefold with
 $(h^{1,1},h^{2,1}) = (20,20)$ and $\chi = 0$; the $(1,1)$-threefolds of
 Braun \cite{Braun12} are free quotients of special symmetric members of
-this family.  Under the same hypothesis, the scan shows uniqueness:
+this family.  The scan shows uniqueness:
 among all $473{,}800{,}776$ reflexive $4$-polytopes, the $24$-cell is the
 only one whose generic anticanonical hypersurface and mirror are
 \emph{both} smooth.
@@ -704,7 +713,7 @@ and two $\mathrm{dP}_6$-cone points, each with a local smoothing;
 \item the maximal projective crepant partial resolutions satisfy
 $(h^{1,1},h^{2,1})(\widehat X) = (20,26)$ and
 $(h^{1,1},h^{2,1})(\widehat{X^\circ}) = (26,20)$;
-\item under the database hypothesis, $\Delta_{\FF_1}$ is the \emph{only}
+\item $\Delta_{\FF_1}$ is the \emph{only}
 both-sides unit reflexive
 $4$-polytope, up to lattice isomorphism, carrying a
 non-smoothable face that is not a triangle.
@@ -761,7 +770,7 @@ $\mathrm{dP}_6$, the class with two smoothing components in the catalogue of
 \cite[Rem.~2.6]{paper1}.  The Hodge numbers are
 given by Batyrev's formulas \cite[\S4]{Batyrev94}, evaluated in exact
 arithmetic.  The mirror swap in (4) is forced by Batyrev duality and serves as
-a consistency check.  Conditional on the database hypothesis, (5) is
+a consistency check.  Assertion (5) is
 Theorem~\ref{thm:dichot}: the scan finds no other non-triangle
 non-smoothable face on any both-sides unit polytope.
 \end{proof}
@@ -830,7 +839,7 @@ Can one characterize the unit-edge lattice polygons that occur as
 two-dimensional faces of reflexive polytopes whose edges and polar edges
 all have lattice length one?  In dimension four,
 Theorem~\ref{thm:class} gives the twelve classes in
-Table~\ref{tab:occ}, subject to the database hypothesis.  A geometric
+Table~\ref{tab:occ}.  A geometric
 explanation would account for the occurrence of only triangles,
 zonotopes, and reflexive polygons without using the classification.
 The local condition discussed in \S\ref{sec:refuted} is insufficient.

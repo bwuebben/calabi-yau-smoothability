@@ -23,6 +23,11 @@ The [sections/](sections/) directory contains required LaTeX inputs,
 including the maintained degree-scope table. The theorem does not assert
 the same mixed criterion for degrees one through four.
 
+The bounded census uses the at-most-nine-vertex part of the fully verified
+database copy. [Input verification and provenance](../DATASET_CHECK.md)
+establish completeness and absence of repetitions up to lattice equivalence;
+the census counts remain the original computations.
+
 ## Build
 
 From this directory:

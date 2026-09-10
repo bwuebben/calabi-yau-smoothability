@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-The one polytope the per-vertex-count mirror misses (paper 1, Sec. 6.1).
+The polytope outside the original scan's vertex range (paper 1, Sec. 6.1).
 
 The HuggingFace mirror calabi-yau-data/polytopes-4d stores the Kreuzer-Skarke
 classification in files polytopes-4d-NN-vertices.parquet.  The sweep

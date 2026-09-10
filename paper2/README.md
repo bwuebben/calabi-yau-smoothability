@@ -1,6 +1,6 @@
 # Deformations of toric pairs and the smoothing of Batyrev Calabi–Yau threefolds
 
-Paper 2 · Bernd Johannes Wuebben · 19 pages
+Paper 2 · Bernd Johannes Wuebben · 18 pages
 
 [PDF](cy-toric-pairs.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 
@@ -13,8 +13,9 @@ shows the dual-edge threshold is sharp.
 
 The lone del Pezzo cone cases use the explicitly stated link-homology
 necessary condition from [Paper 5](../paper5/README.md). The comparison of
-3,774 facewise cases with 30,241 Batyrev–Kreuzer smoothings retains the
-manuscript's database hypothesis.
+3,774 facewise cases with the 30,241 smoothings reported by Batyrev–Kreuzer
+uses the verified database copy. The input verification does not repeat
+the original singularity enumeration.
 
 ## Build
 

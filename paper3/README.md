@@ -4,8 +4,8 @@ Paper 3 · Bernd Johannes Wuebben · 11 pages
 
 [PDF](cy-mirror-pairs.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 
-Under the database-completeness and no-repetition hypothesis, 590
-reflexive four-polytopes have both associated Batyrev hypersurfaces with
+The scan of the verified database copy classifies 590
+reflexive four-polytopes whose two associated Batyrev hypersurfaces have
 at most isolated singularities. Their two-faces form twelve lattice classes.
 The F₁ cone occurs in a unique mirror pair in this classification; its
 explicit 22/26-vertex polytopes and resolution Hodge numbers (20,26)/(26,20)

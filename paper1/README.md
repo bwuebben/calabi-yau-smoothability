@@ -10,7 +10,7 @@ positive-dimensional reduced deformation base and no smoothing component.
 The local classification contains 217 isolated Gorenstein toric singularity
 classes with primitive edge vectors in [−2,2]² in some lattice basis.
 
-Under the manuscript's database-completeness and no-repetition hypothesis,
+The scan of the verified database copy finds that
 39,175,536 polytopes carry the sufficient local obstruction, approximately
 8.27% of the Kreuzer–Skarke classification. This gives a lower bound for
 global nonsmoothability. Type (R) means reduced-rigid, allowing nonzero

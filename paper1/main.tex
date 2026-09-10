@@ -58,8 +58,7 @@ obstructs smoothing if it has no Minkowski decomposition into unit segments
 and unimodular triangles. We also classify the 217 isolated Gorenstein
 toric threefold singularities whose polygon edge vectors have coordinates
 in $[-2,2]$ in some lattice basis, recording their deformation types and
-smoothing components. Subject to completeness and absence of repetitions
-in the database copy used, a scan of the Kreuzer--Skarke classification
+smoothing components. A scan of the Kreuzer--Skarke classification
 finds this obstruction in $39{,}175{,}536$ of its $473{,}800{,}776$
 polytopes (approximately $8.27\%$), whose generic anticanonical
 hypersurfaces therefore admit no smoothing.
@@ -208,8 +207,7 @@ length $1$ and gives $X_C$, as well as a threefold with a single
 $\frac13(1,1,1)$ point.  A systematic scan of the Kreuzer--Skarke
 classification \cite{KreuzerSkarke00} locates a $10$-vertex reflexive
 polytope giving $X_D$; its printed vertex and facet data verify the example
-independently of the database-completeness hypothesis used for the scan's
-aggregate counts.
+independently of the scan's aggregate counts.
 
 The two theorems are instances of a general construction: realize a
 prescribed polygon as a two-dimensional face of a reflexive $4$-polytope.
@@ -242,20 +240,24 @@ almost-flatness or bundle-cohomology obstruction is needed.  The versal base
 of the germ already has no smoothing component, and this kills all global
 smoothings (Lemma~\ref{lem:localglobal}).
 
-All computations in this paper (the census, the face inventories of the
+The census, the face inventories of the
 example polytopes, the dual-edge point counts, the completion-search
 statistics and
-the Kreuzer--Skarke scan of \S\ref{sec:questions}, and the Hodge numbers) are
+the Kreuzer--Skarke scan of \S\ref{sec:questions}, and the Hodge numbers are
 implemented in six short exact-arithmetic computer programs, validated
 against the classical cases recalled in the text (the quintic; $X_9 \subset
 \PP(1,1,1,3,3)$; the del Pezzo cone catalogue; Altmann's hexagon; and, for
 the scan, the Hodge numbers recorded in the Kreuzer--Skarke data itself).
+A separate PALP-based computation verifies reflexivity and absence of
+repetitions up to lattice equivalence in the complete input database,
+as described in \S\ref{sec:questions}.
 They are included with the arXiv submission as ancillary files and are
 public, together with all data and results, at
 \url{https://github.com/bwuebben/calabi-yau-smoothability}.
 
 \subsection*{Acknowledgements}
 I am grateful to Mark Gross for first drawing my attention, many years ago, to the problem of smoothing canonical singularities on Calabi--Yau threefolds.
+The author used LLMs during the development of this work for literature exploration, editorial and coding assistance and as an adversarial reader.
 
 \section{Local models: cones over polygons}\label{sec:local}
 
@@ -1078,8 +1080,7 @@ Kreuzer--Skarke classification.  The scan that produced $\Delta_D$ found
 three $10$-vertex polytopes whose unique \emph{non-smoothable} face is of
 type \textup{(D)} with dual edge of length one; $\Delta_D$ is the one whose
 other faces are all smooth (the other two carry additional ordinary
-smoothable singular points).  Subject to the database hypothesis stated in
-\S\ref{sec:questions}, over the full classification there are exactly four
+smoothable singular points).  Over the full classification there are exactly four
 polytopes whose generic hypersurface has a \emph{single}
 singular point of type \textup{(D)}, with $10$, $11$, $11$ and $12$ vertices
 ($\Delta_D$ being the minimal one), and in all four the germ is $C(Q_B)$;
@@ -1103,17 +1104,16 @@ $[-2,2]^4$) raises the count to $32$ of the $87$: all $23$ classes with
 $i \le 6$ embed, together with $9$ classes with $7 \le i \le 10$.
 
 A complementary approach is to scan a
-per-vertex-count copy of the Kreuzer--Skarke classification.  We carried out
-the test of Theorem~\ref{thm:trichotomy} on that copy and on the remaining
-$36$-vertex polytope separately \cite{KreuzerSkarke00}.  The resulting global
-counts have the explicit database-completeness hypothesis in the next
-statement; the checks supporting it are described at the end of the
-subsection.
+per-vertex-count copy of the Kreuzer--Skarke classification
+\cite{KreuzerSkarke00}.  We carried out the test of
+Theorem~\ref{thm:trichotomy} on the files for $5$ to $33$ vertices and on
+the $36$-vertex polytope separately.  Reflexivity and absence of repetitions
+up to lattice equivalence have been verified for every entry of the
+complete copy; the computation establishing its completeness is described
+at the end of this subsection.
 
 \begin{proposition}[Frequency of the local obstruction]\label{prop:scan}
-Assume that the per-vertex-count database files described below contain,
-without repetition, exactly the reflexive $4$-polytopes in the vertex range
-specified there.  Then, of the $473{,}800{,}776$ reflexive $4$-polytopes,
+Of the $473{,}800{,}776$ reflexive $4$-polytopes up to lattice equivalence,
 exactly $39{,}175{,}536$
 (that is, $8.27\%$) carry a two-dimensional face with primitive edges whose
 cone is not smoothable.  For each of these the generic anticanonical
@@ -1127,12 +1127,12 @@ elsewhere\textup{)}.
 By Theorem~\ref{thm:trichotomy} the type of $C(F)$ depends only on the edge
 multiset of $F$, so the test is a finite computation on each polytope; it was
 run on every entry of the database copy and on the separately reconstructed
-$36$-vertex polytope.  Under the stated completeness and no-duplication
-hypothesis, these are precisely the members of the classification, and the
-surviving counts are recorded below.
+$36$-vertex polytope.  The database verification described below shows that
+these are precisely the members of the classification.  Summing the saved
+per-file results gives the stated count.
 \end{proof}
 
-Under the same database hypothesis, in more detail we find:
+In more detail, the scan gives:
 \begin{itemize}
 \item $8.27\%$ (that is, $39{,}175{,}536$ of them) carry a unit-edge
 non-smoothable two-dimensional face, so their generic anticanonical
@@ -1160,7 +1160,7 @@ occur (reduced-rigid polygons with an edge coordinate exceeding $2$; those we
 inspected have at most five edges), so the classes of
 Proposition~\ref{prop:census} do not exhaust the phenomenon.
 \end{itemize}
-Under that hypothesis, the scan determines the fraction of reflexive
+The scan determines the fraction of reflexive
 $4$-polytopes carrying a non-smoothable unit-edge two-face.  It therefore
 gives a lower bound for the proportion whose generic anticanonical
 hypersurface is non-smoothable, rather than a complete count of globally
@@ -1168,7 +1168,7 @@ non-smoothable hypersurfaces.  The counts concern polytopes up to lattice
 equivalence, not deformation-equivalence classes of threefolds.
 The scan also determines which local models occur within
 Proposition~\ref{prop:census}; the unit-edge non-smoothable faces outside
-that range remain to be classified.  Under the same hypothesis, the
+that range remain to be classified.  The
 single-point examples are similarly constrained: among
 all reflexive $4$-polytopes with unit edges whose generic hypersurface
 has a \emph{single} singular point, and that point of type \textup{(D)},
@@ -1181,25 +1181,37 @@ unique \emph{non-smoothable} point of a hypersurface that also carries
 smoothable singular points; it is only as a lone singularity that
 $C(Q_B)$ is forced.)
 
-\emph{Completeness of the enumeration.}  We scanned $473{,}800{,}775$
-polytopes through the per-vertex-count copy of the Kreuzer--Skarke
-database that we used, whose files cover $5$ to $33$ vertices, and the
-one remaining polytope separately.  Granting that the copy's entries are
-distinct members of the classification (the polytope counts and Hodge
-data recorded for each vertex number were validated throughout the
-scan), the one polytope it omits is the classification's unique member
-with more than $33$ vertices, and we identify it: it is the $36$-vertex
-product of two reflexive hexagons, verified
-directly.\footnote{Ancillary file \texttt{missing\_polytope.py}.}  That
+\emph{Completeness of the enumeration.}  The input manifest identifies
+the database copy by repository revision \texttt{60c0e119a036} (with the
+full identifier in the manifest) and the byte size and SHA-256 digest of
+each file.  Its $30$ files, covering $5$ to $33$ and $36$ vertices,
+contain $473{,}800{,}776$ entries.  For every entry, a separate computation
+using PALP \cite{PALP} verifies dimension four and reflexivity, recomputes
+the vertex and facet counts, and computes a normal form under
+$\mathrm{GL}(4,\ZZ)$.  All normal forms are distinct.  The entries are
+therefore distinct four-dimensional reflexive polytopes; comparison with
+the total in \cite{KreuzerSkarke00} proves that the copy contains every
+lattice-equivalence class exactly once.\footnote{The ancillary materials
+include \texttt{check\_ks\_dataset.py}, the input manifest, and the full
+report \path{ks_dataset_check_2026-09-09.json}.  The report records
+per-file results and digests identifying the checker and PALP executable.
+See also \texttt{DATASET\_CHECK.md} for input provenance and reproduction.}
+
+The original singularity scan covered the $473{,}800{,}775$ entries with
+$5$ to $33$ vertices.  The remaining file contains the unique
+$36$-vertex polytope, the product of two reflexive hexagons, which we
+checked separately.\footnote{Ancillary file \texttt{missing\_polytope.py}.}
+It was outside the original scan range, not absent from the dataset.  That
 polytope's $48$ two-dimensional faces are $36$ unit parallelograms and
 $12$ hexagons of $\mathrm{dP}_6$ type, all of type \textup{(S)} with dual
 edge of length one, so it contributes to none of the counts above.
-For reproducibility, the ancillary input manifest pins the database copy to
-repository revision
-\texttt{60c0e119a036} (with the full identifier in the manifest) and records
-the byte size and SHA-256 digest of every per-vertex-count file.  This
-identifies the finite input exactly; it does not replace the completeness
-and no-duplication hypothesis in Proposition~\ref{prop:scan}.
+The saved scan results agree with the verified inventory file by file in
+name and row count, and the upstream file history identifies the same
+data objects throughout the scan period.  The older scan results did not
+record input digests at execution time.  The database verification
+establishes completeness and absence of repetitions; the singularity
+counts remain the results of the original exact-arithmetic scan, rather
+than an independent repetition of that scan.
 
 \subsection{Non-isolated singularities}
 
@@ -1336,6 +1348,12 @@ Comm.\ Algebra \textbf{37} (2009), no.~2, 482--502; arXiv:math/0703810.
 M.~Kreuzer and H.~Skarke,
 \emph{Complete classification of reflexive polyhedra in four dimensions},
 Adv.\ Theor.\ Math.\ Phys.\ \textbf{4} (2000), 1209--1230.
+
+\bibitem[KS04]{PALP}
+M.~Kreuzer and H.~Skarke,
+\emph{PALP: A package for analyzing lattice polytopes with applications to
+toric geometry}, Comput.\ Phys.\ Commun.\ \textbf{157} (2004), 87--106;
+arXiv:math/0204356.
 
 \bibitem[Nam02]{Namikawa02}
 Y.~Namikawa,

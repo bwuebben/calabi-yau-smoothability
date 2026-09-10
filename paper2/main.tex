@@ -57,8 +57,8 @@ is singular. If every singular face satisfies these conditions,
 simultaneous smoothing follows in the nodal case and, in general, under
 irreducibility of the semiuniversal deformation space. A seven-vertex
 example with one ordinary double point and no smoothing shows that the
-dual-edge condition is sharp. Assuming the database files contain the
-Kreuzer--Skarke classification without repetition, the facewise criterion
+dual-edge condition is sharp. A scan of the Kreuzer--Skarke classification
+shows that the facewise criterion
 accounts for 3,774 of the 30,241 smoothings in the Batyrev--Kreuzer census;
 the other 26,467 require relations among exceptional curve classes from
 different faces.
@@ -84,7 +84,7 @@ Corti--Filip--Petracci \cite{CFP}, $C(F)$ is \emph{smoothable} if and only
 if $F$ admits a Minkowski decomposition into unit segments and standard
 triangles (type (S) in the Altmann--Corti--Filip--Petracci trichotomy,
 as recalled in \cite[Thm.~2.2]{paper1}).  The companion paper
-proved that a single face of the other two types (rigid or
+proved that a single face of the other two types (reduced-rigid or
 deformable-but-non-smoothable) forbids every global smoothing of $X$.
 This paper treats the remaining case: \emph{every} singular
 two-dimensional face is of type (S), so every singular point of $X$
@@ -292,7 +292,7 @@ the necessary condition recalled in \S\ref{sec:germ}.  At the level of
 germs, Gross's
 theorem for primitive realizations fails exactly when the exceptional
 surface is $\PP^2$ or $\FF_1$, and these are precisely the two classes with one
-interior point that are \emph{rigid} in the trichotomy
+interior point that are \emph{reduced-rigid} in the trichotomy
 (Theorem~\ref{thm:trich}).
 The local trichotomy and the global smoothing problem see the same
 dichotomy.
@@ -329,8 +329,8 @@ census.  For the $\ell(F^\circ)$ nodes over a single square face the
 exceptional classes coincide, so Friedman's all-nonzero relation is
 satisfiable face-locally if and only if $\ell(F^\circ) \ge 2$; this
 reproduces the threshold of Theorem~\ref{thm:A} from pure homology.  A
-scan of the database copy described in \S\ref{sec:bk}, subject to the
-completeness hypothesis stated there, shows that this per-face condition
+scan of the verified database copy described in \S\ref{sec:bk}
+shows that this per-face condition
 accounts for exactly $3{,}774$ of the $30{,}241$
 conifold polytopes that Batyrev--Kreuzer show to be smoothable, one
 in eight, so the great majority of their smoothings require
@@ -348,6 +348,7 @@ included as ancillary files and are public, with all data, at
 I am grateful to Mark Gross for first drawing my attention, many years
 ago, to the problem of smoothing canonical singularities on Calabi--Yau
 threefolds.
+The author used LLMs during the development of this work for literature exploration, editorial and coding assistance and as an adversarial reader.
 
 
 \section{Preliminaries}\label{sec:prelim}
@@ -380,7 +381,7 @@ Let $Q$ be a unit-edge lattice polygon that is not a standard triangle, so
 that $C(Q)$ is singular.  Then $Q$ is of exactly one of three types:
 \textup{(S)}, admitting a Minkowski decomposition into unit segments and
 standard triangles, so that $C(Q)$ is smoothable; \textup{(R)}
-\emph{(rigid)}, admitting no non-trivial Minkowski decomposition, so that
+\emph{(reduced-rigid)}, admitting no non-trivial Minkowski decomposition, so that
 $C(Q)$ has no positive-dimensional deformations (the reduced miniversal
 base is a point; first-order deformations may exist); or \textup{(D)}, admitting a
 non-trivial decomposition but none into unit segments and standard
@@ -976,7 +977,7 @@ two-dimensional non-smooth summand $Q_i$, and no other singular points.
 In particular, if $F$ is deformable-but-non-smoothable (type
 \textup{(D)}), take the construction for a maximal decomposition
 $F=R_0+\dots+R_s$.  Then $X$ deforms to a Calabi--Yau threefold in which
-each of the $\ell(F^\circ)$ points of type $C(F)$ is replaced by a rigid
+each of the $\ell(F^\circ)$ points of type $C(F)$ is replaced by a reduced-rigid
 point $C(R_j)$ for each two-dimensional non-smooth summand $R_j$; this
 deformed threefold is again non-smoothable.
 \end{proposition}
@@ -1029,7 +1030,7 @@ space), which transports each of them, with its germ
 $C(Q_i)$, to a singular point of $\mathcal Y_t$.
 When $F$ is of type~(D), take the decomposition to be maximal.  Every
 summand is then Minkowski-indecomposable, so every two-dimensional non-smooth
-summand is rigid.  Thus each $C(F)$ point
+summand gives a reduced-rigid cone.  Thus each $C(F)$ point
 becomes a collection of $C(R_j)$ points; since each $C(R_j)$ has no smoothing
 component (Theorem~\ref{thm:trich}), the deformed
 threefold admits no
@@ -1210,7 +1211,7 @@ A unit-edge polygon with exactly one interior lattice point is, up to
 equivalence, one of five, and the corresponding cones are the
 anticanonical cones over the five smooth toric del Pezzo
 surfaces (\cite[Rem.~2.6]{paper1}, which rests on
-\cite[\S5.5]{Gross97}); two of them, $\PP^2$ and $\FF_1$, are rigid, and the remaining
+\cite[\S5.5]{Gross97}); two of them, $\PP^2$ and $\FF_1$, give reduced-rigid cones, and the remaining
 three are of type~(S): the cones over $\PP^1\times\PP^1$ $(\deg 8)$,
 $\mathrm{dP}_7$ $(\deg 7)$ and $\mathrm{dP}_6$ $(\deg 6)$.  So $F$ is
 one of these three.  An MPCP subdivision is a maximal \emph{projective}
@@ -1313,7 +1314,7 @@ by Kapustka--Kapustka and Kapustka
 \cite{KapustkaKapustka09,Kapustka09}.  The theorem fails exactly when the
 exceptional surface is $\PP^2$ or $\FF_1$, which are precisely the two
 classes with one interior point that
-are \emph{rigid} in the trichotomy (Theorem~\ref{thm:trich}): the germ
+are \emph{reduced-rigid} in the trichotomy (Theorem~\ref{thm:trich}): the germ
 classification and the global smoothing problem see the same dichotomy.
 Proposition~\ref{prop:C2} shows that these Batyrev hypersurfaces do
 not provide the primitive realization.  Their nonsmoothability follows
@@ -1354,15 +1355,17 @@ other faces.
 
 We tabulated this over the per-vertex-count database copy described in
 \cite[\S6.1]{paper1}, together with the separately reconstructed
-$36$-vertex polytope.  Assume, as in \cite[Proposition~6.1]{paper1}, that
-the files contain without repetition exactly the classification members in
-their stated vertex range.  Under this database hypothesis, for
-each reflexive $4$-polytope we test every two-dimensional face for being
+$36$-vertex polytope.  For each reflexive $4$-polytope we test every two-dimensional face for being
 a standard triangle or a unit parallelogram, and compute $\ell(F^\circ)$
 as the lattice length of the edge of $\Delta^\circ$ dual to it.  The
 ancillary input manifest pins these files to the revision and SHA-256
-digests specified in \cite[\S6.1]{paper1}; this makes the finite input
-reproducible but leaves the database hypothesis in force.  Our enumeration
+digests specified in \cite[\S6.1]{paper1}.  The full database-copy
+verification reported there checks reflexivity and absence of repetitions
+up to lattice equivalence for every entry; comparison with the published
+classification total establishes completeness.  This verifies the input
+copy, separately from the singularity enumeration reported here.
+The verification report and input-provenance record accompany the
+ancillary programs.  Our enumeration
 finds exactly $198{,}849$ reflexive $4$-polytopes in the
 Batyrev--Kreuzer class: every two-dimensional face a standard triangle
 or a unit

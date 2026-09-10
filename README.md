@@ -8,8 +8,8 @@ pairs. Paper 4 develops a global obstruction using vanishing periods.
 Paper 5 proves a necessary and sufficient mixed smoothing criterion and
 convergent integrability for its specified deformation spaces.
 
-Papers 1–3 distinguish explicit examples and local classifications from
-database-wide counts, which retain the completeness hypothesis stated below. Paper 4
+Papers 1–3 give explicit examples, local classifications and computer-assisted
+database-wide counts using the verified input copy described below. Paper 4
 specifies the singularity and resolution hypotheses for its homological
 matrix, and Paper 5 gives the precise slice hypotheses and threshold count
 in its ambient obstruction argument.
@@ -28,7 +28,7 @@ mixed criterion for those degrees.
 | paper | guide | compiled PDF | pages |
 |---|---|---|---:|
 | 1. Non-smoothable Calabi–Yau threefolds from reflexive polytopes | [paper1/](paper1/README.md) | [cy-non-smoothable.pdf](paper1/cy-non-smoothable.pdf) | 18 |
-| 2. Deformations of toric pairs and the smoothing of Batyrev Calabi–Yau threefolds | [paper2/](paper2/README.md) | [cy-toric-pairs.pdf](paper2/cy-toric-pairs.pdf) | 19 |
+| 2. Deformations of toric pairs and the smoothing of Batyrev Calabi–Yau threefolds | [paper2/](paper2/README.md) | [cy-toric-pairs.pdf](paper2/cy-toric-pairs.pdf) | 18 |
 | 3. Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau threefolds | [paper3/](paper3/README.md) | [cy-mirror-pairs.pdf](paper3/cy-mirror-pairs.pdf) | 11 |
 | 4. A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds | [paper4/](paper4/README.md) | [cy-vanishing-cycle.pdf](paper4/cy-vanishing-cycle.pdf) | 32 |
 | 5. Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points | [paper5/](paper5/README.md) | [cy-mixed-smoothing.pdf](paper5/cy-mixed-smoothing.pdf) | 61 |
@@ -47,8 +47,9 @@ uniqueness and final checkpoint validation. The
 [complete report](output/ks_dataset_check_2026-09-09.json) records the result;
 [checking the dataset copy](DATASET_CHECK.md) gives its scope and reproduction
 commands. This check validates the input copy; it does not recompute the
-papers' singularity-subset counts. The current manuscripts retain their
-stated database hypotheses.
+papers' singularity-subset counts. Papers 1–3 use it to discharge their
+database-completeness and no-repetition hypotheses; Papers 4–5 identify
+the verified inputs to their bounded censuses.
 
 ## The papers
 
@@ -63,7 +64,7 @@ stated database hypotheses.
    including the ordinary double point. Reduced-rigid means that the reduced
    miniversal base is a point; it does not assert vanishing of the first-order
    deformation space. The smooth unimodular triangle is excluded.
-   Under the database hypothesis, **39,175,536** of the **473,800,776**
+   The scan finds that **39,175,536** of the **473,800,776**
    classification polytopes carry a nonsmoothable unit-edge two-face,
    approximately **8.27%**. This is a sufficient local obstruction and gives
    a lower bound for global nonsmoothability, not a complete count of it.
@@ -79,13 +80,13 @@ stated database hypotheses.
    dual-edge threshold is sharp. The lone length-one del Pezzo cases
    (degrees 6 and 7, and P¹×P¹) are nonsmoothable by the surface-homology
    injection and the explicitly recalled necessary condition from Paper 5.
-   Under the database hypothesis, **3,774** of the **30,241** smoothings in
+   Exactly **3,774** of the **30,241** smoothings in
    the Batyrev–Kreuzer census meet the criterion face by face; the remaining
    **26,467** require relations among exceptional curves from different faces.
 
 3. **Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau
-   threefolds** ([paper3/](paper3/README.md)) — under the database hypothesis,
-   exactly **590** reflexive four-polytopes have both associated Batyrev
+   threefolds** ([paper3/](paper3/README.md)) — exactly **590** reflexive
+   four-polytopes have both associated Batyrev
    hypersurfaces with at most isolated singularities. Their two-faces belong
    to **twelve** lattice-isomorphism classes: triangles, zonotopes, and
    reflexive polygons. The only nonsmoothable germs are ⅓(1,1,1), ⅕(1,1,3)
@@ -156,15 +157,17 @@ stated database hypotheses.
    lattice facets rigid, and **3,005** with a decomposable containing facet. These are
    counts of facet conditions, not an unrestricted smoothability census.
 
-The classification-wide counts of papers 1–3 (the 8.27%, the
-3,774 / 26,467 split, the 590 both-sides unit polytopes and the
-uniqueness of the mirror pair) are stated in the papers under an explicit
-hypothesis on the database copy scanned: that the per-vertex-count files
-contain, without repetition, exactly the classification members in their
-stated vertex range, the one 36-vertex member being supplied separately
-(`missing_polytope.py`). The transverse identity, the local trichotomy and
-census, and every assertion about an explicitly displayed polytope are
-unconditional.
+The classification-wide counts use a complete set of distinct reflexive
+polytopes up to lattice equivalence. PALP verifies these properties for
+all 473,800,776 entries; the published Kreuzer–Skarke total then establishes
+completeness. The original scan range covered 5–33 vertices; the 36-vertex
+file belongs to the full dataset and was checked separately.
+
+The [input-provenance record](DATASET_CHECK.md#connection-to-the-original-scans)
+connects the saved scans to the verified inventory: the upstream data objects
+have been unchanged since February 2024, and the recorded filenames and row
+counts agree. Legacy scan results did not record execution-time input hashes.
+The dataset verification does not independently repeat the singularity scans.
 
 ## Code (`src/`)
 
@@ -179,10 +182,12 @@ data and test the named examples; the geometric and analytic arguments are given
   induced lattices, dual-edge lengths) and the headline example polytopes.
 - `hodge_numbers.py` — Batyrev Hodge numbers of the MPCP resolutions.
 - `plant_search.py` — planting non-smoothable polygons as 2-faces.
+- `reconcile_ks_inputs.py` — compare the verified inventory, pinned upstream
+  file history and saved scan coverage without rerunning singularity tests.
 - `ks_sweep.py` — the full Kreuzer–Skarke sweep (fast integer engine,
   selftested per file against the reference path).
-- `missing_polytope.py` — the one polytope the per-vertex-count parquet
-  files omit (the 36-vertex hexagon×hexagon product), identified and
+- `missing_polytope.py` — the polytope outside the original scan
+  range (the 36-vertex hexagon×hexagon product), identified and
   verified.
 - `paper2_check.py`, `cascade_check.py` — machine checks for paper 2.
 - `bk_check.py` — the Batyrev–Kreuzer all-conifold census.
@@ -341,6 +346,7 @@ downloaded file against it.
 ## Reproducing
 
 ```bash
+python3 src/reconcile_ks_inputs.py # input provenance and saved row coverage
 python3 src/toric_census.py        # local census + self-tests   (~1 s)
 python3 src/batyrev_global.py      # example polytopes, asserted  (~1 s)
 python3 src/hodge_numbers.py       # Hodge numbers, asserted      (~1 s)
