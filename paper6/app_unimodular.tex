@@ -1,0 +1,292 @@
+\section{Unimodular heights: proof of Theorem~\ref{thm:U}}\label{app:unimodular}
+
+Theorem~\ref{thm:U} asks, for every admissible $\Delta$, for a unimodular triangulation $\mathcal T$ of $\partial\Delta^\circ$
+refining its faces and an integral height $\check h$ on the fan over $\mathcal T$ such that $\check h$ and
+$\check h-\check\varphi$ are strictly convex. Section~\ref{ssec:ureform} shows that this is equivalent to the existence of
+a fine, regular, unimodular triangulation of $\Delta^\circ$ that is star-shaped from the origin, and that strict convexity
+of $\check h-\check\varphi$ implies that of $\check h$. Section~\ref{ssec:ufacets} explains why admissibility does not
+yield such a triangulation by a general argument: it constrains the facets of $\Delta^\circ$ only along their edges, and
+lattice polytopes of dimension three need not have unimodular triangulations at all. Section~\ref{ssec:uproof} proves the
+theorem by exhaustion over the classification of Kreuzer and Skarke, with a certificate for each polytope checked in
+exact integer arithmetic, and Section~\ref{ssec:utrust} states on what the proof rests.
+
+Throughout, a piecewise linear function $g$ on a complete simplicial fan is \emph{strictly convex} if it is convex and its
+maximal domains of linearity are the maximal cones. A \emph{wall} is a common facet of two maximal cones $\kappa,\kappa'$,
+and the \emph{bend} of $g$ across it is $g(m')-\ell_\kappa(m')$, where $\ell_\kappa$ is the linear function equal to $g$ on
+$\kappa$ and $m'$ is the generator of $\kappa'$ not in $\kappa$. Bends are additive in $g$, and $g$ is strictly convex if
+and only if every bend is positive; this is the wall criterion of \cite[\S6.1]{CLS}, where support functions carry the
+opposite sign, so that convexity here is concavity there. Recall that $\check\varphi$ equals $1$ on $\partial\Delta^\circ$ and is
+linear on the cones over the faces of $\Delta^\circ$; it is convex, its maximal domains of linearity are the cones over the
+facets, and $\check\varphi(m)=\max_v\langle m,-v\rangle$ over the vertices $v$ of $\Delta$.
+
+\subsection{Reformulation}\label{ssec:ureform}
+
+\begin{lemma}\label{lem:Ureform}
+Let $\mathcal T$ be a unimodular triangulation of $\partial\Delta^\circ$ refining its faces. The following are
+equivalent.
+\begin{enumerate}
+\item[(a)] There is a piecewise linear function $\check h$ on the fan over $\mathcal T$, integral on $M$, such that $\check h$ and
+$\check h-\check\varphi$ are strictly convex.
+\item[(b)] There is a real piecewise linear function on the fan over $\mathcal T$ that is strictly convex.
+\item[(c)] There are real heights $\omega$ on the vertices of $\mathcal T$ such that for every facet $F$ of $\Delta^\circ$ the
+restriction $\mathcal T|_F$ is the regular subdivision of $\operatorname{vert}(\mathcal T)\cap F$ induced by $\omega|_F$.
+\end{enumerate}
+Moreover, for any piecewise linear $\check h$ on the fan over $\mathcal T$, strict convexity of $\check h-\check\varphi$
+implies strict convexity of $\check h$.
+\end{lemma}
+
+\begin{proof}
+(a)$\Rightarrow$(b): take $\check h-\check\varphi$.
+
+(b)$\Rightarrow$(a): strict convexity is an open condition on the values at the rays, so we may take the strictly convex
+function $g$ rational, and after scaling integral at the primitive generators of the rays. Put $\check h=g+\check\varphi$.
+Then $\check h-\check\varphi=g$ is strictly convex. Every simplex of $\mathcal T$ lies in a facet, so $\check\varphi$ is
+linear on every cone of the fan and bends by $\ge0$ across every wall; hence every bend of $\check h$ is at least the
+corresponding bend of $g$, and $\check h$ is strictly convex. The same computation proves the last assertion, for any triangulation. The
+function $g$ is integral on $M$, because a linear function on a unimodular cone that is integral at the generators is
+integral on the lattice points of the cone, and $\check\varphi$ is integral on $M$ because the vertices of $\Delta$ are
+lattice points.
+
+(b)$\Rightarrow$(c): put $\omega=g|_{\operatorname{vert}\mathcal T}$. On the cone over a facet $F$, $g$ is convex with the cones
+over the simplices of $\mathcal T|_F$ as its maximal domains of linearity. Its restriction to the affine hyperplane of $F$
+is therefore a convex piecewise linear function on $F$ whose domains of linearity are exactly the simplices of
+$\mathcal T|_F$ and whose values at their vertices are $\omega$; this says that $\mathcal T|_F$ is the regular subdivision
+induced by $\omega|_F$.
+
+(c)$\Rightarrow$(b): let $g_0$ be linear on each cone of the fan over $\mathcal T$ with $g_0=\omega$ on the vertices. Across a
+wall inside the cone over a facet $F$, the bend of $g_0$ is positive by the regularity of $\mathcal T|_F$, since a bend is
+a local condition, homogeneous of degree one. Across the finitely many walls between the cones over two different facets,
+$\check\varphi$ bends positively, while it does not bend across walls inside a facet cone. So $g_0+\lambda\check\varphi$
+is strictly convex for $\lambda\gg0$.
+\end{proof}
+
+Adding a constant to the heights $\omega$ on $\partial\Delta^\circ$ adds a multiple of $\check\varphi$ to the corresponding
+piecewise linear function; this is the conversion used below. A triangulation of $\Delta^\circ$ is \emph{star-shaped from
+the origin} if the origin is a vertex of each of its maximal simplices.
+
+\begin{corollary}\label{cor:Ureform}
+The conclusion of Theorem~\ref{thm:U} holds for $\Delta$ if and only if $\Delta^\circ$ has a fine, regular, unimodular
+triangulation that is star-shaped from the origin.
+\end{corollary}
+
+\begin{proof}
+A star-shaped triangulation of $\Delta^\circ$ consists of the simplices $\operatorname{conv}(0,\tau)$, $\tau$ in a
+triangulation $\mathcal T$ of $\partial\Delta^\circ$; each $\tau$ lies in a facet, since a convex subset of the boundary of a
+polytope lies in a facet, so $\mathcal T$ refines the faces of $\Delta^\circ$. Since $\Delta^\circ$ is reflexive, every facet lies at lattice distance
+one from the origin, so $\operatorname{conv}(0,\tau)$ is unimodular if and only if $\tau$ is unimodular in its facet, and a
+unimodular simplex contains no lattice points other than its vertices, so unimodular triangulations are fine. The
+star-shaped triangulation is regular if and only if it is induced by heights $0$ at the origin and $\omega$ on
+$\partial\Delta^\circ$ (subtract an affine function), and the lower envelope of the lifted points is then linear on each
+$\operatorname{conv}(0,\tau)$ and $0$ at the origin; so regularity holds if and only if the piecewise linear function with
+values $\omega$ on the fan over $\mathcal T$ is strictly convex. This is (b) of Lemma~\ref{lem:Ureform}, which is equivalent to (a).
+\end{proof}
+
+\subsection{The facets of \texorpdfstring{$\Delta^\circ$}{the polar polytope}}\label{ssec:ufacets}
+Let $v$ be a vertex of $\Delta$ with neighbours $w_1,\dots,w_k$ along edges, and $d_i=w_i-v$, primitive by admissibility.
+The facet of $\Delta^\circ$ dual to $v$ is the lattice three-polytope
+\[
+F_v=\{m\in M_\R:\ \langle m,v\rangle=-1,\ \langle m,d_i\rangle\ge0\ (i=1,\dots,k)\},
+\]
+the polytope of the anticanonical bundle of $\mathbb P_\Delta$ restricted to the toric divisor $D_v$. Its vertices, edges
+and two-faces correspond to the facets, two-faces and edges of $\Delta$ that contain $v$.
+
+\begin{proposition}\label{prop:Ufacets}
+Let $\Delta$ be admissible and let $E$ be an edge of $F_v$, dual to a two-face $\theta\ni v$ of $\Delta$.
+\begin{enumerate}
+\item The normal cone of $F_v$ along $E$ is lattice equivalent to the tangent cone of $\theta$ at $v$, in the lattice of the
+plane of $\theta$. It is unimodular if $\theta$ is a triangle, a square or a hexagon, and if $\theta$ is a pentagon and $v$
+is one of its three corners of index one; at the other two corners of a pentagon it has index $2$.
+\item If $\theta$ is not a triangle, $E$ has lattice length one.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(1) The two-dimensional cone of the fan $\operatorname{Star}(v)/v$ given by $\theta$ is $\operatorname{cone}(\theta-v)$ modulo
+$\R v$. Since $\theta$ lies in a facet of $\Delta$ at lattice height one, the saturated lattice of $\R\theta$ is
+$\Z v\oplus L_\theta$, with $L_\theta$ the direction lattice of the plane of $\theta$, so $L_\theta$ maps isomorphically onto a
+saturated sublattice of $N/\Z v$, carrying the tangent cone of $\theta$ at $v$ to that two-dimensional cone. The index at a
+corner is the determinant of the two primitive edge vectors there; for the pentagon
+$\operatorname{conv}\{(1,0),(1,1),(0,1),(-1,0),(0,-1)\}$ these are $1,1,1,2,2$, for the hexagon all are $1$. (2) is the
+condition $\ell(\theta^\circ)=1$ of Definition~\ref{def:admissible}.
+\end{proof}
+
+Admissibility is a condition on the two-faces of $\Delta$ and on their dual edges, that is, on the edges of the facets
+$F_v$ and on the normal cones along them; Proposition~\ref{prop:Ufacets} records what it says there. It imposes no direct
+condition on the cones of $F_v$ at its vertices beyond their two-dimensional faces, nor on the two-faces of $F_v$.
+
+The known sufficient conditions for unimodular triangulations do not apply to these facets. If every facet $F_v$ has
+lattice width one with respect to each of its facet normals (is \emph{compressed}), then every pulling triangulation
+of each facet is unimodular \cite[Thm.~2.3]{HPPS}, and pulling the boundary lattice points of $\Delta^\circ$ in one global
+order gives heights as in Lemma~\ref{lem:Ureform}(c). If the facet normals of a facet form a unimodular matrix, that facet
+has a regular unimodular triangulation \cite[Thm.~2.4]{HPPS}, but the triangulations of two adjacent facets obtained in this
+way need not agree on the common face. Compressed facets are rare: of the $3{,}175$ facets of the $418$ admissible
+polytopes with at most eight vertices, $46$ are compressed. Facets with unimodular normals are common ($12{,}350$ of the
+$13{,}469$ facets of the admissible polytopes of the list of Section~\ref{ssec:list}), but their triangulations need not be
+compatible. The facets are also far from small: among the $3{,}175$ there are facets with $242$ lattice points and
+normalised volume $756$, and $2{,}171$ of the $2{,}444$ facets with at most $40$ lattice points contain empty lattice
+tetrahedra of volume greater than one among their lattice points, so that a fine triangulation of such a facet need not be
+unimodular. For lattice
+three-polytopes in general, unimodular triangulations need not exist, and their existence is open even for smooth
+lattice three-polytopes \cite[\S1.5.1]{HPPS}; the facets $F_v$ need not be smooth, since by
+Proposition~\ref{prop:Ufacets} their vertex cones are constrained only through their two-dimensional faces. A general
+proof of Theorem~\ref{thm:U} would therefore produce compatible regular unimodular triangulations for a class of lattice
+three-polytopes, the polytopes of $-K_{\mathbb P_\Delta}|_{D_v}$, for which no such result is known. We know no conceptual
+proof, and we prove the theorem by exhaustion.
+
+\subsection{Proof of Theorem~\ref{thm:U}}\label{ssec:uproof}
+The proof has three steps: the list of all reflexive four-polytopes, the determination of the admissible ones, and an
+exactly checked certificate for each of these.
+
+\emph{Step 1: the classification.} Kreuzer and Skarke classified the reflexive four-polytopes up to $GL_4(\Z)$: there are
+$473{,}800{,}776$ of them \cite{KS00}. We use a copy of their list whose completeness we checked against the published
+count, with every polytope reflexive and no two equivalent (by normal forms). Every polytope of the list is treated as
+$\Delta$; since the list contains the polar of each of its members, this covers every polar pair in both orders.
+
+\emph{Step 2: the admissible polytopes.} Admissibility is decided from the vertices and the facet inequalities of
+$\Delta$, computed with PALP \cite{PALP}. The two-faces of $\Delta$ are the maximal vertex sets shared by two facets; each is
+classified in the lattice of its plane. By Pick's theorem, a lattice polygon with primitive edges is a unimodular
+triangle, a unit square, a $dP_7$ pentagon or a $dP_6$ hexagon exactly when its number of vertices and twice its area are
+$(3,1)$, $(4,2)$, $(5,5)$ or $(6,6)$. For every non-triangular two-face the lattice length of the dual edge is computed
+from the two facet normals. The result is Table~\ref{tab:Ucounts}: up to $GL_4(\Z)$ there are $51{,}827$ admissible
+polytopes, $40{,}403$ without and $11{,}424$ with a hexagonal two-face, and $741$ of them have no singular two-face. Every one of them was checked admissible a second time by an independent
+program, the $51{,}827$ have pairwise different normal forms, and the $612$ admissible polytopes of the list of
+Section~\ref{ssec:list} all occur among them.
+
+\begin{table}[ht]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{rrrr@{\qquad}rrrr}
+vertices & polytopes & admissible & with hexagon & vertices & polytopes & admissible & with hexagon\\\hline
+5 & 1{,}561 & 5 & 0 & 20 & 21{,}913{,}680 & 3{,}407 & 1{,}557\\
+6 & 24{,}189 & 26 & 0 & 21 & 12{,}070{,}919 & 2{,}404 & 1{,}268\\
+7 & 177{,}446 & 102 & 0 & 22 & 5{,}826{,}221 & 1{,}567 & 906\\
+8 & 834{,}638 & 285 & 1 & 23 & 2{,}450{,}720 & 999 & 623\\
+9 & 2{,}867{,}955 & 629 & 7 & 24 & 898{,}929 & 583 & 386\\
+10 & 7{,}725{,}801 & 1{,}156 & 25 & 25 & 284{,}696 & 315 & 221\\
+11 & 16{,}608{,}387 & 1{,}931 & 57 & 26 & 78{,}468 & 173 & 131\\
+12 & 29{,}270{,}253 & 2{,}857 & 123 & 27 & 18{,}417 & 81 & 65\\
+13 & 43{,}458{,}000 & 3{,}888 & 225 & 28 & 3{,}781 & 38 & 31\\
+14 & 56{,}060{,}584 & 4{,}846 & 345 & 29 & 647 & 14 & 12\\
+15 & 64{,}085{,}869 & 5{,}499 & 527 & 30 & 114 & 9 & 7\\
+16 & 65{,}615{,}931 & 5{,}824 & 782 & 31 & 23 & 4 & 4\\
+17 & 59{,}972{,}682 & 5{,}697 & 1{,}088 & 32 & 8 & 0 & 0\\
+18 & 48{,}703{,}033 & 5{,}134 & 1{,}419 & 33 & 2 & 1 & 1\\
+19 & 34{,}847{,}821 & 4{,}352 & 1{,}612 & 36 & 1 & 1 & 1\\\hline
+& & & & total & $473{,}800{,}776$ & $51{,}827$ & $11{,}424$
+\end{tabular}
+\caption{Reflexive four-polytopes by number of vertices, the admissible ones, and those among them with a hexagonal
+two-face.}\label{tab:Ucounts}
+\end{table}
+
+\emph{Step 3: certificates.} For each admissible $\Delta$ we record an integer height $h(m)$ at every nonzero lattice point
+$m$ of $\Delta^\circ$. It determines a candidate triangulation: in each facet $F$ of
+$\Delta^\circ$, the lower faces of the convex hull of the lifted points $(m,h(m))$, $m\in F\cap M$. For an integer $\lambda$, computed in the check, put $g=h+\lambda$
+on $\partial\Delta^\circ\cap M$, extended linearly on the cones over the candidate tetrahedra, and $\check h=g+\check\varphi$.
+The following are then checked in exact integer arithmetic:
+\begin{enumerate}
+\item[(i)] every recorded point is a lattice point of $\partial\Delta^\circ$, and every height is an integer;
+\item[(ii)] every candidate tetrahedron lies in a facet hyperplane of $\Delta^\circ$ and has determinant $\pm1$;
+\item[(iii)] every triangle of a candidate tetrahedron lies in exactly two candidate tetrahedra, and their fourth vertices
+lie on opposite sides of the hyperplane spanned by the triangle and the origin;
+\item[(iv)] each of three fixed rays in general position lies in the cone over exactly one candidate tetrahedron;
+\item[(v)] across every wall, the bends of $g$ and of $\check h$ are positive integers.
+\end{enumerate}
+
+\begin{lemma}\label{lem:Ucert}
+If (i)--(v) hold, the candidate tetrahedra form a unimodular triangulation $\mathcal T$ of $\partial\Delta^\circ$ refining its
+faces, and $\check h$ is an integral height on the fan over $\mathcal T$ with $\check h$ and $\check h-\check\varphi$ strictly
+convex.
+\end{lemma}
+
+\begin{proof}
+Write $\sigma_T=\operatorname{cone}(T)$ for a candidate tetrahedron $T$; by (ii) it is a four-dimensional simplicial cone, and
+its facets are the cones over the triangles of $T$, the \emph{walls}. Let $Z$ be the union of the cones over the edges of
+the candidate tetrahedra and of the intersections of pairs of walls that span different hyperplanes; it is a finite union of
+cones of dimension at most two, so $M_\R\setminus Z$ is connected, and any two points off $Z$ and off the walls are joined by
+a path that avoids $Z$ and crosses the walls transversally at finitely many points.
+
+\emph{The interiors are disjoint.} For $x$ off the walls let $N(x)$ be the number of cones $\sigma_T$ containing $x$. Let $x$
+lie on a wall but not in $Z$. The walls through $x$ contain $x$ in their relative interiors (the relative boundary of a
+wall lies in cones over edges) and span a common hyperplane $H$. A cone containing $x$ on its boundary contains it in
+exactly one facet (two facets meet in the cone over an edge), which is one of these walls; by (iii) each of these walls is
+a facet of exactly two cones, lying on opposite sides of $H$. So near $x$ the same number of cones is gained on each side of
+$H$, and $N$ takes the same value on both sides. Hence $N$ is constant off the walls, and by (iv) it equals $1$: the
+interiors of the cones are pairwise disjoint.
+
+\emph{Local structure at the faces.} We show, for a face $\phi\neq0$ of some $\sigma_T$ and a point $x$ in its relative interior,
+that the cones having $\phi$ as a face cover a neighbourhood of $x$, and that no other cone contains $x$. The second
+assertion follows from the first: a cone containing $x$ has interior points arbitrarily close to $x$, which would lie in the
+interior of a cone having $\phi$ as a face, so by disjointness it is that cone. If $\phi=\sigma_T$ there is nothing to show.
+If $\phi$ is a wall, by (iii) it is a facet of a second cone on the other side of its hyperplane, and the two cones cover a
+neighbourhood of $x$; in particular a wall is never subdivided by the facets of several cones on one side, since (iii)
+requires the whole wall to be a facet of a cone on each side. If $\phi$ is the cone over an edge $e$, project to the plane
+$M_\R/\operatorname{span}\phi$: the cones containing $\phi$ become sectors of angle less than $\pi$, and the walls
+containing $\phi$ their boundary rays. By (iii) each such ray bounds exactly two of the sectors, on opposite sides, so the
+sectors form cycles that turn monotonically around the origin, each covering every direction at least once; their
+interiors are disjoint, so there is exactly one cycle and it covers every direction once. So the cones containing $\phi$
+cover a neighbourhood of $x$. If $\phi$ is a ray $\R_{\ge0}v$, project to $M_\R/\R v$ and intersect with a small sphere: the
+cones containing $\phi$ become spherical triangles forming a closed two-dimensional pseudomanifold $L$ by (iii). By the case
+of walls and edges already treated, the map from $L$ to the sphere is a local homeomorphism near every point of $L$,
+including its vertices, whose links are single circles. So $L$ is a closed surface and the map is a covering of the
+two-sphere; each component of $L$ maps homeomorphically, and by disjointness of the interiors there is exactly one. So the
+cones containing $\phi$ cover a neighbourhood of $x$.
+
+\emph{The fan.} The union of the cones is closed, and by the local structure it is open, so it is $M_\R$. Let
+$x\in\sigma_T\cap\sigma_{T'}$, $x\neq0$, and let $\phi$ be the face of $\sigma_T$ containing $x$ in its relative interior; by
+the local structure $\phi$ is a face of $\sigma_{T'}$. Applying this to a point $x$ in the relative interior of the convex
+cone $\sigma_T\cap\sigma_{T'}$, whose carrier face $\phi$ in $\sigma_T$ contains $\sigma_T\cap\sigma_{T'}$, gives
+$\sigma_T\cap\sigma_{T'}=\phi$, a common face. So the cones form a complete simplicial fan.
+
+\emph{Conclusion.} By (i) and (ii) each tetrahedron lies in a facet of $\Delta^\circ$ and is unimodular, so the tetrahedra
+triangulate every facet, hence every face, of $\partial\Delta^\circ$; a unimodular tetrahedron contains no lattice points
+besides its vertices, and the tetrahedra cover $\partial\Delta^\circ$, so every lattice point of $\partial\Delta^\circ$ is a
+vertex. By (v) and the wall criterion, $g=\check h-\check\varphi$ and $\check h$ are strictly convex. The values of $g$ at the
+vertices are integers, so $\check h$ is integral on $M$ as in the proof of Lemma~\ref{lem:Ureform}.
+\end{proof}
+
+All $51{,}827$ certificates pass, with $12{,}001{,}172$ tetrahedra in all. By Lemma~\ref{lem:Ucert} each
+certificate proves the conclusion of Theorem~\ref{thm:U} for its polytope, and by Step 2, which examined every polytope of
+the classification, the certified polytopes are all admissible reflexive four-polytopes. This proves
+Theorem~\ref{thm:U}. \qed
+
+A second program proves the conclusion from the same heights by a different set of sufficient checks, in exact rational
+arithmetic: (i$'$) the recorded points are exactly the nonzero lattice points of $\Delta^\circ$, enumerated independently,
+and lie on its boundary; (ii$'$) in each facet $F$, every cell of the lower convex hull of the points $(m,h(m))$,
+$m\in F\cap M$, is a tetrahedron of determinant $\pm1$; (v$'$) for each tetrahedron and each recorded point $m$ outside its
+cone, $g(m)$ and $\check h(m)$ exceed the values at $m$ of the linear functions that agree with $g$, respectively $\check h$,
+on the cone. By (ii$'$) each facet is triangulated by the regular subdivision induced by $h$, and since the heights are
+global, the triangulations of two facets restrict to the same regular subdivision of their common face; so the tetrahedra
+form a unimodular triangulation of $\partial\Delta^\circ$ refining its faces, and (v$'$) is strict convexity of $g$ and
+$\check h$ on its fan. This program does not need (iii) and (iv). As a further consistency check it compares the number of
+tetrahedra with the normalised volume of $\Delta^\circ$.
+
+The heights were found by choosing $h(m)$ close to a large multiple of a positive definite quadratic form in $m$, first
+$|m|^2$ and then random forms: the first choice succeeds on $7{,}231$ polytopes, and no polytope needed more than $30$
+forms. A quadratic height induces a regular triangulation of every facet at once, which is why one height serves all
+facets; the constant $\lambda$ makes the bends across walls between different facets positive, as in the proof of
+Lemma~\ref{lem:Ureform}. How the heights were found plays no role in the proof.
+
+\subsection{What the proof rests on}\label{ssec:utrust}
+The proof rests on three computations.
+\begin{enumerate}
+\item \emph{The classification data.} The theorem is as reliable as the classification of \cite{KS00}, itself a computer
+classification, and as our copy of it. The classification was not recomputed. Our copy was checked against the published
+count and published file digests; every member was checked reflexive, and no two members are equivalent.
+\item \emph{The admissibility filter.} The program of Step 2 was run on every polytope of the classification, and the
+statement that the certified polytopes are all the admissible ones rests on it. Every polytope it accepts was checked
+admissible again by an independent program. A second implementation of the whole test, sharing no code with the first
+(its faces come from a different polyhedral library, and the interior lattice points of two-faces from Pick's theorem), was
+run on part of the classification and agrees with the first on every polytope on which both were run. Let $d$ be the
+number of nonzero lattice points of $\Delta$ that are not vertices; all admissible polytopes found have $d\le7$ except two,
+with $d=12$ and $d=20$.
+The second implementation has been run on every polytope with at most $9$ vertices ($3{,}905{,}789$ polytopes), and, for
+$10$ to $13$ vertices, on every polytope with $d\le5$ together with $5{,}000$ further polytopes for each number of vertices
+($2{,}000$ chosen uniformly and $3{,}000$ with $d\in\{6,7\}$): $7{,}644{,}706$ polytopes, containing all $10{,}879$ admissible
+polytopes with at most $13$ vertices. For $14$ or more vertices, which carry $40{,}948$ of the $51{,}827$ admissible
+polytopes, every polytope accepted by the first program was checked admissible by the second, and the rejected
+polytopes rest on the first program alone.
+\item \emph{The certificate checks.} The first program checks (i)--(v) in integer arithmetic, with determinants by
+fraction-free elimination; the second checks (i$'$), (ii$'$) and (v$'$) in exact rational arithmetic. Both accept all
+$51{,}827$ certificates. On $135$ corrupted certificates (random, negated, constant or rescaled heights, a point removed)
+the two programs return the same verdicts.
+\end{enumerate}
+The certificates and both checking programs are available at \coderepo.

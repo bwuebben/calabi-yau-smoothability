@@ -1,0 +1,545 @@
+\section{Periods and the relation lattice}\label{sec:periods}
+
+This section proves Theorem~\ref{thm:main} and Corollary~\ref{cor:smooth}. Theorems~\ref{thm:real} and~\ref{thm:lift}
+give the inclusion $K\subseteq\Rel(\delta)$ and item~(2) directly (Section~\ref{ssec:relations}). The reverse inclusion
+is a period computation, which follows the mechanism of Greene, Morrison and Strominger \cite[\S2]{GMS95} inside the
+polynomial family. Near the degenerate locus the period $\wp_q$ of a holomorphic volume form over $\delta_q$ is the
+critical value $\varepsilon_P$ at $q_P$ times a holomorphic function $\beta_q$ that has no zero near the locus
+$\{\varepsilon_P=0\}$ (Lemma~\ref{lem:period}). A
+relation among the classes $[\delta_q]$, even a relation modulo torsion, therefore gives the same relation among the
+functions $\wp_q$ on a whole neighbourhood $U$ of the member, and among their differentials at the point $c^{(0)}$ of
+$\mathcal Z$ below it. There the matrix of differentials is $\operatorname{diag}(\beta_q)\,\mathbf R$ up to an error
+$O(t^{\theta_0/2})$, where $\mathbf R$ is the integer matrix with rows $r_P$, whose left kernel is $K\otimes\Q$. So the
+relations have rank at most $\operatorname{rank}K$, and saturation of $K$ gives equality over $\Z$ and excludes torsion.
+The same matrix, with a contraction argument and the holomorphic implicit function theorem, describes the nodal locus
+(Section~\ref{ssec:nodal}). Section~\ref{ssec:lagrangian} replaces the spheres $\delta_q$ by pairwise disjoint Lagrangian
+spheres, and Section~\ref{ssec:smooth} proves Corollary~\ref{cor:smooth}.
+
+Throughout, the configuration of Section~\ref{ssec:member} is fixed: $\mathcal T$ and $\check h$, the pulling
+refinement $\mathcal F_C$ and the height $h_C$, the vectors $w_u$, the integer $k_0$ and $H=k_0\varphi+h_C$. We use the
+notation of Section~\ref{sec:regime}: the compact set $\mathscr K_0\subset\mathcal Z$, the radius $r\le r_1$ and the
+bound $\eta_0\le r^2/20$ of Definition~\ref{def:window}, the constant $C_\eta$ of Lemma~\ref{lem:eta}, the sets
+$U_\C\subseteq U^+_\C$ of Definition~\ref{def:window}, the max-norm $\|\xi\|=\max_n|\xi_n|$ on $\C^{\mathcal A}$ with
+$\|r_P\|_*=4$, and $\eta_P(\xi)=r_P\cdot\xi$, extended complex-linearly. A coefficient vector near $c^{(0)}$ is written
+$c^{(0)}e^\xi$ with $\xi\in\C^{\mathcal A}$. Constants called $C$ depend only on the configuration and on
+$\mathscr K_0$; $C(\eta_0)$ depends in addition on $\eta_0$. All thresholds on $t$ below depend only on these data.
+
+\subsection{The neighbourhood \texorpdfstring{$U$}{U} and the periods}\label{ssec:U}
+
+Fix $t$ below the threshold of Lemmas~\ref{lem:W}, \ref{lem:NM} and~\ref{lem:TR}, and a member $c=c^{(0)}e^{\xi_c}$ as
+in Theorem~\ref{thm:main}: $c^{(0)}\in\mathscr K_0$, and $\xi_c$ real and in the window. For a node $q$, with
+parallelogram $P$, and a coefficient vector $c'$ at which Lemma~\ref{lem:NM} applies, $q_P(c')$ and $\varepsilon_P(c')$
+denote the Morse point of $f^{(1)}$ in $\mathbb D_P$ and its critical value. Below, sets of nodes are indexed by the
+nodes $q$ or by their parallelograms $P$ interchangeably.
+
+\begin{lemma}[the neighbourhood $U$]\label{lem:U}
+Put $\eta_0':=3\eta_0/2$. The open set
+\[
+U:=\bigl\{c^{(0)}e^{\xi}:\ \xi\in\C^{\mathcal A},\ \|\xi\|<3/2,\ |\eta_P(\xi)|<\eta_0'\ \text{for every }P\bigr\}
+\]
+of complex coefficient vectors has the following properties.
+\begin{enumerate}
+\item $U_\C\subseteq U\subseteq U^+_\C$; in particular $U$ contains $c$ and $c^{(0)}$. The set $U$ is simply connected.
+\item The conclusions of Lemmas~\ref{lem:W}(2), \ref{lem:NM} and~\ref{lem:TR}(2) hold for every $c'\in U$.
+\item Each $\varepsilon_P$ is holomorphic on $U$, and on all of $U$
+\begin{equation}\label{eq:depsilon}
+d\varepsilon_P=e^{-\eta_P}\,r_P\cdot d\xi+O\bigl(C(\eta_0)\,t^{\theta_0/2}\bigr).
+\end{equation}
+\item For $c'\in U$ the singular points of $Y_{t,c'}$ are the points $q_P(c')$ with $\varepsilon_P(c')=0$, and each of
+them is an ordinary double point.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+The defining bounds of $U_\C$, $U$ and $U^+_\C$ are $(1,\eta_0)$, $(3/2,3\eta_0/2)$ and $(2,2\eta_0)$, so
+$U_\C\subseteq U\subseteq U^+_\C$. The map $\xi\mapsto c^{(0)}e^\xi$ is injective on $\{\|\operatorname{Im}\xi\|<\pi\}$, and
+$3/2<\pi$; so $U$ is the image of a convex set under a homeomorphism onto its image, hence contractible. This proves
+(1). Lemmas~\ref{lem:W}(2), \ref{lem:NM} and~\ref{lem:TR}(2) hold for every coefficient vector in $U^+_\C$, with the same
+proofs and the same threshold on $t$ (Definition~\ref{def:window}), hence on $U$. This proves (2).
+
+The critical point $q_P(c')$ is nondegenerate, so by the holomorphic implicit function theorem it depends
+holomorphically on $c'$, and so does $\varepsilon_P(c')=f^{(1)}(q_P(c'))$. By Lemma~\ref{lem:NM}(2), which holds on
+$U^+_\C$ with the same proof (Definition~\ref{def:window}), $\varepsilon_P+\kappa_P=O(t^{\theta_0/2})$ on $U^+_\C$,
+where $\kappa_P=e^{-\eta_P}-1$. Every point of $U$ is the centre of a polydisc in $\xi$ of polyradius
+$\varrho_*:=\min(1/2,\eta_0/8)=\min\bigl(1/2,\eta_0/(2\|r_P\|_*)\bigr)$ contained in $U^+_\C$: on it
+$\|\xi\|<3/2+1/2$ and $|\eta_P|<3\eta_0/2+\|r_P\|_*\varrho_*\le2\eta_0$. The Cauchy estimates on these polydiscs bound
+$d(\varepsilon_P+\kappa_P)$ by $C(\eta_0)t^{\theta_0/2}$ on $U$, and $d\kappa_P=-e^{-\eta_P}\,r_P\cdot d\xi$. This is
+(3). By Lemma~\ref{lem:W}(2) on $U$ the singular points of $Y_{t,c'}$ are the $q_P(c')$ with $\varepsilon_P(c')=0$. At
+such a point the local defining function $f^{(1)}$ in the ambient chart has a nondegenerate critical point with critical
+value $0$, so the point is an ordinary double point of $Y_{t,c'}$. This is (4).
+\end{proof}
+
+For a node $q$ with parallelogram $P$ put $D_q:=\{c'\in U:\varepsilon_P(c')=0\}$, and for $Q'\subseteq Q$ put
+$D_{Q'}:=\bigcap_{q\in Q'}D_q$. By Lemma~\ref{lem:U}(4), $D_{Q'}$ is the locus of members of $U$ with a node at
+$q_P$ for every $q\in Q'$. By~\eqref{eq:depsilon}, and since $|e^{-\eta_P}|\ge e^{-\eta_0'}\ge e^{-1}$ on $U$ while the
+linear form $r_P\cdot d\xi$ has norm $\|r_P\|_*=4$, the differential $d\varepsilon_P$ does not vanish on $U$ for $t$ small;
+so $D_q$ is a smooth complex hypersurface of $U$, possibly empty. The set $U^\circ:=U\setminus\bigcup_qD_q$ is connected,
+as the complement of a proper analytic subset of a connected complex manifold, and it contains $c$, because
+$\varepsilon_P(c)\neq0$ in the window (Lemma~\ref{lem:NM}(3)). The members of $U^\circ$ are smooth.
+
+\subsubsection*{Vanishing spheres over $U$}
+For $c'\in U\setminus D_q$ let $\delta_q(c')\subset Y_{t,c'}$ be the vanishing sphere of the Morse point $q_P(c')$ for the
+straight path of values from $\varepsilon_P(c')$ to $0$, as in Definition~\ref{def:deltaq}: in holomorphic coordinates
+$\zeta$ centred at $q_P(c')$ with $f^{(1)}=\varepsilon_P+\sum_i\zeta_i^2$, it is
+$\{\zeta\in(-\varepsilon_P)^{1/2}\R^4:\sum_i\zeta_i^2=-\varepsilon_P\}$. On $U$,
+\begin{equation}\label{eq:epsbound}
+|\varepsilon_P|\le|\kappa_P|+Ct^{\theta_0/2}\le e^{\eta_0'}\eta_0'+Ct^{\theta_0/2}<r^2/6,
+\end{equation}
+since $\eta_0'=3\eta_0/2\le3r^2/40$; so the sphere lies in $\mathbb D_P$. The orientation of
+Definition~\ref{def:orient}, fixed at the members in the window, extends continuously to all of $U\setminus D_q$. Indeed,
+since $U$ is simply connected and $D_q$ is a smooth hypersurface, $\pi_1(U\setminus D_q)$ is generated by conjugates of
+meridians of $D_q$, and along a meridian $\varepsilon_P$ turns once around $0$, which carries $\delta_q$ to itself with
+its orientation (Remark~\ref{rem:kappa}).
+
+\begin{lemma}[flatness]\label{lem:flat}
+The members $Y_{t,c'}$, $c'\in U^\circ$, form a locally trivial fibre bundle over $U^\circ$, and the classes
+$[\delta_q(c')]\in H_3(Y_{t,c'};\Z)$, $q\in Q$, are flat sections of the local system of the groups
+$H_3(Y_{t,c'};\Z)$ over $U^\circ$.
+\end{lemma}
+
+\begin{proof}
+The set $\mathcal Y^\circ:=\{(c',y):c'\in U^\circ,\ y\in Y_{t,c'}\}$ is a closed submanifold of $U^\circ\times X_{\mathcal T}$,
+and the projection to $U^\circ$ is a proper submersion, since every fibre is a smooth hypersurface of the compact
+manifold $X_{\mathcal T}$. By Ehresmann's theorem it is locally trivial, and parallel transport along a path in $U^\circ$
+is induced by a diffeomorphism of fibres, well defined up to isotopy. Over a small ball in $U^\circ$ the Morse points,
+the Morse coordinates of the holomorphic Morse lemma with parameters \cite{AGZV1} and the spheres $\delta_q(c')$ vary
+continuously, with the continuous orientation above; in a trivialisation over the ball the spheres form an isotopy, so
+their classes correspond under parallel transport.
+\end{proof}
+
+\subsubsection*{Periods}
+Let $\Theta_T:=\chi^{-n_1}d\chi^{n_1}\wedge\dots\wedge\chi^{-n_4}d\chi^{n_4}$ be the invariant four-form of the dense
+torus for a basis $n_1,\dots,n_4$ of $N$, and write $F_t/x^0=\sum_n\gamma_n\chi^n$. In the chart of a maximal cone, with
+Cox coordinates $Z_1,\dots,Z_4$, we have $\Theta_T=\pm dZ_1\wedge\dots\wedge dZ_4/(Z_1\cdots Z_4)$ and
+$F_t/x^0=F_\sigma/(Z_1\cdots Z_4)$, where $F_\sigma$ is the defining polynomial of $Y_{t,c'}$ in the chart. So
+$\Theta_T/(F_t/x^0)=\pm dZ_1\wedge\dots\wedge dZ_4/F_\sigma$ has a simple pole along $Y_{t,c'}$ and no other pole. For
+$c'\in U$ its residue $\Omega_{t,c'}$ is a nowhere vanishing holomorphic three-form on the smooth locus of $Y_{t,c'}$,
+depending holomorphically on $c'$. Put
+\[
+\wp_q(c'):=\int_{\delta_q(c')}\Omega_{t,c'},\qquad c'\in U\setminus D_q .
+\]
+
+\begin{lemma}[periods]\label{lem:period}
+Let $q$ be a node, with parallelogram $P$. There are a holomorphic function $\beta_q$ on $U$, a sign $s_q$ and a
+constant $C$ independent of $t$ such that $\wp_q=\beta_q\varepsilon_P$ on $U\setminus D_q$ and
+\[
+\bigl|\beta_q-4\pi^2s_q\,\mu_P/c_0\bigr|\le C\bigl(|\varepsilon_P|+t^{\theta_0/2}\bigr)\qquad\text{on }U.
+\]
+In particular $\wp_q$ extends holomorphically to $U$, $\beta_q$ is bounded on $U$ uniformly in $t$, and there is
+$\varepsilon_*>0$ independent of $t$ such that, for $t$ small, $\beta_q$ has no zero at the points of $U$ with
+$|\varepsilon_P|\le\varepsilon_*$, which include $D_q$.
+\end{lemma}
+
+\begin{proof}
+\emph{Coordinates.} By Lemma~\ref{lem:NM}(1), on $2\mathbb D_P$ the function $f^{(1)}$ differs by $O(t^{\theta_0/2})$ from
+$f_{\rm lin}:=xy+z_1z_2-\kappa_P$, with $z_1=\hat Z$ and $z_2=\vartheta_P\hat Z'$, since $a\hat Z$ and $a'\hat Z'$ are
+$O(\lambda_P^{-1/2})$ there; by the Cauchy estimates the difference is $O(t^{\theta_0/2})$ in $C^3$ on $\mathbb D_P$. Let
+$\zeta^0$ be the linear coordinates with $x=\zeta^0_1+i\zeta^0_2$, $y=\zeta^0_1-i\zeta^0_2$, $z_1=\zeta^0_3+i\zeta^0_4$,
+$z_2=\zeta^0_3-i\zeta^0_4$, so that $f_{\rm lin}=\sum_i(\zeta^0_i)^2-\kappa_P$ and
+$dx\wedge dy\wedge dz_1\wedge dz_2=-4\,d^4\zeta^0$, where $d^4\zeta:=d\zeta_1\wedge\dots\wedge d\zeta_4$ for any coordinates
+$\zeta$. Put $\zeta^1:=\zeta^0-\zeta^0(q_P)$ and $\mathsf H(\zeta^1):=\int_0^1(1-s)\operatorname{Hess}f^{(1)}(s\zeta^1)\,ds$, the
+Hessian taken in the coordinates $\zeta^1$. Since $q_P$ is a critical point of $f^{(1)}$ with value $\varepsilon_P$,
+Taylor's formula with integral remainder gives $f^{(1)}=\varepsilon_P+(\zeta^1)^{\mathsf T}\mathsf H(\zeta^1)\,\zeta^1$. The Hessian
+of $f_{\rm lin}$ is $2I$, and $f^{(1)}-f_{\rm lin}$ is $O(t^{\theta_0/2})$ in $C^3$ on the ball $\{|\zeta^1|<r/2\}$, which
+lies in $\mathbb D_P$ because $r\le1/2$; so $\mathsf H=I+O(t^{\theta_0/2})$ in $C^1$ there. Put $\zeta:=\mathsf H(\zeta^1)^{1/2}\zeta^1$,
+with the principal square root of the symmetric matrix $\mathsf H$. Then $\zeta$ are holomorphic coordinates centred at $q_P$,
+depending holomorphically on $c'$, with $f^{(1)}=\varepsilon_P+\mathfrak q$, $\mathfrak q:=\sum_i\zeta_i^2$, and
+$\zeta-\zeta^1=O(t^{\theta_0/2})$ in $C^1$ on the ball, with constants independent of $c'$ and $t$.
+
+\emph{The form.} On the chart $U_{u,u'}$ of Section~\ref{ssec:morse} we take $n_1,\dots,n_4=b-a,\,d-a,\,w_u,\,w_{u'}$.
+Since $x^a/x^0=\chi^a=(ZZ')^{-1}$ by~\eqref{eq:nodeexp}, $\Theta_T/(F_t/x^0)=\Theta/f^{(1)}$ with
+$\Theta:=\pm\gamma_a^{-1}(\chi_1\chi_2)^{-1}d\chi_1\wedge d\chi_2\wedge dZ\wedge dZ'$. From
+$\chi_1=(\gamma_a/\gamma_b)\mu_P^{-1/2}(x-\mu_P^{-1/2})$, $\chi_2=(\gamma_a/\gamma_d)\mu_P^{-1/2}(y-\mu_P^{-1/2})$,
+$Z=\nu_Zz_1$, $Z'=\nu_{Z'}z_2/\vartheta_P$, $\nu_Z\nu_{Z'}=1/|\mathfrak b|$ and $\mathfrak b=\gamma_0/\gamma_a$, with
+$\gamma_0=c_0$ because $H(0)=0$,
+\[
+\Theta=\pm\frac{\mu_P}{c_0}\,\frac{dx\wedge dy\wedge dz_1\wedge dz_2}{(1-\mu_P^{1/2}x)(1-\mu_P^{1/2}y)}
+=\mp\frac{4\mu_P}{c_0}\,\frac{d^4\zeta^0}{(1-\mu_P^{1/2}x)(1-\mu_P^{1/2}y)} .
+\]
+Write $\Theta=g\,d^4\zeta$. Then $g$ is holomorphic in $c'$ and $\zeta$, bounded on the ball uniformly in $t$, and
+$g(0)=\mp4(\mu_P/c_0)\bigl(1+O(t^{\theta_0/2})\bigr)$, because $q_P$ lies within $O(t^{\theta_0/2})$ of the node point
+$x=y=0$ (Lemma~\ref{lem:NM}(2)).
+
+\emph{The period.} For $|\lambda|<r^2/5$ let $\mathbf B_\lambda:=\lambda^{1/2}\mathbf B$, where $\mathbf B$ is the closed
+unit ball of $\R^4\subset\C^4$ in the coordinates $\zeta$, oriented by $\R^4$; this does not depend on the choice of the
+square root, since $-1$ preserves the orientation of $\R^4$. Its boundary lies in $\{\mathfrak q=\lambda\}$, and for
+$\lambda=-\varepsilon_P$ it is the sphere $\delta_q(c')$; by~\eqref{eq:epsbound} this applies on all of $U$. Let
+$s'_q=\pm1$ compare the orientation of $\delta_q$ with the boundary orientation of $\mathbf B_{-\varepsilon_P}$; it is
+locally constant in $c'$. Put
+\[
+\mathcal I(c',\lambda):=\int_{\mathbf B_\lambda}g\,d^4\zeta=\lambda^2\int_{\mathbf B}g(\lambda^{1/2}u)\,d^4u .
+\]
+In the Taylor expansion of $g$ at $\zeta=0$ the terms of odd degree integrate to zero over $\mathbf B$, so $\mathcal I$
+is holomorphic in $(c',\lambda)$, and $\mathcal I=\lambda^2\bigl(\tfrac{\pi^2}2g(0)+\lambda\mathcal I_1\bigr)$, since
+$\mathbf B$ has volume $\pi^2/2$; by the Cauchy estimates $\mathcal I_1$ is bounded on $|\lambda|\le r^2/6$ uniformly in
+$t$. On $Y_{t,c'}$ near $q_P$ the residue of $\Theta/f^{(1)}$ is $g$ times the Gelfand--Leray form $d^4\zeta/d\mathfrak q$,
+and the Gelfand--Leray formula \cite{AGZV2} gives
+$\partial_\lambda\mathcal I(c',\lambda)=\int_{\partial\mathbf B_\lambda}g\,d^4\zeta/d\mathfrak q$. Hence
+\[
+\wp_q=s'_q\,\partial_\lambda\mathcal I(c',-\varepsilon_P)
+=-s'_q\,\varepsilon_P\bigl(\pi^2g(0)-\varepsilon_P\mathcal I_2(c',-\varepsilon_P)\bigr),\qquad
+\mathcal I_2:=3\mathcal I_1+\lambda\,\partial_\lambda\mathcal I_1 .
+\]
+The function $\beta_q:=-s'_q\bigl(\pi^2g(0)-\varepsilon_P\mathcal I_2(c',-\varepsilon_P)\bigr)$ is holomorphic near every
+point of $U$, also on $D_q$, and it equals $\wp_q/\varepsilon_P$ on the dense set $U\setminus D_q$; so these local
+functions define a holomorphic function on $U$. The estimate follows from the formula for $g(0)$, with
+$s_q=\pm s'_q$; this sign is constant, because $s'_q$ is locally constant on the connected set $U\setminus D_q$.
+Since $|\mu_P/c_0|$ is bounded below on $U$ by a constant depending only on $\mathscr K_0$ and $\eta_0$, the last
+statement follows.
+\end{proof}
+
+\subsection{Relations: proof of Theorem \texorpdfstring{\ref{thm:main}}{A}(1) and (2)}\label{ssec:relations}
+
+\subsubsection*{The threshold}
+We use the choices of Section~\ref{ssec:member}: $r=r_1$, $\eta_1=r_1^2/20$ and $C=C_\eta$ in the statement of
+Theorem~\ref{thm:main}, so that for $\eta_0\in(0,\eta_1]$ the members of Theorem~\ref{thm:main} are exactly the members
+$c=c^{(0)}e^{\xi_c}$ with $c^{(0)}\in\mathscr K_0$ and $\xi_c$ real and in the window; here $\log\mu_P(c)=\eta_P(\xi_c)$.
+Let $t_0$ be the threshold of Theorem~\ref{thm:lift} (Proposition~\ref{prop:Bprecise}) for $r$, $\eta_0$ and
+$\mathscr K_0$, which lies below those of Lemmas~\ref{lem:W}, \ref{lem:NM} and~\ref{lem:TR}. In the proofs of items~(1)
+and~(3) we decrease $t_0$ finitely many times, each time by a condition that involves only the configuration,
+$\mathscr K_0$ and $\eta_0$; the result is the $t_0$ of Theorem~\ref{thm:main}. Fix $t<t_0$, a member $c$ and the
+neighbourhood $U$ of Lemma~\ref{lem:U}.
+
+\subsubsection*{Proof of item (2), and $K\subseteq\Rel(\delta)$}
+Let $\mathfrak K_0$ be the barycentric subdivision of $\mathscr P$, in which $\Gamma$ is a full subcomplex
+(Lemma~\ref{lem:full}), and let $k\in K$. By Theorem~\ref{thm:real} there is $z\in Z(\mathfrak K_0)$ with $\rho(z)=k$. By
+Theorem~\ref{thm:lift}, applied to $\mathfrak K_0$ and $z$, there is an integral four-chain $\check\Xi(z)$ on $Y_t$ with
+$\partial\check\Xi(z)=\sum_q\rho_q(z)[\delta_q]=\sum_qk_q[\delta_q]$. This is item~(2), and it gives
+$\sum_qk_q[\delta_q]=0$ in $H_3(Y_t;\Z)$, so $K\subseteq\Rel(\delta)$.
+
+Both theorems are stated with the same objects: the group $Z(\mathfrak K)$ of Definition~\ref{def:relcycle}, with
+coefficients in the sheaf $\iota_*\Lambda$ and boundary in $C_1(\Gamma;\mathcal D)$, and the node coefficients of
+Definition~\ref{def:nodecoef}. Theorem~\ref{thm:lift} reads $\rho_q$ through the passage formula $\rho_q=c_{ab}-c_{bc}$,
+which agrees with Definition~\ref{def:nodecoef} (Section~\ref{ssec:cycles-bdry}), and it orients $\delta_q$ by
+Definition~\ref{def:orient}, as Theorem~\ref{thm:main} does, for the same labelling of each parallelogram. So no further
+compatibility is needed; by Lemma~\ref{lem:diag} the conclusion does not depend on the labelling.
+
+\subsubsection*{Proof of item (1)}
+Let $T:=\{k\in\Z^Q:\sum_qk_q[\delta_q]\in\Tors H_3(Y_t;\Z)\}$. Then $K\subseteq\Rel(\delta)\subseteq T$, and item~(1) is the
+statement $T=K$. Let $\mathbf R$ be the $|Q|\times|\mathcal A|$ integer matrix with rows $r_P=e_a+e_c-e_b-e_d$; its entries lie in
+$\{0,\pm1\}$. The points of the set $R$ of Section~\ref{ssec:admissible} are lattice points of $\partial\Delta$, so
+$\Z^R\subseteq\Z^{\mathcal A}$, and under this inclusion $r_P=-\circv_q$, both for the labelling that orients $\delta_q$
+(a change of diagonal reverses $r_P$, $\circv_q$ and $\delta_q$ together, Lemma~\ref{lem:diag}). Hence the left kernel of $\mathbf R$ over $\Q$ is
+$\{k\in\Q^Q:\sum_qk_q\circv_q=0\}=K\otimes\Q$, and
+\[
+\rho_{\mathbf R}:=\operatorname{rank}\mathbf R=|Q|-\operatorname{rank}K .
+\]
+
+\emph{Step 1: relations propagate over $U$.} Let $k\in T$. By Lemma~\ref{lem:flat}, parallel transport along a path in
+the connected set $U^\circ$ from $c$ to $c'$ is a group isomorphism $H_3(Y_{t,c};\Z)\to H_3(Y_{t,c'};\Z)$ carrying
+$[\delta_q(c)]$ to $[\delta_q(c')]$; so $\sum_qk_q[\delta_q(c')]$ is a torsion class for every $c'\in U^\circ$.
+Integration of the closed form $\Omega_{t,c'}$ is a homomorphism $H_3(Y_{t,c'};\Z)\to\C$, which vanishes on torsion
+classes; hence $\sum_qk_q\wp_q=0$ on $U^\circ$. By Lemma~\ref{lem:period} each $\wp_q=\beta_q\varepsilon_P$ extends
+holomorphically to $U$, and $U^\circ$ is dense in $U$; so
+\begin{equation}\label{eq:periodrel}
+\sum_qk_q\,\wp_q\equiv0\quad\text{on }U,\qquad\text{for every }k\in T,\ \text{in particular for every }k\in K .
+\end{equation}
+
+\emph{Step 2: the differentials at $c^{(0)}$.} At the point $c^{(0)}\in U$, where $\xi=0$, every $\eta_P$ vanishes, so
+$\kappa_P=0$ and $|\varepsilon_P(c^{(0)})|\le Ct^{\theta_0/2}$ (Lemma~\ref{lem:NM}(2)). Since $\mathscr K_0$ is compact
+and $c_0>0$ on $\mathcal Z$, there are $0<c_-\le c_+$ with $c^{(0)}_0\in[c_-,c_+]$ for all $c^{(0)}\in\mathscr K_0$. By
+Lemma~\ref{lem:period}, with $\mu_P(c^{(0)})=1$, $\bigl||\beta_q(c^{(0)})|-4\pi^2/c^{(0)}_0\bigr|\le Ct^{\theta_0/2}$, and
+$|\beta_q|\le b_+$ on $U$ with $b_+$ independent of $t$. So for $t$ small
+\[
+b_-:=2\pi^2/c_+\ \le\ |\beta_q(c^{(0)})|\ \le\ b_+\qquad\text{for every }q .
+\]
+The polydisc in $\xi$ about $0$ of polyradius $\varrho_*=\min(1/2,\eta_0/8)$ lies in $U_\C\subseteq U$: on it
+$\|\xi\|\le1/2$ and $|\eta_P|\le\|r_P\|_*\|\xi\|\le\eta_0/2$. Since $\beta_q$ is holomorphic and bounded by $b_+$ on $U$,
+the Cauchy estimates on this polydisc give $|\partial\beta_q/\partial\xi_n(c^{(0)})|\le b_+/\varrho_*$. Hence, at $c^{(0)}$,
+\[
+d\wp_q=\beta_q(c^{(0)})\,d\varepsilon_P+\varepsilon_P(c^{(0)})\,d\beta_q
+=\beta_q(c^{(0)})\,r_P\cdot d\xi+O\bigl(C(\eta_0)\,t^{\theta_0/2}\bigr),
+\]
+by~\eqref{eq:depsilon} with $\eta_P=0$. Let $\mathbf D(t)$ be the $|Q|\times|\mathcal A|$ matrix whose rows are the
+differentials $d\wp_q(c^{(0)})$, as linear forms in $d\xi$. Then
+\begin{equation}\label{eq:Dmatrix}
+\mathbf D(t)=\operatorname{diag}\bigl(\beta_q(c^{(0)})\bigr)\,\mathbf R+\mathbf E(t),\qquad
+\max_{q,n}|\mathbf E(t)_{qn}|\le C(\eta_0)\,t^{\theta_0/2}.
+\end{equation}
+
+\emph{Step 3: the rank.} Choose $\rho_{\mathbf R}$ rows $I$ and $\rho_{\mathbf R}$ columns $J$ of $\mathbf R$ with $\det\mathbf R_{IJ}\neq0$; as an integer,
+$|\det\mathbf R_{IJ}|\ge1$. Then $\bigl|\det\bigl(\operatorname{diag}(\beta)\mathbf R\bigr)_{IJ}\bigr|=\prod_{q\in I}|\beta_q(c^{(0)})|\,
+|\det\mathbf R_{IJ}|\ge b_-^{\rho_{\mathbf R}}$, and every entry of $\operatorname{diag}(\beta)\mathbf R$ has modulus at most $b_+$. The determinant
+is a polynomial of degree $\rho_{\mathbf R}$ in the entries, so, once $C(\eta_0)t^{\theta_0/2}\le1$,
+\[
+\bigl|\det\mathbf D(t)_{IJ}-\det\bigl(\operatorname{diag}(\beta)\mathbf R\bigr)_{IJ}\bigr|
+\le\rho_{\mathbf R}\cdot\rho_{\mathbf R}!\,(b_++1)^{\rho_{\mathbf R}-1}\,C(\eta_0)\,t^{\theta_0/2}.
+\]
+We decrease $t_0$ so that the right-hand side is less than $b_-^{\rho_{\mathbf R}}/2$. Then $\det\mathbf D(t)_{IJ}\neq0$, so
+$\operatorname{rank}\mathbf D(t)\ge\rho_{\mathbf R}$, and the left kernel of $\mathbf D(t)$ in $\C^Q$ has dimension at most
+$|Q|-\rho_{\mathbf R}=\operatorname{rank}K$.
+
+\emph{Step 4: conclusion.} Let $k\in T$. Differentiating~\eqref{eq:periodrel} at $c^{(0)}$ gives
+$\sum_qk_q\,d\wp_q(c^{(0)})=0$, so $k$ lies in the left kernel of $\mathbf D(t)$. The complex span of $T$ therefore has
+dimension at most $\operatorname{rank}K$, and it contains the complex span of $K\subseteq T$, which has dimension
+$\operatorname{rank}K$. The two spans agree, and since both $T$ and $K$ consist of integral vectors, $T\otimes\Q=K\otimes\Q$.
+As $K$ is saturated in $\Z^Q$, $T\subseteq(K\otimes\Q)\cap\Z^Q=K$. Hence $T=\Rel(\delta)=K$.
+
+The homomorphism $\Z^Q\to H_3(Y_t;\Z)$, $k\mapsto\sum_qk_q[\delta_q]$, therefore has kernel $K$, and its image meets the
+torsion subgroup only in $0$. The image is isomorphic to $\Z^Q/K$, which is finitely generated and torsion-free because
+$K$ is saturated, hence free of rank $|Q|-\operatorname{rank}K$. This proves item~(1). \qed
+
+\begin{remark}\label{rem:relationsU}
+Step~1 uses only that $\sum_qk_q[\delta_q]$ is torsion at one member, and the inclusion $K\subseteq\Rel(\delta)$ is the
+integral statement of item~(2), not a statement modulo torsion. The rank bound of Step~3 is where the relation lattice
+of the circuits enters: the left kernel of $\mathbf R$ over $\Q$ is the space of relations among the classes $[C_q]$ in
+$H_2(\widehat X;\Q)$ (Proposition~\ref{prop:partialres}).
+\end{remark}
+
+The conclusion extends from the given member to all smooth members of $U$ that have Morse points at every node, as
+Section~\ref{ssec:scope} states.
+
+\begin{proposition}\label{prop:relationsU}
+For every $c'\in U^\circ=U\setminus\bigcup_qD_q$, including complex coefficient vectors, the member $Y_{t,c'}$ is smooth, and
+for $k\in\Z^Q$ the class $\sum_qk_q[\delta_q(c')]$ is a torsion element of $H_3(Y_{t,c'};\Z)$ if and only if $k\in K$, and
+it is then zero.
+\end{proposition}
+
+\begin{proof}
+Smoothness is Lemma~\ref{lem:U}(4). Parallel transport along a path in the connected set $U^\circ$ from $c$ to $c'$ is a
+group isomorphism carrying $[\delta_q(c)]$ to $[\delta_q(c')]$ for every $q$ (Lemma~\ref{lem:flat}). It carries the
+homomorphism $k\mapsto\sum_qk_q[\delta_q(c)]$ to $k\mapsto\sum_qk_q[\delta_q(c')]$ and the torsion subgroup onto the torsion
+subgroup; so the kernels, and the preimages of the torsion subgroups, agree. Item~(1) at $c$ gives the claim.
+\end{proof}
+
+\subsection{The nodal locus: proof of Theorem \texorpdfstring{\ref{thm:main}}{A}(3)}\label{ssec:nodal}
+
+By Lemma~\ref{lem:U}(4) the members of $U$ with a node at every point $q_P$, $P\in Q$, are the points of $D_Q$; each of
+them has exactly $|Q|$ singular points, all ordinary double points. Let $I\subseteq Q$ index rows $r_P$, $P\in I$, that
+form a basis of the row space of $\mathbf R$, so $|I|=\rho_{\mathbf R}=|Q|-\operatorname{rank}K$, and put $D_I:=\bigcap_{P\in I}D_P$. We
+show that $D_I$ is a nonempty complex submanifold of $U$ of codimension $|I|$, and that $D_Q=D_I$.
+
+In the chart $\xi$ write $\varepsilon_P(c^{(0)}e^\xi)=-\kappa_P(\xi)+E_P(\xi)$ with $\kappa_P=e^{-r_P\cdot\xi}-1$. By
+Lemma~\ref{lem:NM}(2), $|E_P|\le Ct^{\theta_0/2}$ on $U^+_\C$. The space $\C^{\mathcal A}$, its subspaces and $\C^I$ carry
+the max-norm, and operator norms are taken between these.
+
+\emph{(a) $D_I\neq\emptyset$.} Let $V:=\operatorname{span}_\C\{r_P:P\in I\}\subseteq\C^{\mathcal A}$ and
+$L\colon V\to\C^I$, $L\xi:=(r_P\cdot\xi)_{P\in I}$. In the basis $(r_P)_{P\in I}$ of $V$ the matrix of $L$ is the Gram
+matrix of linearly independent real vectors, which is invertible; so $L$ is an isomorphism, and $\|L^{-1}\|\le C_L$ for
+a constant $C_L$ depending only on $\mathbf R$ and $I$. Put $\varrho_V:=\min(1/2,\eta_0/8)$ and
+$B_V:=\{\xi\in V:\|\xi\|\le\varrho_V\}$. Every point of $B_V$ lies in $U_\C\subseteq U$, and so does the polydisc of
+polyradius $\varrho_*=\min(1/2,\eta_0/8)$ about it: on that polydisc $\|\xi\|\le1$ and $|\eta_P|\le\eta_0$. The Cauchy
+estimates on these polydiscs give $\sup_{B_V}\|E\|\le Ct^{\theta_0/2}$ and $\sup_{B_V}\|dE\|\le C(\eta_0)t^{\theta_0/2}$
+for $E:=(E_P)_{P\in I}$, with $C\le C(\eta_0)$. Let $t$ be so small that $C(\eta_0)t^{\theta_0/2}\le1/2$. On $B_V$ the
+equations $\varepsilon_P=0$, $P\in I$, say $e^{-\eta_P}=1+E_P$. Here $|\eta_P|\le\eta_0/2<1$ and $|\log(1+E_P)|\le2|E_P|\le1$
+for the principal logarithm, so $\eta_P=-\log(1+E_P)$, no other branch being possible, and the equations are equivalent
+to the fixed point equation
+\[
+\xi=\mathsf T(\xi):=L^{-1}\bigl(-\log(1+E(\xi))\bigr),\qquad\xi\in B_V .
+\]
+For $|w|\le1/2$ one has $|\log(1+w)|\le2|w|$ and $|d\log(1+w)/dw|\le2$, and $B_V$ is convex. Hence
+$\|\mathsf T(\xi)\|\le\varrho_t:=2C_L\,C(\eta_0)\,t^{\theta_0/2}$, and $\mathsf T$ is Lipschitz on $B_V$ with constant at most
+$2C_L\sup_{B_V}\|dE\|\le\varrho_t$. We decrease $t_0$ so that $\varrho_t\le\varrho_V$ and $\varrho_t<1$. Then $\mathsf T$
+maps the closed ball of radius $\varrho_t$ in $V$, which lies in $B_V$, into itself and is a contraction there. Its
+fixed point $\xi^*$ satisfies $\varepsilon_P(c^{(0)}e^{\xi^*})=0$ for $P\in I$, with $\|\xi^*\|\le\varrho_t$, and
+$c^{(0)}e^{\xi^*}\in U$. So $D_I\neq\emptyset$.
+
+\emph{(b) $D_I$ is a complex submanifold of codimension $|I|$.} On $U$, $|e^{-\eta_P}|\in[e^{-1},e]$, and the
+differentials~\eqref{eq:depsilon}, $P\in I$, are the rows of the matrix $\operatorname{diag}(e^{-\eta_P})_{P\in I}\mathbf R_I$ up to
+an error bounded entrywise by $C(\eta_0)t^{\theta_0/2}$. The minor argument of Step~3 of Section~\ref{ssec:relations}, with
+$e^{-\eta_P}$ in place of $\beta_q$ and the bounds $e^{-1}$, $e$ in place of $b_\pm$, shows that these $|I|$ forms are
+linearly independent at every point of $U$ once $t$ is small. By the holomorphic implicit function theorem $D_I$ is a
+complex submanifold of $U$ of codimension $|I|$.
+
+For use in (c) we bound $\eta_P$ on $D_I$. For $P\in I$, $\varepsilon_P=0$ gives $|e^{-\eta_P}-1|=|\kappa_P|=|E_P|\le
+Ct^{\theta_0/2}$. On $U$, $|\eta_P|<\eta_0'=3\eta_0/2<1$, since $\eta_0\le r^2/20\le1/80$; and for $|w|\le1$ one has
+$|e^{-w}-1|\ge|w|-(e-2)|w|^2\ge|w|/4$. Hence $|\eta_P|\le4Ct^{\theta_0/2}$ on $D_I$. For $P\notin I$,
+$r_P=\sum_{P'\in I}a_{PP'}r_{P'}$ with rational coefficients $a_{PP'}$ depending only on $\mathbf R$ and $I$, so
+$\eta_P=\sum_{P'}a_{PP'}\eta_{P'}$ and $|\eta_P|\le Ct^{\theta_0/2}$ on $D_I$ as well. Consequently
+\begin{equation}\label{eq:epsDI}
+|\varepsilon_P|\le|\kappa_P|+Ct^{\theta_0/2}\le Ct^{\theta_0/2}\qquad\text{on }D_I,\ \text{for every }P\in Q .
+\end{equation}
+
+\emph{(c) $D_Q=D_I$.} Let $q\notin I$, with parallelogram $P$. The rows $r_{P'}$, $P'\in I\cup\{P\}$, are linearly
+dependent, and since the rows indexed by $I$ are independent they satisfy a rational relation $k$ with $k_q\neq0$ and
+support in $I\cup\{q\}$. As $r_{P'}=-\circv_{q'}$, $k\in K\otimes\Q$, and a nonzero integer multiple $mk$ lies in $K$. By
+item~(2) and~\eqref{eq:periodrel}, $\sum_{p}mk_p\wp_p\equiv0$ on $U$. On $D_I$, $\wp_p=\beta_p\varepsilon_p=0$ for
+$p\in I$, so $k_q\beta_q\varepsilon_P=0$ there. By~\eqref{eq:epsDI}, $|\varepsilon_P|\le\varepsilon_*$ on $D_I$ once $t$ is
+small, so $\beta_q$ has no zero on $D_I$ (Lemma~\ref{lem:period}). Hence $\varepsilon_P=0$ on $D_I$, that is
+$D_I\subseteq D_q$. So $D_I\subseteq D_Q\subseteq D_I$, and $D_Q=D_I$ is a nonempty complex submanifold of $U$ of
+codimension $|Q|-\operatorname{rank}K$.
+
+Finally, by Proposition~\ref{prop:partialres}(3) the diagonals can be chosen so that the small resolution
+$\widehat X\to X'_\sigma$ is projective, and for every projective small resolution $|Q|-\operatorname{rank}K$ is the relative
+Picard number of $\widehat X\to X'_\sigma$ (Proposition~\ref{prop:partialres}(2); changing the diagonal at $q$ changes only the
+sign of the image of $[C_q]$ in $\Q^R$, and by Lemma~\ref{lem:diag} it leaves items~(1) and~(2) unchanged). This proves item~(3), and with it Theorem~\ref{thm:main}. \qed
+
+\subsection{Lagrangian representatives}\label{ssec:lagrangian}
+
+Casta\~no-Bernard and Matessi construct Lagrangian torus fibrations over integral affine three-manifolds with
+singularities \cite{CBM09}, and Lagrangian submanifolds associated with tropical varieties are constructed in
+\cite{Mik19,Mat21a,Mat21b}; here the Lagrangian spheres are built directly in the K\"ahler manifolds $Y_t$. Fix a toric
+K\"ahler form $\omega_{\mathcal T}$ on the smooth projective toric variety $X_{\mathcal T}$, and write $\omega_{c'}$ for its
+restriction to a smooth member $Y_{t,c'}$, a K\"ahler form.
+
+\begin{lemma}\label{lem:L}
+Let $c$ be a member as in Theorem~\ref{thm:main}, with neighbourhood $U$, and let $Q'\subseteq Q$ be a set of nodes with
+$D_{Q'}\neq\emptyset$. Then there are pairwise disjoint embedded Lagrangian three-spheres $L_P\subset(Y_t,\omega_c)$,
+$P\in Q'$, each smoothly isotopic in $Y_t$ to $\delta_P$.
+\end{lemma}
+
+No localization of $L_P$ in the Morse polydisc is claimed: for a fixed K\"ahler form the equivalence constant between
+$\omega_{\mathcal T}$ and the flat metric of the rescaled Morse chart grows like a negative power of $t$, and at the member
+$c$ itself the thimbles need not stay in the polydiscs.
+
+\begin{proof}
+\emph{Step 1: a thimble bound near $D_{Q'}$.} Fix $b_0\in D_{Q'}$ and a compact neighbourhood $\mathcal V\subset U$ of
+$b_0$. By Lemma~\ref{lem:NM}, which holds on $\mathcal V$ including where $\varepsilon_P=0$, each $f_P:=f^{(1)}$ has on
+$\mathbb D_P$ a single critical point $q_P$, and it is nondegenerate. By the holomorphic Morse lemma with parameters
+\cite{AGZV1} there are holomorphic coordinates $\zeta$ centred at $q_P$, depending continuously on the member, with
+$f_P=\varepsilon_P+\sum_i\zeta_i^2$ exactly. Put $\Phi_P:=\operatorname{Re}(e^{-i\arg\varepsilon_P}f_P)$; then $|d\Phi_P|_0=2|\zeta|$,
+where $|\cdot|_0$ is the flat norm of the coordinates $\zeta$. By compactness there are $\varpi_0,C>0$, uniform on
+$\mathcal V$, such that the ball $\mathsf B_P:=\{|\zeta|\le\varpi_0\}$ lies in the chart and in $\mathbb D_P$, and
+$C^{-1}|\cdot|_0\le|\cdot|_\omega\le C|\cdot|_0$ on $\mathsf B_P$, where $|\cdot|_\omega$ is the norm of
+$\omega_{\mathcal T}$. Along a flow line of $-\nabla_\omega\Phi_P$, $\Phi_P$ decreases at rate $|d\Phi_P|_\omega\ge C^{-1}|d\Phi_P|_0$ per unit
+$\omega$-length, and the $\omega$-length needed to cross the shell $\varpi/2\le|\zeta|\le\varpi$ is at least $\varpi/(2C)$;
+so crossing it costs a drop of $\Phi_P$ of at least $c_H\varpi^2/(4C^2)$ with $c_H=2$, while the drop from $q_P$ to the level
+$f_P=0$ is $|\varepsilon_P|$. Hence, if $|\varepsilon_P|<\Phi_0:=c_H\varpi_0^2/(4C^2)$, the descending manifold of $q_P$ between
+the levels $\varepsilon_P$ and $0$ lies in the ball of radius $2C(|\varepsilon_P|/c_H)^{1/2}$, and every flow line from $q_P$
+reaches the level $0$ there, $q_P$ being the only critical point.
+
+\emph{Step 2: Lagrangian spheres near $D_{Q'}$.} Choose $b_1\in\mathcal V\cap U^\circ$ with $0<|\varepsilon_P(b_1)|<\Phi_0$
+for $P\in Q'$; this is possible because the $\varepsilon_P$ are continuous, vanish at $b_0$, and $\bigcup_qD_q$ is nowhere
+dense. By the Cauchy--Riemann equations the gradient flow of $\Phi_P$ for the K\"ahler metric preserves
+$\operatorname{Im}(e^{-i\arg\varepsilon_P}f_P)$, so by Step~1 the descending manifold is the Lefschetz thimble of $q_P$ for
+the straight path from $\varepsilon_P$ to $0$, contained in $\mathsf B_P$. By \cite[\S1.3, Lemmas~1.13--1.14]{Seidel},
+whose argument is local along the thimble (Seidel attributes the thimble construction to Donaldson \cite{Donaldson}), it
+is an embedded Lagrangian ball, and its boundary $L_P(b_1)$ is an embedded Lagrangian sphere in $Y_{t,b_1}$. The
+polydiscs are disjoint, so the $L_P(b_1)$ are. Replacing $\omega_{\mathcal T}$ on $\mathsf B_P$ by
+$(1-\tau)\omega_{\mathcal T}+\tau\,\mathcal X_*\omega_{\rm std}$, $\tau\in[0,1]$, where $\mathcal X$ is the Morse chart
+$\zeta$ of Step~1, keeps the estimates of Step~1 with the constant $\max(C,1)$, and gives a smooth isotopy in
+$\mathbb D_P\cap Y_{t,b_1}$ from $L_P(b_1)$ to the Morse-chart sphere $\delta_P(b_1)$.
+
+\emph{Step 3: symplectic parallel transport.} Choose a smooth path $\gamma$ in the connected set $U^\circ$ from $b_1$ to
+$c$. Every $Y_{t,\gamma(s)}$ is smooth, so $\mathcal Y=\{(s,y):y\in Y_{t,\gamma(s)}\}$ is a manifold submersing onto
+$[0,1]$ with compact fibres. Let $\omega_{\mathcal Y}$ be the pullback of $\omega_{\mathcal T}$. Since the fibres are
+symplectic, their $\omega_{\mathcal Y}$-orthogonal complement is a line field transverse to them; let $\hat\partial_s$ be
+the lift of $\partial_s$ in it, whose flow $\phi_s$ is defined on $[0,1]$. Then
+$\mathcal L_{\hat\partial_s}\omega_{\mathcal Y}=d(\iota_{\hat\partial_s}\omega_{\mathcal Y})$, and
+$\iota_{\hat\partial_s}\omega_{\mathcal Y}$ vanishes on the fibres, so each $\phi_s$ restricts to a symplectomorphism between
+the fibres. Put $L_P:=\phi_1(L_P(b_1))$: these are pairwise disjoint embedded Lagrangian spheres in $(Y_t,\omega_c)$.
+
+\emph{Step 4: the isotopy to $\delta_P$.} Along $\gamma$, $\varepsilon_P\ne0$ and Lemma~\ref{lem:NM} holds, so by the
+holomorphic Morse lemma with parameters the Morse-chart spheres $\delta_P(\gamma(s))$ form a smooth family. Two holomorphic
+Morse charts at $q_P$ differ by a biholomorphism $g$ preserving $\sum_i\zeta_i^2$; the maps $\zeta\mapsto g(\lambda\zeta)/\lambda$,
+$\lambda\in(0,1]$, preserve it as well and tend to $dg(0)\in O(4,\C)$, and $SO(4,\C)$ is connected while $O(4,\R)$ preserves
+the real sphere, so the sphere is well defined up to isotopy. Pulling the spheres $\delta_P(\gamma(s))$ back by $\phi_s$
+gives an isotopy in $Y_{t,b_1}$ from $\delta_P(b_1)$ to $\phi_1^{-1}(\delta_P(c))$. Composing with the isotopy of Step~2
+and applying $\phi_1$ gives a smooth isotopy in $Y_t$ from $L_P$ to $\delta_P$. We orient $L_P$ by transport; the
+orientation of Definition~\ref{def:orient} is locally constant along $\gamma$ (Remark~\ref{rem:kappa}).
+\end{proof}
+
+By Theorem~\ref{thm:main}(3), $D_Q\neq\emptyset$, so $D_{Q'}\supseteq D_Q$ is nonempty for every $Q'\subseteq Q$, and
+Lemma~\ref{lem:L} applies with $Q'=Q$: the spheres $\delta_q$, $q\in Q$, are simultaneously isotopic to pairwise disjoint
+Lagrangian spheres $L_q$, with $[L_q]=[\delta_q]$ in $H_3(Y_t;\Z)$.
+
+\subsection{Smoothings: proof of Corollary \texorpdfstring{\ref{cor:smooth}}{B}}\label{ssec:smooth}
+
+The equivalence of (a) and (b) is Namikawa's theorem \cite[Thm.~2.5]{Nam02}, which we apply after verifying its
+hypotheses. Namikawa calls a projective threefold with only terminal singularities, trivial canonical class and
+$H^1(\mathcal O)=0$ a \emph{Calabi--Yau threefold} \cite[\S0.2]{Nam02}.
+
+\begin{lemma}\label{lem:Xprime}
+$X'_\sigma$ is a Calabi--Yau threefold in the sense of \cite{Nam02}: it is a normal projective threefold whose singular
+points are the $|Q|$ nodes, with $\omega_{X'_\sigma}\cong\mathcal O_{X'_\sigma}$ and
+$H^1(X'_\sigma,\mathcal O)=H^2(X'_\sigma,\mathcal O)=0$. The small resolution $\widehat X\to X'_\sigma$ is an isomorphism off the
+curves $C_q\cong\mathbb P^1$.
+\end{lemma}
+
+\begin{proof}
+The toric variety $P'_\sigma$ of~\ref{hyp:P} is projective, and it is Gorenstein: its rays are generated by lattice points
+of $\partial\Delta$, so the support function $\varphi$ of $-K$ is linear on each of its cones. The morphism
+$P'_\sigma\to\mathbb P_\Delta$ is crepant for the same reason. So the total transform of the anticanonical hypersurface $X$
+is an anticanonical divisor of $P'_\sigma$. It has no exceptional component: such a component would map onto the closure
+of a torus orbit of $\mathbb P_\Delta$ contained in $X$, while the $\Delta^\circ$-regular hypersurface $X$ meets every orbit
+transversally and contains none \cite[\S3]{Batyrev}. Hence $X'_\sigma\in|-K_{P'_\sigma}|$ is a Cartier divisor, and it is
+projective. By adjunction $\omega_{X'_\sigma}\cong\mathcal O_{X'_\sigma}$. The singular points of $X'_\sigma$ are the nodes,
+one for each $q\in Q$ (Section~\ref{ssec:partialres}); ordinary double points are terminal. As a Cartier divisor in the
+Cohen--Macaulay variety $P'_\sigma$, $X'_\sigma$ is Cohen--Macaulay, and with finitely many singular points it is normal.
+From $0\to\omega_{P'_\sigma}\to\mathcal O_{P'_\sigma}\to\mathcal O_{X'_\sigma}\to0$, Serre duality on the four-dimensional
+Cohen--Macaulay projective variety $P'_\sigma$, and $H^j(P'_\sigma,\mathcal O)=0$ for $j>0$ \cite[\S9.2]{CLS}, we get
+$H^i(P'_\sigma,\omega_{P'_\sigma})\cong H^{4-i}(P'_\sigma,\mathcal O)^\vee=0$ for $i\le3$, hence
+$H^0(X'_\sigma,\mathcal O)=\C$ and $H^i(X'_\sigma,\mathcal O)=0$ for $i=1,2$; in particular $X'_\sigma$ is connected, hence
+irreducible. The last sentence is the description of $\widehat X$ in Section~\ref{ssec:partialres}.
+\end{proof}
+
+\begin{lemma}\label{lem:allnonzero}
+Let $L\subseteq\Z^Q$ be a subgroup. The following are equivalent: (i) some $\lambda\in L$ has $\lambda_q\neq0$ for every
+$q$; (ii) some $\lambda\in L\otimes\Q$ does; (iii) some $\lambda\in L\otimes\C$ does; (iv) for no $q$ is $L$ contained in the
+coordinate hyperplane $\{\lambda_q=0\}$.
+\end{lemma}
+
+\begin{proof}
+(i)$\Rightarrow$(ii)$\Rightarrow$(iii) holds because $L\subseteq L\otimes\Q\subseteq L\otimes\C$, and (iii)$\Rightarrow$(iv) because $L\subseteq\{\lambda_q=0\}$ implies
+$L\otimes\C\subseteq\{\lambda_q=0\}$. For (iv)$\Rightarrow$(i) choose $\ell^{(p)}\in L$ with $\ell^{(p)}_p\neq0$ for each
+$p\in Q$. For $m\in\Z^Q$, the $q$-th coordinate of $\sum_pm_p\ell^{(p)}$ is a linear form in $m$ whose coefficient of
+$m_q$ is $\ell^{(q)}_q\neq0$. The union of the $|Q|$ kernels of these nonzero forms does not contain $\Z^Q$, so some
+$\lambda=\sum_pm_p\ell^{(p)}$ has every coordinate nonzero.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:smooth}]
+\emph{(a)$\Leftrightarrow$(b).} By Lemma~\ref{lem:Xprime}, $X'_\sigma$ is a Calabi--Yau threefold in Namikawa's sense
+whose singular points are the nodes $q\in Q$, and $\widehat X\to X'_\sigma$ is a small resolution, not necessarily projective,
+that is an isomorphism off the curves $C_q\cong\mathbb P^1$. For these data \cite[Thm.~2.5]{Nam02} states that $X'_\sigma$ is
+smoothable by a flat deformation if and only if some relation $\sum_q\lambda_q[C_q]=0$ in $H_2(\widehat X;\C)$ has every
+$\lambda_q\neq0$. (The theorem adds a third equivalent condition, maximality of $X'_\sigma$, which we do not use. Unlike
+\cite[Cor.~(4.7)]{Friedman} it needs no hypothesis on the classes of the curves, and it covers both directions for an
+arbitrary flat deformation.) The classes $[C_q]$ are rational, and by
+Proposition~\ref{prop:partialres} the relations among them in $H_2(\widehat X;\Q)$ form $K\otimes\Q$; the relations in
+$H_2(\widehat X;\C)=H_2(\widehat X;\Q)\otimes\C$ therefore form $K\otimes\C$. By Lemma~\ref{lem:allnonzero} applied to $L=K$,
+a relation with every coefficient nonzero exists over $\C$ if and only if one exists over $\Q$. This is (b).
+
+\emph{(b)$\Leftrightarrow$(c).} By Proposition~\ref{prop:partialres} and Lemma~\ref{lem:allnonzero}, (b) holds if and only if
+some $\lambda\in K$ has every $\lambda_q\neq0$. By Theorem~\ref{thm:main}(1), $K=\Rel(\delta)$, the lattice of relations
+among the classes $[\delta_q]$ in $H_3(Y_t;\Z)$; so this holds if and only if (c) holds. Conditions (b) and (c) do not
+depend on the diagonals: a change of diagonal at $q$ changes the sign of $[C_q]$ (Proposition~\ref{prop:partialres}(2)) and
+of $\delta_q$ (Lemma~\ref{lem:diag}), which preserves the existence of a relation with every coefficient nonzero. By
+Proposition~\ref{prop:relationsU} the same equivalence holds at every member of $U^\circ$.
+
+\emph{The symplectic statement.} By Theorem~\ref{thm:main}(3) and Lemma~\ref{lem:L} with $Q'=Q$
+(Section~\ref{ssec:lagrangian}), the spheres $\delta_q$ are smoothly isotopic to pairwise disjoint embedded Lagrangian
+spheres $L_q\subset(Y_t,\omega_c)$, $q\in Q$, with $[L_q]=[\delta_q]$; this part does not use (a)--(c). The manifold $Y_t$
+is a compact K\"ahler, in particular symplectic, six-manifold. If (c) holds, $\sum_qk_q[L_q]=0$ in $H_3(Y_t;\Z)$ with every
+$k_q\neq0$, which is the hypothesis of \cite[Thm.~2.9]{STY} for the $n=|Q|$ spheres $L_q$: a relation in $H_3(\,\cdot\,;\Z)$
+among $n$ disjoint embedded Lagrangian three-spheres in a symplectic six-manifold, with every coefficient nonzero. That
+theorem gives a symplectic structure on one of the $2^{|Q|}$ conifold transitions of $Y_t$ in the spheres $L_q$ in which
+the exceptional curves are symplectic. In the proof of \cite[Thm.~2.9]{STY} the choice at the sphere $L_q$, an orientation
+of $L_q$ together with one of the two small resolutions, is determined by the sign of $k_q$.
+\end{proof}
+
+\begin{remark}[forced nodes]\label{rem:forced}
+By Lemma~\ref{lem:allnonzero}, (a)--(c) fail exactly when some node $q$ is \emph{forced}: every $\lambda\in K$ has
+$\lambda_q=0$. By Theorem~\ref{thm:main}(1) this is the case if and only if $\delta_q$ occurs with nonzero coefficient in
+no relation among the classes $[\delta_{q'}]$, that is, if and only if $[\delta_q]$ does not lie in the span of the other
+classes in $H_3(Y_t;\Q)$. The proof of \cite[Thm.~2.5]{Nam02} shows that a forced
+node of $X'_\sigma$ survives every flat deformation. Whether (b) holds is a finite linear-algebra test on the circuits
+$\circv_q$; Section~\ref{ssec:list} records its outcome on the list.
+\end{remark}
+
+\subsection{The factoring locus and the nodal locus}\label{ssec:periodsremarks}
+
+Batyrev and Kreuzer specialised the mirror family to the locus where the face polynomial of every node parallelogram
+is a product of two binomials, that is $\mu_P=1$ for every $P$ \cite[\S3]{BK10}. Within $U$ this \emph{factoring locus}
+is $\{c'\in U:\eta_P(c')=0\text{ for every }P\}$, because $\mu_P=e^{\eta_P}$ and $|\eta_P|<1$ on $U$; its points with real
+coefficients of our sign pattern form $\mathcal Z\cap U$. The nodal locus $D_Q$ lies close to it: by the bound on the
+$\eta_P$ in the proof of item~(3)(b), $|\eta_P|\le Ct^{\theta_0/2}$ on $D_Q$ for every $P$.
+
+The two loci are in general different. On the factoring locus $\kappa_P=0$, so $\varepsilon_P=E_P$, which
+Lemma~\ref{lem:NM}(2) bounds by $Ct^{\theta_0/2}$ but does not make zero; and by Lemma~\ref{lem:U}(4) the member is smooth
+near $q_P$ unless $\varepsilon_P=0$. The terms that move the critical value are those of the apexes of the cells next to
+$P$. In the node chart of Section~\ref{ssec:morse}, at $\kappa_P=0$, the monomials of $\mathcal A_P$ give
+$xy+\mathfrak b\,ZZ'+AZ+A'Z'$, with the apex sums $A$ and $A'$. In the model where these are replaced by $A_0+A_1x$ and
+$A'_0+A'_1y$, with constants $A_0,A_1,A'_0,A'_1$ and $A_1A'_1\neq\mathfrak b$, the critical point is
+$Z=-A'_0/(\mathfrak b-A_1A'_1)$, $Z'=-A_0/(\mathfrak b-A_1A'_1)$, $x=-A'_1Z'$, $y=-A_1Z$, and the critical value is
+\[
+-\frac{A_0A'_0}{\mathfrak b-A_1A'_1},
+\]
+which is nonzero whenever the apex sums do not vanish at the node point. So at the factoring locus the members are in
+general smooth near $q_P$, and the members of $U$ with a node at every $q_P$ are those of $D_Q$. For these,
+Corollary~\ref{cor:smooth} settles the analogue of the question left open in \cite[\S3]{BK10}: the spheres $\delta_q$
+satisfy a relation with every coefficient nonzero exactly when $X'_\sigma$ is smoothable. The corollary produces a
+symplectic conifold transition, by \cite[Thm.~2.9]{STY}, and not a projective small resolution.
+
+Theorem~\ref{thm:main}(3) is the mirror half of Morrison's count (Section~\ref{sec:statements}) at the members of $U$. The
+other half of the proposal in \cite[\S3.1]{Mor99}, that the members of $D_Q$ have a small resolution mirror to a smoothing
+of $X'_\sigma$, is not addressed here.

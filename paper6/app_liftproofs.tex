@@ -1,0 +1,320 @@
+\section{Proofs of the lemmas of Section~\ref{sec:lift} on model arcs, pieces and regions}\label{app:liftproofs}
+
+This appendix contains the proofs of ten lemmas of Section~\ref{sec:lift}. They use only the statements that precede
+the lemma in question in Section~\ref{sec:lift} and the results of Sections~\ref{sec:dualpair}--\ref{sec:regime}.
+
+\begin{proof}[Proof of Lemma~\ref{lem:litarcs}]
+We work in $e^\vee+\nabla^{H'}_e$; negation does not affect the assertions. Write $y(x):=\langle x,y\rangle$ and
+$y_\tau:=y(u_i)=y(u_j)$. The $\zeta$ with $F_1(\zeta)=\tau$ satisfy $\langle u_j-u_i,\zeta\rangle=\check h(u_i)-\check
+h(u_j)$; modulo $\R n+\R n'$ they form the relatively open cell dual to $\tau$ of the tropical curve of $(e^\vee\cap
+M,\check h)$, contained in a line. The linear functions on the direction space of $e^\vee+\nabla^{H'}_e$ that vanish on
+$u_j-u_i$ are the multiples of $y$, so this cell is $\{\zeta_0+sy:s\in I\}$ for an open interval $I$. Put
+$F(s):=F_2(\zeta_0+sy)$; the cells with lower support $\tau$ are the $\tau+F(s)$, $s\in I$.
+
+(a) Let $s<s'$ in $I$, $x\in F(s)$, $x'\in F(s')$. Adding $\langle x,\zeta_0\rangle+sy(x)\le\langle
+x',\zeta_0\rangle+sy(x')$ and $\langle x',\zeta_0\rangle+s'y(x')\le\langle x,\zeta_0\rangle+s'y(x)$ gives
+$(s'-s)(y(x')-y(x))\le0$, so $\max_{F(s')}y\le\min_{F(s)}y$. If $F(s)\ne F(s')$, then $y(b_{\mathfrak
+c'})<y(b_{\mathfrak c})$ for $\mathfrak c=\tau+F(s)$, $\mathfrak c'=\tau+F(s')$: otherwise $y$ would be constant, with
+one value, on $\mathfrak c$ and $\mathfrak c'$, and the two inequalities would give $\langle x,\zeta_0\rangle=\langle
+x',\zeta_0\rangle$ for all $x\in F(s)$, $x'\in F(s')$, that is $F(s)=F(s')$.
+
+(b) Along a chain of cells the lower supports increase, so a cell containing $\tau+F(s)$ has lower support $\tau$ or a
+triangle $\sigma\supset\tau$ of $\mathcal T$; in the second case it is the cell $\mathfrak c_\sigma:=\sigma+F_2(\zeta_\sigma)$
+at the end $\zeta_\sigma=\zeta_0+s_*y$ of the cell dual to $\tau$ that is dual to $\sigma$, and $b_{\mathfrak c_\sigma}$
+is the vertex $C_Y(\sigma,e)$. By Definition~\ref{def:strata} the closure of $C_Y(\tau,e)$ is the polygonal path through
+the points $b_{\mathfrak c}$, $\mathfrak c=\tau+F(s)$, in the order of $s$, extended at each finite end $s_*$ of $I$ by
+the segment to $b_{\mathfrak c_\sigma}$; at an infinite end the last cell lies in an edge of the polygon and its point
+$b_{\mathfrak c}$ is a leaf.
+
+(c) By (a), $y$ decreases strictly along the points $b_{\mathfrak c}$ as $s$ increases. Let $s_*=\inf I$ be finite,
+with triangle $\sigma$, and $w$ the vertex of $\sigma$ opposite $\tau$. The value of $a\mapsto\langle
+a,\zeta_0+sy\rangle+\check h(a)$ at $w$ minus its value at $u_i$ is affine in $s$ with slope $y(w)-y_\tau$, vanishes at
+$s_*$ and is positive for $s>s_*$ near $s_*$; so $y(w)>y_\tau$ and $y$ is minimal on $\sigma$ exactly along $\tau$. For
+such $s$, $F(s)$ is the face of $F_2(\zeta_\sigma)$ on which $y$ is minimal, $\mathfrak c=\tau+F(s)$ is the face of
+$\mathfrak c_\sigma$ on which $y$ is minimal, and $y(b_{\mathfrak c_\sigma})>y(b_{\mathfrak c})$. The end $\sup I$ is
+treated with $-y$. So $y$ decreases strictly along the whole path; the lines parallel to $u_j-u_i$ in the plane of
+$E_e$ are the level sets of $y$.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:leafpaths}]
+A leaf path of a model point on $J$ lies in the convex set $S_J$, which contains $m$, $m'$ and $\mathfrak k_e(\bar m)$; so
+leaf paths from different edges are disjoint. The points $o_e+t(b-o_e)$ of $S_J$ with $0<t\le1$ lie in $E_e$, in
+$\partial E_e$ only for $t=1$, and have $y_J=1-t$. The leaf path consists of such points with $0\le
+y_J\le1-\mathfrak t_e$, and $y_J=0$ only at $m$; and $\mathfrak k_e(E_e)\subset\{y_J\ge1-\mathfrak t_e\}$, while $y_J<1-\mathfrak t_e$
+on the path except at its end, because $\eta_J\le1/4<1-\mathfrak t_e$.
+
+Let $m_1,\dots,m_k$ be the model points on $J$ in their order along $J$, with leaves $\bar m_1,\dots,\bar m_k$ in the
+same order, and let $s$ be a linear function of norm one increasing from $m_1$ to $m_k$ along $J$. Then
+$s(m_{i+1})-s(m_i)\ge4\theta_3$ and $|s(m'_i)-s(m_i)|\le\theta_3$, so $s(m'_{i+1})>s(m'_i)$; and $s(\mathfrak k_e(\bar
+m_{i+1}))-s(\mathfrak k_e(\bar m_i))=\mathfrak t_e(s(\bar m_{i+1})-s(\bar m_i))>0$. In the affine coordinates $(s,y_J)$ the
+points $m_i$, $m'_i$ and $\mathfrak k_e(\bar m_i)$ lie on the lines $y_J=0$, $\eta_J$, $1-\mathfrak t_e$, in increasing order of
+$s$; two segments of the same kind are two sides of a convex quadrilateral with strictly ordered ends and are disjoint,
+and a first and a second segment meet at most on $y_J=\eta_J$, that is, only if they share $m'_i$.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:arcsystems}]
+\emph{The interior vertices.} The three points $b_{\mathfrak c}$ lie in the relative interiors of three distinct edges of
+the convex polygon $\mathfrak c_\sigma$, so they are not collinear, $v_\sigma\in\operatorname{ri}\mathfrak c_\sigma$, the
+segments $[v_\sigma,b_{\mathfrak c}]$ lie in $\mathfrak c_\sigma$ and meet only at $v_\sigma$, and the three angles at
+$v_\sigma$ are less than $\pi$; their cyclic order is the order of the edges $\mathfrak c$ along $\partial\mathfrak
+c_\sigma$, which is also their order at $b_{\mathfrak c_\sigma}$. A point of $\mathfrak c_\sigma$ lies on $\Gamma_Y$ exactly
+when the bottom of its chain has lower support of positive dimension (Definition~\ref{def:strata}), so $\Gamma_Y\cap
+\mathfrak c_\sigma$ is the union of the three replaced segments, and $\Gamma'_e$ is a plane graph isomorphic to
+$\Gamma_Y\cap E_e$ with the same rotations and leaves. By the proof of Lemma~\ref{lem:litarcs}(c), the function $y$ for
+the edge $\tau$ with $\mathfrak c=\tau+F(s)$ is minimal on $\mathfrak c_\sigma$ exactly on $\mathfrak c$; so $y(v_\sigma)>
+y(b_{\mathfrak c})$, and $y$ is strictly monotone along each closed arc of $\Gamma'_e$.
+
+\emph{The graph.} The closed arcs of $\Gamma'_e$ meet only at common vertices (Proposition~\ref{prop:L1}(3)), and
+$\mathfrak k_e$ is injective with $\mathfrak k_e(E_e)\subset\Omega_e$; with Lemma~\ref{lem:leafpaths}, $\mathscr G_e$ is a
+plane graph properly embedded in $E_e$, with leaves at the model points and all interior vertices and all edges except
+the leaf paths in $\Omega_e$. \emph{Monotonicity.} Let the arc of $\tau=[u,u']$ end at a literal leaf $\bar m$ on
+$J=J_\omega$. Since $J$ is parallel to $u'-u$, it suffices to show that $y_J$ increases strictly from $m$ along the arc.
+It does so along the leaf path, from $0$ through $\eta_J$ to $1-\mathfrak t_e$; along the closed arc of $\Gamma'_e$ it
+increases strictly from $y_J(\bar m)=0=\min_{E_e}y_J$ by Lemma~\ref{lem:litarcs} and the previous paragraph, and
+$y_J\circ\mathfrak k_e=1-\mathfrak t_e+\mathfrak t_ey_J$. If $e$ lies in the interior of a two-face, the other end lies on the
+edge $J'$ parallel to $J$, where $y_{J'}$ is a decreasing affine function of $y_J$. Edges between interior vertices are
+images of closed arcs of $\Gamma'_e$. For $e$ in the interior of a two-face, $\Gamma_Y\cap E_e$ consists of the $k$
+disjoint arcs $\overline{C_Y([u_{i-1},u_i],e)}$, the $i$-th joining the $i$-th literal leaves on $J_{\omega_\pm}$
+(Proposition~\ref{prop:L1}(3)). The homothety has positive ratio, so it preserves rotations; the model points lie on the
+same edges $J_\omega$ as the literal leaves, in the same order.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:modelcx}]
+We define $\Upsilon^M$ on the faces $F$ of $B_Y$ by induction on $\dim F$, together with the cells $C^M(p)$ in
+$\operatorname{ri}F$; by Proposition~\ref{prop:L1}(5), $\operatorname{ri}F^*_\omega$ is the union of the cells
+$C_Y(\tau,\omega)$, $\tau\subseteq\omega^\vee$. On the vertices of $B_Y$, $\Upsilon^M$ is the identity. Let
+$F=F^*_\omega$, $\dim F\ge1$, and suppose $\Upsilon^M$ defined on $\partial F$, mapping $C_Y(p)\cap\partial F$ onto
+$C^M(p)\cap\partial F$. If $\omega^\vee$ is a vertex $u$, then $\operatorname{ri}F=C_Y(u,\omega)$; extend by coning from an
+interior point. If $\dim F=1$ and $\dim\omega^\vee\ge1$, then $\omega$ is a two-cell of a two-face $G$, $F=J_\omega$, and
+its cells of $\mathscr P_Y$ form the mixed subdivision of $G^\circ$, subdivided by $\mathcal T$ with the heights $\check h$,
+and $\nabla^{H'}_\omega$; so $\operatorname{ri}F$ is the union of the open segments $C_Y(u_i,\omega)$ and the points
+$C_Y([u_{i-1},u_i],\omega)$, in the order $C_Y(u_0,\omega),C_Y([u_0,u_1],\omega),\dots,C_Y(u_k,\omega)$. Let
+$\Upsilon^M|_F$ fix the ends, map $C_Y([u_{i-1},u_i],\omega)$ to the $i$-th model point, and be linear in between. If
+$\dim F=2$ and $\dim\omega^\vee\ge1$, then $\omega=e$ and $F=E_e$; by Propositions~\ref{prop:L1}(5) and~\ref{prop:L2}(2),
+$\Gamma_Y\cap F$ is of the same kind as the model arc system of $e$, with leaves the zero-cells on the edges $J_\omega$,
+which $\Upsilon^M|_{\partial F}$ maps to the leaves of the model arc system in their cyclic order. Its complementary
+regions are the cells $C_Y(u,e)$, open discs. Extend $\Upsilon^M|_{\partial F}$ over $\Gamma_Y\cap F$ by a piecewise
+linear homeomorphism onto the model arc system (Lemma~\ref{lem:arcsystems}), and then over each complementary disc: its
+boundary circle is mapped piecewise linearly and homeomorphically onto the boundary circle of the corresponding
+complementary disc of the model arc system, and a piecewise linear homeomorphism between the boundaries of two piecewise
+linear discs extends to a piecewise linear homeomorphism of the discs (identify both with a simplex and cone).
+If $\dim F=3$, extend by coning. The isotopy to the identity is obtained face by face, in increasing dimension, by the
+Alexander trick \cite{Ale23}, extended by coning as in the proof of Proposition~\ref{prop:F}(3). For (3): $\Upsilon^M$
+maps $\operatorname{int}F^*_n$ onto itself and $\widetilde R^*_u=\bigcup_\omega C_Y(u,\omega)$ onto $R^M_u$, and
+$\Lambda_Y$ is constant on these open sets, with the stated lattices and gluing (Proposition~\ref{prop:L3}).
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:tropcharts}]
+(1) By Lemma~\ref{lem:modelcx}(2) the cells of $J_\omega$ next to $m$ are $C^M(u,\omega)$ and $C^M(u',\omega)$. Parametrise
+$J_\omega=\{p_\omega+s(u_k-u_0)\}$ as in Lemma~\ref{lem:gaps}(1); since $\langle u'-u,w_u-w_{u'}\rangle=-2$ and $u_k-u_0$ is a
+positive multiple of $u'-u$, $\alpha_{uu'}$ decreases as $s$ increases. The end $s=s_+$ is the vertex $F^*_{\omega_1}$ of
+$B_Y$, $\omega_1\subseteq u_0^\vee$, which is the zero-cell $C^M(u_0,\omega_1)$ and lies in the closure of $C^M(u_0,\omega)$,
+since $(u_0,\omega_1)\preceq(u_0,\omega)$, and in no other closure $\overline{C^M(u_j,\omega)}$; so along $J_\omega$ the cells
+occur in the order $C^M(u_0,\omega),C^M([u_0,u_1],\omega),\dots,C^M(u_k,\omega)$ from that end (proof of
+Lemma~\ref{lem:modelcx}). So at the model
+point of $[u,u']=[u_{i-1},u_i]$ the cell of $u$ lies on the side of larger $s$, where $\alpha_{uu'}$ is smaller.
+(2) $(w_u,w_{u'},n'-n,n_y)$ is a basis because $\langle u,\cdot\rangle$, $\langle u',\cdot\rangle$ take the values $(1,0)$ and
+$(0,1)$ on $w_u$, $w_{u'}$, and $\langle u'-u,n_y\rangle=0$ gives the level lines. Near the interior of $E_e$ only $0,n,n'$ are
+maximal, and $B_Y=\{\operatorname{val}_n=-\max(0,y_e)\}$ is the graph of a function of $(y_e,\alpha_e,y)$, since $n'-n$,
+$w_u-w_{u'}$, $n_y$ and $n$ are linearly independent. The arc is $\{y_e=\alpha_e=0\}$, and near $A$ it separates $E_e$ into
+$C^M(u,e)$ and $C^M(u',e)$ (Lemma~\ref{lem:modelcx}(2)), which near the ends of $A$ are adjacent to the cells of $u$ and
+$u'$ on the edges $J_\omega$; by (1) and the monotonicity of Lemma~\ref{lem:arcsystems}, $\alpha_e$ is negative on the first
+and positive on the second.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:place}]
+(1) By Definition~\ref{def:modelpos}(2) the model arcs at $m_P$ begin with segments of the level line of $\alpha_{uu'}$
+through $m_P$, which is $\{\alpha_q=0\}$, in $F^*_{ab}$ and $F^*_{cd}$. By Lemma~\ref{lem:nodemodel}(4) and
+Lemma~\ref{lem:tropcharts}(1), near $m_P$ these arcs separate $F^*_{ab}$ and $F^*_{cd}$ into their parts with $\alpha_q<0$ and
+$\alpha_q>0$, which are the cells of $u$ and of $u'$, and $J_P\setminus\{m_P\}$ into $C^M(u,P)=\{\alpha_q<0\}$ and
+$C^M(u',P)=\{\alpha_q>0\}$. The other cases are the same. This is the description of the standard halves by closed cells
+of Lemma~\ref{lem:D}, in the chart $T_q$. (2) The three two-faces of $B_Y$ containing $J_\tau$ are the $E_{e_k}$; in each
+the model arc system has a leaf at $m$, and near $m$ it separates $E_{e_k}$ into $C^M(u,e_k)$ and $C^M(u',e_k)$, whose
+closures contain $C^M(u,\tau)$ and $C^M(u',\tau)$ respectively, since $(u',\tau)\preceq(u',e_k)$. (3) The closure of
+$C^M(u_i,e)$ contains the vertex, since $(\tau,e)\preceq(u_i,e)$, and near it is bounded by the two model arcs whose edges
+of $\mathcal T$ contain $u_i$; the angle is less than $\pi$ by Lemma~\ref{lem:arcsystems}. (4) is
+Lemma~\ref{lem:tropcharts}(2). Finally $r_S$ is the smallest of the sizes of the neighbourhoods so obtained, and at most
+$\theta_4/4$.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:pieces}]
+(1) \emph{Step 1: the piece lies where $W^*$ is the leg model.} In the leg model the point $\mathbf x(x_1,x_2,y)$ with
+$(x_1,x_2)=E_t(y_e,\alpha_e)$ has $\log|\kappa_e\chi_1|=Ly_e$, $|\hat Z\hat Z'|=|e^{x_1}-1|\le\mathcal S_G=1+e^{x_1}$ and
+$|\hat Z|^2-|\hat Z'|^2=x_2$, so $2\log|\hat Z|$ and $2\log|\hat Z'|$ are at most $\log\mathcal S_G+L|\alpha_e|+C$. Hence its
+tropical position is obtained, by lowering $|Z|$ and $|Z'|$, from the point with the same torus coordinates and $|\hat
+Z|^2=|\hat Z'|^2=\mathcal S_Ge^{L|\alpha_e|}$, which lies within $C_T(|y_e|+|\alpha_e|)+C/L$ of $\mathfrak a$, where $C_T$
+bounds the Lipschitz constants of the inverse charts $T_e^{-1}$. We take $\varsigma_{\max}\le\theta_2/(4C_T)$, and smaller
+than a quarter of the distance between any two model arcs away from their common ends and of the distance from a model
+arc to the edges of $E_e$ other than those containing its ends; then for $t$ small the points of
+$\Pi_{\mathfrak a,\varsigma}$ lie in the exact region of Lemma~\ref{lem:windows}(1), where $W^*$ is the leg model, and the
+same estimate places the divisor pieces in the exact regions listed in the statement.
+
+\emph{Step 2: smoothness and fibres.} The curves $\varrho\mapsto E_t(\varrho\cos\Theta,\varrho\sin\Theta)$ are smooth and
+embedded, with velocity $L(\cos\Theta,2\sin\Theta)\neq0$ at $\varrho=0$. For $(x_1,x_2)\ne0$ the point of the section is
+determined, up to $S^1_\alpha$ where $\hat Z=0$, by: $\chi_1$ negative real, $\hat Z\ge0$, $\mathfrak b\nu_Z\nu_{Z'}\hat
+Z\hat Z'=e^{x_1}-1$ and $\hat Z^2-|\hat Z'|^2=x_2$; it depends smoothly on $(x_1,x_2)$. Near $\varrho=0$ both $|\hat Z\hat
+Z'|$ and $|\hat Z|^2-|\hat Z'|^2$ are of order $\varrho$, and the $S^1_\alpha$-orbits of the section form the graph
+$\{\hat Z'=k(|\hat Z|^2)\bar{\hat Z}\}$ of a smooth function, a disc through the critical locus; for $\Theta=\pm\pi/2$ it is
+$\{\hat Z'=0\}$ or $\{\hat Z=0\}$. Sweeping with the rotation of $\chi_2$ and moving $y$ gives a four-manifold fibred over
+the sheet, whose fibre $\mathbb T_d$ collapses to the circle of $\chi_2$ exactly at $\varrho=0$; no boundary arises there,
+because the disc is smooth through its centre.
+
+\emph{Step 3: the phase and the divisor part.} On $\Pi_{\mathfrak a,\varsigma}$, $\chi_1$ is negative real, so
+$\chi^{n'-n}$ has phase $\pi$. Where $\Theta=\pi/2$, $x_1=0$, so $\chi_1=-1/\kappa_e$, $\hat Z'=0$ and $|\hat Z|^2=x_2\le
+2\sinh(L\varsigma)=\mathcal S_G\sinh(L\varsigma)$.
+
+\emph{Step 4: divisor pieces.} Consider a divisor piece on $D_{u'}$ along a stretch from a model node $P$ to $\Omega_e$,
+say $e=[a,b]$ in the $b-a$ passage. On $D_{u'}$ the origin and the apexes of $\omega_1$ vanish, since their
+$Z'$-exponent is one. By Lemma~\ref{lem:windows}(1$'$) and~(2) every other monomial outside $P$ has weight zero there, so
+$F^{(0)}|_{D_{u'}}=\gamma_ax^a\,g_e$ with $g_e=1+\tilde\chi_1+\psi_d\tilde\chi_2+\psi_c\mu_P\tilde\chi_1\tilde\chi_2$, and
+$I(x)\subseteq P$. By Lemma~\ref{lem:windows}(4), $W^*$ is transverse to $D_{u'}$ along the piece. On the branch, off the
+node neighbourhood, $|\tilde\chi_2|\le t^{\theta_2/2}$, and $\partial g_e/\partial\tilde\chi_1=1+\psi_c\mu_P\tilde\chi_2+
+O(t^{\theta_1/4}/L)\ne0$; so the branch is a graph $\tilde\chi_1=\tilde\chi_1(\hat Z,\chi_2)$ with $\tilde\chi_1=-1+
+O(t^{\theta_2/2})$. The bound $|\hat Z|^2\le\mathcal S_G\sinh(L\varsigma)$ is a smooth condition with positive
+$|\hat Z|$-derivative on the branch. Hence the divisor piece is a disc bundle over an annulus in $\chi_2$, fibred as
+stated, with phase of $\chi_1$ equal to $\pi$ up to $O(t^{\theta_2/2})$. Over $\Omega_e$ the weights of $c,d$ vanish and
+the piece is $\{Z'=0,\ \chi_1=-1/\kappa_e,\ |\hat Z|^2\le2\sinh(L\varsigma)\}$. Over the node neighbourhood the branch is
+$\mathscr C_0$, on which $x=\kappa_P/y$ with $|x|\le|\kappa_P|^{1/2}$, so $\tilde\chi_1=-\mu_P^{-1}(1-\mu_P^{1/2}x)$ has phase
+$\pi$ up to $O(\eta_0^{1/2})$; there the divisor piece is $\Pi^+_q$ over $\mathscr C_0$ by Lemma~\ref{lem:NQ}(1). The
+stretches from a model vertex to $\Omega_e$, those in $\Omega_e$ and those at the turning points are treated in the same
+way, with Lemma~\ref{lem:windows}(1$'$), (1) and (3), where $g_e$ is a binomial or the trinomial of $\tau$. The defining
+inequality does not depend on the reference monomial, and $\nu_Z/\nu_{Z'}$ is one function along each arc, which gives
+the agreement on overlaps.
+
+(2) By Lemma~\ref{lem:windows}(3) the model is exact, and $\hat f$ is a trinomial of full rank, so $\{\hat f=0\}$ is smooth;
+by Lemma~\ref{lem:windows}(4) the intersection with $D_{u'}$ is transverse near the vertex and along the tentacles, since
+there the monomials of positive weight that do not vanish on $D_{u'}$ lie in $\tau$ and are affinely independent. On a
+tentacle the cut-offs reduce $\hat f$ to a binomial and $\Pi_v$ to the divisor piece of the arc.
+
+(3) The model is exact by Lemma~\ref{lem:windows}(1) for the three-cone. On $D_{u_1}$ the equation reduces to
+$1+\kappa_e\chi_1=0$. Away from the vertex, where $z_3\ne0$, the model is the leg model with $(Z,Z')=(z_1,z_2)$, and
+$\Pi_{\rm t}$ is the divisor piece of that arc. The two inequalities are conditions on $(|z_2|,|z_3|)$, so the union is
+invariant under the rotations of $z_2,z_3$; it is a four-manifold with corners.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:crossing}]
+(1) Since $\langle u,n\rangle=\langle u',n\rangle=-1$ and $\{u,u'\}^\perp\cap N$ is spanned by $n'-n$ and $n_y$, we can write
+$n=-w_u-w_{u'}+a_1(n'-n)+a_2n_y$. Then $u'-u=e_{Z'}-e_Z$, since it pairs to $-1,1,0,0$ with the basis, and
+$\Lambda^M=n^\perp\cap M$ on $\operatorname{int}F^*_n$ is $\{z\,e_Z+z'e_{Z'}+k_1e_{\chi_1}+k_2e_{\chi_2}:z+z'=a_1k_1+a_2k_2\}$,
+with basis $u'-u$, $\hat e_1$, $\hat e_2$. On it $d^*_A$ and $g^*_A$ are the coordinates of $\hat e_1$ and $\hat e_2$; they
+vanish on $u'-u$ and form a basis of $\operatorname{Inv}^*(A)=(u'-u)^\perp$. For $X_0=ag^*_A+bd^*_A$ primitive,
+$X_0(x(u'-u)+p_1\hat e_1+p_2\hat e_2)=bp_1+ap_2$, so $\ker X_0\cap\Lambda^M=\langle u'-u,a\hat e_1-b\hat e_2\rangle$, with
+$\langle\beta_0,n'-n\rangle=a$ and $\langle\beta_0,n_y\rangle=-b$. The monodromy $\lambda\mapsto\lambda+\langle\lambda,n'-n\rangle(u'-u)$
+(Proposition~\ref{prop:L2}(4), transported by $\Upsilon^M$) fixes $u'-u$ and sends $\beta_0$ to $\beta_0+a(u'-u)$.
+
+(2) The character $\chi_2^a\chi_1^b=\chi^{an_y+b(n'-n)}$ is fixed by $u'-u$, which does not move $\chi_1,\chi_2$, and by
+$\beta_0$, which multiplies it by $e^{i(-ab+ba)\vartheta}=1$; so the condition is invariant under $\mathbb T(X_0)$. The leg
+model with $\chi_2$ fixed is exact over $D_\varsigma$ by Lemma~\ref{lem:windows}(1) and Step~1 of the proof of
+Lemma~\ref{lem:pieces}(1); it is a torus fibration over $D_\varsigma$ with one singular fibre, a pinched torus, over
+$\mathfrak x_A$, and $\pi_1(U_{D_\varsigma})\cong\Z$, generated by the rotation of $\chi_1$, because the $\alpha$-circle dies
+at the pinch. The condition cuts out an $|a|$-sheeted cover, connected because $\gcd(a,b)=1$; a cover of a smooth
+manifold is smooth. The fibre over a point of $D_\varsigma$ is $S^1_\alpha$ times the circle $\{a\arg\chi_2+b\arg\chi_1=0\}$,
+which is $\mathbb T(X_0)$. Over $\mathfrak x_A$ the $\alpha$-circle collapses at the $|a|$ points of the $\beta_0$-circle
+where $\arg\chi_1=\pi$, so the fibre is of type $I_{|a|}$. The phase of $\chi^{an_y+b(n'-n)}$, a lift of $X_0$, is $0$ on
+$\Pi(X_0)$ and on $\mathfrak s^\vee$.
+
+(3) With $a=0$ and $b=\pm1$, $\beta_0=\mp\hat e_2$, so $\mathbb T_d$ is generated by $u'-u$ and $\hat e_2$, both fixing
+$\chi_1$. Their weight matrix on $(Z,Z',\chi_2)$ is $\bigl(\begin{smallmatrix}-1&1&0\\a_2&0&1\end{smallmatrix}\bigr)$,
+whose $2\times2$ minors include $-1$, so $\mathbb T_d$ acts freely wherever $Z,Z',\chi_2\ne0$. It preserves the moduli of
+all monomials, hence the weights, and multiplies each monomial by a character; on the exact region of
+Lemma~\ref{lem:windows}(1), where only $0,n,n'$ have positive weight and $\mathbb T_d\subseteq(\{n,n'\}^\perp\cap M)\otimes
+U(1)$ fixes their phases, it maps $W^*$ to itself. The positive points over $\mathfrak D_\varsigma$ lie in that region
+(Step~1 of the proof of Lemma~\ref{lem:pieces}(1), and Lemma~\ref{lem:possec}(2)); there $\chi_1>0$, so $1+\kappa_e\chi_1\ne0$
+and $ZZ'\ne0$, and $\chi_2\ne0$, so $\mathbb T_d$ acts freely. It preserves tropical positions, so orbits over distinct
+base points are disjoint, and $\mathbb T_d\cdot\mathfrak s^\vee(\mathfrak D_\varsigma)\cong\mathfrak D_\varsigma\times T^2$.
+The phase of $\chi^{n'-n}$ is $0$ on it, matching the section.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:R1}]
+(1) The open star of $C^M(u,\omega)$ consists of cells $C^M(u,\omega')$, $\omega'\subseteq\omega$, in the relative interiors of
+the faces $F^*_{\omega'}$, on which exactly the monomials of $\{0\}\cup\omega'$ are maximal. By compactness of $\overline V$
+there is $\theta_V>0$ such that at every point of $\overline V$ every lattice point outside $\{0\}\cup u^\vee$ has tropical
+deficit at least $\theta_V$. Let $x\in W^*\cap T$ with $b=\operatorname{sh}_u(x)\in V$ and $\lambda=\lambda_u(x)<\epsilon$,
+so that the tropical position is $p=b+\lambda u$. For $m\notin u^\vee\cup\{0\}$, $\operatorname{val}_m(p)-\operatorname{val}_0
+(p)=\operatorname{val}_m(b)-\operatorname{val}_0(b)+\lambda(e_u(m)-1)\le-\theta_V+\epsilon e_{\max}$, since $e_u(m)\ge1$;
+with $\epsilon\le\theta_V/(2e_{\max})$ these monomials are at most $t^{\theta_V/2}$ times the origin, up to a bounded
+factor. The monomials of $u^\vee$ are free of $Z_u$ and the origin is linear in it, so by Lemmas~\ref{lem:wirt}
+and~\ref{lem:refined}, $\partial F^{(0)}/\partial Z_u$ is the derivative of the origin monomial up to a relative error
+$O(t^{\theta_V/2}+1/L)$, at every such point and at the points of $D_u$ in their closure. Fix the other Cox coordinates
+$\mathbf z$ of the chart, with $\operatorname{Log}\mathbf z/L\in\pi_u(V)$, and let $Z_u$ run over the disc $\{\lambda\le
+\epsilon\}$. On it $F^{(0)}(\cdot,\mathbf z)$ is a $C^1$-small perturbation of an affine map with invertible linear part,
+hence injective; on the boundary circle the origin monomial exceeds the sum of the others, since at $\lambda=0$ the
+position lies on $B_Y$, where the origin is maximal, and raising $|Z_u|$ by $t^{-\epsilon}$ multiplies the origin by
+$t^{-\epsilon}$ and the monomials of $u^\vee$ by one. So $F^{(0)}(\cdot,\mathbf z)$ has exactly one zero in the disc, in its
+interior, and $W^*_V$ is the graph of $\varphi$, smooth by the implicit function theorem. In the chart, $U_u=\C_{Z_u}\times
+(\C^*)^3$, and the cocharacter $u$ acts only on $Z_u$, so $H_1(U_u)=M/\Z u$.
+
+(2) The open star of $C^M(\tau,n)$ consists of cells $C^M(\tau',n)$, $\tau'\subseteq\tau$, in $\operatorname{int}F^*_n$,
+where exactly $0$ and $n$ are maximal; let $\theta_V>0$ bound from below the deficits of the other lattice points on
+$\overline V$. At $p=b+\lambda m_n$ with $b\in\overline V$ and $|\lambda|<\epsilon$ they are at least $\theta_V-D\epsilon|m_n|$,
+and $\operatorname{val}_n(p)-\operatorname{val}_0(p)=\lambda$. Write the torus as $\operatorname{Hom}(m_n^\perp\cap
+N,\C^*)\times\C^*$, with coordinates $\mathbf z$ and $w=\chi^n$. For $\epsilon\le\theta_V/(2D|m_n|)$ and $t$ small,
+$F^{(0)}=\gamma_0x^0(1+(\gamma_n/\gamma_0)\chi^n+E)$ with $E$ small in $C^1$ relative to the two tied terms
+(Lemma~\ref{lem:refined}); so $W^*_V$ is the graph $w=\varphi(\mathbf z)$, with $|\log|\varphi||$ bounded, and its loops do
+not wind in $w$.
+
+(3) For regions of the same type the inclusion is immediate. Let $V'$ be of type $u$ and $V$ of type $n$. Then
+$V'\subseteq R^M_u\cap\operatorname{int}F^*_n=C^M(u,n)$ (Lemma~\ref{lem:modelcx}(3)). Let $x\in W^*_{V'}$ in the torus, with
+$b=\operatorname{sh}_u(x)$ and $\lambda=\lambda_u(x)<\epsilon$. At $p=b+\lambda u$ the monomial $n$ exceeds the origin by
+$-\lambda$ and every other monomial of $u^\vee$ by at least $\theta_{V'}$, while the monomials outside $u^\vee$ lie below the
+origin; since at a point of $W^*$ the largest monomial, of weight one, cannot exceed the sum of the others by a factor
+larger than $|\mathcal A|$, $\lambda\ge-C/L$. So $W^*_{V'}$ lies in the torus, $\lambda_n(x)=-\lambda$ with $|\lambda_n(x)|
+<\epsilon$ once $C/L<\epsilon$, and $\operatorname{sh}_n(x)$ lies within $C\epsilon$ of $b$, hence in $V$. In the
+identifications of (1) and (2) the inclusion induces the inverse of the isomorphism $n^\perp\cap M\to M/\Z u$ induced by
+$T\subset U_u$, which is the gluing of $\Lambda^M$ on $C^M(u,n)$ (Lemma~\ref{lem:modelcx}(3)).
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:interface}]
+The points in question lie in the exact models of Lemmas~\ref{lem:pieces} and~\ref{lem:crossing} and of the collar paths,
+where $W^*$ is given by $g_e+\vartheta\hat Z\hat Z'=0$ in normalised coordinates, $g_e$ the weighted sum of the monomials
+of $[u,u']^\vee$ divided by $\gamma_nx^n$ and $|\vartheta|=1$; so $|\hat Z\hat Z'|=|g_e|\le\mathcal S_G$. At a point of the torus,
+$T_e(\operatorname{Log}x/L)=(x_1,\log|\hat Z/\hat Z'|,\log|\chi_2|)/L+O(1/L)$ near an arc, and $T_q(\operatorname{Log}x/L)=
+(s_1,s_2,\log|\hat Z/\hat Z'|)/L+O(1/L)$ near a node (Lemma~\ref{lem:nodemodel}(4)). Near a model vertex, at a point of
+$W^*\cap D_{u'}$ the three monomials of $\hat f$ sum to zero, so the torus coordinates of the point, divided by $L$, lie
+within $C/L$ of the tropical line of $\hat f$, which near the model vertex is the tripod of the three arcs; the retraction
+onto the tripod moves a point $p$ by at most $C\operatorname{dist}(p,\text{tripod})$. Near a turning point the offsets from
+its two arcs are affine coordinates, and each is computed from the modulus of one Cox coordinate. Finally $\frac1L\log
+\mathcal S_G$ is, up to $O(1/L)$, the value $\max(0,y_e)$ of $\operatorname{val}_0-\operatorname{val}_n$ on $B_Y$.
+
+\emph{The side of $D_{u'}$.} Suppose that $x\in U_{u,u'}$ has $\hat\mu(x)\ge\mathcal S_G(x)\sinh(L\alpha_e)$ with $\alpha_e\ge
+\varsigma/2$. Then $\hat Z\ne0$, so $x\in U_{u'}$. Its $u'$-shadow is determined by $\log|Z|$, $\log|\chi_1|$, $\log|\chi_2|$,
+since $\langle u',w_u\rangle=0$. At the shadow the origin equals the largest monomial of $u'^\vee$, and these monomials are
+free of $Z'$, so they have the same values at $x$ and at the shadow; the largest of them is, up to a bounded factor,
+$\mathcal S_G|\gamma_nx^n|$. Hence at the shadow $\log|\hat Z\hat Z'|=\log\mathcal S_G+O(1)$, and its offset from the arc is
+$\frac1L(2\log|\hat Z(x)|-\log\mathcal S_G)+O(1/L)$. Since $\hat\mu\le|\hat Z|^2\le\hat\mu+\mathcal S_G$, this offset is
+$\frac1L\log(\hat\mu/\mathcal S_G)+O(1/L)$, which is $\alpha_e+O(1/L)$ when $\hat\mu=\mathcal S_G\sinh(L\alpha_e)$. Moreover
+$\lambda_{u'}(x)=\frac1L\log(|\hat Z\hat Z'|/\mathcal S_G)+O(1/L)\le C/L$. The side of $D_u$ is symmetric.
+
+\emph{Points on $B_Y$.} Suppose that $|g_e(x)|\ge\gamma\,\mathcal S_G(x)$ with $\gamma>0$ and $\hat\mu(x)=\mathcal S_G\sinh(L\alpha_e)$
+with $|\alpha_e|\le2\varsigma$. Then $\log|\hat Z\hat Z'|=\log\mathcal S_G+O_\gamma(1)$ and $\log|\hat Z/\hat Z'|=L\alpha_e+
+O_\gamma(1)$, so $x$ lies in the torus and its tropical position is, up to $O_\gamma(1/L)$, the point of $B_Y$ with
+coordinates $(y_e,\alpha_e,y)$; all its shadows are within $O_\gamma(1/L)$ of that point, with $|\lambda|\le O_\gamma(1/L)$.
+
+\emph{The pieces.} For a point of $\Pi_{\mathfrak a,2\varsigma}$ over $(\varrho,y)$, $(y_e,\alpha_e)=\varrho(\cos\Theta,\sin\Theta)$,
+$\varrho\ge\varsigma$, we have $x_1=Ly_e$, $\mathcal S_G=1+e^{x_1}$, $\hat\mu=\mathcal S_G\sinh(L\alpha_e)$ and
+$|g_e|/\mathcal S_G=\tanh(L|y_e|/2)$, and $\pi_g(x)=T_e^{-1}(y_e,\alpha_e,y)$. If $L|y_e|\ge1$ the previous paragraph
+applies with $\gamma=1/3$; this covers the case $|y_e|\ge\varsigma_1$ of (1), and gives (2) with $L_{\varsigma_2}:=
+C_T/\varsigma_2$. If $|y_e|<\varsigma_1$, then $|\alpha_e|\ge\varsigma/2$, and the first paragraph applies on the side of the
+sign of $\alpha_e$; moreover $\pi_g(x)$, which lies within $C_T\varsigma_1$ of $E_e$ at offset at least $\varsigma/2$ from the
+arc, lies in $R^M_{u'}$ for $\alpha_e>0$ and in $R^M_u$ for $\alpha_e<0$, and in no other vertex region, if $\varsigma_1$ is
+small: a compact part of $C^M(u',e)$ has a neighbourhood in $B_Y$ contained in $R^M_{u'}$, whose size depends on the slopes
+of the walls $C^M([u,u'],n)$, $C^M([u,u'],n')$ created by the coning in the proof of Lemma~\ref{lem:modelcx}. For a divisor
+piece the first paragraph applies with $\hat\mu=|\hat Z|^2$ and $y_e=O(1/L)$; the node piece over $\mathscr C_0$, the vertex
+pieces and the turning pieces are divisor pieces. On the node piece over the thimble $|g_P|\le2|\kappa_P|$, the torus
+coordinates are within $O(r)$ of the node point, and the first paragraph gives $\operatorname{sh}_{u'}(x)=T_q^{-1}(0,0,
+\alpha_q)+O(1/L)=\pi_g(x)+O(1/L)$ on the half-axis $C^M(u',P)$. The crossing pieces with $a\ne0$ are treated as
+$\Pi_{\mathfrak a,2\varsigma}$, the argument of $\chi_1$ being arbitrary: $|g_e|=|1+\kappa_e\chi_1|$ lies between
+$|e^{x_1}-1|$ and $\mathcal S_G$. On the crossing pieces with $a=0$, $\chi_1>0$, so $|g_e|=\mathcal S_G$ and the paragraph on
+points on $B_Y$ applies with $\gamma=1$.
+
+\emph{Collar paths and the section.} The first stage of a collar path lies on the pieces of depths between $\varsigma$ and
+$2\varsigma$. In the second stage $\hat\mu$ and $|\chi_1|,|\chi_2|$ are those of the piece at depth $2\varsigma$ and only the
+phase of $\chi^{\tilde v}$ changes, so $|g_e|$ stays between $|e^{x_1}-1|$ and $\mathcal S_G$. The points of the third stage and
+$\mathfrak s^\vee(b)$ are positive real, with $|g_e|=\mathcal S_G$ up to a bounded factor, and $|\operatorname{Log}\mathfrak s^\vee
+(b)/L-b|\le C/L$ by Lemma~\ref{lem:possec}(2).
+
+\emph{Consequence.} If $V$ is of type $u$, then $\pi_g(x)\in V\subseteq R^M_u$, and by (1) $\operatorname{sh}_u(x)\in V$ and
+$\lambda_u(x)<\epsilon$ for $t$ small, uniformly for $\pi_g(x)\in\mathcal W$; if $x$ is not in the torus, it lies on $D_u$. If
+$V$ is of type $n$, then $\overline V\subset\operatorname{int}F^*_n$ lies at positive distance from the two-skeleton, and (2)
+applies.
+\end{proof}

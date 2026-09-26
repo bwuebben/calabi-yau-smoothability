@@ -1,0 +1,91 @@
+\pdfoutput=1
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools, mathrsfs}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{adjustbox,longtable,needspace}
+\usepackage{flafter}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\setlength{\emergencystretch}{2em}
+
+\newtheorem{mainthm}{Theorem}
+\renewcommand{\themainthm}{\Alph{mainthm}}
+\newtheorem{maincor}[mainthm]{Corollary}
+\newtheorem{mainconj}[mainthm]{Conjecture}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{hypothesisx}{Hypothesis}
+\newenvironment{hypothesis}[2]{\renewcommand{\thehypothesisx}{#1}\begin{hypothesisx}[#2]}{\end{hypothesisx}}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\renewcommand{\thepart}{\Roman{part}}
+\newcommand{\Z}{\mathbb Z}\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}\newcommand{\Q}{\mathbb Q}
+\newcommand{\circv}{\mathrm{circ}}
+\DeclareMathOperator{\Rel}{Rel}
+\DeclareMathOperator{\Tors}{Tors}
+\newcommand{\lgDP}{\mathrm{DP}}
+\newcommand{\lgOrd}{\operatorname{Ord}}
+\newcommand{\lgri}{\operatorname{ri}}
+\newcommand{\lgBar}{\operatorname{Bar}}
+\newcommand{\lgface}{\operatorname{face}}
+\newcommand{\lgsd}{\operatorname{sd}}
+\newcommand{\cyInv}{\operatorname{Inv}}
+\newcommand{\cyBal}{\mathrm{Bal}(\Gamma)}
+\newcommand{\cyTr}{\mathrm{Tr}}
+\newcommand{\cyLk}{\operatorname{Lk}}
+\newcommand{\cyit}{\operatorname{it}}
+\newcommand{\cylin}{\operatorname{lin}}
+\newcommand{\cyU}{\mathcal U}
+\newcommand{\coderepo}{\url{https://github.com/bwuebben/calabi-yau-smoothability}, directory \texttt{paper6}}
+\hypersetup{pdftitle={Tropical 2-cycles and relations among vanishing spheres in Batyrev mirror families},pdfauthor={Bernd Johannes Wuebben}}
+\title[Relations among vanishing spheres]{Tropical $2$-cycles and relations among vanishing spheres in Batyrev mirror families}
+\author{Bernd Johannes Wuebben}
+\date{\today}
+\subjclass[2020]{Primary 14J32; Secondary 14J33, 14T20, 14M25, 14D06, 32S30, 53D12, 53D37}
+\keywords{Calabi--Yau threefolds, conifold transitions, mirror symmetry, vanishing cycles, tropical $2$-cycles, integral affine manifolds with singularities, toric degenerations, Lagrangian spheres}
+\begin{document}
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\input{sec_intro}
+\input{sec_statements}
+\part{The base and its tropical cycles}
+\input{sec_base}
+\input{sec_dualpair}
+\input{sec_cycles}
+\part{The mirror lift and the relation lattice}
+\input{sec_legendre}
+\input{sec_regime}
+\input{sec_lift}
+\input{sec_periods}
+\part{The resolution side}
+\input{sec_resolution}
+\part{Examples}
+\input{sec_examples}
+
+\appendix
+\input{app_unimodular}
+\input{app_dualpair}
+\input{app_estimates}
+\input{app_liftproofs}
+\input{app_resolution}
+\input{app_data}
+
+\bibliographystyle{amsalpha}
+\bibliography{refs}
+\end{document}

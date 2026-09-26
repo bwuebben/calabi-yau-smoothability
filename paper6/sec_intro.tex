@@ -1,0 +1,229 @@
+\section{Introduction}\label{sec:intro}
+
+\subsection{Conifold transitions and their mirrors}
+Let $X'$ be a projective threefold with trivial canonical bundle whose singular points $q\in Q$ are ordinary double
+points, and let $\widehat X\to X'$ be a small resolution, with exceptional curves $C_q\cong\mathbb P^1$. A smoothing
+$X_s$ of $X'$, when it exists, contains a vanishing three-sphere for each node, and passing from $\widehat X$ to $X_s$
+through $X'$ is a conifold transition. The two sides are tied together by linear relations, a phenomenon that goes
+back to Clemens \cite{Cle83}: in a projective conifold transition the relations among the vanishing spheres and those
+among the exceptional curves are mutual annihilators \cite[Thm.~1.14]{LLW18}, so the more relations the curves
+satisfy, the fewer the spheres satisfy. Under a hypothesis on the exceptional curves, Friedman identified the
+image of the first-order deformations of $X'$ in the local deformations of the nodes with the relations
+$\sum_q\lambda_q[C_q]=0$ in $H_2(\widehat X)$, up to a nonzero scalar at each node, and constructed smoothings from
+relations with every coefficient nonzero \cite[Rem.~(4.5), Cor.~(4.7)]{Friedman}. With the unobstructedness theorems of Kawamata,
+Ran and Tian this becomes a criterion, in the form proved by Namikawa: $X'$ is smoothable if and only if the exceptional
+curves satisfy a relation with every coefficient $\lambda_q$ different from zero \cite[Thm.~2.5]{Nam02}; compare
+\cite[Thm.~1.3]{RT09}.
+
+Morrison proposed that mirror symmetry reverses conifold transitions \cite{Mor99}. If $\widehat X$ has a mirror family
+$Y$, the exceptional curves of $\widehat X$ should correspond to vanishing spheres $\delta_q$ of a degeneration of $Y$,
+and the degenerate members should have a small resolution mirror to the smoothing $X_s$. Morrison made the prediction
+quantitative: if the relative Picard number of $\widehat X\to X'$ is $\rho_{\rm rel}$, the $|Q|$ nodes of the mirror should
+impose only $\rho_{\rm rel}$ conditions on its complex moduli \cite[\S3.1]{Mor99}. In terms of lattices the prediction
+reads as follows. Let $K\subset\Z^Q$ be the lattice of relations among the exceptional curves; its rank is
+$|Q|-\rho_{\rm rel}$. On the mirror, the vanishing spheres should satisfy the same relations,
+\begin{equation}\label{eq:intro-prediction}
+\Bigl\{k\in\Z^Q:\ \sum_qk_q[\delta_q]=0\text{ in }H_3(Y;\Z)\Bigr\}=K,
+\end{equation}
+so that the members of the mirror family on which all the spheres $\delta_q$ collapse form a locus of codimension
+$|Q|-\operatorname{rank}K=\rho_{\rm rel}$. Smith, Thomas and Yau proved the symplectic counterpart of Friedman's
+criterion \cite[Thm.~2.9]{STY}: disjoint Lagrangian three-spheres admit a symplectic conifold transition, for one of the
+$2^{|Q|}$ choices of small resolution, exactly when their classes satisfy a relation with every coefficient nonzero.
+Batyrev and Kreuzer tested the picture on Batyrev hypersurfaces whose singular two-faces are unit squares
+\cite{BK10}. They identified the curve classes with the circuits of the squares, specialised the mirror family to the
+locus on which the face polynomial of every square factors into two binomials, where the local model at each square
+suggests a conifold point, and observed that by \cite{STY} a projective small resolution of such a degenerate mirror
+requires a relation among the vanishing spheres with every coefficient nonzero; they did not determine whether such a
+relation exists \cite[\S3]{BK10}.
+
+Casta\~no-Bernard and Matessi proposed a mechanism in terms of affine geometry \cite{CBM}. On an integral affine
+three-manifold $B$ with singularities, a tropical $2$-cycle $S$ with boundary on the discriminant should produce, in a
+small resolution of the conifold built from $B$, a $3$-chain bounded by a combination of exceptional curves, and in a
+smoothing of the conifold built from the dual structure, a $4$-chain bounded by the same combination of vanishing
+spheres. They carried this out for topological models glued from local pieces \cite[Thm.~7.3, \S9.5]{CBM} and
+conjectured that the relations coming from tropical $2$-cycles exhaust the relations among the vanishing cycles
+\cite[Conj.~8.3]{CBM}; for a family of compact examples they proved this conditionally on a basis conjecture
+\cite[Prop.~9.2]{CBM}.
+
+\subsection{The result}
+This paper proves~\eqref{eq:intro-prediction}, with Morrison's count, for a large class of Batyrev hypersurfaces
+and their mirror families, and constructs the relations from relative tropical $2$-cycles on the base of Gross's toric
+degeneration.
+
+The hypersurfaces are the following. Let $\Delta$ be a reflexive four-polytope and $X\subset\mathbb P_\Delta$ a
+$\Delta^\circ$-regular anticanonical hypersurface. Singular two-faces of $\Delta$ give isolated singular points of $X$. We
+assume that $\Delta$ is \emph{admissible} (Definition~\ref{def:admissible}): its edges are primitive, its singular
+two-faces are unit squares, which give nodes, and lattice pentagons and hexagons with one interior lattice point and no
+other lattice points besides their vertices, which give cones over del Pezzo surfaces of degrees seven and six, and the
+edge of $\Delta^\circ$ dual to each of these faces has lattice length one, so that each face gives exactly one singular
+point. Subdividing these faces into unit parallelograms and unimodular triangles, with a
+choice of \emph{profile} $\sigma$ at each hexagon, defines a crepant partial resolution $X'_\sigma\to X$ whose only
+singularities are nodes, one for each parallelogram \cite{Paper4,Paper5}. We assume that this partial resolution is
+induced by a projective toric morphism; this is Hypothesis~\ref{hyp:P}. Then $X'_\sigma$ has a projective small
+resolution $\widehat X$, and the relations among its exceptional curves in $H_2(\widehat X;\Z)$ are exactly the
+lattice
+\[
+K=\Bigl\{\lambda\in\Z^Q:\ \sum_q\lambda_q\,\circv_q=0\Bigr\}
+\]
+of relations among the \emph{circuits} $\circv_q=e_b+e_d-e_a-e_c$ of the parallelograms $abcd$; the group
+$H_2(\widehat X;\Z)$ is torsion-free (Proposition~\ref{prop:integral}). On the mirror side, $Y_t$
+is a member of the Batyrev mirror family near its maximally degenerate limit $t\to0$, with real coefficients of a fixed
+sign pattern, close to the locus where every parallelogram's face polynomial factors into two binomials. Near each
+parallelogram the defining function of $Y_t$ has one nondegenerate critical point with small critical value, and
+$\delta_q\subset Y_t$ is its vanishing sphere.
+
+\begin{theorem*}[Theorem~\ref{thm:main}]
+Under Hypothesis~\ref{hyp:P}, for $t$ small and coefficients in the window just described:
+\begin{enumerate}
+\item $\sum_qk_q[\delta_q]$ is a torsion class of $H_3(Y_t;\Z)$ only if $k\in K$, and it vanishes for $k\in K$. So the
+relation lattice of the vanishing spheres is exactly $K$, and the $[\delta_q]$ span a free group $\Z^Q/K$ that meets the
+torsion trivially.
+\item Every relation $k\in K$ is the boundary of an explicit integral $4$-chain on $Y_t$ lifted from a relative
+tropical $2$-cycle on the base of Gross's toric degeneration of $X'_\sigma$.
+\item Near the given member, the members with a node at every one of these critical points form a nonempty complex
+submanifold of codimension $|Q|-\operatorname{rank}K$, the relative Picard number of a projective small resolution
+$\widehat X\to X'_\sigma$.
+\end{enumerate}
+\end{theorem*}
+
+Item~(1) says that the vanishing spheres of the mirror satisfy exactly the same integral relations as the
+exceptional curves of $\widehat X$, which is~\eqref{eq:intro-prediction}. Near the maximally degenerate limit the nodal locus of item~(3) lies close to, but in general not on, the locus
+where the face polynomials factor; the terms of the defining function from the cells next to each parallelogram move
+the critical values (Section~\ref{ssec:periodsremarks}).
+Combined with the smoothing criterion, the theorem settles the
+analogue of the question of Batyrev and Kreuzer for these families (Corollary~\ref{cor:smooth}): the vanishing spheres of the mirror satisfy a relation with every coefficient nonzero if
+and only if $X'_\sigma$ is smoothable, and then one of the $2^{|Q|}$ conifold transitions of $Y_t$ in Lagrangian spheres
+isotopic to the $\delta_q$ is symplectic.
+
+The smallest example shows every feature. The polytope $\Delta_9$ of \cite{Paper5} has two unit squares and one
+$dP_7$ pentagon, so $X'_\sigma$ has four nodes, and
+$K=\Z\,(1,-1,-1,1)$. On the base $B$ of Gross's degeneration there is a disc whose boundary runs along the discriminant
+through the four nodes, crossing each node straight, and whose node coefficients are $(1,-1,-1,1)$
+(Section~\ref{ssec:x9}). Its lift is a $4$-chain on $Y_t$ bounded by $\delta_1-\delta_2-\delta_3+\delta_4$, and by the
+theorem this is the only relation: the four spheres span a free group of rank three, and the members of the mirror family
+with all four nodes form a locus of codimension three. Since $K$ contains a vector with no zero entry, $X'_\sigma$ is
+smoothable, and the four spheres admit a symplectic conifold transition.
+
+\subsection{Tropical 2-cycles}
+The relations are produced on the base. Let $B=B'_\sigma$ be the dual intersection complex of Gross's toric degeneration
+of $X'_\sigma$ \cite{Gross2005}: an integral affine three-sphere whose singularities lie along a graph $\Gamma$, the
+discriminant. Each node $q$ gives a four-valent vertex $p_q$ of $\Gamma$, which is a negative node in the sense of
+\cite{CBM} (Proposition~\ref{prop:base}); the other vertices of $\Gamma$ are trivalent of the two standard types. Each edge
+of $\Gamma$ carries a vanishing vector, the direction fixed by the monodromy around it.
+
+We work with \emph{relative tropical $2$-cycles} (Definition~\ref{def:relcycle}): integral $2$-chains on $B$ with
+coefficients in the sheaf $\iota_*\Lambda$ of monodromy-invariant integral tangent vectors, whose boundary lies on
+$\Gamma$ and runs along each edge in the direction of its vanishing vector. The boundary of such a chain is a
+\emph{balanced network} on $\Gamma$, and at each node it has a \emph{node coefficient} $\rho_q\in\Z$, the jump of the
+boundary coefficient across $q$ measured against the circuit $\circv_q$ (Definition~\ref{def:nodecoef}). The tropical
+$2$-cycles of \cite{CBM} are examples; relative tropical $2$-cycles may in addition carry non-primitive fields, branch
+arbitrarily, cross the discriminant with any invariant field, and pass a node in both directions. Their node
+coefficients always lie in $K$, by an augmentation argument (Section~\ref{ssec:cycles-bdry}). The first main
+theorem is that they fill it.
+
+\begin{theorem*}[Theorem~\ref{thm:real}]
+Every balanced network on $\Gamma$ bounds a relative tropical $2$-cycle, and the node coefficients of balanced networks
+are exactly $K$. Hence the node coefficients of relative tropical $2$-cycles generate $K$ over $\Z$.
+\end{theorem*}
+
+The second main theorem lifts every relative tropical $2$-cycle $z$ to an integral $4$-chain $\check\Xi(z)$ on $Y_t$ with
+\[
+\partial\,\check\Xi(z)=\sum_q\rho_q(z)\,[\delta_q]
+\]
+(Theorem~\ref{thm:lift}). For a tropical $2$-cycle in the sense of \cite{CBM} the chain realises the four-dimensional
+object that Casta\~no-Bernard and Matessi attach to it in a topological smoothing: away from the discriminant it is, up to
+homotopy, the bundle of two-tori annihilated by the field $v$ of $S$ in the dual torus fibres.
+
+On the resolution side we construct, for every tropical $2$-cycle $S$ in the sense of \cite{CBM}, an integral $3$-chain
+on $\widehat X$ with boundary $\sum_q\rho_q(S)[C_q]$ (Theorem~\ref{thm:res}). So a single tropical object bounds on both
+sides of the transition, with the same coefficients, as \cite{CBM} proposed. We conjecture that these strict tropical
+$2$-cycles already generate $K$ (Conjecture~\ref{conj:strict}); this holds on $340$ of the $364$ hexagon-free polytopes
+of our list with $K\neq0$ that satisfy~\ref{hyp:P}, and Theorem~\ref{thm:real} shows that the larger class of relative cycles
+generates $K$ always.
+
+\subsection{How the proof goes}
+The proof of Theorem~\ref{thm:main} has three steps.
+
+\emph{The base.} Theorem~\ref{thm:real} is combinatorial topology on $B\cong S^3$ with coefficients in $\iota_*\Lambda$.
+At the boundary level, a balanced network is determined near each node by two integers, the flows through the two
+pairs of opposite edges, and its node coefficient is their difference. Pushing the flows onto the two-faces of $\Delta$
+turns the condition $\sum_q\lambda_q\circv_q=0$ into the vanishing of a boundary on the cell complex $\partial\Delta\cong
+S^3$, and $H_1(S^3)=0$ produces a balanced network with node coefficients $\lambda$ for every $\lambda\in K$
+(Section~\ref{ssec:cycles-bdry}). To show that every balanced network bounds, we push it off $\Gamma$ along the dual
+cells and are left with a cycle in $B\setminus\Gamma$ with coefficients in the local system $\Lambda$ that must be shown
+to bound modulo meridians of $\Gamma$. This is a complement lemma: a Mayer--Vietoris argument over a regular neighbourhood of $\Gamma$ shows
+that $H_1(B\setminus\Gamma;\Z)$ is generated by meridians, and a computation on the boundary spheres of the facets of the
+polytope whose boundary is $B$, where $H^1(S^2;\Z)=0$, shows that the coefficients cause no further obstruction. Every step is integral, so no torsion enters
+(Section~\ref{sec:cycles}).
+
+\emph{The lift.} The cycle lives on $B'_\sigma$, the base of $X'_\sigma$, while the mirror family degenerates over a second
+base $B_Y$, built from the mirror polytope with a different subdivision. The cells of the two bases do not correspond,
+so we first construct a piecewise linear homeomorphism $B'_\sigma\to B_Y$ that carries discriminant to discriminant and
+the local system of integral tangent vectors to the dual local system, by a Legendre correspondence through a complex of
+pairs of dual cells (Sections~\ref{sec:dualpair} and~\ref{sec:legendre}). On the mirror we replace $Y_t$ by a localized hypersurface $W^*$ in the
+sense of Mikhalkin and Yamamoto \cite{Mikhalkin,Ya16}, in which each monomial is cut off where it is far from maximal; an
+isotopy through smooth hypersurfaces carries $W^*$ to $Y_t$. The regime is chosen so that near each node $W^*$ is, in
+holomorphic coordinates, the conifold smoothing $\{xy+z_1z_2=\kappa\}$ with $\kappa$ small and nonzero, whose vanishing
+sphere is $\delta_q$ (Section~\ref{sec:regime}). The chain is then assembled from local pieces: thimbles at the nodes,
+subsets of toric divisors along the boundary of the cycle, and two-torus bundles over the rest, extended over regions
+of $W^*$ that are aspherical with fundamental group $\Lambda$. The lift is linear in the cycle, and we build it
+constituent by constituent on an abstract domain, so that sheets that cross or coincide on the base simply add. The
+only global obstruction is boundary in the class of the fibre three-torus, and it vanishes because the positive real
+locus of $W^*$ meets each fibre torus once and misses every vanishing sphere (Section~\ref{sec:lift}).
+
+\emph{Periods.} The first two parts give $K\subseteq\Rel(\delta)$. For the reverse inclusion we regard the periods
+$\wp_q=\int_{\delta_q}\Omega$ of a holomorphic volume form as functions of the coefficients. Each extends holomorphically
+over a neighbourhood of the given member, including the members with nodes, and equals the critical value
+$\varepsilon_q$ times a function without zeros near the nodal locus, while $d\varepsilon_q$ is close to the circuit row of $q$. A relation
+among the $[\delta_q]$ is therefore a linear relation among differentials whose matrix has rank
+$|Q|-\operatorname{rank}K$, so $\Rel(\delta)$ has rank at most $\operatorname{rank}K$; since $K$ is saturated, equality
+follows, and the same argument shows that no nonzero combination outside $K$ is torsion. The loci $\{\varepsilon_q=0\}$ for
+$q$ in a basis of the row space meet transversally, and the remaining critical values vanish on their intersection;
+this is item~(3) (Section~\ref{sec:periods}). The period argument is classical \cite{GMS95,LLW18}; what is needed
+here is its uniform form near the maximally degenerate limit.
+
+\subsection{Hypotheses}
+Hypothesis~\ref{hyp:P} is the only restriction beyond admissibility. It is required by the method, since without it
+the partial resolution $X'_\sigma$ is not projective over $X$ and has no Gross degeneration, and it is a genuine
+restriction: on our list it fails for $11$ of the $375$ hexagon-free polytopes with $K\neq0$, and for every profile on
+$59$ of the $142$ polytopes with a hexagon (Section~\ref{ssec:scope}). Two further conditions enter the construction and
+hold automatically. The base requires a regular unimodular triangulation of $\partial\Delta^\circ$ with a height
+satisfying Gross's convexity conditions; Theorem~\ref{thm:U} shows that one exists for every admissible polytope, by
+a computer-assisted verification over the $51{,}827$ admissible polytopes of the Kreuzer--Skarke classification with
+exactly checked certificates (Appendix~\ref{app:unimodular}). The mirror side requires a subdivision of $\partial\Delta$
+in which the cells next to each node parallelogram have their other vertices at lattice height one; the pulling
+refinement of the subdivision given by~\ref{hyp:P} has this property (Proposition~\ref{prop:pulling}).
+
+\subsection{Relation to other work}
+Casta\~no-Bernard and Matessi constructed Lagrangian torus fibrations over integral affine three-manifolds with
+singularities \cite{CBM09} and the conifolds and cycles described above \cite{CBM}; the present paper realises their
+construction on actual hypersurfaces and their Batyrev mirrors, where the base is Gross's \cite{Gross2005} and the
+spaces are algebraic. Gross and Siebert developed the correspondence between toric degenerations and their affine data, with the discrete
+Legendre transform that exchanges the two sides of the mirror \cite{GSI}; Haase and Zharkov
+constructed the integral affine spheres of toric hypersurfaces and their torus fibrations \cite{HZ1}. Cycles in
+Calabi--Yau hypersurfaces near a maximally degenerate limit have been built from tropical data in other settings:
+Lagrangian rational homology spheres from tropical curves with ends on the discriminant by Mak and Ruddat
+\cite{MR20}, and lifts of closed tropical $(p,q)$-cycles in hypersurfaces with unimodular tropicalisation by
+Yamamoto \cite{Ya26}, who notes that the tropical $2$-cycles of \cite{CBM} can be regarded as tropical $(1,2)$-cycles
+\cite[\S1, footnote]{Ya26}. Ruddat and Siebert compute period integrals over lifts of tropical one-cycles \cite{RS20},
+Ruddat develops a homology theory of tropical cycles on integral affine manifolds with a perfect pairing \cite{Ru21},
+and Abouzaid, Ganatra, Iritani and Sheridan compute periods tropically in the setting of the Gamma conjecture
+\cite{AGIS20}. The chains constructed here differ from these in two respects: they are relative, with boundary at the
+nodes, and the subdivision that defines the ambient toric variety of $X'_\sigma$ is not unimodular, since it contains the
+node parallelograms. The period argument of Section~\ref{sec:periods} goes back to Greene, Morrison and Strominger
+\cite{GMS95}; compare \cite{LLW18}.
+
+\subsection{Organisation}
+Section~\ref{sec:statements} fixes the setting and states the results. Part~I concerns the base:
+Section~\ref{sec:base} describes the partial resolution, the relation lattice, Gross's base, its discriminant and the
+mirror subdivision; Section~\ref{sec:dualpair} introduces the dual-pair complex, a cell structure shared by the base of
+$X'_\sigma$ and the base of the mirror family; and Section~\ref{sec:cycles} proves Theorem~\ref{thm:real}. Part~II
+concerns the mirror: Section~\ref{sec:legendre} transfers relative tropical $2$-cycles to the mirror base,
+Section~\ref{sec:regime} constructs the localized mirror and the Morse charts at the nodes, Section~\ref{sec:lift} the
+lift of relative tropical $2$-cycles (Theorem~\ref{thm:lift}), and Section~\ref{sec:periods} proves
+Theorem~\ref{thm:main} and Corollary~\ref{cor:smooth}. Part~III, Section~\ref{sec:resolution}, constructs the chains on
+the small resolution (Theorem~\ref{thm:res}); it is not used in Parts~I and~II. Part~IV, Section~\ref{sec:examples},
+treats the examples and the list of polytopes, including the evidence for Conjecture~\ref{conj:strict}.
+Appendix~\ref{app:unimodular} proves Theorem~\ref{thm:U}, and the remaining appendices contain deferred proofs and
+data.
+

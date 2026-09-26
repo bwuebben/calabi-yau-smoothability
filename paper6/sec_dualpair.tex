@@ -1,0 +1,457 @@
+\section{The dual-pair complex}\label{sec:dualpair}
+
+The base $B'_\sigma$ of $X'_\sigma$ and the base $B_Y$ of the mirror family are built from the same two subdivisions,
+of $\partial\Delta^\circ$ by $\mathcal T$ and of $\partial\Delta$ by a fan side, with the roles of Newton side and fan side
+exchanged. Gross proved that the two bases are related by the discrete Legendre transform \cite[Thm.~3.25]{Gross2005},
+which matches the cells of two polyhedral decompositions. The decompositions that the degenerations actually give are in
+general not Legendre dual to one another, and the mirror base is built from the pulling refinement $\mathcal F_C$ of
+$\Sigma'$ rather than from $\Sigma'$ itself. This section therefore introduces a coarser structure, used in both parts of
+the paper: a regular cell decomposition of each base whose cells are indexed by pairs of dual cells of $\mathcal T$ and of
+the subdivision of $\partial\Delta$ (Proposition~\ref{prop:L1}). Its face poset is the same on both bases, it needs no
+polarization, and it carries the discriminants (Proposition~\ref{prop:L2}) and a flat perfect pairing between the two
+local systems of integral tangent vectors (Proposition~\ref{prop:L3}). Section~\ref{sec:cycles} uses it to compute with
+relative tropical $2$-cycles on $B'_\sigma$, and Section~\ref{sec:legendre} to transfer them to $B_Y$. The proof that the
+cells are balls is in Appendix~\ref{app:legendre}.
+
+\subsection{Faces, decompositions and charts}\label{ssec:leg-setting}
+Throughout this section $\mathcal T$ and $\check h$ are as in Section~\ref{ssec:tropical}, with the normalisation of
+Section~\ref{ssec:gross}: $\mathcal T$ is a unimodular triangulation of $\partial\Delta^\circ$ refining its faces, and the
+integral height $\check h$ and $\check h':=\check h-\check\varphi$ are strictly convex on the fan over $\mathcal T$, that is,
+convex, with the cones over the tetrahedra of $\mathcal T$ as their maximal domains of linearity. In the language of
+Section~\ref{ssec:conventions}, $(\Delta^\circ,\mathcal T,\check h)$ is the Newton side of the degeneration of $X'_\sigma$.
+
+\begin{definition}[fan sides]\label{def:fanside}
+A \emph{fan side} is a subdivision $\mathcal F$ of $\partial\Delta$ into lattice polytopes, refining the faces of
+$\Delta$, that is induced by a function $h\colon N_\R\to\R$ which is piecewise linear and strictly convex on the fan over
+$\mathcal F$: convex, with the cones over the cells of $\mathcal F$ as its maximal domains of linearity.
+\end{definition}
+
+A fan side is a regular polyhedral subdivision of $\partial\Delta$ in the sense of \cite[\S2.3]{DLRS}, and the fan over it
+is the fan of a projective toric variety refining $\mathbb P_\Delta$. The fan sides of this paper are $\Sigma'$
+(Hypothesis~\ref{hyp:P}), the pulling refinement $\mathcal F_C$ (Section~\ref{ssec:mirrorsub}) and the regular
+refinements of Section~\ref{sec:resolution}.
+
+Cells of $\mathcal T$ are denoted $\tau$, cells of $\mathcal F$ are denoted $\omega$, vertices of $\mathcal T$ are denoted
+$u,u'$ and vertices of $\mathcal F$ are denoted $n,n'$. For $\tau\in\mathcal T$ and $\omega\in\mathcal F$ put
+\begin{gather*}
+\tau^\vee=\{n\in\Delta:\langle u,n\rangle=-1\text{ for all vertices $u$ of $\tau$}\},\\
+\omega^\vee=\{m\in\Delta^\circ:\langle m,n\rangle=-1\text{ for all vertices $n$ of $\omega$}\}.
+\end{gather*}
+If $G$ is the smallest face of $\Delta^\circ$ containing $\tau$, then $\tau$ meets the relative interior of $G$, and an
+affine function that is $\ge-1$ on $G$ and equal to $-1$ at a relative interior point is $-1$ on $G$; so $\tau^\vee$ is
+the face of $\Delta$ dual to $G$, of dimension $3-\dim G\le3-\dim\tau$. The same holds for $\omega^\vee$. We write
+$\lgri Z$ for the relative interior of a convex set $Z$, $\operatorname{cone}(\tau)=\R_{\ge0}\tau$, and $L_\tau\subset M_\R$
+for the linear span of $\tau$; since the vertices of $\tau$ lie in a hyperplane $\{\langle\,\cdot\,,n\rangle=-1\}$,
+$\dim L_\tau=\dim\tau+1$.
+
+\begin{lemma}[faces]\label{lem:faces}
+For $\tau\in\mathcal T$ let $\nabla^{\check h'}_\tau=\{w\in\nabla^{\check h'}:\langle u,w\rangle=-\check h'(u)\text{ for all
+vertices }u\text{ of }\tau\}$, where $\nabla^{\check h'}=\{w\in N_\R:\langle m,w\rangle\ge-\check h'(m)\text{ for all }m\in
+M_\R\}$.
+\begin{enumerate}
+\item $\nabla^{\check h'}_\tau$ is the face of the polytope $\nabla^{\check h'}$ with inner normal cone
+$\operatorname{cone}(\tau)$; $\dim\nabla^{\check h'}_\tau=3-\dim\tau$, and $\nabla^{\check h'}_\tau\subseteq\nabla^{\check
+h'}_{\tau'}$ if and only if $\tau\supseteq\tau'$.
+\item $\nabla^{\check h}=\Delta+\nabla^{\check h'}$, its normal fan is the fan over $\mathcal T$, and the face with inner
+normal cone $\operatorname{cone}(\tau)$ is $F_\tau=\tau^\vee+\nabla^{\check h'}_\tau$. In particular $\tau^\vee\ne\emptyset$,
+$\dim F_\tau=3-\dim\tau$, and $F_\tau\subseteq F_{\tau'}$ if and only if $\tau\supseteq\tau'$.
+\end{enumerate}
+\end{lemma}
+We write $F_u=F_{\{u\}}$ for the facets and $F_{uu'}=F_{[u,u']}$ for the two-faces. The proof is in
+Appendix~\ref{app:leg-faces}.
+
+\emph{Gross's decomposition.} Let $\widetilde\Sigma$ be the normal fan of the epigraph $\mathrm{Epi}=\{(m,l):m\in\Delta^\circ,\
+l\ge\check h'(m)\}$ \cite[Prop.~3.7]{Gross2005}, and for a vertex $u$ of $\mathcal T$ let $\widetilde\Sigma_u$ be its normal
+cone at the vertex $(u,\check h'(u))$. The \emph{Cayley polytope} of $u$ is
+\[
+\mathrm{Cay}_u=\operatorname{conv}\bigl(u^\vee\times\{0\}\cup\nabla^{\check h'}_u\times\{1\}\bigr)\subset N_\R\oplus\R .
+\]
+It lies in the affine hyperplane $\{\langle u,y\rangle+(\check h(u)-2)l=-1\}$, since $\langle u,a\rangle=-1$ for $a\in u^\vee$
+and $\langle u,w\rangle=-\check h'(u)=1-\check h(u)$ for $w\in\nabla^{\check h'}_u$. The maximal cones of $\widetilde\Sigma$ are
+the $\widetilde\Sigma_u$ and the normal cone $\widetilde\Sigma_{\rm up}=\operatorname{cone}(\nabla^{\check h'}\times\{1\})$ at
+the vertex $(0,0)$ of $\mathrm{Epi}$ \cite[Prop.~3.7]{Gross2005}.
+
+Given a fan side $\mathcal F$ with function $h$, we fix the following subdivision $\widetilde\Sigma'$ of $\widetilde\Sigma$:
+on each $\widetilde\Sigma_u$ its cones are the cones over the cells of the regular subdivision of the point configuration
+$(u^\vee\cap N)\times\{0\}\cup\operatorname{vert}\nabla^{\check h'}_u\times\{1\}$ with the heights $h(a)$ at $(a,0)$ and $0$
+at $(w,1)$, and $\widetilde\Sigma_{\rm up}$ is not subdivided. These subdivisions agree on common faces, since the heights
+are global and vanish on the upper points. The trace of $\widetilde\Sigma'$ on $N_\R\times\{0\}$ is the fan over
+$\mathcal F$, and its other rays are generated by the vectors $(w,1)$, $w$ a vertex of $\nabla^{\check h'}$. Such a $w$ is a
+lattice point: it is $\nabla^{\check h'}_\tau$ for a tetrahedron $\tau=\{u_1,\dots,u_4\}$ of $\mathcal T$, so $\langle
+u_i,w\rangle=-\check h'(u_i)\in\Z$, and $u_1,\dots,u_4$ is a basis of $M$ because $\mathcal T$ is unimodular. So $(w,1)$
+is primitive, and $\widetilde\Sigma'$ is good for $\mathcal F$ in the sense of \cite[Def.~3.8]{Gross2005}. It is the
+subdivision of \cite[Rem.~3.18]{Gross2005} determined by the values $h$ on $N_\R\times\{0\}$ and $0$ on
+$\widetilde\Sigma_{\rm up}$, because on $\widetilde\Sigma_u$ the lower envelope of these values is the cone over the lower
+envelope of the heights on the slice $\mathrm{Cay}_u$ (Lemma~\ref{lem:cayley}(1)). We let $B_X=B_X(\mathcal F)$ be
+$\partial\nabla^{\check h}$ with the decomposition $\mathscr P_X=\mathscr P^{\widetilde\Sigma'}_\nabla$ of
+\cite[Def.~3.13]{Gross2005}: a mixed cone with lower generators $\omega\times\{0\}$ and upper generators
+$\tau_1\times\{1\}$ gives the cell $\omega+\operatorname{conv}\tau_1$. For $\mathcal F=\Sigma'$ this is the base
+$B'_\sigma$ with its decomposition $\mathscr P$ (Section~\ref{ssec:gross}).
+
+\begin{lemma}[the cells as a mixed subdivision]\label{lem:cayley}
+\begin{enumerate}
+\item $\widetilde\Sigma_u$ is the cone over $\mathrm{Cay}_u$.
+\item For $\tau\in\mathcal T$, the cells of $\mathscr P_X$ contained in $F_\tau$ are the cells of the regular mixed
+subdivision of $\tau^\vee+\nabla^{\check h'}_\tau$ with the heights $h$ on $\tau^\vee\cap N$ and $0$ on
+$\nabla^{\check h'}_\tau$: the projections to $N_\R$ of the bounded faces of $\widehat A_\tau+\widehat\nabla_\tau$, where
+\[
+\widehat A_\tau=\operatorname{conv}\{(a,h(a)):a\in\tau^\vee\cap N\}+\R_{\ge0}(0,1),\qquad
+\widehat\nabla_\tau=\nabla^{\check h'}_\tau\times\{0\}+\R_{\ge0}(0,1).
+\]
+Each such cell is $c=\omega+\nabla^{\check h'}_{\tau'}$ with $\omega\in\mathcal F$, $\omega\subseteq\tau^\vee$, and
+$\tau'\in\mathcal T$, $\tau'\supseteq\tau$, and $\omega$ and $\tau'$ are determined by $c$.
+\end{enumerate}
+\end{lemma}
+The proof, by the Cayley trick, is in Appendix~\ref{app:leg-faces}. For a cell $c$ of $\mathscr P_X$ we call $\omega(c)$
+its \emph{lower support}, as in Section~\ref{ssec:tropical}, and the $\tau(c)\in\mathcal T$ with $\lgri
+c\subseteq\lgri F_{\tau(c)}$ its \emph{face label}; $F_{\tau(c)}$ is the smallest face of $\nabla^{\check h}$ containing
+$c$. If $c\subseteq c'$, then $\tau(c)\supseteq\tau(c')$ and $\omega(c)\subseteq\omega(c')$, the latter because the lifted
+face of $c$ is a face of the lifted face of $c'$. The barycentric subdivision $\lgBar\mathscr P_X$ has one simplex for
+each chain $c_0\subsetneq\dots\subsetneq c_k$ of cells.
+
+\emph{Regions, discriminant and charts.} For a vertex $n$ of $\mathcal F$ let $\widetilde R_n$ be the union of the open
+simplices of $\lgBar\mathscr P_X$ whose chain has $\omega(c_0)=\{n\}$, and let $\Gamma_X$ be the union of the closed
+simplices whose chain has $\dim\omega(c_0)\ge1$ and $\dim\tau(c_k)\ge1$. A maximal such chain is $e\subsetneq f$ with $f$
+a two-cell in a two-face $F_{uu'}$ and $e$ an edge of $f$ with a two-point lower support; we call the segment
+$[b_e,b_f]$ between their barycentres a \emph{leg} of $\Gamma_X$. For $\mathcal F=\Sigma'$ these are the legs of
+Section~\ref{ssec:tropical} (Lemma~\ref{lem:monodromy}), and $\Gamma_X$ is the discriminant $\Gamma$ of $B'_\sigma$.
+
+\begin{lemma}[charts]\label{lem:charts}
+\begin{enumerate}
+\item $\widetilde R_n$ is open. If $b\in\widetilde R_n$, then $\langle u,n\rangle=-1$ for every facet $F_u$ containing
+$b$, and the projection $\pi_n\colon N_\R\to N_\R/\R n$ restricts to a homeomorphism of a neighbourhood of $b$ in $B_X$
+onto an open set, which on each facet $F_u$ is the restriction of an affine isomorphism $\operatorname{aff}F_u\to
+N_\R/\R n$ with linear part the lattice isomorphism $u^\perp\cap N\to N/\Z n$.
+\item $B_X\setminus\Gamma_X=\bigcup_u\operatorname{int}F_u\cup\bigcup_n\widetilde R_n$, and $\Gamma_X$ is the union of the
+open simplices whose chain has $\dim\omega(c_0)\ge1$ and $\dim\tau(c_k)\ge1$.
+\item The facet charts on the $\operatorname{int}F_u$ and the projections $\pi_n$ on the $\widetilde R_n$ form an integral
+affine atlas on $B_X\setminus\Gamma_X$, which restricts to Gross's structure \cite[Prop.~3.14]{Gross2005} on the
+complement of Gross's discriminant.
+\end{enumerate}
+\end{lemma}
+We write $\Lambda_X$ for the local system of integral tangent vectors of this structure. For $\mathcal F=\Sigma'$ it is
+the local system $\Lambda$ of Section~\ref{ssec:tropical}. The proof is in Appendix~\ref{app:leg-faces}.
+
+\emph{The mirror base.} Let $H\colon N_\R\to\R$ be piecewise linear on the fan over $\mathcal F$, with integral slopes (on
+each cone of that fan $H$ is the restriction of an element of $M$), and such that $H':=H-\varphi$ is strictly convex on
+that fan. The height $H=k_0\varphi+h_C$ of the mirror family (Section~\ref{ssec:mirrorfamily}) is such a function for
+$\mathcal F=\mathcal F_C$: $\varphi$ is convex and linear on the cones over the cells of $\mathcal F_C$, so
+$H'=(k_0-1)\varphi+h_C$, $k_0\ge1$, has the maximal domains of linearity of $h_C$; and $H$ has integral slopes because
+$\varphi$ does, $\Delta$ being reflexive, and $h_C$ does by choice. The vertices of $\nabla^{H'}$ are lattice points: the
+vertex with inner normal cone $\operatorname{cone}(\omega)$, $\omega$ a maximal cell, is $-m_\omega$, where $m_\omega\in M$
+is the slope of $H'$ on $\operatorname{cone}(\omega)$. The \emph{mirror base} is $B_Y=\partial\nabla^H$,
+$\nabla^H=\{m\in M_\R:\langle m,n\rangle\ge-H(n)\ \forall n\}$. It is the same construction with the roles of
+$(\Delta^\circ,\mathcal T,\check h)$ and $(\Delta,\mathcal F,H)$ exchanged: $(\Delta,\mathcal F,H)$ is the Newton side and
+$(\Delta^\circ,\mathcal T,\check h)$ the fan side. Its faces are $F^*_\omega=\omega^\vee+\nabla^{H'}_\omega$,
+$\omega\in\mathcal F$, with $\nabla^{H'}_\omega$ the face of $\nabla^{H'}$ with inner normal cone
+$\operatorname{cone}(\omega)$; its decomposition $\mathscr P_Y$ is defined by the heights $\check h$ on the lower points and
+$0$ on the upper vertices; a cell $c$ of $\mathscr P_Y$ has a face label $\omega_Y(c)\in\mathcal F$ and a lower support
+$\tau_Y(c)\in\mathcal T$; the regions are the $\widetilde R^*_u$, with charts $M_\R\to M_\R/\R u$; the facet $F^*_n$ carries
+the lattice $n^\perp\cap M$; and the discriminant $\Gamma_Y$ and the local system $\Lambda_Y$ are defined as above.
+Lemmas~\ref{lem:faces}--\ref{lem:charts} hold for $B_Y$ with the same proofs, which use only the strict convexity of the
+Newton-side function ($\check h'$, respectively $H'$) and of the fan-side function ($h$, respectively $\check h$). The
+subdivision of $\widetilde\Sigma_Y$ that defines $\mathscr P_Y$ is good in the sense of \cite[Def.~3.8]{Gross2005}, by the
+argument above with the vertices of $\nabla^{H'}$ in place of those of $\nabla^{\check h'}$. So, by
+\cite[Prop.~3.14]{Gross2005} with the roles exchanged, $(B_Y,\mathscr P_Y)$ is the dual intersection complex of the
+degeneration $\{\sum_nc_nt^{H(n)}x^n=0\}\subset X_{\mathcal T}\times\operatorname{Spec}\C[\![t]\!]$. Since $H(0)=0$, the
+polytope $\nabla^H$ is the region on which the term $n=0$ of the tropical polynomial $m\mapsto\min_n(H(n)+\langle
+m,n\rangle)$ attains the minimum, and $B_Y$ is the target of Yamamoto's tropical contraction of the tropical
+hypersurface \cite[(5.36), Prop.~5.4]{Ya21}; we do not use the contraction. We write $B_X(\mathcal F)$ and
+$B_Y(\mathcal F)$ when the fan side must be specified. Thus $B'_\sigma=B_X(\Sigma')$, and the mirror base of this paper is
+$B_Y=B_Y(\mathcal F_C)$ with the height $H$ of Section~\ref{ssec:mirrorfamily}.
+
+\subsection{The dual-pair complex}\label{ssec:leg-mixed}
+\begin{definition}[dual pairs]\label{def:DP}
+A \emph{dual pair} is a pair $(\tau,\omega)\in\mathcal T\times\mathcal F$ with $\langle u,n\rangle=-1$ for all vertices $u$
+of $\tau$ and $n$ of $\omega$; equivalently $\omega\subseteq\tau^\vee$, or $\tau\subseteq\omega^\vee$. The set $\lgDP$ of
+dual pairs is ordered by $(\tau,\omega)\preceq(\tau',\omega')$ if $\tau\supseteq\tau'$ and $\omega\supseteq\omega'$. We
+put $d_p=3-\dim\tau-\dim\omega$ for $p=(\tau,\omega)$; since $\dim\omega\le\dim\tau^\vee\le3-\dim\tau$, $d_p\ge0$.
+\end{definition}
+In the language of Batyrev duality, $(\tau,\omega)$ is a dual pair if and only if $\tau$ and $\omega$ lie in a pair of
+mutually dual faces of $\Delta^\circ$ and $\Delta$.
+
+\begin{definition}[labels]\label{def:strata}
+A point $b\in B_X$ lies in the open simplex of a unique chain $c_0\subsetneq\dots\subsetneq c_k$ of $\mathscr P_X$; put
+$\lambda_X(b)=(\tau(c_k),\omega(c_0))$, the face label of the top and the lower support of the bottom. For $b\in B_Y$ in
+the open simplex of a chain $c_0\subsetneq\dots\subsetneq c_k$ of $\mathscr P_Y$, put
+$\lambda_Y(b)=(\tau_Y(c_0),\omega_Y(c_k))$. For $p\in\lgDP$ let $C_X(p)=\lambda_X^{-1}(p)$ and $C_Y(p)=\lambda_Y^{-1}(p)$.
+\end{definition}
+
+\begin{proposition}[the dual-pair complex]\label{prop:L1}
+\begin{enumerate}
+\item $\lambda_X$ and $\lambda_Y$ take values in $\lgDP$.
+\item The sets $C_X(p)$, $p\in\lgDP$, are the open cells of a regular CW decomposition of $B_X$ with face poset
+$(\lgDP,\preceq)$: each closure $\overline{C_X(p)}=\bigcup_{q\preceq p}C_X(q)$ is a subcomplex of $\lgBar\mathscr P_X$ and a
+piecewise linear ball of dimension $d_p$, with boundary sphere $\bigcup_{q\prec p}C_X(q)$. In particular every $C_X(p)$ is
+nonempty.
+\item The same holds for the $C_Y(p)$ on $B_Y$, with the same poset.
+\item There is a piecewise linear homeomorphism $\mathcal L\colon B_X\to B_Y$ with $\mathcal L(C_X(p))=C_Y(p)$ for all
+$p\in\lgDP$, and any two such homeomorphisms are isotopic through homeomorphisms with this property.
+\item $C_X(\tau,\omega)\subseteq\lgri F_\tau$ and $C_Y(\tau,\omega)\subseteq\lgri F^*_\omega$. Moreover, for every
+$\tau\in\mathcal T$ and every vertex $n$ of $\mathcal F$, $\lgri F_\tau=\bigcup_\omega C_X(\tau,\omega)$ and $\widetilde
+R_n\cap\lgri F_\tau=C_X(\tau,n)$; in particular $\operatorname{int}F_u=\bigcup_\omega C_X(u,\omega)$ and $\widetilde
+R_n=\bigcup_\tau C_X(\tau,n)$. Likewise on $B_Y$, with the roles of $\tau$ and $\omega$ exchanged. Hence
+$\mathcal L(\operatorname{int}F_u)=\widetilde R^*_u$ and $\mathcal L(\widetilde R_n)=\operatorname{int}F^*_n$:
+$\mathcal L$ exchanges the open facets with the regions.
+\end{enumerate}
+\end{proposition}
+We call the decomposition of (2) and (3) the \emph{dual-pair complex} of $B_X$ and of $B_Y$, and a homeomorphism as in
+(4) a \emph{Legendre map}. On a face $F_\tau$ the cells $C_X(\tau,\omega)$ correspond to the cells of the polyhedral
+complex dual to the regular subdivision $\mathcal F|_{\tau^\vee}$, that is, of the tropical hypersurface of
+$m\mapsto\min_{a\in\tau^\vee\cap N}(h(a)+\langle m,a\rangle)$ \cite[\S3.1]{MS}, refined by the normal fan of
+$\nabla^{\check h'}_\tau$ and truncated by a level set of a gauge function of $\nabla^{\check h'}_\tau$, which makes the
+unbounded cells bounded (Lemmas~\ref{lem:onefacet} and~\ref{lem:trunc}). The cells of $\mathscr P_X$ are in general not
+unions of cells of the dual-pair complex: a maximal cell $c\subset F_u$ with lower support an edge $[n,n']$ has its
+barycentre in $C_X(u,[n,n'])$, while the open simplex of the chain $(n+w\subsetneq c)$, for a vertex $n+w$ of $c$, lies in
+$C_X(u,n)$.
+
+Pairs of dual cells were used by Haase and Zharkov \cite{HZ1,HZ2,HZ3}, who realise two mutually dual integral affine
+structures on a sphere subdivided by the pairs of barycentres of dual simplices of coherent triangulations of the boundaries
+of a dual pair of reflexive polytopes \cite[\S2.4]{HZ1}, \cite[\S2.2]{HZ2}. Proposition~\ref{prop:L1} gives the
+corresponding cell structures on Gross's bases $B_X$ and $B_Y$ themselves, for a fan side that need not be a
+triangulation, and Proposition~\ref{prop:L3} the duality of the lattices. Posets of pairs of dual cells also underlie the
+mirror isomorphism of tropical homology groups of Matessi and Renaudineau \cite[Thm.~1.1, \S2]{MR25}. A Legendre map is a
+piecewise linear homeomorphism matching two cell decompositions; it is not a discrete Legendre transform in the sense of
+\cite[\S1.4]{GSI}, which requires a polarization.
+
+\begin{remark}[the discrete Legendre transform]\label{rem:DLT}
+In the proof of \cite[Thm.~3.26]{Gross2005}, Gross takes $\tilde h\equiv0$ on $\widetilde\Sigma_{\rm up}$ and $\tilde h=h$
+on $N_\R\times\{0\}$ and subdivides each cone of $\widetilde\Sigma$ coherently by these values \cite[Rem.~3.18]{Gross2005};
+this is the subdivision $\widetilde\Sigma'$ fixed above. For suitable positive integers $m_0,m_1$ the function
+$m_0\tilde h+m_1\tilde\varphi$ is integral and strictly convex on the same $\widetilde\Sigma'$, and
+$m_0\tilde h+(m_1-1)\tilde\varphi$ is convex; here $\tilde\varphi$, the function of \cite[\S3]{Gross2005} defined by
+$\mathrm{Epi}$, is linear on each cone of $\widetilde\Sigma$. Since $B_X$, its decomposition and $\Lambda_X$ depend only on
+$\check h$ and $\widetilde\Sigma'$, the pair $(B_X,\mathscr P_X)$ is polarized by $m_0\tilde h+m_1\tilde\varphi$, and
+\cite[Thm.~3.25]{Gross2005} identifies its discrete Legendre transform with $B_Y(\mathcal F)$ for $H=m_0h+m_1\varphi$,
+carrying the Legendre-dual decomposition. The decomposition $\mathscr P_Y$ defined by the heights $(\check h,0)$, the one
+attached to the degeneration of the mirror family, is in general a different decomposition, and the dual-pair complex
+avoids comparing the two.
+Propositions~\ref{prop:L1} and~\ref{prop:L3} give for the cells of the dual-pair complex the statements that the discrete
+Legendre transform gives for cells, and they apply to $\mathscr P_X$ and $\mathscr P_Y$ alike.
+\end{remark}
+
+\begin{proof}[Proof of Proposition~\ref{prop:L1}]
+(1) For a chain $c_0\subsetneq\dots\subsetneq c_k$ we have $\tau(c_0)\supseteq\tau(c_k)$, and
+$\omega(c_0)\subseteq\tau(c_0)^\vee\subseteq\tau(c_k)^\vee$ by Lemma~\ref{lem:cayley}(2); so $(\tau(c_k),\omega(c_0))$ is a
+dual pair. On $B_Y$ the argument is the same with the roles exchanged.
+
+(2) and (3) are proved in Appendix~\ref{app:leg-balls}. In outline: fix $p=(\tau,\omega)$. On the face $F_\tau$ the cells of
+$\mathscr P_X$ are in inclusion-reversing bijection with the cells of a polyhedral complex $\mathcal R_\tau$ in the dual
+of the direction space of $F_\tau$, the common refinement of the complex dual to $\mathcal F|_{\tau^\vee}$ and of the
+normal fan of $\nabla^{\check h'}_\tau$ (Lemma~\ref{lem:onefacet}). Under this bijection the simplices of $\lgBar\mathscr
+P_X$ with label $\preceq p$ form the order complex of the cells of $\mathcal R_\tau$ contained in the cell $D(\omega)$ dual
+to $\omega$, and those with label $\prec p$ the order complex of its cells in $\partial D(\omega)$ together with its
+unbounded cells (Lemma~\ref{lem:ordcx}). Truncation by a function that is linear on the normal fan of $\nabla^{\check
+h'}_\tau$ realises the first order complex as a linear triangulation of a convex polytope of dimension $d_p$, with the
+second on its boundary (Lemma~\ref{lem:trunc}).
+
+(4) Let $|\lgOrd(\lgDP)|$ be the geometric realisation of the order complex of $\lgDP$, and $\lgOrd^{\preceq p}$,
+$\lgOrd^{\prec p}$ the order complexes of $\{q\preceq p\}$ and $\{q\prec p\}$. We construct a piecewise linear
+homeomorphism $\Psi_X\colon|\lgOrd(\lgDP)|\to B_X$ with $\Psi_X(|\lgOrd^{\preceq p}|)=\overline{C_X(p)}$ for all $p$, by
+induction on $d_p$. For $d_p=0$ the cell $C_X(p)$ is a point, and $\Psi_X(p)$ is that point. If $\Psi_X$ has been
+constructed on the union of the $|\lgOrd^{\preceq q}|$ with $d_q<k$ and $d_p=k$, then $\Psi_X$ maps
+$|\lgOrd^{\prec p}|=\bigcup_{q\prec p}|\lgOrd^{\preceq q}|$ homeomorphically onto $\bigcup_{q\prec p}\overline{C_X(q)}=
+\partial\overline{C_X(p)}$, a piecewise linear $(k-1)$-sphere; $|\lgOrd^{\preceq p}|$ is the cone from the vertex $p$ over
+$|\lgOrd^{\prec p}|$, and $\overline{C_X(p)}$ is piecewise linearly the convex polytope of Lemma~\ref{lem:trunc}, the cone
+from an interior point over its boundary; so $\Psi_X$ extends by coning. The extensions over different cells agree on
+overlaps, which lie in lower cells. In the same way we obtain $\Psi_Y$, and $\mathcal L=\Psi_Y\circ\Psi_X^{-1}$ has the
+required property. The uniqueness up to isotopy is proved in Appendix~\ref{app:leg-pl}.
+
+(5) A point of $C_X(\tau,\omega)$ lies in the open simplex of a chain whose top $c_k$ has face label $\tau$, hence in
+$\lgri c_k\subseteq\lgri F_\tau$. Conversely, a point $b\in\lgri F_\tau$ lies in the open simplex of a chain whose top
+$c_k$ satisfies $b\in\lgri c_k\subseteq\lgri F_{\tau(c_k)}$; since the relative interiors of the faces partition $B_X$,
+$\tau(c_k)=\tau$, and $\lambda_X(b)=(\tau,\omega(c_0))$. This gives $\lgri F_\tau=\bigcup_\omega C_X(\tau,\omega)$;
+$\widetilde R_n=\bigcup_\tau C_X(\tau,n)$ is the definition of $\widetilde R_n$; and as $C_X(\tau',n)\subseteq\lgri
+F_{\tau'}$, which is disjoint from $\lgri F_\tau$ for $\tau'\ne\tau$, also $\widetilde R_n\cap\lgri F_\tau=C_X(\tau,n)$.
+On $B_Y$ the roles of the two labels are exchanged: $\lgri F^*_\omega=\bigcup_\tau C_Y(\tau,\omega)$ and
+$\widetilde R^*_u=\bigcup_\omega C_Y(u,\omega)$. Applying $\mathcal L$ gives the last statement.
+\end{proof}
+
+The decomposition $\mathscr P_X$ depends on the height $\check h$ only through its geometry, not through its combinatorics.
+
+\begin{lemma}[independence of the height]\label{lem:indepheight}
+Let $\check h_1,\check h_2$ be integral heights on $\mathcal T$ with $\check h_i$ and $\check h_i-\check\varphi$ strictly
+convex on the fan over $\mathcal T$, and let $\mathscr P^i_X$ be the decomposition of $B^i_X=\partial\nabla^{\check h_i}$
+built from $\check h_i$, with the same fan side $\mathcal F$ and function $h$. Then
+$\omega+\nabla^{\check h_1'}_{\tau'}\mapsto\omega+\nabla^{\check h_2'}_{\tau'}$ is a well-defined bijection from the cells of
+$\mathscr P^1_X$ onto those of $\mathscr P^2_X$ which preserves inclusions, dimensions, lower supports and face labels.
+Consequently the barycentric subdivisions are isomorphic simplicial complexes, and the simplexwise linear map
+$\phi\colon B^1_X\to B^2_X$ sending each barycentre to the barycentre of the corresponding cell is a piecewise linear
+homeomorphism that preserves the labels $\lambda_X$ of Definition~\ref{def:strata}, hence the open facets, the regions
+$\widetilde R_n$, the discriminant $\Gamma_X$ and its legs with their lower supports.
+\end{lemma}
+\begin{proof}
+Fix $\tau\in\mathcal T$. By Lemmas~\ref{lem:cayley}(2) and~\ref{lem:onefacet}(3), $c\mapsto c^*$ is an inclusion-reversing
+bijection from the cells of $\mathscr P^i_X$ in $F_\tau$ onto the cells of the complex $\mathcal R_\tau$ in $M_\R/L_\tau$,
+with $\dim c+\dim c^*=3-\dim\tau$, and the cell $c=\omega+\nabla^{\check h_i'}_{\tau'}$ corresponds to
+$c^*=D(\omega)\cap\operatorname{cone}_\tau(\tau')$. The complex $\mathcal R_\tau$ is the common refinement of the complex
+$\mathcal D_\tau$ of the $D(\omega)$, which is defined by $\mathcal F$ and the values of $h$ on $\tau^\vee\cap N$, and of the fan
+of the images of the cones $\operatorname{cone}(\tau')$, $\tau'\supseteq\tau$, which is defined by $\mathcal T$
+(Lemma~\ref{lem:onefacet}(1),(2)); neither depends on $\check h_i$. Indeed, every cell of $\mathcal R_\tau$ is such an
+intersection, and conversely, if $\zeta\in\lgri D(\omega)\cap\lgri\operatorname{cone}_\tau(\tau')$, then $(\zeta,1)$ selects
+exactly $\hat\omega$ in $\widehat A_\tau$ and exactly $\nabla^{\check h_i'}_{\tau'}$ in $\nabla^{\check h_i'}_\tau$, hence exactly
+the bounded face $\hat\omega+\nabla^{\check h_i'}_{\tau'}\times\{0\}$ of the sum, so $\zeta\in\lgri c^*$ for
+$c=\omega+\nabla^{\check h_i'}_{\tau'}$. Conversely, if $\zeta\in\lgri c^*$, then $(\zeta,1)$ selects exactly
+$\hat c=\hat\omega+\nabla^{\check h_i'}_{\tau'}\times\{0\}$, and since the face of a Minkowski sum selected by a functional
+is the sum of the faces selected on the summands, uniquely (proof of Lemma~\ref{lem:onefacet}(3),(4)), it selects exactly
+$\hat\omega$ in $\widehat A_\tau$ and exactly $\nabla^{\check h_i'}_{\tau'}$ in $\nabla^{\check h_i'}_\tau$; so
+$\zeta\in\lgri D(\omega)\cap\lgri\operatorname{cone}_\tau(\tau')$ by Lemma~\ref{lem:onefacet}(1),(2). Hence
+$\lgri c^*=\lgri D(\omega)\cap\lgri\operatorname{cone}_\tau(\tau')$, and a cell of $\mathcal R_\tau$ determines the pair
+$(\omega,\tau')$ with this property, because the relative interiors of the cells of $\mathcal D_\tau$, and those of the
+cones $\operatorname{cone}_\tau(\tau')$, are pairwise disjoint. So the set of
+pairs $(\omega,\tau')$ for which $\omega+\nabla^{\check h_i'}_{\tau'}$ is a cell in $F_\tau$, and the inclusions and
+dimensions of these cells, are the same for $i=1,2$; the face label is read from the recession cone of $c^*$
+(Lemma~\ref{lem:onefacet}(5)). Every cell lies in a facet, and two cells $c\subseteq c'$ lie in a common facet $F_u$, $u$ a
+vertex of $\tau(c')$; taking $\tau=u$ gives the bijection with its properties. A chain of cells goes to a chain, so the
+barycentric subdivisions are isomorphic; $\lgBar\mathscr P^i_X$ is a triangulation of $B^i_X$, so $\phi$ is a piecewise linear
+homeomorphism, and it preserves the labels of the chains. The last assertions follow from the definitions of the open
+facets, the regions and $\Gamma_X$ through the labels (Lemma~\ref{lem:charts}(2)).
+\end{proof}
+
+\subsection{The discriminants and the flat pairing}\label{ssec:leg-disc}
+A loop \emph{around an arc} $C_X(\tau,\omega)$, $\tau=[u,u']$, $\omega=[n,n']$, is a loop in a small neighbourhood of a
+point of the arc which passes once through each of the cells whose closures contain the arc. These are the cells
+$C_X(p)$ with $p\succ(\tau,\omega)$, that is, $p=(\tau',\omega')\neq(\tau,\omega)$ with $\tau'\subseteq\tau$ and
+$\omega'\subseteq\omega$: four three-cells and four two-cells. Since the dual-pair complex is a regular cell decomposition
+of a three-manifold with face poset $(\lgDP,\preceq)$ (Proposition~\ref{prop:L1}(2)), a small circle linking the arc
+meets these eight cells in a cyclic order in which a three-cell and a two-cell are consecutive exactly when the two-cell
+lies in the boundary of the three-cell, that is, when their pairs are comparable. The comparability graph of the eight
+pairs is the cycle
+$C_X(u,n)$, $C_X([u,u'],n)$, $C_X(u',n)$, $C_X(u',[n,n'])$, $C_X(u',n')$, $C_X([u,u'],n')$, $C_X(u,n')$,
+$C_X(u,[n,n'])$, which is therefore the cyclic order in which they surround the arc.
+
+\begin{proposition}[the discriminants]\label{prop:L2}
+\begin{enumerate}
+\item $\Gamma_X=\bigcup\{C_X(\tau,\omega):\dim\tau\ge1,\ \dim\omega\ge1\}$ and
+$\Gamma_Y=\bigcup\{C_Y(\tau,\omega):\dim\tau\ge1,\ \dim\omega\ge1\}$. Hence $\mathcal L(\Gamma_X)=\Gamma_Y$ and
+$\mathcal L(B_X\setminus\Gamma_X)=B_Y\setminus\Gamma_Y$.
+\item $\Gamma_X$ is a graph. Its edges, the \emph{arcs}, are the one-cells $C_X(\tau,\omega)$ with $\tau$ and $\omega$
+edges; each arc is a union of legs, consecutive legs meeting at a barycentre that lies on exactly two legs. Its vertices
+are the zero-cells $C_X(\tau,\omega)$ with $\tau$ a triangle and $\omega$ an edge, of valency three, and those with
+$\tau$ an edge and $\omega$ a two-cell of $\mathcal F$ in a two-face of $\Delta$, of valency the number of edges of
+$\omega$. For $\mathcal F=\Sigma'$ and $\mathcal F=\mathcal F_C$ these two-cells are the unimodular triangles and the node
+parallelograms of the profile $\sigma$ (Definition~\ref{def:profile}). The same holds for $\Gamma_Y$.
+\item The vertex types are exchanged. A vertex (edge $[u,u']$, unimodular triangle) is of negative type on $B_X$ and of
+positive type on $B_Y$; a vertex (triangle, edge $[n,n']$) is of positive type on $B_X$ and of negative type on $B_Y$
+(Definition~\ref{def:types}). At a node (edge $[u,u']$, node parallelogram) the monodromies of the four arcs have the
+common covector $u'-u$ on $B_X$, as at a negative node, and the common vector $u'-u$ on $B_Y$, as at a positive node
+\cite[Ex.~6.1, 6.2]{CBM}.
+\item Let $\gamma$ be a loop around the arc $([u,u'],[n,n'])$, based in $C_X(u,n)$ and passing through $C_X(u,n)$,
+$C_X(u',n)$, $C_X(u',n')$, $C_X(u,n')$ in this order. Then parallel transport in $\Lambda_X$ along $\gamma$ and in
+$\Lambda_Y$ along $\mathcal L\circ\gamma$ is
+\[
+T^X_\gamma(x)=x+\langle u'-u,x\rangle\,(n-n')\quad(x\in u^\perp\cap N),\qquad
+T^Y_{\mathcal L\gamma}(\zeta)=\zeta+\langle\zeta,n'-n\rangle\,(u'-u)\quad(\zeta\in n^\perp\cap M).
+\]
+Both are nontrivial transvections.
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition}[the flat pairing]\label{prop:L3}
+On $C_X(u,n)\subseteq\operatorname{int}F_u$ the lattice $\Lambda_X$ is $u^\perp\cap N$, and on $C_Y(u,n)\subseteq
+\operatorname{int}F^*_n$ the lattice $\Lambda_Y$ is $n^\perp\cap M$. There is a unique pairing of local systems
+\[
+\beta\colon\mathcal L^*\Lambda_Y\otimes\Lambda_X\longrightarrow\Z\qquad\text{on }B_X\setminus\Gamma_X
+\]
+which on every $C_X(u,n)$ is the restriction of $\langle\ ,\ \rangle\colon(n^\perp\cap M)\times(u^\perp\cap N)\to\Z$. It is
+perfect and flat. Consequently $\mathcal L^*\Lambda_Y\cong\Lambda_X^\vee$, and $T^Y_{\mathcal L\gamma}=(T^X_\gamma)^{-\top}$
+for every loop $\gamma$ in $B_X\setminus\Gamma_X$.
+\end{proposition}
+In the language of \cite[\S1.4]{GSI}, Proposition~\ref{prop:L3} says that $(B_Y,\Lambda_Y)$ is, as a manifold with a
+lattice local system, the Legendre dual of $(B_X,\Lambda_X)$: the tangent lattice of one is the cotangent lattice of the
+other.
+
+\begin{proof}[Proof of Proposition~\ref{prop:L2}(1),(2)]
+(1) By Lemma~\ref{lem:charts}(2), $\Gamma_X$ is the union of the open simplices whose label $(\tau(c_k),\omega(c_0))$ has
+$\dim\tau\ge1$ and $\dim\omega\ge1$. On $B_Y$ the defining condition is that the lower support $\tau_Y(c_0)$ of the bottom
+and the face label $\omega_Y(c_k)$ of the top have dimension at least one; this is the same set of labels.
+
+(2) If $\dim\tau\ge1$ and $\dim\omega\ge1$, then $d_{(\tau,\omega)}\le1$. The one-cells are the pairs of edges; the
+zero-cells are the pairs (triangle, edge) and (edge, two-cell), as $\mathcal T$ is a triangulation. By
+Proposition~\ref{prop:L1}(2) each arc is a one-ball whose two end points are zero-cells, and the arcs at a zero-cell
+$(\tau,\omega)$ are the pairs of edges $(\tau_1,\omega_1)$ with $\tau_1\subseteq\tau$, $\omega_1\subseteq\omega$, all of
+which are dual pairs: three for a triangle $\tau$, and one for each edge of a two-cell $\omega$. A leg $[b_e,b_f]$ is the
+closed simplex of a chain $e\subsetneq f$ with label $(\tau(f),\omega(e))$, a pair of edges, so each arc is a union of
+legs; since the arc is an open one-cell and the legs of other arcs lie in other cells, a point of the arc at which legs
+meet, a barycentre in the interior of a two-face, lies on exactly two legs. A two-cell $\omega$ paired with an edge $\tau$ lies in $\tau^\vee$, a face of $\Delta$ of
+dimension at most two. By admissibility and Definition~\ref{def:profile}, the two-cells of $\Sigma'$ in the two-faces of
+$\Delta$ are unimodular triangles and node parallelograms, and $\mathcal F_C$ has the same two-cells there
+(Proposition~\ref{prop:pulling}). The argument for $\Gamma_Y$ is the same.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:L3}]
+By Propositions~\ref{prop:L1}(5) and~\ref{prop:L2}(1) and Lemma~\ref{lem:charts}(2), $B_X\setminus\Gamma_X$ is covered
+by the open sets $\operatorname{int}F_u$ and $\widetilde R_n$. The open facets are pairwise disjoint, the regions are
+pairwise disjoint, and $\operatorname{int}F_u\cap\widetilde R_n=C_X(u,n)$, an open three-ball, nonempty if and only if
+$\langle u,n\rangle=-1$; there are no triple intersections. On $\operatorname{int}F_u$ the local system $\Lambda_X$ is the
+constant lattice $u^\perp\cap N$ of the facet chart; on $\widetilde R_n$ it is the constant lattice $N/\Z n$, through the
+derivative of $\pi_n$, since all local charts there are restrictions of $\pi_n$ (Lemma~\ref{lem:charts}(1)); on
+$C_X(u,n)$ the two are related by the isomorphism $\pi^X_{un}\colon u^\perp\cap N\to N/\Z n$. On $B_Y$ the roles are
+exchanged: $\mathcal L$ maps $\operatorname{int}F_u$ onto $\widetilde R^*_u$, where $\Lambda_Y$ is the constant lattice
+$M/\Z u$, and $\widetilde R_n$ onto $\operatorname{int}F^*_n$, where $\Lambda_Y$ is $n^\perp\cap M$; on $C_Y(u,n)$ they
+are related by $\pi^Y_{un}\colon n^\perp\cap M\to M/\Z u$.
+
+On $\operatorname{int}F_u$ define $\beta_u\colon M/\Z u\times(u^\perp\cap N)\to\Z$ by $\beta_u(\bar\zeta,x)=\langle\zeta,x\rangle$,
+which is well defined because $\langle u,x\rangle=0$. It is perfect: $u$ is primitive, as a lattice point of the boundary
+of the reflexive polytope $\Delta^\circ$, so $u^\perp\cap N$ is a saturated sublattice of rank three, restriction
+$M\to\operatorname{Hom}(u^\perp\cap N,\Z)$ is surjective, and its kernel is $\Q u\cap M=\Z u$. On $\widetilde R_n$ define
+$\beta_n\colon(n^\perp\cap M)\times N/\Z n\to\Z$ in the same way; it is perfect because $n$ is primitive. On $C_X(u,n)$,
+for $\zeta\in n^\perp\cap M$ and $x\in u^\perp\cap N$,
+\[
+\beta_u\bigl(\pi^Y_{un}\zeta,\,x\bigr)=\langle\zeta,x\rangle=\beta_n\bigl(\zeta,\,\pi^X_{un}x\bigr).
+\]
+So the local pairings agree on the overlaps of the cover and glue to a perfect morphism of local systems $\beta$, which is
+unique because $B_X\setminus\Gamma_X$ is connected. Flatness gives $\beta(T^Y_{\mathcal L\gamma}\zeta,T^X_\gamma
+x)=\beta(\zeta,x)$ for every loop $\gamma$, that is, $T^Y_{\mathcal L\gamma}=(T^X_\gamma)^{-\top}$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:L2}(4)]
+The cells $C_X(u,n)$, $C_X([u,u'],n)$, $C_X(u',n)$ lie in $\widetilde R_n$, where transport is the identity of $N/\Z n$; so
+transport from $C_X(u,n)$ to $C_X(u',n)$ sends $x\in u^\perp\cap N$ to the element $x+\langle u',x\rangle n$ of
+$u'^\perp\cap N$ congruent to $x$ modulo $n$. From $C_X(u',n)$ to $C_X(u',n')$ the loop stays in $\operatorname{int}F_{u'}$,
+and transport is the identity. From $C_X(u',n')$ to $C_X(u,n')$ it is $y\mapsto y+\langle u,y\rangle n'$, and back to
+$C_X(u,n)$ it is the identity. Using $\langle u,x\rangle=0$ and $\langle u,n\rangle=-1$,
+\[
+T^X_\gamma(x)=x+\langle u',x\rangle n+\bigl(\langle u,x\rangle+\langle u',x\rangle\langle u,n\rangle\bigr)n'
+=x+\langle u'-u,x\rangle(n-n').
+\]
+On $B_Y$, $\mathcal L\gamma$ passes through the same labels. From $C_Y(u,n)$ to $C_Y(u',n)$ it stays in
+$\operatorname{int}F^*_n$ (identity); from $C_Y(u',n)$ to $C_Y(u',n')$ it stays in $\widetilde R^*_{u'}$, giving
+$\zeta\mapsto\zeta+\langle\zeta,n'\rangle u'$; then the identity in $\operatorname{int}F^*_{n'}$; and from $C_Y(u,n')$ to
+$C_Y(u,n)$, in $\widetilde R^*_u$, $\eta\mapsto\eta+\langle\eta,n\rangle u$. With $\langle\zeta,n\rangle=0$ and
+$\langle u',n\rangle=-1$ the composite is $\zeta+\langle\zeta,n'-n\rangle(u'-u)$. Both maps are transvections, since
+$\langle u'-u,n-n'\rangle=0$, and they are nontrivial because $u'-u$ is not a multiple of $u$ and $n'-n$ is not a multiple
+of $n$. For $\mathcal F=\Sigma'$ the formula for $T^X_\gamma$ is that of Lemma~\ref{lem:monodromy}, which is
+\cite[Prop.~3.15]{Gross2005} for hypersurfaces.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:L2}(3)]
+By (4), the arc $([u,u'],[n,n'])$ has $T^X-1=\pm(n'-n)\otimes\langle u'-u,\cdot\,\rangle$ and $T^Y-1=\pm(u'-u)\otimes
+\langle\,\cdot\,,n'-n\rangle$. At a zero-cell $([u,u'],\omega)$ all arcs contain the edge $[u,u']$ and share $u'-u$, a
+covector on $B_X$ and a vector on $B_Y$; at a zero-cell $(\tau,[n,n'])$ they share $n'-n$, a vector on $B_X$ and a covector
+on $B_Y$. We check the primitivity and saturation conditions of Definition~\ref{def:types} on $B_Y$, with base cell
+$C_Y(u_1,n)$, $\Lambda_Y=n^\perp\cap M$ and $\Lambda_Y^\vee=N/\Z n$.
+\begin{itemize}
+\item At (triangle $\{u_1,u_2,u_3\}$, $[n,n']$): the common covector is the class of $n'-n$ in $N/\Z n$, which is primitive
+because $n'-n$ is primitive and $\langle u_1,n\rangle=\langle u_1,n'\rangle=-1$, so that $\{0,n,n'\}$ is a unimodular
+triangle and $\Z n+\Z n'$ is saturated. The vectors $u_j-u_i$ lie in $n^\perp\cap M$, sum to zero with orientations, and
+span a saturated rank-two sublattice of $(n'-n)^\perp$, because $\{0,u_1,u_2,u_3\}$ is a face of a unimodular simplex. So
+the vertex is of negative type.
+\item At ($[u,u']$, triangle $\{n_a,n_b,n_c\}$): the common vector $u'-u$ is primitive, as an edge vector of the unimodular
+triangulation $\mathcal T$. The covectors are the classes of $n_b-n_a$, $n_c-n_b$, $n_a-n_c$ in $N/\Z n_a$. The triangle
+is unimodular in its plane, on which $\langle u,\cdot\,\rangle=-1$, so $\{n_a,n_b,n_c\}$ is a basis of the saturated
+rank-three lattice $N\cap\R\{n_a,n_b,n_c\}$; hence the classes of $n_b-n_a$ and $n_c-n_a$ span a saturated rank-two
+sublattice of $N/\Z n_a$, contained in $(u'-u)^\perp$. So the vertex is of positive type.
+\end{itemize}
+The same two computations with the roles of $(u,M)$ and $(n,N)$ exchanged show that on $B_X$ the first vertex is of
+positive type and the second of negative type; for $\mathcal F=\Sigma'$ this is also Lemma~\ref{lem:types}. At a node
+$([u,u'],P)$ the four arcs share $u'-u$, a covector on $B_X$ and a vector on $B_Y$.
+\end{proof}
+
+\begin{remark}[orientation of loops]\label{rem:sameloop}
+For one and the same loop the monodromies of $\Lambda_X$ and $\Lambda_Y$ are inverse transposes of each other, not
+transposes; formulas for the two sides that are transposes of each other refer to loops that are inverse to each other
+under $\mathcal L$. The types of Definition~\ref{def:types} do not depend on the orientation of the loops, since reversing
+it replaces each $d_i$ by $-d_i$, respectively each $\alpha_i$ by $-\alpha_i$; but a statement comparing a monodromy on
+$B_X$ with one on $B_Y$ must use the inverse transpose.
+\end{remark}

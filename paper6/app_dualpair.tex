@@ -1,0 +1,288 @@
+\section{The dual-pair complex}\label{app:legendre}
+
+This appendix proves Lemmas~\ref{lem:faces}, \ref{lem:cayley} and~\ref{lem:charts} and parts (2) and (3) of
+Proposition~\ref{prop:L1}, and the piecewise linear details of Proposition~\ref{prop:L1}(4) and Lemmas~\ref{lem:D}(2) and~\ref{lem:arc}(2). Notation is that of
+Section~\ref{sec:dualpair}; $\mathcal F$ is a fan side with function $h$ (Definition~\ref{def:fanside}). That pulling a point
+preserves the regularity of a subdivision, which the construction of $\mathcal F_C$ uses, is part of
+Proposition~\ref{prop:pulling}.
+
+\subsection{Faces, cells and charts}\label{app:leg-faces}
+\begin{proof}[Proof of Lemma~\ref{lem:faces}]
+(1) A function that is piecewise linear and strictly convex on a complete fan is the negative of the support function of
+a polytope whose normal fan is that fan \cite[\S6.1]{CLS}; since $\check h'$ is strictly convex on the fan over $\mathcal T$,
+the polytope is $\nabla^{\check h'}$. (2) For a convex piecewise linear $g$ the support function
+$m\mapsto\min_{\nabla^g}\langle m,\cdot\,\rangle$ equals $-g$. The function $\check\varphi$ is convex, with
+$\nabla^{\check\varphi}=(\Delta^\circ)^\circ=\Delta$. Support functions add under Minkowski sums and determine a polytope, so
+$\nabla^{\check\varphi+\check h'}=\Delta+\nabla^{\check h'}$. The normal fan of a Minkowski sum is the common refinement of
+the normal fans, and the fan over $\mathcal T$ refines the normal fan of $\Delta$, the fan over the faces of
+$\Delta^\circ$; the face of a sum selected by a functional $\mu$ is the sum of the faces selected by $\mu$
+\cite[Lecture~7]{Ziegler}. For $\mu=\sum_u\lambda_uu$ in the relative interior of $\operatorname{cone}(\tau)$ and
+$n\in\Delta$, $\langle\mu,n\rangle\ge-\sum_u\lambda_u$ with equality if and only if $\langle u,n\rangle=-1$ for every vertex
+$u$ of $\tau$; so the face of $\Delta$ selected by $\mu$ is $\tau^\vee$.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:cayley}]
+(1) A vector $(y,s)$ lies in $\widetilde\Sigma_u$ if and only if $s\ge0$ and $u$ minimises $f(m)=\langle
+m,y\rangle+s\check h'(m)$ on $\Delta^\circ$. For $s=0$ this says that $y$ lies in the inner normal cone of $\Delta^\circ$
+at $u$, which is $\operatorname{cone}(u^\vee)$. For $s=1$, by the optimality condition for the convex function $f$ on the
+convex set $\Delta^\circ$, $u$ is a minimiser if and only if $y\in-\partial\check h'(u)+\operatorname{cone}(u^\vee)$;
+since $\check h'$ is convex and positively homogeneous, $-\partial\check h'(u)=\{w:\langle m,w\rangle\ge-\check h'(m)\
+\forall m,\ \langle u,w\rangle=-\check h'(u)\}=\nabla^{\check h'}_u$. So the slice of $\widetilde\Sigma_u$ at $s=1$ is
+$\nabla^{\check h'}_u+\operatorname{cone}(u^\vee)$, which is also the slice of the cone over $\mathrm{Cay}_u$.
+
+(2) Since $\mathrm{Cay}_u$ lies in an affine hyperplane not through $0$, the fan $\widetilde\Sigma'$ on $\widetilde\Sigma_u$
+is the cone over the regular subdivision of $\mathrm{Cay}_u$ with the heights above, and its mixed cones are the cones over
+the cells with vertices at both levels. By the Cayley trick \cite{HRS}, \cite[\S9.2]{DLRS}, a cell $C$ of that subdivision
+with $C\cap(N_\R\times\{0\})=C_0\times\{0\}$ and $C\cap(N_\R\times\{1\})=C_1\times\{1\}$, both nonempty, corresponds to the
+cell $C_0+C_1$ of the regular mixed subdivision of $u^\vee+\nabla^{\check h'}_u=F_u$ with the same heights, and this is a
+bijection. So the cells of $\mathscr P_X$ in $F_u$ are the cells of that mixed subdivision. For $u\in\tau$, $F_\tau$ is
+the face of $F_u$ selected by any $\mu$ in the relative interior of $\operatorname{cone}(\tau)$, and $\mu$ selects
+$\tau^\vee$ in $u^\vee$ and $\nabla^{\check h'}_\tau$ in $\nabla^{\check h'}_u$ (Lemma~\ref{lem:faces}); the lower faces
+of the lift of $F_u$ lying over $F_\tau$ are the lower faces of the lift of $F_\tau$. This gives the description on
+$F_\tau$. A cell $c$ is the projection of a unique bounded face $\hat c$ of $\widehat A_\tau+\widehat\nabla_\tau$, and if
+$(\zeta,1)$ selects exactly $\hat c$, then $\hat c=\lgface_{(\zeta,1)}\widehat A_\tau+\lgface_{(\zeta,1)}\widehat\nabla_\tau$.
+The first summand is the lift $\hat\omega$ of a cell $\omega\in\mathcal F$, because $h$ is piecewise linear and strictly
+convex on the fan over $\mathcal F$, so that the bounded faces of $\widehat A_\tau$ are the lifts of the cells of
+$\mathcal F$ in $\tau^\vee$; the second is $\lgface_\zeta\nabla^{\check h'}_\tau\times\{0\}$, a face
+$\nabla^{\check h'}_{\tau'}\times\{0\}$ with $\tau'\supseteq\tau$. The decomposition of a face of a Minkowski sum into
+faces of the summands is unique.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:charts}]
+(1) A simplex containing a given one has a smaller bottom cell, whose lower support is contained in $\{n\}$; so the set of
+simplices defining $\widetilde R_n$ is closed under passing to larger simplices, and $\widetilde R_n$ is open. Let $b$ lie
+in the open simplex of $c_0\subsetneq\dots\subsetneq c_k$ with $\omega(c_0)=\{n\}$. Then $b\in\lgri c_k\subseteq\lgri
+F_{\tau(c_k)}$, so the facets through $b$ are the $F_u$ with $u$ a vertex of $\tau(c_k)$, and $n\in\tau(c_0)^\vee\subseteq
+\tau(c_k)^\vee$ by Lemma~\ref{lem:cayley}(2); that is, $\langle u,n\rangle=-1$ for these $u$. Near $b$, $\nabla^{\check h}$
+coincides with $b+T_b$, where $T_b=\{x:\langle u,x\rangle\ge0\ \forall u\in\tau(c_k)\}$ is its tangent cone, and $-n$ lies
+in the interior of $T_b$. Since $\langle u,n\rangle=-1$, the point $x+tn$ lies in $b+T_b$ if and only if
+$t\le\min_u\langle u,x-b\rangle$; so every line $x+\R n$ meets $\partial(b+T_b)$ in exactly one point, at a parameter that
+depends continuously and piecewise linearly on the class of $x$, and $\pi_n$ is a homeomorphism from $\partial(b+T_b)$
+onto $N_\R/\R n$. On $\operatorname{aff}F_u$ the projection is affine with linear part $u^\perp\to N_\R/\R n$, and
+$u^\perp\cap N\to N/\Z n$ is an isomorphism, with inverse $x\mapsto x+\langle u,x\rangle n$, as $\langle u,n\rangle=-1$.
+
+(2) Let $b$ lie in the open simplex of $c_0\subsetneq\dots\subsetneq c_k$. If $\tau(c_k)$ is a vertex $u$, then $b\in\lgri
+c_k\subseteq\operatorname{int}F_u$; if $\omega(c_0)$ is a vertex $n$, then $b\in\widetilde R_n$; otherwise the closed
+simplex lies in $\Gamma_X$. Conversely, the faces of a simplex of $\Gamma_X$ correspond to subchains, which have a larger
+bottom and a smaller top, so their chains again have $\dim\omega\ge1$ at the bottom and $\dim\tau\ge1$ at the top; such an
+open simplex lies in no $\operatorname{int}F_u$ and in no $\widetilde R_n$.
+
+(3) On $\operatorname{int}F_u\cap\widetilde R_n$ the two charts differ by the integral affine isomorphism of (1). Gross's
+chart on the interior of a maximal cell is the facet chart of its facet, and his chart at a vertex $n+w$ of $\mathscr P_X$
+is $\pi_n$ on the open star of the vertex in $\lgBar\mathscr P_X$, which lies in $\widetilde R_n$ because every chain
+through the vertex starts with it.
+\end{proof}
+
+\subsection{The cells of the dual-pair complex are balls}\label{app:leg-balls}
+Fix $\tau\in\mathcal T$ and put $d_\tau=3-\dim\tau$, $A=\tau^\vee$ and $\nabla_\tau=\nabla^{\check h'}_\tau$. Let
+$V_\tau=\{x\in N_\R:\langle u,x\rangle=0\ \forall u\in\tau\}$, of dimension $d_\tau$, with dual $V_\tau^*=M_\R/L_\tau$. Both
+$A$ and $\nabla_\tau$ lie in affine spaces with direction $V_\tau$, and $\nabla_\tau$ has dimension $d_\tau$. An element
+$\zeta\in V_\tau^*$ is a linear function on $V_\tau$, hence an affine function on each of these affine spaces up to an
+additive constant, so $\lgface_\zeta Z$, the set of minimisers of $\zeta$ on $Z$, is well defined for $Z\subseteq A$,
+$Z\subseteq\nabla_\tau$ or $Z\subseteq F_\tau$; likewise $\lgface_{(\zeta,s)}$ on subsets of $(\text{affine space})\times\R$.
+Write $\widehat A=\widehat A_\tau$, $\widehat\nabla=\widehat\nabla_\tau$, and for $\omega\in\mathcal F$, $\omega\subseteq A$,
+let $\hat\omega$ be its lift, a bounded face of $\widehat A$. Define
+\[
+D(\omega)=\{\zeta\in V_\tau^*:\lgface_{(\zeta,1)}\widehat A\supseteq\hat\omega\},\qquad
+\operatorname{cone}_\tau(\tau')=\text{the image of }\operatorname{cone}(\tau')\text{ in }V_\tau^*\quad(\tau'\supseteq\tau),
+\]
+and for a cell $c$ of $\mathscr P_X$ in $F_\tau$ with lifted face $\hat c$ (Lemma~\ref{lem:cayley}),
+$c^*=\{\zeta\in V_\tau^*:\lgface_{(\zeta,1)}(\widehat A+\widehat\nabla)\supseteq\hat c\}$.
+
+\begin{lemma}[one face]\label{lem:onefacet}
+\begin{enumerate}
+\item The $D(\omega)$, for $\omega\in\mathcal F$ with $\omega\subseteq A$, form a polyhedral complex $\mathcal D_\tau$ with
+support $V_\tau^*$; $\dim D(\omega)=d_\tau-\dim\omega$; $D(\omega')$ is a face of $D(\omega)$ if and only if
+$\omega'\supseteq\omega$; and $\lgri D(\omega)=\{\zeta:\lgface_{(\zeta,1)}\widehat A=\hat\omega\}$.
+\item The $\operatorname{cone}_\tau(\tau')$, $\tau'\supseteq\tau$, are pointed and form the normal fan of $\nabla_\tau$ and of
+$F_\tau$ in $V_\tau^*$; $\operatorname{cone}_\tau(\tau')$ is the normal cone of $F_\tau$ at its face $F_{\tau'}$.
+\item $c\mapsto c^*$ is an inclusion-reversing bijection from the cells of $\mathscr P_X$ in $F_\tau$ onto the cells of a
+polyhedral complex $\mathcal R_\tau$ with support $V_\tau^*$, with $\dim c+\dim c^*=d_\tau$ and
+$c^*=D(\omega(c))\cap\operatorname{cone}_\tau(\tau')$ for $c=\omega(c)+\nabla^{\check h'}_{\tau'}$.
+\item $\lgri c^*\subseteq\lgri D(\omega(c))$. Hence $c^*\subseteq D(\omega)$ if and only if $\omega(c)\supseteq\omega$, and
+every $D(\omega)$ is the union of the cells of $\mathcal R_\tau$ it contains.
+\item The recession cone of $c^*$ is $\operatorname{cone}_\tau(\tau(c))$. In particular $c^*$ is unbounded if and only if $c$
+lies in the relative boundary of $F_\tau$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+We use the standard properties of the normal cones $\mathcal N_\Pi(\Phi)=\{\ell:\lgface_\ell\Pi\supseteq\Phi\}$ of the
+faces $\Phi$ of a polyhedron $\Pi$ in a real affine space $W$ \cite[Lecture~7]{Ziegler}: they form a fan whose support is
+the set of linear functions bounded below on $\Pi$; $\dim\mathcal N_\Pi(\Phi)=\dim W-\dim\Phi$, also when $\Pi$ is not
+full-dimensional; $\mathcal N_\Pi(\Phi')$ is a face of $\mathcal N_\Pi(\Phi)$ if and only if $\Phi'\supseteq\Phi$; and
+$\lgri\mathcal N_\Pi(\Phi)$ consists of the functions selecting exactly $\Phi$.
+
+(1) The recession cone of $\widehat A$ is $\R_{\ge0}(0,1)$, so every $(\zeta,1)$ is bounded below on it and selects a bounded
+face, the lift of a cell of $\mathcal F|_A$ (Lemma~\ref{lem:cayley}). A normal cone of a bounded face contains a vector with
+positive last coordinate and lies in $\{s\ge0\}$, so its relative interior lies in $\{s>0\}$ and its slice at $s=1$ has one
+dimension less. The statements follow from those for normal cones, with $W$ the product of $\R$ and the affine space with
+direction $V_\tau$ containing $A$, of dimension $d_\tau+1$.
+
+(2) By Lemma~\ref{lem:faces} the normal fans of $\nabla^{\check h}$ and of $\nabla^{\check h'}$ are the fan over $\mathcal T$,
+and $F_\tau$ and $\nabla_\tau$ are their faces with normal cone $\operatorname{cone}(\tau)$. The normal fan of a face $\Phi$ of
+a polytope $\Pi$, in the quotient of the dual space by the span of $\mathcal N_\Pi(\Phi)$, consists of the images of the
+$\mathcal N_\Pi(\Phi')$ for the faces $\Phi'\subseteq\Phi$; here the span of $\operatorname{cone}(\tau)$ is $L_\tau$. Since
+$\tau$ is a face of the simplex $\tau'$, $\operatorname{cone}(\tau')\cap L_\tau=\operatorname{cone}(\tau)$, so the image of
+$\operatorname{cone}(\tau')$ is pointed.
+
+(3) Apply the properties of normal cones to $\Pi=\widehat A+\widehat\nabla$, which has dimension $d_\tau+1$ because
+$\nabla_\tau$ has dimension $d_\tau$: the slices at $s=1$ of the normal cones of its bounded faces form a polyhedral complex
+with support $V_\tau^*$, inclusion-reversing in the faces, with $\dim c^*=d_\tau-\dim c$. The minimum of $(\zeta,1)$ on $\Pi$
+is the sum of its minima on $\widehat A$ and on $\widehat\nabla$, and a point $x+y$ with $x\in\widehat A$,
+$y\in\widehat\nabla$ attains it if and only if $x$ and $y$ attain theirs. So $\lgface_{(\zeta,1)}\Pi\supseteq\hat\omega+
+\nabla^{\check h'}_{\tau'}\times\{0\}$ if and only if $\lgface_{(\zeta,1)}\widehat A\supseteq\hat\omega$ and
+$\lgface_\zeta\nabla_\tau\supseteq\nabla^{\check h'}_{\tau'}$, that is, $\zeta\in D(\omega)\cap\operatorname{cone}_\tau(\tau')$.
+
+(4) If $\zeta\in\lgri c^*$, then $(\zeta,1)$ selects exactly $\hat c=\hat\omega(c)+\nabla^{\check h'}_{\tau'}\times\{0\}$, hence
+selects exactly $\hat\omega(c)$ in $\widehat A$, so $\zeta\in\lgri D(\omega(c))$ by (1). Since the relative interiors of the
+cells of $\mathcal R_\tau$ and of $\mathcal D_\tau$ both partition $V_\tau^*$, every $D(\omega)$ is the union of the $c^*$
+with $\lgri c^*\subseteq D(\omega)$, and $\lgri c^*\subseteq D(\omega)$ holds if and only if $D(\omega(c))\subseteq
+D(\omega)$, that is, $\omega(c)\supseteq\omega$.
+
+(5) The recession cone of the slice at $s=1$ of the closed cone $\mathcal N_\Pi(\hat c)$ is its slice at $s=0$,
+$\{\zeta:\hat c\subseteq\lgface_{(\zeta,0)}\Pi\}$. As $\Pi$ projects onto $F_\tau$ and $(\zeta,0)$ does not see the last
+coordinate, this is $\{\zeta:c\subseteq\lgface_\zeta F_\tau\}$, the normal cone of $F_\tau$ at the smallest face containing $c$,
+which is $F_{\tau(c)}$; by (2) it is $\operatorname{cone}_\tau(\tau(c))$. It is zero if and only if $\tau(c)=\tau$, that is,
+$c\not\subseteq\partial F_\tau$.
+\end{proof}
+
+For $p=(\tau,\omega)\in\lgDP$ let $\mathcal C_p$ be the set of cells of $\mathcal R_\tau$ contained in $D(\omega)$, a
+polyhedral complex with support $D(\omega)$ by Lemma~\ref{lem:onefacet}(4); let $\mathcal C_p^\partial$ be its subcomplex of
+cells contained in the relative boundary $\partial D(\omega)$, and $\mathcal C_p^u$ the set of its unbounded cells. For a
+poset $\mathcal C$, $\lgOrd(\mathcal C)$ is its order complex, whose simplices are the chains; the order complex of a subposet
+is a subcomplex. Let $\lgBar^{\preceq p}$ and $\lgBar^{\prec p}$ be the sets of simplices of $\lgBar\mathscr P_X$ whose label
+is $\preceq p$, respectively $\prec p$.
+
+\begin{lemma}[order complexes]\label{lem:ordcx}
+The label of a simplex is $\preceq$ the label of every simplex containing it, so $\lgBar^{\preceq p}$ and $\lgBar^{\prec p}$
+are subcomplexes and $C_X(p)=|\lgBar^{\preceq p}|\setminus|\lgBar^{\prec p}|$. The map $c\mapsto c^*$ induces isomorphisms of
+simplicial complexes
+\[
+\lgBar^{\preceq p}\cong\lgOrd(\mathcal C_p),\qquad\lgBar^{\prec p}\cong\lgOrd(\mathcal C_p^\partial)\cup
+\lgOrd(\mathcal C_p^u).
+\]
+\end{lemma}
+\begin{proof}
+A face of a simplex corresponds to a subchain, which has a smaller top and a larger bottom, so its face label and its lower
+support are larger: its label is $\preceq$. A chain has label $\preceq p$ if and only if $c_k\subseteq F_\tau$ and
+$\omega(c_0)\supseteq\omega$, that is, if and only if all its cells lie in $U_p=\{c\subseteq F_\tau:\omega(c)\supseteq
+\omega\}$, since face labels decrease and lower supports increase along a chain. By Lemma~\ref{lem:onefacet}(3),(4),
+$c\mapsto c^*$ is an order-reversing bijection from $U_p$ onto $\mathcal C_p$, and a poset and its opposite have the same
+order complex. The label of a chain in $U_p$ is $\prec p$ if and only if $\tau(c_k)\supsetneq\tau$ or
+$\omega(c_0)\supsetneq\omega$. The first condition says that $c_k^*$ is unbounded (Lemma~\ref{lem:onefacet}(5)); since
+$c_k^*$ is contained in every $c_i^*$, all cells of the image chain are then unbounded, and conversely. The second says
+that $D(\omega(c_0))$ is a proper face of $D(\omega)$, that is, $c_0^*\subseteq\partial D(\omega)$
+(Lemma~\ref{lem:onefacet}(1),(4)); since $c_0^*$ contains every $c_i^*$, the image chain then lies in $\mathcal
+C_p^\partial$, and conversely.
+\end{proof}
+
+\begin{lemma}[truncation]\label{lem:trunc}
+Let $W$ be a finite-dimensional real vector space, $g\colon W\to\R_{\ge0}$ convex and positively homogeneous with $g(x)>0$
+for $x\ne0$, and $\mathcal C$ a finite polyhedral complex in $W$ whose support is a convex polyhedron $D$ of dimension $k$
+and such that $g$ is linear on every cell. Choose $R$ larger than the value of $g$ at every vertex of every cell. Then
+$\lgOrd(\mathcal C)$ is isomorphic to a linear triangulation of the convex polytope $D_R=D\cap\{g\le R\}$, of dimension
+$k$, and the isomorphism carries $\lgOrd(\mathcal C^\partial)\cup\lgOrd(\mathcal C^u)$ onto a triangulation of its boundary,
+where $\mathcal C^\partial$ is the subcomplex of cells in $\partial D$ and $\mathcal C^u$ the set of unbounded cells. In
+particular $|\lgOrd(\mathcal C)|$ is a piecewise linear $k$-ball with boundary $|\lgOrd(\mathcal C^\partial)\cup
+\lgOrd(\mathcal C^u)|$.
+\end{lemma}
+\begin{proof}
+Let $e$ be a cell and $\ell_e$ the linear function equal to $g$ on $e$. For $v$ in the recession cone of $e$ and $x\in e$,
+$\ell_e(v)=\lim_{t\to\infty}g(x+tv)/t=g(v)$, which is positive for $v\ne0$; so $e$ contains no line, has a vertex, and
+$e_R=e\cap\{\ell_e\le R\}$ is a polytope. If $e$ is bounded it is the convex hull of its vertices, $g<R$ on $e$, and
+$e_R=e$. If $e$ is unbounded, the hyperplane $\{\ell_e=R\}$ separates the vertices of $e$ from points far out along a
+recession direction and meets $\lgri e$; so $e'=e\cap\{\ell_e=R\}$ is a facet of $e_R$ with $\lgri e'\subseteq\lgri e$.
+Since the hyperplane contains no vertex, the faces of $e_R$ are the $f_R$ for the faces $f$ of $e$ and the $f'$ for the
+unbounded faces $f$ of $e$.
+
+Realise $\lgOrd(\mathcal C)$ by sending $e$ to its barycentre $p(e)$ if $e$ is bounded and to a point $p(e)\in\lgri e'$ if
+$e$ is unbounded, and a chain $e_0<\dots<e_j$ to $\operatorname{conv}\{p(e_0),\dots,p(e_j)\}$. We show by induction on
+$\dim e$ that the chains with top $\le e$ give a triangulation of $e_R$ in which the chains of unbounded cells triangulate
+$e'$. For bounded $e$ this is the derived subdivision: $e$ is the cone from its barycentre over $\partial e=\bigcup_{f<e}f$.
+For unbounded $e$, $p(e)$ lies in the relative interior of the facet $e'$ of $e_R$, and $e'$ is the only facet of $e_R$
+containing it. A polytope is the union of the cones from a point in the relative interior of one facet over the other
+facets, and these cones meet along the cones over common faces: a ray from $p(e)$ inside $e'$ leaves $e_R$ through
+$\partial e'$, which is covered by other facets, and any other ray leaves $\operatorname{aff}e'$ at once and exits through
+a facet different from $e'$. The facets of $e_R$ other than $e'$ are the $f_R$ for the facets $f$ of $e$, so
+$e_R=p(e)*\bigcup_{f<e}f_R$ and likewise $e'=p(e)*\bigcup_{f<e\text{ unbounded}}f'$, and the induction hypothesis applies
+to the $f$. The triangulations of the $e_R$ agree on common faces, so they form a triangulation of $\bigcup_ee_R=D_R$. The
+chains in $\mathcal C^\partial$ triangulate $\partial D\cap\{g\le R\}$, because a cell whose relative interior meets a
+proper face of $D$ lies in it; and the chains in $\mathcal C^u$ triangulate $\bigcup_ee'=D\cap\{g=R\}$, as $g<R$ on a bounded cell.
+
+$D_R$ is convex and compact, as $g$ is bounded below by a positive multiple of a norm. It meets $\{g<R\}\cap\lgri D$, near
+a vertex of a cell, so it has dimension $k$, and its relative boundary is $(\partial D\cap\{g\le R\})\cup(D\cap\{g=R\})$.
+A linearly triangulated convex $k$-polytope is a piecewise linear $k$-ball with boundary the triangulated relative boundary
+\cite[Ch.~1--2]{RS}.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:L1}(2),(3)]
+(2) Let $p=(\tau,\omega)$. Apply Lemma~\ref{lem:trunc} to $\mathcal C=\mathcal C_p$ in $W=V_\tau^*$, with
+$g(\zeta)=\langle\zeta,x_0\rangle-\min_{y\in\nabla_\tau}\langle\zeta,y\rangle$ for a point $x_0$ in the relative interior of
+$\nabla_\tau$. This $g$ is convex and positively homogeneous, positive off $0$ because a nonzero $\zeta\in V_\tau^*$ is not
+constant on the $d_\tau$-dimensional affine space of $\nabla_\tau$, and linear on every cone $\operatorname{cone}_\tau(\tau')$,
+on which $\min_{\nabla_\tau}\zeta$ is attained at a fixed point of $\nabla^{\check h'}_{\tau'}$. Every cell of $\mathcal R_\tau$
+lies in some $\operatorname{cone}_\tau(\tau')$ (Lemma~\ref{lem:onefacet}(3)), so $g$ is linear on the cells of $\mathcal C_p$,
+whose support $D(\omega)$ is a convex polyhedron of dimension $d_\tau-\dim\omega=d_p$. The polyhedron $D(\omega)$ contains
+lines when $\tau^\vee$ has dimension less than $d_\tau$; this is why the truncation uses $g$ rather than a linear function.
+By Lemmas~\ref{lem:ordcx} and~\ref{lem:trunc}, $|\lgBar^{\preceq p}|$ is a piecewise linear ball of dimension $d_p$ with
+boundary $|\lgBar^{\prec p}|$. Every open simplex of $\lgBar\mathscr P_X$ has exactly one label, so $|\lgBar^{\preceq
+p}|=\bigcup_{q\preceq p}C_X(q)$ and $|\lgBar^{\prec p}|=\bigcup_{q\prec p}C_X(q)$, and $C_X(p)$ is the interior of the ball.
+As $d_q<d_p$ for $q\prec p$, this is a regular CW decomposition with face poset $(\lgDP,\preceq)$.
+
+(3) The arguments of this appendix use only the conclusions of Lemmas~\ref{lem:faces}--\ref{lem:charts}, which hold for
+$B_Y$ with face label and lower support exchanged: on a face $F^*_\omega$ one uses the complex dual to
+$(\omega^\vee,\mathcal T|_{\omega^\vee},\check h)$ in $M_\R/L_\omega$ and the normal fan of $\nabla^{H'}_\omega$. The labels
+$\lambda_Y$ take values in the same set $\lgDP$ with the same order, since both the definition of a dual pair and the order
+are symmetric in the two factors.
+\end{proof}
+
+\subsection{Piecewise linear details}\label{app:leg-pl}
+\emph{Uniqueness in Proposition~\ref{prop:L1}(4).} If $\mathcal L_1,\mathcal L_2$ both map every $C_X(p)$ onto $C_Y(p)$, $\phi=\mathcal L_2^{-1}\mathcal L_1$ is a homeomorphism of $B_X$ preserving
+every cell $C_X(p)$, hence every closed cell. Write $B_X^{(k)}$ for the union of the closed cells of dimension at most $k$,
+and identify each closed cell $\overline{C_X(p)}=\Psi_X(|\lgOrd^{\preceq p}|)$, through $\Psi_X$, with the cone from the
+vertex $p$ over its boundary sphere. We show by induction on $k$ that $\phi$ is isotopic, through cell-preserving
+homeomorphisms, to a homeomorphism $\phi_k$ that is the identity on $B_X^{(k)}$; for $k=0$ take $\phi_0=\phi$, which fixes
+the zero-cells. Suppose $\phi_{k-1}$ has been found. On each closed $k$-cell $\bar e$, $\phi_{k-1}$ fixes the boundary
+sphere, and the Alexander trick \cite{Ale23} in the cone coordinates of $\bar e$ gives an isotopy $I^e_s$ of $\bar e$
+relative to $\partial\bar e$ with $I^e_0=\phi_{k-1}|_{\bar e}$ and $I^e_1=\mathrm{id}$. These agree on the overlaps, which
+lie in $B_X^{(k-1)}$, and define an isotopy $I_s$ of $B_X^{(k)}$ preserving every cell. Put
+$\theta_s=I_s\circ(\phi_{k-1}|_{B_X^{(k)}})^{-1}$, an isotopy of $B_X^{(k)}$ through cell-preserving homeomorphisms with
+$\theta_0=\mathrm{id}$, and extend it cellwise in increasing dimension to an isotopy $\Theta_s$ of $B_X$: on a closed cell
+of dimension $m>k$ on whose boundary sphere $\Theta_s$ is defined, let $\Theta_s(\lambda p+(1-\lambda)x)=\lambda
+p+(1-\lambda)\Theta_s(x)$ in the cone coordinates. Each $\Theta_s$ is a cell-preserving homeomorphism, $\Theta_0=\mathrm{id}$,
+and $\Theta_s\circ\phi_{k-1}$ runs from $\phi_{k-1}$ to $\phi_k=\Theta_1\circ\phi_{k-1}$, which is the identity on
+$B_X^{(k)}$. For $k=3$ this gives an isotopy $\Omega_s$ from $\phi$ to the identity through cell-preserving
+homeomorphisms, and $\mathcal L_2\circ\Omega_s$ is an isotopy from $\mathcal L_1$ to $\mathcal L_2$ through homeomorphisms
+with the property of (4).
+
+\begin{proof}[Proof of Lemma~\ref{lem:arc}(2)]
+A chain lies in $\operatorname{st}p_e$ exactly when its union with $\{p_e\}$ is a chain, that is, when it is contained in
+$\{z_-,z_+,p_e\}\cup\lgDP_{\succ p_e}$ and contains at most one of the incomparable $z_\pm$. So $\operatorname{st}p_e$ is
+the simplicial join $\{z_-,z_+\}*\{p_e\}*\lgOrd(\lgDP_{\succ p_e})$. By (1), $\epsilon$ identifies $\lgDP_{\succ p_e}$ with
+the nonzero sign vectors, which form the face poset of $\partial\Diamond$; so $\lgOrd(\lgDP_{\succ p_e})$ is isomorphic to
+the barycentric subdivision of $\partial\Diamond$. The join of this triangulation with the vertex $0$ and with the two
+vertices $\pm e_3$ is a triangulation of $V$: every point of $V^\circ$ with $\pm x_3\ge0$ is uniquely $(1-s)(\pm e_3)+s\,w$
+with $s\in(0,1]$ and $w\in\Diamond$, and every $w\ne0$ is uniquely $t\,y$ with $t\in(0,1]$ and $y\in\partial\Diamond$. Let
+$E_e\colon|\operatorname{st}p_e|\to V$ be the resulting simplicial isomorphism, which sends $z_\pm$ to $\pm e_3$ and $p_e$ to
+$0$, and put $\Phi^X_e=E_e\circ\Psi_X^{-1}$, $\Phi^Y_e=E_e\circ\Psi_Y^{-1}$; then $\Phi^Y_e\circ\mathcal L=\Phi^X_e$. As in the
+proof of Lemma~\ref{lem:D}, $\Psi_Y$ maps the union of the open simplices of the chains with top $p$ onto $C_Y(p)$. In
+$\operatorname{st}p_e$ a chain with top $p\succ p_e$ is $c_-\cup c_+$ with $c_-\subseteq\{z_\pm,p_e\}$ and $\emptyset\ne
+c_+\subseteq\lgDP_{\succ p_e}$ with top $p$, and the points of its open simplex are the points $(1-s)(\pm e_3)+s\,t\,y$ with
+$s,t>0$ and $y$ in the open simplex of $c_+$, which lies in the relative interior of the face of $\epsilon(p)$; so
+$(x_1,x_2)=st\,y\in\mathcal O^{(2)}_{\epsilon(p)}$, and every point of $V^\circ$ with $(x_1,x_2)\in\mathcal
+O^{(2)}_{\epsilon(p)}$ arises in this way. The chains with top $p_e$ in $\operatorname{st}p_e$ are $\{p_e\}$ and
+$\{z_\pm,p_e\}$, whose open simplices form the open segment between $-e_3$ and $e_3$. The open star of $p_e$ is open in
+$|\lgOrd(\lgDP)|$, contains the open arc and lies in $\operatorname{st}p_e$.
+\end{proof}
+
+\emph{Uniqueness in Lemma~\ref{lem:D}(2).} Two homeomorphisms with the property differ by a homeomorphism $\chi$
+of $O$ preserving every $\mathcal O_\epsilon\cap O$. These sets are not the cells of a cell decomposition of $O$, since for
+$\epsilon\ne0$ the set $\mathcal O_\epsilon\cap O$ contains $\mathcal O_\epsilon\cap\partial O=\lgri\lgface(\epsilon)$, where
+$\lgface(\epsilon)=\operatorname{conv}\{\epsilon_ie_i:\epsilon_i\ne0\}$. We use instead the regular cell decomposition of
+$O$ with open cells $\{0\}$, the sets $\mathcal O_\epsilon\cap\operatorname{int}O$ for $\epsilon\ne0$, and the sets
+$\lgri\lgface(\epsilon)\subseteq\partial O$; its closed cells are the simplices
+$\operatorname{conv}(\{0\}\cup\lgface(\epsilon))$ and $\lgface(\epsilon)$. By invariance of domain $\chi$ maps
+$\operatorname{int}O$ onto itself, hence $\partial O$ onto itself, so it preserves every cell of this decomposition. The
+argument given above for Proposition~\ref{prop:L1}(4), with the closed cells, which are simplices, as cones from their
+barycentres, shows that $\chi$ is isotopic to the identity through homeomorphisms preserving every cell, and hence every
+$\mathcal O_\epsilon\cap O$.

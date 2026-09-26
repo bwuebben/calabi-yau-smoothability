@@ -1,0 +1,486 @@
+\section{Estimates for the localized mirror}\label{app:mirror}
+
+This appendix proves Lemmas~\ref{lem:onecell}, \ref{lem:W}, \ref{lem:NM} and~\ref{lem:TR} of
+Section~\ref{sec:regime}, and Lemma~\ref{lem:windows} of Section~\ref{sec:lift}, under the standing assumptions of
+Section~\ref{sec:regime} and in its notation. At a point $x$ of a chart $U_{\mathsf c}$ the Cox monomials are evaluated in
+the chart, and we put
+\[
+\mathfrak m(x):=\max_m|\gamma_mx^m(x)|,\qquad \mathfrak S(x):=\sum_m|\gamma_mx^m(x)|^2,
+\]
+so that $\mathfrak m\le\mathfrak S^{1/2}\le|\mathcal A|^{1/2}\mathfrak m$. The \emph{transition set} $\operatorname{Trans}(x)$ is the
+set of $n\neq0$ with $\theta_1/4\le\tilde d_n(x)\le\theta_1/2$; outside it each $\psi_n$ is locally constant, equal to $1$
+or $0$. We use $e_{\max}$, $\mathcal E_P$ (Definition~\ref{def:node}), $D$ and $\theta_2$ (Section~\ref{ssec:localized}),
+and write $\beta'_{\max}=\max|\beta'|$. Constants $C$, $c$ depend only on the configuration and on $\mathscr K_0$, unless a
+dependence on $r$ or $\eta_0$ is indicated.
+
+\subsection{Deficits, cut-offs and a regularity criterion}\label{app:deficits}
+
+\begin{proof}[Proof of Lemma~\ref{lem:onecell}]
+A lower face of $\operatorname{conv}\{(n,H(n))\}$ is the set of lifted points on which $n\mapsto\langle p,n\rangle-H(n)$ is
+maximal, for some $p\in M_\R$. So $I$ is cellular if and only if $d^{\rm tr}_n(p)=0$ for all $n\in I$ and some $p$, that
+is, $\gamma^*(I)=0$. The function $p\mapsto\max_{n\in I}d^{\rm tr}_n(p)$ is convex, piecewise linear and nonnegative, so
+its infimum is attained (it is the value of the linear program: minimise $\gamma$ subject to
+$\langle p,m-n\rangle-H(m)+H(n)\le\gamma$ for $n\in I$, $m\in\mathcal A$). Hence $\gamma^*(I)>0$ for non-cellular $I$, and
+$\theta_0>0$ as a minimum over finitely many sets.
+
+Let $c_*$ bound $|\log|c_m/c_n||$ over the union of the sets $U^+_\C(c^{(0)})$, $c^{(0)}\in\mathscr K_0$, which is compact.
+At a torus point, $|d_n(x)-d^{\rm tr}_n(p)|\le2c_*/L$. If $L\ge8c_*/\theta_0$, the set $I=\{n:d_n(x)<3\theta_0/4\}$ has
+$\max_Id^{\rm tr}_n(p)<\theta_0$, so it is cellular. At a point $x$ of the toric boundary, $d_n(x')\to d_n(x)$ for torus
+points $x'\to x$ (with limit $\infty$ where $x^n(x)=0$), because the maximum is attained by a monomial not vanishing at
+$x$; so $\{n:d_n(x)<3\theta_0/4\}\subseteq\{n:d_n(x')<3\theta_0/4\}$ for $x'$ close to $x$, and subsets of cellular sets
+are cellular.
+\end{proof}
+
+\begin{lemma}[derivatives of the cut-offs]\label{lem:refined}
+Let $x$ lie in a chart $U_{\mathsf c}$.
+\begin{enumerate}
+\item $d_n\le\tilde d_n\le d_n+\log|\mathcal A|/(2L)$, and $|\gamma_nx^n(x)|\le t^{\theta_1/4}\mathfrak S(x)^{1/2}$ for
+$n\in\operatorname{Trans}(x)$.
+\item For $\ell\in M_\R$ let $\partial_\ell$ be the holomorphic vector field of the torus action with
+$\partial_\ell\chi^m=\langle\ell,m\rangle\chi^m$, and $v_\ell:=2\operatorname{Re}\partial_\ell$ the corresponding real field.
+Then $d\psi_n(Jv_\ell)=0$ and $|d\psi_n(v_\ell)|\le\beta'_{\max}|\ell|D/L$.
+\item Let $Z$ be a Cox coordinate of the chart, $e(m)$ the $Z$-exponent of $m$, and $v=\partial/\partial\operatorname{Re}Z$.
+Then $\partial_Z\tilde d_n=(\bar e-e(n))/(2LZ)$ with $\bar e=\sum_mp_me(m)$, $p_m=|\gamma_mx^m|^2/\mathfrak S$, and
+\[
+\sum_n|\gamma_nx^n|\bigl(|d\tilde\psi_n(v)|+|d\tilde\psi_n(Jv)|\bigr)\le\frac{2\beta'_{\max}}L\Bigl[\Bigl(\sum_{\substack{n\in\operatorname{Trans}\\
+e(n)=0}}\frac{|\gamma_nx^n|}{\mathfrak S^{1/2}}\Bigr)\mathcal D_Z+\sum_{\substack{n\in\operatorname{Trans}\\ e(n)\ge1}}\bigl(e(n)+e_{\max}\bigr)
+\Bigl|\frac{\gamma_nx^n}Z\Bigr|\Bigr],
+\]
+where $\mathcal D_Z:=\sum_me(m)|\gamma_mx^m/Z|$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(1) $\max_m|\gamma_mx^m|^2\le\mathfrak S\le|\mathcal A|\max_m|\gamma_mx^m|^2$. If $\tilde d_n\ge\theta_1/4$ then
+$|\gamma_nx^n|^2\le t^{\theta_1/2}\mathfrak S$. (2) The weights depend only on the moduli, which the compact torus
+preserves, so $d\psi_n(Jv_\ell)=0$. Since $v_\ell\log|\chi^m|^2=2\langle\ell,m\rangle$,
+$v_\ell\tilde d_n=\frac1L\bigl(\sum_mp_m\langle\ell,m\rangle-\langle\ell,n\rangle\bigr)$, of modulus at most $|\ell|D/L$.
+(3) $|\gamma_mx^m|^2$ depends on $Z$ through $|Z|^{2e(m)}$, so $\partial_Z\log|\gamma_mx^m|^2=e(m)/Z$, which gives the
+formula. For a real function $\phi$, $|d\phi(v)|+|d\phi(Jv)|\le4|\partial_Z\phi|$, and
+$d\tilde\psi_n=(1-s)\beta'(\tilde d_n)\,d\tilde d_n$ vanishes unless $n\in\operatorname{Trans}$ (the origin has constant weight).
+For $e(n)=0$, $|\bar e|\,|\gamma_nx^n|/|Z|\le(|\gamma_nx^n|/\mathfrak S^{1/2})\sum_me(m)|\gamma_mx^m|/|Z|$ because
+$p_m\le|\gamma_mx^m|/\mathfrak S^{1/2}$; for $e(n)\ge1$, $|\bar e-e(n)|\le e(n)+e_{\max}$.
+\end{proof}
+
+\begin{lemma}[regularity criterion]\label{lem:wirt}
+Let $g_1,\dots,g_k$ be holomorphic and $\phi_1,\dots,\phi_k$ smooth real functions near a point $x$ of $\C^4$, and
+$F=\sum_i\phi_ig_i$. Let $v$ be a real tangent vector at $x$, and put
+\[
+h:=\sum_i\phi_i(x)\,dg_i(v),\qquad \mathcal J:=\sum_i|g_i(x)|\bigl(|d\phi_i(v)|+|d\phi_i(Jv)|\bigr).
+\]
+If $|h|>\mathcal J$, then $dF_x$ maps $\operatorname{span}_\R(v,Jv)$ onto $\C$; in particular $dF_x$ has real rank two.
+\end{lemma}
+
+\begin{proof}
+For $w=\lambda v+\mu Jv$, $dg_i(w)=(\lambda+i\mu)dg_i(v)$, so
+$dF(w)=(\lambda+i\mu)h+\sum_ig_i(x)\bigl(\lambda\,d\phi_i(v)+\mu\,d\phi_i(Jv)\bigr)$. The second term has modulus at most
+$\mathcal J|\lambda+i\mu|$. So $dF(w)\ne0$ for $w\ne0$, and the $\R$-linear map $\R^2\to\C$ is injective, hence onto.
+\end{proof}
+
+On $X_{\mathcal T}$ we apply Lemma~\ref{lem:wirt} in a chart, to $F^{(s)}$ divided by a Cox monomial that does not vanish
+at $x$, with $g_n=\gamma_nx^n$ divided by the same monomial and $\phi_n=\tilde\psi_n$; at a zero of $F^{(s)}$ this division
+does not affect the rank.
+
+\subsection{Proof of the transport lemma}\label{app:W}
+
+Let $x\in W_s$, and put $\mathcal C^\circ(x):=\mathcal C(x)\setminus\{0\}$ and $\mathcal H(x)$ the smallest face of $\Delta$
+containing $\mathcal C^\circ(x)$.
+
+\begin{lemma}[the cases]\label{lem:cases}
+At least one of the following holds: (A) $\mathcal C(x)$ is affinely independent; (B) $\mathcal H(x)$ is a facet $u^\vee$;
+(C) $\mathcal C^\circ(x)$ is a node parallelogram $P$, and then $x\in\mathcal U_P$.
+\end{lemma}
+
+\begin{proof}
+By Lemmas~\ref{lem:onecell} and~\ref{lem:hull}, $\mathcal C(x)\subseteq\{0\}\cup\omega$ for a cell $\omega$ of $\mathcal F_C$,
+so $\mathcal C^\circ(x)\subseteq\omega\subseteq\partial\Delta$ and $\mathcal H(x)$ is a proper face. If it is not a facet, it
+has dimension at most two, and $\mathcal C^\circ(x)$ lies in the cell $\omega\cap\mathcal H(x)$ of the subdivision of
+$\mathcal H(x)$ induced by $\mathcal F_C$. Since $\mathcal F_C$ agrees with $\Sigma'$ on the two-skeleton
+(Proposition~\ref{prop:pulling}), this cell is a cell of $\sigma$ (Definition~\ref{def:profile}): a point, a primitive
+segment, a unimodular triangle, a unit square, or one of the parallelograms and triangles of the subdivision of a
+pentagon or of a hexagon, on either branch. Each of these has no lattice points other than its vertices, and a set of
+vertices of such a cell is affinely independent unless it is all four vertices of a node parallelogram. Since
+$0\notin\operatorname{aff}\mathcal H(x)$, $\mathcal C(x)$ is affinely independent if and only if $\mathcal C^\circ(x)$ is. If
+$\mathcal C^\circ(x)=P$, the monomials of $P$ do not vanish at $x$, so the Cox coordinates vanishing at $x$ are among those
+of the vertices $\bar u$ of $\mathcal T$ with $P\subseteq\bar u^\vee$, that is $\bar u\in G^\circ=\{u,u'\}$; hence
+$x\in U_{u,u'}$.
+\end{proof}
+
+\emph{Case (A).} Let $n_0$ be a maximal monomial at $x$; it lies in $\mathcal C(x)$ and has $\tilde\psi_{n_0}=1$. Put
+$f:=F^{(s)}/(\gamma_{n_0}x^{n_0})=\sum_n\tilde\psi_n(\gamma_n/\gamma_{n_0})\chi^{n-n_0}$, regular near $x$. Since $|f|=0$ at
+$x$ and the monomials outside the core contribute at most $|\mathcal A|t^{\theta_0/2}$,
+\[
+\sum_{n\in\mathcal C(x)\setminus\{n_0\}}\tilde\psi_n\frac{|\gamma_nx^n|}{\mathfrak m}\ \ge\ 1-|\mathcal A|t^{\theta_0/2},
+\]
+so some $n_1\in\mathcal C(x)\setminus\{n_0\}$ has $\tilde\psi_{n_1}|\gamma_{n_1}x^{n_1}|\ge\mathfrak m/(2|\mathcal A|)$. Since
+$\mathcal C(x)$ is affinely independent, there is $\ell\in M_\R$ with $\langle\ell,n-n_0\rangle=0$ for
+$n\in\mathcal C(x)\setminus\{n_0,n_1\}$ and $\langle\ell,n_1-n_0\rangle=1$; among the finitely many affinely independent
+subsets of $\mathcal A$ we may take $|\ell|\le\ell_{\max}$. With $v=v_\ell$ and $g_n=(\gamma_n/\gamma_{n_0})\chi^{n-n_0}$,
+\[
+|h|\ \ge\ \frac1{2|\mathcal A|}-\ell_{\max}D\,|\mathcal A|\,t^{\theta_0/2},\qquad \mathcal J\ \le\
+\frac{\beta'_{\max}\ell_{\max}D}{L}\,|\mathcal A|^{3/2}t^{\theta_1/4}
+\]
+by Lemma~\ref{lem:refined}(1),(2). For $t$ small, $|h|>\mathcal J$, and Lemma~\ref{lem:wirt} applies. (In particular
+$v_\ell(x)\neq0$.)
+
+\emph{Case (B).} We use the following domination.
+
+\begin{lemma}[domination on a facet]\label{lem:slide}
+Let $\mathcal H(x)=u^\vee$ be a facet. Then $x$ lies in the chart $U_{\mathsf c}$ of every maximal cone $\mathsf c\ni u$, the Cox
+coordinates of $\sigma$ other than $Z_u$ do not vanish at $x$, and every $n\notin u^\vee\cup\{0\}$ satisfies
+\[
+\bigl|\gamma_nx^n/Z_u\bigr|\ \le\ t^{3\theta_0/4}\bigl|\gamma_0x^0/Z_u\bigr|\qquad\text{at }x,
+\]
+both sides being polynomials in the chart coordinates.
+\end{lemma}
+
+\begin{proof}
+If $Z_{\bar u}(x)=0$, every monomial not vanishing at $x$ lies in $\bar u^\vee$, so $\bar u^\vee\supseteq\mathcal C^\circ(x)$
+and $\bar u^\vee\supseteq u^\vee$; as $u^\vee$ is a facet, $\bar u^\vee=u^\vee$ and $\bar u=u$. This gives the first two
+assertions. Every cell of $\mathcal F_C$ containing $\mathcal C^\circ(x)$ lies in a proper face containing $u^\vee$, hence in
+$u^\vee$; so for $n\notin u^\vee\cup\{0\}$ no set $\mathcal C^\circ(x)\cup\{n\}$ or $\mathcal C^\circ(x)\cup\{0,n\}$ is
+cellular.
+
+Assume first $Z_u(x)\ne0$, and let $x_\tau$ be the point with $Z_u$ multiplied by $e^{\tau L}$ and the other chart
+coordinates fixed; a monomial is multiplied by $e^{\tau Le_u(n)}$, and those of $u^\vee$ are unchanged. If the maximum at
+$x$ is attained by a monomial with $e_u\ge1$, that monomial lies in $\mathcal C(x)$ but not in $\mathcal C^\circ(x)\subseteq
+u^\vee$, so it is the origin; then for $n\notin u^\vee\cup\{0\}$ the set $\mathcal C(x)\cup\{n\}$ is not cellular,
+Lemma~\ref{lem:onecell} gives $d_n(x)\ge3\theta_0/4$, and $|\gamma_nx^n|\le t^{3\theta_0/4}\mathfrak m=t^{3\theta_0/4}
+|\gamma_0x^0|$. Otherwise the maximum $\mathfrak m_u$ is attained only in $u^\vee$. Let $\tau_*>0$ be the least $\tau$ at
+which a monomial with $e_u\ge1$ reaches $\mathfrak m_u$. For $\tau\le\tau_*$ the maximum is $\mathfrak m_u$ and
+$\mathcal C^\circ(x)\subseteq\mathcal C(x_\tau)$; at $\tau_*$ the monomial reaching $\mathfrak m_u$ has deficit $0$, so it forms
+a cellular set with $\mathcal C^\circ(x)$ and is the origin. By the first case at $x_{\tau_*}$,
+$|\gamma_nx^n|\le t^{3\theta_0/4}|\gamma_0x^0|$ there, and going back from $x_{\tau_*}$ to $x$ multiplies the ratio
+$|\gamma_nx^n|/|\gamma_0x^0|$ by $e^{-\tau_*L(e_u(n)-1)}\le1$ when $e_u(n)\ge1$; when $e_u(n)=0$, $n\in u^\vee$. If
+$Z_u(x)=0$, points $x'$ near $x$ with $Z_u(x')\ne0$ and the same other coordinates have
+$\mathcal C^\circ(x)\subseteq\mathcal C(x')$ and $\mathcal H(x')=u^\vee$, so the inequality holds at $x'$, and by continuity at
+$x$.
+\end{proof}
+
+In case (B) apply Lemma~\ref{lem:wirt} with $v=\partial/\partial\operatorname{Re}Z_u$. The derivative $h$ of that lemma, in
+which the cut-offs are held constant, is
+\[
+h=\gamma_0\,\partial_{Z_u}x^0+\sum_{n\notin u^\vee\cup\{0\}}\tilde\psi_n\,e_u(n)\,\frac{\gamma_nx^n}{Z_u},\qquad
+|h-\gamma_0\partial_{Z_u}x^0|\le|\mathcal A|e_{\max}t^{3\theta_0/4}|\gamma_0\partial_{Z_u}x^0|,
+\]
+and $\gamma_0\partial_{Z_u}x^0=\gamma_0\prod_{\bar u\in\mathsf c\setminus\{u\}}Z_{\bar u}\ne0$ by Lemma~\ref{lem:slide}. In
+Lemma~\ref{lem:refined}(3), $\mathcal D_{Z_u}$ is at most $(1+|\mathcal A|e_{\max}t^{3\theta_0/4})|\gamma_0\partial_{Z_u}x^0|$; the
+transition monomials with $e_u=0$ have $|\gamma_nx^n|/\mathfrak S^{1/2}\le t^{\theta_1/4}$; and those with $e_u\ge1$ are not
+the origin, so their contribution is at most $2e_{\max}|\mathcal A|t^{3\theta_0/4}|\gamma_0\partial_{Z_u}x^0|$. Hence
+$\mathcal J\le(C/L)(t^{\theta_1/4}+t^{3\theta_0/4})|h|<|h|$ for $t$ small. No condition on $\eta$ or on the binomial ratios
+of the cells is used.
+
+\emph{Case (C)} is Lemma~\ref{lem:TR}(1), proved in Appendix~\ref{app:NM}.
+
+\begin{proof}[Proof of Lemma~\ref{lem:W}]
+(1) By Lemma~\ref{lem:cases} every point of $W_s$ falls under (A), (B) or (C), and in each case $dF^{(s)}$ has real rank
+two. The thresholds on $t$ are finitely many and depend on the configuration, on $\mathscr K_0$ and, in case (C), on $r$
+and $\eta_0$. At $s=1$ the section is holomorphic, so $W_1=Y_t$ is a complex hypersurface, smooth by the above.
+
+(2) At $s=1$ all weights equal $1$ and $\mathcal J=0$. The arguments of cases (A) and (B) use only bounds on $|c_n|$, so
+they apply to every $c\in U_\C$ and show that $Y_{t,c}$ is smooth outside the sets $\mathcal U_P$. In $\mathcal U_P$,
+Lemma~\ref{lem:TR}(2) places the singular points in $\mathbb D_P$, where by Lemma~\ref{lem:NM}(2) the only critical point of
+$f^{(1)}$ is $q_P$; it lies on $Y_{t,c}$ exactly when $\varepsilon_P=0$, and is then a singular point.
+\end{proof}
+
+\subsection{Near a node}\label{app:NM}
+
+Fix a node $P$ and use the chart $(Z,Z',\chi_1,\chi_2)$ and the notation of Section~\ref{ssec:morse}; moduli of monomials
+are taken relative to $|\gamma_ax^a|$. Being within $\epsilon$ of the node point is defined in
+Section~\ref{ssec:morse}: $|s_1|,|s_2|\le\epsilon L$, with $s_1=\log|\mu_P\tilde\chi_1|$ and $s_2=\log|\mu_P\tilde\chi_2|$.
+
+\begin{lemma}[weighted parallelograms]\label{lem:square}
+Let $m_0=1$, $m_1=\tilde\chi_1$, $m_2=\tilde\chi_2$, $m_3=\mu_P\tilde\chi_1\tilde\chi_2$ at a point, and let
+$p_0,\dots,p_3\in[0,1]$ with $p_i\ge p_j$ whenever $|m_i|\ge|m_j|$. Put $E=\max_ip_i|m_i|$, $\tilde g=\sum_ip_im_i$,
+$D_1\tilde g=p_1m_1+p_3m_3$ and $D_2\tilde g=p_2m_2+p_3m_3$. If $\max_i|m_i|\ge e^\epsilon\min_i|m_i|$ with $\epsilon>0$,
+and $|\tilde g|\le cE$ with $c=(1-e^{-\epsilon})/8$, then $\max(|D_1\tilde g|,|D_2\tilde g|)\ge cE$.
+\end{lemma}
+
+\begin{proof}
+Suppose $|D_1\tilde g|,|D_2\tilde g|<cE$. Since $p_0m_0-p_3m_3=\tilde g-D_1\tilde g-D_2\tilde g$, we get
+$|p_0m_0-p_3m_3|<3cE$, and together with $|p_1m_1+p_3m_3|,|p_2m_2+p_3m_3|<cE$ all four $p_i|m_i|$ lie within $4cE$ of each
+other; as their maximum is $E$, each is at least $(1-4c)E$. Take $i$ with $|m_i|$ maximal and $j$ with $|m_j|$ minimal.
+Then $p_i\ge p_j$ and $E\ge p_i|m_i|\ge e^\epsilon p_j|m_j|\ge e^\epsilon(1-4c)E=\tfrac12(e^\epsilon+1)E>E$, a
+contradiction.
+\end{proof}
+
+The weights $\tilde\psi_n$ of the four monomials of $P$ satisfy the monotonicity of Lemma~\ref{lem:square}, because
+$\tilde d_n$ is a decreasing function of $|\gamma_nx^n|$ at fixed $x$ and $\beta$ is nonincreasing.
+
+\begin{proof}[Proof of Lemma~\ref{lem:NM}]
+(1) On $U^+_\C$ we have $|\eta_P|\le2\eta_0\le r^2/10\le1/160$, so $|\mu_P^{\pm1/2}|\le e^{1/320}<1.01$. On $2\mathbb D_P$,
+$|x|,|y|<2r\le1/2$, hence $|\mu_P^{1/2}x|,|\mu_P^{1/2}y|<0.51$, and $\mu_P\tilde\chi_1=\mu_P^{1/2}x-1$,
+$\mu_P\tilde\chi_2=\mu_P^{1/2}y-1$ have moduli in $[0.49,1.51]$. So $\chi_1,\chi_2\neq0$: the polydisc $2\mathbb D_P$ lies in
+the chart $U_{u,u'}$ (this is where $r\le r_1\le1/4$ is used), and the four monomials of $P$, which relative to
+$\gamma_ax^a$ are $1,\tilde\chi_1,\tilde\chi_2,\mu_P\tilde\chi_1\tilde\chi_2$, have moduli within a factor $16$ of each other.
+The origin has modulus $|\hat Z\hat Z'|\le4$, and each apex has modulus at most $C\lambda_P^{-1/2}\le Ct^{\mathfrak g_P/2}$, with
+$C$ depending only on the configuration and $\mathscr K_0$. So $\mathfrak m\le C$, the deficits of
+$P$ are at most $C/L$ and those of the apexes at least $\mathfrak g_P/2-C/L\ge(\theta_0+1)/2-C/L$
+by~\eqref{eq:lambdagap}. For $n\notin\mathcal A_P$ the set $P\cup\{n\}$ is not cellular: a cell of $\mathcal F_C$ containing
+$P$ lies in $G$, $u^\vee$ or $u'^\vee$, so it is $P$, $\omega_1$ or $\omega_2$, and $n$ lies in none of them. This includes
+the lattice points of $G\setminus P$, the other vertices of a pentagon or hexagon, because
+$\omega_1\cap G=\omega_2\cap G=P$. So Lemma~\ref{lem:onecell} gives $d_n\ge3\theta_0/4$. Since $\theta_1\le\theta_0$, the
+weights are as stated for $t$ small, the apexes are outside the core, and $\mathbb D_P\subseteq\mathcal U_P$. The origin term
+is $\mathfrak b\nu_Z\nu_{Z'}\hat Z\hat Z'=(\mathfrak b/|\mathfrak b|)\hat Z\hat Z'=\vartheta_P\hat Z\hat Z'$, since $\mathfrak b$ is a
+constant, and the monomials of $P$ give $xy-\kappa_P$. The apex terms are $a\hat Z$ and $a'\hat Z'$ with
+$|a|,|a'|\le C\lambda_P^{-1/2}$, and $R$, the sum of the monomials outside $\mathcal A_P$, has
+$|R|\le|\mathcal A|t^{3\theta_0/4}\mathfrak m\le Ct^{\theta_0/2}$.
+
+(2) Put $\hat Z_s=\hat Z+s\,a'/\vartheta_P$, $\hat Z'_s=\hat Z'+s\,a/\vartheta_P$ and $G_s=xy-\kappa_P-s^2aa'/\vartheta_P$.
+Then
+\[
+f^{(s)}=G_s(x,y)+\vartheta_P\,\hat Z_s\hat Z'_s+s\,R ,
+\]
+and $\zeta=(x,y,\hat Z_s,\hat Z'_s)$ are holomorphic coordinates on $2\mathbb D_P$, a shift of $(x,y,\hat Z,\hat Z')$ by at most
+$C\lambda_P^{-1/2}$, since $a,a'$ are holomorphic functions of $(x,y)$. So $f^{(s)}=\mathcal P(\zeta)-\kappa_P+E_s(\zeta)$ with
+$\mathcal P(\zeta):=xy+\vartheta_P\hat Z_s\hat Z'_s$ and $E_s:=sR-s^2aa'/\vartheta_P$. By the Cauchy estimates,
+$\|E_s\|_{C^2}\le C(r)t^{\theta_0/2}$ on a convex neighbourhood $V_P$, in the coordinates $\zeta$, of the image of
+$\mathbb D_P$, contained in the image of $\tfrac32\mathbb D_P$. The quadratic form $\mathcal P$ has gradient
+$(y,x,\vartheta_P\hat Z'_s,\vartheta_P\hat Z_s)$, so $|\nabla\mathcal P(\zeta)|=|\zeta|$, and its Hessian is a constant
+invertible matrix $H_0$. Hence $\nabla f^{(s)}=H_0\zeta+\nabla E_s$ on $V_P$: a zero has $|\zeta|\le C(r)t^{\theta_0/2}$;
+two zeros $\zeta_1,\zeta_2$ satisfy $|\zeta_1-\zeta_2|=|H_0(\zeta_1-\zeta_2)|\le C(r)t^{\theta_0/2}|\zeta_1-\zeta_2|$, so there
+is at most one; and the map $\zeta\mapsto-H_0^{-1}\nabla E_s(\zeta)$ is a contraction of the ball of radius
+$C(r)t^{\theta_0/2}$ about $0$, whose fixed point is a zero. The zero is nondegenerate, since
+$\operatorname{Hess}f^{(s)}=H_0+O(C(r)t^{\theta_0/2})$, and the value there is
+$-\kappa_P+O(|\zeta|^2)+O(t^{\theta_0/2})=-\kappa_P+O(t^{\theta_0/2})$.
+
+(3) For $|\eta_P|\le\eta_0\le1$, $|\kappa_P|=|e^{-\eta_P}-1|\ge|\eta_P|/2\ge\eta_0/(2C_\eta)$ in the window.
+\end{proof}
+
+\begin{lemma}[node comparison]\label{lem:nodecomp}
+Let $x\in U_{u,u'}$ with $(\chi_1,\chi_2)$ within $\theta_2$ of the node point, and assume that the maximum $\mathfrak m(x)$
+is attained by a monomial of $P$. For a lattice point $n$ let $m_n:=\gamma_nx^n/(\gamma_ax^a)$ be its term in $f^{(1)}$.
+Then every $n\notin\mathcal A_P$ with $e_{u'}(n)\ge1$ satisfies
+\[
+|\partial_{Z'}m_n|\le Ce_{\max}\,t^{\theta_0-\mathcal E_P\theta_2}\bigl(|\mathfrak bZ|+|A'|_{\rm mon}\bigr)\le
+Ce_{\max}\,t^{15\theta_0/16}\bigl(|\mathfrak bZ|+|A'|_{\rm mon}\bigr),
+\]
+where $|A'|_{\rm mon}$ is the largest modulus of a single term of $A'$ at $(\chi_1,\chi_2)$; symmetrically for $\partial_Z$,
+with $|\mathfrak bZ'|+|A|_{\rm mon}$.
+\end{lemma}
+
+\begin{proof}
+Both sides are continuous, and if $x$ satisfies the hypotheses and $ZZ'=0$, so do the nearby points with the same
+$(\chi_1,\chi_2)$ and $ZZ'\ne0$, because the monomials that vanish at $x$ are small near $x$. So we may assume
+$ZZ'\neq0$. Put $\zeta_Z:=\log|Z|/L$, $\zeta_{Z'}:=\log|Z'|/L$, $\varpi:=(\log|\chi_1|,\log|\chi_2|)/L$, and
+$\mathrm{val}_m:=\log|m_m|/L$. By~\eqref{eq:nodeexp} and the bounds on the coefficients,
+\[
+\mathrm{val}_m=\alpha_m\varpi_1+\beta_m\varpi_2+e_u(m)\,\zeta_Z+e_{u'}(m)\,\zeta_{Z'}-H(m)+H(a)+O(1/L),
+\]
+the tropical value of $m$, relative to $a$, at the tropical point with coordinates $(\varpi,\zeta_Z,\zeta_{Z'})$ in the basis
+dual to $(b-a,d-a,w_u,w_{u'})$. Let $\varpi^0$ be the tropical position of the node point and
+$\bar\theta_2:=\theta_2+C/L$, so that $|\varpi-\varpi^0|_\infty\le\bar\theta_2$. Replacing $\varpi$ by $\varpi^0$ at fixed
+$(\zeta_Z,\zeta_{Z'})$ changes $\mathrm{val}_m-\mathrm{val}_{m'}$ by at most $(|\alpha_m-\alpha_{m'}|+|\beta_m-\beta_{m'}|)\bar\theta_2$.
+Since $\mathrm{val}_a=0$, the values of $a,b,c,d$ at $x$ are at most $2\bar\theta_2$, and the maximum is one of them; so
+$\mathrm{val}_m(x)\le2\bar\theta_2$ for all $m$. The origin has $\mathrm{val}_0=\zeta_Z+\zeta_{Z'}+H(a)+O(1/L)$, independent of
+$\varpi$ because $\alpha_0=\beta_0=0$.
+
+Fix apexes $v_1\in\omega_1$ and $v_2\in\omega_2$ and put $\lambda_k:=2+|v_k|_P$, so $2\le\lambda_k\le2+A_P$. In the
+$(\zeta_Z,\zeta_{Z'})$-plane at $\varpi^0$ the edge $J_P$ of Lemma~\ref{lem:gaps} is the segment
+$\{\zeta_Z+\zeta_{Z'}=-H(a),\ \zeta_Z\le\zeta^*_Z,\ \zeta_{Z'}\le\zeta^*_{Z'}\}$: moving along $u'-u$ changes $(\zeta_Z,\zeta_{Z'})$
+by $(-1,1)$ and fixes $\varpi$, and by Lemma~\ref{lem:gaps}(1), (2), on $J_P$ the deficits of $v_2$ and $v_1$ are
+$\zeta^*_Z-\zeta_Z$ and $\zeta^*_{Z'}-\zeta_{Z'}$. Its end $p_Z=(\zeta^*_Z,-H(a)-\zeta^*_Z)$ is dual to
+$\operatorname{conv}(0,\omega_2)$ and $p_{Z'}$ to $\operatorname{conv}(0,\omega_1)$. At the point
+$x^0:=(\varpi^0,\zeta_Z,\zeta_{Z'})$ the bounds $\mathrm{val}_{v_2}(x),\mathrm{val}_{v_1}(x),\mathrm{val}_0(x)\le2\bar\theta_2$ give
+\[
+\zeta_Z\le\zeta^*_Z+\lambda_2\bar\theta_2,\qquad \zeta_{Z'}\le\zeta^*_{Z'}+\lambda_1\bar\theta_2,\qquad
+\zeta_Z+\zeta_{Z'}\le-H(a)+2\bar\theta_2,
+\]
+up to $O(1/L)$, which we absorb in $\bar\theta_2$. This region is nonempty and bounded above in both coordinates, and a
+function on it that is linear and nondecreasing in $\zeta_Z$ and in $\zeta_{Z'}$ attains its maximum at one of the two
+points $p'_Z:=p_Z+(\lambda_2\bar\theta_2,(2-\lambda_2)\bar\theta_2)$, $p'_{Z'}:=p_{Z'}+((2-\lambda_1)\bar\theta_2,\lambda_1\bar\theta_2)$.
+
+Let $i:=e_u(n)$ and $j:=e_{u'}(n)\ge1$. By Lemma~\ref{lem:hull} the set $\{0\}\cup P\cup\{v_2,n\}$ is not cellular, as
+$v_2\notin\omega_1$ and $n\notin\mathcal A_P$; at $p_Z$ its members other than $n$ are maximal, so $d^{\rm tr}_n(p_Z)$ is the
+largest deficit on this set at $p_Z$, and $d^{\rm tr}_n(p_Z)\ge\gamma^*\ge\theta_0$ by Lemma~\ref{lem:onecell}. Since the
+origin is maximal at $p_Z$, $\mathrm{val}_n(p_Z)-\mathrm{val}_0(p_Z)=-d^{\rm tr}_n(p_Z)$ up to $O(1/L)$. Likewise
+$d^{\rm tr}_n(p_{Z'})\ge\theta_0$, using $v_1$.
+
+If $i\ge1$, the function $g:=\mathrm{val}_n-\mathrm{val}_0=(i-1)\zeta_Z+(j-1)\zeta_{Z'}+\mathrm{const}$ is nondecreasing,
+$g(p_Z),g(p_{Z'})\le-\theta_0$, and since $\lambda_k\ge2$, $g(p'_Z)\le-\theta_0+(i-1)\lambda_2\bar\theta_2$ and
+$g(p'_{Z'})\le-\theta_0+(j-1)\lambda_1\bar\theta_2$. Returning from $x^0$ to $x$ adds at most $|n|_P\bar\theta_2$. So
+\[
+\mathrm{val}_n(x)-\mathrm{val}_0(x)\le-\theta_0+\bigl((\max(i,j)-1)(2+A_P)+|n|_P\bigr)\bar\theta_2\le-\theta_0+\mathcal E_P\bar\theta_2 ,
+\]
+by the definition of $\mathcal E_P$. Hence $|m_n|\le Ct^{\theta_0-\mathcal E_P\theta_2}|\mathfrak bZZ'|$, and
+\[
+|\partial_{Z'}m_n|=j|m_n|/|Z'|\le Ce_{\max}t^{\theta_0-\mathcal E_P\theta_2}|\mathfrak bZ| .
+\]
+
+If $i=0$, compare with $v_1$: $g':=\mathrm{val}_n-\mathrm{val}_{v_1}=(j-1)\zeta_{Z'}+\mathrm{const}$ at $\varpi^0$, and at $p_{Z'}$
+the monomials $0$, $P$, $v_1$ are maximal, so $g'(p_{Z'})\le-\theta_0$; hence
+$g'(x^0)\le-\theta_0+(j-1)\lambda_1\bar\theta_2$, and returning to $x$ adds at most $(|n|_P+|v_1|_P)\bar\theta_2$. So
+$\mathrm{val}_n(x)-\mathrm{val}_{v_1}(x)\le-\theta_0+((j-1)(2+A_P)+|n|_P+A_P)\bar\theta_2\le-\theta_0+\mathcal E_P\bar\theta_2$, and
+$|\partial_{Z'}m_n|\le e_{\max}|m_n|/|Z'|\le Ce_{\max}t^{\theta_0-\mathcal E_P\theta_2}|A'|_{\rm mon}$.
+
+Finally $\mathcal E_P\theta_2\le\theta_1/16\le\theta_0/16$. The case of $\partial_Z$ is the same with the roles of
+$(u,\omega_1,v_1)$ and $(u',\omega_2,v_2)$ exchanged.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:TR}]
+Let $x\in\mathcal U_P$, so that $\mathcal C(x)\setminus\{0\}=P$: the apexes and the monomials outside $\mathcal A_P$ are not in
+the core. Put $O:=|\mathfrak bZZ'|$ (the origin, of weight one), let $\|AZ\|_1$ and $\|A'Z'\|_1$ be the sums of the moduli
+of the apex monomials of $\omega_2$ and of $\omega_1$, and $\gamma:=\theta_1/8$. Then
+$\|AZ\|_1,\|A'Z'\|_1\le|\mathcal A|t^{\theta_0/2}\mathfrak m$, and every monomial outside $\mathcal A_P$ has modulus at most
+$t^{3\theta_0/4}\mathfrak m$ (Lemma~\ref{lem:onecell}).
+
+(1) Let $x\in W_s$.
+
+\emph{Case $O\ge t^\gamma\mathfrak m$.} Apply Lemma~\ref{lem:wirt} with $v=\partial/\partial\operatorname{Re}Z'$. The derivative
+$h$ of Lemma~\ref{lem:wirt}, in which the cut-offs are held constant, is
+$h=\mathfrak bZ+(\text{weighted }A')+\sum\tilde\psi_n\partial_{Z'}(\gamma_nx^n)$ over the monomials outside $\mathcal A_P$ with
+$e_{u'}\ge1$, so
+\[
+|h|\ge\bigl(O-\|A'Z'\|_1-e_{\max}|\mathcal A|t^{3\theta_0/4}\mathfrak m\bigr)/|Z'|\ge O/(2|Z'|),
+\]
+since $\gamma<\theta_0/2$. In Lemma~\ref{lem:refined}(3),
+$\mathcal D_{Z'}\le(O+\|A'Z'\|_1+e_{\max}|\mathcal A|t^{3\theta_0/4}\mathfrak m)/|Z'|\le2O/|Z'|$, and the transition monomials
+with $e_{u'}\ge1$ are apexes or lie outside $\mathcal A_P$, of total modulus at most $O/2$. So
+$\mathcal J\le(C\beta'_{\max}/L)\,O/|Z'|<|h|$ for $L$ large.
+
+\emph{Case $O<t^\gamma\mathfrak m$.} Then every monomial other than those of $P$ has modulus at most
+$2|\mathcal A|t^\gamma\mathfrak m$, and the maximum $\mathfrak m$ is attained by a monomial of $P$, which has weight one. Write
+$f^{(s)}=\tilde g+\mathcal G$ with $\tilde g$ the weighted sum over $P$; then $|\mathcal G|\le2|\mathcal A|^2t^\gamma\mathfrak m$, and
+$|\chi_1\partial_{\chi_1}\mathcal G|,|\chi_2\partial_{\chi_2}\mathcal G|\le Ct^\gamma\mathfrak m$ for the logarithmic torus derivatives
+$\chi_1\partial_{\chi_1}$, $\chi_2\partial_{\chi_2}$. By Lemma~\ref{lem:refined}(2), $\mathcal J\le C\beta'_{\max}t^{\theta_1/4}\mathfrak m/L$
+for these directions.
+\begin{itemize}
+\item If $(\chi_1,\chi_2)$ is not within $\theta_2$ of the node point, the moduli of the four monomials of $P$ differ by a
+factor at least $e^{\theta_2L/2}$, and Lemma~\ref{lem:square}, applied with its maximum $E=\mathfrak m$ (the maximum is a
+monomial of $P$ of weight one) and $|\tilde g|=|\mathcal G|\le c\,\mathfrak m$, gives
+$\max(|\chi_1\partial_{\chi_1}\tilde g|,|\chi_2\partial_{\chi_2}\tilde g|)\ge\mathfrak m/16$. So one of the two torus directions has
+$|h|\ge\mathfrak m/16-Ct^\gamma\mathfrak m>\mathcal J$.
+\item If $(\chi_1,\chi_2)$ is within $\theta_2$ of the node point, the deficits of $P$ are at most
+$2\theta_2+C/L<\theta_1/4$, so its weights are one and $\tilde g=xy-\kappa_P$. We have
+$\chi_1\partial_{\chi_1}\tilde g=\mu_P^{1/2}\tilde\chi_1\,y$ and $\chi_2\partial_{\chi_2}\tilde g=\mu_P^{1/2}\tilde\chi_2\,x$, and
+$|xy-\kappa_P|\le Ct^\gamma\mathfrak m$ on $W_s$. If $|y|\ge r$, then, since $|\kappa_P|\le2\eta_0\le r^2/10$ and
+$\mathfrak m\le C(1+|x|)(1+|y|)$, the inequality $|xy-\kappa_P|\le Ct^\gamma\mathfrak m$ gives $|x|\le r/5$ for $t$ small; so
+$|\mu_P^{1/2}\tilde\chi_1|\ge1/2$ and $\mathfrak m\le C(1+|y|)$, hence $|\chi_1\partial_{\chi_1}\tilde g|\ge|y|/2\ge c\,r\,\mathfrak m$.
+The case $|x|\ge r$ is symmetric. If $|x|,|y|<r$, then $\mathfrak m\le C$ and
+$|xy|\ge|\kappa_P|-Ct^\gamma\ge\eta_0/(4C_\eta)$ in the window, so
+$\max(|\chi_1\partial_{\chi_1}\tilde g|,|\chi_2\partial_{\chi_2}\tilde g|)\ge\tfrac12(\eta_0/(4C_\eta))^{1/2}$. In each case
+$|h|>\mathcal J$ for $t<t_0(r,\eta_0,\mathscr K_0)$.
+\end{itemize}
+
+(2) Let $s=1$, $c\in U_\C$, and let $x\in\mathcal U_P$ be a singular point of $Y_{t,c}$. All weights are one and
+$\mathcal J=0$. The first case above and the first item of the second case apply verbatim and show that
+$O<t^\gamma\mathfrak m$ and that $(\chi_1,\chi_2)$ is within $\theta_2$ of the node point; the part of the second item with
+$|x|\ge r$ or $|y|\ge r$ uses only $|\kappa_P|\le2\eta_0$ and shows $|x|,|y|<r$. Since $O<t^\gamma\mathfrak m$, the maximum is
+attained by a monomial of $P$, so Lemma~\ref{lem:nodecomp} applies. At $x$, $\partial_{Z'}f=\mathfrak bZ+A'+\mathcal G_{Z'}=0$,
+where $\mathcal G_{Z'}$ is the sum of the terms $\partial_{Z'}m_n$, $n\notin\mathcal A_P$, and
+$|\mathcal G_{Z'}|\le Ct^{15\theta_0/16}(|\mathfrak bZ|+|A'|_{\rm mon})$ by Lemma~\ref{lem:nodecomp}. Hence
+$|\mathfrak bZ|\le|\mathcal A||A'|_{\rm mon}+Ct^{15\theta_0/16}(|\mathfrak bZ|+|A'|_{\rm mon})$, so
+$|\mathfrak bZ|\le2|\mathcal A||A'|_{\rm mon}$. Each apex term of $A'$ is a monomial $\chi_1^{\alpha}\chi_2^{\beta}$ times a
+constant with $|\alpha|+|\beta|\le A_P\le\mathcal E_P$, so moving $(\chi_1,\chi_2)$ to the node point changes $|A'|_{\rm mon}$
+by a factor at most $t^{-\mathcal E_P\theta_2}C\le t^{-\theta_1/16}C$. Since $\mathfrak b$ is constant,
+$|\mathfrak b|\nu_Z=\lambda_P^{1/2}|A'|_{\rm mon}(q)$ exactly, where $|A'|_{\rm mon}(q)$ is the value at the node point, and
+therefore
+\[
+|\hat Z|=\frac{|Z|}{\nu_Z}\le\frac{2|\mathcal A||A'|_{\rm mon}}{|\mathfrak b|\nu_Z}\le C\lambda_P^{-1/2}t^{-\theta_1/16}\le
+Ct^{\mathfrak g_P/2-\theta_1/16}<1,
+\]
+because $\mathfrak g_P/2\ge\theta_0\ge\theta_1$ by Lemma~\ref{lem:gaps}(3). Symmetrically $|\hat Z'|<1$. So
+$x\in\mathbb D_P$.
+\end{proof}
+
+\subsection{Exactness of the weights}\label{app:windows}
+
+\begin{proof}[Proof of Lemma~\ref{lem:windows}]
+Throughout, $\mathrm{val}_m$ denotes $\frac1L\log|\gamma_mx^m|$ at the point considered, so that the deficit of $m$ is
+$\max_k\mathrm{val}_k-\mathrm{val}_m$; by~\eqref{eq:tropdeficit} and the bounds on the coefficients, $\mathrm{val}_m$ is the
+tropical value $\langle p,m\rangle-H(m)$ at the tropical position $p$, up to $O(1/L)$ after subtracting the value of a
+fixed monomial. Two facts are used repeatedly: lowering $|Z|$ or $|Z'|$ at fixed torus coordinates does not increase
+$\mathrm{val}_m-\mathrm{val}_n$ when $n$ has $e_u(n)=e_{u'}(n)=0$, since all Cox exponents are nonnegative; and a monomial
+whose deficit is below $\theta_1/4-C/L$ (resp.\ above $\theta_1/2+C/L$) has weight one (resp.\ zero), by
+Lemma~\ref{lem:refined}(1).
+
+(1) Let $p_0\in\Omega_e$ with $|p-p_0|\le\theta_2$, $p$ the tropical position of $x$. At $p_0$ the monomials $0,n,n'$ are
+maximal and every other monomial has deficit at least $f_e(p_0)>3\theta_1/4$. Passing from $p_0$ to $p$ changes each
+$\mathrm{val}_m-\mathrm{val}_n$ by at most $D\theta_2\le\theta_1/16$. Since $u,u'\in e^\vee$, $e_u(n)=e_{u'}(n)=0$, so passing
+from $x$ to $x'$ does not increase any $\mathrm{val}_m-\mathrm{val}_n$ and leaves $\mathrm{val}_{n'}-\mathrm{val}_n$ unchanged. So at $x'$
+we have $\mathrm{val}_m-\mathrm{val}_n\le\theta_1/16+C/L$ for all $m$, and
+$\mathrm{val}_m-\mathrm{val}_n\le-3\theta_1/4+\theta_1/16+C/L$ for $m\notin\{0,n,n'\}$. Hence the deficits of $n,n'$ at $x'$ are at
+most $\theta_1/8+C/L$ and those of the other $m\ne0$ at least $\theta_1/2+\theta_1/8$: the weights are as stated, and
+$\psi_0\equiv1$. At a turning point the same argument applies with the three Cox coordinates of the triangle
+$\tau\subseteq e^\vee$.
+
+(1$'$) The path $I$ lies in $E_e$, because $E_e=\{p:d^{\rm tr}_0(p)=d^{\rm tr}_n(p)=d^{\rm tr}_{n'}(p)=0\}$ is convex and
+contains $m$, $m'$ and $p_e$. On $E_e$ the maximal value is $\mathrm{val}_0$, which is linear in $p$, so every deficit
+$d^{\rm tr}_m$ is affine on $E_e$. Let $m_1$ be a lattice point outside $\{0\}\cup\omega$. If $\omega=P$ is a node
+parallelogram, then $d^{\rm tr}_{m_1}(m)\ge\theta_0$ if $m_1\notin\mathcal A_P$, because $\{0\}\cup P\cup\{m_1\}$ is not
+cellular and $0,P$ are maximal at the midpoint $m$ of $J_P$, and $d^{\rm tr}_{m_1}(m)=\mathfrak g_P/2\ge\theta_0$ if $m_1$ is
+an apex, by Lemma~\ref{lem:gaps}(2), (3). If $\omega=\tau$ is a triangle and $m\in J^\flat_\tau$, then
+$d^{\rm tr}_{m_1}(m)\ge3\theta_1/4$ if $m_1\in(\omega_1\cup\omega_2)\setminus\tau$, by the definition of $J^\flat_\tau$, and
+$d^{\rm tr}_{m_1}(m)\ge\theta_0$ otherwise, because $\{0\}\cup\tau\cup\{m_1\}$ is not cellular (proof of (3)). In both cases
+$d^{\rm tr}_{m_1}(m)\ge3\theta_1/4$, hence $d^{\rm tr}_{m_1}(m')\ge3\theta_1/4-D\theta_2/4\ge3\theta_1/4-\theta_1/64$, and
+$d^{\rm tr}_{m_1}(p_e)\ge f_e(p_e)>3\theta_1/4$. By affinity $d^{\rm tr}_{m_1}\ge3\theta_1/4-\theta_1/64$ on $I$, as
+$\theta_0\ge\theta_1$. Now let $n$ be a vertex of $e$, so $e_u(n)=e_{u'}(n)=0$, and pass from a point $y$ of $I$ to $x$.
+Moving the tropical position by at most $\theta_2$ changes $\mathrm{val}_{m_1}-\mathrm{val}_n$ by at most
+$D\theta_2\le\theta_1/16$; lowering $\log|Z|,\log|Z'|$ does not increase it. At $y$ both vertices of $e$ are maximal. So
+at $x$, $\mathrm{val}_{m_1}-\mathrm{val}_n\le\theta_1/16+C/L$ for every $m_1$, and
+$\mathrm{val}_{m_1}-\mathrm{val}_n\le-(3/4-1/64-1/16)\theta_1+C/L=-43\theta_1/64+C/L$ for $m_1$ outside $\{0\}\cup\omega$. The
+deficits of the vertices of $e$ are therefore at most $\theta_1/16+C/L<\theta_1/4$, and those of the monomials outside
+$\{0\}\cup\omega$ at least $43\theta_1/64-C/L>\theta_1/2$; the origin has weight one by definition.
+
+(2) First, $\mathbb D_P\subseteq\mathcal N_P$: on $\mathbb D_P$, $|x|,|y|<r$ gives $s_1,s_2=O(r)$, and $|\hat Z|,|\hat Z'|<1$.
+Let $x\in\mathcal N_P$, write $\mathrm{val}_m$ relative to $\mathrm{val}_a=0$, and put $\hat\zeta_Z:=\log|\hat Z|/L$,
+$\hat\zeta_{Z'}:=\log|\hat Z'|/L$ and $\bar\theta_2:=\theta_2+C/L$. The monomials of $P$ have $\mathrm{val}\le2\bar\theta_2$, and
+the origin, whose term in $f^{(0)}$ is $\vartheta_P\hat Z\hat Z'$, has $\mathrm{val}_0=\hat\zeta_Z+\hat\zeta_{Z'}\le\theta_2$.
+Since $\hat\zeta_Z,\hat\zeta_{Z'}\le\theta_P$ and $\hat\zeta_Z+\hat\zeta_{Z'}\le\theta_2$, there is $s\in[-\theta_P,\theta_P]$ with
+$\hat\zeta_Z\le s+\theta_2$ and $\hat\zeta_{Z'}\le-s+\theta_2$ (take $s=\hat\zeta_Z$ if $\hat\zeta_Z\ge-\theta_P$, and
+$s=-\theta_P$ otherwise). Let $y$ be the point of $J_P$ with $(\hat\zeta_Z,\hat\zeta_{Z'})=(s,-s)$ at the node point; the
+normalisation of Definition~\ref{def:morsecoords} puts the midpoint of $J_P$ at $(0,0)$. At $y$ the monomial $a$ is
+maximal; by Lemma~\ref{lem:gaps}(2) the apexes have deficit $\mathfrak g_P/2\mp s\ge\mathfrak g_P/2-\theta_P=\theta_1$; and the
+monomials outside $\mathcal A_P$ have deficit at least $\theta_0\ge\theta_1$, since $\{0\}\cup P\cup\{m\}$ is not cellular and
+$0,P$ are maximal on $J_P$. Passing from $y$ to $x$ raises $\hat\zeta_Z,\hat\zeta_{Z'}$ by at most $\theta_2$ and moves the
+torus coordinates by at most $\bar\theta_2$, so it increases $\mathrm{val}_m$ by at most
+$(e_u(m)+e_{u'}(m))\theta_2+|m|_P\bar\theta_2\le2\mathcal E_P\bar\theta_2\le\theta_1/8+C/L$: for $m\notin\mathcal A_P$,
+$e_u(m)+e_{u'}(m)\le2+2(\max(e_u(m),e_{u'}(m))-1)^+$, so $e_u(m)+e_{u'}(m)+|m|_P\le\mathcal E_P+2\le2\mathcal E_P$ by the
+definition of $\mathcal E_P$, and for an apex $e_u+e_{u'}+|m|_P\le1+A_P\le\mathcal E_P$. So at $x$ every apex and every
+monomial outside $\mathcal A_P$ has $\mathrm{val}_m\le-7\theta_1/8+C/L$, while $\mathrm{val}_a=0$. Hence the maximum at $x$ is at
+most $2\bar\theta_2$, the deficits of the monomials of $P$ are at most $4\bar\theta_2<\theta_1/4-C/L$, as
+$\theta_2\le\theta_1/32$, and those of the apexes and of the monomials outside $\mathcal A_P$ are at least
+$7\theta_1/8-C/L$.
+
+(3) By Lemma~\ref{lem:gaps}(1), on $J_\tau$ the deficit of a lattice point $n$ of $(\omega_1\cup\omega_2)\setminus\tau$ is
+affine in the parameter $s$, with slope $\pm e(n)$, $e(n)\le e_{\max}$; so $J^\flat_\tau$ is a segment. At the midpoint
+$s=s_{\rm mid}$ these deficits are at least $\mathfrak g_\tau/2\ge(\theta_0+1)/2$, by the definition of $\mathfrak g_\tau$
+and~\eqref{eq:lambdagap}. So at the points with $|s-s_{\rm mid}|\le1/(4e_{\max})$, which lie in $J_\tau$ because
+$s_+-s_-=|J_\tau|\ge\mathfrak g_\tau/e_{\max}\ge1/e_{\max}$ by Lemma~\ref{lem:gaps}(2) and~\eqref{eq:lambdagap}, they are at
+least $\mathfrak g_\tau/2-1/4\ge\theta_0/2+1/4\ge3\theta_1/4$, as $\theta_1\le\min(\theta_0,1)$. The cells of $\mathcal F_C$
+containing $\tau$ are $\tau,\omega_1,\omega_2$ (proof of Lemma~\ref{lem:gaps}(1)), so a lattice point
+$m\notin\{0\}\cup\omega_1\cup\omega_2$ forms with $\{0\}\cup\tau$ a set that is not cellular, and has deficit at least
+$\theta_0\ge\theta_1$ on $J_\tau$, where $0$ and $\tau$ are maximal. Moving the tropical position by at most $\theta_2$
+changes the deficits by at most $2D\theta_2\le\theta_1/8$, and lowering $\log|Z|,\log|Z'|$ does not increase
+$\mathrm{val}_m-\mathrm{val}_{n_a}$, since $e_u(n_a)=e_{u'}(n_a)=0$ for the edge $[u,u']$ of $\mathcal T$ in $G^\circ$. So at the
+points of (3) the deficits of $n_a,n_b,n_c$ are at most $\theta_1/8+C/L<\theta_1/4$ and all others except the origin are
+at least $3\theta_1/4-\theta_1/8-C/L>\theta_1/2$.
+
+(4) Let $x\in W^*\cap D_{u'}$. The monomials vanishing on $D_{u'}$, and those of weight zero near $x$, do not contribute
+to $F^{(0)}$ or to its derivative along $D_{u'}$ at $x$: the weights are smooth and vanish to infinite order where
+$\tilde d_n=\theta_1/2$. So along $D_{u'}$ near $x$, $F^{(0)}=\sum_{n\in I(x)}\tilde\psi_n\gamma_nx^n$ up to terms vanishing
+to first order at $x$, and $F^{(0)}(x)=0$. The maximal monomial at $x$ among those not vanishing on $D_{u'}$ has weight
+one, so it lies in $I(x)$. We show that the derivative of $F^{(0)}|_{D_{u'}}$ at $x$ along the torus action has real rank
+two; the torus vector fields are tangent to $D_{u'}$, so this gives the transversality.
+
+If $I(x)$ is affinely independent, let $n_0\in I(x)$ be maximal. From $F^{(0)}(x)=0$, some $n_1\in I(x)\setminus\{n_0\}$
+has $\tilde\psi_{n_1}|\gamma_{n_1}x^{n_1}|\ge\mathfrak m/|\mathcal A|$, where $\mathfrak m=|\gamma_{n_0}x^{n_0}|$. Choose $\ell$ with
+$\langle\ell,n-n_0\rangle=0$ for $n\in I(x)\setminus\{n_0,n_1\}$ and $\langle\ell,n_1-n_0\rangle=1$, with
+$|\ell|\le\ell_{\max}$ as in case (A). In Lemma~\ref{lem:wirt} with $v=v_\ell$ and the functions divided by
+$\gamma_{n_0}x^{n_0}$, $|h|\ge1/|\mathcal A|$ and $\mathcal J\le\beta'_{\max}\ell_{\max}D|\mathcal A|^{3/2}t^{\theta_1/4}/L$ by
+Lemma~\ref{lem:refined}(1), (2), which extend by continuity to the points of $D_{u'}$.
+
+Let $c$ be in the window and $I(x)\subseteq P$. If $I(x)\neq P$, then $I(x)$ is affinely independent, and the previous
+case applies. So let $I(x)=P$. Then $x\in U_{u,u'}$, since the monomials of $P$ do not vanish at $x$, and
+$F^{(0)}|_{D_{u'}}=\gamma_ax^a\,\tilde g$ near $x$, with $\tilde g$ the weighted sum of the four monomials of $P$. If
+$(\chi_1,\chi_2)$ is within $\theta_2$ of the node point, the four monomials are within a factor $Ct^{-2\theta_2}$ of the
+maximum, so they have weight one and $\tilde g=g_P=xy-\kappa_P$; its differential $y\,dx+x\,dy$ vanishes only at $x=y=0$,
+where $g_P=-\kappa_P\neq0$. Otherwise their moduli differ by a factor at least $e^{\theta_2L/2}$, and
+Lemma~\ref{lem:square}, with $\tilde g(x)=0$ and $E=\mathfrak m$, gives
+$\max(|\chi_1\partial_{\chi_1}\tilde g|,|\chi_2\partial_{\chi_2}\tilde g|)\ge\mathfrak m/16$, against
+$\mathcal J\le C\beta'_{\max}t^{\theta_1/4}\mathfrak m/L$ as in the proof of Lemma~\ref{lem:TR}.
+
+On the sets of (1)--(3), $I(x)$ is contained in $\{n,n'\}$, in $P$, or in $\tau$, by the weights computed there and
+because the origin vanishes on $D_{u'}$; $\{n,n'\}$ and $\tau$ are affinely independent. The same arguments apply to $D_u$
+and, at turning points, to $D_{u_1}$.
+\end{proof}

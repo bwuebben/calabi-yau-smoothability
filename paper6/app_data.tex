@@ -1,0 +1,143 @@
+\section{Data of the examples}\label{app:data}
+This appendix lists the data of the examples of Section~\ref{sec:examples}: for $X_9$, $X_{19}$ and $X_{20}$ the rays of
+$\Sigma'$, the node parallelograms, a $\Z$-basis of $K$ and the tropical $2$-cycles of Lemma~\ref{lem:x9belt} and
+Table~\ref{tab:x19x20}; for $X_{88}$ and $X_{154}$ the vertices, the profile, the node parallelograms and a $\Z$-basis of
+$K$. The lists are generated from the data accompanying the paper by programs that also check each assertion made here.
+The triangulations $\mathcal T$, the heights, the fans $\Sigma'$ and the triangles of the cycles are available at
+\coderepo.
+
+\emph{Conventions.} The rays of $\Sigma'$ are numbered $n_0,n_1,\dots$; the vertices of $\Delta$ come first. A node
+parallelogram is written $q=(a,b,c,d)$ with $n_a+n_c=n_b+n_d$, in the labelling of Section~\ref{ssec:admissible}:
+$\{a,c\}$ is the chosen diagonal, which passes through the centre at a pentagon or a hexagon, and
+$\circv_q=e_b+e_d-e_a-e_c$. A \emph{boundary segment} of a tropical $2$-cycle $S$ is a maximal path in $\partial S$ whose
+interior avoids the negative vertices; it is either closed or joins two negative vertices $t_i$. A boundary segment is
+written, in one of its two directions, as the sequence of the lower supports of its arcs and of the nodes it passes. An
+ordered pair $(i,j)$ stands for the arcs with lower support $\{n_i,n_j\}$ on which the boundary network $\partial(v[S])$,
+read in the direction of listing, has coefficient $n_j-n_i$; so the boundary field is $v=n_j-n_i$ if the listing follows
+the boundary orientation of $\partial S$ and $v=n_i-n_j$ otherwise, and $e_{n_j}-e_{n_i}$ is the corresponding canonical
+lift (Section~\ref{ssec:tropical}). Consecutive arcs with the same pair, which meet at positive vertices or at edge
+points, are listed once, and $q_k$ between two pairs marks the passage through the node $q_k$. A closed boundary segment
+returns to its first pair after the last node listed. Reversing the direction of listing reverses the order and the
+signs, so the difference of the lifts after and before $q_k$ does not depend on it; by Definition~\ref{def:nodecoef},
+$\rho_{q_k}(S)$ is the coefficient of $\circv_{q_k}$ in this difference, and can therefore be read off from the lists
+below. For the cycles with trivalent vertices, we also give the number of four-valent interior vertices of $S$, the
+number of points at which $S$ crosses $\Gamma$ transversally (clause (b) of \cite[Def.~7.2]{CBM}), and the Euler
+characteristic of $S$. Vectors in $\Z^Q$ are written as combinations of the nodes: $q_2-q_3$ stands for the vector with
+coordinate $1$ at $q_2$, $-1$ at $q_3$ and $0$ elsewhere.
+
+\begingroup\sloppy
+\subsection{The example \texorpdfstring{$X_9$}{X9}}\label{app:data-x9}
+\emph{Rays of $\Sigma'$.} The vertices of $\Delta_9$ are $n_{0}=(1,0,0,0)$, $n_{1}=(0,1,0,0)$, $n_{2}=(-1,-1,0,0)$, $n_{3}=(0,0,1,0)$, $n_{4}=(0,0,0,1)$, $n_{5}=(-4,-2,-1,0)$, $n_{6}=(-4,-2,0,-1)$, $n_{7}=(3,1,1,1)$, $n_{8}=(2,1,1,1)$.
+ The centre of the $dP_7$ pentagon is $n_{10}=(-2,-1,0,0)$. The fan $\Sigma'$ has one further ray, $n_{9}=(-1,0,0,0)$, in the interior of a facet of $\Delta_9$.
+
+\emph{Node parallelograms} $q=(a,b,c,d)$, given by the indices of $n_a,n_b,n_c,n_d$; an asterisk marks the two parallelograms of the pentagon: $q_{1}=(3,6,10,8)^{*}$, $q_{2}=(2,6,3,7)$, $q_{3}=(4,5,10,8)^{*}$, $q_{4}=(2,5,4,7)$.
+
+\emph{A $\Z$-basis of $K$} (rank 1): $q_{1}-q_{2}-q_{3}+q_{4}$.
+
+\emph{Generating cycles.}
+The cycles are the following.
+\begin{itemize}
+\item $S_{1}$: a belt cycle with constant field $\pm(4,2,1,1)$, a disc; its boundary passes 5 positive vertices.
+Boundary segments: $(3,6)$ $q_{2}$ $(7,2)$ $q_{4}$ $(4,5)$ $q_{3}$ $(8,10)$ $q_{1}$.
+Node coefficients: $\rho(S_{1})=q_{1}-q_{2}-q_{3}+q_{4}$.
+\end{itemize}
+\emph{Index.} The node coefficient vector of $S_1$ is the basis vector of $K$.
+
+\subsection{The example \texorpdfstring{$X_{19}$}{X19}}\label{app:data-x19}
+\emph{Rays of $\Sigma'$.} The vertices of $\Delta_{19}$ are $n_{0}=(1,0,0,0)$, $n_{1}=(0,1,0,0)$, $n_{2}=(0,0,1,0)$, $n_{3}=(0,0,-1,0)$, $n_{4}=(0,-1,0,0)$, $n_{5}=(1,-1,-1,0)$, $n_{6}=(0,0,0,1)$, $n_{7}=(-1,1,1,-1)$, $n_{8}=(0,-1,0,1)$, $n_{9}=(0,0,-1,1)$, $n_{10}=(-1,1,0,-1)$, $n_{11}=(-1,0,1,-1)$, $n_{12}=(-1,0,1,0)$, $n_{13}=(-1,1,0,0)$, $n_{14}=(0,-1,-1,0)$, $n_{15}=(0,-1,-1,1)$, $n_{16}=(-1,0,0,-1)$, $n_{17}=(-2,1,1,-1)$, $n_{18}=(-1,0,0,1)$.
+ The centre of the $dP_7$ pentagon is $n_{19}=(-1,0,0,0)$.
+
+\emph{Node parallelograms} $q=(a,b,c,d)$, given by the indices of $n_a,n_b,n_c,n_d$; an asterisk marks the two parallelograms of the pentagon: $q_{1}=(16,17,19,14)^{*}$, $q_{2}=(1,7,17,13)$, $q_{3}=(2,7,17,12)$, $q_{4}=(2,6,18,12)$, $q_{5}=(15,18,19,14)^{*}$, $q_{6}=(4,8,12,11)$, $q_{7}=(1,6,18,13)$, $q_{8}=(4,11,16,14)$, $q_{9}=(3,10,16,14)$, $q_{10}=(3,9,13,10)$, $q_{11}=(4,8,15,14)$, $q_{12}=(3,9,15,14)$, $q_{13}=(0,2,4,5)$, $q_{14}=(7,10,16,11)$, $q_{15}=(6,8,15,9)$, $q_{16}=(0,1,3,5)$.
+
+\emph{A $\Z$-basis of $K$} (rank 3): $q_{2}-q_{3}+q_{4}-q_{7}$, $q_{2}-q_{3}-q_{6}+q_{8}-q_{9}+q_{10}+q_{11}-q_{12}-q_{13}+q_{16}$, $q_{1}+q_{2}-q_{5}-q_{7}-q_{8}-q_{9}+q_{11}+q_{12}+q_{14}-q_{15}$.
+
+\emph{Generating cycles.}
+The boundary graphs below have the following negative vertices.
+\begin{itemize}
+\item $t_{1}$: lower support $\{n_{10},n_{16},n_{17}\}$, face label $[(0,0,0,1),(1,0,1,0)]$.
+\item $t_{2}$: lower support $\{n_{7},n_{10},n_{17}\}$, face label $[(0,-1,0,0),(0,0,0,1)]$.
+\item $t_{3}$: lower support $\{n_{8},n_{15},n_{18}\}$, face label $[(0,0,0,-1),(1,1,0,0)]$.
+\item $t_{4}$: lower support $\{n_{6},n_{8},n_{18}\}$, face label $[(0,0,-1,-1),(0,0,0,-1)]$.
+\item $t_{5}$: lower support $\{n_{2},n_{11},n_{12}\}$, face label $[(0,0,-1,0),(0,1,-1,0)]$.
+\item $t_{6}$: lower support $\{n_{1},n_{9},n_{13}\}$, face label $[(0,-1,0,-1),(0,-1,1,0)]$.
+\item $t_{7}$: lower support $\{n_{2},n_{4},n_{11}\}$, face label $[(-1,1,-1,1),(0,1,-1,0)]$.
+\item $t_{8}$: lower support $\{n_{1},n_{3},n_{9}\}$, face label $[(-1,-1,1,0),(0,-1,1,0)]$.
+\end{itemize}
+The cycles are the following.
+\begin{itemize}
+\item $S_{1}$: a belt cycle with constant field $\pm(1,0,0,0)$, a disc; its boundary passes 5 positive vertices.
+Boundary segments: $(17,7)$ $q_{3}$ $(12,2)$ $q_{4}$ $(18,6)$ $q_{7}$ $(13,1)$ $q_{2}$.
+Node coefficients: $\rho(S_{1})=q_{2}-q_{3}+q_{4}-q_{7}$.
+\item $S_{2}$: boundary graph a complete graph on four vertices; 20 positive vertices on $\partial S$, 6 four-valent interior vertices, 11 transverse crossings with $\Gamma$, $\chi(S)=5$.
+Boundary segments: $t_{1}$ $(17,16)$ $q_{1}$ $(19,14)$ $q_{5}$ $(18,15)$ $t_{3}$; $t_{1}$ $(10,17)$ $t_{2}$; $t_{1}$ $(16,10)$ $q_{9}$ $(14,3)$ $q_{12}$ $(15,9)$ $q_{15}$ $(8,6)$ $t_{4}$; $t_{2}$ $(7,17)$ $q_{3}$ $(2,12)$ $q_{4}$ $(6,18)$ $t_{4}$; $t_{2}$ $(10,7)$ $q_{14}$ $(16,11)$ $q_{8}$ $(14,4)$ $q_{11}$ $(15,8)$ $t_{3}$; $t_{3}$ $(18,8)$ $t_{4}$.
+Node coefficients: $\rho(S_{2})=q_{1}+q_{3}-q_{4}-q_{5}-q_{8}-q_{9}+q_{11}+q_{12}+q_{14}-q_{15}$.
+\item $S_{3}$: boundary graph a complete graph on four vertices; 26 positive vertices on $\partial S$, 17 four-valent interior vertices, 39 transverse crossings with $\Gamma$, $\chi(S)=5$.
+Boundary segments: $t_{5}$ $(12,11)$ $q_{6}$ $(8,4)$ $q_{11}$ $(15,14)$ $q_{12}$ $(9,3)$ $t_{8}$; $t_{5}$ $(11,2)$ $t_{7}$; $t_{5}$ $(2,12)$ $q_{3}$ $(7,17)$ $q_{2}$ $(1,13)$ $t_{6}$; $t_{6}$ $(9,13)$ $q_{10}$ $(3,10)$ $q_{9}$ $(14,16)$ $q_{8}$ $(4,11)$ $t_{7}$; $t_{6}$ $(1,9)$ $t_{8}$; $t_{7}$ $(4,2)$ $q_{13}$ $(5,0)$ $q_{16}$ $(3,1)$ $t_{8}$.
+Node coefficients: $\rho(S_{3})=q_{2}-q_{3}-q_{6}+q_{8}-q_{9}+q_{10}+q_{11}-q_{12}-q_{13}+q_{16}$.
+\end{itemize}
+\emph{Index.} In the basis above, the node coefficient vectors of $S_1,\dots,S_{3}$ have coordinates $(1,0,0)$, $(-1,0,1)$, $(0,1,0)$; the elementary divisors of this matrix are $1,1,1$, so the vectors $\rho(S_i)$ generate $K$.
+
+\subsection{The example \texorpdfstring{$X_{20}$}{X20}}\label{app:data-x20}
+\emph{Rays of $\Sigma'$.} The vertices of $\Delta_{20}$ are $n_{0}=(1,0,0,0)$, $n_{1}=(0,1,0,0)$, $n_{2}=(0,0,1,0)$, $n_{3}=(0,0,0,1)$, $n_{4}=(1,-1,-1,-1)$, $n_{5}=(-1,1,1,1)$, $n_{6}=(0,0,0,-1)$, $n_{7}=(0,0,-1,0)$, $n_{8}=(0,-1,0,0)$, $n_{9}=(-1,1,0,1)$, $n_{10}=(0,0,-1,-1)$, $n_{11}=(-1,1,0,0)$, $n_{12}=(-1,0,1,1)$, $n_{13}=(0,-1,0,-1)$, $n_{14}=(-1,0,1,0)$, $n_{15}=(0,-1,-1,-1)$, $n_{16}=(-1,0,0,1)$, $n_{17}=(-1,0,-1,0)$, $n_{18}=(-1,-1,0,0)$, $n_{19}=(-1,-1,1,0)$.
+ The centre of the $dP_7$ pentagon is $n_{20}=(-1,0,0,0)$.
+
+\emph{Node parallelograms} $q=(a,b,c,d)$, given by the indices of $n_a,n_b,n_c,n_d$; an asterisk marks the two parallelograms of the pentagon: $q_{1}=(18,19,20,17)^{*}$, $q_{2}=(13,15,18,19)$, $q_{3}=(12,16,18,19)$, $q_{4}=(3,8,18,16)$, $q_{5}=(4,8,18,15)$, $q_{6}=(14,19,20,11)^{*}$, $q_{7}=(6,13,19,14)$, $q_{8}=(5,12,19,14)$, $q_{9}=(4,7,17,15)$, $q_{10}=(3,7,17,16)$, $q_{11}=(5,9,16,12)$, $q_{12}=(6,10,15,13)$, $q_{13}=(4,8,19,13)$, $q_{14}=(3,8,19,12)$, $q_{15}=(0,1,9,3)$, $q_{16}=(0,2,19,8)$, $q_{17}=(0,2,12,3)$, $q_{18}=(0,1,10,4)$, $q_{19}=(0,2,13,4)$.
+
+\emph{A $\Z$-basis of $K$} (rank 6): $q_{14}-q_{16}+q_{17}$, $q_{13}-q_{16}+q_{19}$, $q_{3}-q_{4}+q_{14}$, $q_{2}-q_{5}+q_{13}$, $q_{4}-q_{5}+q_{9}-q_{10}$, $q_{4}-q_{5}+q_{7}-q_{8}+q_{11}-q_{12}+q_{15}-q_{18}$.
+
+\emph{Generating cycles.}
+The boundary graphs below have the following negative vertices.
+\begin{itemize}
+\item $t_{1}$: lower support $\{n_{3},n_{9},n_{16}\}$, face label $[(0,0,0,-1),(0,0,1,-1)]$.
+\item $t_{2}$: lower support $\{n_{4},n_{10},n_{15}\}$, face label $[(0,0,0,1),(0,0,1,0)]$.
+\end{itemize}
+The cycles are the following.
+\begin{itemize}
+\item $S_{1}$: a belt cycle with constant field $\pm(1,0,-1,0)$, a disc; its boundary passes 3 positive vertices.
+Boundary segments: $(8,19)$ $q_{16}$ $(0,2)$ $q_{17}$ $(3,12)$ $q_{14}$.
+Node coefficients: $\rho(S_{1})=-q_{14}+q_{16}-q_{17}$.
+\item $S_{2}$: a belt cycle with constant field $\pm(0,1,0,1)$, a disc; its boundary passes 5 positive vertices.
+Boundary segments: $(18,16)$ $q_{4}$ $(8,3)$ $q_{14}$ $(19,12)$ $q_{3}$.
+Node coefficients: $\rho(S_{2})=q_{3}-q_{4}+q_{14}$.
+\item $S_{3}$: a belt cycle with constant field $\pm(1,0,0,0)$, a disc; its boundary passes 5 positive vertices.
+Boundary segments: $(8,18)$ $q_{5}$ $(4,15)$ $q_{9}$ $(7,17)$ $q_{10}$ $(3,16)$ $q_{4}$.
+Node coefficients: $\rho(S_{3})=-q_{4}+q_{5}-q_{9}+q_{10}$.
+\item $S_{4}$: a belt cycle with constant field $\pm(1,0,-1,-1)$, a disc; its boundary passes 5 positive vertices.
+Boundary segments: $(18,15)$ $q_{5}$ $(8,4)$ $q_{13}$ $(19,13)$ $q_{2}$.
+Node coefficients: $\rho(S_{4})=q_{2}-q_{5}+q_{13}$.
+\item $S_{5}$: a belt cycle with constant field $\pm(1,0,-1,0)$, a disc; its boundary passes 6 positive vertices.
+Boundary segments: $(8,19)$ $q_{16}$ $(0,2)$ $q_{19}$ $(4,13)$ $q_{13}$.
+Node coefficients: $\rho(S_{5})=-q_{13}+q_{16}-q_{19}$.
+\item $S_{6}$: boundary graph with two trivalent vertices; 18 positive vertices on $\partial S$, 8 four-valent interior vertices, 25 transverse crossings with $\Gamma$, $\chi(S)=8$.
+Boundary segments: $t_{1}$ $(9,16)$ $q_{11}$ $(5,12)$ $q_{8}$ $(14,19)$ $q_{7}$ $(6,13)$ $q_{12}$ $(10,15)$ $t_{2}$; $t_{1}$ $(16,3)$ $q_{4}$ $(18,8)$ $q_{5}$ $(15,4)$ $t_{2}$; $t_{1}$ $(3,9)$ $q_{15}$ $(0,1)$ $q_{18}$ $(4,10)$ $t_{2}$.
+Node coefficients: $\rho(S_{6})=q_{4}-q_{5}+q_{7}-q_{8}+q_{11}-q_{12}+q_{15}-q_{18}$.
+\end{itemize}
+\emph{Index.} In the basis above, the node coefficient vectors of $S_1,\dots,S_{6}$ have coordinates $(-1,0,0,0,0,0)$, $(0,0,1,0,0,0)$, $(0,0,0,0,-1,0)$, $(0,0,0,1,0,0)$, $(0,-1,0,0,0,0)$, $(0,0,0,0,0,1)$; the elementary divisors of this matrix are $1,1,1,1,1,1$, so the vectors $\rho(S_i)$ generate $K$.
+
+\subsection{The hexagon examples \texorpdfstring{$X_{88}$}{X88} and \texorpdfstring{$X_{154}$}{X154}}\label{app:data-hex}
+For these two examples the rays listed are the vertices of $\Delta$ and the centre of the hexagon; the fan $\Sigma'$ of the
+witness of~\ref{hyp:P} may have further rays, which are in the accompanying data. The hexagon is listed in cyclic order
+$w_0,\dots,w_5$, and an asterisk marks its node parallelograms. The $\Z$-bases of $K$ are reduced (by the LLL algorithm)
+bases of the lattice computed from the circuits.
+
+\emph{The example $X_{88}$.} $\Delta_{88}$ has $21$ vertices, $22$ unit squares and one hexagon. The profile is the $A_1$ subdivision with the parallelograms $\{o,w_1,w_2,w_3\}$ and $\{o,w_4,w_5,w_0\}$; the other two $A_1$ subdivisions also satisfy~\ref{hyp:P}, and their lattices $K$ are identified with this one by matching the pairs of hexagon nodes, up to sign.
+
+\emph{Rays.} $n_{0}=(1,0,0,0)$, $n_{1}=(0,1,0,0)$, $n_{2}=(1,-1,0,0)$, $n_{3}=(0,0,1,0)$, $n_{4}=(0,0,0,1)$, $n_{5}=(0,0,1,-1)$, $n_{6}=(0,0,-1,1)$, $n_{7}=(0,0,0,-1)$, $n_{8}=(0,0,-1,0)$, $n_{9}=(0,-1,0,0)$, $n_{10}=(-1,1,0,0)$, $n_{11}=(-1,1,1,0)$, $n_{12}=(-1,1,0,1)$, $n_{13}=(0,-1,0,-1)$, $n_{14}=(0,-1,-1,0)$, $n_{15}=(-1,0,0,-1)$, $n_{16}=(-1,0,-1,1)$, $n_{17}=(-1,0,-1,0)$, $n_{18}=(-1,0,0,1)$, $n_{19}=(-1,0,1,-1)$, $n_{20}=(-1,0,1,0)$. The centre of the hexagon is $n_{21}=(-1,0,0,0)$. The hexagon is $n_{15}$, $n_{19}$, $n_{20}$, $n_{18}$, $n_{16}$, $n_{17}$.
+
+\emph{Node parallelograms} $q=(a,b,c,d)$: $q_{1}=(11,1,0,3)$, $q_{2}=(12,4,0,1)$, $q_{3}=(12,4,3,11)$, $q_{4}=(13,7,0,2)$, $q_{5}=(14,2,0,8)$, $q_{6}=(14,8,7,13)$, $q_{7}=(15,7,1,10)$, $q_{8}=(15,19,5,7)$, $q_{9}=(15,19,11,10)$, $q_{10}=(17,10,1,8)$, $q_{11}=(17,8,6,16)$, $q_{12}=(17,10,12,16)$, $q_{13}=(17,8,7,15)$, $q_{14}=(20,3,2,9)$, $q_{15}=(9,2,4,18)$, $q_{16}=(18,4,3,20)$, $q_{17}=(19,5,3,20)$, $q_{18}=(19,13,9,20)$, $q_{19}=(16,18,4,6)$, $q_{20}=(16,18,9,14)$, $q_{21}=(18,12,11,20)$, $q_{22}=(14,17,15,13)$, $q_{23}=(21,19,20,18)^{*}$, $q_{24}=(21,16,17,15)^{*}$.
+
+\emph{A $\Z$-basis of $K$} (rank 10): $q_{3}-q_{16}+q_{21}$, $-q_{1}+q_{2}-q_{3}$, $q_{6}-q_{13}-q_{22}$, $q_{4}-q_{5}+q_{6}$, $q_{7}-q_{10}+q_{13}$, $q_{14}+q_{15}+q_{16}$, $q_{2}-q_{5}+q_{10}-q_{12}+q_{15}-q_{20}$, $-q_{1}+q_{4}-q_{7}+q_{9}+q_{14}+q_{18}$, $q_{9}-q_{12}-q_{21}-q_{23}+q_{24}$, $q_{8}-q_{11}+q_{13}-q_{16}+q_{17}-q_{19}$.
+
+\emph{No forced node.} The vector $-q_{1}+q_{2}-2q_{3}-q_{4}+q_{5}+q_{6}-q_{7}+q_{8}-2q_{9}+q_{10}-q_{11}+2q_{12}-2q_{13}-q_{14}-q_{15}-q_{16}+q_{17}-q_{18}-q_{19}+q_{20}+q_{21}-q_{22}+q_{23}-q_{24}$ lies in $K$.
+
+\emph{The example $X_{154}$.} $\Delta_{154}$ has $22$ vertices, $20$ unit squares and one hexagon. The profile is the $A_2$ subdivision with the three parallelograms $\{o,w_0,w_1,w_2\}$, $\{o,w_2,w_3,w_4\}$, $\{o,w_4,w_5,w_0\}$; the other $A_2$ subdivision also satisfies~\ref{hyp:P}.
+
+\emph{Rays.} $n_{0}=(1,0,0,0)$, $n_{1}=(0,1,0,0)$, $n_{2}=(0,0,1,0)$, $n_{3}=(0,0,0,1)$, $n_{4}=(1,0,0,-1)$, $n_{5}=(0,1,-1,0)$, $n_{6}=(0,-1,1,0)$, $n_{7}=(-1,0,0,1)$, $n_{8}=(0,0,0,-1)$, $n_{9}=(0,0,-1,0)$, $n_{10}=(-1,0,0,0)$, $n_{11}=(0,-1,0,0)$, $n_{12}=(-1,0,-1,1)$, $n_{13}=(0,-1,1,-1)$, $n_{14}=(-1,-1,1,0)$, $n_{15}=(-1,-1,0,1)$, $n_{16}=(-1,0,-1,0)$, $n_{17}=(0,-1,0,-1)$, $n_{18}=(-1,-1,1,-1)$, $n_{19}=(-1,-1,-1,1)$, $n_{20}=(-1,-1,0,-1)$, $n_{21}=(-1,-1,-1,0)$. The centre of the hexagon is $n_{22}=(-1,-1,0,0)$. The hexagon is $n_{20}$, $n_{18}$, $n_{14}$, $n_{15}$, $n_{19}$, $n_{21}$.
+
+\emph{Node parallelograms} $q=(a,b,c,d)$: $q_{1}=(13,4,0,6)$, $q_{2}=(19,12,5,9)$, $q_{3}=(19,15,6,11)$, $q_{4}=(17,4,0,11)$, $q_{5}=(17,13,6,11)$, $q_{6}=(17,4,9,21)$, $q_{7}=(17,11,19,21)$, $q_{8}=(18,8,4,13)$, $q_{9}=(18,10,7,14)$, $q_{10}=(12,7,1,5)$, $q_{11}=(16,10,1,5)$, $q_{12}=(16,10,7,12)$, $q_{13}=(16,5,8,20)$, $q_{14}=(20,18,10,16)$, $q_{15}=(18,13,6,14)$, $q_{16}=(19,15,7,12)$, $q_{17}=(20,17,4,8)$, $q_{18}=(21,9,5,16)$, $q_{19}=(20,18,13,17)$, $q_{20}=(21,16,12,19)$, $q_{21}=(22,20,18,14)^{*}$, $q_{22}=(22,14,15,19)^{*}$, $q_{23}=(22,19,21,20)^{*}$.
+
+\emph{A $\Z$-basis of $K$} (rank 9): $q_{2}-q_{18}+q_{20}$, $q_{1}-q_{4}+q_{5}$, $q_{8}-q_{17}+q_{19}$, $q_{10}-q_{11}+q_{12}$, $q_{6}+q_{13}+q_{17}+q_{18}$, $q_{3}-q_{5}-q_{19}-q_{21}+q_{22}$, $-q_{5}+q_{7}+q_{15}-q_{21}+q_{23}$, $q_{9}-q_{12}-q_{20}-q_{21}+q_{23}$, $q_{12}+q_{14}-q_{16}+q_{21}-q_{22}$.
+
+\emph{No forced node.} The vector $-q_{1}+q_{2}+2q_{3}+q_{4}-2q_{5}+2q_{6}-q_{7}+q_{8}-q_{9}-q_{10}+q_{11}+q_{12}+2q_{13}+q_{14}-q_{15}-q_{16}+q_{17}+q_{18}-q_{19}+2q_{20}+q_{21}+q_{22}-2q_{23}$ lies in $K$.
+
+\endgroup
