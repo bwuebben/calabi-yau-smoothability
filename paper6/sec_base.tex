@@ -262,7 +262,7 @@ parallelograms labelled by the diagonals of $\widehat X$. Then:
 \begin{enumerate}
 \item the homomorphism
 \begin{equation}\label{eq:iotaZ}
-\iota\colon H_2(\widehat X;\Z)\longrightarrow\Z^R,\qquad C\longmapsto(D_r\cdot C)_{r\in R},
+\mathrm{ev}_D\colon H_2(\widehat X;\Z)\longrightarrow\Z^R,\qquad C\longmapsto(D_r\cdot C)_{r\in R},
 \end{equation}
 is injective; in particular $H_2(\widehat X;\Z)$ is torsion-free;
 \item $\bigl\{\lambda\in\Z^Q:\ \sum_q\lambda_q[C_q]=0\text{ in }H_2(\widehat X;\Z)\bigr\}=K$.
@@ -270,8 +270,8 @@ is injective; in particular $H_2(\widehat X;\Z)$ is torsion-free;
 Hypothesis~\ref{hyp:P} is not required, and $\widehat X$ need not be projective.
 \end{proposition}
 
-Part~(2) follows from part~(1): by the proof of Proposition~\ref{prop:partialres}(2), $\iota[C_q]=\circv_q$, a local toric
-computation that is integral as it stands, so $\iota\bigl(\sum_q\lambda_q[C_q]\bigr)=\sum_q\lambda_q\circv_q$, which
+Part~(2) follows from part~(1): by the proof of Proposition~\ref{prop:partialres}(2), $\mathrm{ev}_D[C_q]=\circv_q$, a local toric
+computation that is integral as it stands, so $\mathrm{ev}_D\bigl(\sum_q\lambda_q[C_q]\bigr)=\sum_q\lambda_q\circv_q$, which
 vanishes if and only if $\lambda\in K$. Part~(1) also recovers the injectivity of~\eqref{eq:injection}. With
 Theorem~\ref{thm:main}(1), the exceptional curves of $\widehat X$ and the vanishing spheres of $Y_t$ have the same
 relation lattice $K$, integrally.
@@ -369,7 +369,7 @@ classes $y_i\wedge n$ span $\Lambda^2N$. So $H_2(W;\Z)$ is spanned by classes th
 \emph{Step B.} By Step A and the exact sequence of the pair $(\widehat X,W)$, the map
 $H_2(\widehat X;\Z)\to H_2(\widehat X,W;\Z)$ is injective.
 
-\emph{Step C: $H_2(\widehat X,W;\Z)\cong\Z^R$, and the composite with Step B is $\iota$.} Triangulate $\widehat X$ so
+\emph{Step C: $H_2(\widehat X,W;\Z)\cong\Z^R$, and the composite with Step B is $\mathrm{ev}_D$.} Triangulate $\widehat X$ so
 that every $D_r$ is a subcomplex \cite[Thm.~2]{Loj64}. Then $D$ is a compact subcomplex, hence locally contractible, and
 $W=\widehat X\setminus D$. The duality theorem for compact subsets of a closed oriented manifold \cite[Thm.~3.44]{Hat02} gives
 \[
@@ -394,7 +394,7 @@ $H^4(D;\Z)\cong\bigoplus_{r\in R}H^4(D_r;\Z)=\Z^R$, the $r$-th component being r
 above, the $r$-th component of $H_2(\widehat X;\Z)\to H_2(\widehat X,\widehat X\setminus D;\Z)\cong\Z^R$ is the map
 $H_2(\widehat X)\to H_2(\widehat X,\widehat X\setminus D_r)\cong H^4(D_r)=\Z$. Through the Thom isomorphism of the normal bundle
 of the smooth surface $D_r$, this map is the intersection number with $D_r$, that is, $C\mapsto D_r\cdot C$. So the
-composite of Step B with this isomorphism is $\iota$, and $\iota$ is injective.
+composite of Step B with this isomorphism is $\mathrm{ev}_D$, and $\mathrm{ev}_D$ is injective.
 \end{proof}
 
 \begin{remark}
@@ -1075,14 +1075,14 @@ The lattice points of $\omega_1\cup\omega_2$ not in $P$ are the \emph{apexes} of
 \item Let $\mathcal S$ be a regular subdivision of $\partial\Delta$ into lattice polytopes that induces $\sigma$ on the two-faces and in which the
 three-cells containing node parallelograms have no lattice points other than their vertices. Then the height condition holds for $\mathcal S$, by
 the argument of (4) with Lemma~\ref{lem:hidden}. In particular it holds for $\Sigma'$ itself whenever every lattice point of $\partial\Delta$ is a
-vertex of $\Sigma'$; this is the case for the subdivisions $\Sigma'$ of the three examples of Section~\ref{sec:examples}, and there
+vertex of $\Sigma'$; this is the case for the subdivisions $\Sigma'$ of the examples $X_9$, $X_{19}$ and $X_{20}$ in Section~\ref{sec:examples}, and there
 $\mathcal F_C=\Sigma'$.
 \item In general a subdivision $\Sigma'$ satisfying~\ref{hyp:P} does not satisfy the height condition. The polytope $\Delta_9$ of the example
 $X_9$ has a subdivision satisfying~\ref{hyp:P} whose vertices are all the lattice points of $\partial\Delta_9$ except $(-1,0,0,0)$; in it the three-cell over one of the pentagon parallelograms $P$, in the facet $u=(1,-1,-1,-1)$ with
 $u'=(0,1,-1,-1)$, is the pyramid $\operatorname{conv}(P\cup\{e_2\})$ with $e_{u'}(e_2)=2$, whose only lattice point at height one is $(-1,0,0,0)$.
 Pulling this point gives the $\Sigma'$ of Section~\ref{sec:examples}. On the list of Section~\ref{ssec:list}, the subdivisions $\Sigma'$ that
 the linear program of~\ref{hyp:P} returns violate the height condition on $7$ of the $364$ hexagon-free polytopes satisfying~\ref{hyp:P}, with apexes
-at height $2$ or $3$, while $\mathcal F_C$ satisfies it on all of them (exact computation over the list; see the statement on code availability).
+at height $2$ or $3$, while $\mathcal F_C$ satisfies it on all of them (exact computation over the list; see Section~\ref{ssec:list}).
 \end{enumerate}
 \end{remark}
 

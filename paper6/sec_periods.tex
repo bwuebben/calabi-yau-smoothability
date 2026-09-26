@@ -4,11 +4,11 @@ This section proves Theorem~\ref{thm:main} and Corollary~\ref{cor:smooth}. Theor
 give the inclusion $K\subseteq\Rel(\delta)$ and item~(2) directly (Section~\ref{ssec:relations}). The reverse inclusion
 is a period computation, which follows the mechanism of Greene, Morrison and Strominger \cite[\S2]{GMS95} inside the
 polynomial family. Near the degenerate locus the period $\wp_q$ of a holomorphic volume form over $\delta_q$ is the
-critical value $\varepsilon_P$ at $q_P$ times a holomorphic function $\beta_q$ that has no zero near the locus
+critical value $\varepsilon_P$ at $q_P$ times a holomorphic function $\mathcal B_q$ that has no zero near the locus
 $\{\varepsilon_P=0\}$ (Lemma~\ref{lem:period}). A
 relation among the classes $[\delta_q]$, even a relation modulo torsion, therefore gives the same relation among the
 functions $\wp_q$ on a whole neighbourhood $U$ of the member, and among their differentials at the point $c^{(0)}$ of
-$\mathcal Z$ below it. There the matrix of differentials is $\operatorname{diag}(\beta_q)\,\mathbf R$ up to an error
+$\mathcal Z$ below it. There the matrix of differentials is $\operatorname{diag}(\mathcal B_q)\,\mathbf R$ up to an error
 $O(t^{\theta_0/2})$, where $\mathbf R$ is the integer matrix with rows $r_P$, whose left kernel is $K\otimes\Q$. So the
 relations have rank at most $\operatorname{rank}K$, and saturation of $K$ gives equality over $\Z$ and excludes torsion.
 The same matrix, with a contraction argument and the holomorphic implicit function theorem, describes the nodal locus
@@ -17,17 +17,17 @@ spheres, and Section~\ref{ssec:smooth} proves Corollary~\ref{cor:smooth}.
 
 Throughout, the configuration of Section~\ref{ssec:member} is fixed: $\mathcal T$ and $\check h$, the pulling
 refinement $\mathcal F_C$ and the height $h_C$, the vectors $w_u$, the integer $k_0$ and $H=k_0\varphi+h_C$. We use the
-notation of Section~\ref{sec:regime}: the compact set $\mathscr K_0\subset\mathcal Z$, the radius $r\le r_1$ and the
+notation of Section~\ref{sec:regime}: the compact set $\mathscr C_0\subset\mathcal Z$, the radius $r\le r_1$ and the
 bound $\eta_0\le r^2/20$ of Definition~\ref{def:window}, the constant $C_\eta$ of Lemma~\ref{lem:eta}, the sets
 $U_\C\subseteq U^+_\C$ of Definition~\ref{def:window}, the max-norm $\|\xi\|=\max_n|\xi_n|$ on $\C^{\mathcal A}$ with
 $\|r_P\|_*=4$, and $\eta_P(\xi)=r_P\cdot\xi$, extended complex-linearly. A coefficient vector near $c^{(0)}$ is written
 $c^{(0)}e^\xi$ with $\xi\in\C^{\mathcal A}$. Constants called $C$ depend only on the configuration and on
-$\mathscr K_0$; $C(\eta_0)$ depends in addition on $\eta_0$. All thresholds on $t$ below depend only on these data.
+$\mathscr C_0$; $C(\eta_0)$ depends in addition on $\eta_0$. All thresholds on $t$ below depend only on these data.
 
 \subsection{The neighbourhood \texorpdfstring{$U$}{U} and the periods}\label{ssec:U}
 
 Fix $t$ below the threshold of Lemmas~\ref{lem:W}, \ref{lem:NM} and~\ref{lem:TR}, and a member $c=c^{(0)}e^{\xi_c}$ as
-in Theorem~\ref{thm:main}: $c^{(0)}\in\mathscr K_0$, and $\xi_c$ real and in the window. For a node $q$, with
+in Theorem~\ref{thm:main}: $c^{(0)}\in\mathscr C_0$, and $\xi_c$ real and in the window. For a node $q$, with
 parallelogram $P$, and a coefficient vector $c'$ at which Lemma~\ref{lem:NM} applies, $q_P(c')$ and $\varepsilon_P(c')$
 denote the Morse point of $f^{(1)}$ in $\mathbb D_P$ and its critical value. Below, sets of nodes are indexed by the
 nodes $q$ or by their parallelograms $P$ interchangeably.
@@ -120,20 +120,27 @@ depending holomorphically on $c'$. Put
 \]
 
 \begin{lemma}[periods]\label{lem:period}
-Let $q$ be a node, with parallelogram $P$. There are a holomorphic function $\beta_q$ on $U$, a sign $s_q$ and a
-constant $C$ independent of $t$ such that $\wp_q=\beta_q\varepsilon_P$ on $U\setminus D_q$ and
+Let $q$ be a node, with parallelogram $P$. There are a holomorphic function $\mathcal B_q$ on $U$, a sign $s_q$ and a
+constant $C$ independent of $t$ such that $\wp_q=\mathcal B_q\varepsilon_P$ on $U\setminus D_q$ and
 \[
-\bigl|\beta_q-4\pi^2s_q\,\mu_P/c_0\bigr|\le C\bigl(|\varepsilon_P|+t^{\theta_0/2}\bigr)\qquad\text{on }U.
+\bigl|\mathcal B_q-4\pi^2s_q\,\mu_P/c_0\bigr|\le C\bigl(|\varepsilon_P|+t^{\theta_0/2}\bigr)\qquad\text{on }U.
 \]
-In particular $\wp_q$ extends holomorphically to $U$, $\beta_q$ is bounded on $U$ uniformly in $t$, and there is
-$\varepsilon_*>0$ independent of $t$ such that, for $t$ small, $\beta_q$ has no zero at the points of $U$ with
+In particular $\wp_q$ extends holomorphically to $U$, $\mathcal B_q$ is bounded on $U$ uniformly in $t$, and there is
+$\varepsilon_*>0$ independent of $t$ such that, for $t$ small, $\mathcal B_q$ has no zero at the points of $U$ with
 $|\varepsilon_P|\le\varepsilon_*$, which include $D_q$.
 \end{lemma}
 
 \begin{proof}
-\emph{Coordinates.} By Lemma~\ref{lem:NM}(1), on $2\mathbb D_P$ the function $f^{(1)}$ differs by $O(t^{\theta_0/2})$ from
-$f_{\rm lin}:=xy+z_1z_2-\kappa_P$, with $z_1=\hat Z$ and $z_2=\vartheta_P\hat Z'$, since $a\hat Z$ and $a'\hat Z'$ are
-$O(\lambda_P^{-1/2})$ there; by the Cauchy estimates the difference is $O(t^{\theta_0/2})$ in $C^3$ on $\mathbb D_P$. Let
+\emph{Coordinates.} Fix $c_*\in U$ and freeze the positive scale $\nu_*:=\nu_Z(c_*)$. On a neighbourhood
+$V\subset U$ of $c_*$ use $\mu_P^{1/2}=\exp(\eta_P/2)$ and put $z_1:=Z/\nu_*$ and $z_2:=\mathfrak b(c')\nu_*Z'$. These coordinates depend holomorphically
+on the point and on $c'$, and $z_1z_2=\mathfrak bZZ'$. At $c_*$ they agree with $\hat Z$ and
+$\vartheta_P\hat Z'$, since $\nu_Z\nu_{Z'}=1/|\mathfrak b|$. The scales defining $\mathbb D_P$ are continuous in
+$c'$, so, after shrinking $V$, these charts have a common domain inside $2\mathbb D_P$.
+By Lemma~\ref{lem:NM}(1), at $c_*$ the function $f^{(1)}$ differs by $O(t^{\theta_0/2})$ from
+$f_{\rm lin}:=xy+z_1z_2-\kappa_P$, since $a\hat Z$ and $a'\hat Z'$ are
+$O(\lambda_P^{-1/2})$ there. Fibre-variable Cauchy estimates give the same bound in $C^3$ on $\mathbb D_P$;
+on a slightly smaller common domain it holds throughout $V$. Uniform bounds below are taken at the arbitrary
+centre $c_*$, where the original normalisation applies, so their constants are independent of $c_*$ and $t$. Let
 $\zeta^0$ be the linear coordinates with $x=\zeta^0_1+i\zeta^0_2$, $y=\zeta^0_1-i\zeta^0_2$, $z_1=\zeta^0_3+i\zeta^0_4$,
 $z_2=\zeta^0_3-i\zeta^0_4$, so that $f_{\rm lin}=\sum_i(\zeta^0_i)^2-\kappa_P$ and
 $dx\wedge dy\wedge dz_1\wedge dz_2=-4\,d^4\zeta^0$, where $d^4\zeta:=d\zeta_1\wedge\dots\wedge d\zeta_4$ for any coordinates
@@ -142,15 +149,17 @@ Hessian taken in the coordinates $\zeta^1$. Since $q_P$ is a critical point of $
 Taylor's formula with integral remainder gives $f^{(1)}=\varepsilon_P+(\zeta^1)^{\mathsf T}\mathsf H(\zeta^1)\,\zeta^1$. The Hessian
 of $f_{\rm lin}$ is $2I$, and $f^{(1)}-f_{\rm lin}$ is $O(t^{\theta_0/2})$ in $C^3$ on the ball $\{|\zeta^1|<r/2\}$, which
 lies in $\mathbb D_P$ because $r\le1/2$; so $\mathsf H=I+O(t^{\theta_0/2})$ in $C^1$ there. Put $\zeta:=\mathsf H(\zeta^1)^{1/2}\zeta^1$,
-with the principal square root of the symmetric matrix $\mathsf H$. Then $\zeta$ are holomorphic coordinates centred at $q_P$,
-depending holomorphically on $c'$, with $f^{(1)}=\varepsilon_P+\mathfrak q$, $\mathfrak q:=\sum_i\zeta_i^2$, and
-$\zeta-\zeta^1=O(t^{\theta_0/2})$ in $C^1$ on the ball, with constants independent of $c'$ and $t$.
+with the principal square root of the symmetric matrix $\mathsf H$. The critical point is holomorphic in $c'$ in
+the original toric coordinates, by the implicit function theorem. Thus $\zeta$ are jointly holomorphic coordinates
+on the local parameter chart, centred at $q_P$, with $f^{(1)}=\varepsilon_P+\mathfrak q$, $\mathfrak q:=\sum_i\zeta_i^2$, and
+$\zeta-\zeta^1=O(t^{\theta_0/2})$ in $C^1$ on the ball, with uniform constants at $c_*$.
+After shrinking $V$ and decreasing $t$, the image contains $|\zeta|<r/\sqrt5$.
 
 \emph{The form.} On the chart $U_{u,u'}$ of Section~\ref{ssec:morse} we take $n_1,\dots,n_4=b-a,\,d-a,\,w_u,\,w_{u'}$.
 Since $x^a/x^0=\chi^a=(ZZ')^{-1}$ by~\eqref{eq:nodeexp}, $\Theta_T/(F_t/x^0)=\Theta/f^{(1)}$ with
 $\Theta:=\pm\gamma_a^{-1}(\chi_1\chi_2)^{-1}d\chi_1\wedge d\chi_2\wedge dZ\wedge dZ'$. From
 $\chi_1=(\gamma_a/\gamma_b)\mu_P^{-1/2}(x-\mu_P^{-1/2})$, $\chi_2=(\gamma_a/\gamma_d)\mu_P^{-1/2}(y-\mu_P^{-1/2})$,
-$Z=\nu_Zz_1$, $Z'=\nu_{Z'}z_2/\vartheta_P$, $\nu_Z\nu_{Z'}=1/|\mathfrak b|$ and $\mathfrak b=\gamma_0/\gamma_a$, with
+$Z=\nu_*z_1$, $Z'=z_2/(\mathfrak b\nu_*)$ and $\mathfrak b=\gamma_0/\gamma_a$, with
 $\gamma_0=c_0$ because $H(0)=0$,
 \[
 \Theta=\pm\frac{\mu_P}{c_0}\,\frac{dx\wedge dy\wedge dz_1\wedge dz_2}{(1-\mu_P^{1/2}x)(1-\mu_P^{1/2}y)}
@@ -163,7 +172,7 @@ $x=y=0$ (Lemma~\ref{lem:NM}(2)).
 \emph{The period.} For $|\lambda|<r^2/5$ let $\mathbf B_\lambda:=\lambda^{1/2}\mathbf B$, where $\mathbf B$ is the closed
 unit ball of $\R^4\subset\C^4$ in the coordinates $\zeta$, oriented by $\R^4$; this does not depend on the choice of the
 square root, since $-1$ preserves the orientation of $\R^4$. Its boundary lies in $\{\mathfrak q=\lambda\}$, and for
-$\lambda=-\varepsilon_P$ it is the sphere $\delta_q(c')$; by~\eqref{eq:epsbound} this applies on all of $U$. Let
+$\lambda=-\varepsilon_P$ it is the sphere $\delta_q(c')$; by~\eqref{eq:epsbound} this applies throughout $V$. Let
 $s'_q=\pm1$ compare the orientation of $\delta_q$ with the boundary orientation of $\mathbf B_{-\varepsilon_P}$; it is
 locally constant in $c'$. Put
 \[
@@ -180,11 +189,12 @@ $\partial_\lambda\mathcal I(c',\lambda)=\int_{\partial\mathbf B_\lambda}g\,d^4\z
 =-s'_q\,\varepsilon_P\bigl(\pi^2g(0)-\varepsilon_P\mathcal I_2(c',-\varepsilon_P)\bigr),\qquad
 \mathcal I_2:=3\mathcal I_1+\lambda\,\partial_\lambda\mathcal I_1 .
 \]
-The function $\beta_q:=-s'_q\bigl(\pi^2g(0)-\varepsilon_P\mathcal I_2(c',-\varepsilon_P)\bigr)$ is holomorphic near every
+The function $\mathcal B_q:=-s'_q\bigl(\pi^2g(0)-\varepsilon_P\mathcal I_2(c',-\varepsilon_P)\bigr)$ is holomorphic near every
 point of $U$, also on $D_q$, and it equals $\wp_q/\varepsilon_P$ on the dense set $U\setminus D_q$; so these local
 functions define a holomorphic function on $U$. The estimate follows from the formula for $g(0)$, with
-$s_q=\pm s'_q$; this sign is constant, because $s'_q$ is locally constant on the connected set $U\setminus D_q$.
-Since $|\mu_P/c_0|$ is bounded below on $U$ by a constant depending only on $\mathscr K_0$ and $\eta_0$, the last
+$s_q=\pm s'_q$. The sign agrees at each centre with the one in the continuously varying original normalisation,
+so it is locally constant on the connected set $U\setminus D_q$ and hence constant.
+Since $|\mu_P/c_0|$ is bounded below on $U$ by a constant depending only on $\mathscr C_0$ and $\eta_0$, the last
 statement follows.
 \end{proof}
 
@@ -193,11 +203,11 @@ statement follows.
 \subsubsection*{The threshold}
 We use the choices of Section~\ref{ssec:member}: $r=r_1$, $\eta_1=r_1^2/20$ and $C=C_\eta$ in the statement of
 Theorem~\ref{thm:main}, so that for $\eta_0\in(0,\eta_1]$ the members of Theorem~\ref{thm:main} are exactly the members
-$c=c^{(0)}e^{\xi_c}$ with $c^{(0)}\in\mathscr K_0$ and $\xi_c$ real and in the window; here $\log\mu_P(c)=\eta_P(\xi_c)$.
+$c=c^{(0)}e^{\xi_c}$ with $c^{(0)}\in\mathscr C_0$ and $\xi_c$ real and in the window; here $\log\mu_P(c)=\eta_P(\xi_c)$.
 Let $t_0$ be the threshold of Theorem~\ref{thm:lift} (Proposition~\ref{prop:Bprecise}) for $r$, $\eta_0$ and
-$\mathscr K_0$, which lies below those of Lemmas~\ref{lem:W}, \ref{lem:NM} and~\ref{lem:TR}. In the proofs of items~(1)
+$\mathscr C_0$, which lies below those of Lemmas~\ref{lem:W}, \ref{lem:NM} and~\ref{lem:TR}. In the proofs of items~(1)
 and~(3) we decrease $t_0$ finitely many times, each time by a condition that involves only the configuration,
-$\mathscr K_0$ and $\eta_0$; the result is the $t_0$ of Theorem~\ref{thm:main}. Fix $t<t_0$, a member $c$ and the
+$\mathscr C_0$ and $\eta_0$; the result is the $t_0$ of Theorem~\ref{thm:main}. Fix $t<t_0$, a member $c$ and the
 neighbourhood $U$ of Lemma~\ref{lem:U}.
 
 \subsubsection*{Proof of item (2), and $K\subseteq\Rel(\delta)$}
@@ -222,52 +232,52 @@ $\Z^R\subseteq\Z^{\mathcal A}$, and under this inclusion $r_P=-\circv_q$, both f
 (a change of diagonal reverses $r_P$, $\circv_q$ and $\delta_q$ together, Lemma~\ref{lem:diag}). Hence the left kernel of $\mathbf R$ over $\Q$ is
 $\{k\in\Q^Q:\sum_qk_q\circv_q=0\}=K\otimes\Q$, and
 \[
-\rho_{\mathbf R}:=\operatorname{rank}\mathbf R=|Q|-\operatorname{rank}K .
+r_{\mathbf R}:=\operatorname{rank}\mathbf R=|Q|-\operatorname{rank}K .
 \]
 
 \emph{Step 1: relations propagate over $U$.} Let $k\in T$. By Lemma~\ref{lem:flat}, parallel transport along a path in
 the connected set $U^\circ$ from $c$ to $c'$ is a group isomorphism $H_3(Y_{t,c};\Z)\to H_3(Y_{t,c'};\Z)$ carrying
 $[\delta_q(c)]$ to $[\delta_q(c')]$; so $\sum_qk_q[\delta_q(c')]$ is a torsion class for every $c'\in U^\circ$.
 Integration of the closed form $\Omega_{t,c'}$ is a homomorphism $H_3(Y_{t,c'};\Z)\to\C$, which vanishes on torsion
-classes; hence $\sum_qk_q\wp_q=0$ on $U^\circ$. By Lemma~\ref{lem:period} each $\wp_q=\beta_q\varepsilon_P$ extends
+classes; hence $\sum_qk_q\wp_q=0$ on $U^\circ$. By Lemma~\ref{lem:period} each $\wp_q=\mathcal B_q\varepsilon_P$ extends
 holomorphically to $U$, and $U^\circ$ is dense in $U$; so
 \begin{equation}\label{eq:periodrel}
 \sum_qk_q\,\wp_q\equiv0\quad\text{on }U,\qquad\text{for every }k\in T,\ \text{in particular for every }k\in K .
 \end{equation}
 
 \emph{Step 2: the differentials at $c^{(0)}$.} At the point $c^{(0)}\in U$, where $\xi=0$, every $\eta_P$ vanishes, so
-$\kappa_P=0$ and $|\varepsilon_P(c^{(0)})|\le Ct^{\theta_0/2}$ (Lemma~\ref{lem:NM}(2)). Since $\mathscr K_0$ is compact
-and $c_0>0$ on $\mathcal Z$, there are $0<c_-\le c_+$ with $c^{(0)}_0\in[c_-,c_+]$ for all $c^{(0)}\in\mathscr K_0$. By
-Lemma~\ref{lem:period}, with $\mu_P(c^{(0)})=1$, $\bigl||\beta_q(c^{(0)})|-4\pi^2/c^{(0)}_0\bigr|\le Ct^{\theta_0/2}$, and
-$|\beta_q|\le b_+$ on $U$ with $b_+$ independent of $t$. So for $t$ small
+$\kappa_P=0$ and $|\varepsilon_P(c^{(0)})|\le Ct^{\theta_0/2}$ (Lemma~\ref{lem:NM}(2)). Since $\mathscr C_0$ is compact
+and $c_0>0$ on $\mathcal Z$, there are $0<c_-\le c_+$ with $c^{(0)}_0\in[c_-,c_+]$ for all $c^{(0)}\in\mathscr C_0$. By
+Lemma~\ref{lem:period}, with $\mu_P(c^{(0)})=1$, $\bigl||\mathcal B_q(c^{(0)})|-4\pi^2/c^{(0)}_0\bigr|\le Ct^{\theta_0/2}$, and
+$|\mathcal B_q|\le b_+$ on $U$ with $b_+$ independent of $t$. So for $t$ small
 \[
-b_-:=2\pi^2/c_+\ \le\ |\beta_q(c^{(0)})|\ \le\ b_+\qquad\text{for every }q .
+b_-:=2\pi^2/c_+\ \le\ |\mathcal B_q(c^{(0)})|\ \le\ b_+\qquad\text{for every }q .
 \]
 The polydisc in $\xi$ about $0$ of polyradius $\varrho_*=\min(1/2,\eta_0/8)$ lies in $U_\C\subseteq U$: on it
-$\|\xi\|\le1/2$ and $|\eta_P|\le\|r_P\|_*\|\xi\|\le\eta_0/2$. Since $\beta_q$ is holomorphic and bounded by $b_+$ on $U$,
-the Cauchy estimates on this polydisc give $|\partial\beta_q/\partial\xi_n(c^{(0)})|\le b_+/\varrho_*$. Hence, at $c^{(0)}$,
+$\|\xi\|\le1/2$ and $|\eta_P|\le\|r_P\|_*\|\xi\|\le\eta_0/2$. Since $\mathcal B_q$ is holomorphic and bounded by $b_+$ on $U$,
+the Cauchy estimates on this polydisc give $|\partial\mathcal B_q/\partial\xi_n(c^{(0)})|\le b_+/\varrho_*$. Hence, at $c^{(0)}$,
 \[
-d\wp_q=\beta_q(c^{(0)})\,d\varepsilon_P+\varepsilon_P(c^{(0)})\,d\beta_q
-=\beta_q(c^{(0)})\,r_P\cdot d\xi+O\bigl(C(\eta_0)\,t^{\theta_0/2}\bigr),
+d\wp_q=\mathcal B_q(c^{(0)})\,d\varepsilon_P+\varepsilon_P(c^{(0)})\,d\mathcal B_q
+=\mathcal B_q(c^{(0)})\,r_P\cdot d\xi+O\bigl(C(\eta_0)\,t^{\theta_0/2}\bigr),
 \]
 by~\eqref{eq:depsilon} with $\eta_P=0$. Let $\mathbf D(t)$ be the $|Q|\times|\mathcal A|$ matrix whose rows are the
 differentials $d\wp_q(c^{(0)})$, as linear forms in $d\xi$. Then
 \begin{equation}\label{eq:Dmatrix}
-\mathbf D(t)=\operatorname{diag}\bigl(\beta_q(c^{(0)})\bigr)\,\mathbf R+\mathbf E(t),\qquad
+\mathbf D(t)=\operatorname{diag}\bigl(\mathcal B_q(c^{(0)})\bigr)\,\mathbf R+\mathbf E(t),\qquad
 \max_{q,n}|\mathbf E(t)_{qn}|\le C(\eta_0)\,t^{\theta_0/2}.
 \end{equation}
 
-\emph{Step 3: the rank.} Choose $\rho_{\mathbf R}$ rows $I$ and $\rho_{\mathbf R}$ columns $J$ of $\mathbf R$ with $\det\mathbf R_{IJ}\neq0$; as an integer,
-$|\det\mathbf R_{IJ}|\ge1$. Then $\bigl|\det\bigl(\operatorname{diag}(\beta)\mathbf R\bigr)_{IJ}\bigr|=\prod_{q\in I}|\beta_q(c^{(0)})|\,
-|\det\mathbf R_{IJ}|\ge b_-^{\rho_{\mathbf R}}$, and every entry of $\operatorname{diag}(\beta)\mathbf R$ has modulus at most $b_+$. The determinant
-is a polynomial of degree $\rho_{\mathbf R}$ in the entries, so, once $C(\eta_0)t^{\theta_0/2}\le1$,
+\emph{Step 3: the rank.} Choose $r_{\mathbf R}$ rows $I$ and $r_{\mathbf R}$ columns $J$ of $\mathbf R$ with $\det\mathbf R_{IJ}\neq0$; as an integer,
+$|\det\mathbf R_{IJ}|\ge1$. Then $\bigl|\det\bigl(\operatorname{diag}(\mathcal B)\mathbf R\bigr)_{IJ}\bigr|=\prod_{q\in I}|\mathcal B_q(c^{(0)})|\,
+|\det\mathbf R_{IJ}|\ge b_-^{r_{\mathbf R}}$, and every entry of $\operatorname{diag}(\mathcal B)\mathbf R$ has modulus at most $b_+$. The determinant
+is a polynomial of degree $r_{\mathbf R}$ in the entries, so, once $C(\eta_0)t^{\theta_0/2}\le1$,
 \[
-\bigl|\det\mathbf D(t)_{IJ}-\det\bigl(\operatorname{diag}(\beta)\mathbf R\bigr)_{IJ}\bigr|
-\le\rho_{\mathbf R}\cdot\rho_{\mathbf R}!\,(b_++1)^{\rho_{\mathbf R}-1}\,C(\eta_0)\,t^{\theta_0/2}.
+\bigl|\det\mathbf D(t)_{IJ}-\det\bigl(\operatorname{diag}(\mathcal B)\mathbf R\bigr)_{IJ}\bigr|
+\le r_{\mathbf R}\cdot r_{\mathbf R}!\,(b_++1)^{r_{\mathbf R}-1}\,C(\eta_0)\,t^{\theta_0/2}.
 \]
-We decrease $t_0$ so that the right-hand side is less than $b_-^{\rho_{\mathbf R}}/2$. Then $\det\mathbf D(t)_{IJ}\neq0$, so
-$\operatorname{rank}\mathbf D(t)\ge\rho_{\mathbf R}$, and the left kernel of $\mathbf D(t)$ in $\C^Q$ has dimension at most
-$|Q|-\rho_{\mathbf R}=\operatorname{rank}K$.
+We decrease $t_0$ so that the right-hand side is less than $b_-^{r_{\mathbf R}}/2$. Then $\det\mathbf D(t)_{IJ}\neq0$, so
+$\operatorname{rank}\mathbf D(t)\ge r_{\mathbf R}$, and the left kernel of $\mathbf D(t)$ in $\C^Q$ has dimension at most
+$|Q|-r_{\mathbf R}=\operatorname{rank}K$.
 
 \emph{Step 4: conclusion.} Let $k\in T$. Differentiating~\eqref{eq:periodrel} at $c^{(0)}$ gives
 $\sum_qk_q\,d\wp_q(c^{(0)})=0$, so $k$ lies in the left kernel of $\mathbf D(t)$. The complex span of $T$ therefore has
@@ -306,7 +316,7 @@ subgroup; so the kernels, and the preimages of the torsion subgroups, agree. Ite
 
 By Lemma~\ref{lem:U}(4) the members of $U$ with a node at every point $q_P$, $P\in Q$, are the points of $D_Q$; each of
 them has exactly $|Q|$ singular points, all ordinary double points. Let $I\subseteq Q$ index rows $r_P$, $P\in I$, that
-form a basis of the row space of $\mathbf R$, so $|I|=\rho_{\mathbf R}=|Q|-\operatorname{rank}K$, and put $D_I:=\bigcap_{P\in I}D_P$. We
+form a basis of the row space of $\mathbf R$, so $|I|=r_{\mathbf R}=|Q|-\operatorname{rank}K$, and put $D_I:=\bigcap_{P\in I}D_P$. We
 show that $D_I$ is a nonempty complex submanifold of $U$ of codimension $|I|$, and that $D_Q=D_I$.
 
 In the chart $\xi$ write $\varepsilon_P(c^{(0)}e^\xi)=-\kappa_P(\xi)+E_P(\xi)$ with $\kappa_P=e^{-r_P\cdot\xi}-1$. By
@@ -337,7 +347,7 @@ $c^{(0)}e^{\xi^*}\in U$. So $D_I\neq\emptyset$.
 \emph{(b) $D_I$ is a complex submanifold of codimension $|I|$.} On $U$, $|e^{-\eta_P}|\in[e^{-1},e]$, and the
 differentials~\eqref{eq:depsilon}, $P\in I$, are the rows of the matrix $\operatorname{diag}(e^{-\eta_P})_{P\in I}\mathbf R_I$ up to
 an error bounded entrywise by $C(\eta_0)t^{\theta_0/2}$. The minor argument of Step~3 of Section~\ref{ssec:relations}, with
-$e^{-\eta_P}$ in place of $\beta_q$ and the bounds $e^{-1}$, $e$ in place of $b_\pm$, shows that these $|I|$ forms are
+$e^{-\eta_P}$ in place of $\mathcal B_q$ and the bounds $e^{-1}$, $e$ in place of $b_\pm$, shows that these $|I|$ forms are
 linearly independent at every point of $U$ once $t$ is small. By the holomorphic implicit function theorem $D_I$ is a
 complex submanifold of $U$ of codimension $|I|$.
 
@@ -354,8 +364,8 @@ $\eta_P=\sum_{P'}a_{PP'}\eta_{P'}$ and $|\eta_P|\le Ct^{\theta_0/2}$ on $D_I$ as
 dependent, and since the rows indexed by $I$ are independent they satisfy a rational relation $k$ with $k_q\neq0$ and
 support in $I\cup\{q\}$. As $r_{P'}=-\circv_{q'}$, $k\in K\otimes\Q$, and a nonzero integer multiple $mk$ lies in $K$. By
 item~(2) and~\eqref{eq:periodrel}, $\sum_{p}mk_p\wp_p\equiv0$ on $U$. On $D_I$, $\wp_p=\beta_p\varepsilon_p=0$ for
-$p\in I$, so $k_q\beta_q\varepsilon_P=0$ there. By~\eqref{eq:epsDI}, $|\varepsilon_P|\le\varepsilon_*$ on $D_I$ once $t$ is
-small, so $\beta_q$ has no zero on $D_I$ (Lemma~\ref{lem:period}). Hence $\varepsilon_P=0$ on $D_I$, that is
+$p\in I$, so $k_q\mathcal B_q\varepsilon_P=0$ there. By~\eqref{eq:epsDI}, $|\varepsilon_P|\le\varepsilon_*$ on $D_I$ once $t$ is
+small, so $\mathcal B_q$ has no zero on $D_I$ (Lemma~\ref{lem:period}). Hence $\varepsilon_P=0$ on $D_I$, that is
 $D_I\subseteq D_q$. So $D_I\subseteq D_Q\subseteq D_I$, and $D_Q=D_I$ is a nonempty complex submanifold of $U$ of
 codimension $|Q|-\operatorname{rank}K$.
 

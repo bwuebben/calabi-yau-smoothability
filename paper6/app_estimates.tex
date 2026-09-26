@@ -10,7 +10,7 @@ the chart, and we put
 so that $\mathfrak m\le\mathfrak S^{1/2}\le|\mathcal A|^{1/2}\mathfrak m$. The \emph{transition set} $\operatorname{Trans}(x)$ is the
 set of $n\neq0$ with $\theta_1/4\le\tilde d_n(x)\le\theta_1/2$; outside it each $\psi_n$ is locally constant, equal to $1$
 or $0$. We use $e_{\max}$, $\mathcal E_P$ (Definition~\ref{def:node}), $D$ and $\theta_2$ (Section~\ref{ssec:localized}),
-and write $\beta'_{\max}=\max|\beta'|$. Constants $C$, $c$ depend only on the configuration and on $\mathscr K_0$, unless a
+and write $\beta'_{\max}=\max|\beta'|$. Constants $C$, $c$ depend only on the configuration and on $\mathscr C_0$, unless a
 dependence on $r$ or $\eta_0$ is indicated.
 
 \subsection{Deficits, cut-offs and a regularity criterion}\label{app:deficits}
@@ -23,7 +23,7 @@ its infimum is attained (it is the value of the linear program: minimise $\gamma
 $\langle p,m-n\rangle-H(m)+H(n)\le\gamma$ for $n\in I$, $m\in\mathcal A$). Hence $\gamma^*(I)>0$ for non-cellular $I$, and
 $\theta_0>0$ as a minimum over finitely many sets.
 
-Let $c_*$ bound $|\log|c_m/c_n||$ over the union of the sets $U^+_\C(c^{(0)})$, $c^{(0)}\in\mathscr K_0$, which is compact.
+Let $c_*$ bound $|\log|c_m/c_n||$ over the union of the sets $U^+_\C(c^{(0)})$, $c^{(0)}\in\mathscr C_0$, which is compact.
 At a torus point, $|d_n(x)-d^{\rm tr}_n(p)|\le2c_*/L$. If $L\ge8c_*/\theta_0$, the set $I=\{n:d_n(x)<3\theta_0/4\}$ has
 $\max_Id^{\rm tr}_n(p)<\theta_0$, so it is cellular. At a point $x$ of the toric boundary, $d_n(x')\to d_n(x)$ for torus
 points $x'\to x$ (with limit $\infty$ where $x^n(x)=0$), because the maximum is attained by a monomial not vanishing at
@@ -174,7 +174,7 @@ of the cells is used.
 
 \begin{proof}[Proof of Lemma~\ref{lem:W}]
 (1) By Lemma~\ref{lem:cases} every point of $W_s$ falls under (A), (B) or (C), and in each case $dF^{(s)}$ has real rank
-two. The thresholds on $t$ are finitely many and depend on the configuration, on $\mathscr K_0$ and, in case (C), on $r$
+two. The thresholds on $t$ are finitely many and depend on the configuration, on $\mathscr C_0$ and, in case (C), on $r$
 and $\eta_0$. At $s=1$ the section is holomorphic, so $W_1=Y_t$ is a complex hypersurface, smooth by the above.
 
 (2) At $s=1$ all weights equal $1$ and $\mathcal J=0$. The arguments of cases (A) and (B) use only bounds on $|c_n|$, so
@@ -214,7 +214,7 @@ $\mu_P\tilde\chi_2=\mu_P^{1/2}y-1$ have moduli in $[0.49,1.51]$. So $\chi_1,\chi
 the chart $U_{u,u'}$ (this is where $r\le r_1\le1/4$ is used), and the four monomials of $P$, which relative to
 $\gamma_ax^a$ are $1,\tilde\chi_1,\tilde\chi_2,\mu_P\tilde\chi_1\tilde\chi_2$, have moduli within a factor $16$ of each other.
 The origin has modulus $|\hat Z\hat Z'|\le4$, and each apex has modulus at most $C\lambda_P^{-1/2}\le Ct^{\mathfrak g_P/2}$, with
-$C$ depending only on the configuration and $\mathscr K_0$. So $\mathfrak m\le C$, the deficits of
+$C$ depending only on the configuration and $\mathscr C_0$. So $\mathfrak m\le C$, the deficits of
 $P$ are at most $C/L$ and those of the apexes at least $\mathfrak g_P/2-C/L\ge(\theta_0+1)/2-C/L$
 by~\eqref{eq:lambdagap}. For $n\notin\mathcal A_P$ the set $P\cup\{n\}$ is not cellular: a cell of $\mathcal F_C$ containing
 $P$ lies in $G$, $u^\vee$ or $u'^\vee$, so it is $P$, $\omega_1$ or $\omega_2$, and $n$ lies in none of them. This includes
@@ -359,7 +359,7 @@ $|\mu_P^{1/2}\tilde\chi_1|\ge1/2$ and $\mathfrak m\le C(1+|y|)$, hence $|\chi_1\
 The case $|x|\ge r$ is symmetric. If $|x|,|y|<r$, then $\mathfrak m\le C$ and
 $|xy|\ge|\kappa_P|-Ct^\gamma\ge\eta_0/(4C_\eta)$ in the window, so
 $\max(|\chi_1\partial_{\chi_1}\tilde g|,|\chi_2\partial_{\chi_2}\tilde g|)\ge\tfrac12(\eta_0/(4C_\eta))^{1/2}$. In each case
-$|h|>\mathcal J$ for $t<t_0(r,\eta_0,\mathscr K_0)$.
+$|h|>\mathcal J$ for $t<t_0(r,\eta_0,\mathscr C_0)$.
 \end{itemize}
 
 (2) Let $s=1$, $c\in U_\C$, and let $x\in\mathcal U_P$ be a singular point of $Y_{t,c}$. All weights are one and
@@ -383,7 +383,7 @@ because $\mathfrak g_P/2\ge\theta_0\ge\theta_1$ by Lemma~\ref{lem:gaps}(3). Symm
 $x\in\mathbb D_P$.
 \end{proof}
 
-\subsection{Exactness of the weights}\label{app:windows}
+\subsection{Where the localized mirror is given by exact models}\label{app:windows}
 
 \begin{proof}[Proof of Lemma~\ref{lem:windows}]
 Throughout, $\mathrm{val}_m$ denotes $\frac1L\log|\gamma_mx^m|$ at the point considered, so that the deficit of $m$ is

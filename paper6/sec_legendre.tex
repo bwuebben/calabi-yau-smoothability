@@ -7,7 +7,7 @@ $B_Y$ and the local system of integral tangent vectors of $B'_\sigma$ onto the d
 transfer relative tropical $2$-cycles to $B_Y$ with the same boundary networks and the same node coefficients
 (Proposition~\ref{prop:transfer}). The homeomorphism is assembled from three comparisons, each compatible with the
 dual-pair complex of Section~\ref{sec:dualpair}: a change of fan side (Proposition~\ref{prop:F}), by which $\Sigma'$ is
-replaced by $\mathcal F_C$; a change of height (Lemma~\ref{lem:height}); and the Legendre map between the two bases built
+replaced by $\mathcal F_C$; a change of height (Lemma~\ref{lem:height}); and the dual-pair homeomorphism between the two bases built
 from the same data (Proposition~\ref{prop:L1}). Lemmas~\ref{lem:D} and~\ref{lem:arc} describe the cell structure near a
 node and near an arc of the discriminant; these are the neighbourhoods in which the local models of Section~\ref{sec:lift}
 are placed.
@@ -76,7 +76,7 @@ $\tau=\{u_G\}$, where $G$ is the facet of $\Delta$ containing $\omega$ and $u_G$
 isotopic to the identity through face-preserving homeomorphisms, such that $g(C^1(\tau,\omega))=C^2(\tau,\omega)$
 for $\dim\tau\ge1$. In particular $g(\Gamma^1_X)=\Gamma^2_X$, $g$ maps the arc $C^1([u,u'],[n,n'])$ onto the arc
 $C^2([u,u'],[n,n'])$ and each vertex of $\Gamma^1_X$ onto the vertex of $\Gamma^2_X$ of the same dual pair, and there is an
-isomorphism $\iota\colon\Lambda^1_X\to g^*\Lambda^2_X$ that is the identity of $u^\perp\cap N$ on every open facet
+isomorphism $\kappa\colon\Lambda^1_X\to g^*\Lambda^2_X$ that is the identity of $u^\perp\cap N$ on every open facet
 $\operatorname{int}F_u$ and carries the vanishing vector $n'-n$ of each arc to that of its image.
 \item If $h_1$ and $h_2$ agree on the lattice points of the two-skeleton, $g$ can be taken to be the identity on the
 two-skeleton of $\partial\nabla^{\check h}$.
@@ -97,15 +97,15 @@ $C^i(\tau',\omega)$ with $\tau'\supseteq\tau$. Extend $g$ over each facet, a con
 by coning from an interior point; the cone of a piecewise linear map is piecewise linear. Faces of dimension zero are
 points and are fixed; on the edges, the two-faces and the facets in turn, $g$ is isotopic to the identity relative to the
 lower-dimensional faces by the Alexander trick, extended by coning as in Appendix~\ref{app:leg-pl}. By
-Propositions~\ref{prop:L2}(1),(2), $g(\Gamma^1_X)=\Gamma^2_X$, with arcs and vertices as stated. Define $\iota$ on each
+Propositions~\ref{prop:L2}(1),(2), $g(\Gamma^1_X)=\Gamma^2_X$, with arcs and vertices as stated. Define $\kappa$ on each
 $\operatorname{int}F_u$, which $g$ preserves, as the identity of $u^\perp\cap N$. A point $b$ of the two-skeleton outside
 $\Gamma^1_X$ lies in some $C^1(\tau,n)$ with $\dim\tau\ge1$, so $b\in\widetilde R^1_n$ and $g(b)\in C^2(\tau,n)\subseteq
 \widetilde R^2_n$. On a connected neighbourhood $U\subseteq\widetilde R^1_n\cap g^{-1}(\widetilde R^2_n)$ of $b$ both local
 systems are the constant $N/\Z n$, and on $U\cap\operatorname{int}F_u$ the identity of $u^\perp\cap N$ corresponds to the
-identity of $N/\Z n$ under $\pi^X_{un}$ on both sides. So $\iota$ extends over $U$ as the identity of $N/\Z n$, compatibly
+identity of $N/\Z n$ under $\pi^X_{un}$ on both sides. So $\kappa$ extends over $U$ as the identity of $N/\Z n$, compatibly
 on overlaps, and is an isomorphism of local systems on $\partial\nabla^{\check h}\setminus\Gamma^1_X$. Near the arc
 $C^i([u,u'],[n,n'])$ the vanishing vector is represented in the chart of $F_u$ by $n'-n\in u^\perp\cap N$ on both bases
-(Proposition~\ref{prop:L2}(4)), and $\iota$ is the identity there.
+(Proposition~\ref{prop:L2}(4)), and $\kappa$ is the identity there.
 
 (4) By Lemma~\ref{lem:cayley}(2), the decomposition of a face $F_\tau$ with $\dim\tau\ge1$ depends only on the restriction
 of $h_i$ to $\tau^\vee\cap N$, which lies in the two-skeleton of $\partial\Delta$. So the two decompositions, their
@@ -113,13 +113,13 @@ barycentric subdivisions and their cells agree on the two-skeleton, and $g$ can 
 \end{proof}
 
 The vertices of $\mathcal F_2$ in the interior of a facet $G$ of $\Delta$ only change the cells $C^2(u_G,\omega)$ inside the
-open facet $\operatorname{int}F_{u_G}$, by (2); there $\Lambda^2_X$ is the constant facet lattice, and $\iota$ is its
+open facet $\operatorname{int}F_{u_G}$, by (2); there $\Lambda^2_X$ is the constant facet lattice, and $\kappa$ is its
 identity.
 
 We apply Proposition~\ref{prop:F} with $\mathcal F_1=\Sigma'$ and $\mathcal F_2=\mathcal F_C$. The pulling refinement
 $\mathcal F_C$ is a fan side, induced by the height $h_C$, and it agrees with $\Sigma'$ on the two-skeleton
 (Proposition~\ref{prop:pulling}). We build $B_X(\mathcal F_C)$ with the function $h_C$, and fix the resulting piecewise
-linear homeomorphism $g_C\colon B'_\sigma\to B_X(\mathcal F_C)$ and the isomorphism $\iota_C\colon\Lambda\to g_C^*\Lambda^{\mathcal F_C}_X$. Since $g_C$ maps the node point $p_q$,
+linear homeomorphism $g_C\colon B'_\sigma\to B_X(\mathcal F_C)$ and the isomorphism $\kappa_C\colon\Lambda\to g_C^*\Lambda^{\mathcal F_C}_X$. Since $g_C$ maps the node point $p_q$,
 the zero-cell $C([u,u'],P_q)$, to the zero-cell of the same dual pair, and each arc to the arc with the same lower support,
 the node coefficients of Definition~\ref{def:nodecoef}, read from the lower supports of the legs at $p_q$, are preserved by
 the transport $(g_C)_*$ of Lemma~\ref{lem:transport}.
@@ -141,11 +141,11 @@ $\Lambda_i$ for its local system. Then:
 every dual pair $(\tau,\omega)$; it maps each open facet $\operatorname{int}F_u$ and each region $\widetilde R_n$ onto the
 open facet and the region with the same index, $\Gamma_1$ onto $\Gamma_2$, each node point $p_q$ onto $p_q$, each arc onto
 the arc with the same dual pair, and each vertex of $\Gamma_1$ onto a vertex of $\Gamma_2$ of the same type;
-\item there is an isomorphism of local systems $\iota\colon\Lambda_1\to\phi^*\Lambda_2$ on $B_1\setminus\Gamma_1$ that is the
+\item there is an isomorphism of local systems $\kappa\colon\Lambda_1\to\phi^*\Lambda_2$ on $B_1\setminus\Gamma_1$ that is the
 identity of $u^\perp\cap N$ on every $\operatorname{int}F_u$ and the identity of $N/\Z n$ on every $\widetilde R_n$;
 \item the transport $\phi_*$ of Lemma~\ref{lem:transport} carries relative tropical $2$-cycles on $B_1$ to relative
 tropical $2$-cycles on $B_2$ with the same integers $c_E$ in their boundary networks and the same node coefficients; and
-$(S,j,v)\mapsto(S,\phi\circ j,\iota(v))$ is a bijection from the tropical $2$-cycles of \cite[Def.~7.2]{CBM} on $B_1$ to
+$(S,j,v)\mapsto(S,\phi\circ j,\kappa(v))$ is a bijection from the tropical $2$-cycles of \cite[Def.~7.2]{CBM} on $B_1$ to
 those on $B_2$, which preserves piecewise linearity of $j$ and the node coefficients.
 \end{enumerate}
 In particular, relative tropical $2$-cycles and tropical $2$-cycles on the base of any such height on $\mathcal T$ are
@@ -165,15 +165,15 @@ is determined by its dual pair (Proposition~\ref{prop:L2}(3)).
 (2) The open facets and the regions cover $B_i\setminus\Gamma_i$, with $\operatorname{int}F_u\cap\widetilde R_n=C^i(u,n)$
 and no triple intersections (proof of Proposition~\ref{prop:L3}). On $\operatorname{int}F_u$ the lattice $\Lambda_i$ is
 $u^\perp\cap N$, on $\widetilde R_n$ it is $N/\Z n$, and on $C^i(u,n)$ the two are related by the projection
-$u^\perp\cap N\to N/\Z n$, on both bases. So the identities on the pieces agree on the overlaps and define $\iota$.
+$u^\perp\cap N\to N/\Z n$, on both bases. So the identities on the pieces agree on the overlaps and define $\kappa$.
 
-(3) The pair $(\phi,\iota)$ satisfies the hypotheses of Lemma~\ref{lem:transport}: near the arc of $([u,u'],[n,n'])$ the
-vanishing vector is $n'-n\in u^\perp\cap N$ on both bases and $\iota$ is the identity there. The integers $c_E$ are
+(3) The pair $(\phi,\kappa)$ satisfies the hypotheses of Lemma~\ref{lem:transport}: near the arc of $([u,u'],[n,n'])$ the
+vanishing vector is $n'-n\in u^\perp\cap N$ on both bases and $\kappa$ is the identity there. The integers $c_E$ are
 therefore unchanged, and the node coefficients, read from the lower supports of the legs at the node points
 (Definition~\ref{def:nodecoef}), are unchanged by (1). The clauses of \cite[Def.~7.2]{CBM} refer to the topology of $S$
 and $j$, to $\Gamma_i$ with its vertex types and nodes, and to $\Lambda_i$ and its monodromy. An orientation of $B_i$ enters
 only through Definition~\ref{def:types}, and the types do not depend on it (Remark~\ref{rem:sameloop}). By (1) and (2),
-$\phi$ and $\iota$ preserve all of these, and $\iota$ intertwines parallel transport, so $(S,\phi\circ j,\iota(v))$
+$\phi$ and $\kappa$ preserve all of these, and $\kappa$ intertwines parallel transport, so $(S,\phi\circ j,\kappa(v))$
 satisfies the clauses if and only if $(S,j,v)$ does; $\phi\circ j$ is piecewise linear if $j$ is. For a tropical
 $2$-cycle, triangulated, the node coefficients are those of the relative cycle it defines (Section~\ref{ssec:cbm}), and
 these are unchanged.
@@ -181,7 +181,7 @@ these are unchanged.
 
 \subsection{The node star and the neighbourhood of an arc}\label{ssec:leg-node}
 In this subsection $B_X=B_X(\mathcal F_C)$, $B_Y$ is the mirror base, and $\mathcal L=\Psi_Y\circ\Psi_X^{-1}$ is the
-Legendre map constructed in the proof of Proposition~\ref{prop:L1}(4), which we fix. Since $g_C$ preserves the faces of
+dual-pair homeomorphism constructed in the proof of Proposition~\ref{prop:L1}(4), which we fix. Since $g_C$ preserves the faces of
 $\partial\nabla^{\check h}$ and the cells $C(\tau,\omega)$ with $\dim\tau\ge1$ (Proposition~\ref{prop:F}(3)), statements
 about $B'_\sigma$ that involve only these are carried over by $g_C$.
 
@@ -258,10 +258,9 @@ $\{y_1=y_3=0,\ y_2<0\}$, over $dc$ to $y_2>0$, over $da$ to $y_1<0$ and over $bc
 halves} at $q$ are the sets $(\Phi^Y_q)^{-1}(\{y_1=0,\ \pm y_3\ge0\})$ and $(\Phi^Y_q)^{-1}(\{y_2=0,\ \pm y_3\ge0\})$; by (1)
 and (3), $(\Phi^Y_q)^{-1}(\{y_1=0,\ y_3\ge0\})$ is the union of the closed cells with sign vectors $(0,\ast,+)$ and
 $(0,\ast,0)$, that is, the closure of $C_Y(u',ab)\cup C_Y(u',P)\cup C_Y(u',cd)$, and similarly for the other three. In the
-node model of Section~\ref{sec:regime}, with base coordinates $(s_1,s_2,\hat\mu)$, the facet regions of $a,b,c,d$ are the
-quadrants of the $(s_1,s_2)$-plane with the sign patterns $(-,-),(+,-),(+,+),(-,+)$, times the $\hat\mu$-axis, and the
-regions of $u$ and $u'$ are $\{\hat\mu<0\}$ and $\{\hat\mu>0\}$; so, up to a homeomorphism preserving these regions and the
-discriminant, the cells of the model are those of the coordinate fan with $(y_1,y_2,y_3)=(s_1,s_2,\hat\mu)$.
+node model of Section~\ref{sec:regime}, the tropical chart $T_q$ of Lemma~\ref{lem:nodemodel}(4) has the same
+quadrant and half-space description. That lemma compares the chart with scaled logarithmic coordinates on the
+hypersurface up to $O(1/L)$; the cell identification here concerns the tropical bases.
 
 Let $p_e=([u,u'],[n,n'])$ be a dual pair of edges, so that $C_Y(p_e)$ is an arc of $\Gamma_Y$
 (Proposition~\ref{prop:L2}(2)). To the faces of $[n,n']$ assign $\epsilon_1(n)=-$, $\epsilon_1(n')=+$,
@@ -338,12 +337,12 @@ $\Gamma^\Upsilon:=\Upsilon(\Gamma_Y)$ and $\Lambda^\Upsilon:=\Upsilon_*\Lambda_Y
 \[
 \mathfrak h:=\Upsilon\circ\mathcal L\circ g_C\colon B'_\sigma\longrightarrow B_Y,
 \]
-with $g_C$ of Section~\ref{ssec:leg-F} and the Legendre map $\mathcal L\colon B_X(\mathcal F_C)\to B_Y$ fixed in
+with $g_C$ of Section~\ref{ssec:leg-F} and the dual-pair homeomorphism $\mathcal L\colon B_X(\mathcal F_C)\to B_Y$ fixed in
 Section~\ref{ssec:leg-node}. Let
 \[
 \psi\colon\Lambda\longrightarrow \mathfrak h^*(\Lambda^\Upsilon)^\vee\qquad\text{on }B'_\sigma\setminus\Gamma
 \]
-be the composite of $\iota_C\colon\Lambda\to g_C^*\Lambda^{\mathcal F_C}_X$ (Proposition~\ref{prop:F}(3)), of the
+be the composite of $\kappa_C\colon\Lambda\to g_C^*\Lambda^{\mathcal F_C}_X$ (Proposition~\ref{prop:F}(3)), of the
 isomorphism $\Lambda^{\mathcal F_C}_X\to(\mathcal L^*\Lambda_Y)^\vee$, $x\mapsto\beta(\,\cdot\,,x)$, given by the flat
 perfect pairing of Proposition~\ref{prop:L3}, and of the transport by $\Upsilon$. For an arc
 $A=C^\Upsilon([u,u'],[n,n'])$ of $\Gamma^\Upsilon$ put $d^*_A:=\langle\,\cdot\,,n'-n\rangle$, a flat section of
@@ -403,7 +402,7 @@ arcs over $ab$ and $bc$, $\rho^*_q=c_{ab}-c_{bc}$.
 (1) The first statement combines Proposition~\ref{prop:F}(3) for $g_C$, Proposition~\ref{prop:L1}(4) for $\mathcal L$ and
 the definition of $C^\Upsilon(p)$; the vertex types are those of Proposition~\ref{prop:L2}(3), and $\Upsilon$ carries the
 monodromies of $\Lambda_Y$ to those of $\Lambda^\Upsilon$. The map $g_C$ preserves $\operatorname{int}F_u$, where
-$\iota_C$ is the identity of $u^\perp\cap N$, and $\mathcal L(\operatorname{int}F_u)=\widetilde R^*_u$, where
+$\kappa_C$ is the identity of $u^\perp\cap N$, and $\mathcal L(\operatorname{int}F_u)=\widetilde R^*_u$, where
 $\Lambda_Y=M/\Z u$ and $\beta$ is $\beta_u(\bar\zeta,x)=\langle\zeta,x\rangle$ (proof of Proposition~\ref{prop:L3}).
 
 (2) Transport by $\Upsilon$ does not change monodromies, so it suffices to argue on $B_Y$ near the arc $C_Y([u,u'],[n,n'])$.
@@ -418,7 +417,7 @@ The covector $\langle\,\cdot\,,n'-n\rangle$ vanishes on $u'-u$, hence is flat, a
 are flat sections near the arc.
 
 (3) At a node or at a vertex of positive type, all arcs share the vector $u'-u$ (Proposition~\ref{prop:L2}(3)) and have
-monodromies $\zeta\mapsto\zeta+\langle\zeta,\delta_A\rangle(u'-u)$ with $\delta_A$ the edge vectors of $P$, respectively of
+monodromies $\zeta\mapsto\zeta+\langle\zeta,t_A\rangle(u'-u)$ with $t_A$ the edge vectors of $P$, respectively of
 the triangle; as in (2) the invariant covectors are those vanishing on $u'-u$. At a node, in the chart of $C_Y(u,a)$,
 $(\Lambda_Y)^\vee=N/\Z a$ and the covectors vanishing on $u'-u$ form the image of $(u'-u)^\perp\cap N$. The plane of $G$ is
 at lattice distance one from the origin and the triangle $abd$ is unimodular in it, so $\{a,b-a,d-a\}$ is a basis of

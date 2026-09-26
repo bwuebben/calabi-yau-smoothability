@@ -37,7 +37,66 @@ W_U=\{(k,\ell)\in T_\parallel\times\bar L:\ -\log|k|/\log R\in U_\parallel^\eta,
 \]
 with $L_U=\{\ell\in\bar L:\pi_\perp(\ell)\in\Omega_\perp\}$, $\bar L$ including the limit points on $D_n$.
 
-\emph{The factor $L_U$.} (a) $L\subset\C^*$ is the zero set of $\beta_0+\beta_u(-R)^{-\check h_u}x^u$. At a zero the two terms are opposite, so $x^u$ is a positive real number (as $(-R)^{-\check h_u}<0$), and there is only one zero because $\beta_0$ and $\beta_u$ are monotone in $|x^u|$ in opposite directions. So $L_U$ is a point. (b) $L\subset(\C^*)^2$ is the localized line $\{\beta_0+\beta_uw_1+\beta_{u'}w_2=0\}$ (after rescaling the coordinates by the constants). Over each of the three ends of the tropical line only two monomials are active, so there $L$ is a product of a point and an annulus in the variable along the end. $\Omega_\perp$ contains the sup-ball $\{|\pi_\perp|_\infty<r\}$ around the vertex of the tropical line, from which two of its ends run along $\partial \mathcal O_\perp$ (the directions along $\widehat B$), and the $\eta$-tube along the third end, the tentacle direction $(-1,-1)$, up to the divisor $D_n$. Truncating the first two ends at $|\pi_\perp|_\infty=r$ is a deformation retraction, by the product structure; the third end is capped at the one point where $\bar L$ meets $D_n$ transversally. So $L_U$ is a pair of pants with two ends truncated and the third capped, an annulus. (c) $L\subset(\C^*)^3$ is the localized plane. By \cite[Thm.~3.9(1)]{Ya16}, applied to $1+x_1+x_2+x_3$ (unimodular fan and triangulation), it is isotopic to $\{1+x_1+x_2+x_3=0\}\cap(\C^*)^3$, which is $\mathbb P^2$ minus four lines in general position, one line for each ray of the tropical plane: the three directions $+e_k$ in $\widehat B$ and the tentacle direction $(-1,-1,-1)$. Over the interior of each two-dimensional cone of the tropical plane only two monomials are active, and over each ray three are, so $L$ is a product there, of a point and $(\C^*)^2$, respectively of a localized line and $\C^*$. Truncating at $|\pi_\perp|_\infty=r$ along the three rays $+e_k$ is therefore a fibrewise deformation retraction: near the far ends of these rays $\Omega_\perp$ coincides with the sup-ball, and in each tentacle cone $\Omega_\perp$ is $\{s<f(t)\}$ in cone coordinates with interval fibres. Capping at $D_n$ adds back the line of the tentacle ray. Hence $L_U\simeq\mathbb P^2\setminus(\text{three lines})\cong(\C^*)^2$.
+\emph{The capped localized hyperplane and its truncation.}
+Write $z_0=1$ and $z_i=(-R)^{-\check h_{a_i}}x^{a_i}$ for
+$A\setminus0=\{a_1,\ldots,a_d\}$. Thus $p_i=-\log_R|z_i/z_0|$.
+The partial compactification at $D_n$ identifies the transverse ambient space with
+\[
+ Z_d=\{[z_0:\cdots:z_d]\in\mathbb P^d:z_i\ne0\text{ for }1\le i\le d\},
+\]
+and the divisor $D_n$ is $z_0=0$. Let $Y_d\subset Z_d$ be the capped localized
+hyperplane $\sum_{j=0}^d\beta_jz_j=0$, where
+$\beta_j=\prod_k\beta(\log_R|z_k/z_j|)$, with its usual extension over $z_0=0$.
+
+For completeness, $Y_d$ has the homotopy type of $(\mathbb C^*)^{d-1}$.
+Apply the regularity calculation of Appendix~\ref{app:Ufan} to the standard
+simplex and the family $\sum_j((1-s)+s\beta_j)z_j=0$ in $\mathbb P^d$.
+At a zero on each toric orbit, two real torus vector fields have derivatives
+spanning $\mathbb C$. Solving the isotopy equation with these fields and
+patching by a partition of unity gives a vector field tangent to every toric
+orbit; compactness of $\mathbb P^d$ gives its flow for $0\le s\le1$.
+Thus the isotopy preserves every coordinate divisor and restricts to $Z_d$.
+The ordinary hyperplane in $Z_d$ projects isomorphically to
+$\{[z_1:\cdots:z_d]:z_i\ne0\}\cong(\mathbb C^*)^{d-1}$.
+This also identifies its fundamental group with that of $Z_d$ via inclusion.
+
+We give a deformation retraction which respects the actual logarithmic region.
+For $d=2,3$, choose $C_0<a<\eta$, and set
+\[
+ M(z)=\max_{0\le j\le d}|z_j|,\qquad
+ \delta_i(z)=\log_R\frac{M(z)}{|z_i|}\quad(1\le i\le d).
+\]
+The ratios defining $\delta_i$ are well defined on $Z_d$. Define
+\[
+ H_t[z_0:z_1:\cdots:z_d]
+   =[z_0:z_1R^{t(\delta_1-a)_+}:\cdots:z_dR^{t(\delta_d-a)_+}].
+\]
+The maximum $M$ is unchanged. Every changed monomial has gap at least $a>C_0$
+throughout this homotopy, so its cutoff coefficient vanishes; its contribution
+to each active coefficient is a factor equal to $1$. The other monomials and
+their coefficients do not change. Consequently $H_t$ preserves $Y_d$ exactly.
+It is continuous at $z_0=0$ and is a strong deformation retraction onto
+$K_a=\{z\in Y_d:\delta_i\le a\text{ for all }i\}$.
+
+On the dense torus the logarithmic map at $t=1$ is
+\[
+ f_a(p)_i=\min\{p_i,\mu(p)+a\},\qquad
+ H_t^{\log}(p)=(1-t)p+t f_a(p).
+\]
+The map $f_a$ is $1$-Lipschitz in the sup-norm: both $p_i$ and $\mu(p)+a$ are
+$1$-Lipschitz, and their minimum is $1$-Lipschitz. It preserves $S_{d,r}$,
+since it leaves the minimum and all coordinates attaining it unchanged and
+only decreases $p_i-\mu(p)$. The same holds for $H_t^{\log}$, which is also
+$1$-Lipschitz. Hence $H_t^{\log}$ preserves $S_{d,r}^{\eta}$.
+For a point of $K_a$ in the dense torus, the point
+$q=\mu(p)(1,\ldots,1)$ belongs to $S_{d,r}$ and satisfies
+$|p-q|_\infty\le a<\eta$. The capped points follow by continuity and the local
+product structure at $z_0=0$. Thus $K_a\subset L_U$, and both $Y_d$ and $L_U$
+strongly deformation retract onto $K_a$. This proves
+$L_U\simeq(\mathbb C^*)^{d-1}$.
+For $d=1$ the localized two-term equation has its unique root at $p_1=0$,
+so $L_U$ is a point.
+
 
 \emph{$\pi_1$ and naturality.} $W_U$ is a product of a compact torus, a convex set and $L_U$, so it is aspherical with $\pi_1=A^\perp\oplus\pi_1(L_U)$. In type (a) this is $u^\perp\cap N$. In type (b), $\pi_1(L_U)=\Z\lambda$ with $\lambda$ the loop around the first leg, whose class generates $C$ modulo $n$; so $\pi_1=A^\perp\oplus C\cong N/\Z n$. In type (c), $\pi_1(L_U)$ is generated by the loops around the three rays $+e_k$ modulo their relation, $\cong C$, and again $\pi_1\cong N/\Z n$. Invariantly, in types (b), (c) the inclusion of $W_U$ into the toric chart of the ray $n$, whose fundamental group is $N/\Z n$, is an isomorphism on $\pi_1$; in type (a) the inclusion into the torus induces $\pi_1(W_U)=u^\perp\cap N\subset N$. For $W_{U'}\subset W_U$ both maps factor through these inclusions, and the induced map is the composite of the identifications, which is Gross's parallel transport: $u^\perp\cap N\to N/\Z n$ from type (a) to types (b), (c), and the identity of $N/\Z n$ between types (b) and (c). This proves (1) and (2).
 
@@ -98,7 +157,35 @@ $L_{>r_\chi/2}=L_\Omega\cap\{|\chi|>r_\chi/2\}$. The projection $\mathcal S\to L
 \]
 the second isomorphism by van Kampen for $L_\Omega=L_{>r_\chi/2}\cup(\{|\chi|<r_\chi\}\times L_0)$; both are induced by $\Pi$. The same decompositions show that $W_\Omega$ is path connected, and it is open in $W$ because $Y_{\Omega'}$ and $T_I$ are open.
 
-\emph{The factor $L_\Omega$.} Dividing by $\chi$, $L_\Omega$ is the localized hyperplane of the $d+2$ monomials $0,u_0$ and $u\in\tau'$ in the variables $\chi^{-1}$ and $\chi^{-1}\mathfrak t_u$, that is, the factor $L$ of Appendix~\ref{app:regions} in type (b) for $d=1$ and type (c) for $d=2$, capped at $\chi=0$. The region $\{\log_R|\chi|\in\langle u_0,\Omega'\rangle,\ \mathfrak t\in T_I\}$ contains the vertex of the tropical hyperplane with a margin of $4C_0$, because $\Omega$ contains the $4C_0$-ball about a point of $\operatorname{ri}F_\tau$, where $0$ and the vertices of $\tau$ tie; it contains the whole ray $\chi\to0$, along which $0$ is the dominated monomial; and it truncates every other ray, since the $I_u$ are bounded and $\log_R|\chi|<\sup\langle u_0,\Omega'\rangle$. As in Appendix~\ref{app:regions}, the truncations are deformation retractions, because over each ray only the monomials of a proper subset are active and $L$ is a product there, and the cap adds back the hyperplane of the constant term. So $L_\Omega$ is homotopy equivalent to $\mathbb P^d$ minus the $d+1$ hyperplanes of the monomials $u_0$ and $u\in\tau'$, which are in general position; the complement is isomorphic to $(\C^*)^d$, and $\pi_1(L_\Omega)\cong\Z^d$. The characters $\mathfrak t_u$ do not vanish on $L_\Omega$ and define a homomorphism $\pi_1(L_\Omega)\to\Z^{\tau'}$. It is onto. In the coordinates $\log_R|\chi|$ and $\log_R|\mathfrak t_u|$ the region above is a product of intervals, and each contains the value at the vertex of the tropical hyperplane with a margin of at least $4C_0$, because the projection of the $4C_0$-ball in $\Omega$ under a nonzero lattice covector has half-width at least $4C_0$. For $u\in\tau'$, decreasing $\log_R|\mathfrak t_u|$ from its value at the vertex by $2C_0$, with the other coordinates at their values at the vertex, gives a point of the region at which the term of $u$ lies $2C_0$ below the others, which tie. Near that point only the other monomials are active, so $L$ is there the product of the localized hyperplane of the other monomials in the remaining variables (a point if $d=1$) and an annulus in $\mathfrak t_u$; the loop that turns $\arg \mathfrak t_u$ once, with the other coordinates fixed, lies in $L_\Omega$ and maps to the basis vector of $u$. A surjective homomorphism $\Z^d\to\Z^d$ is an isomorphism. By the previous step the characters $\mathfrak t_u$ induce an isomorphism on $\pi_1(W_\Omega)$ as well.
+\emph{The interval regions.}
+In the notation of Appendix~\ref{app:collar}, enumerate $\tau'=\{u_2,\ldots,u_{d+1}\}$ and use projective monomial
+coordinates
+\[
+ z_0=\chi,\qquad z_1=R^{-\check h_{u_0}},\qquad
+ z_i=R^{-\check h_{u_i}}\mathfrak t_{u_i}\quad (i=2,\ldots,d+1).
+\]
+The signs can equivalently be absorbed in these coordinates; they do not affect
+any modulus below. The image region defining $L_\Omega$ is described by
+\[
+ c=\log_R|z_0/z_1|<b_0,\qquad
+ b_i=\log_R|z_i/z_1|\in J_i\quad (i=2,\ldots,d+1),
+\]
+where $b_0\ge4C_0$ (possibly $+\infty$) and every $J_i$ contains
+$[-4C_0,4C_0]$. The equality of this image region with these intervals follows
+from the nonempty convex fibres of the projection from $\Omega'$;
+$\Omega'+\operatorname{cone}(\omega)=\Omega'$ implies that the $c$-interval
+has no lower endpoint. Apply the same homotopy $H_t$ with $a=2C_0$, clamping
+all the nonconstant monomials $z_1,\ldots,z_{d+1}$ and leaving $z_0$ unchanged.
+Writing $h_i=(\delta_i-a)_+$, its action is
+\[
+ b_i(t)=b_i+t(h_i-h_1),\qquad c(t)=c-th_1.
+\]
+Since $\delta_i=\delta_1-b_i$, each $b_i(t)$ lies between $b_i$ and $0$;
+hence it remains in $J_i$. Also $c(t)\le c$, so the upper bound is preserved.
+At $t=1$, all $|b_i|\le a$ and $c\le a$, so the clamped core is contained in
+the image region. Therefore the full capped localized hyperplane and
+$L_\Omega$ both retract onto this core. In particular
+$L_\Omega\simeq(\mathbb C^*)^d$. The characters $\mathfrak t_u$ do not vanish on $L_\Omega$ and define a homomorphism $\pi_1(L_\Omega)\to\Z^{\tau'}$. It is onto. In the coordinates $\log_R|\chi|$ and $\log_R|\mathfrak t_u|$ the region above is a product of intervals, and each contains the value at the vertex of the tropical hyperplane with a margin of at least $4C_0$, because the projection of the $4C_0$-ball in $\Omega$ under a nonzero lattice covector has half-width at least $4C_0$. For $u\in\tau'$, decreasing $\log_R|\mathfrak t_u|$ from its value at the vertex by $2C_0$, with the other coordinates at their values at the vertex, gives a point of the region at which the term of $u$ lies $2C_0$ below the others, which tie. Near that point only the other monomials are active, so $L$ is there the product of the localized hyperplane of the other monomials in the remaining variables (a point if $d=1$) and an annulus in $\mathfrak t_u$; the loop that turns $\arg \mathfrak t_u$ once, with the other coordinates fixed, lies in $L_\Omega$ and maps to the basis vector of $u$. A surjective homomorphism $\Z^d\to\Z^d$ is an isomorphism. By the previous step the characters $\mathfrak t_u$ induce an isomorphism on $\pi_1(W_\Omega)$ as well.
 
 \emph{The case $\dim\tau=\dim\omega=1$.} Here $d=1$, $\tau'=\{u\}$, and $N_\omega^\perp$ has the basis $u-u_0,\kappa$. As above $N=N_\omega\oplus\Z\nu_u\oplus\Z\nu_\kappa$, $X_\omega=Y_\omega\times\C^*_{\mathfrak t_u}\times\C^*_w$ with $w=x^\kappa$, and $\operatorname{Log}(y,\mathfrak t_u,w)=\operatorname{Log}_\omega y-\log_R|\mathfrak t_u|\,\nu_u-\log_R|w|\,\nu_\kappa$. The character $\chi=x^{-u_0}$ vanishes on $\nu_u$ and $\nu_\kappa$, and the functions $T_0-T_{u_0}$ and $T_u-T_{u_0}$ depend only on $|\chi|$ and $|\mathfrak t_u|$; so the equation of $W$ on $\operatorname{Log}^{-1}(\Omega)$ does not involve $w$, and
 \[

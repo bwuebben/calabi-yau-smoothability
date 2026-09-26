@@ -13,7 +13,7 @@ Section~\ref{sec:cycles}: the clauses (a)--(j) of \cite[Def.~7.2]{CBM} and Lemma
 (Section~\ref{ssec:cbm}), Lemma~\ref{lem:lift}, the node coefficients (Section~\ref{ssec:cycles-bdry}) and, in a remark,
 Proposition~\ref{prop:containment}. From Section~\ref{sec:dualpair}: Propositions~\ref{prop:L1} and~\ref{prop:L2} on the
 dual-pair complex, whose proofs do not use the present section. Theorems~\ref{thm:real} and~\ref{thm:lift}, and
-Lemma~\ref{lem:F}, enter only the last assertion of Theorem~\ref{thm:res} and Section~\ref{ssec:res-relative}.
+Proposition~\ref{lem:F}, enter only the last assertion of Theorem~\ref{thm:res} and Section~\ref{ssec:res-relative}.
 Of the hypotheses we use~\ref{hyp:P} and the pair $(\mathcal T,\check h)$ of Theorem~\ref{thm:U}, with $\check h$
 normalised as in Section~\ref{ssec:gross}, so that $\check h(m)$ is odd and positive for every
 $m\in\partial\Delta^\circ\cap M$; the pulling refinement and the mirror family play no role. Throughout, $j$ is piecewise
@@ -343,8 +343,7 @@ boundary field, which are unchanged.
 
 Clause (i) is read, as in Section~\ref{ssec:cbm}, as conjugacy in $GL_2(\Z)$. With this reading the orientation of the loop
 around a leg plays no role in this section, and we fix no convention for it; in particular no statement here depends on
-the orientation convention for loops in \cite[Prop.~3.15]{Gross2005}. Nothing is claimed
-about the shell $U_q\setminus U_q^{r_*}$: it may contain crossings, other sheets, interior edges and vertices of $S$, and the
+the orientation convention for loops in \cite[Prop.~3.15]{Gross2005}. The shell $U_q\setminus U_q^{r_*}$ may contain crossings, other sheets, interior edges and vertices of $S$, and the
 winding of the passing sheet.
 
 \begin{definition}[resolved cycle]\label{def:resolvedcycle}
@@ -538,11 +537,19 @@ $\widehat\Gamma$ exceeds $\ell_0$. For such $U$ let $\Omega_U=\varpi^{-1}(U)^\et
 the chart; in the chart
 \[
 \Omega_U=\{\pi_\parallel\in U_\parallel^\eta,\ \pi_\perp\in\Omega_\perp\},\qquad
-\Omega_\perp=\bigl(U_\perp\cup(U^{(1)}_\perp+\R_{\ge0}(-1,\dots,-1))\bigr)^\eta ,
+\Omega_\perp=S_{d,r}^{\eta},\qquad d=|A_\Phi\setminus0|,
 \]
-where $U_\perp^{(1)}$ is the part of $U_\perp$ on the rays and the vertex of $\partial\mathcal O_\perp$. The \emph{region} of
+where, for $p=(p_1,\ldots,p_d)$ and $\mu(p)=\min(0,p_1,\ldots,p_d)$, we set
+\[
+ S_{d,r}=\{p:\text{the minimum defining }\mu(p)\text{ is attained at least twice},\quad
+                    p_i-\mu(p)<r\ (1\le i\le d)\}.
+\]
+Thus $S_{1,r}=\{0\}$; $S_{2,r}$ consists of two truncated positive rays and the negative diagonal ray;
+and $S_{3,r}$ consists of the truncated boundary of the positive orthant together with its tentacles from the rays and
+vertex. The contraction is $p\mapsto p-\mu(p)(1,\ldots,1)$.
+The \emph{region} of
 $U$ is $W_U=W\cap\operatorname{Log}^{-1}(\Omega_U)$ together with its limit points on the divisor $D_n$ at the ends of the
-tentacles. Here $\eta>0$ and $\ell_0=C_{\rm Lip}(C_{\rm ch}\eta+C_{\rm act}C_0)$, where $C_{\rm ch}$ bounds the distortion
+tentacles. Here $\eta>C_0$ and $\ell_0=C_{\rm Lip}(C_{\rm ch}\eta+C_{\rm act}C_0)$, where $C_{\rm ch}$ bounds the distortion
 between the chart norms and the Euclidean norm, $C_{\rm Lip}$ is the Lipschitz constant of $\varpi$ over pairs of cells, and
 $C_{\rm act}$ is such that active monomials lie within $C_{\rm act}C_0$ of the maximum.
 \end{definition}
@@ -1239,7 +1246,7 @@ pair of opposite legs. Its ingredients are nevertheless local: the pieces
 along the legs, at the negative and positive vertices, at the crossings and at the nodes, and the extension over aspherical
 regions. Lemma~\ref{lem:nodedeg} is already stated for arbitrary leg coefficients $c_{ab}$, $c_{bc}$, and the crossing pieces
 $S^1_v\cdot\mathfrak s(D_k)$ are solid tori for every monodromy-invariant field. The mirror side removes the corresponding restrictions by building the regular part over an abstract domain and by
-removing fibre-class boundary with the positive real locus (Section~\ref{sec:lift}, Lemma~\ref{lem:F}); on $\widehat X$ we
+removing fibre-class boundary with the positive real locus (Section~\ref{sec:lift}, Proposition~\ref{lem:F}); on $\widehat X$ we
 have no analogue of the second step, and we do not extend Theorem~\ref{thm:res} to relative tropical $2$-cycles here.
 Nothing in this paper depends on such an extension.
 \end{remark}

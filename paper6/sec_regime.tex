@@ -1,4 +1,4 @@
-\section{The localized mirror and the Morse regime}\label{sec:regime}
+\section{The localized mirror and Morse charts at the nodes}\label{sec:regime}
 
 This section prepares the analytic side of the mirror lift. We fix the members $Y_t$ of Theorem~\ref{thm:main} and
 study them near the maximally degenerate limit by comparing monomials in units of $L=\log(1/t)$. Three results are
@@ -35,7 +35,7 @@ family is built on $\mathcal F_C$.
 The constants of Sections~\ref{sec:regime} and~\ref{sec:lift} depend on data chosen in a fixed order. First the
 \emph{configuration} is fixed: $\Delta$, $\sigma$, $\mathcal T$ and $\check h$, $\mathcal F_C$ and its height $h_C$, the
 lattice vectors $w_u$ of Section~\ref{ssec:member}, and the integer $k_0$. A constant is said to \emph{depend only on the
-configuration} if it depends on these data alone. Then a compact set $\mathscr K_0\subset\mathcal Z$, a radius $r$ and
+configuration} if it depends on these data alone. Then a compact set $\mathscr C_0\subset\mathcal Z$, a radius $r$ and
 a size $\eta_0$ of the perturbation of the node binomials are chosen, then a threshold $t_0$, and finally the
 coefficient vector $c$ and $t<t_0$. The principal constants are these.
 \begin{center}\small
@@ -59,8 +59,8 @@ $\varsigma_{\max}$, $\varsigma_0$ & depth of the pieces & Lemma~\ref{lem:pieces}
 $t_0$ & threshold on $t$ & Lemmas~\ref{lem:W}, \ref{lem:NM}, \ref{lem:TR}
 \end{tabular}
 \end{center}
-Every one of these constants exists for every admissible $\Delta$ and every profile satisfying~\ref{hyp:P}, and none is
-obtained by a computation on examples. The height $h_C$ exists by the regularity of $\mathcal F_C$. The constant
+These constants exist for every admissible $\Delta$ and every profile satisfying~\ref{hyp:P},
+with the conventions below when there are no nodes. The height $h_C$ exists by the regularity of $\mathcal F_C$. The constant
 $\theta_0$ is the minimum of finitely many positive values of linear programs (Lemma~\ref{lem:onecell}). The gaps and
 the exponent constants are read off from the lattice data, the vectors $w_u$ and the heights, and $k_0$ is any integer
 above the explicit bound of Lemma~\ref{lem:gaps}(4), which involves only lattice data and $h_C$. The constants $C_\eta$
@@ -68,6 +68,25 @@ and $C_R$ come from the linear algebra of the vectors $r_P$ (Lemma~\ref{lem:eta}
 $\theta_3$, $\theta_P$ and $r_1$ are explicit; $\theta_4$ and $\varsigma_{\max}$ are bounds over the finitely many
 model data of Section~\ref{sec:lift}; and $t_0$ is the minimum of finitely
 many thresholds, each given by an explicit inequality in Appendix~\ref{app:mirror}.
+
+\paragraph{The case without nodes.}
+When $Q=\emptyset$, we have $K=0$. Put $C_\eta=C_R=1$ and
+$\mathcal E_{\max}=0$, and replace the direction choice of
+Lemma~\ref{lem:eta} by $\xi_c=0$, $c=c^{(0)}$.
+The window has no binomial-ratio restrictions; the norm bound for $\xi_c$
+has empty maximum zero. Omit node-indexed constructions and thresholds,
+retaining the triangle-gap, height, edge and trivalent-vertex conditions.
+Thus $U_\C$, $U^+_\C$ and $U$ have only their stated bounds on $\|\xi\|$.
+Cases~(A) and~(B) in the proof of Lemma~\ref{lem:W} exhaust all points
+and use only bounds on coefficient moduli. Compactness of
+$\mathscr C_0$ therefore gives a uniform threshold on $t$ for smoothness
+of every member of $U^+_\C$. In particular $U^\circ=D_\emptyset=U$.
+Theorem~\ref{thm:main}(1)--(2) then follow using zero relations, the zero
+cycle and the zero chain, while item~(3) has codimension and relative
+Picard number zero. Corollary~\ref{cor:smooth} holds with the trivial
+smoothing of the already smooth $X'_\sigma$ and the empty transition of
+$Y_t$. All subsequent node calculations concern $Q\ne\emptyset$;
+the constructions for non-node tropical pieces remain in force.
 
 \subsection{The mirror member}\label{ssec:member}
 
@@ -127,14 +146,14 @@ $n\neq0$.
 Let $P=abcd$ be a node parallelogram, labelled as in Section~\ref{ssec:admissible}. Since $H$ is linear on the cone over
 $P$ and $a+c=b+d$, its node binomial ratio is $\mu_P=c_ac_c/(c_bc_d)=\gamma_a\gamma_c/(\gamma_b\gamma_d)$. The set
 $\mathcal Z$ of Section~\ref{ssec:mirrorfamily} is nonempty: it contains the vector with $c_0=1$ and $c_n=-1$ for
-$n\neq0$. Fix a compact set $\mathscr K_0\subset\mathcal Z$. As in Section~\ref{ssec:mirrorfamily}, every real $c$ with the
+$n\neq0$. Fix a compact set $\mathscr C_0\subset\mathcal Z$. As in Section~\ref{ssec:mirrorfamily}, every real $c$ with the
 sign pattern is uniquely $c=c^{(0)}e^\xi$ with $c^{(0)}\in\mathcal Z$ and $\xi\in\operatorname{span}_\R\{r_P\}$, and we put
 \[
 \eta_P:=\log\mu_P=r_P\cdot\xi .
 \]
 
 \begin{lemma}\label{lem:eta}
-The map $\xi\mapsto(\eta_P)_P$ has image $V=\{\eta:\sum_Pk_P\eta_P=0$ for every relation $\sum_Pk_Pr_P=0\}$, and no
+Assume $Q\ne\emptyset$. The map $\xi\mapsto(\eta_P)_P$ has image $V=\{\eta:\sum_Pk_P\eta_P=0$ for every relation $\sum_Pk_Pr_P=0\}$, and no
 coordinate $\eta_P$ vanishes identically on $V$. Consequently there are a direction $\bar\xi\in\operatorname{span}\{r_P\}$
 and a constant $C_\eta\ge1$, depending only on the configuration, such that for every $\eta_0>0$ the multiple $\xi$ of
 $\bar\xi$ with $\max_P|\eta_P|=\eta_0$ satisfies $\eta_0/C_\eta\le|\eta_P|\le\eta_0$ for all $P$.
@@ -149,8 +168,8 @@ $C_\eta=\max_P|r_P\cdot\bar\xi|/\min_P|r_P\cdot\bar\xi|$.
 
 \begin{definition}[the window]\label{def:window}
 Fix $r\in(0,r_1]$, with $r_1$ as in Lemma~\ref{lem:NM}, and $\eta_0\in(0,r^2/20]$. A coefficient vector
-$c=c^{(0)}e^{\xi}$ with $c^{(0)}\in\mathscr K_0$ and $\xi\in\operatorname{span}_\R\{r_P\}$ is \emph{in the window} if
-$\eta_0/C_\eta\le|\eta_P|\le\eta_0$ for every node. For $c^{(0)}\in\mathscr K_0$ the \emph{complex neighbourhood}
+$c=c^{(0)}e^{\xi}$ with $c^{(0)}\in\mathscr C_0$ and $\xi\in\operatorname{span}_\R\{r_P\}$ is \emph{in the window} if
+$\eta_0/C_\eta\le|\eta_P|\le\eta_0$ for every node. For $c^{(0)}\in\mathscr C_0$ the \emph{complex neighbourhood}
 $U_\C=U_\C(c^{(0)})$ is the set of $c^{(0)}e^{\xi}$ with $\xi\in\C^{\mathcal A}$, $\|\xi\|\le1$ and $|\eta_P(\xi)|\le\eta_0$
 for every node, and $U^+_\C$ is defined in the same way with the bounds $2$ and $2\eta_0$. Here $\|\xi\|:=\max_n|\xi_n|$,
 and $\|\cdot\|_*$ denotes the dual norm, so that $\|r_P\|_*=4$.
@@ -159,10 +178,10 @@ and $\|\cdot\|_*$ denotes the dual norm, so that $\|r_P\|_*=4$.
 In the notation of Theorem~\ref{thm:main}, $C=C_\eta$ and $\eta_1=r_1^2/20$; for $\eta_0\le\eta_1$ we take $r=r_1$.
 Every vector in the window lies in $U_\C$: for $\xi$ in the span of the $r_P$ one has $\|\xi\|\le C_R\max_P|\eta_P|$,
 with $C_R$ depending only on the configuration, and $C_R\eta_0\le1$, because $\eta_0\le r^2/20\le r_1^2/20$ and
-$r_1^2\le20/C_R$ (Lemma~\ref{lem:NM}). The union of the sets $U^+_\C(c^{(0)})$, $c^{(0)}\in\mathscr K_0$, is compact, so
-$|c_n|$ and $|c_n|^{-1}$ are bounded on it by a constant depending on $\mathscr K_0$. Constants called $C$, and the
-thresholds on $t$, depend on the configuration and on $\mathscr K_0$ through these bounds, and on $r$ and $\eta_0$ where
-this is indicated; we do not repeat the dependence on $\mathscr K_0$. The statements proved below for $c\in U_\C$ hold
+$r_1^2\le20/C_R$ (Lemma~\ref{lem:NM}). The union of the sets $U^+_\C(c^{(0)})$, $c^{(0)}\in\mathscr C_0$, is compact, so
+$|c_n|$ and $|c_n|^{-1}$ are bounded on it by a constant depending on $\mathscr C_0$. Constants called $C$, and the
+thresholds on $t$, depend on the configuration and on $\mathscr C_0$ through these bounds, and on $r$ and $\eta_0$ where
+this is indicated; we do not repeat the dependence on $\mathscr C_0$. The statements proved below for $c\in U_\C$ hold
 with the same proofs for $c\in U^+_\C$; we use this for Cauchy estimates in $\xi$. No threshold is uniform on all of
 $\mathcal Z$: when $|\log|c^{(0)}_n||$ is comparable to $\theta_0L$ the coefficients move the tropical picture, and the
 estimates below fail.
@@ -189,10 +208,10 @@ and $\mu_{P_1}=\mu_{P_2}=1+(\mathsf a_0\mathsf b_0+\mathsf a_2\mathsf b_2)/(\mat
 factors after rescaling (a trinomial whose Newton polygon is a unimodular triangle is irreducible); the sign pattern then
 forces all $\mathsf a_i$ to have one sign and all $\mathsf b_i$ the other, so $\mu_{P_i}>1$: no real point of the product
 locus with the sign pattern lies in $\mathcal Z$.
-\item \emph{$A_2$ branch}, parallelograms $P_j$, $j\in\{0,2,4\}$ (the odd tiling is symmetric). For
+\item \emph{$A_2$ branch}, parallelograms $P_j$, $j\in\{0,2,4\}$ (the odd subdivision is symmetric). For
 $f_G=(\mathsf a_0+\mathsf a_1\chi^{w_0})(\mathsf b_0+\mathsf b_1\chi^{w_2})(\mathsf e_0+\mathsf e_1\chi^{w_4})$, since
 $w_0+w_2+w_4=0$, $c_o=T_1+T_2$ with $T_1=\mathsf a_0\mathsf b_0\mathsf e_0$, $T_2=\mathsf a_1\mathsf b_1\mathsf e_1$, and
-$\mu_{P_j}=1+T_2/T_1\neq1$ for all three $j$ (for the odd tiling $1+T_1/T_2$). So the product locus misses $\mathcal Z$. Its
+$\mu_{P_j}=1+T_2/T_1\neq1$ for all three $j$ (for the odd subdivision $1+T_1/T_2$). So the product locus misses $\mathcal Z$. Its
 curve is three curves meeting pairwise transversally in one point each; the three points coincide exactly when $c_o=0$.
 \item \emph{In the regime}, if the face polynomial $\sum_{n\in G}\gamma_n\chi^n$ of $F_t$ is such a product and
 $|c_n|^{\pm1}$ are bounded, then $|\mu_P-1|\le Ct$ for every node parallelogram $P$ of $G$. On the $A_1$ branch,
@@ -441,7 +460,7 @@ anticanonical bundle, in general not holomorphic. The compact torus $M\otimes U(
 same character as $x^n$.
 
 \begin{lemma}[the transport lemma]\label{lem:W}
-There is a threshold $t_0=t_0(r,\eta_0,\mathscr K_0)>0$ such that for $0<t<t_0$:
+There is a threshold $t_0=t_0(r,\eta_0,\mathscr C_0)>0$ such that for $0<t<t_0$:
 \begin{enumerate}
 \item for every coefficient vector in the window and every $s\in[0,1]$, $F^{(s)}$ has real rank two along $W_s$; so
 $W_s$ is a smooth compact submanifold of real codimension two, and $W_1=Y_t$ is a smooth hypersurface;
@@ -524,12 +543,12 @@ $\mathbb D_P:=\{|x|<r,\ |y|<r,\ |\hat Z|<1,\ |\hat Z'|<1\}$.
 
 The normalisation places the node point at the centre of the range of $|Z|/|Z'|$ on which both apex sums are
 negligible: on $\mathbb D_P$ one has $|AZ|,|A'Z'|\le2|\mathcal A|\lambda_P^{-1/2}\le Ct^{\mathfrak g_P/2}$, while
-$|\mathfrak bZZ'|\le C$. The \emph{Morse ball} of $P$ is the closed bidisc $\mathbb B_P:=\{|x|\le r,\ |y|\le r\}$ in the torus
+$|\mathfrak bZZ'|\le C$. The \emph{Morse bidisc} of $P$ is the closed bidisc $\mathbb B_P:=\{|x|\le r,\ |y|\le r\}$ in the torus
 coordinates $(\chi_1,\chi_2)$, the projection of the closure of $\mathbb D_P$.
 
 \begin{lemma}[Morse chart at a node]\label{lem:NM}
 Put $r_1:=\min\bigl(1/4,(20/C_R)^{1/2}\bigr)$, with $C_R$ the constant defined after Definition~\ref{def:window}; it
-depends only on the configuration. For $r\le r_1$ there is $t_1=t_1(r,\mathscr K_0)>0$ such that for $t<t_1$, every $c\in U_\C$ and every $s\in[0,1]$:
+depends only on the configuration. For $r\le r_1$ there is $t_1=t_1(r,\mathscr C_0)>0$ such that for $t<t_1$, every $c\in U_\C$ and every $s\in[0,1]$:
 \begin{enumerate}
 \item on the polydisc $2\mathbb D_P$ with doubled radii, $\tilde\psi_n=1$ for $n\in P\cup\{0\}$ and $\tilde\psi_n=s$ for
 every other $n$. Hence $f^{(s)}=f^{(0)}+s\,(f^{(1)}-f^{(0)})$ is holomorphic on $2\mathbb D_P$, and
@@ -570,7 +589,7 @@ $\mathcal U_P$ of distinct nodes are disjoint. This applies also to two node par
 $A_2$ subdivision of a hexagon.
 
 \begin{lemma}[no other critical points near a node]\label{lem:TR}
-For $t<t_0(r,\eta_0,\mathscr K_0)$:
+For $t<t_0(r,\eta_0,\mathscr C_0)$:
 \begin{enumerate}
 \item if $c$ is in the window, every point of $W_s\cap\mathcal U_P$ is a regular point of $F^{(s)}$, for every
 $s\in[0,1]$;
@@ -627,7 +646,7 @@ Tropically, $\mathcal N_P$ consists of the points within $\theta_2$ of the regio
 Lemma~\ref{lem:gaps} at distance at most $\theta_P$ from its midpoint, that is, up to distance $\theta_1$ from its ends; it
 extends to distance $\theta_2$ in the torus directions.
 
-\subsection{Exactness of the weights}\label{ssec:windows}
+\subsection{Where the localized mirror is given by exact models}\label{ssec:windows}
 
 On the following sets the weights of the localized mirror are exactly $0$ or $1$, so that $W^*$ is there given by an
 algebraic model: near the legs, from the nodes and vertices to the legs, at the nodes, and at the vertices of positive
@@ -713,22 +732,22 @@ The \emph{node model base} is $\mathfrak B_q=\R^3$ with coordinates
 s_1:=\log|\mu_P\tilde\chi_1|,\qquad s_2:=\log|\mu_P\tilde\chi_2|,\qquad \hat\mu,
 \]
 and $\pi_q:=(s_1,s_2,\hat\mu)\colon W^*\cap\mathcal N_P\to\mathfrak B_q$. The fibre angles are $\varphi_1=\arg\tilde\chi_1$,
-$\varphi_2=\arg\tilde\chi_2$ and the angle $\vartheta_\alpha$ of $S^1_\alpha$. In the node star of $B_Y$ (Section~\ref{sec:legendre})
-the same coordinates $(s_1,s_2,\hat\mu)$ describe the cells at the node, up to a homeomorphism preserving them: the
-regions of the facets of $a,b,c,d$ are the quadrants of the $(s_1,s_2)$-plane with the sign patterns
-$(-,-),(+,-),(+,+),(-,+)$, times the $\hat\mu$-axis, and the regions of $u$ and $u'$ are $\{\hat\mu<0\}$ and
-$\{\hat\mu>0\}$. Lemma~\ref{lem:nodemodel}(4) makes this precise.
+$\varphi_2=\arg\tilde\chi_2$ and the angle $\vartheta_\alpha$ of $S^1_\alpha$. The cell structure at the corresponding
+node of $B_Y$ is described by the tropical coordinates $(y_1,y_2,\alpha_q)$ below. Lemma~\ref{lem:nodemodel}(4)
+compares these coordinates with the scaled logarithmic coordinates of the hypersurface.
 
 \begin{lemma}[the node model]\label{lem:nodemodel}
 \begin{enumerate}
-\item The moduli of the four monomials of $P$ are proportional to $\mu_P,\ e^{s_1},\ e^{s_2},\ e^{s_1+s_2}$. So, up to a
-translation of size $|\eta_P|$, the monomial $a$, $b$, $c$ or $d$ is the largest of the four exactly over the open
-quadrant of $(s_1,s_2)$ with signs $(-,-)$, $(+,-)$, $(+,+)$ or $(-,+)$.
+\item The moduli of the four monomials of $P$ are proportional to $\mu_P,\ e^{s_1},\ e^{s_2},\ e^{s_1+s_2}$.
+When $|s_1|,|s_2|>|\eta_P|$, the largest monomial is $a$, $b$, $c$ or $d$ according as the signs of $(s_1,s_2)$
+are $(-,-)$, $(+,-)$, $(+,+)$ or $(-,+)$.
 \item $\hat\mu<0$ exactly where $|\hat Z|<|\hat Z'|$, that is towards the divisor $D_u$, and $\hat\mu>0$ towards $D_{u'}$.
-\item The $S^1_\alpha$-orbits collapse exactly over $\{\hat\mu=0\}\times\mathscr A_P$, where
-$\mathscr A_P=\{(s_1,s_2):g_P=0\text{ for some phases}\}$ is the amoeba of $g_P$, a closed neighbourhood of the cross
-$\{s_1s_2=0\}$ that retracts onto it; the four half-lines of the cross are the legs over $ab$ ($s_1=0$, $s_2<0$), $dc$
-($s_1=0$, $s_2>0$), $da$ ($s_2=0$, $s_1<0$) and $bc$ ($s_2=0$, $s_1>0$).
+\item The $S^1_\alpha$-orbits collapse exactly where $\hat Z=\hat Z'=0$, equivalently where $\hat\mu=0$ and
+$g_P=0$. Their $(s_1,s_2)$-coordinates lie in the amoeba
+$\mathscr A_P:=\{(s_1,s_2):g_P=0\text{ for some phases}\}$, which satisfies
+\[
+\mathscr A_P\subseteq\{|s_1|\le|\eta_P|+\log3\}\ \cup\ \{|s_2|\le|\eta_P|+\log3\}.
+\]
 \item (tropical chart) Let $m_P$ be the midpoint of $J_P$, and put
 \[
 y_1:=\operatorname{val}_b-\operatorname{val}_a,\qquad y_2:=\operatorname{val}_d-\operatorname{val}_a,\qquad
@@ -748,10 +767,14 @@ T_q(\operatorname{Log}x/L)=\bigl(s_1,\ s_2,\ \log|\hat Z|-\log|\hat Z'|\bigr)/L+
 
 \begin{proof}
 (1) Relative to $\gamma_ax^a$ the four monomials are $1$, $\tilde\chi_1$, $\tilde\chi_2$, $\mu_P\tilde\chi_1\tilde\chi_2$, of
-moduli $\mu_P^{-1}$ times $\mu_P$, $e^{s_1}$, $e^{s_2}$, $e^{s_1+s_2}$, and $|\log\mu_P|=|\eta_P|$. (2) is the definition of
+moduli $\mu_P^{-1}$ times $\mu_P$, $e^{s_1}$, $e^{s_2}$, $e^{s_1+s_2}$, and $|\log\mu_P|=|\eta_P|$.
+Comparison of their logarithms gives the four labels whenever both $|s_i|>|\eta_P|$.
+(2) is the definition of
 $\hat\mu$, with $Z=Z_u$ and $Z'=Z_{u'}$ up to units. (3) The orbit collapses exactly where $\hat Z=\hat Z'=0$, which on
-$W^*$ means $g_P(\chi_1,\chi_2)=0$, and the image of $\{g_P=0\}$ under $(s_1,s_2)$ is the amoeba; the amoeba of a product of
-two binomials perturbed by $\kappa_P$ lies within $O(1)$ of the cross and retracts onto it. (4) The linear parts $b-a$,
+$W^*$ means $g_P(\chi_1,\chi_2)=0$. Outside the two strips in (3), one of the four monomials has modulus
+strictly greater than three times the modulus of each of the other three, by the same logarithmic comparison.
+The triangle inequality then excludes a zero of $g_P$.
+(4) The linear parts $b-a$,
 $d-a$, $w_u-w_{u'}$ of the three coordinates and the linear part $a$ of $\operatorname{val}_a$ are linearly independent,
 since $(b-a,d-a,w_u,w_{u'})$ is a basis of $N$ and $a=-w_u-w_{u'}$. At $m_P$ only the origin and the monomials of $P$ are
 maximal (Lemma~\ref{lem:gaps}(2); the other lattice points have positive deficit there), and $H(a)+H(c)=H(b)+H(d)$
@@ -773,7 +796,8 @@ those of $m_P$ up to $O(1)$.
 
 The four \emph{standard halves} of the node model base are $\{s_1=0,\ \hat\mu\ge0\}$ and $\{s_1=0,\ \hat\mu\le0\}$ (the
 \emph{$b-a$ passage}, along the legs over $ab$ and $dc$) and $\{s_2=0,\ \hat\mu\gtrless0\}$ (the \emph{$c-b$ passage},
-along $bc$ and $da$). By (4) their tropical images are the sets $T_q^{-1}(\{y_1=0,\ \pm\alpha_q\ge0\})$ and
+along $bc$ and $da$). The corresponding standard halves in the tropical chart are the sets
+$T_q^{-1}(\{y_1=0,\ \pm\alpha_q\ge0\})$ and
 $T_q^{-1}(\{y_2=0,\ \pm\alpha_q\ge0\})$: the parts of $F^*_{ab}\cup F^*_P\cup F^*_{cd}$, respectively of
 $F^*_{bc}\cup F^*_P\cup F^*_{da}$, near $m_P$ on one side of $\{\alpha_q=0\}$. In Section~\ref{sec:lift} the discriminant
 of $B_Y$ is moved so that its node at $P$ is $m_P$ and its legs leave $m_P$ along $\{\alpha_q=0\}$
@@ -788,7 +812,7 @@ $\{x=0\}$. Write $\kappa_P=|\kappa_P|e^{i\phi}$ and let
 \]
 be the Lefschetz thimble of $xy-\kappa_P$ at its critical point for the straight path of values, a disc bounded by the
 circle $\{xy=\kappa_P,\ |x|=|y|\}$. Let $\mathscr C_0$ be the part of $\{g_P=0\}$ over $\mathcal N_P$ tending to the branch
-$\{x=0\}$: near the node point it is $\{xy=\kappa_P,\ |x|\le|y|\}$, and outside the Morse ball it is the curve
+$\{x=0\}$: near the node point it is $\{xy=\kappa_P,\ |x|\le|y|\}$, and outside the Morse bidisc it is the curve
 $\{g_P=0\}$ along the two legs of the passage. Put $\mathscr C:=\mathscr C_0\cup\mathscr T_q$. The coordinate $y$ identifies
 $\mathscr C$ with $\C\setminus\{\mu_P^{-1/2}\}\cong\C^*$, the omitted point being $\tilde\chi_2=0$, and its two ends run
 along the two legs.
@@ -852,7 +876,7 @@ the standard vanishing sphere of $xy+z_1z_2-\kappa_P$ for the straight path, whi
 $W^*\cap\mathbb D_P$.
 \end{proof}
 
-The coordinate $\tilde\chi_2$ identifies $\mathscr C$ with an annulus in $\C^*$. Away from the Morse ball, the fibre of
+The coordinate $\tilde\chi_2$ identifies $\mathscr C$ with an annulus in $\C^*$. Away from the Morse bidisc, the fibre of
 $\Pi_q^+$ over a point $(s_2,\hat\mu)$ of the standard half with $\hat\mu>0$ is the circle $\{|\tilde\chi_2|=\mathrm{const}\}$
 of $\mathscr C$ times the $S^1_\alpha$-orbit: the affine two-torus of \cite[Lemma~5.14]{CBM}, spanned by $S^1_\alpha$ and the
 rotation of $\tilde\chi_2$. Over $\mathscr C_0$, $\Pi_q^+$ is the set of points of $W^*\cap D_{u'}$ over $\mathscr C_0$ with
