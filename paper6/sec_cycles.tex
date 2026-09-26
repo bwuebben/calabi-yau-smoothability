@@ -316,7 +316,7 @@ $\eta_\varepsilon\otimes d_\varepsilon$ and $\eta_\varepsilon\otimes\tilde e_\va
 $\eta_\varepsilon$ change sign together, we may orient the edges of a two-cell $\omega$ along its boundary cycle when we
 compute at $C(\tau,\omega)$. Write $f_\varepsilon=(\partial\eta_\varepsilon)(p)$. If $\omega$ is a unimodular triangle, its
 three edge vectors sum to zero and any two are independent, so (1)(ii) forces $f_\varepsilon=t$ for all three edges;
-then $\chi_p(\beta)=t\,\partial[\omega]$ and $\partial\tilde\beta(p)=\partial\chi_p(\beta)=0$. If $\omega=q$, the edge vectors are
+then $\chi_p(\beta)=t\,\partial[\omega]$ and $\partial\tilde\beta(p)=\partial\chi_p(\beta)=0$. If $\omega=P_q$, the edge vectors are
 $b-a$, $c-b$, $d-c=a-b$, $a-d=b-c$, and (1)(ii) reads $(f_{ab}-f_{cd})(b-a)+(f_{bc}-f_{da})(c-b)=0$; as $b-a$ and $c-b$
 are independent, $f_{ab}=f_{cd}=:x_q$ and $f_{bc}=f_{da}=:y_q$. Then
 \[
@@ -390,29 +390,29 @@ coefficients $F$, and deduces a normal form of relative tropical $2$-cycles near
 constant coefficients $\Z$ in Section~\ref{ssec:filling} and with the coefficients $F$ in Section~\ref{sec:lift}.
 
 Let $\mathfrak K$ be a triangulation of $B$ in which $\Gamma$ is full, and $\mathfrak K'$ its barycentric subdivision,
-whose simplices are the chains $\langle\sigma_0\subsetneq\dots\subsetneq\sigma_r\rangle$ of simplices of $\mathfrak K$.
-Such a simplex meets $\Gamma$ if and only if $\sigma_0\subseteq\Gamma$, and then its intersection with $\Gamma$ is the face
-spanned by the barycentres $b_{\sigma_i}$ with $\sigma_i\subseteq\Gamma$, an initial segment of the chain. Let $U$ be the
+whose simplices are the chains $\langle{s}_0\subsetneq\dots\subsetneq{s}_r\rangle$ of simplices of $\mathfrak K$.
+Such a simplex meets $\Gamma$ if and only if ${s}_0\subseteq\Gamma$, and then its intersection with $\Gamma$ is the face
+spanned by the barycentres $b_{{s}_i}$ with ${s}_i\subseteq\Gamma$, an initial segment of the chain. Let $U$ be the
 union of the closed simplices of $\mathfrak K'$ that meet $\Gamma$, and $\partial U$ the union of the simplices of $U$ that
 do not; $U$ is a regular neighbourhood of $\Gamma$ \cite[Ch.~3]{RS}. For a vertex $p$ of $\mathfrak K$ on $\Gamma$ let
-$B_p$ be the union of the simplices with $p\in\sigma_0$, the closed star of $p$ in $\mathfrak K'$: a three-ball, the cone
+$B_p$ be the union of the simplices with $p\in{s}_0$, the closed star of $p$ in $\mathfrak K'$: a three-ball, the cone
 from $p$ over the two-sphere $\partial B_p=\cyLk(p,\mathfrak K')$. For an edge $E$ of $\mathfrak K$ in $\Gamma$ let
-$\bar D(E)$ be the union of the simplices with $E\subseteq\sigma_0$: a two-disc, the cone from the midpoint $b_E$ over the
-circle $\partial\bar D(E)$ formed by the chains with $E\subsetneq\sigma_0$, which is the barycentric subdivision of
+$\bar D(E)$ be the union of the simplices with $E\subseteq{s}_0$: a two-disc, the cone from the midpoint $b_E$ over the
+circle $\partial\bar D(E)$ formed by the chains with $E\subsetneq{s}_0$, which is the barycentric subdivision of
 $\cyLk(E,\mathfrak K)$. It meets $\Gamma$ only in $b_E$. We orient $\bar D(E)$ so that its orientation followed by the
 direction of $E$ is the orientation of $B$.
 
 \begin{definition}[transverse discs]\label{def:transverse}
-For an edge $E$ of $\mathfrak K$ in an arc $A$ and $X\in\cyInv(A)$, the $2$-chain $X\cdot\bar D(E)\in C_2(\mathfrak K';F)$ is
-the \emph{transverse disc} at $E$ with coefficient $X$. Orient each arc once and for all, and its edges accordingly.
-Let $\delta\colon\bigoplus_p\cyInv(p)\to\bigoplus_E\cyInv(E)$, the sums over the vertices and edges of $\mathfrak K$ in
-$\Gamma$ and $\cyInv(E):=\cyInv(A)$, be $(\delta Y)(E)=Y(o(E))-Y(t(E))$, where $o(E)$ and $t(E)$ are the origin and
-terminus of $E$. The \emph{group of transverse discs} is $\cyTr(\Gamma):=\operatorname{coker}\delta$.
+For an edge $E$ of $\mathfrak K$ in an arc $A$ and $v\in\cyInv(A)$, the $2$-chain $v\cdot\bar D(E)\in C_2(\mathfrak K';F)$ is
+the \emph{transverse disc} at $E$ with coefficient $v$. Orient each arc once and for all, and its edges accordingly.
+Let $d_\Gamma \colon\bigoplus_p\cyInv(p)\to\bigoplus_E\cyInv(E)$, the sums over the vertices and edges of $\mathfrak K$ in
+$\Gamma$ and $\cyInv(E):=\cyInv(A)$, be $(d_\Gamma(v_p)_p)(E)=v_{o(E)}-v_{t(E)}$, where $o(E)$ and $t(E)$ are the origin and
+terminus of $E$. The \emph{group of transverse discs} is $\cyTr(\Gamma):=\operatorname{coker}d_\Gamma$.
 \end{definition}
 
 A transverse disc is a disc crossing $\Gamma$ once, at an interior point of an arc, and carrying a monodromy-invariant
 coefficient; it is the local form of a sheet of \cite{CBM} at one of the points $\mathfrak x_k$ of clause~(b). Contracting
-the vertices interior to arcs, at which $\delta$ identifies the summands of the two adjacent edges, gives
+the vertices interior to arcs, at which $d_\Gamma$ identifies the summands of the two adjacent edges, gives
 $\cyTr(\Gamma)\cong\operatorname{coker}\bigl(\bigoplus_{p}\cyInv(p)\to\bigoplus_A\cyInv(A)\bigr)$, the sum over the
 $\Gamma$-vertices and the arcs; every arc has two end vertices (D3).
 
@@ -420,9 +420,9 @@ $\Gamma$-vertices and the arcs; every arc has two end vertices (D3).
 \begin{enumerate}
 \item $H_k(U,\partial U;F)=0$ for $k\ne2,3$, and there is an exact sequence
 \[
-0\to H_3(U,\partial U;F)\to\bigoplus_p\cyInv(p)\xrightarrow{\ \delta\ }\bigoplus_E\cyInv(E)\to H_2(U,\partial U;F)\to0
+0\to H_3(U,\partial U;F)\to\bigoplus_p\cyInv(p)\xrightarrow{\ d_\Gamma \ }\bigoplus_E\cyInv(E)\to H_2(U,\partial U;F)\to0
 \]
-whose third map sends $X$ in the summand of $E$ to the class of $X\cdot\bar D(E)$. In particular every relative
+whose third map sends $v$ in the summand of $E$ to the class of $v\cdot\bar D(E)$. In particular every relative
 $2$-cycle of $(U,\partial U;F)$ is homologous relative to $\partial U$ to a sum of transverse discs, and
 $H_2(U,\partial U;F)\cong\cyTr(\Gamma)$.
 \item The sequence
@@ -439,31 +439,31 @@ because $\partial U\cap\Gamma=\emptyset$; its relative $2$-cycles are the $2$-ch
 $\partial U$ plus a chain on $\Gamma$ with coefficients in $\mathcal D$, and the latter is their \emph{$\Gamma$-boundary}.
 
 \begin{proof}
-\emph{The blocks.} Every simplex of $U$ has $\sigma_0\subseteq\Gamma$, so $\sigma_0$ is a vertex $p$ or an edge
-$E=[p,p']$ of $\Gamma$, and the simplex lies in $B_p$. A simplex of $B_p\cap B_{p'}$, $p\ne p'$, has $p,p'\in\sigma_0$;
-if $\sigma_0\subseteq\Gamma$ then $\sigma_0=[p,p']=E$ and the simplex lies in $\bar D(E)$, and otherwise it misses $\Gamma$
+\emph{The blocks.} Every simplex of $U$ has $s_0\subseteq\Gamma$, so $s_0$ is a vertex $p$ or an edge
+$E=[p,p']$ of $\Gamma$, and the simplex lies in $B_p$. A simplex of $B_p\cap B_{p'}$, $p\ne p'$, has $p,p'\in s_0$;
+if $s_0\subseteq\Gamma$ then $s_0=[p,p']=E$ and the simplex lies in $\bar D(E)$, and otherwise it misses $\Gamma$
 and lies in $\partial U$. So $\partial B_p=(\partial B_p\cap\partial U)\cup\bigcup_{E\ni p}\bar D(E)$,
 $\bar D(E)\cap\partial U=\partial\bar D(E)$, and $\bar D(E)\cap\bar D(E')\subseteq\partial U$ for $E\ne E'$.
 
-\emph{Coefficients.} A simplex of $U$ with $\sigma_0=p$ meets $\Gamma$ in $p$ or in a half-edge $[p,b_E]$, and has
-coefficient group $\cyInv(p)$ by Lemma~\ref{lem:coef}(2) and $\cyInv(p)\subseteq\cyInv(E)$; a simplex with $\sigma_0=E$
+\emph{Coefficients.} A simplex of $U$ with $s_0=p$ meets $\Gamma$ in $p$ or in a half-edge $[p,b_E]$, and has
+coefficient group $\cyInv(p)$ by Lemma~\ref{lem:coef}(2) and $\cyInv(p)\subseteq\cyInv(E)$; a simplex with $s_0=E$
 meets $\Gamma$ in $b_E$ and has $\cyInv(E)$. All restriction maps among the simplices of $B_p$ containing $p$, and among
 those of $\bar D(E)$ containing $b_E$, are identities.
 
 \emph{The cone lemma.} Let $C=c*L$ be a simplicial cone and let a coefficient system on $C$ be the constant group $I$,
 with identity restrictions, on the simplices containing $c$. Then $C_*(C,L;I)$ is $I\otimes\widetilde C_{*-1}(L)$, by
-$c*\sigma\leftrightarrow\sigma$ and $c\leftrightarrow$ the augmentation, up to sign; so $H_k(C,L;I)\cong
+$c*s\leftrightarrow s$ and $c\leftrightarrow$ the augmentation, up to sign; so $H_k(C,L;I)\cong
 I\otimes\widetilde H_{k-1}(L)$. Hence $H_*(B_p,\partial B_p;F)$ is $\cyInv(p)$ in degree $3$, generated by the classes
-$Y\cdot[B_p]$, and $H_*(\bar D(E),\partial\bar D(E);F)$ is $\cyInv(E)$ in degree $2$, generated by the $X\cdot[\bar D(E)]$.
+$v_p\cdot[B_p]$, and $H_*(\bar D(E),\partial\bar D(E);F)$ is $\cyInv(E)$ in degree $2$, generated by the $v\cdot[\bar D(E)]$.
 
 \emph{Proof of (1).} Let $U_1=\partial U\cup\bigcup_E\bar D(E)$. By the block description,
 $C_*(U_1;F)/C_*(\partial U;F)=\bigoplus_EC_*(\bar D(E),\partial\bar D(E);F)$ and
 $C_*(U;F)/C_*(U_1;F)=\bigoplus_pC_*(B_p,\partial B_p;F)$. So $H_*(U_1,\partial U;F)=\bigoplus_E\cyInv(E)$ in degree $2$ and
 $H_*(U,U_1;F)=\bigoplus_p\cyInv(p)$ in degree $3$, and the exact sequence of the triple $(U,U_1,\partial U)$ reduces to
-the sequence of~(1), with $H_k(U,\partial U;F)=0$ for $k\ne2,3$. The connecting map sends $Y\cdot[B_p]$ to
-$Y\cdot[\partial B_p]$ modulo $C_*(\partial U;F)$, which is $\sum_{E\ni p}\epsilon(p,E)\,Y\cdot[\bar D(E)]$ with
+the sequence of~(1), with $H_k(U,\partial U;F)=0$ for $k\ne2,3$. The connecting map sends $v_p\cdot[B_p]$ to
+$v_p\cdot[\partial B_p]$ modulo $C_*(\partial U;F)$, which is $\sum_{E\ni p}\epsilon(p,E)\,v_p\cdot[\bar D(E)]$ with
 $\epsilon(p,E)=+1$ if $p=o(E)$ and $-1$ if $p=t(E)$: at $o(E)$ the outward normal of $B_p$ along $\bar D(E)$ points along
-$E$. So the connecting map is $\delta$.
+$E$. So the connecting map is $d_\Gamma$.
 
 \emph{Proof of (2).} The triple $C_*(\partial U;F)\subseteq C_*(\partial U\cup\Gamma;F,\mathcal D)\subseteq C_*(U;F)$ gives
 the exact sequence
@@ -502,12 +502,12 @@ $(c_{ab}+c_{dc})(b-a)+(c_{bc}+c_{ad})(c-b)=0$ with $b-a$, $c-b$ independent.
 \begin{lemma}[normal form]\label{lem:normalform}
 Let $z\in Z(\mathfrak K)$, and let $\Theta$ be a relative $2$-cycle of $(U,\partial U\cup\Gamma;F,\mathcal D)$ on $\mathfrak K'$
 whose $\Gamma$-boundary is $\operatorname{sd}(\partial z)$. Choose one edge $E_A$ in each arc $A$. There are
-$w\in C_3(U;F)$, $X_A\in\cyInv(A)$ and $y\in C_2(\mathfrak K';F)$ supported on simplices not in $U\setminus\partial U$, such
+$w\in C_3(U;F)$, $v_A\in\cyInv(A)$ and $y\in C_2(\mathfrak K';F)$ supported on simplices not in $U\setminus\partial U$, such
 that
 \[
-\operatorname{sd}(z)-\partial w=\Theta+\sum_AX_A\cdot\bar D(E_A)+y.
+\operatorname{sd}(z)-\partial w=\Theta+\sum_Av_A\cdot\bar D(E_A)+y.
 \]
-The class of $(X_A)_A$ in $\cyTr(\Gamma)$ is determined by $z$ and $\Theta$. In particular $\operatorname{sd}(z)-\partial w$ has the
+The class of $(v_A)_A$ in $\cyTr(\Gamma)$ is determined by $z$ and $\Theta$. In particular $\operatorname{sd}(z)-\partial w$ has the
 boundary network and the node coefficients of $z$, and near $\Gamma$ it consists of $\Theta$ and transverse discs.
 \end{lemma}
 
@@ -516,15 +516,15 @@ Let $z_U$ be the part of $\operatorname{sd}(z)$ on the $2$-simplices of $U$. An 
 so every $2$-simplex containing it lies in $U$, and $\partial z_U$ agrees with $\partial\operatorname{sd}(z)$ on such edges.
 Hence $z_U$ is a relative $2$-cycle of $(U,\partial U\cup\Gamma;F,\mathcal D)$ with $\Gamma$-boundary
 $\operatorname{sd}(\partial z)$, and $z_U-\Theta$ has boundary on $\partial U$: it is a relative $2$-cycle of $(U,\partial U;F)$.
-By Lemma~\ref{lem:nbhd}(1), $z_U-\Theta=\sum_EX_E\cdot\bar D(E)+\partial w+c$ with $w\in C_3(U;F)$ and $c\in C_2(\partial U;F)$.
-To collect the discs of an arc into one, let $E$, $E'$ be consecutive edges of $A$ with common vertex $v=t(E)=o(E')$.
-The proof of Lemma~\ref{lem:nbhd}(1) gives $\partial[B_v]=-\bar D(E)+\bar D(E')+(\text{a chain on }\partial U)$, so for
-$X\in\cyInv(A)=\cyInv(v)$
+By Lemma~\ref{lem:nbhd}(1), $z_U-\Theta=\sum_Ev_E\cdot\bar D(E)+\partial w+c$ with $w\in C_3(U;F)$ and $c\in C_2(\partial U;F)$.
+To collect the discs of an arc into one, let $E$, $E'$ be consecutive edges of $A$ with common vertex $p=t(E)=o(E')$.
+The proof of Lemma~\ref{lem:nbhd}(1) gives $\partial[B_p]=-\bar D(E)+\bar D(E')+(\text{a chain on }\partial U)$, so for
+$v\in\cyInv(A)=\cyInv(p)$
 \[
-X\cdot\bar D(E)-X\cdot\bar D(E')=-\partial\bigl(X\cdot[B_v]\bigr)+(\text{a chain on }\partial U).
+v\cdot\bar D(E)-v\cdot\bar D(E')=-\partial\bigl(v\cdot[B_p]\bigr)+(\text{a chain on }\partial U).
 \]
-After these moves, $\operatorname{sd}(z)-\partial w'=\Theta+\sum_AX_A\cdot\bar D(E_A)+y$ with $y=(\operatorname{sd}(z)-z_U)+c'$,
-$c'$ a chain on $\partial U$. The class of $(X_A)$ is the class of $z_U-\Theta$ in $H_2(U,\partial U;F)\cong\cyTr(\Gamma)$.
+After these moves, $\operatorname{sd}(z)-\partial w'=\Theta+\sum_Av_A\cdot\bar D(E_A)+y$ with $y=(\operatorname{sd}(z)-z_U)+c'$,
+$c'$ a chain on $\partial U$. The class of $(v_A)$ is the class of $z_U-\Theta$ in $H_2(U,\partial U;F)\cong\cyTr(\Gamma)$.
 \end{proof}
 
 An admissible $\Theta$ always exists: $z_U$ is one, and by Lemma~\ref{lem:nbhd}(2) every balanced network is the
@@ -532,12 +532,19 @@ $\Gamma$-boundary of a relative $2$-cycle of $(U,\partial U\cup\Gamma;F,\mathcal
 $\Gamma$-boundary differ by an element of $\cyTr(\Gamma)$, for instance two windings of a sheet about an arc.
 
 \begin{remark}[the group of transverse discs is free]\label{rem:free}
-The map $\delta$ is injective and $\cyTr(\Gamma)$ is free of rank $2a-2(n_-+|Q|)-n_+$, where $a$, $n_-$ and $n_+$ are the
-numbers of arcs, negative vertices and positive vertices; neither statement is used in this paper. Both follow by showing
-that a rational $Y\in\bigoplus_p\cyInv(p)\otimes\Q$ with $\delta Y$ integral is integral, using that the part of $\Gamma$ in a
-two-face $F_\tau$ with $\tau^\vee$ a two-face $G$ of $\Delta$ is the connected dual graph of the subdivision of $G$, that two
-edge vectors of $G$ form a basis of its plane lattice (for a pentagon or hexagon $w_{i+1}-w_i$ and $w_{i+2}-w_{i+1}$ for an
-index $i$ with $w_i+w_{i+2}=o+w_{i+1}$), and that the edges of $\Delta$ are primitive.
+The map $d_\Gamma$ is injective and $\cyTr(\Gamma)$ is free of rank $2a-2(n_-+|Q|)-n_+$, where $a$, $n_-$ and $n_+$ are the
+numbers of arcs, negative vertices and positive vertices. To see the integrality assertion, suppose that a rational
+family $(v_p)_p$ has $d_\Gamma(v_p)_p$ integral. Its classes in $N_\Q/N$ agree along every arc. In a two-face $F_\tau$
+with $\tau^\vee=G$ a two-face of $\Delta$, the dual graph of the subdivision of $G$ is connected, including its boundary
+legs. The common class therefore lies in the images of the rational lines generated by all boundary edge vectors of
+$G$: at the adjoining positive vertices these are precisely the stalks of Lemma~\ref{lem:stalks}. Two of those vectors
+form a basis of the saturated plane lattice of $G$. For a pentagon or hexagon one may take
+$w_{i+1}-w_i$, $w_{i+2}-w_{i+1}$ with $w_i+w_{i+2}=o+w_{i+1}$; the triangle and square cases are immediate.
+The two rational lines have zero intersection modulo that plane lattice, so this common class is zero.
+The connected dual graph of the triangulation of each $E^\vee$, for an edge $E$ of $\Delta$, joins every remaining
+positive vertex to such a boundary leg. Thus every $v_p$ is integral. Applied to $(v_p)/m$ for every positive integer
+$m$ when $d_\Gamma(v_p)=0$, this also proves injectivity. The image is saturated, and the rank follows from the stalk
+ranks and the arc presentation above.
 \end{remark}
 
 \begin{remark}[scope]\label{rem:nbhdscope}
@@ -701,22 +708,22 @@ $\sum_ux_{un}=\deg(x)_n\,n$. From the display, $\sum_u\cyit[b']_{un}=\sum_{\omeg
 \[
 \deg\cyit[b']=0.
 \]
-For an arc $A=C([u,u'],[n,n'])$ and $X\in\cyInv(A)=[u,u']^\perp\cap N$ put
+For an arc $A=C([u,u'],[n,n'])$ and $v\in\cyInv(A)=[u,u']^\perp\cap N$ put
 \[
-m_A(X):=X\bigl([u,n]-[u',n]+[u',n']-[u,n']\bigr)\in\mathcal Z_G,
+m_A(v):=v\bigl([u,n]-[u',n]+[u',n']-[u,n']\bigr)\in\mathcal Z_G,
 \]
-and let $I_\Gamma\subseteq\mathcal Z_G$ be the span of all $m_A(X)$. Each $m_A(X)$ lies in $\ker\deg$. Let $L=[b_e,b_f]$ be a leg in $A$,
+and let $I_\Gamma\subseteq\mathcal Z_G$ be the span of all $m_A(v)$. Each $m_A(v)$ lies in $\ker\deg$. Let $L=[b_e,b_f]$ be a leg in $A$,
 with $e\subset f$, let $v_1,v_2$ be the end points of $e$ and $C_\pm$ the maximal cells containing $f$, with facet indices
 $u_\pm$. The link of $L$ in $\mathfrak K_0$ is the $4$-cycle $\cyLk(L)=b_{v_1}-b_{C_+}-b_{v_2}-b_{C_-}-b_{v_1}$ (the chains
 $v_i\subset e\subset f\subset C_\pm$), whose vertices are region vertices $b_{v_i}$ and facet vertices $b_{C_\pm}$, and the
 cone $b_f*\cyLk(L)$ consists of the triangles $[b_f,b_{v_i},b_{C_\pm}]$, whose open parts lie in $C(u_\pm,n_i)$ (Figure~\ref{fig:meridian}).
 These triangles meet $\Gamma$ only in $b_f$, which is a two-leg point, a negative vertex or a node, with
-$\cyInv(b_f)=[u_-,u_+]^\perp\cap N=\cyInv(A)$. So $X\cdot(b_f*\cyLk(L))\in C_2(\mathfrak K_0;F)$ for $X\in\cyInv(A)$, with
-boundary $X\cdot\cyLk(L)$, the coefficient on each edge being the restriction of $X$; and by Lemma~\ref{lem:nerve}
+$\cyInv(b_f)=[u_-,u_+]^\perp\cap N=\cyInv(A)$. So $v\cdot(b_f*\cyLk(L))\in C_2(\mathfrak K_0;F)$ for $v\in\cyInv(A)$, with
+boundary $v\cdot\cyLk(L)$, the coefficient on each edge being the restriction of $v$; and by Lemma~\ref{lem:nerve}
 \[
-\cyit[X\cdot\cyLk(L)]=\pm\,m_A(X),
+\cyit[v\cdot\cyLk(L)]=\pm\,m_A(v),
 \]
-since the coefficient read in the facet charts of $F_{u_\pm}$ is $X$. The cycle $\cyLk(L)$ is a meridian of $L$: it bounds the
+since the coefficient read in the facet charts of $F_{u_\pm}$ is $v$. The cycle $\cyLk(L)$ is a meridian of $L$: it bounds the
 disc $x*\cyLk(L)$, which meets $\Gamma$ only in an interior point $x$ of $L$.
 
 \begin{figure}[ht]
@@ -760,8 +767,8 @@ disc $x*\cyLk(L)$, which meets $\Gamma$ only in an interior point $x$ of $L$.
 \end{tikzpicture}
 \caption{A leg $L=[b_e,b_f]$ of $\Gamma$, its link $\cyLk(L)$ in $\mathfrak K_0$, and the cone $b_f*\cyLk(L)$. The link passes
 alternately through the vertex regions of the lower rays of the end points of $e$ and the open facets of the two maximal
-cells containing $f$; with a coefficient $X\in\cyInv(A)$ its itinerary is the meridian class $\pm m_A(X)$. The cone meets
-$\Gamma$ only at its apex $b_f$, where $X$ is a flat section.}\label{fig:meridian}
+cells containing $f$; with a coefficient $v\in\cyInv(A)$ its itinerary is the meridian class $\pm m_A(v)$. The cone meets
+$\Gamma$ only at its apex $b_f$, where $v$ is a flat section.}\label{fig:meridian}
 \end{figure}
 
 \begin{lemma}[the complement lemma]\label{lem:complement}
@@ -776,22 +783,22 @@ Unimodularity then lifts the vertex functions to vectors in $N$ over the integer
 below; the last step is what excludes a finite-index obstruction.
 
 \begin{proof}
-Let $X_0$ be the two-dimensional cell complex obtained from the graph $G_0$ by attaching one square $\square_A$ for each arc
-$A=C([u,u'],[n,n'])$ along the edge loop $(u,n),(u',n),(u',n'),(u,n')$. On $X_0$ consider the coefficient system $\hat\Lambda$
+Let $\mathfrak X_0$ be the two-dimensional cell complex obtained from the graph $G_0$ by attaching one square $\square_A$ for each arc
+$A=C([u,u'],[n,n'])$ along the edge loop $(u,n),(u',n),(u',n'),(u,n')$. On $\mathfrak X_0$ consider the coefficient system $\hat\Lambda$
 of subgroups of $N$ given by $u^\perp\cap N$ at the vertex $u$ and on the edges $(u,n)$, by $N$ at the vertex $n$, and by
-$[u,u']^\perp\cap N$ on $\square_A$, with inclusions as restriction maps. Then $C_*(X_0;\hat\Lambda)$ is a subcomplex of
-$C_*(X_0)\otimes N$. Its $1$-cycles are the $x$ with $\sum_nx_{un}=0$ and $\sum_ux_{un}=0$ in $N$, which is $\ker\deg$ because
-$n\ne0$; and with suitable orientations of the squares $\partial(X\cdot \square_A)=m_A(X)$, so its $1$-boundaries form $I_\Gamma$. The
-claim is $H_1(X_0;\hat\Lambda)=0$. Let $\mathcal Q=N/\hat\Lambda$. It is $0$ at the vertices $n$; $N/(u^\perp\cap N)\cong\Z$ by
+$[u,u']^\perp\cap N$ on $\square_A$, with inclusions as restriction maps. Then $C_*(\mathfrak X_0;\hat\Lambda)$ is a subcomplex of
+$C_*(\mathfrak X_0)\otimes N$. Its $1$-cycles are the $x$ with $\sum_nx_{un}=0$ and $\sum_ux_{un}=0$ in $N$, which is $\ker\deg$ because
+$n\ne0$; and with suitable orientations of the squares $\partial(v\cdot \square_A)=m_A(v)$, so its $1$-boundaries form $I_\Gamma$. The
+claim is $H_1(\mathfrak X_0;\hat\Lambda)=0$. Let $\mathcal Q=N/\hat\Lambda$. It is $0$ at the vertices $n$; $N/(u^\perp\cap N)\cong\Z$ by
 $\langle u,\cdot\rangle$ at $u$ and on the edges $(u,n)$; and $N/([u,u']^\perp\cap N)\cong\Z^2$ by $(\langle u,\cdot\rangle,
 \langle u',\cdot\rangle)$ on $\square_A$, these maps being onto because $u$, $u'$ are part of a basis of $M$
 (Lemma~\ref{lem:stalks}(3)). The exact sequence of $0\to\hat\Lambda\to N\to\mathcal Q\to0$ contains
 \[
-H_2(X_0;N)\to H_2(X_0;\mathcal Q)\to H_1(X_0;\hat\Lambda)\to H_1(X_0;N),
+H_2(\mathfrak X_0;N)\to H_2(\mathfrak X_0;\mathcal Q)\to H_1(\mathfrak X_0;\hat\Lambda)\to H_1(\mathfrak X_0;N),
 \]
 and we show that the last group vanishes and the first map is onto.
 
-(a) $H_1(X_0;N)=H_1(X_0;\Z)\otimes N$ since $N$ is free, and $H_1(X_0;\Z)$ is the quotient of $H_1(G_0;\Z)$ by the classes of
+(a) $H_1(\mathfrak X_0;N)=H_1(\mathfrak X_0;\Z)\otimes N$ since $N$ is free, and $H_1(\mathfrak X_0;\Z)$ is the quotient of $H_1(G_0;\Z)$ by the classes of
 the attaching loops. Lemma~\ref{lem:nerve}, with $\Lambda$ replaced by the constant system $\Z$, identifies
 $H_1(B\setminus\Gamma;\Z)$ with $H_1(G_0;\Z)$, and carries the class of $\cyLk(L)$, $L\subset A$, to $\pm$ the attaching loop of
 $\square_A$. So it suffices that the meridians $\cyLk(L)$ generate $H_1(B\setminus\Gamma;\Z)$. Let $U\supset\Gamma$ be the
@@ -806,15 +813,15 @@ $\partial\bar D(L)$, which lies in $(L*\cyLk(L))\setminus L$, homeomorphically o
 the barycentre of $s$, and the segment between two such barycentres onto a segment. Hence $[\partial\bar D(L)]=\pm[\cyLk(L)]$ in
 $H_1(B\setminus\Gamma)$.
 
-(b) There are no three-cells, so $H_2(X_0;\mathcal Q)$ is the group of $2$-cycles. A $2$-chain with coefficients in $\mathcal Q$ is a
+(b) There are no three-cells, so $H_2(\mathfrak X_0;\mathcal Q)$ is the group of $2$-cycles. A $2$-chain with coefficients in $\mathcal Q$ is a
 family of integers $p=(p^{(u)}_A)$, one for each arc $A$ and each vertex $u$ of $\tau_A$, where $A=C(\tau_A,\omega_A)$; the
-boundary of $C_*(X_0;\mathcal Q)$ in degree two decouples over $u$, the component on the edge $(u,n)$ involving only the
+boundary of $C_*(\mathfrak X_0;\mathcal Q)$ in degree two decouples over $u$, the component on the edge $(u,n)$ involving only the
 $p^{(u)}$. Fix $u$ and let $S_u=\partial F_u$, a two-sphere oriented as the boundary of $F_u$. By (D2), $S_u$ is the union
 of the cells $C(\tau,\omega)$ with $u\in\tau$ and $\dim\tau\ge1$, a subcomplex of the dual-pair complex. Its cells in $\Gamma$
 form the graph $\Gamma_u=\Gamma\cap S_u$, whose one-cells are the arcs $A$ with $u\in\tau_A$; its other cells are the
 $C(\tau,n)$, which group, according to $n$, into the sets $D^u_n=S_u\cap\widetilde R_n$. Each nonempty $D^u_n$ is connected:
-its cells are the $C(u*\sigma,n)$, $\sigma$ a simplex of the link of $u$ in the triangulation of the face $n^\vee$ of
-$\Delta^\circ$, with $C(u*\sigma,n)$ in the closure of $C(u*\sigma',n)$ when $\sigma\supseteq\sigma'$. That link is
+its cells are the $C(u*s,n)$, $s$ a simplex of the link of $u$ in the triangulation of the face $n^\vee$ of
+$\Delta^\circ$, with $C(u*s,n)$ in the closure of $C(u*s',n)$ when $s\supseteq s'$. That link is
 connected: $n^\vee$ is a facet of $\Delta^\circ$ if $n$ is a vertex of $\Delta$, an edge of lattice length one (with $u$ an end
 point) if $n$ is the centre of a pentagon or hexagon, and a point if $n$ lies in the interior of a facet of $\Delta$, and the
 link of a vertex in a triangulated three-polytope is a disc or a sphere. So the $D^u_n$ are the components of
@@ -825,37 +832,37 @@ $S_u$ and of $S_{u'}$, so the orientation of $\square_A$ can be chosen so that, 
 $\partial(p\,\square_A)$ on $(u,n)$ is $p$ times the incidence of $C([u,u'],n)$ with $A$ in $S_u$. With this choice, $p$ is a cycle
 if and only if, for every $u$ and $n$, the $1$-cochain $p^{(u)}$ on the arcs of $\Gamma_u$ satisfies
 \[
-\sum_{\text{two-cells }f\subseteq D^u_n}\bigl(\delta\tilde p^{(u)}\bigr)(f)=0,
+\sum_{\text{two-cells }f\subseteq D^u_n}\bigl(d\tilde p^{(u)}\bigr)(f)=0,
 \]
-where $\tilde p^{(u)}$ extends $p^{(u)}$ by zero to the one-cells of $S_u$ not in $\Gamma_u$ and $\delta$ is the cellular
+where $\tilde p^{(u)}$ extends $p^{(u)}$ by zero to the one-cells of $S_u$ not in $\Gamma_u$ and $d$ is the cellular
 coboundary of $S_u$.
 
 Consider the exact sequence $0=H^1(S_u)\to H^1(\Gamma_u)\to H^2(S_u,\Gamma_u)$. The relative cellular cochains of
 $(S_u,\Gamma_u)$ split as $\bigoplus_nC^*_n$, the cochains on the cells of $D^u_n$, since the coboundary of a cell $C(\tau,n)$
 consists of cells $C(\tau',n)$. Each one-cell of $D^u_n$ lies on exactly two two-cells, both in $D^u_n$, with opposite
-incidences, and $D^u_n$ is connected, so the sum of the values on the two-cells identifies $C^2_n/\delta C^1_n$ with $\Z$;
+incidences, and $D^u_n$ is connected, so the sum of the values on the two-cells identifies $C^2_n/d C^1_n$ with $\Z$;
 thus $H^2(S_u,\Gamma_u)=\bigoplus_n\Z$, and the connecting map sends the class of $p^{(u)}$ to the family of sums displayed
-above. Therefore the $u$-components of $2$-cycles are exactly the coboundaries $p^{(u)}=\delta\varphi_u$ of functions
-$\varphi_u$ on the vertices of $\Gamma_u$, that is, the integral combinations $\sum_v\varphi_u(v)\,\delta_u[v]$ of the vertex
-cochains $\delta_u[v]$, which are $\pm1$ on the arcs of $\Gamma_u$ at $v$ and $0$ elsewhere (arcs have distinct end points).
+above. Therefore the $u$-components of $2$-cycles are exactly the coboundaries $p^{(u)}=d\varphi_u$ of functions
+$\varphi_u$ on the vertices of $\Gamma_u$, that is, the integral combinations $\sum_v\varphi_u(v)\,d_u[v]$ of the vertex
+cochains $d_u[v]$, which are $\pm1$ on the arcs of $\Gamma_u$ at $v$ and $0$ elsewhere (arcs have distinct end points).
 
 For a $\Gamma$-vertex $v=C(\tau_v,\omega_v)$ let $\Sigma_v$ be the sum of the squares $\square_A$ of the arcs at $v$, with signs
-making it a $2$-cycle of $X_0$ with integer coefficients: at a negative vertex or node the arcs are the $C(\tau_v,\varepsilon)$,
+making it a $2$-cycle of $\mathfrak X_0$ with integer coefficients: at a negative vertex or node the arcs are the $C(\tau_v,\varepsilon)$,
 $\varepsilon$ an edge of $\omega_v$, and each edge $(u,n)$, $n$ a vertex of $\omega_v$, occurs in the two squares of the edges of
 $\omega_v$ at $n$; at a positive vertex the arcs are the $C(\tau_1,\omega_v)$, $\tau_1$ an edge of $\tau_v$, and each edge
 $(u,n)$ occurs in the two squares of the edges of $\tau_v$ at $u$. For $y\in N$ the image of $y\cdot\Sigma_v$ in
-$C_2(X_0;\mathcal Q)$ has $u$-component, for $u\in\tau_v$, equal to $\langle u,y\rangle$ times a cycle supported on the arcs of
+$C_2(\mathfrak X_0;\mathcal Q)$ has $u$-component, for $u\in\tau_v$, equal to $\langle u,y\rangle$ times a cycle supported on the arcs of
 $\Gamma_u$ at $v$ with entries $\pm1$. The cycles supported on these arcs form a group of rank at most one. Indeed, the arcs of
 $\Gamma_u$ at $v$ are the $C(\tau_1,\omega_1)$ at $v$ with $u\in\tau_1$; for such a cycle the condition attached to $D^u_n$
 involves exactly the arcs at $v$ whose lower support contains $n$, each with coefficient $\pm1$; and the graph on the arcs at
 $v$ in which two are joined when their lower supports share a vertex is connected (a cycle for a negative vertex or node, and
-two arcs with the same lower support for a positive vertex). So the value on one arc determines the others. As $\delta_u[v]$ is such a cycle with entries $\pm1$, the $u$-component of the
-image of $y\cdot\Sigma_v$ is $\epsilon_u(v)\langle u,y\rangle\,\delta_u[v]$ with $\epsilon_u(v)=\pm1$.
+two arcs with the same lower support for a positive vertex). So the value on one arc determines the others. As $d_u[v]$ is such a cycle with entries $\pm1$, the $u$-component of the
+image of $y\cdot\Sigma_v$ is $\epsilon_u(v)\langle u,y\rangle\,d_u[v]$ with $\epsilon_u(v)=\pm1$.
 
-Now let $p$ be a $2$-cycle, $p^{(u)}=\sum_v\varphi_u(v)\,\delta_u[v]$. By Lemma~\ref{lem:stalks}(3) the map $N\to\Z^{\tau_v}$,
+Now let $p$ be a $2$-cycle, $p^{(u)}=\sum_v\varphi_u(v)\,d_u[v]$. By Lemma~\ref{lem:stalks}(3) the map $N\to\Z^{\tau_v}$,
 $y\mapsto(\langle u,y\rangle)_{u\in\tau_v}$, is onto, so there are $y_v\in N$ with $\langle u,y_v\rangle=\epsilon_u(v)\varphi_u(v)$ for
-all $u\in\tau_v$. Then $\sum_vy_v\cdot\Sigma_v\in H_2(X_0;N)$ maps to $p$. So $H_2(X_0;N)\to H_2(X_0;\mathcal Q)$ is onto, and
-$H_1(X_0;\hat\Lambda)=0$.
+all $u\in\tau_v$. Then $\sum_vy_v\cdot\Sigma_v\in H_2(\mathfrak X_0;N)$ maps to $p$. So $H_2(\mathfrak X_0;N)\to H_2(\mathfrak X_0;\mathcal Q)$ is onto, and
+$H_1(\mathfrak X_0;\hat\Lambda)=0$.
 \end{proof}
 
 \begin{theorem}[filling]\label{thm:filling}
@@ -865,14 +872,14 @@ $\partial Z(\mathfrak K_0)=\cyBal$.
 \begin{proof}
 $\partial Z(\mathfrak K_0)\subseteq\cyBal$ because $\partial\partial=0$. Let $\beta\in\cyBal$ and let $\zeta$, $b$, $\theta$, $b'$ be as in
 Steps~1 and~2. By Lemmas~\ref{lem:nerve} and~\ref{lem:complement}, $\cyit[b']\in\ker\deg=I_\Gamma$, so
-$\cyit[b']=\sum_i m_{A_i}(X_i)$ for finitely many arcs $A_i$ and $X_i\in\cyInv(A_i)$. Choose a leg $L_i\subset A_i$ with
-apex $b_{f_i}$, and signs so that $\cyit[X_i\cdot\cyLk(L_i)]=m_{A_i}(X_i)$. Then $b'-\sum_iX_i\cdot\cyLk(L_i)$ is a $1$-cycle on
+$\cyit[b']=\sum_i m_{A_i}(v_i)$ for finitely many arcs $A_i$ and $v_i\in\cyInv(A_i)$. Choose a leg $L_i\subset A_i$ with
+apex $b_{f_i}$, and signs so that $\cyit[v_i\cdot\cyLk(L_i)]=m_{A_i}(v_i)$. Then $b'-\sum_iv_i\cdot\cyLk(L_i)$ is a $1$-cycle on
 $\mathfrak K_0^\circ$ with itinerary zero, hence null-homologous in $B\setminus\Gamma$ (Lemma~\ref{lem:nerve}), hence the boundary
 $\partial y_0$ of a $2$-chain $y_0$ on $\mathfrak K_0^\circ$ with coefficients in $\Lambda$. Put
 \[
-z:=\zeta-\theta+y_0+\sum_iX_i\cdot\bigl(b_{f_i}*\cyLk(L_i)\bigr)\in C_2(\mathfrak K_0;F).
+z:=\zeta-\theta+y_0+\sum_iv_i\cdot\bigl(b_{f_i}*\cyLk(L_i)\bigr)\in C_2(\mathfrak K_0;F).
 \]
-Since $\beta=b+\partial\zeta$, $b=b'-\partial \theta$, $b'=\partial y_0+\sum_iX_i\cdot\cyLk(L_i)$ and $\partial(b_f*c)=c$ for a $1$-cycle
+Since $\beta=b+\partial\zeta$, $b=b'-\partial \theta$, $b'=\partial y_0+\sum_iv_i\cdot\cyLk(L_i)$ and $\partial(b_f*c)=c$ for a $1$-cycle
 $c$, we get $\partial z=\beta$. So $z\in Z(\mathfrak K_0)$ with boundary network $\beta$.
 \end{proof}
 

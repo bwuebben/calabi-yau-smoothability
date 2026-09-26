@@ -2,7 +2,7 @@
 
 This appendix proves Lemmas~\ref{lem:faces}, \ref{lem:cayley} and~\ref{lem:charts} and parts (2) and (3) of
 Proposition~\ref{prop:L1}, and the piecewise linear details of Proposition~\ref{prop:L1}(4) and Lemmas~\ref{lem:D}(2) and~\ref{lem:arc}(2). Notation is that of
-Section~\ref{sec:dualpair}; $\mathcal F$ is a fan side with function $h$ (Definition~\ref{def:fanside}). That pulling a point
+Section~\ref{sec:dualpair}; $\mathcal F$ is a fan-side subdivision with function $h$ (Definition~\ref{def:fanside}). That pulling a point
 preserves the regularity of a subdivision, which the construction of $\mathcal F_C$ uses, is part of
 Proposition~\ref{prop:pulling}.
 
@@ -146,34 +146,34 @@ which is $F_{\tau(c)}$; by (2) it is $\operatorname{cone}_\tau(\tau(c))$. It is 
 $c\not\subseteq\partial F_\tau$.
 \end{proof}
 
-For $p=(\tau,\omega)\in\lgDP$ let $\mathcal C_p$ be the set of cells of $\mathcal R_\tau$ contained in $D(\omega)$, a
-polyhedral complex with support $D(\omega)$ by Lemma~\ref{lem:onefacet}(4); let $\mathcal C_p^\partial$ be its subcomplex of
-cells contained in the relative boundary $\partial D(\omega)$, and $\mathcal C_p^u$ the set of its unbounded cells. For a
+For ${\mathfrak p}=(\tau,\omega)\in\lgDP$ let $\mathcal C_{\mathfrak p}$ be the set of cells of $\mathcal R_\tau$ contained in $D(\omega)$, a
+polyhedral complex with support $D(\omega)$ by Lemma~\ref{lem:onefacet}(4); let $\mathcal C_{\mathfrak p}^\partial$ be its subcomplex of
+cells contained in the relative boundary $\partial D(\omega)$, and $\mathcal C_{\mathfrak p}^u$ the set of its unbounded cells. For a
 poset $\mathcal C$, $\lgOrd(\mathcal C)$ is its order complex, whose simplices are the chains; the order complex of a subposet
-is a subcomplex. Let $\lgBar^{\preceq p}$ and $\lgBar^{\prec p}$ be the sets of simplices of $\lgBar\mathscr P_X$ whose label
-is $\preceq p$, respectively $\prec p$.
+is a subcomplex. Let $\lgBar^{\preceq {\mathfrak p}}$ and $\lgBar^{\prec {\mathfrak p}}$ be the sets of simplices of $\lgBar\mathscr P_X$ whose label
+is $\preceq {\mathfrak p}$, respectively $\prec {\mathfrak p}$.
 
 \begin{lemma}[order complexes]\label{lem:ordcx}
-The label of a simplex is $\preceq$ the label of every simplex containing it, so $\lgBar^{\preceq p}$ and $\lgBar^{\prec p}$
-are subcomplexes and $C_X(p)=|\lgBar^{\preceq p}|\setminus|\lgBar^{\prec p}|$. The map $c\mapsto c^*$ induces isomorphisms of
+The label of a simplex is $\preceq$ the label of every simplex containing it, so $\lgBar^{\preceq {\mathfrak p}}$ and $\lgBar^{\prec {\mathfrak p}}$
+are subcomplexes and $C_X({\mathfrak p})=|\lgBar^{\preceq {\mathfrak p}}|\setminus|\lgBar^{\prec {\mathfrak p}}|$. The map $c\mapsto c^*$ induces isomorphisms of
 simplicial complexes
 \[
-\lgBar^{\preceq p}\cong\lgOrd(\mathcal C_p),\qquad\lgBar^{\prec p}\cong\lgOrd(\mathcal C_p^\partial)\cup
-\lgOrd(\mathcal C_p^u).
+\lgBar^{\preceq {\mathfrak p}}\cong\lgOrd(\mathcal C_{\mathfrak p}),\qquad\lgBar^{\prec {\mathfrak p}}\cong\lgOrd(\mathcal C_{\mathfrak p}^\partial)\cup
+\lgOrd(\mathcal C_{\mathfrak p}^u).
 \]
 \end{lemma}
 \begin{proof}
 A face of a simplex corresponds to a subchain, which has a smaller top and a larger bottom, so its face label and its lower
-support are larger: its label is $\preceq$. A chain has label $\preceq p$ if and only if $c_k\subseteq F_\tau$ and
-$\omega(c_0)\supseteq\omega$, that is, if and only if all its cells lie in $U_p=\{c\subseteq F_\tau:\omega(c)\supseteq
+support are larger: its label is $\preceq$. A chain has label $\preceq {\mathfrak p}$ if and only if $c_k\subseteq F_\tau$ and
+$\omega(c_0)\supseteq\omega$, that is, if and only if all its cells lie in $U_{\mathfrak p}=\{c\subseteq F_\tau:\omega(c)\supseteq
 \omega\}$, since face labels decrease and lower supports increase along a chain. By Lemma~\ref{lem:onefacet}(3),(4),
-$c\mapsto c^*$ is an order-reversing bijection from $U_p$ onto $\mathcal C_p$, and a poset and its opposite have the same
-order complex. The label of a chain in $U_p$ is $\prec p$ if and only if $\tau(c_k)\supsetneq\tau$ or
+$c\mapsto c^*$ is an order-reversing bijection from $U_{\mathfrak p}$ onto $\mathcal C_{\mathfrak p}$, and a poset and its opposite have the same
+order complex. The label of a chain in $U_{\mathfrak p}$ is $\prec {\mathfrak p}$ if and only if $\tau(c_k)\supsetneq\tau$ or
 $\omega(c_0)\supsetneq\omega$. The first condition says that $c_k^*$ is unbounded (Lemma~\ref{lem:onefacet}(5)); since
 $c_k^*$ is contained in every $c_i^*$, all cells of the image chain are then unbounded, and conversely. The second says
 that $D(\omega(c_0))$ is a proper face of $D(\omega)$, that is, $c_0^*\subseteq\partial D(\omega)$
 (Lemma~\ref{lem:onefacet}(1),(4)); since $c_0^*$ contains every $c_i^*$, the image chain then lies in $\mathcal
-C_p^\partial$, and conversely.
+C_{\mathfrak p}^\partial$, and conversely.
 \end{proof}
 
 \begin{lemma}[truncation]\label{lem:trunc}
@@ -195,16 +195,16 @@ recession direction and meets $\lgri e$; so $e'=e\cap\{\ell_e=R\}$ is a facet of
 Since the hyperplane contains no vertex, the faces of $e_R$ are the $f_R$ for the faces $f$ of $e$ and the $f'$ for the
 unbounded faces $f$ of $e$.
 
-Realise $\lgOrd(\mathcal C)$ by sending $e$ to its barycentre $p(e)$ if $e$ is bounded and to a point $p(e)\in\lgri e'$ if
-$e$ is unbounded, and a chain $e_0<\dots<e_j$ to $\operatorname{conv}\{p(e_0),\dots,p(e_j)\}$. We show by induction on
+Realise $\lgOrd(\mathcal C)$ by sending $e$ to its barycentre $b(e)$ if $e$ is bounded and to a point $b(e)\in\lgri e'$ if
+$e$ is unbounded, and a chain $e_0<\dots<e_j$ to $\operatorname{conv}\{b(e_0),\dots,b(e_j)\}$. We show by induction on
 $\dim e$ that the chains with top $\le e$ give a triangulation of $e_R$ in which the chains of unbounded cells triangulate
 $e'$. For bounded $e$ this is the derived subdivision: $e$ is the cone from its barycentre over $\partial e=\bigcup_{f<e}f$.
-For unbounded $e$, $p(e)$ lies in the relative interior of the facet $e'$ of $e_R$, and $e'$ is the only facet of $e_R$
+For unbounded $e$, $b(e)$ lies in the relative interior of the facet $e'$ of $e_R$, and $e'$ is the only facet of $e_R$
 containing it. A polytope is the union of the cones from a point in the relative interior of one facet over the other
-facets, and these cones meet along the cones over common faces: a ray from $p(e)$ inside $e'$ leaves $e_R$ through
+facets, and these cones meet along the cones over common faces: a ray from $b(e)$ inside $e'$ leaves $e_R$ through
 $\partial e'$, which is covered by other facets, and any other ray leaves $\operatorname{aff}e'$ at once and exits through
 a facet different from $e'$. The facets of $e_R$ other than $e'$ are the $f_R$ for the facets $f$ of $e$, so
-$e_R=p(e)*\bigcup_{f<e}f_R$ and likewise $e'=p(e)*\bigcup_{f<e\text{ unbounded}}f'$, and the induction hypothesis applies
+$e_R=b(e)*\bigcup_{f<e}f_R$ and likewise $e'=b(e)*\bigcup_{f<e\text{ unbounded}}f'$, and the induction hypothesis applies
 to the $f$. The triangulations of the $e_R$ agree on common faces, so they form a triangulation of $\bigcup_ee_R=D_R$. The
 chains in $\mathcal C^\partial$ triangulate $\partial D\cap\{g\le R\}$, because a cell whose relative interior meets a
 proper face of $D$ lies in it; and the chains in $\mathcal C^u$ triangulate $\bigcup_ee'=D\cap\{g=R\}$, as $g<R$ on a bounded cell.
@@ -216,31 +216,31 @@ A linearly triangulated convex $k$-polytope is a piecewise linear $k$-ball with 
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{prop:L1}(2),(3)]
-(2) Let $p=(\tau,\omega)$. Apply Lemma~\ref{lem:trunc} to $\mathcal C=\mathcal C_p$ in $W=V_\tau^*$, with
+(2) Let ${\mathfrak p}=(\tau,\omega)$. Apply Lemma~\ref{lem:trunc} to $\mathcal C=\mathcal C_{\mathfrak p}$ in $W=V_\tau^*$, with
 $g(\zeta)=\langle\zeta,x_0\rangle-\min_{y\in\nabla_\tau}\langle\zeta,y\rangle$ for a point $x_0$ in the relative interior of
 $\nabla_\tau$. This $g$ is convex and positively homogeneous, positive off $0$ because a nonzero $\zeta\in V_\tau^*$ is not
 constant on the $d_\tau$-dimensional affine space of $\nabla_\tau$, and linear on every cone $\operatorname{cone}_\tau(\tau')$,
 on which $\min_{\nabla_\tau}\zeta$ is attained at a fixed point of $\nabla^{\check h'}_{\tau'}$. Every cell of $\mathcal R_\tau$
-lies in some $\operatorname{cone}_\tau(\tau')$ (Lemma~\ref{lem:onefacet}(3)), so $g$ is linear on the cells of $\mathcal C_p$,
-whose support $D(\omega)$ is a convex polyhedron of dimension $d_\tau-\dim\omega=d_p$. The polyhedron $D(\omega)$ contains
+lies in some $\operatorname{cone}_\tau(\tau')$ (Lemma~\ref{lem:onefacet}(3)), so $g$ is linear on the cells of $\mathcal C_{\mathfrak p}$,
+whose support $D(\omega)$ is a convex polyhedron of dimension $d_\tau-\dim\omega=\dim{\mathfrak p}$. The polyhedron $D(\omega)$ contains
 lines when $\tau^\vee$ has dimension less than $d_\tau$; this is why the truncation uses $g$ rather than a linear function.
-By Lemmas~\ref{lem:ordcx} and~\ref{lem:trunc}, $|\lgBar^{\preceq p}|$ is a piecewise linear ball of dimension $d_p$ with
-boundary $|\lgBar^{\prec p}|$. Every open simplex of $\lgBar\mathscr P_X$ has exactly one label, so $|\lgBar^{\preceq
-p}|=\bigcup_{q\preceq p}C_X(q)$ and $|\lgBar^{\prec p}|=\bigcup_{q\prec p}C_X(q)$, and $C_X(p)$ is the interior of the ball.
-As $d_q<d_p$ for $q\prec p$, this is a regular CW decomposition with face poset $(\lgDP,\preceq)$.
+By Lemmas~\ref{lem:ordcx} and~\ref{lem:trunc}, $|\lgBar^{\preceq {\mathfrak p}}|$ is a piecewise linear ball of dimension $\dim{\mathfrak p}$ with
+boundary $|\lgBar^{\prec {\mathfrak p}}|$. Every open simplex of $\lgBar\mathscr P_X$ has exactly one label, so $|\lgBar^{\preceq
+{\mathfrak p}}|=\bigcup_{{\mathfrak q}\preceq {\mathfrak p}}C_X({\mathfrak q})$ and $|\lgBar^{\prec {\mathfrak p}}|=\bigcup_{{\mathfrak q}\prec {\mathfrak p}}C_X({\mathfrak q})$, and $C_X({\mathfrak p})$ is the interior of the ball.
+As $\dim{\mathfrak q}<\dim{\mathfrak p}$ for ${\mathfrak q}\prec {\mathfrak p}$, this is a regular CW decomposition with face poset $(\lgDP,\preceq)$.
 
 (3) The arguments of this appendix use only the conclusions of Lemmas~\ref{lem:faces}--\ref{lem:charts}, which hold for
 $B_Y$ with face label and lower support exchanged: on a face $F^*_\omega$ one uses the complex dual to
 $(\omega^\vee,\mathcal T|_{\omega^\vee},\check h)$ in $M_\R/L_\omega$ and the normal fan of $\nabla^{H'}_\omega$. The labels
-$\lambda_Y$ take values in the same set $\lgDP$ with the same order, since both the definition of a dual pair and the order
+$\operatorname{lab}_Y$ take values in the same set $\lgDP$ with the same order, since both the definition of a dual pair and the order
 are symmetric in the two factors.
 \end{proof}
 
 \subsection{Piecewise linear details}\label{app:leg-pl}
-\emph{Uniqueness in Proposition~\ref{prop:L1}(4).} If $\mathcal L_1,\mathcal L_2$ both map every $C_X(p)$ onto $C_Y(p)$, $\phi=\mathcal L_2^{-1}\mathcal L_1$ is a homeomorphism of $B_X$ preserving
-every cell $C_X(p)$, hence every closed cell. Write $B_X^{(k)}$ for the union of the closed cells of dimension at most $k$,
-and identify each closed cell $\overline{C_X(p)}=\Psi_X(|\lgOrd^{\preceq p}|)$, through $\Psi_X$, with the cone from the
-vertex $p$ over its boundary sphere. We show by induction on $k$ that $\phi$ is isotopic, through cell-preserving
+\emph{Uniqueness in Proposition~\ref{prop:L1}(4).} If $\mathcal L_1,\mathcal L_2$ both map every $C_X({\mathfrak p})$ onto $C_Y({\mathfrak p})$, $\phi=\mathcal L_2^{-1}\mathcal L_1$ is a homeomorphism of $B_X$ preserving
+every cell $C_X({\mathfrak p})$, hence every closed cell. Write $B_X^{(k)}$ for the union of the closed cells of dimension at most $k$,
+and identify each closed cell $\overline{C_X({\mathfrak p})}=\Psi_X(|\lgOrd^{\preceq {\mathfrak p}}|)$, through $\Psi_X$, with the cone from the
+vertex ${\mathfrak p}$ over its boundary sphere. We show by induction on $k$ that $\phi$ is isotopic, through cell-preserving
 homeomorphisms, to a homeomorphism $\phi_k$ that is the identity on $B_X^{(k)}$; for $k=0$ take $\phi_0=\phi$, which fixes
 the zero-cells. Suppose $\phi_{k-1}$ has been found. On each closed $k$-cell $\bar e$, $\phi_{k-1}$ fixes the boundary
 sphere, and the Alexander trick \cite{Ale23} in the cone coordinates of $\bar e$ gives an isotopy $I^e_s$ of $\bar e$
@@ -248,31 +248,31 @@ relative to $\partial\bar e$ with $I^e_0=\phi_{k-1}|_{\bar e}$ and $I^e_1=\mathr
 lie in $B_X^{(k-1)}$, and define an isotopy $I_s$ of $B_X^{(k)}$ preserving every cell. Put
 $\theta_s=I_s\circ(\phi_{k-1}|_{B_X^{(k)}})^{-1}$, an isotopy of $B_X^{(k)}$ through cell-preserving homeomorphisms with
 $\theta_0=\mathrm{id}$, and extend it cellwise in increasing dimension to an isotopy $\Theta_s$ of $B_X$: on a closed cell
-of dimension $m>k$ on whose boundary sphere $\Theta_s$ is defined, let $\Theta_s(\lambda p+(1-\lambda)x)=\lambda
-p+(1-\lambda)\Theta_s(x)$ in the cone coordinates. Each $\Theta_s$ is a cell-preserving homeomorphism, $\Theta_0=\mathrm{id}$,
+of dimension $m>k$ on whose boundary sphere $\Theta_s$ is defined, let $\Theta_s(\lambda {\mathfrak p}+(1-\lambda)x)=\lambda
+{\mathfrak p}+(1-\lambda)\Theta_s(x)$ in the cone coordinates. Each $\Theta_s$ is a cell-preserving homeomorphism, $\Theta_0=\mathrm{id}$,
 and $\Theta_s\circ\phi_{k-1}$ runs from $\phi_{k-1}$ to $\phi_k=\Theta_1\circ\phi_{k-1}$, which is the identity on
 $B_X^{(k)}$. For $k=3$ this gives an isotopy $\Omega_s$ from $\phi$ to the identity through cell-preserving
 homeomorphisms, and $\mathcal L_2\circ\Omega_s$ is an isotopy from $\mathcal L_1$ to $\mathcal L_2$ through homeomorphisms
 with the property of (4).
 
 \begin{proof}[Proof of Lemma~\ref{lem:arc}(2)]
-A chain lies in $\operatorname{st}p_e$ exactly when its union with $\{p_e\}$ is a chain, that is, when it is contained in
-$\{z_-,z_+,p_e\}\cup\lgDP_{\succ p_e}$ and contains at most one of the incomparable $z_\pm$. So $\operatorname{st}p_e$ is
-the simplicial join $\{z_-,z_+\}*\{p_e\}*\lgOrd(\lgDP_{\succ p_e})$. By (1), $\epsilon$ identifies $\lgDP_{\succ p_e}$ with
-the nonzero sign vectors, which form the face poset of $\partial\Diamond$; so $\lgOrd(\lgDP_{\succ p_e})$ is isomorphic to
+A chain lies in $\operatorname{st}{\mathfrak p}_e$ exactly when its union with $\{{\mathfrak p}_e\}$ is a chain, that is, when it is contained in
+$\{z_-,z_+,{\mathfrak p}_e\}\cup\lgDP_{\succ {\mathfrak p}_e}$ and contains at most one of the incomparable $z_\pm$. So $\operatorname{st}{\mathfrak p}_e$ is
+the simplicial join $\{z_-,z_+\}*\{{\mathfrak p}_e\}*\lgOrd(\lgDP_{\succ {\mathfrak p}_e})$. By (1), $\epsilon$ identifies $\lgDP_{\succ {\mathfrak p}_e}$ with
+the nonzero sign vectors, which form the face poset of $\partial\Diamond$; so $\lgOrd(\lgDP_{\succ {\mathfrak p}_e})$ is isomorphic to
 the barycentric subdivision of $\partial\Diamond$. The join of this triangulation with the vertex $0$ and with the two
 vertices $\pm e_3$ is a triangulation of $V$: every point of $V^\circ$ with $\pm x_3\ge0$ is uniquely $(1-s)(\pm e_3)+s\,w$
 with $s\in(0,1]$ and $w\in\Diamond$, and every $w\ne0$ is uniquely $t\,y$ with $t\in(0,1]$ and $y\in\partial\Diamond$. Let
-$E_e\colon|\operatorname{st}p_e|\to V$ be the resulting simplicial isomorphism, which sends $z_\pm$ to $\pm e_3$ and $p_e$ to
+$E_e\colon|\operatorname{st}{\mathfrak p}_e|\to V$ be the resulting simplicial isomorphism, which sends $z_\pm$ to $\pm e_3$ and ${\mathfrak p}_e$ to
 $0$, and put $\Phi^X_e=E_e\circ\Psi_X^{-1}$, $\Phi^Y_e=E_e\circ\Psi_Y^{-1}$; then $\Phi^Y_e\circ\mathcal L=\Phi^X_e$. As in the
-proof of Lemma~\ref{lem:D}, $\Psi_Y$ maps the union of the open simplices of the chains with top $p$ onto $C_Y(p)$. In
-$\operatorname{st}p_e$ a chain with top $p\succ p_e$ is $c_-\cup c_+$ with $c_-\subseteq\{z_\pm,p_e\}$ and $\emptyset\ne
-c_+\subseteq\lgDP_{\succ p_e}$ with top $p$, and the points of its open simplex are the points $(1-s)(\pm e_3)+s\,t\,y$ with
-$s,t>0$ and $y$ in the open simplex of $c_+$, which lies in the relative interior of the face of $\epsilon(p)$; so
-$(x_1,x_2)=st\,y\in\mathcal O^{(2)}_{\epsilon(p)}$, and every point of $V^\circ$ with $(x_1,x_2)\in\mathcal
-O^{(2)}_{\epsilon(p)}$ arises in this way. The chains with top $p_e$ in $\operatorname{st}p_e$ are $\{p_e\}$ and
-$\{z_\pm,p_e\}$, whose open simplices form the open segment between $-e_3$ and $e_3$. The open star of $p_e$ is open in
-$|\lgOrd(\lgDP)|$, contains the open arc and lies in $\operatorname{st}p_e$.
+proof of Lemma~\ref{lem:D}, $\Psi_Y$ maps the union of the open simplices of the chains with top ${\mathfrak p}$ onto $C_Y({\mathfrak p})$. In
+$\operatorname{st}{\mathfrak p}_e$ a chain with top ${\mathfrak p}\succ {\mathfrak p}_e$ is $c_-\cup c_+$ with $c_-\subseteq\{z_\pm,{\mathfrak p}_e\}$ and $\emptyset\ne
+c_+\subseteq\lgDP_{\succ {\mathfrak p}_e}$ with top ${\mathfrak p}$, and the points of its open simplex are the points $(1-s)(\pm e_3)+s\,t\,y$ with
+$s,t>0$ and $y$ in the open simplex of $c_+$, which lies in the relative interior of the face of $\epsilon({\mathfrak p})$; so
+$(x_1,x_2)=st\,y\in\mathcal O^{(2)}_{\epsilon({\mathfrak p})}$, and every point of $V^\circ$ with $(x_1,x_2)\in\mathcal
+O^{(2)}_{\epsilon({\mathfrak p})}$ arises in this way. The chains with top ${\mathfrak p}_e$ in $\operatorname{st}{\mathfrak p}_e$ are $\{{\mathfrak p}_e\}$ and
+$\{z_\pm,{\mathfrak p}_e\}$, whose open simplices form the open segment between $-e_3$ and $e_3$. The open star of ${\mathfrak p}_e$ is open in
+$|\lgOrd(\lgDP)|$, contains the open arc and lies in $\operatorname{st}{\mathfrak p}_e$.
 \end{proof}
 
 \emph{Uniqueness in Lemma~\ref{lem:D}(2).} Two homeomorphisms with the property differ by a homeomorphism $\chi$

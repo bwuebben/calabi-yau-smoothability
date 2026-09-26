@@ -225,8 +225,8 @@ Definition~\ref{def:orient}, as Theorem~\ref{thm:main} does, for the same labell
 compatibility is needed; by Lemma~\ref{lem:diag} the conclusion does not depend on the labelling.
 
 \subsubsection*{Proof of item (1)}
-Let $T:=\{k\in\Z^Q:\sum_qk_q[\delta_q]\in\Tors H_3(Y_t;\Z)\}$. Then $K\subseteq\Rel(\delta)\subseteq T$, and item~(1) is the
-statement $T=K$. Let $\mathbf R$ be the $|Q|\times|\mathcal A|$ integer matrix with rows $r_P=e_a+e_c-e_b-e_d$; its entries lie in
+Let $K_{\rm tor}:=\{k\in\Z^Q:\sum_qk_q[\delta_q]\in\Tors H_3(Y_t;\Z)\}$. Then $K\subseteq\Rel(\delta)\subseteq K_{\rm tor}$, and item~(1) is the
+statement $K_{\rm tor}=K$. Let $\mathbf R$ be the $|Q|\times|\mathcal A|$ integer matrix with rows $r_P=e_a+e_c-e_b-e_d$; its entries lie in
 $\{0,\pm1\}$. The points of the set $R$ of Section~\ref{ssec:admissible} are lattice points of $\partial\Delta$, so
 $\Z^R\subseteq\Z^{\mathcal A}$, and under this inclusion $r_P=-\circv_q$, both for the labelling that orients $\delta_q$
 (a change of diagonal reverses $r_P$, $\circv_q$ and $\delta_q$ together, Lemma~\ref{lem:diag}). Hence the left kernel of $\mathbf R$ over $\Q$ is
@@ -235,14 +235,14 @@ $\{k\in\Q^Q:\sum_qk_q\circv_q=0\}=K\otimes\Q$, and
 r_{\mathbf R}:=\operatorname{rank}\mathbf R=|Q|-\operatorname{rank}K .
 \]
 
-\emph{Step 1: relations propagate over $U$.} Let $k\in T$. By Lemma~\ref{lem:flat}, parallel transport along a path in
+\emph{Step 1: relations propagate over $U$.} Let $k\in K_{\rm tor}$. By Lemma~\ref{lem:flat}, parallel transport along a path in
 the connected set $U^\circ$ from $c$ to $c'$ is a group isomorphism $H_3(Y_{t,c};\Z)\to H_3(Y_{t,c'};\Z)$ carrying
 $[\delta_q(c)]$ to $[\delta_q(c')]$; so $\sum_qk_q[\delta_q(c')]$ is a torsion class for every $c'\in U^\circ$.
 Integration of the closed form $\Omega_{t,c'}$ is a homomorphism $H_3(Y_{t,c'};\Z)\to\C$, which vanishes on torsion
 classes; hence $\sum_qk_q\wp_q=0$ on $U^\circ$. By Lemma~\ref{lem:period} each $\wp_q=\mathcal B_q\varepsilon_P$ extends
 holomorphically to $U$, and $U^\circ$ is dense in $U$; so
 \begin{equation}\label{eq:periodrel}
-\sum_qk_q\,\wp_q\equiv0\quad\text{on }U,\qquad\text{for every }k\in T,\ \text{in particular for every }k\in K .
+\sum_qk_q\,\wp_q\equiv0\quad\text{on }U,\qquad\text{for every }k\in K_{\rm tor},\ \text{in particular for every }k\in K .
 \end{equation}
 
 \emph{Step 2: the differentials at $c^{(0)}$.} At the point $c^{(0)}\in U$, where $\xi=0$, every $\eta_P$ vanishes, so
@@ -279,11 +279,11 @@ We decrease $t_0$ so that the right-hand side is less than $b_-^{r_{\mathbf R}}/
 $\operatorname{rank}\mathbf D(t)\ge r_{\mathbf R}$, and the left kernel of $\mathbf D(t)$ in $\C^Q$ has dimension at most
 $|Q|-r_{\mathbf R}=\operatorname{rank}K$.
 
-\emph{Step 4: conclusion.} Let $k\in T$. Differentiating~\eqref{eq:periodrel} at $c^{(0)}$ gives
-$\sum_qk_q\,d\wp_q(c^{(0)})=0$, so $k$ lies in the left kernel of $\mathbf D(t)$. The complex span of $T$ therefore has
-dimension at most $\operatorname{rank}K$, and it contains the complex span of $K\subseteq T$, which has dimension
-$\operatorname{rank}K$. The two spans agree, and since both $T$ and $K$ consist of integral vectors, $T\otimes\Q=K\otimes\Q$.
-As $K$ is saturated in $\Z^Q$, $T\subseteq(K\otimes\Q)\cap\Z^Q=K$. Hence $T=\Rel(\delta)=K$.
+\emph{Step 4: conclusion.} Let $k\in K_{\rm tor}$. Differentiating~\eqref{eq:periodrel} at $c^{(0)}$ gives
+$\sum_qk_q\,d\wp_q(c^{(0)})=0$, so $k$ lies in the left kernel of $\mathbf D(t)$. The complex span of $K_{\rm tor}$ therefore has
+dimension at most $\operatorname{rank}K$, and it contains the complex span of $K\subseteq K_{\rm tor}$, which has dimension
+$\operatorname{rank}K$. The two spans agree, and since both $K_{\rm tor}$ and $K$ consist of integral vectors, $K_{\rm tor}\otimes\Q=K\otimes\Q$.
+As $K$ is saturated in $\Z^Q$, $K_{\rm tor}\subseteq(K\otimes\Q)\cap\Z^Q=K$. Hence $K_{\rm tor}=\Rel(\delta)=K$.
 
 The homomorphism $\Z^Q\to H_3(Y_t;\Z)$, $k\mapsto\sum_qk_q[\delta_q]$, therefore has kernel $K$, and its image meets the
 torsion subgroup only in $0$. The image is isomorphic to $\Z^Q/K$, which is finitely generated and torsion-free because
@@ -324,9 +324,9 @@ Lemma~\ref{lem:NM}(2), $|E_P|\le Ct^{\theta_0/2}$ on $U^+_\C$. The space $\C^{\m
 the max-norm, and operator norms are taken between these.
 
 \emph{(a) $D_I\neq\emptyset$.} Let $V:=\operatorname{span}_\C\{r_P:P\in I\}\subseteq\C^{\mathcal A}$ and
-$L\colon V\to\C^I$, $L\xi:=(r_P\cdot\xi)_{P\in I}$. In the basis $(r_P)_{P\in I}$ of $V$ the matrix of $L$ is the Gram
-matrix of linearly independent real vectors, which is invertible; so $L$ is an isomorphism, and $\|L^{-1}\|\le C_L$ for
-a constant $C_L$ depending only on $\mathbf R$ and $I$. Put $\varrho_V:=\min(1/2,\eta_0/8)$ and
+${\mathsf A}\colon V\to\C^I$, ${\mathsf A}\xi:=(r_P\cdot\xi)_{P\in I}$. In the basis $(r_P)_{P\in I}$ of $V$ the matrix of ${\mathsf A}$ is the Gram
+matrix of linearly independent real vectors, which is invertible; so ${\mathsf A}$ is an isomorphism, and $\|{\mathsf A}^{-1}\|\le C_{\mathsf A}$ for
+a constant $C_{\mathsf A}$ depending only on $\mathbf R$ and $I$. Put $\varrho_V:=\min(1/2,\eta_0/8)$ and
 $B_V:=\{\xi\in V:\|\xi\|\le\varrho_V\}$. Every point of $B_V$ lies in $U_\C\subseteq U$, and so does the polydisc of
 polyradius $\varrho_*=\min(1/2,\eta_0/8)$ about it: on that polydisc $\|\xi\|\le1$ and $|\eta_P|\le\eta_0$. The Cauchy
 estimates on these polydiscs give $\sup_{B_V}\|E\|\le Ct^{\theta_0/2}$ and $\sup_{B_V}\|dE\|\le C(\eta_0)t^{\theta_0/2}$
@@ -335,11 +335,11 @@ equations $\varepsilon_P=0$, $P\in I$, say $e^{-\eta_P}=1+E_P$. Here $|\eta_P|\l
 for the principal logarithm, so $\eta_P=-\log(1+E_P)$, no other branch being possible, and the equations are equivalent
 to the fixed point equation
 \[
-\xi=\mathsf T(\xi):=L^{-1}\bigl(-\log(1+E(\xi))\bigr),\qquad\xi\in B_V .
+\xi=\mathsf T(\xi):={\mathsf A}^{-1}\bigl(-\log(1+E(\xi))\bigr),\qquad\xi\in B_V .
 \]
 For $|w|\le1/2$ one has $|\log(1+w)|\le2|w|$ and $|d\log(1+w)/dw|\le2$, and $B_V$ is convex. Hence
-$\|\mathsf T(\xi)\|\le\varrho_t:=2C_L\,C(\eta_0)\,t^{\theta_0/2}$, and $\mathsf T$ is Lipschitz on $B_V$ with constant at most
-$2C_L\sup_{B_V}\|dE\|\le\varrho_t$. We decrease $t_0$ so that $\varrho_t\le\varrho_V$ and $\varrho_t<1$. Then $\mathsf T$
+$\|\mathsf T(\xi)\|\le\varrho_t:=2C_{\mathsf A}\,C(\eta_0)\,t^{\theta_0/2}$, and $\mathsf T$ is Lipschitz on $B_V$ with constant at most
+$2C_{\mathsf A}\sup_{B_V}\|dE\|\le\varrho_t$. We decrease $t_0$ so that $\varrho_t\le\varrho_V$ and $\varrho_t<1$. Then $\mathsf T$
 maps the closed ball of radius $\varrho_t$ in $V$, which lies in $B_V$, into itself and is a contraction there. Its
 fixed point $\xi^*$ satisfies $\varepsilon_P(c^{(0)}e^{\xi^*})=0$ for $P\in I$, with $\|\xi^*\|\le\varrho_t$, and
 $c^{(0)}e^{\xi^*}\in U$. So $D_I\neq\emptyset$.
@@ -388,7 +388,7 @@ $D_{Q'}\neq\emptyset$. Then there are pairwise disjoint embedded Lagrangian thre
 $P\in Q'$, each smoothly isotopic in $Y_t$ to $\delta_P$.
 \end{lemma}
 
-No localization of $L_P$ in the Morse polydisc is claimed: for a fixed K\"ahler form the equivalence constant between
+The lemma controls the isotopy class of $L_P$, without a bound on its position in the Morse polydisc: for a fixed K\"ahler form the equivalence constant between
 $\omega_{\mathcal T}$ and the flat metric of the rescaled Morse chart grows like a negative power of $t$, and at the member
 $c$ itself the thimbles need not stay in the polydiscs.
 

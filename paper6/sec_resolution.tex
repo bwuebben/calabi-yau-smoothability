@@ -5,8 +5,8 @@ This section proves Theorem~\ref{thm:res}: for every tropical $2$-cycle $(S,j,v)
 $X'_\sigma$ with $\partial\Xi(S)=\sum_q\rho_q(S)[C_q]$, and we compare the other small resolutions. It is the
 resolution-side counterpart of Theorem~\ref{thm:lift} and forms Part~III of the paper. No result of this section is used
 in Parts~I and~II: Theorems~\ref{thm:main}, \ref{thm:real} and~\ref{thm:lift} and Corollary~\ref{cor:smooth} are proved
-without it, and the relations among the exceptional curves that they use are the rational ones of
-Proposition~\ref{prop:partialres}. Conversely, this section uses the following results of the other parts. From Section~\ref{sec:base}:
+without it; the integral relations among the exceptional curves are established independently in
+Proposition~\ref{prop:integral}. Conversely, this section uses the following results of the other parts. From Section~\ref{sec:base}:
 Proposition~\ref{prop:partialres} and Lemma~\ref{lem:H2} on the small resolutions, Remark~\ref{rem:tie} on the ties, and,
 on the base, Lemmas~\ref{lem:monodromy}, \ref{lem:stack} and~\ref{lem:types} and the passages at a node. From
 Section~\ref{sec:cycles}: the clauses (a)--(j) of \cite[Def.~7.2]{CBM} and Lemma~\ref{lem:boundaryfield}
@@ -32,7 +32,7 @@ variety carrying $W$ onto $\widehat X$. The construction has five steps.
 \emph{The resolved base} (Sections~\ref{ssec:res-base} and~\ref{ssec:res-shell}). The resolution $\widehat X$ is induced by a
 regular refinement $\mathcal F'$ of $\Sigma'$ that splits every node parallelogram along a diagonal. Gross's construction
 with $\mathcal F'$ in place of $\Sigma'$ gives a second base $\widehat B$ on the same sphere $\partial\nabla^{\check h}$, in
-which each node point $p_q$ is replaced by two negative vertices $y_0,y_\infty$ joined by an arc $e_q$ of the
+which each vertex $p_q$ of the discriminant is replaced by two negative vertices $y_0,y_\infty$ joined by an arc $e_q$ of the
 discriminant. After $S$ is put in a standard position near the nodes, a homeomorphism $B'_\sigma\to\widehat B$ carries it
 to a surface $\hat S$, the \emph{resolved cycle}, that satisfies the clauses of \cite[Def.~7.2]{CBM} away from the nodes, while near each node met
 by $\partial S$ its boundary turns at $y_0$ and $y_\infty$ and runs along $e_q$, whose vanishing vector is not the field
@@ -79,6 +79,9 @@ fixed. The cut-off constants and the parameter $R$ of $W$ follow, then the local
 $S$, and finally the transport to $\widehat X$. Five technical proofs are deferred to Appendix~\ref{app:original}.
 
 \subsection{The resolved base}\label{ssec:res-base}
+We compare the discriminants before and after splitting each node parallelogram along a diagonal.
+The dual-pair description controls both the topology of this modification and the transport of the integral tangent lattices.
+
 We use the dual-pair complex of Section~\ref{sec:dualpair}. For a fan-side subdivision $\mathcal F$ of $\partial\Delta$, a
 pair $(\tau,\omega)$ of a simplex $\tau$ of $\mathcal T$ and a cell $\omega$ of $\mathcal F$ is \emph{dual} if
 $\langle u,n\rangle=-1$ for all vertices $u$ of $\tau$ and $n$ of $\omega$. The base built from $(\mathcal T,\check h)$ and
@@ -124,7 +127,7 @@ $\widehat\Gamma$ for that of $\widehat B$, and call $\widehat B$ the \emph{resol
 degeneration of $\widehat X$, just as $B'_\sigma$ is that of $X'_\sigma$.
 
 \emph{The node in $\widehat B$.} Let $q\in Q$, with parallelogram $P=abcd$ in the two-face $G$ of $\Delta$, and let
-$G^\circ=[u_-,u_+]$; the node point $p_q$ lies in the two-face $F_q:=F_{u_+u_-}$ of $\nabla^{\check h}$. In $\mathcal F'$
+$G^\circ=[u_-,u_+]$; the vertex $p_q$ of the discriminant lies in the two-face $F_q:=F_{u_+u_-}$ of $\nabla^{\check h}$. In $\mathcal F'$
 the parallelogram is replaced by the unimodular triangles $\{a,b,c\}$ and $\{a,c,d\}$, which by Lemmas~\ref{lem:stack}
 and~\ref{lem:types} give negative vertices $y_0$ and $y_\infty$ of $\widehat\Gamma$ in $F_q$. They are joined by the arc
 $e_q=C_{\widehat B}([u_+,u_-],[a,c])$ (Proposition~\ref{prop:L2}), a union of legs with lower support $\{a,c\}$ and vanishing
@@ -406,6 +409,9 @@ many points (the \emph{edge crossings}) and its two-faces transversally in curve
 \cite[Def.~7.2]{CBM}, which are local near $\widehat\Gamma$.
 
 \subsection{The localized hypersurface}\label{ssec:res-W}
+We choose a localization with exact equations near the strata met by the cycle.
+Its orbit-preserving isotopy to a holomorphic hypersurface and the topology of its regular regions supply the targets for the chain construction.
+
 Let $\check{\mathcal A}=\Delta^\circ\cap M$ and $\check h_m:=\check h(m)$, so that $\check h_0=0$ and $\check h_m$ is odd and
 positive for $m\neq0$. For $R>1$ put
 \[
@@ -576,14 +582,17 @@ $\mathfrak s(U)\subset W_U$ once $\eta$ exceeds $C_{\rm ch}$ times the radial wi
 $\mathfrak s(\gamma)$ with $\gamma$ in a contractible $U$ are contractible in $W_U$.
 
 \subsection{The domain}\label{ssec:res-domain}
-Let $\mathcal K$ be the triangulation of $S\setminus\operatorname{int}\mathcal N_\Gamma$ of Lemma~\ref{lem:AC} below. The
-cell complex $\mathfrak D(S)$ is glued from pieces over the cells of $\mathcal K$ and from local domains over $\mathcal N_\Gamma$.
+We construct the three-dimensional domain by attaching circles, triangles and tetrahedra over the cells of the tropical cycle.
+Balancing cancels the boundaries along interior strata; the remaining boundary components lie over the nodes.
+
+Let $\mathfrak T$ be the triangulation of $S\setminus\operatorname{int}\mathcal N_\Gamma$ of Lemma~\ref{lem:AC} below. The
+cell complex $\mathfrak D(S)$ is glued from pieces over the cells of $\mathfrak T$ and from local domains over $\mathcal N_\Gamma$.
 
 \begin{definition}[the domain]\label{def:domain}
 The \emph{domain} $\mathfrak D=\mathfrak D(S)$ is the CW complex obtained by gluing the following pieces.
 \begin{itemize}
-\item Over each cell $c$ of $\mathcal K$ in a sheet, $c\times S^1$, the circle being $\R v/\Z v$, oriented by $v$.
-\item Over each cell $c$ of $\mathcal K$ on an interior edge, with fields $v_1,v_2,v_3$ on the adjacent sheets and
+\item Over each cell $c$ of $\mathfrak T$ in a sheet, $c\times S^1$, the circle being $\R v/\Z v$, oriented by $v$.
+\item Over each cell $c$ of $\mathfrak T$ on an interior edge, with fields $v_1,v_2,v_3$ on the adjacent sheets and
 $s_1v_1+s_2v_2+s_3v_3=0$ (clause (g)): $c\times\mathcal Q$, where $\mathcal Q$ is a $2$-simplex with its three vertices identified
 to one point, whose three edges are glued to the circles $G_k=\R v_k/\Z v_k$ of the three sheets, and which is oriented so that
 $\partial\mathcal Q=s_1G_1+s_2G_2+s_3G_3$ with $G_k$ oriented by $v_k$. It is the domain of the flat triangle of
@@ -601,12 +610,12 @@ leg segments.
 \end{itemize}
 Each piece is oriented as (sheet)$\times$(circle oriented by $v$), and $[\mathfrak D]$ denotes the sum of the oriented top
 cells. For a node $q$ on $\partial S$ let $\partial_q\mathfrak D=(e_q\times S^1)/\!\sim$, the circle collapsed at $y_0$ and
-$y_\infty$, a $2$-sphere. The frontier of $\mathcal N_\Gamma$ in $S$ is the \emph{interface}.
+$y_\infty$, a $2$-sphere. The frontier of $\mathcal N_\Gamma$ in $S$ is the \emph{inner boundary}.
 \end{definition}
 
 Over the smooth part of $S$ away from $\mathcal N_\Gamma$, $\mathfrak D(S)$ is the circle bundle with fibre $\R v/\Z v$ of
 \cite[\S7]{CBM}, and over the interior edges and vertices it is their completion by flat triangles and tetrahedra. Each local
-domain meets the cells over the regular part $S\setminus\operatorname{int}\mathcal N_\Gamma$ over its part of the interface.
+domain meets the cells over the regular part $S\setminus\operatorname{int}\mathcal N_\Gamma$ over its part of the inner boundary.
 
 \begin{lemma}[the domain]\label{lem:domain}
 $\partial[\mathfrak D]=\sum_q[\partial_q\mathfrak D]$, the sum over the nodes $q$ with $p_q\in j(\partial S)$, where $e_q$
@@ -614,13 +623,13 @@ carries the boundary orientation of $\mathfrak H_q$.
 \end{lemma}
 \begin{proof}
 Interior faces cancel in pairs if the local orientations agree across them. Over the sheets this holds because the
-orientations are products. Along an interior edge, let $c$ be a one-cell of $\mathcal K$ on the edge, oriented as the edge.
+orientations are products. Along an interior edge, let $c$ be a one-cell of $\mathfrak T$ on the edge, oriented as the edge.
 Then $\partial(c\times\mathcal Q)=\partial c\times\mathcal Q-c\times\partial\mathcal Q=\partial c\times\mathcal Q-\sum_ks_k\,c\times
 G_k$. The term $\partial c\times\mathcal Q$ cancels between adjacent cells of the edge, and $s_k\,c\times G_k$ is the
 contribution of $c$ to the boundary of the cylinders over the $k$-th sheet, because $s_k$ is by definition the sign with which
 $c$ occurs in the boundary of the $k$-th sheet; so the three cylinders are cancelled. At an interior vertex the boundary of the
 $3$-simplex is the sum of the four triangles with the signs of the balancing conditions. At the local domains the pieces are
-glued along the interfaces of Section~\ref{ssec:res-local}, and over the legs, boundary vertices, positive vertices and
+glued along the inner boundaries of Section~\ref{ssec:res-local}, and over the legs, boundary vertices, positive vertices and
 crossings the circle collapses or closes up without creating boundary. What remains is the part of
 $\partial\mathfrak H^\circ_q\times S^1$ over $e_q$, where the circle $\R v/\Z v$ does not collapse, because the vanishing vector
 of $e_q$ is $c-a\neq\pm v$.
@@ -628,7 +637,7 @@ of $e_q$ is $c-a\neq\pm v$.
 
 \subsection{The local pieces}\label{ssec:res-local}
 Each local domain is mapped into $W$ by an explicit map, built in the exact local models of Lemma~\ref{lem:Ufan}(3), whose
-restriction to the interface with the regular part consists of orbits of the circle $S^1_v=\R v/\Z v\subset N\otimes U(1)$
+restriction to the inner boundary with the regular part consists of orbits of the circle $S^1_v=\R v/\Z v\subset N\otimes U(1)$
 through points of the positive section, over base points in the sets $V_c$ of Lemma~\ref{lem:AC}. Since the positive points
 miss the strata (Lemma~\ref{lem:stratum}), each piece contains collar paths from a point of $\mathfrak s$ to the critical locus
 of the local model. For a path $\gamma$ in $W$ and a character $x^m$ that does not vanish on $\gamma$, a \emph{lifted phase} of
@@ -768,9 +777,9 @@ consists of $S^1_v$-orbits through points of $\mathfrak s$.
 $z_1$ of opposite signs, so they do not form a continuous family across $e^*$. For each switching point $e^*$ we choose points
 $e'$ and $e''$ of the edge on either side of $e^*$, with no other switching point between them, and call \emph{switching disc}
 the closed disc $\mathbb B_{e^*}\subset S$ bounded by the segment $[e',e'']$ of $\partial S$, the transverse segments at $e'$ and
-$e''$, and an arc of the interface. The \emph{switching piece} is $S^1_v\cdot\Theta_{e^*}$ over $\mathbb B_{e^*}$, where
+$e''$, and an arc of the inner boundary. The \emph{switching piece} is $S^1_v\cdot\Theta_{e^*}$ over $\mathbb B_{e^*}$, where
 $\Theta_{e^*}\colon\mathbb B_{e^*}\to W$ is given by Lemma~\ref{lem:collar}(4): it agrees with $\gamma_{e'}$ and $\gamma_{e''}$
-on the transverse segments and with $\mathfrak s$ on the interface arc, and maps each point $e$ of $[e',e'']$ to the point of
+on the transverse segments and with $\mathfrak s$ on the inner boundary arc, and maps each point $e$ of $[e',e'']$ to the point of
 $\mathrm{Crit}$ over $e$. Like a leg piece it is a disc times an arc; the leg pieces are taken over the edge with the interiors
 of the switching discs removed.
 
@@ -786,7 +795,7 @@ point of $\mathfrak s$ to the point $Z=0$, $\mathfrak t=\mathfrak t_0$ of $\math
 $\arg\mathfrak t$ from $0$ to $\pi$ as in (iii) and ends with $|Z_1|=|Z_2|=|Z_3|\to0$ and $\arg Z_j=0$ (side $+1$) or $\pi/3$
 (side $-1$), so that $Z_1Z_2Z_3=x^{-u}$ ends in $s\R_{\ge0}$. Let $\mathbb B_j$ be the corner of the $j$-th sheet at the
 vertex: a closed disc in the sheet bounded by a segment of its leg ending at the vertex, a segment of the interior edge, a
-transverse segment of the sheet at the other end of the leg segment, and an arc of the interface; the leg segment contains no
+transverse segment of the sheet at the other end of the leg segment, and an arc of the inner boundary; the leg segment contains no
 switching point. The piece is the union of the leg pieces over the rest of the legs, the three sheet pieces $G_j\cdot\Theta_j$
 over the $\mathbb B_j$, with $\Theta_j$ given by Lemma~\ref{lem:collar}(2), and the cone, over the vertex path, on the triangle
 $\mathcal Q\subset T^2$ with $\partial\mathcal Q=G_1+G_2+G_3$ \cite[\S7.5]{CBM}. The two-cells $\mathcal Q\cdot\mathfrak s(b)$
@@ -802,23 +811,23 @@ t_3$, and $\mathrm{Crit}=\{z=0,\ \alpha_{u_1}+\alpha_{u_2}\mathfrak t_2+\alpha_{
 $(\mathfrak t_2,\mathfrak t_3)$-torus, a pair of pants whose three ends lie over the three legs of $\widehat\Gamma$ at $p$. Along
 $\Gamma_{12}$ the leg collar paths of the two-face $F_{u_1u_2}$ arrive, by \eqref{eq:collarphase}, with lifted phases
 \[
-(\arg\mathfrak t_2,\arg\mathfrak t_3)=\bigl(\iota_{12}\pi,\ \langle u_3-u_1,\nu_{12}\rangle\pi\bigr),\qquad
-\iota_{12}=\langle u_2-u_1,\nu_{12}\rangle=\pm1,
+(\arg\mathfrak t_2,\arg\mathfrak t_3)=\bigl(\epsilon_{12}\pi,\ \langle u_3-u_1,\nu_{12}\rangle\pi\bigr),\qquad
+\epsilon_{12}=\langle u_2-u_1,\nu_{12}\rangle=\pm1,
 \]
 where $\nu_{12}$ is the cocharacter of $F_{u_1u_2}$, and $x^{-u_1}$ ends in $\R_{\ge0}$, since the side is that of $F_{u_1}$;
 symmetrically along $\Gamma_{13}$. In the part of a neighbourhood of $\Gamma_{12}$ where $u_3$ is inactive, the circle
 $\nu_3\otimes U(1)$ preserves $W$ (Lemma~\ref{lem:symm}), commutes with $S^1_v$, preserves $\mathrm{Crit}$, and changes, among
 $\mathfrak t_2,\mathfrak t_3,x^{-u_1}$, only the phase of $\mathfrak t_3$. Let $\mathbb B_p$ be the corner of $S$ at $p$, a closed
 disc bounded by segments $[p,e_2]\subset\Gamma_{12}$ and $[p,e_3]\subset\Gamma_{13}$ of the two legs, the transverse segments at
-$e_2$ and $e_3$, and an arc of the interface; the segments are long compared with $\varsigma_0$, so that the collar paths over
+$e_2$ and $e_3$, and an arc of the inner boundary; the segments are long compared with $\varsigma_0$, so that the collar paths over
 points of $\Gamma_{12}$ near $e_2$ lie in the part where $u_3$ is inactive, and symmetrically at $e_3$. The \emph{slide} along
 $\Gamma_{12}$ modifies the collar paths over a segment $[e'_2,e_2]\subset\Gamma_{12}$ in that part: it replaces
 $\gamma_e(\varsigma)$ by $e^{i\pi k\phi(e)\chi(\varsigma)\nu_3}\gamma_e(\varsigma)$, where $\phi$ increases from $0$ at $e'_2$
 to $1$ at $e_2$, $\chi=1$ for $\varsigma\le\varsigma_0/4$ and $\chi=0$ for $\varsigma\ge\varsigma_0/2$, and the integer $k$ is
-chosen so that the lifted phase of $\mathfrak t_3$ at the end becomes $\iota_{13}\pi$, the value with which the collar paths
-along $\Gamma_{13}$ arrive. Symmetrically, the slide along $\Gamma_{13}$ turns $\arg\mathfrak t_2$ to $\iota_{12}\pi$ with
+chosen so that the lifted phase of $\mathfrak t_3$ at the end becomes $\epsilon_{13}\pi$, the value with which the collar paths
+along $\Gamma_{13}$ arrive. Symmetrically, the slide along $\Gamma_{13}$ turns $\arg\mathfrak t_2$ to $\epsilon_{12}\pi$ with
 $\nu_2$. After the slides both families arrive at $e_2$ and $e_3$ with $(\arg\mathfrak t_2,\arg\mathfrak
-t_3)=(\iota_{12}\pi,\iota_{13}\pi)$ and $x^{-u_1}\in\R_{\ge0}$, that is, in the \emph{corner chamber}
+t_3)=(\epsilon_{12}\pi,\epsilon_{13}\pi)$ and $x^{-u_1}\in\R_{\ge0}$, that is, in the \emph{corner chamber}
 $W\cap U_\sigma\cap\{x^{-u_1}\in\R_{\ge0},\ \mathfrak t_2,\mathfrak t_3\in\R_{<0}\}$, which contains the real arc of $\mathrm{Crit}$
 joining $\Gamma_{12}$ to $\Gamma_{13}$; on it $x^{-u}$, for the first element $u$ of the ordering of $F_{u_1u_j}$, lies in
 $s\R_{\ge0}$, $s$ being the side of the corner sheet at $\Gamma_{1j}$. The piece is $S^1_v\cdot\Theta_p$ over
@@ -843,10 +852,10 @@ $\zeta=Z_b/Z_d$, the circle $S^1_\lambda$, $\lambda=k_1(b-a)+k_2(c-b)$, acts by 
 $\mathrm{wt}(\lambda)=k_1-k_2$ its \emph{weight}. The curves $D_{ab}=\{Z_a=Z_b=0\}$ and $D_{bc}$ meet $C^W_q$ at $\zeta=0$, and
 $D_{cd}$, $D_{da}$ at $\zeta=\infty$. Let $\mathbb B_q\subset\mathfrak H_q^\circ$ be a closed disc bounded by the part of the
 boundary path of $\mathfrak H_q$ between points $e'$, $e''$ of the two leg segments near $y_0$ and $y_\infty$, the transverse
-segments of $\mathfrak H_q^\circ$ at $e'$ and $e''$, and an arc of the interface. The \emph{node piece} is $S^1_v\cdot\Theta_q$ over
+segments of $\mathfrak H_q^\circ$ at $e'$ and $e''$, and an arc of the inner boundary. The \emph{node piece} is $S^1_v\cdot\Theta_q$ over
 $\mathbb B_q$, together with the leg pieces over the rest of the two leg segments, where $\Theta_q\colon\mathbb B_q\to W$ is given
 by Lemma~\ref{lem:collar}(1): it agrees with the leg collar paths $\gamma_{e'}$, $\gamma_{e''}$ on the transverse segments and
-with $\mathfrak s$ on the interface, maps the boundary path near $y_0$ and $y_\infty$ to $\mathrm{Crit}$, and maps $e_q$ to an arc
+with $\mathfrak s$ on the inner boundary, maps the boundary path near $y_0$ and $y_\infty$ to $\mathrm{Crit}$, and maps $e_q$ to an arc
 $\gamma_q\subset C^W_q$ from $\zeta=0$ to $\zeta=\infty$.
 
 \begin{lemma}[node degree]\label{lem:nodedeg}
@@ -858,14 +867,14 @@ Section~\ref{ssec:cycles-bdry}, the degree is $\mathrm{wt}(v_q)=c_{bc}-c_{ab}$.
 \end{lemma}
 \begin{proof}
 On $\partial_q\mathfrak D$ the map is $(x,\theta)\mapsto e^{i\theta v}\cdot\gamma_q(x)$, $x\in e_q$, collapsed at the poles,
-which $S^1_v$ fixes. Take the $b-a$ passage entering along the leg with lower support $\{a,b\}$, with $v=\iota(b-a)$. The
+which $S^1_v$ fixes. Take the $b-a$ passage entering along the leg with lower support $\{a,b\}$, with $v=\epsilon_v(b-a)$. The
 boundary path of $\mathfrak H_q$ runs from that leg through $y_0$, along $e_q$ and through $y_\infty$ to the leg with lower
 support $\{c,d\}$, and $\gamma_q$ runs from $\zeta=0$ (on $D_{ab}$) to $\zeta=\infty$ (on $D_{cd}$). By Stokes, the orientation of
 $\partial_q\mathfrak D$ is (boundary orientation of $e_q$)$\times$(circle), and in polar coordinates $\zeta=re^{i\phi}$ the map is
-$(r,\theta)\mapsto re^{i\iota\theta}$, of degree $\iota=\mathrm{wt}(v)$. Since $c_{ab}=-\iota$ and $c_{bc}=0$, this is
+$(r,\theta)\mapsto re^{i\epsilon_v\theta}$, of degree $\epsilon_v=\mathrm{wt}(v)$. Since $c_{ab}=-\epsilon_v$ and $c_{bc}=0$, this is
 $\mathrm{wt}(v_q)$, and it equals $-\rho_q$ by the formula $\rho_q=c_{ab}-c_{bc}$ of Section~\ref{ssec:cycles-bdry}. For the
-$c-b$ passage entering along the leg with lower support $\{b,c\}$, with $v=\iota'(c-b)$, the arc again runs from $\zeta=0$ to
-$\zeta=\infty$ and the degree is $\mathrm{wt}(v)=-\iota'=-\rho_q$. Reversing the orientation of $\partial S$ reverses both
+$c-b$ passage entering along the leg with lower support $\{b,c\}$, with $v=\epsilon_v'(c-b)$, the arc again runs from $\zeta=0$ to
+$\zeta=\infty$ and the degree is $\mathrm{wt}(v)=-\epsilon_v'=-\rho_q$. Reversing the orientation of $\partial S$ reverses both
 $\gamma_q$ and the sign of $\rho_q$. The degree depends only on the homotopy class of $\gamma_q$ relative to the poles, and
 $C^W_q$ is simply connected, so it does not depend on the choice of $\gamma_q$.
 \end{proof}
@@ -899,14 +908,14 @@ $\pi_1(W_\Omega)\to\Z^{\tau'}\times\Z$.
 \begin{lemma}[consistency of the collar paths]\label{lem:collar}
 \begin{enumerate}
 \item[(1)] At a node $q$ on $\partial S$, for every arc $\gamma_q\subset C^W_q$ from $\zeta=0$ to $\zeta=\infty$, the map on
-$\partial\mathbb B_q$ given by the leg collar paths $\gamma_{e'}$, $\gamma_{e''}$, by $\mathfrak s$ on the interface arc, by
+$\partial\mathbb B_q$ given by the leg collar paths $\gamma_{e'}$, $\gamma_{e''}$, by $\mathfrak s$ on the inner boundary arc, by
 $\mathrm{Crit}$ over the leg segments and by $\gamma_q$ over $e_q$ extends to a continuous map $\Theta_q\colon\mathbb B_q\to W$.
 \item[(2)] At a negative vertex, on each of the three sheet corners $\mathbb B_j$, the map on $\partial\mathbb B_j$ given by the
 leg collar paths, $\mathfrak s$, $\mathrm{Crit}$ and the vertex path extends to a continuous map $\Theta_j\colon\mathbb B_j\to W$.
 \item[(3)] At a positive vertex, after the slides, the map on the boundary of the corner $\mathbb B_p$ given by the leg collar
 paths, $\mathfrak s$ and the real arc of $\mathrm{Crit}$ extends to a continuous map $\Theta_p\colon\mathbb B_p\to W$.
 \item[(4)] At a switching point $e^*$, the map on $\partial\mathbb B_{e^*}$ given by the leg collar paths $\gamma_{e'}$,
-$\gamma_{e''}$, by $\mathfrak s$ on the interface arc and by $\mathrm{Crit}$ over $[e',e'']$ extends to a continuous map
+$\gamma_{e''}$, by $\mathfrak s$ on the inner boundary arc and by $\mathrm{Crit}$ over $[e',e'']$ extends to a continuous map
 $\Theta_{e^*}\colon\mathbb B_{e^*}\to W$.
 \end{enumerate}
 Explicitly, in (1) the two families of collar paths end, in the conifold coordinates $z_1=Z_aZ_b$, $z_2=Z_cZ_d$, $z_3=Z_aZ_d$,
@@ -943,7 +952,7 @@ of $\tau$ lies at least $d_0$ below the maximum of the $T_i$. The lengths of the
 switching discs), at most $\varsigma_1$, and the transverse length $\varsigma_0$ are chosen with $\mathcal N_\Gamma$, with
 $\varsigma_0$ small compared with $\varsigma_1$ and $\varsigma_1$ small compared with $d_0$.
 
-\emph{Sizes, step 2: where the boundary data lie.} The section $\mathfrak s$ over the interface arc and the transverse
+\emph{Sizes, step 2: where the boundary data lie.} The section $\mathfrak s$ over the inner boundary arc and the transverse
 segments, and the collar paths, lie over the $d_1(\varsigma_0+C_0t_{\max})$-neighbourhood of $\mathcal X$ plus
 $\operatorname{cone}(\omega)$, with $d_1$ depending only on the adapted coordinates: $\mathfrak s$ lies in the band of
 Lemma~\ref{lem:pos}, and steps (ii)--(iv) change only $|\mathfrak t|$ and $|z_1z_2|$, which moves the logarithm by
@@ -995,8 +1004,8 @@ path, which also turns $\arg\mathfrak t$ by $\pi$. On the interior edge $\Theta_
 $G_j\cdot\Theta_j$ and the cone on $\mathcal Q$ agree there, $T^2$ acting exactly and $\partial\mathcal Q=G_1+G_2+G_3$.
 
 (3) Here $\tau'=\{u_2,u_3\}$. Around $\partial\mathbb B_p$ the lifted phases of $(\mathfrak t_2,\mathfrak t_3)$ change by $(0,0)$
-along $\mathfrak s$, by $(\iota_{12},\iota_{13})\pi$ along the slid collar path at $e_2$ from $\mathfrak s$ to $\mathrm{Crit}$, by
-$(0,0)$ along the real arc of $\mathrm{Crit}$, on which $\mathfrak t_2,\mathfrak t_3<0$, and by $-(\iota_{12},\iota_{13})\pi$ back
+along $\mathfrak s$, by $(\epsilon_{12},\epsilon_{13})\pi$ along the slid collar path at $e_2$ from $\mathfrak s$ to $\mathrm{Crit}$, by
+$(0,0)$ along the real arc of $\mathrm{Crit}$, on which $\mathfrak t_2,\mathfrak t_3<0$, and by $-(\epsilon_{12},\epsilon_{13})\pi$ back
 along the slid collar path at $e_3$. The total is zero.
 
 (4) Here $\tau'=\{u'\}$, and $\pi_1(W_\Omega)\cong\Z^2$ is detected by $(\mathfrak t,w)$. Around $\partial\mathbb B_{e^*}$ the
@@ -1011,7 +1020,7 @@ $\partial_q\mathfrak D$, on which $F$ is $(x,\theta)\mapsto e^{i\theta v}\gamma_
 \end{proof}
 
 Without the slides, the lifted phases around $\partial\mathbb B_p$ would change by
-$\bigl(\iota_{12}-\langle u_2-u_1,\nu_{13}\rangle,\ \langle u_3-u_1,\nu_{12}\rangle-\iota_{13}\bigr)\pi$, which is in general
+$\bigl(\epsilon_{12}-\langle u_2-u_1,\nu_{13}\rangle,\ \langle u_3-u_1,\nu_{12}\rangle-\epsilon_{13}\bigr)\pi$, which is in general
 nonzero; the slides are therefore needed, and their amounts are fixed by the cocharacters. At nodes and negative vertices no
 correction of the phase of $\mathfrak t$ is needed, because all collar paths there lie in one two-face and use one cocharacter;
 the half-turn at a node on side $-1$ is part of an explicit choice of the arc $\gamma_q$, not a condition for the existence
@@ -1020,11 +1029,11 @@ normalisation $\langle u,\nu\rangle=0$ is what allows adapted coordinates with $
 $\langle m_1,\nu\rangle=\langle m_2,\nu\rangle=0$; it is used for the explicit chamber pattern in Lemma~\ref{lem:collar}, while
 the existence of the maps $\Theta$ uses only that all collar paths in one two-face turn $\arg\mathfrak t$ by the same $+\pi$.
 
-The pieces satisfy the following \emph{interface condition}:
+The pieces satisfy the following \emph{inner boundary condition}:
 \begin{enumerate}
 \item[(I)] on the boundary of $\mathcal N_\Gamma$ in $S$, the local pieces are $S^1_v$-orbits through points $\mathfrak s(b)$, and on
 the two-cells $\mathcal Q\cdot\mathfrak s(b)$ at the interior edges leaving boundary vertices they lie in
-$T^2\cdot\mathfrak s(b)$; in both cases the base points $b$ lie in the set $V_c$ of the adjacent cell $c$ of $\mathcal K$, so the
+$T^2\cdot\mathfrak s(b)$; in both cases the base points $b$ lie in the set $V_c$ of the adjacent cell $c$ of $\mathfrak T$, so the
 images lie in $W_{V_c}$.
 \end{enumerate}
 
@@ -1033,7 +1042,7 @@ Over $S\setminus\operatorname{int}\mathcal N_\Gamma$ the map is extended cell by
 of an open set of $\widehat B$ that is product-shaped, contains the image of the cell, and increases with the cell.
 
 \begin{lemma}[admissible cover]\label{lem:AC}
-For the choices listed in Appendix~\ref{app:AC}, there are a triangulation $\mathcal K$ of $S\setminus\operatorname{int}\mathcal
+For the choices listed in Appendix~\ref{app:AC}, there are a triangulation $\mathfrak T$ of $S\setminus\operatorname{int}\mathcal
 N_\Gamma$, adapted to the faces of $\nabla^{\check h}$ (each closed cell meets each closed face in one face of the cell), and for
 each cell $c$ an open set $V_c\subset\widehat B$ such that:
 \begin{enumerate}
@@ -1051,10 +1060,10 @@ $x_0$.
 \begin{lemma}[extension]\label{lem:ext}
 Given local pieces satisfying (I), the map on $\partial\mathfrak D_{\rm reg}$ extends to a map $F$ on
 $\mathfrak D_{\rm reg}=\mathfrak D|_{S\setminus\operatorname{int}\mathcal N_\Gamma}$ that sends the cells over each cell $c$ of
-$\mathcal K$ into $W_{V_c}$.
+$\mathfrak T$ into $W_{V_c}$.
 \end{lemma}
 \begin{proof}
-Build $F$ by increasing dimension of cells, mapping the cells over each cell $c$ of $\mathcal K$ into the region $W_{V_c}$. By
+Build $F$ by increasing dimension of cells, mapping the cells over each cell $c$ of $\mathfrak T$ into the region $W_{V_c}$. By
 Lemma~\ref{lem:AC}(2), the cells over the faces of $c$ are then already mapped into $W_{V_c}$. On $0$-cells use $\mathfrak s$. On
 $1$-cells in the base direction use $\mathfrak s$; on circle fibres use $S^1_v$-orbit arcs through $\mathfrak s$ where $S^1_v$ acts
 exactly, and otherwise arcs whose loops represent $v\in\Lambda_{V_c}=\pi_1(W_{V_c})$ (Lemma~\ref{lem:regions}). A map on the
@@ -1068,6 +1077,9 @@ extension exists because $W_{V_c}$ is aspherical.
 \end{proof}
 
 \subsection{Transport}\label{ssec:res-transport}
+An orbit-preserving isotopy carries the constructed chain from the localized model to a holomorphic member.
+Transport through the nondegenerate family then identifies this member with the chosen small resolution, preserving the exceptional curves.
+
 \begin{lemma}\label{lem:T0}
 For $R$ large there is a homeomorphism $\Upsilon^0_{\rm res}$ of $X_{\mathcal F'}$, isotopic to the identity, smooth on the smooth locus
 and preserving every torus orbit, with $\Upsilon^0_{\rm res}(W)=\widehat X_R$ and, for every $q$,
@@ -1113,6 +1125,9 @@ Put $\Upsilon_{\rm res}=\Upsilon^1_{\rm res}\circ\Upsilon^0_{\rm res}$. The path
 element of $H_3(\widehat X)$.
 
 \subsection{Proof of Theorem~\ref{thm:res}}\label{ssec:res-proof}
+We assemble the local maps and the extension over the regular part, with the orientations fixed above.
+The degree computation at each node gives the boundary coefficient, and transport yields the chain on the small resolution.
+
 Let $(S,j,v)$ be a tropical $2$-cycle on $B'_\sigma$, with $j$ piecewise linear, and let $\widehat X$ and $\mathcal F'$ be as in
 Section~\ref{ssec:res-base}, the node coefficients being computed with the diagonals of $\widehat X$. The choices are made in the
 following order, each depending only on the previous ones:
@@ -1124,7 +1139,7 @@ and the cocharacters used for the slides (these are combinatorial);
 \item the normalising isotopy (T1)--(T3), which determines the switching points; then the neighbourhood $\mathcal N_\Gamma$,
 with the switching discs, the corner lengths and the transverse length $\varsigma_0$ as in the proof of Lemma~\ref{lem:collar};
 and the generic isotopy (Section~\ref{ssec:res-shell});
-\item the charts, the triangulation $\mathcal K$, the radii and $\eta$ (Appendix~\ref{app:AC});
+\item the charts, the triangulation $\mathfrak T$, the radii and $\eta$ (Appendix~\ref{app:AC});
 \item $C_0$ small, the cut-off profile $\beta$ and the constant $C_1$, and then $R$ large, for Lemmas~\ref{lem:Ufan},
 \ref{lem:pos}, \ref{lem:regions}, \ref{lem:chamber} and~\ref{lem:T0};
 \item the leg collar paths and the slides, the arcs $\gamma_q$ and the extensions $\Theta$ of Lemma~\ref{lem:collar}
@@ -1139,7 +1154,7 @@ continuous: the leg collar paths depend continuously on the point of the leg bet
 extend the collar paths; the circle actions used ($S^1_v$, and $T^2$ at the negative vertices) act exactly on the relevant parts of
 $W$ and fix $\mathrm{Crit}$ where the domain collapses the circle. Different local domains meet along transverse segments at
 points of the legs, where both are given by the same (slid) leg collar paths, and the local domains meet the regular part along
-the interface (I), which consists of $S^1_v$-orbits through points of $\mathfrak s$ and of the sets $\mathcal Q\cdot\mathfrak s(b)$,
+the inner boundary (I), which consists of $S^1_v$-orbits through points of $\mathfrak s$ and of the sets $\mathcal Q\cdot\mathfrak s(b)$,
 where Lemma~\ref{lem:ext} extends them. By Lemma~\ref{lem:domain},
 \[
 \partial F_*[\mathfrak D]=\sum_qF_*[\partial_q\mathfrak D],

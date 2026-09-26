@@ -6,14 +6,14 @@ piecewise linear homeomorphism $\mathfrak h\colon B'_\sigma\to B_Y$ that carries
 $B_Y$ and the local system of integral tangent vectors of $B'_\sigma$ onto the dual of that of $B_Y$, and uses it to
 transfer relative tropical $2$-cycles to $B_Y$ with the same boundary networks and the same node coefficients
 (Proposition~\ref{prop:transfer}). The homeomorphism is assembled from three comparisons, each compatible with the
-dual-pair complex of Section~\ref{sec:dualpair}: a change of fan side (Proposition~\ref{prop:F}), by which $\Sigma'$ is
+dual-pair complex of Section~\ref{sec:dualpair}: a change of fan-side subdivision (Proposition~\ref{prop:F}), by which $\Sigma'$ is
 replaced by $\mathcal F_C$; a change of height (Lemma~\ref{lem:height}); and the dual-pair homeomorphism between the two bases built
 from the same data (Proposition~\ref{prop:L1}). Lemmas~\ref{lem:D} and~\ref{lem:arc} describe the cell structure near a
 node and near an arc of the discriminant; these are the neighbourhoods in which the local models of Section~\ref{sec:lift}
 are placed.
 
-\subsection{Change of fan side and of height}\label{ssec:leg-F}
-Three comparisons of bases occur in this paper: a change of fan side (Proposition~\ref{prop:F}), a change of height
+\subsection{Change of fan-side subdivision and of height}\label{ssec:leg-F}
+Three comparisons of bases occur in this paper: a change of fan-side subdivision (Proposition~\ref{prop:F}), a change of height
 (Lemma~\ref{lem:height}) and the passage to the mirror base (Section~\ref{ssec:leg-transfer}). Each consists of a
 piecewise linear homeomorphism of pairs and an isomorphism of local systems, and each carries relative tropical
 $2$-cycles by the following lemma.
@@ -63,8 +63,8 @@ $V\setminus\Gamma_1$ is connected for small $V$. So it maps $Z_1(\mathfrak K)$ i
 the stated boundary, and (2) applies.
 \end{proof}
 
-\begin{proposition}[change of fan side]\label{prop:F}
-Let $\mathcal F_1$ and $\mathcal F_2$ be two fan sides which agree on the two-skeleton of $\partial\Delta$: a cell of either
+\begin{proposition}[change of fan-side subdivision]\label{prop:F}
+Let $\mathcal F_1$ and $\mathcal F_2$ be two fan-side subdivisions which agree on the two-skeleton of $\partial\Delta$: a cell of either
 contained in a face of $\Delta$ of dimension at most two is a cell of the other. Write $C^i$, $\Gamma^i_X$, $\Lambda^i_X$ for
 the cells, discriminant and local system of $B_X(\mathcal F_i)$; the underlying space $\partial\nabla^{\check h}$ is the
 same.
@@ -117,9 +117,9 @@ open facet $\operatorname{int}F_{u_G}$, by (2); there $\Lambda^2_X$ is the const
 identity.
 
 We apply Proposition~\ref{prop:F} with $\mathcal F_1=\Sigma'$ and $\mathcal F_2=\mathcal F_C$. The pulling refinement
-$\mathcal F_C$ is a fan side, induced by the height $h_C$, and it agrees with $\Sigma'$ on the two-skeleton
+$\mathcal F_C$ is a fan-side subdivision, induced by the height $h_C$, and it agrees with $\Sigma'$ on the two-skeleton
 (Proposition~\ref{prop:pulling}). We build $B_X(\mathcal F_C)$ with the function $h_C$, and fix the resulting piecewise
-linear homeomorphism $g_C\colon B'_\sigma\to B_X(\mathcal F_C)$ and the isomorphism $\kappa_C\colon\Lambda\to g_C^*\Lambda^{\mathcal F_C}_X$. Since $g_C$ maps the node point $p_q$,
+linear homeomorphism $g_C\colon B'_\sigma\to B_X(\mathcal F_C)$ and the isomorphism $\kappa_C\colon\Lambda\to g_C^*\Lambda^{\mathcal F_C}_X$. Since $g_C$ maps the vertex $p_q$ of the discriminant,
 the zero-cell $C([u,u'],P_q)$, to the zero-cell of the same dual pair, and each arc to the arc with the same lower support,
 the node coefficients of Definition~\ref{def:nodecoef}, read from the lower supports of the legs at $p_q$, are preserved by
 the transport $(g_C)_*$ of Lemma~\ref{lem:transport}.
@@ -139,7 +139,7 @@ $\Lambda_i$ for its local system. Then:
 \begin{enumerate}
 \item there is a piecewise linear homeomorphism $\phi\colon B_1\to B_2$ with $\phi(C^1(\tau,\omega))=C^2(\tau,\omega)$ for
 every dual pair $(\tau,\omega)$; it maps each open facet $\operatorname{int}F_u$ and each region $\widetilde R_n$ onto the
-open facet and the region with the same index, $\Gamma_1$ onto $\Gamma_2$, each node point $p_q$ onto $p_q$, each arc onto
+open facet and the region with the same index, $\Gamma_1$ onto $\Gamma_2$, each vertex $p_q$ of the discriminant onto $p_q$, each arc onto
 the arc with the same dual pair, and each vertex of $\Gamma_1$ onto a vertex of $\Gamma_2$ of the same type;
 \item there is an isomorphism of local systems $\kappa\colon\Lambda_1\to\phi^*\Lambda_2$ on $B_1\setminus\Gamma_1$ that is the
 identity of $u^\perp\cap N$ on every $\operatorname{int}F_u$ and the identity of $N/\Z n$ on every $\widetilde R_n$;
@@ -156,9 +156,9 @@ coefficients.
 (1) The homeomorphism of Lemma~\ref{lem:indepheight} has these properties. Alternatively: the set of dual pairs and its order depend only on $\mathcal T$ and $\Sigma'$, and Proposition~\ref{prop:L1}, which
 uses only the strict convexity of $\check h_i$ and $\check h_i-\check\varphi$, applies to both heights. The inductive
 construction in its proof gives piecewise linear homeomorphisms $\Psi_i\colon|\lgOrd(\lgDP)|\to B_i$ with
-$\Psi_i(|\lgOrd^{\preceq p}|)=\overline{C^i(p)}$, and $\phi=\Psi_2\circ\Psi_1^{-1}$ preserves the cells. The facets, regions,
+$\Psi_i(|\lgOrd^{\preceq {\mathfrak p}}|)=\overline{C^i({\mathfrak p})}$, and $\phi=\Psi_2\circ\Psi_1^{-1}$ preserves the cells. The facets, regions,
 arcs and vertices of the discriminant are unions of cells described by their dual pairs (Propositions~\ref{prop:L1}(5)
-and~\ref{prop:L2}(1),(2)); the node point $p_q$ is the zero-cell $C^i([u,u'],P_q)$, the barycentre of the carrying cell, the
+and~\ref{prop:L2}(1),(2)); the vertex $p_q$ of the discriminant is the zero-cell $C^i([u,u'],P_q)$, the barycentre of the carrying cell, the
 unique cell with face label $[u,u']$ and lower support $P_q$ (Lemma~\ref{lem:stack}); and the type of a three-valent vertex
 is determined by its dual pair (Proposition~\ref{prop:L2}(3)).
 
@@ -187,35 +187,35 @@ about $B'_\sigma$ that involve only these are carried over by $g_C$.
 
 Let $q\in Q$ be a node, with node parallelogram $P=abcd$ in the two-face $G$ of $\Delta$, labelled as in
 Section~\ref{ssec:admissible}, and $G^\circ=[u,u']$, an edge of $\mathcal T$ because $\ell(G^\circ)=1$. Then
-$([u,u'],P)$ is a dual pair with $d=0$; its zero-cell in $B'_\sigma$ is the node point $p_q$, the barycentre of the
+$([u,u'],P)$ is a dual pair of dimension zero; its zero-cell in $B'_\sigma$ is the vertex $p_q$ of the discriminant, the barycentre of the
 carrying cell, the unique cell of $\mathscr P$ with face label $[u,u']$ and lower support $P$ (Lemma~\ref{lem:stack}).
-We denote the dual pair and its zero-cells on both bases by $q$. Put $e_1=b-a=c-d$ and $e_2=d-a=c-b$. The statements
+Write ${\mathfrak q}=([u,u'],P)$ for this dual pair; its zero-cells are indexed by the node $q$. Put $f_1=b-a=c-d$ and $f_2=d-a=c-b$. The statements
 below concern only the cells of $\mathcal T$ contained in $[u,u']$ and the cells of $\mathcal F_C$ contained in $P$; they do
 not depend on whether $G$ is a square, a pentagon or a hexagon, nor, for a hexagon, on the branch of the profile.
 
 To a face $\omega$ of $P$ assign $(\epsilon_1(\omega),\epsilon_2(\omega))\in\{-,0,+\}^2$, its position in the directions
-$e_1$ and $e_2$: $a\mapsto(-,-)$, $b\mapsto(+,-)$, $c\mapsto(+,+)$, $d\mapsto(-,+)$, $ab\mapsto(0,-)$, $bc\mapsto(+,0)$,
+$f_1$ and $f_2$: $a\mapsto(-,-)$, $b\mapsto(+,-)$, $c\mapsto(+,+)$, $d\mapsto(-,+)$, $ab\mapsto(0,-)$, $bc\mapsto(+,0)$,
 $cd\mapsto(0,+)$, $da\mapsto(-,0)$, $P\mapsto(0,0)$. To $\tau\in\{u,[u,u'],u'\}$ assign $\epsilon_3(u)=-$,
 $\epsilon_3([u,u'])=0$, $\epsilon_3(u')=+$. In $\R^3$ with coordinates $(y_1,y_2,y_3)$ let
 $\mathcal O_\epsilon=\{y:\operatorname{sign}y_i=\epsilon_i\}$ for $\epsilon\in\{-,0,+\}^3$, the relatively open coordinate
-orthants of all dimensions, and $O=\{|y_1|+|y_2|+|y_3|\le1\}$. Put $\operatorname{St}^X_q=\Psi_X(\operatorname{st}q)$ and
-$\operatorname{St}^Y_q=\Psi_Y(\operatorname{st}q)$, where $\operatorname{st}q$ is the closed star of the vertex $q$ in
-$\lgOrd(\lgDP)$; these are closed neighbourhoods of $q$, and $\mathcal L(\operatorname{St}^X_q)=\operatorname{St}^Y_q$.
+orthants of all dimensions, and $O=\{|y_1|+|y_2|+|y_3|\le1\}$. Put $\operatorname{St}^X_q=\Psi_X(\operatorname{st}{\mathfrak q})$ and
+$\operatorname{St}^Y_q=\Psi_Y(\operatorname{st}{\mathfrak q})$, where $\operatorname{st}{\mathfrak q}$ is the closed star of the vertex ${\mathfrak q}$ in
+$\lgOrd(\lgDP)$; these are closed neighbourhoods of the zero-cells indexed by $q$, and $\mathcal L(\operatorname{St}^X_q)=\operatorname{St}^Y_q$.
 Finally let $\mathcal W_q$ be the union of the cells $C_Y([u,u'],\omega)$, $\omega\subseteq P$: the node, the four arcs at it
 and the four two-cells between them.
 
 \begin{lemma}[the node star]\label{lem:D}
 \begin{enumerate}
-\item The dual pairs $p\succeq q$ are the $27$ pairs $(\tau,\omega)$ with $\tau$ equal to $u$, $[u,u']$ or $u'$ and
+\item The dual pairs ${\mathfrak p}\succeq{\mathfrak q}$ are the $27$ pairs $(\tau,\omega)$ with $\tau$ equal to $u$, $[u,u']$ or $u'$ and
 $\omega$ a face of $P$: the node; four arcs, $\tau=[u,u']$ and $\omega$ an edge; four two-cells, $\tau=[u,u']$ and
 $\omega$ a vertex; two one-cells, $\omega=P$ and $\tau$ a vertex; eight two-cells, $\tau$ a vertex and $\omega$ an edge;
 and eight three-cells, $\tau$ and $\omega$ vertices. The map
 $\epsilon(\tau,\omega)=(\epsilon_1(\omega),\epsilon_2(\omega),\epsilon_3(\tau))$ is an isomorphism of this poset onto the
-face poset of the coordinate fan: $p\preceq p'$ if and only if $\mathcal O_{\epsilon(p)}\subseteq
-\overline{\mathcal O_{\epsilon(p')}}$; and $d_p$ is the number of nonzero entries of $\epsilon(p)$.
+face poset of the coordinate fan: ${\mathfrak p}\preceq {\mathfrak p}'$ if and only if $\mathcal O_{\epsilon({\mathfrak p})}\subseteq
+\overline{\mathcal O_{\epsilon({\mathfrak p}')}}$; and $\dim{\mathfrak p}$ is the number of nonzero entries of $\epsilon({\mathfrak p})$.
 \item There are piecewise linear homeomorphisms $\Phi^X_q\colon\operatorname{St}^X_q\to O$ and
-$\Phi^Y_q\colon\operatorname{St}^Y_q\to O$ with $\Phi^X_q(C_X(p)\cap\operatorname{St}^X_q)=\mathcal O_{\epsilon(p)}\cap O=
-\Phi^Y_q(C_Y(p)\cap\operatorname{St}^Y_q)$ for all $p\succeq q$, and $\Phi^Y_q\circ\mathcal L=\Phi^X_q$ on
+$\Phi^Y_q\colon\operatorname{St}^Y_q\to O$ with $\Phi^X_q(C_X({\mathfrak p})\cap\operatorname{St}^X_q)=\mathcal O_{\epsilon({\mathfrak p})}\cap O=
+\Phi^Y_q(C_Y({\mathfrak p})\cap\operatorname{St}^Y_q)$ for all ${\mathfrak p}\succeq{\mathfrak q}$, and $\Phi^Y_q\circ\mathcal L=\Phi^X_q$ on
 $\operatorname{St}^X_q$. Any two homeomorphisms $\operatorname{St}^Y_q\to O$ with this property are isotopic through such
 homeomorphisms.
 \item Consequently $\Phi^Y_q(\mathcal W_q\cap\operatorname{St}^Y_q)=\{y_3=0\}\cap O$; $\Phi^Y_q$ maps
@@ -227,20 +227,20 @@ $\operatorname{int}F_u$, $\operatorname{int}F_{u'}$ onto the two half-balls.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-(1) The pairs $\succeq q$ are the $(\tau,\omega)$ with $\tau\subseteq[u,u']$ and $\omega\subseteq P$, and every such pair is
+(1) The pairs $\succeq{\mathfrak q}$ are the $(\tau,\omega)$ with $\tau\subseteq[u,u']$ and $\omega\subseteq P$, and every such pair is
 dual, being contained in a dual pair. The faces of the parallelogram $P$ are the products of faces of two segments, and the
 faces of the segment $[u,u']$ are its end points and itself; in each factor, inclusion of faces corresponds to
 $\epsilon_i\in\{0,\epsilon'_i\}$ with $0$ for the larger face, which is the order of the coordinate fan. The number of
 nonzero entries is $3-\dim\tau-\dim\omega$.
 
-(2) The closed star of $q$ in $\lgOrd(\lgDP)$ consists of the chains containing $q$ and their subchains; since $q$ is
-minimal in $\{p\succeq q\}$ and has $d_q=0$, it is the cone $q*\lgOrd(\lgDP_{\succ q})$. The nonzero sign vectors, ordered
+(2) The closed star of ${\mathfrak q}$ in $\lgOrd(\lgDP)$ consists of the chains containing ${\mathfrak q}$ and their subchains; since ${\mathfrak q}$ is
+minimal in $\{{\mathfrak p}\succeq{\mathfrak q}\}$ and has $\dim{\mathfrak q}=0$, it is the cone ${\mathfrak q}*\lgOrd(\lgDP_{\succ{\mathfrak q}})$. The nonzero sign vectors, ordered
 as in (1), form the face poset of the boundary of the cross-polytope $O$, the face of $\epsilon$ being
 $\operatorname{conv}\{\epsilon_ie_i:\epsilon_i\ne0\}$; so $\epsilon$ induces a simplicial isomorphism of
-$\lgOrd(\lgDP_{\succ q})$ with the barycentric subdivision of $\partial O$, whose cone is a piecewise linear homeomorphism
-$E_q\colon|\operatorname{st}q|\to O$. The open simplices of $\operatorname{st}q$ whose chain has top $p$ are mapped onto
-$\mathcal O_{\epsilon(p)}\cap O$, and $\Psi_X$ maps their union onto $C_X(p)\cap\operatorname{St}^X_q$, because open
-simplices of chains with top $p$ lie in $\Psi_X^{-1}(C_X(p))$. So $\Phi^X_q=E_q\circ\Psi_X^{-1}$ and
+$\lgOrd(\lgDP_{\succ{\mathfrak q}})$ with the barycentric subdivision of $\partial O$, whose cone is a piecewise linear homeomorphism
+$E_q\colon|\operatorname{st}{\mathfrak q}|\to O$. The open simplices of $\operatorname{st}{\mathfrak q}$ whose chain has top ${\mathfrak p}$ are mapped onto
+$\mathcal O_{\epsilon({\mathfrak p})}\cap O$, and $\Psi_X$ maps their union onto $C_X({\mathfrak p})\cap\operatorname{St}^X_q$, because open
+simplices of chains with top ${\mathfrak p}$ lie in $\Psi_X^{-1}(C_X({\mathfrak p}))$. So $\Phi^X_q=E_q\circ\Psi_X^{-1}$ and
 $\Phi^Y_q=E_q\circ\Psi_Y^{-1}$ have the stated properties, and $\Phi^Y_q\circ\mathcal L=\Phi^X_q$. Two homeomorphisms with
 the property differ by a homeomorphism of $O$ preserving every $\mathcal O_\epsilon\cap O$, which is isotopic to the
 identity through such homeomorphisms (Appendix~\ref{app:leg-pl}).
@@ -262,25 +262,25 @@ node model of Section~\ref{sec:regime}, the tropical chart $T_q$ of Lemma~\ref{l
 quadrant and half-space description. That lemma compares the chart with scaled logarithmic coordinates on the
 hypersurface up to $O(1/L)$; the cell identification here concerns the tropical bases.
 
-Let $p_e=([u,u'],[n,n'])$ be a dual pair of edges, so that $C_Y(p_e)$ is an arc of $\Gamma_Y$
+Let ${\mathfrak p}_e=([u,u'],[n,n'])$ be a dual pair of edges, so that $C_Y({\mathfrak p}_e)$ is an arc of $\Gamma_Y$
 (Proposition~\ref{prop:L2}(2)). To the faces of $[n,n']$ assign $\epsilon_1(n)=-$, $\epsilon_1(n')=+$,
 $\epsilon_1([n,n'])=0$, and to the faces of $[u,u']$ assign $\epsilon_2(u)=-$, $\epsilon_2(u')=+$, $\epsilon_2([u,u'])=0$.
 For $\epsilon\in\{-,0,+\}^2$ let $\mathcal O^{(2)}_\epsilon=\{(x_1,x_2):\operatorname{sign}x_i=\epsilon_i\}$. In $\R^3$ with
 coordinates $(x_1,x_2,x_3)$ let $V=\operatorname{conv}\bigl((\Diamond\times\{0\})\cup\{\pm e_3\}\bigr)$, where
-$\Diamond=\{|x_1|+|x_2|\le1\}$, and $V^\circ=V\setminus\{\pm e_3\}$. Put $\operatorname{St}^X_e=\Psi_X(\operatorname{st}p_e)$
-and $\operatorname{St}^Y_e=\Psi_Y(\operatorname{st}p_e)$, with $\operatorname{st}p_e$ the closed star of the vertex $p_e$ in
+$\Diamond=\{|x_1|+|x_2|\le1\}$, and $V^\circ=V\setminus\{\pm e_3\}$. Put $\operatorname{St}^X_e=\Psi_X(\operatorname{st}{\mathfrak p}_e)$
+and $\operatorname{St}^Y_e=\Psi_Y(\operatorname{st}{\mathfrak p}_e)$, with $\operatorname{st}{\mathfrak p}_e$ the closed star of the vertex ${\mathfrak p}_e$ in
 $\lgOrd(\lgDP)$; then $\mathcal L(\operatorname{St}^X_e)=\operatorname{St}^Y_e$.
 
 \begin{lemma}[the neighbourhood of an arc]\label{lem:arc}
 \begin{enumerate}
-\item The dual pairs $p\succeq p_e$ are the nine pairs $(\tau,\omega)$ with $\tau\subseteq[u,u']$ and
+\item The dual pairs ${\mathfrak p}\succeq {\mathfrak p}_e$ are the nine pairs $(\tau,\omega)$ with $\tau\subseteq[u,u']$ and
 $\omega\subseteq[n,n']$. The map $\epsilon(\tau,\omega)=(\epsilon_1(\omega),\epsilon_2(\tau))$ is an isomorphism of this
-poset onto the face poset of the coordinate fan of $\R^2$, and $d_p-1$ is the number of nonzero entries of $\epsilon(p)$.
-There are exactly two dual pairs $z_\pm\prec p_e$; they have $d=0$, and $C_Y(z_\pm)$ are the end points of the arc.
+poset onto the face poset of the coordinate fan of $\R^2$, and $\dim{\mathfrak p}-1$ is the number of nonzero entries of $\epsilon({\mathfrak p})$.
+There are exactly two dual pairs $z_\pm\prec {\mathfrak p}_e$; they have dimension zero, and $C_Y(z_\pm)$ are the end points of the arc.
 \item There are piecewise linear homeomorphisms $\Phi^X_e\colon\operatorname{St}^X_e\to V$ and
 $\Phi^Y_e\colon\operatorname{St}^Y_e\to V$ with $\Phi^Y_e\circ\mathcal L=\Phi^X_e$, mapping $C_Y(z_\pm)$ to $\pm e_3$, the arc
-$C_Y(p_e)$ onto the open segment $\{x_1=x_2=0,\ |x_3|<1\}$, and $C_Y(p)\cap\operatorname{St}^Y_e$ onto
-$\{x\in V^\circ:(x_1,x_2)\in\mathcal O^{(2)}_{\epsilon(p)}\}$ for every $p\succ p_e$; likewise on $B_X$. The set
+$C_Y({\mathfrak p}_e)$ onto the open segment $\{x_1=x_2=0,\ |x_3|<1\}$, and $C_Y({\mathfrak p})\cap\operatorname{St}^Y_e$ onto
+$\{x\in V^\circ:(x_1,x_2)\in\mathcal O^{(2)}_{\epsilon({\mathfrak p})}\}$ for every ${\mathfrak p}\succ {\mathfrak p}_e$; likewise on $B_X$. The set
 $\operatorname{St}^Y_e$ is a neighbourhood of the open arc.
 \item Consequently $\Phi^Y_e$ maps $\operatorname{int}F^*_n\cap\operatorname{St}^Y_e$ and
 $\operatorname{int}F^*_{n'}\cap\operatorname{St}^Y_e$ onto $\{x_1<0\}\cap V^\circ$ and $\{x_1>0\}\cap V^\circ$, $\widetilde
@@ -289,8 +289,8 @@ $\{x_2>0\}\cap V^\circ$, the two-cells $C_Y(u,[n,n'])$ and $C_Y(u',[n,n'])$ onto
 $\{x_1=0,\ x_2>0\}\cap V^\circ$, and $C_Y([u,u'],n)$, $C_Y([u,u'],n')$ onto $\{x_2=0,\ x_1<0\}\cap V^\circ$ and
 $\{x_2=0,\ x_1>0\}\cap V^\circ$.
 \item Suppose that an end of the arc is a node $q$, so that $[n,n']$ is an edge of the node parallelogram $P$, labelled so
-that $n'-n\in\{e_1,e_2\}$. For $p\succeq p_e$ the sign vector of $p$ in Lemma~\ref{lem:D} is obtained from
-$\epsilon(p)=(\epsilon'_1,\epsilon'_2)$ by inserting the constant sign of the arc: it is $(\epsilon'_1,-,\epsilon'_2)$,
+that $n'-n\in\{f_1,f_2\}$. For ${\mathfrak p}\succeq {\mathfrak p}_e$ the sign vector of ${\mathfrak p}$ in Lemma~\ref{lem:D} is obtained from
+$\epsilon({\mathfrak p})=(\epsilon'_1,\epsilon'_2)$ by inserting the constant sign of the arc: it is $(\epsilon'_1,-,\epsilon'_2)$,
 $(\epsilon'_1,+,\epsilon'_2)$, $(-,\epsilon'_1,\epsilon'_2)$, $(+,\epsilon'_1,\epsilon'_2)$ for the arcs over $ab$, $dc$,
 $ad$, $bc$. In particular, on $\operatorname{St}^Y_e\cap\operatorname{St}^Y_q$ the standard halves containing the arc, on
 the sides $y_3\ge0$ and $y_3\le0$, are the closures in $\operatorname{St}^Y_e\cap\operatorname{St}^Y_q$ of $C_Y(u',[n,n'])$
@@ -298,11 +298,11 @@ and $C_Y(u,[n,n'])$, which $\Phi^Y_e$ maps to $\{x_1=0,\ x_2\ge0\}$ and $\{x_1=0
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-(1) The pairs $\succeq p_e$ are the $(\tau,\omega)$ with $\tau\subseteq[u,u']$ and $\omega\subseteq[n,n']$, all dual, being
+(1) The pairs $\succeq {\mathfrak p}_e$ are the $(\tau,\omega)$ with $\tau\subseteq[u,u']$ and $\omega\subseteq[n,n']$, all dual, being
 contained in a dual pair. The faces of a segment are its two end points and itself, and in each factor inclusion
-corresponds to $\epsilon_i\in\{0,\epsilon'_i\}$ with $0$ for the larger face; $d_p=3-\dim\tau-\dim\omega$ is one more than
-the number of end points among $\tau,\omega$. By Proposition~\ref{prop:L1}(2), $\overline{C_Y(p_e)}$ is a one-ball whose
-boundary is the union of the nonempty cells $C_Y(z)$, $z\prec p_e$; these have $d_z=0$, so they are points, and there are
+corresponds to $\epsilon_i\in\{0,\epsilon'_i\}$ with $0$ for the larger face; $\dim{\mathfrak p}=3-\dim\tau-\dim\omega$ is one more than
+the number of end points among $\tau,\omega$. By Proposition~\ref{prop:L1}(2), $\overline{C_Y({\mathfrak p}_e)}$ is a one-ball whose
+boundary is the union of the nonempty cells $C_Y(z)$, $z\prec {\mathfrak p}_e$; these have $d_z=0$, so they are points, and there are
 exactly two of them.
 
 (2) This is a join construction like that of Lemma~\ref{lem:D}(2); the details are in
@@ -319,9 +319,9 @@ $\{y_1=0,\ y_3\ge0\}$ meets $\operatorname{St}^Y_e\cap\operatorname{St}^Y_q$, ne
 $\mathcal O_{(0,-,+)}$, the cell of $(u',[a,b])$, and similarly in the other cases; now apply (3).
 \end{proof}
 
-Lemmas~\ref{lem:D} and~\ref{lem:arc} are statements about the cells $C_Y(p)$ and hold for their images under any
+Lemmas~\ref{lem:D} and~\ref{lem:arc} are statements about the cells $C_Y({\mathfrak p})$ and hold for their images under any
 homeomorphism $\Upsilon$ of $B_Y$: with $\Phi^\Upsilon_q:=\Phi^Y_q\circ\Upsilon^{-1}$ and
-$\Phi^\Upsilon_e:=\Phi^Y_e\circ\Upsilon^{-1}$ they hold for the cells $\Upsilon(C_Y(p))$. In Section~\ref{sec:lift} they are
+$\Phi^\Upsilon_e:=\Phi^Y_e\circ\Upsilon^{-1}$ they hold for the cells $\Upsilon(C_Y({\mathfrak p}))$. In Section~\ref{sec:lift} they are
 used in this form for the model complex.
 
 \subsection{Transfer of relative tropical \texorpdfstring{$2$}{2}-cycles}\label{ssec:leg-transfer}
@@ -332,7 +332,7 @@ $B_Y$. Of Lemma~\ref{lem:modelcx} only the fact that $\Upsilon^M$ is such a home
 discriminant and the local system of the model complex are then the transported ones of Definition~\ref{def:transfer}.
 
 \begin{definition}[the transfer]\label{def:transfer}
-Let $\Upsilon$ be a piecewise linear homeomorphism of $B_Y$. Put $C^\Upsilon(p):=\Upsilon(C_Y(p))$ for $p\in\lgDP$,
+Let $\Upsilon$ be a piecewise linear homeomorphism of $B_Y$. Put $C^\Upsilon({\mathfrak p}):=\Upsilon(C_Y({\mathfrak p}))$ for ${\mathfrak p}\in\lgDP$,
 $\Gamma^\Upsilon:=\Upsilon(\Gamma_Y)$ and $\Lambda^\Upsilon:=\Upsilon_*\Lambda_Y$, and let
 \[
 \mathfrak h:=\Upsilon\circ\mathcal L\circ g_C\colon B'_\sigma\longrightarrow B_Y,
@@ -340,10 +340,10 @@ $\Gamma^\Upsilon:=\Upsilon(\Gamma_Y)$ and $\Lambda^\Upsilon:=\Upsilon_*\Lambda_Y
 with $g_C$ of Section~\ref{ssec:leg-F} and the dual-pair homeomorphism $\mathcal L\colon B_X(\mathcal F_C)\to B_Y$ fixed in
 Section~\ref{ssec:leg-node}. Let
 \[
-\psi\colon\Lambda\longrightarrow \mathfrak h^*(\Lambda^\Upsilon)^\vee\qquad\text{on }B'_\sigma\setminus\Gamma
+\kappa_{\mathfrak h}\colon\Lambda\longrightarrow \mathfrak h^*(\Lambda^\Upsilon)^\vee\qquad\text{on }B'_\sigma\setminus\Gamma
 \]
 be the composite of $\kappa_C\colon\Lambda\to g_C^*\Lambda^{\mathcal F_C}_X$ (Proposition~\ref{prop:F}(3)), of the
-isomorphism $\Lambda^{\mathcal F_C}_X\to(\mathcal L^*\Lambda_Y)^\vee$, $x\mapsto\beta(\,\cdot\,,x)$, given by the flat
+isomorphism $\Lambda^{\mathcal F_C}_X\to(\mathcal L^*\Lambda_Y)^\vee$, $x\mapsto\langle\,\cdot\,,x\rangle_{\mathcal L}$, given by the flat
 perfect pairing of Proposition~\ref{prop:L3}, and of the transport by $\Upsilon$. For an arc
 $A=C^\Upsilon([u,u'],[n,n'])$ of $\Gamma^\Upsilon$ put $d^*_A:=\langle\,\cdot\,,n'-n\rangle$, a flat section of
 $(\Lambda^\Upsilon)^\vee$ near $A$ (Proposition~\ref{prop:dict}(2)). For a triangulation $\mathfrak K^*$ of $B_Y$ in which
@@ -356,26 +356,26 @@ Definition~\ref{def:relcycle}.
 For a triangulation $\mathfrak K$ of $B'_\sigma$ in which $\Gamma$ is full, choose a subdivision $\mathfrak K^0_1$ of
 $\mathfrak K$ on whose simplices $\mathfrak h$ is linear and a derived subdivision $\mathfrak K_1$ of $\mathfrak K^0_1$. The
 \emph{transfer} of $z\in Z(\mathfrak K)$ is $\mathfrak h_*z:=\mathfrak h_\#(\lgsd z)$, the transport of Lemma~\ref{lem:transport} for the pair
-$(\mathfrak h,\psi)$.
+$(\mathfrak h,\kappa_{\mathfrak h})$.
 \end{definition}
 
 The group $F^*(s)$ is the analogue on $B_Y$ of the coefficient group $F(s)$ of Definition~\ref{def:relcycle}, for the
 dual local system: the coefficients of a transferred cycle are integral cotangent vectors of $B_Y$, invariant under the
-local monodromy. In Section~\ref{sec:lift}, $\Upsilon=\Upsilon^M$, and we write $C^M(p)$, $\Gamma^M$ and $\Lambda^M$ for
-$C^\Upsilon(p)$, $\Gamma^\Upsilon$ and $\Lambda^\Upsilon$. For $x\in\Gamma^\Upsilon$ let
+local monodromy. In Section~\ref{sec:lift}, $\Upsilon=\Upsilon^M$, and we write $C^M({\mathfrak p})$, $\Gamma^M$ and $\Lambda^M$ for
+$C^\Upsilon({\mathfrak p})$, $\Gamma^\Upsilon$ and $\Lambda^\Upsilon$. For $x\in\Gamma^\Upsilon$ let
 $\operatorname{Inv}^*(x)$ be the group of flat sections of $(\Lambda^\Upsilon)^\vee$ over $V\setminus\Gamma^\Upsilon$ for a
 small ball $V$ about $x$, and for an arc $A$ let $\operatorname{Inv}^*(A)$ be its value at the points of $A$.
 
 \begin{proposition}[the transferred coefficients]\label{prop:dict}
 \begin{enumerate}
-\item The homeomorphism $\mathfrak h$ maps every cell $C(p)$ of $B'_\sigma$ with $p=(\tau,\omega)$, $\dim\tau\ge1$, onto
-$C^\Upsilon(p)$. In particular $\mathfrak h(\Gamma)=\Gamma^\Upsilon$; $\mathfrak h$ maps the arc of $([u,u'],[n,n'])$ onto the arc of the same
-dual pair, the node point $p_q$ onto the zero-cell $C^\Upsilon([u,u'],P_q)$, the negative vertices of $\Gamma$ (edge,
+\item The homeomorphism $\mathfrak h$ maps every cell $C({\mathfrak p})$ of $B'_\sigma$ with ${\mathfrak p}=(\tau,\omega)$, $\dim\tau\ge1$, onto
+$C^\Upsilon({\mathfrak p})$. In particular $\mathfrak h(\Gamma)=\Gamma^\Upsilon$; $\mathfrak h$ maps the arc of $([u,u'],[n,n'])$ onto the arc of the same
+dual pair, the vertex $p_q$ of the discriminant onto the zero-cell $C^\Upsilon([u,u'],P_q)$, the negative vertices of $\Gamma$ (edge,
 triangle) onto the vertices of $\Gamma^\Upsilon$ of positive type, and the positive vertices (triangle, edge) onto the
 vertices of negative type. At a point of an open facet $\operatorname{int}F_u$, where $\Lambda=u^\perp\cap N$ and
-$\Lambda^\Upsilon=M/\Z u$ at the image point, $\psi(x)=\langle\,\cdot\,,x\rangle$.
+$\Lambda^\Upsilon=M/\Z u$ at the image point, $\kappa_{\mathfrak h}(x)=\langle\,\cdot\,,x\rangle$.
 \item On the arc $A=C^\Upsilon([u,u'],[n,n'])$: $u'-u$ is a flat section of $\Lambda^\Upsilon$ near $A$;
-$d^*_A=\langle\,\cdot\,,n'-n\rangle$ is a flat section of $(\Lambda^\Upsilon)^\vee$ near $A$, and $d^*_A=\psi(n'-n)$;
+$d^*_A=\langle\,\cdot\,,n'-n\rangle$ is a flat section of $(\Lambda^\Upsilon)^\vee$ near $A$, and $d^*_A=\kappa_{\mathfrak h}(n'-n)$;
 \[
 \operatorname{Inv}^*(A)=\{X\in(\Lambda^\Upsilon)^\vee:X(u'-u)=0\},
 \]
@@ -390,7 +390,7 @@ two, containing $d^*_A$ for the three arcs $A$ at it;
 \item at a vertex $C^\Upsilon(\{u_1,u_2,u_3\},[n,n'])$ of negative type: $\operatorname{Inv}^*=\Z\langle\,\cdot\,,n'-n\rangle$,
 the common value of $d^*_A$ on the three arcs at it, up to sign.
 \end{itemize}
-In each case $\psi$ maps the stalk of $\iota_*\Lambda$ at the corresponding point of $\Gamma$ onto this group.
+In each case $\kappa_{\mathfrak h}$ maps the stalk of $\iota_*\Lambda$ at the corresponding point of $\Gamma$ onto this group.
 \item For a $1$-cycle $\sum_Ac_A\,d^*_A[A]$ of $C_*(\Gamma^\Upsilon;\mathcal D^*)$, with $d^*_A=\langle\,\cdot\,,n'_A-n_A\rangle$,
 define its canonical lift $\sum_Ac_A(e_{n'_A}-e_{n_A})[A]\in C_1(\Gamma^\Upsilon;\Z^R)$ and its node coefficients $\rho^*_q$
 by the rule of Definition~\ref{def:nodecoef} at the zero-cell $C^\Upsilon([u,u'],P_q)$. Equivalently, with the coefficients
@@ -400,10 +400,10 @@ arcs over $ab$ and $bc$, $\rho^*_q=c_{ab}-c_{bc}$.
 \end{proposition}
 \begin{proof}
 (1) The first statement combines Proposition~\ref{prop:F}(3) for $g_C$, Proposition~\ref{prop:L1}(4) for $\mathcal L$ and
-the definition of $C^\Upsilon(p)$; the vertex types are those of Proposition~\ref{prop:L2}(3), and $\Upsilon$ carries the
+the definition of $C^\Upsilon({\mathfrak p})$; the vertex types are those of Proposition~\ref{prop:L2}(3), and $\Upsilon$ carries the
 monodromies of $\Lambda_Y$ to those of $\Lambda^\Upsilon$. The map $g_C$ preserves $\operatorname{int}F_u$, where
 $\kappa_C$ is the identity of $u^\perp\cap N$, and $\mathcal L(\operatorname{int}F_u)=\widetilde R^*_u$, where
-$\Lambda_Y=M/\Z u$ and $\beta$ is $\beta_u(\bar\zeta,x)=\langle\zeta,x\rangle$ (proof of Proposition~\ref{prop:L3}).
+$\Lambda_Y=M/\Z u$ and the flat pairing is $\langle\bar\zeta,x\rangle_{\mathcal L}=\langle\zeta,x\rangle$ (proof of Proposition~\ref{prop:L3}).
 
 (2) Transport by $\Upsilon$ does not change monodromies, so it suffices to argue on $B_Y$ near the arc $C_Y([u,u'],[n,n'])$.
 In the chart of $C_Y(u,n)$, $\Lambda_Y=n^\perp\cap M$, which contains $u'-u$ because $\langle u,n\rangle=\langle
@@ -413,7 +413,7 @@ $T(u'-u)=u'-u$, as $\langle u'-u,n'-n\rangle=0$; the fixed sublattice is $\{\zet
 invariant under the dual action if and only if $X(T\zeta)=X(\zeta)$ for all $\zeta$, that is, $\langle\zeta,n'-n\rangle X(u'-u)=0$
 for all $\zeta\in n^\perp\cap M$, that is, $X(u'-u)=0$, since $\langle\,\cdot\,,n'-n\rangle$ does not vanish on $n^\perp\cap M$.
 The covector $\langle\,\cdot\,,n'-n\rangle$ vanishes on $u'-u$, hence is flat, and it is primitive in $N/\Z n$
-(proof of Proposition~\ref{prop:L2}(3)). By (1), $\psi(n'-n)=\langle\,\cdot\,,n'-n\rangle$ on the side of $F_u$, and both
+(proof of Proposition~\ref{prop:L2}(3)). By (1), $\kappa_{\mathfrak h}(n'-n)=\langle\,\cdot\,,n'-n\rangle$ on the side of $F_u$, and both
 are flat sections near the arc.
 
 (3) At a node or at a vertex of positive type, all arcs share the vector $u'-u$ (Proposition~\ref{prop:L2}(3)) and have
@@ -425,7 +425,7 @@ $(u'-u)^\perp\cap N$, and the classes of $b-a$ and $d-a=c-b$ form a basis of the
 the three arcs share the covector $\langle\,\cdot\,,n'-n\rangle$ and have monodromies $\zeta\mapsto\zeta+\langle
 \zeta,n'-n\rangle(u_j-u_i)$; a covector is invariant if and only if it vanishes on the $u_j-u_i$, which span a saturated
 rank-two sublattice of $n^\perp\cap M$ (proof of Proposition~\ref{prop:L2}(3)); its annihilator in $N/\Z n$ is saturated
-of rank one and contains the primitive class of $n'-n$. The last statement holds because $\psi$ is an isomorphism of local
+of rank one and contains the primitive class of $n'-n$. The last statement holds because $\kappa_{\mathfrak h}$ is an isomorphism of local
 systems and $\mathfrak h$ maps small balls about a point of $\Gamma$ onto neighbourhoods of its image.
 
 (4) The equivalence of the two descriptions is the computation of Section~\ref{ssec:cycles-bdry} for
@@ -448,8 +448,8 @@ integers $c_E$, and
 \end{proposition}
 \begin{proof}
 By Proposition~\ref{prop:dict}(1), $\mathfrak h$ is a piecewise linear homeomorphism with $\mathfrak h(\Gamma)=\Gamma^\Upsilon$ mapping arcs
-onto arcs, and by Proposition~\ref{prop:dict}(2), $\psi(d_E)=\psi(n'-n)=d^*_{\mathfrak h(A)}$ for a leg $E$ with lower support
-$\{n,n'\}$ on the arc $A$ of $([u,u'],[n,n'])$ (Proposition~\ref{prop:L2}(2)). So $(\mathfrak h,\psi)$ satisfies the hypotheses of
+onto arcs, and by Proposition~\ref{prop:dict}(2), $\kappa_{\mathfrak h}(d_E)=\kappa_{\mathfrak h}(n'-n)=d^*_{\mathfrak h(A)}$ for a leg $E$ with lower support
+$\{n,n'\}$ on the arc $A$ of $([u,u'],[n,n'])$ (Proposition~\ref{prop:L2}(2)). So $(\mathfrak h,\kappa_{\mathfrak h})$ satisfies the hypotheses of
 Lemma~\ref{lem:transport}, which gives all but the last statement. The node coefficients of $z$ are computed from the
 integers $c_E$ on the legs at $p_q$ and the lower supports of these legs; those of $\mathfrak h_*z$ from the same integers on the arcs
 at $\mathfrak h(p_q)=C^\Upsilon([u,u'],P_q)$ and the same labels (Proposition~\ref{prop:dict}(1),(4)). Subdivision replaces each leg
@@ -465,12 +465,12 @@ type, and the rank-two stalks of the negative vertices of $B'_\sigma$ at the ver
 \begin{remark}[tropical $2$-cycles and the lift of Casta\~no-Bernard and Matessi]\label{rem:CBMfibre}
 Let $(S,j,v)$ be a tropical $2$-cycle in the sense of \cite[Def.~7.2]{CBM}, triangulated, so that it defines a relative
 tropical $2$-cycle $z$ with coefficient $v$ on the triangles of its smooth part (Section~\ref{ssec:cbm}). The coefficients
-of $\mathfrak h_*z$ are the covectors $\psi(v)$, and $\ker\psi(v)\subseteq\Lambda^\Upsilon$ is a rank-two subbundle along the image of
+of $\mathfrak h_*z$ are the covectors $\kappa_{\mathfrak h}(v)$, and $\ker\kappa_{\mathfrak h}(v)\subseteq\Lambda^\Upsilon$ is a rank-two subbundle along the image of
 the smooth part. It is the bundle $\ker v\subseteq T^*B$ of \cite[Def.~7.2]{CBM}, written in the affine structure of $B_Y$.
 In \cite[\S7]{CBM} the lift $\widetilde S$ of $S$ lies in the torus fibration over $B'_\sigma$ with fibres
 $T^*_bB/\Lambda^\vee_b$, with fibre $(\ker v)_b/(\ker v)_b\cap\Lambda^\vee_b$ over a smooth point; by
 Proposition~\ref{prop:L3} this is the torus fibration over $B_Y$ with fibres $\Lambda_Y\otimes U(1)$, and the fibre of the
-lift over the image point is the two-torus $\ker\psi(v)\otimes U(1)$. This is the fibre of the chain of
+lift over the image point is the two-torus $\ker\kappa_{\mathfrak h}(v)\otimes U(1)$. This is the fibre of the chain of
 Theorem~\ref{thm:lift} over the regular part.
 \end{remark}
 

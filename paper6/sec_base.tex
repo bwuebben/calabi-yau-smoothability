@@ -20,7 +20,7 @@ subcomplex of the barycentric subdivision of Gross's decomposition, and Lemma~\r
 pentagon or hexagon. Proposition~\ref{prop:pulling} constructs the subdivision $\mathcal F_C$ of $\partial\Delta$ used on
 the mirror side and proves that it satisfies a height condition at every node parallelogram. The proof rests on a
 count of lattice points in a pyramid over a unit parallelogram (Lemma~\ref{lem:pyramid}). Section~\ref{ssec:proj}
-identifies~\ref{hyp:P} with the projectivity of $X'_\sigma\to X$ and describes the certificate of its failure.
+identifies~\ref{hyp:P} with the projectivity of $X'_\sigma\to X$ and describes an explicit obstruction to it.
 
 Throughout, $\Delta$ is admissible (Definition~\ref{def:admissible}) and $\sigma$ is a profile
 (Definition~\ref{def:profile}). Hypothesis~\ref{hyp:P} is assumed in Sections~\ref{ssec:gross}--\ref{ssec:mirrorsub},
@@ -31,7 +31,7 @@ $(\mathcal T,\check h)$ is the one provided by Theorem~\ref{thm:U}.
 Let $G$ be a $dP_7$ pentagon or a $dP_6$ hexagon, with $k=5$ or $6$ vertices $w_0,\dots,w_{k-1}$ in cyclic order and
 centre $o$; indices of the $w_j$ are taken modulo $k$. For each $j$ put
 \[
-T_j=\operatorname{conv}\{o,w_j,w_{j+1}\},\qquad Q_j=\operatorname{conv}\{o,w_j,w_{j+1},w_{j+2}\}.
+T_j=\operatorname{conv}\{o,w_j,w_{j+1}\},\qquad P_j=\operatorname{conv}\{o,w_j,w_{j+1},w_{j+2}\}.
 \]
 Up to $GL_2(\Z)$ and translation there is exactly one lattice pentagon and exactly one lattice hexagon with one
 interior lattice point and no boundary lattice points other than their vertices, since the lattice polygons with
@@ -43,15 +43,15 @@ w_0,\dots,w_4=(1,0),\ (1,1),\ (0,1),\ (-1,0),\ (0,-1),\qquad o=(0,0).
 
 \begin{lemma}[subdivisions of the del Pezzo faces]\label{lem:subdiv}
 \begin{enumerate}
-\item Every triangle $T_j$ is unimodular, every segment $[o,w_j]$ is primitive, and $Q_j$ is a unit parallelogram if and
+\item Every triangle $T_j$ is unimodular, every segment $[o,w_j]$ is primitive, and $P_j$ is a unit parallelogram if and
 only if $w_j+w_{j+2}=o+w_{j+1}$. For the hexagon this holds for every $j$; for the pentagon~\eqref{eq:pentnormal} it holds
 exactly for $j\in\{4,0,1\}$.
 \item The subdivisions of $G$ into unit parallelograms and unimodular triangles all of which contain $o$ are the
-subdivisions into cells $T_j$ and $Q_j$ whose edges at $o$ are consecutive segments $[o,w_j]$.
+subdivisions into cells $T_j$ and $P_j$ whose edges at $o$ are consecutive segments $[o,w_j]$.
 \item A pentagon has exactly one such subdivision with two parallelograms; in the coordinates~\eqref{eq:pentnormal} it
-consists of $Q_4$, $Q_1$ and $T_3$. A hexagon has exactly three such subdivisions in which two parallelograms meet only
-in $o$, namely $\{Q_j,T_{j+2},Q_{j+3},T_{j+5}\}$ for $j\in\{0,1,2\}$ (the $A_1$ subdivisions of
-Definition~\ref{def:profile}), and exactly two with three parallelograms, namely $\{Q_j:j\equiv j_0\bmod2\}$ for
+consists of $P_4$, $P_1$ and $T_3$. A hexagon has exactly three such subdivisions in which two parallelograms meet only
+in $o$, namely $\{P_j,T_{j+2},P_{j+3},T_{j+5}\}$ for $j\in\{0,1,2\}$ (the $A_1$ subdivisions of
+Definition~\ref{def:profile}), and exactly two with three parallelograms, namely $\{P_j:j\equiv j_0\bmod2\}$ for
 $j_0\in\{0,1\}$ (the $A_2$ subdivisions).
 \item Every cell of these subdivisions, and every face of such a cell, has no lattice points other than its vertices.
 \end{enumerate}
@@ -71,10 +71,10 @@ every cell, and the other vertices are among the $w_j$. The edges of the subdivi
 cut $G$ into sectors, and a cell containing $o$ is the sector between two consecutive such edges $[o,w_j]$ and
 $[o,w_{j+m}]$, because it contains the part of $\partial G$ between $w_j$ and $w_{j+m}$. That sector is
 $\operatorname{conv}\{o,w_j,\dots,w_{j+m}\}$, a polygon with $m+2$ vertices. So $m=1$ and the cell is $T_j$, or $m=2$ and the
-cell is $Q_j$, which must then be a unit parallelogram.
+cell is $P_j$, which must then be a unit parallelogram.
 
 (3) By (2) the subdivisions correspond to the ways of cutting the cyclic sequence of the $k$ boundary edges of $G$ into
-runs of length $1$ (a triangle) and $2$ (a parallelogram $Q_j$, allowed only where the relation of (1) holds). For the
+runs of length $1$ (a triangle) and $2$ (a parallelogram $P_j$, allowed only where the relation of (1) holds). For the
 pentagon with two parallelograms the runs are $2,2,1$, starting at $j$, $j+2$ and $j+4$; by (1) both $j$ and $j+2$ must
 lie in $\{4,0,1\}$, which forces $j=4$. For the hexagon every run of length $2$ is allowed. Two parallelograms meeting
 only in $o$ are separated on both sides by a triangle, so the runs are $2,1,2,1$ starting at $j,j+2,j+3,j+5$, and $j$ is
@@ -86,7 +86,8 @@ and the segments $[o,w_j]$, which are primitive by (1).
 
 The remaining subdivisions of the hexagon in (2), with no parallelogram, with one, or with two parallelograms sharing an
 edge, do not occur in profiles. The $A_1$ and $A_2$ subdivisions are the local models $W_{6,1}$ and $W_{6,2}$ of
-\cite[Prop.~3.7]{Paper5}, and the pentagon subdivision is its model at a $dP_7$ point (Section~\ref{ssec:partialres}).
+\cite[Prop.~3.7(2),(3)]{Paper5}. The pentagon subdivision gives the two-node model described in
+Section~\ref{ssec:partialres}.
 
 By Lemma~\ref{lem:subdiv}(4) and admissibility, the lattice points of $\Delta$ on faces of dimension at most two are the
 vertices of $\Delta$ and the centres of the pentagons and hexagons, which is the set $R$ of
@@ -289,10 +290,10 @@ $\Lambda^2N$.
 
 \begin{proof}
 If $G$ is a triangle, it is unimodular and its vertices form a unimodular triple; if $G$ is a unit square, any three of
-its vertices do. If $G$ is a pentagon or a hexagon, choose $j$ such that $Q_j$ is a unit parallelogram
-(Lemma~\ref{lem:subdiv}(1)). The diagonal $[w_j,w_{j+2}]$ cuts $Q_j$ into the triangles $\operatorname{conv}\{w_j,w_{j+1},w_{j+2}\}$
-and $\operatorname{conv}\{o,w_j,w_{j+2}\}$, which are exchanged by the point reflection of $Q_j$ in its centre and
-therefore have equal area. As $Q_j$ has normalised area two, $w_j,w_{j+1},w_{j+2}$ is a unimodular triple.
+its vertices do. If $G$ is a pentagon or a hexagon, choose $j$ such that $P_j$ is a unit parallelogram
+(Lemma~\ref{lem:subdiv}(1)). The diagonal $[w_j,w_{j+2}]$ cuts $P_j$ into the triangles $\operatorname{conv}\{w_j,w_{j+1},w_{j+2}\}$
+and $\operatorname{conv}\{o,w_j,w_{j+2}\}$, which are exchanged by the point reflection of $P_j$ in its centre and
+therefore have equal area. As $P_j$ has normalised area two, $w_j,w_{j+1},w_{j+2}$ is a unimodular triple.
 
 Let $u$ be a vertex of $\Delta^\circ$ with $G\subset u^\vee$, so that $\langle u,\cdot\rangle=-1$ on $\operatorname{aff}(G)$. For
 $x\in L_G$ we have $x+\langle u,x\rangle y_1\in L_G\cap u^\perp$, so $L_G=\Z y_1\oplus(L_G\cap u^\perp)$. The lattice
@@ -427,15 +428,15 @@ With these conventions, $E$ is the smooth toric surface of the complete fan in $
 curves are the $f_j$.
 \begin{enumerate}
 \item \emph{Pentagon.} $E\cong\mathrm{Bl}_2\mathbb P^2$ with the marking~\eqref{eq:marking7}. The node parallelograms are
-$Q_4$ and $Q_1$, and their exceptional curves are $C_{q_1}=f_0=e_1$ and $C_{q_2}=f_2=e_2$, two disjoint $(-1)$-curves.
+$P_4$ and $P_1$, and their exceptional curves are $C_{q_1}=f_0=e_1$ and $C_{q_2}=f_2=e_2$, two disjoint $(-1)$-curves.
 $E'\cong\mathbb P^2$, and the two nodes lie at two of its three torus-fixed points.
 \item \emph{$A_1$ hexagon.} $E\cong\mathrm{Bl}_3\mathbb P^2$ with the marking~\eqref{eq:marking6}. For the $A_1$ subdivision
-with parallelograms $Q_j$ and $Q_{j+3}$, the exceptional curves are $f_{j+1}$ and $f_{j+4}$, two opposite, hence disjoint,
+with parallelograms $P_j$ and $P_{j+3}$, the exceptional curves are $f_{j+1}$ and $f_{j+4}$, two opposite, hence disjoint,
 $(-1)$-curves. We label the nodes so that the middle vertex of $q_1$ has even index; then $C_{q_1}=e_i$ and
 $C_{q_2}=H_E-e_k-e_l$ with $\{i,k,l\}=\{1,2,3\}$. $E'\cong\mathbb P^1\times\mathbb P^1$, and the two nodes lie at two
 opposite torus-fixed points.
 \item \emph{$A_2$ hexagon.} $E\cong\mathrm{Bl}_3\mathbb P^2$ with the marking~\eqref{eq:marking6}. For the $A_2$ subdivision
-$\{Q_j:j\equiv j_0\bmod2\}$ the exceptional curves are the three pairwise disjoint $(-1)$-curves $f_{j+1}$: for $j_0=1$
+$\{P_j:j\equiv j_0\bmod2\}$ the exceptional curves are the three pairwise disjoint $(-1)$-curves $f_{j+1}$: for $j_0=1$
 they are $C=e_2,e_3,e_1$ (for $j=1,3,5$), and for $j_0=0$ the lines $C=H_E-e_1-e_2,\ H_E-e_2-e_3,\ H_E-e_1-e_3$ (for $j=0,2,4$).
 $E'\cong\mathbb P^2$, and the three nodes are its three torus-fixed points.
 \end{enumerate}
@@ -448,7 +449,7 @@ Lemma~\ref{lem:subdiv}(1) consecutive rays form lattice bases, so $E$ is smooth,
 $(w_{j-1}-o)+(w_{j+1}-o)=a_j(w_j-o)$. For the hexagon $a_j=1$ for every $j$; contracting the disjoint $(-1)$-curves $f_0,f_2,f_4$
 leaves the fan with rays $w_1,w_3,w_5$, which is that of $\mathbb P^2$, and gives~\eqref{eq:marking6}. For the pentagon
 $(a_0,\dots,a_4)=(1,1,1,0,0)$; contracting $f_0$ and $f_2$ leaves the rays $w_1,w_3,w_4$ of $\mathbb P^2$ and
-gives~\eqref{eq:marking7}. The exceptional curve of $Q_j$ is the curve of the wall $\operatorname{cone}(o,w_{j+1})$ (proof of
+gives~\eqref{eq:marking7}. The exceptional curve of $P_j$ is the curve of the wall $\operatorname{cone}(o,w_{j+1})$ (proof of
 Proposition~\ref{prop:partialres}(2)), which is $D_o\cap D_{w_{j+1}}=f_{j+1}$. In the three cases this gives the curves
 listed; in (2), exactly one of $j+1$, $j+4$ is even, and $f_{2m}=e_{m+1}$, while $f_{2m+1}$ is a line through two of the
 blown-up points.
@@ -461,8 +462,8 @@ $w_i+w_{i+3}=2o$ in the hexagon; so $E'\cong\mathbb P^1\times\mathbb P^1$. The n
 of $E'$ of the cone over it.
 \end{proof}
 
-This is \cite[Prop.~3.7]{Paper5}. The subdivision $W_{6,1}$ there is the $A_1$ subdivision with $j=2$, written with the
-representative $j=5$: its parallelogram $Q_5\ni w_0$ is $q_1$, with $C_{q_1}=f_0=e_1$, and $C_{q_2}=f_3=H_E-e_2-e_3$. The subdivision
+The two hexagon cases are \cite[Prop.~3.7(2),(3)]{Paper5}. The subdivision $W_{6,1}$ there is the $A_1$ subdivision with $j=2$, written with the
+representative $j=5$: its parallelogram $P_5\ni w_0$ is $q_1$, with $C_{q_1}=f_0=e_1$, and $C_{q_2}=f_3=H_E-e_2-e_3$. The subdivision
 $W_{6,2}$ is the $A_2$ subdivision with $j_0=1$. The labelling of $q_1,q_2$ in (2) matters for signs only: the rotation of
 the hexagon by three positions is the Cremona involution of $dP_6$, which changes the sign of the class $\ell$ below.
 
@@ -484,7 +485,7 @@ root lattice of $E$:
 $\ell=e_i-(H_E-e_k-e_l)=-H_E+e_1+e_2+e_3$, the $A_1$ root line of $dP_6$; the three $A_1$ subdivisions give the same line;
 \item at an $A_2$ hexagon, $\sum_{q\subset G}\lambda_q[C_q]=\mu_1e_1+\mu_2e_2+\mu_3e_3$ with $\mu_1+\mu_2+\mu_3=0$, where
 $(\mu_1,\mu_2,\mu_3)=(\lambda_{q_5},\lambda_{q_1},\lambda_{q_3})$ for $j_0=1$ and $(\lambda_{q_2},\lambda_{q_4},\lambda_{q_0})$ for $j_0=0$,
-indexing the node $q_j$ of $Q_j$ by $j$; for $j_0=0$ the multiples of $H_E$ cancel by the tie. The local tie plane
+indexing the node $q_j$ of $P_j$ by $j$; for $j_0=0$ the multiples of $H_E$ cancel by the tie. The local tie plane
 $\{\lambda\in\Z^3:\sum\lambda=0\}$ maps isomorphically onto the $A_2$ root lattice $\{\sum\mu_ie_i:\sum\mu_i=0\}$.
 \end{enumerate}
 In each case every $\lambda_q$ with $q\subset G$ is nonzero if and only if the local class is nonzero on every root
@@ -630,14 +631,14 @@ then the flag $(e,f)$ has $n\ne n'$ and $u_+\neq u_-$, so it has nontrivial mono
 $[b_e,b_f]$ is a leg.
 \end{proof}
 
-For a two-dimensional cell $L$ of $\Sigma'$, let $G(L)$ be the smallest face of $\Delta$ containing $L$, and put
-$\lambda(L)=\ell(G(L)^\circ)$ if $G(L)$ is a two-face and $\lambda(L)=0$ if it is a facet.
+For a two-dimensional cell $L$ of $\Sigma'$, let $G(L)$ be the smallest face of $\Delta$ containing $L$.
+We use the convention $\ell(G(L)^\circ)=0$ when $G(L)$ is a facet, so its dual is a point.
 
 \begin{lemma}[stack lemma]\label{lem:stack}
 The two-cells of $\mathscr P$ with lower support $L$, together with the maximal cells containing them, form a linear sequence
 $C_0\,|\,f_1\,|\,C_1\,|\cdots|\,f_k\,|\,C_k$ with $k\ge1$, in which $C_0$ and $C_k$ have as lower supports the two three-cells of
 $\Sigma'$ containing $L$. Along the sequence the facet indices run monotonically through all lattice points of $G(L)^\circ$, and
-exactly $\lambda(L)$ of the $f_i$ separate maximal cells with different facet indices.
+exactly $\ell(G(L)^\circ)$ of the $f_i$ separate maximal cells with different facet indices.
 \end{lemma}
 
 \begin{proof}
@@ -858,7 +859,7 @@ position modulo the lattice is in general not that of $b'$; this is why the vert
 
 \begin{lemma}[placement]\label{lem:placement}
 Let $\Gamma'$ be $\Gamma$ with the star inside every carrying cell replaced by $\Gamma_{b'}$. There is a piecewise linear
-homeomorphism $\psi$ of $B$ which preserves every closed face of $\nabla^{\check h}$ and every cell of $\mathscr P$, carries
+homeomorphism $\phi_{\rm pl}$ of $B$ which preserves every closed face of $\nabla^{\check h}$ and every cell of $\mathscr P$, carries
 $\Gamma'$ onto $\Gamma$ and the local system of $B\setminus\Gamma'$ to that of $B\setminus\Gamma$, and is supported in a compact
 subset of the union of the open stars of the points $p_q$ in $\operatorname{Bar}\mathscr P$. It is isotopic to the identity
 through homeomorphisms with the same support that preserve $\Gamma$ outside the carrying cells.
@@ -871,7 +872,7 @@ $\partial\mathfrak c$, carrying one to the other; by the Alexander trick \cite{A
 identity relative to a neighbourhood of $\partial\mathfrak c$. Extend it and the isotopy across the two sides of $\mathfrak c$ by a
 product in a thin collar, tapering to the identity. The support is then a compact subset of the open star of $p_q$, which is an
 open neighbourhood of $\operatorname{int}\mathfrak c$. By Lemma~\ref{lem:nodegerm}(2) both placements assign the charts to the four
-complementary regions by the same rule, and $\psi$ preserves the regions, so it carries $\Lambda$ to $\Lambda$.
+complementary regions by the same rule, and $\phi_{\rm pl}$ preserves the regions, so it carries $\Lambda$ to $\Lambda$.
 \end{proof}
 
 The open stars of distinct points $p_q$ in $\operatorname{Bar}\mathscr P$ are disjoint, because no chain of cells contains two

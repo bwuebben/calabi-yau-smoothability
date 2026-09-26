@@ -5,13 +5,13 @@ study them near the maximally degenerate limit by comparing monomials in units o
 proved. First, for $t$ small and every coefficient vector in a window around $\mathcal Z$, the member $Y_t$ is smooth
 and isotopic in $X_{\mathcal T}$ to a smooth compact submanifold $W^*$, the \emph{localized mirror}, on which every
 stratum of the tropical picture near the discriminant has an exact algebraic model (Lemma~\ref{lem:W} and
-Proposition~\ref{prop:isotopy}). Second, near the node point of each $P\in Q$ the defining function has exactly one
+Proposition~\ref{prop:isotopy}). Second, near the node point (Definition~\ref{def:morsecoords}) of each $P\in Q$ the defining function has exactly one
 critical point; it is nondegenerate, its critical value differs by $O(t^{\theta_0/2})$ from $-\kappa_P=1-\mu_P^{-1}$,
 and on a polydisc around it $W^*$ is exactly the conifold smoothing $\{xy+z_1z_2=\kappa_P\}$ (Lemmas~\ref{lem:NM}
 and~\ref{lem:TR}). This defines the vanishing sphere $\delta_q$. Third, a sphere isotopic to $\delta_q$ is the
 boundary, over a Lefschetz thimble, of a four-chain $\Pi_q$ lying over a standard half-plane through the node of the
 base $B_Y$ of Section~\ref{sec:dualpair}; we orient $\delta_q$ so that this boundary is $\rho_q\,\delta_q$ for every
-standard half at $q$, with either orientation and either sign of its coefficient (Definition~\ref{def:orient} and
+standard half at $q$ (defined in Section~\ref{ssec:nodepiece}), with either orientation and either sign of its coefficient (Definition~\ref{def:orient} and
 Lemma~\ref{lem:SI}). Section~\ref{sec:lift} builds the chains of Theorem~\ref{thm:lift} from these node pieces and from
 pieces along the legs of the discriminant.
 
@@ -44,7 +44,7 @@ constant & role & fixed in\\\hline
 $h_C$ & strictly convex height inducing $\mathcal F_C$ & Section~\ref{ssec:member}\\
 $k_0$ & multiple of $\varphi$ in the height $H$ & \eqref{eq:lambdagap}, Lemma~\ref{lem:gaps}(4)\\
 $\theta_0$ & threshold of the one-cell lemma & Lemma~\ref{lem:onecell}\\
-$\mathfrak g_P$, $\mathfrak g_\tau$ & apex gap of a node, vertex gap of a triangle & Definition~\ref{def:node}\\
+$\mathfrak g_P$, $\mathfrak g_\omega$ & apex gap of a node, vertex gap of a triangle & Definition~\ref{def:node}\\
 $\mathcal E_P$, $\mathcal E_{\max}$, $e_{\max}$ & exponent constants & Definition~\ref{def:node}\\
 $C_\eta$, $C_R$ & ratio of the largest to the smallest $|\eta_P|$; bound of $\|\xi\|$ by $\max_P|\eta_P|$ &
 Lemma~\ref{lem:eta}; after Definition~\ref{def:window}\\
@@ -213,7 +213,7 @@ $f_G=(\mathsf a_0+\mathsf a_1\chi^{w_0})(\mathsf b_0+\mathsf b_1\chi^{w_2})(\mat
 $w_0+w_2+w_4=0$, $c_o=T_1+T_2$ with $T_1=\mathsf a_0\mathsf b_0\mathsf e_0$, $T_2=\mathsf a_1\mathsf b_1\mathsf e_1$, and
 $\mu_{P_j}=1+T_2/T_1\neq1$ for all three $j$ (for the odd subdivision $1+T_1/T_2$). So the product locus misses $\mathcal Z$. Its
 curve is three curves meeting pairwise transversally in one point each; the three points coincide exactly when $c_o=0$.
-\item \emph{In the regime}, if the face polynomial $\sum_{n\in G}\gamma_n\chi^n$ of $F_t$ is such a product and
+\item \emph{For $t$ small and $c$ in the window}, if the face polynomial $\sum_{n\in G}\gamma_n\chi^n$ of $F_t$ is such a product and
 $|c_n|^{\pm1}$ are bounded, then $|\mu_P-1|\le Ct$ for every node parallelogram $P$ of $G$. On the $A_1$ branch,
 $(\mathsf a_0\mathsf b_0)/(\mathsf a_1\mathsf b_1)=\gamma_{w_1}^2\gamma_{w_3}/(\gamma_{w_0}\gamma_{w_2}^2)$ and
 $(\mathsf a_2\mathsf b_2)/(\mathsf a_1\mathsf b_1)=\gamma_{w_1}^2\gamma_{w_5}/(\gamma_{w_0}^2\gamma_{w_2})$ are bounded multiples of
@@ -226,7 +226,7 @@ $H$ is convex but not affine on $\operatorname{conv}(w_0,w_2,w_4)$, which meets 
 is again a positive integer.
 \end{enumerate}
 So the product loci lie within $O(t)$ of $\mathcal Z$ in the coordinates $\eta_P$, outside the window for $t$ small. The
-node condition of the regime involves only the four monomials of $P$ and the origin (Lemma~\ref{lem:NM}): it is
+node condition used below involves only the four monomials of $P$ and the origin (Lemma~\ref{lem:NM}): it is
 $\varepsilon_P=0$, close to $\mu_P=1$, and not a factorisation of $f_G$.
 \end{remark}
 
@@ -281,10 +281,10 @@ $\{0\}\cup\omega_1$ and of $\{0\}\cup\omega_2$.
 
 The \emph{apex gap} of $P$ is $\mathfrak g_P:=\min\bigl(H(v)+H(v')-H(0)-\ell_P(v+v')\bigr)$, over apexes
 $v\in\omega_1$, $v'\in\omega_2$, where $\ell_P$ is the linear function equal to $H$ on the cone over $P$; the point
-$v+v'$ lies in the plane of $G$. For a unimodular triangle $\tau$ of $\mathcal F_C$ in a two-face with dual edge
-$[u,u']$, the tropical cell dual to $\operatorname{conv}(0,\tau)$ is a segment; its \emph{vertex gap} $\mathfrak g_\tau$ is
-twice the smallest tropical deficit, at the midpoint of that segment, of a lattice point $n\notin\{0\}\cup\tau$ lying in
-a cell of $\mathcal F_C$ that contains $\tau$.
+$v+v'$ lies in the plane of $G$. For a unimodular triangle $\omega$ of $\mathcal F_C$ in a two-face with dual edge
+$[u,u']$, the tropical cell dual to $\operatorname{conv}(0,\omega)$ is a segment; its \emph{vertex gap} $\mathfrak g_\omega$ is
+twice the smallest tropical deficit, at the midpoint of that segment, of a lattice point $n\notin\{0\}\cup\omega$ lying in
+a cell of $\mathcal F_C$ that contains $\omega$.
 
 \emph{Exponents at a node.} Let $w_u\in N$ be the vector of Section~\ref{ssec:member} for the edge $G^\circ=[u,u']$, so
 that $\langle u,w_u\rangle=1$ and $\langle u',w_u\rangle=0$, and put $w_{u'}:=-a-w_u$. Since
@@ -307,66 +307,66 @@ $n\in\mathcal A$.
 
 We require
 \begin{equation}\label{eq:lambdagap}
-\mathfrak g_P\ge\theta_0+1+2\theta_1,\qquad\mathfrak g_\tau\ge\theta_0+1,\qquad k_0+\min_{\partial\Delta\cap N}h_C\ge1,
+\mathfrak g_P\ge\theta_0+1+2\theta_1,\qquad\mathfrak g_\omega\ge\theta_0+1,\qquad k_0+\min_{\partial\Delta\cap N}h_C\ge1,
 \end{equation}
-for all node parallelograms $P$ and all triangles $\tau$ as above, where $\theta_1\le\min(\theta_0,1)$ is the cut-off
+for all node parallelograms $P$ and all triangles $\omega$ as above, where $\theta_1\le\min(\theta_0,1)$ is the cut-off
 constant of Section~\ref{ssec:localized}. The first condition is used in two ways: the apexes have deficit at least
 $\mathfrak g_P/2\ge(1+\theta_0)/2$ on the Morse polydisc (proof of Lemma~\ref{lem:NM}), and the node neighbourhood of
 Section~\ref{ssec:nodepiece} reaches $\theta_P:=\mathfrak g_P/2-\theta_1\ge(1+\theta_0)/2$ along the segment $J_P$ of the
 next lemma. By that lemma, \eqref{eq:lambdagap} is a lower bound on $k_0$.
 
 \begin{lemma}[the gaps]\label{lem:gaps}
-Let $G$ be a two-face of $\Delta$ with $G^\circ=[u,u']$, let $\tau$ be a node parallelogram or a unimodular triangle of
+Let $G$ be a two-face of $\Delta$ with $G^\circ=[u,u']$, let $\omega$ be a node parallelogram or a unimodular triangle of
 $\mathcal F_C$ in $G$, and let $\omega_1\subseteq u^\vee$ and $\omega_2\subseteq u'^\vee$ be the three-cells of $\mathcal F_C$
-containing $\tau$.
+containing $\omega$.
 \begin{enumerate}
-\item The tropical cell dual to $\operatorname{conv}(0,\tau)$ is a segment $J_\tau=\{p_\tau+s(u'-u):s_-\le s\le s_+\}$. On
-$J_\tau$ a lattice point $n$ of $\omega_1\setminus\tau$ has tropical deficit $e_{u'}(n)(s_+-s)$, with $e_{u'}(n)\ge1$, and a
-lattice point $n$ of $\omega_2\setminus\tau$ has tropical deficit $e_u(n)(s-s_-)$, with $e_u(n)\ge1$. The length
-$|J_\tau|:=s_+-s_-$ satisfies $|J_\tau|=k_0+|J_\tau|^{(0)}$, where $|J_\tau|^{(0)}>0$ is the length of the corresponding
+\item The tropical cell dual to $\operatorname{conv}(0,\omega)$ is a segment $J_\omega=\{p_\omega+s(u'-u):s_-\le s\le s_+\}$. On
+$J_\omega$ a lattice point $n$ of $\omega_1\setminus\omega$ has tropical deficit $e_{u'}(n)(s_+-s)$, with $e_{u'}(n)\ge1$, and a
+lattice point $n$ of $\omega_2\setminus\omega$ has tropical deficit $e_u(n)(s-s_-)$, with $e_u(n)\ge1$. The length
+$|J_\omega|:=s_+-s_-$ satisfies $|J_\omega|=k_0+|J_\omega|^{(0)}$, where $|J_\omega|^{(0)}>0$ is the length of the corresponding
 segment for the height $h_C$ alone.
 \item For a node parallelogram, $\mathfrak g_P=|J_P|$; at each point of $J_P$ all apexes of $\omega_1$ have the same
 tropical deficit, and so do all apexes of $\omega_2$, and at the midpoint both deficits equal $\mathfrak g_P/2$; and
 $\mathfrak g_P=k_0+\mathfrak g_P^{(0)}$, where $\mathfrak g_P^{(0)}>0$ is the apex gap for the height $h_C$. For a
-triangle, $\mathfrak g_\tau=m_\tau|J_\tau|$, where $m_\tau\ge1$ is the smallest of the exponents $e_{u'}(n)$,
-$n\in\omega_1\setminus\tau$, and $e_u(n)$, $n\in\omega_2\setminus\tau$, over lattice points.
-\item $\theta_0\le\mathfrak g_P/2$ for every node parallelogram $P$, and $\theta_0\le\mathfrak g_\tau-|J_\tau|/(2e_{\max})$
-for every triangle $\tau$ as above.
+triangle, $\mathfrak g_\omega=m_\omega|J_\omega|$, where $m_\omega\ge1$ is the smallest of the exponents $e_{u'}(n)$,
+$n\in\omega_1\setminus\omega$, and $e_u(n)$, $n\in\omega_2\setminus\omega$, over lattice points.
+\item $\theta_0\le\mathfrak g_P/2$ for every node parallelogram $P$, and $\theta_0\le\mathfrak g_\omega-|J_\omega|/(2e_{\max})$
+for every triangle $\omega$ as above.
 \item Consequently~\eqref{eq:lambdagap} holds whenever
 $k_0\ge\max\bigl(2e_{\max},\,2\mathcal E_{\max}+2,\,1-\min_{\partial\Delta\cap N}h_C\bigr)$.
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-(1) A cell of $\mathcal F_C$ containing $\tau$ lies in a face of $\Delta$ containing $G$, that is in $G$, $u^\vee$ or
-$u'^\vee$. In $G$ the only such cell is $\tau$, which is a maximal cell of the subdivision $\sigma$ of $G$ and hence of
+(1) A cell of $\mathcal F_C$ containing $\omega$ lies in a face of $\Delta$ containing $G$, that is in $G$, $u^\vee$ or
+$u'^\vee$. In $G$ the only such cell is $\omega$, which is a maximal cell of the subdivision $\sigma$ of $G$ and hence of
 $\mathcal F_C|_G$ (Proposition~\ref{prop:pulling} and Definition~\ref{def:profile}); in $u^\vee$ it is the unique three-cell
-$\omega_1$ of $\mathcal F_C|_{u^\vee}$ containing the boundary two-cell $\tau$, and likewise $\omega_2$ in $u'^\vee$. So by
-Lemma~\ref{lem:hull} the lower faces containing $\operatorname{conv}(0,\tau)$ are $\operatorname{conv}(0,\tau)$,
+$\omega_1$ of $\mathcal F_C|_{u^\vee}$ containing the boundary two-cell $\omega$, and likewise $\omega_2$ in $u'^\vee$. So by
+Lemma~\ref{lem:hull} the lower faces containing $\operatorname{conv}(0,\omega)$ are $\operatorname{conv}(0,\omega)$,
 $\operatorname{conv}(0,\omega_1)$ and $\operatorname{conv}(0,\omega_2)$. By the inclusion-reversing duality between the lower
-faces of $\operatorname{conv}\{(n,H(n))\}$ and the cells of $\operatorname{Trop}$, the cell dual to $\operatorname{conv}(0,\tau)$
+faces of $\operatorname{conv}\{(n,H(n))\}$ and the cells of $\operatorname{Trop}$, the cell dual to $\operatorname{conv}(0,\omega)$
 is a segment whose end points are dual to $\operatorname{conv}(0,\omega_1)$ and $\operatorname{conv}(0,\omega_2)$. On it the
-origin and the points of $\tau$ are maximal, with value $0$, so it lies on the line $\{p:\langle p,n\rangle=H(n),\
-n\in\tau\}$; since $\tau$ spans the linear span of $G$, and $\langle u'-u,n\rangle=0$ for $n\in G$, this line is
-$p_\tau+\R(u'-u)$ for any point $p_\tau$ of it. For $n\in u^\vee$ we have $\langle u'-u,n\rangle=(e_{u'}(n)-1)+1=e_{u'}(n)$,
+origin and the points of $\omega$ are maximal, with value $0$, so it lies on the line $\{p:\langle p,n\rangle=H(n),\
+n\in\omega\}$; since $\omega$ spans the linear span of $G$, and $\langle u'-u,n\rangle=0$ for $n\in G$, this line is
+$p_\omega+\R(u'-u)$ for any point $p_\omega$ of it. For $n\in u^\vee$ we have $\langle u'-u,n\rangle=(e_{u'}(n)-1)+1=e_{u'}(n)$,
 and for $n\in u'^\vee$, $\langle u'-u,n\rangle=-e_u(n)$. Let $s_+$ be the parameter of the end dual to
 $\operatorname{conv}(0,\omega_1)$; there every lattice point of $\omega_1$ is maximal, because $H$ is linear on the cone over
-$\omega_1$. Since the maximal value is $0$ all along $J_\tau$, a lattice point $n$ of $\omega_1$ has tropical deficit
-$-\bigl(\langle p_\tau,n\rangle+s\,e_{u'}(n)-H(n)\bigr)=e_{u'}(n)(s_+-s)$ on $J_\tau$. If $n\notin\tau$, then
-$n\notin u'^\vee$, since $\omega_1\cap u'^\vee\subseteq\omega_1\cap G=\tau$; so $e_{u'}(n)\ge1$. The statement for $\omega_2$
+$\omega_1$. Since the maximal value is $0$ all along $J_\omega$, a lattice point $n$ of $\omega_1$ has tropical deficit
+$-\bigl(\langle p_\omega,n\rangle+s\,e_{u'}(n)-H(n)\bigr)=e_{u'}(n)(s_+-s)$ on $J_\omega$. If $n\notin\omega$, then
+$n\notin u'^\vee$, since $\omega_1\cap u'^\vee\subseteq\omega_1\cap G=\omega$; so $e_{u'}(n)\ge1$. The statement for $\omega_2$
 is proved in the same way, with $s_-$ the other end.
 
-For the length, choose lattice points $v\in\omega_1\setminus\tau$ and $v'\in\omega_2\setminus\tau$ and put
-$e=e_{u'}(v)$, $e'=e_u(v')$. The deficits vanish at the ends, so $H(v)-\langle p_\tau,v\rangle=e\,s_+$ and
-$H(v')-\langle p_\tau,v'\rangle=-e'\,s_-$, whence
+For the length, choose lattice points $v\in\omega_1\setminus\omega$ and $v'\in\omega_2\setminus\omega$ and put
+$e=e_{u'}(v)$, $e'=e_u(v')$. The deficits vanish at the ends, so $H(v)-\langle p_\omega,v\rangle=e\,s_+$ and
+$H(v')-\langle p_\omega,v'\rangle=-e'\,s_-$, whence
 \[
-ee'\,|J_\tau|=e'H(v)+eH(v')-\langle p_\tau,w\rangle,\qquad w:=e'v+ev'.
+ee'\,|J_\omega|=e'H(v)+eH(v')-\langle p_\omega,w\rangle,\qquad w:=e'v+ev'.
 \]
-Since $\langle u'-u,w\rangle=e'e-ee'=0$, $w$ lies in the span of $G$, where $\langle p_\tau,\cdot\rangle$ is the linear
-function $\ell_\tau$ equal to $H$ on the cone over $\tau$. The right-hand side is therefore linear in $H$. For
-$H=\varphi$: $\varphi(v)=\varphi(v')=1$, and on the span of $G\subseteq u^\vee$ the function $\ell_\tau$ is
+Since $\langle u'-u,w\rangle=e'e-ee'=0$, $w$ lies in the span of $G$, where $\langle p_\omega,\cdot\rangle$ is the linear
+function $\ell_\omega$ equal to $H$ on the cone over $\omega$. The right-hand side is therefore linear in $H$. For
+$H=\varphi$: $\varphi(v)=\varphi(v')=1$, and on the span of $G\subseteq u^\vee$ the function $\ell_\omega$ is
 $-\langle u,\cdot\rangle$, with $\langle u,v\rangle=-1$ and $\langle u,v'\rangle=e'-1$; so the right-hand side equals
-$e'+e+e'(-1)+e(e'-1)=ee'$. For $H=k_0\varphi+h_C$ this gives $|J_\tau|=k_0+|J_\tau|^{(0)}$, where $|J_\tau|^{(0)}$ is given
+$e'+e+e'(-1)+e(e'-1)=ee'$. For $H=k_0\varphi+h_C$ this gives $|J_\omega|=k_0+|J_\omega|^{(0)}$, where $|J_\omega|^{(0)}$ is given
 by the same formula for $h_C$; by Lemma~\ref{lem:hull} with $k_0=0$ it is the length of a segment whose two ends are
 dual to the distinct lower faces $\operatorname{conv}(0,\omega_1)\neq\operatorname{conv}(0,\omega_2)$, hence positive.
 
@@ -374,27 +374,27 @@ dual to the distinct lower faces $\operatorname{conv}(0,\omega_1)\neq\operatorna
 so by (1) the apexes of $\omega_1$ all have deficit $s_+-s$ and those of $\omega_2$ all have $s-s_-$. The computation of
 (1) with apexes $v,v'$ and $e=e'=1$ reads $|J_P|=H(v)+H(v')-H(0)-\ell_P(v+v')$ for every pair of apexes; so
 $\mathfrak g_P=|J_P|$, the apexes have deficit $\mathfrak g_P/2$ at the midpoint, and $\mathfrak g_P=k_0+\mathfrak g_P^{(0)}$
-with $\mathfrak g^{(0)}_P=|J_P|^{(0)}>0$. For a triangle, the cells containing $\tau$ are $\tau$, $\omega_1$ and $\omega_2$,
-so the lattice points $n\notin\{0\}\cup\tau$ in a cell containing $\tau$ are those of $(\omega_1\cup\omega_2)\setminus\tau$,
-and by (1) their deficits at the midpoint are $e_{u'}(n)|J_\tau|/2$ and $e_u(n)|J_\tau|/2$; so
-$\mathfrak g_\tau=m_\tau|J_\tau|$.
+with $\mathfrak g^{(0)}_P=|J_P|^{(0)}>0$. For a triangle, the cells containing $\omega$ are $\omega$, $\omega_1$ and $\omega_2$,
+so the lattice points $n\notin\{0\}\cup\omega$ in a cell containing $\omega$ are those of $(\omega_1\cup\omega_2)\setminus\omega$,
+and by (1) their deficits at the midpoint are $e_{u'}(n)|J_\omega|/2$ and $e_u(n)|J_\omega|/2$; so
+$\mathfrak g_\omega=m_\omega|J_\omega|$.
 
-(3) Let $v\in\omega_1\setminus\tau$ and $v'\in\omega_2\setminus\tau$ be lattice points, with $e,e'$ as in (1). The set
-$I=\tau\cup\{v,v'\}$ is not cellular: by Lemma~\ref{lem:hull} a cell containing it would lie in a proper face of $\Delta$
-containing $G$, that is in $G$, $u^\vee$ or $u'^\vee$, but $v\notin u'^\vee$ and $v'\notin u^\vee$. The points of $\tau$
-have deficit $0$ on $J_\tau$, so by (1)
+(3) Let $v\in\omega_1\setminus\omega$ and $v'\in\omega_2\setminus\omega$ be lattice points, with $e,e'$ as in (1). The set
+$I=\omega\cup\{v,v'\}$ is not cellular: by Lemma~\ref{lem:hull} a cell containing it would lie in a proper face of $\Delta$
+containing $G$, that is in $G$, $u^\vee$ or $u'^\vee$, but $v\notin u'^\vee$ and $v'\notin u^\vee$. The points of $\omega$
+have deficit $0$ on $J_\omega$, so by (1)
 \[
-\theta_0\le\gamma^*(I)\le\min_{s_-\le s\le s_+}\max\bigl(e(s_+-s),\,e'(s-s_-)\bigr)=\frac{ee'}{e+e'}\,|J_\tau| .
+\theta_0\le\gamma^*(I)\le\min_{s_-\le s\le s_+}\max\bigl(e(s_+-s),\,e'(s-s_-)\bigr)=\frac{ee'}{e+e'}\,|J_\omega| .
 \]
 For a node parallelogram, with apexes $v,v'$, this is $\theta_0\le|J_P|/2=\mathfrak g_P/2$. For a triangle, choose $v$
-and $v'$ with $e$ and $e'$ smallest on their sides, so that $\min(e,e')=m_\tau$; then
+and $v'$ with $e$ and $e'$ smallest on their sides, so that $\min(e,e')=m_\omega$; then
 \[
-\mathfrak g_\tau-\theta_0\ \ge\ |J_\tau|\Bigl(\min(e,e')-\frac{ee'}{e+e'}\Bigr)=|J_\tau|\,\frac{\min(e,e')^2}{e+e'}\ \ge\
-\frac{|J_\tau|}{2e_{\max}} .
+\mathfrak g_\omega-\theta_0\ \ge\ |J_\omega|\Bigl(\min(e,e')-\frac{ee'}{e+e'}\Bigr)=|J_\omega|\,\frac{\min(e,e')^2}{e+e'}\ \ge\
+\frac{|J_\omega|}{2e_{\max}} .
 \]
 
-(4) By (1) and (2), $\mathfrak g_P>k_0$ and $\mathfrak g_\tau\ge|J_\tau|>k_0$. So by (3),
-$\mathfrak g_\tau-\theta_0\ge|J_\tau|/(2e_{\max})>k_0/(2e_{\max})\ge1$ when $k_0\ge2e_{\max}$, and, since $\theta_1\le1$,
+(4) By (1) and (2), $\mathfrak g_P>k_0$ and $\mathfrak g_\omega\ge|J_\omega|>k_0$. So by (3),
+$\mathfrak g_\omega-\theta_0\ge|J_\omega|/(2e_{\max})>k_0/(2e_{\max})\ge1$ when $k_0\ge2e_{\max}$, and, since $\theta_1\le1$,
 $\mathfrak g_P-\theta_0-2\theta_1\ge\mathfrak g_P/2-2>k_0/2-2\ge1$ when $k_0\ge6$, which holds when
 $k_0\ge2\mathcal E_{\max}+2$, as $\mathcal E_P\ge2$. The bound is not circular: $e_{\max}$ and $\mathcal E_P$ depend only on
 the lattice data and the vectors $w_u$, and $\theta_1\le1$ by its definition, whereas $\theta_0$ and the gaps may grow
@@ -542,7 +542,7 @@ $\mathbb D_P:=\{|x|<r,\ |y|<r,\ |\hat Z|<1,\ |\hat Z'|<1\}$.
 \end{definition}
 
 The normalisation places the node point at the centre of the range of $|Z|/|Z'|$ on which both apex sums are
-negligible: on $\mathbb D_P$ one has $|AZ|,|A'Z'|\le2|\mathcal A|\lambda_P^{-1/2}\le Ct^{\mathfrak g_P/2}$, while
+negligible: on $\mathbb D_P$ one has $|AZ|,|A'Z'|\le2^{A_P}|\mathcal A|\lambda_P^{-1/2}\le Ct^{\mathfrak g_P/2}$, while
 $|\mathfrak bZZ'|\le C$. The \emph{Morse bidisc} of $P$ is the closed bidisc $\mathbb B_P:=\{|x|\le r,\ |y|\le r\}$ in the torus
 coordinates $(\chi_1,\chi_2)$, the projection of the closure of $\mathbb D_P$.
 
@@ -669,13 +669,13 @@ of $I$ by lowering $\log|Z|$ and $\log|Z'|$. Then at $x$ the origin and the two 
 monomial outside $\{0\}\cup\omega$ has weight zero.
 \item (nodes) On the node neighbourhood $\mathcal N_P$ every apex and every monomial outside $\mathcal A_P$ has weight $0$,
 and the monomials of $P$ have weight $1$.
-\item (vertices of positive type) Let $\tau=[n_a,n_b,n_c]$ be a unimodular triangle of $\mathcal F_C$ in a two-face $G$,
-with $G^\circ=[u_0,u_k]$ and $u_0,\dots,u_k$ its lattice points in order; write $J_\tau=\{p_\tau+s(u_k-u_0):s_-\le s\le
+\item (vertices of positive type) Let $\omega=[n_a,n_b,n_c]$ be a unimodular triangle of $\mathcal F_C$ in a two-face $G$,
+with $G^\circ=[u_0,u_k]$ and $u_0,\dots,u_k$ its lattice points in order; write $J_\omega=\{p_\omega+s(u_k-u_0):s_-\le s\le
 s_+\}$ as in Lemma~\ref{lem:gaps}(1), applied with $(u,u')=(u_0,u_k)$, and $s_{\rm mid}:=(s_++s_-)/2$. Let $[u,u']$ be an
-edge of $\mathcal T$ in $G^\circ$, with Cox coordinates $Z,Z'$. The set $J^\flat_\tau$ of points of $J_\tau$ at which every
-lattice point of $(\omega_1\cup\omega_2)\setminus\tau$ has tropical deficit at least $3\theta_1/4$ is a segment containing
+edge of $\mathcal T$ in $G^\circ$, with Cox coordinates $Z,Z'$. The set $J^\flat_\omega$ of points of $J_\omega$ at which every
+lattice point of $(\omega_1\cup\omega_2)\setminus\omega$ has tropical deficit at least $3\theta_1/4$ is a segment containing
 the points with $|s-s_{\rm mid}|\le1/(4e_{\max})$. At the points of $U_{u,u'}$ whose tropical position is within $\theta_2$
-of a point of $J^\flat_\tau$, or is obtained from such a point by lowering $\log|Z|$ and $\log|Z'|$, the weights of
+of a point of $J^\flat_\omega$, or is obtained from such a point by lowering $\log|Z|$ and $\log|Z'|$, the weights of
 $0,n_a,n_b,n_c$ are one and all other weights are zero.
 \item Let $x\in W^*\cap D_{u'}$, and let $I(x)$ be the set of monomials that do not vanish on $D_{u'}$ and have positive
 weight at $x$. If $I(x)$ is affinely independent, or $c$ is in the window and $I(x)\subseteq P$ for a node parallelogram
@@ -811,9 +811,9 @@ $\{x=0\}$. Write $\kappa_P=|\kappa_P|e^{i\phi}$ and let
 \mathscr T_q:=\{(x,y):y=e^{i\phi}\bar x,\ |x|^2\le|\kappa_P|\}
 \]
 be the Lefschetz thimble of $xy-\kappa_P$ at its critical point for the straight path of values, a disc bounded by the
-circle $\{xy=\kappa_P,\ |x|=|y|\}$. Let $\mathscr C_0$ be the part of $\{g_P=0\}$ over $\mathcal N_P$ tending to the branch
+circle $\{xy=\kappa_P,\ |x|=|y|\}$. Let $\mathscr C_P$ be the part of $\{g_P=0\}$ over $\mathcal N_P$ tending to the branch
 $\{x=0\}$: near the node point it is $\{xy=\kappa_P,\ |x|\le|y|\}$, and outside the Morse bidisc it is the curve
-$\{g_P=0\}$ along the two legs of the passage. Put $\mathscr C:=\mathscr C_0\cup\mathscr T_q$. The coordinate $y$ identifies
+$\{g_P=0\}$ along the two legs of the passage. Put $\mathscr C:=\mathscr C_P\cup\mathscr T_q$. The coordinate $y$ identifies
 $\mathscr C$ with $\C\setminus\{\mu_P^{-1/2}\}\cong\C^*$, the omitted point being $\tilde\chi_2=0$, and its two ends run
 along the two legs.
 
@@ -830,36 +830,36 @@ $\{y=0\}$, and parametrise $\mathscr C$ by $x$. Section~\ref{sec:lift} takes $\t
 
 \begin{lemma}[the node piece]\label{lem:NQ}
 \begin{enumerate}
-\item Over $\mathscr C_0$, $\Pi_q^+$ is the divisor piece
-$W^*\cap D_{u'}\cap\{(\chi_1,\chi_2)\in\mathscr C_0,\ |\hat Z|^2\le\bar\mu\}=\{Z'=0,\ (\chi_1,\chi_2)\in\mathscr C_0,\
-|\hat Z|^2\le\bar\mu(\chi_1,\chi_2)\}$, and $\Pi_q^-$ is $W^*\cap D_u$ over $\mathscr C_0$, with $|\hat Z'|^2\le\bar\mu$.
+\item Over $\mathscr C_P$, $\Pi_q^+$ is the divisor piece
+$W^*\cap D_{u'}\cap\{(\chi_1,\chi_2)\in\mathscr C_P,\ |\hat Z|^2\le\bar\mu\}=\{Z'=0,\ (\chi_1,\chi_2)\in\mathscr C_P,\
+|\hat Z|^2\le\bar\mu(\chi_1,\chi_2)\}$, and $\Pi_q^-$ is $W^*\cap D_u$ over $\mathscr C_P$, with $|\hat Z'|^2\le\bar\mu$.
 \item The map $(y,\hat\mu,\vartheta_\alpha)\mapsto p$, with $\vartheta_\alpha=\arg\hat Z$, is a homeomorphism from
 $\{(y,\hat\mu):y\in\mathscr C,\ 0<\hat\mu\le\bar\mu(y)\}\times S^1$ onto $\Pi_q^+\cap\{\hat\mu>0\}$ which restricts to
-diffeomorphisms over the two closed pieces $\mathscr C_0$ and $\mathscr T_q$ of $\mathscr C$; likewise for $\Pi_q^-$, with
+diffeomorphisms over the two closed pieces $\mathscr C_P$ and $\mathscr T_q$ of $\mathscr C$; likewise for $\Pi_q^-$, with
 $\vartheta_\alpha=-\arg\hat Z'$ and $\hat\mu\in[-\bar\mu,0)$. In both cases $\vartheta_\alpha$ is the angle of $S^1_\alpha$.
 \item $\Pi_q^\pm$ is a topological four-manifold, piecewise smooth, whose boundary consists of the outer part
 $\{\hat\mu=\pm\bar\mu\}$, the ends over the two legs, and the three-sphere
 \[
 \Sigma_q:=\pi^{-1}(\{0\}\times\mathscr T_q)=\{(x,y)\in\mathscr T_q,\ |\hat Z|=|\hat Z'|,\ \vartheta_P\hat Z\hat Z'=\kappa_P-xy\}.
 \]
-Over $\{0\}\times\mathscr C_0$ the circles collapse without creating boundary.
+Over $\{0\}\times\mathscr C_P$ the circles collapse without creating boundary.
 \item $\Sigma_q$ is isotopic in $W^*\cap\mathbb D_P$ to the vanishing sphere $\Sigma_0$ of Lemma~\ref{lem:carry}.
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-(1) On $\mathscr C_0$ we have $g_P=0$, so $\mathfrak bZZ'=0$; with $\hat\mu\ge0$ this forces $Z'=0$ and $|\hat Z|^2=\hat\mu$.
-Conversely every point of $W^*\cap D_{u'}$ over $\mathscr C_0$ has $\hat\mu=|\hat Z|^2\ge0$.
+(1) On $\mathscr C_P$ we have $g_P=0$, so $\mathfrak bZZ'=0$; with $\hat\mu\ge0$ this forces $Z'=0$ and $|\hat Z|^2=\hat\mu$.
+Conversely every point of $W^*\cap D_{u'}$ over $\mathscr C_P$ has $\hat\mu=|\hat Z|^2\ge0$.
 
 (2) By Lemma~\ref{lem:quot}, for $\hat\mu>0$ the fibre of $\pi$ over $(\hat\mu,\chi_1,\chi_2)$ is a free $S^1_\alpha$-orbit
 on which $\hat Z\neq0$, containing exactly one point with $\arg\hat Z=\vartheta_\alpha$ for each $\vartheta_\alpha$. The point of $\mathscr C$
-with coordinate $y$ is $(\kappa_P/y,y)$ over $\mathscr C_0$ and $(e^{i\phi}\bar y,y)$ over $\mathscr T_q$; these agree on the
+with coordinate $y$ is $(\kappa_P/y,y)$ over $\mathscr C_P$ and $(e^{i\phi}\bar y,y)$ over $\mathscr T_q$; these agree on the
 neck circle $|y|^2=|\kappa_P|$, so the map is continuous, and it is smooth on each closed piece but only continuous across
 the neck. The inverse is continuous, and smooth over each piece, because $|\hat Z|$ and $|\hat Z'|$ are smooth functions
 of $\hat\mu$ and $|\hat Z\hat Z'|=|g_P|$ where $|\hat Z|^2\ge\hat\mu>0$. For $\hat\mu<0$ the same holds with $\hat Z'\ne0$
 and $\vartheta_\alpha=-\arg\hat Z'$, since $S^1_\alpha$ acts on $\hat Z'$ by $e^{-i\vartheta}$.
 
-(3) Over $\mathscr C_0$, by (1), $\Pi_q^+$ is the bundle over $\mathscr C_0$ of the closed discs $|\hat Z|^2\le\bar\mu$, and
+(3) Over $\mathscr C_P$, by (1), $\Pi_q^+$ is the bundle over $\mathscr C_P$ of the closed discs $|\hat Z|^2\le\bar\mu$, and
 the points with $\hat\mu=0$ are the centres of the discs, which are interior. Over the interior of $\mathscr T_q$ we have
 $g_P\ne0$, so $Z,Z'\ne0$, and $\Pi_q^+$ is a circle bundle over
 $\{(y,\hat\mu):y\in\mathscr T_q,\ 0\le\hat\mu\le\bar\mu(y)\}$ whose boundary over $\hat\mu=0$ is the circle bundle over
@@ -879,7 +879,7 @@ $W^*\cap\mathbb D_P$.
 The coordinate $\tilde\chi_2$ identifies $\mathscr C$ with an annulus in $\C^*$. Away from the Morse bidisc, the fibre of
 $\Pi_q^+$ over a point $(s_2,\hat\mu)$ of the standard half with $\hat\mu>0$ is the circle $\{|\tilde\chi_2|=\mathrm{const}\}$
 of $\mathscr C$ times the $S^1_\alpha$-orbit: the affine two-torus of \cite[Lemma~5.14]{CBM}, spanned by $S^1_\alpha$ and the
-rotation of $\tilde\chi_2$. Over $\mathscr C_0$, $\Pi_q^+$ is the set of points of $W^*\cap D_{u'}$ over $\mathscr C_0$ with
+rotation of $\tilde\chi_2$. Over $\mathscr C_P$, $\Pi_q^+$ is the set of points of $W^*\cap D_{u'}$ over $\mathscr C_P$ with
 $|\hat Z|^2\le\bar\mu$, and $\Pi^-_q$ the set of points of $W^*\cap D_u$ with $|\hat Z'|^2\le\bar\mu$. Section~\ref{sec:lift} chooses $\bar\mu$
 so that, along the two legs of the passage, the node piece agrees with the divisor pieces defined there by the same
 inequality where the two overlap. Figure~\ref{fig:morse} shows the node piece schematically.
@@ -995,8 +995,8 @@ and the outward normal $+\partial_{\hat\mu}$ gives the boundary $(x,\vartheta_\a
 \draw[dashed,thick] (0.7,0) -- (3.2,0);
 \draw[line width=3pt] (-0.7,0) -- (0.7,0);
 \draw[<-] (0.1,-0.12) -- (0.5,-0.75) node[below,font=\small] {$\mathscr T_q$: boundary $\rho_q\Sigma_q$};
-\node[below,font=\small] at (-2.1,-0.08) {$\mathscr C_0$: in $D_{u'}$};
-\node[below,font=\small] at (2.25,-0.08) {$\mathscr C_0$: in $D_{u'}$};
+\node[below,font=\small] at (-2.1,-0.08) {$\mathscr C_P$: in $D_{u'}$};
+\node[below,font=\small] at (2.25,-0.08) {$\mathscr C_P$: in $D_{u'}$};
 \draw[->] (-3.2,1.0) -- (-3.8,1.0) node[left,font=\small] {leg $ab$};
 \draw[->] (3.2,1.0) -- (3.8,1.0) node[right,font=\small] {leg $dc$};
 \node[font=\small] at (-1.4,1.05) {$\Pi^+_q$};
@@ -1009,7 +1009,7 @@ dimensions lower: in coordinates $\zeta$ with $xy+z_1z_2=\sum_i\zeta_i^2$, the v
 $\{\zeta\in\kappa_P^{1/2}\R^4:\sum_i\zeta_i^2=\kappa_P\}$; the dashed lines are the cone of the singular fibre $\kappa_P=0$. (b) The node piece
 $\Pi_q^+$ of the $b-a$ passage over the standard half $\{s_1=0,\ \hat\mu\ge0\}$, drawn in the coordinates
 $(s_2,\hat\mu)$. Over the interior the fibre is a two-torus (the angle $\varphi_2$ of $\tilde\chi_2$ and the angle
-$\vartheta_\alpha$ of $S^1_\alpha$). Over $\hat\mu=0$ the circles $S^1_\alpha$ collapse along $\mathscr C_0$ (dashed), where
+$\vartheta_\alpha$ of $S^1_\alpha$). Over $\hat\mu=0$ the circles $S^1_\alpha$ collapse along $\mathscr C_P$ (dashed), where
 $\Pi_q^+$ lies in the divisor $D_{u'}$ and has no boundary; over the thimble $\mathscr T_q$ (thick) they do not, and the
 boundary there is the three-sphere $\Sigma_q$, isotopic to $\delta_q$, with multiplicity $\rho_q$
 (Lemma~\ref{lem:SI}).}\label{fig:morse}

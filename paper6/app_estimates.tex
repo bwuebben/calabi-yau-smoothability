@@ -127,7 +127,7 @@ $v_\ell(x)\neq0$.)
 
 \begin{lemma}[domination on a facet]\label{lem:slide}
 Let $\mathcal H(x)=u^\vee$ be a facet. Then $x$ lies in the chart $U_{\mathsf c}$ of every maximal cone $\mathsf c\ni u$, the Cox
-coordinates of $\sigma$ other than $Z_u$ do not vanish at $x$, and every $n\notin u^\vee\cup\{0\}$ satisfies
+coordinates of $\mathsf c$ other than $Z_u$ do not vanish at $x$, and every $n\notin u^\vee\cup\{0\}$ satisfies
 \[
 \bigl|\gamma_nx^n/Z_u\bigr|\ \le\ t^{3\theta_0/4}\bigl|\gamma_0x^0/Z_u\bigr|\qquad\text{at }x,
 \]
@@ -213,13 +213,23 @@ $|x|,|y|<2r\le1/2$, hence $|\mu_P^{1/2}x|,|\mu_P^{1/2}y|<0.51$, and $\mu_P\tilde
 $\mu_P\tilde\chi_2=\mu_P^{1/2}y-1$ have moduli in $[0.49,1.51]$. So $\chi_1,\chi_2\neq0$: the polydisc $2\mathbb D_P$ lies in
 the chart $U_{u,u'}$ (this is where $r\le r_1\le1/4$ is used), and the four monomials of $P$, which relative to
 $\gamma_ax^a$ are $1,\tilde\chi_1,\tilde\chi_2,\mu_P\tilde\chi_1\tilde\chi_2$, have moduli within a factor $16$ of each other.
-The origin has modulus $|\hat Z\hat Z'|\le4$, and each apex has modulus at most $C\lambda_P^{-1/2}\le Ct^{\mathfrak g_P/2}$, with
-$C$ depending only on the configuration and $\mathscr C_0$. So $\mathfrak m\le C$, the deficits of
-$P$ are at most $C/L$ and those of the apexes at least $\mathfrak g_P/2-C/L\ge(\theta_0+1)/2-C/L$
-by~\eqref{eq:lambdagap}. For $n\notin\mathcal A_P$ the set $P\cup\{n\}$ is not cellular: a cell of $\mathcal F_C$ containing
+The origin has modulus $|\hat Z\hat Z'|\le4$. Moving from $x=y=0$ to $2\mathbb D_P$ changes the modulus of
+$\chi_1^{\alpha_n}\chi_2^{\beta_n}$ by a factor at most $3^{|n|_P}$. Thus each apex has modulus at most
+$2\cdot3^{A_P}\lambda_P^{-1/2}\le Ct^{\mathfrak g_P/2}$.
+
+To bound the other monomials, let $z_*$ have $x=y=0$, $Z=\nu_Z$ and $Z'=\nu_{Z'}$. Its tropical position is within
+$C/L$ of the midpoint of $J_P$: the four monomials of $P$ have bounded nonzero moduli, the origin has modulus one,
+and the largest apex modulus on each side is $\lambda_P^{-1/2}$. Lemma~\ref{lem:gaps}(1),(2) therefore places it at
+the midpoint up to $C/L$. For $n\notin\mathcal A_P$ the set $P\cup\{n\}$ is not cellular: a cell of $\mathcal F_C$ containing
 $P$ lies in $G$, $u^\vee$ or $u'^\vee$, so it is $P$, $\omega_1$ or $\omega_2$, and $n$ lies in none of them. This includes
 the lattice points of $G\setminus P$, the other vertices of a pentagon or hexagon, because
-$\omega_1\cap G=\omega_2\cap G=P$. So Lemma~\ref{lem:onecell} gives $d_n\ge3\theta_0/4$. Since $\theta_1\le\theta_0$, the
+$\omega_1\cap G=\omega_2\cap G=P$. At the midpoint the tropical deficits of $P$ vanish, so the deficit of $n$ is at
+least $\gamma^*(P\cup\{n\})\ge\theta_0$. Its relative modulus at $z_*$ is consequently at most $Ct^{\theta_0}$.
+Since the $Z,Z'$ exponents are nonnegative, throughout $2\mathbb D_P$ its relative modulus is at most
+$C\,3^{|n|_P}2^{e_u(n)+e_{u'}(n)}t^{\theta_0}$. The finite configuration now gives $\mathfrak m\le C$ without an
+assumption on the remaining monomials. Hence the deficits of $P$ are at most $C/L$, those of the apexes are at least
+$\mathfrak g_P/2-C/L\ge(\theta_0+1)/2-C/L$, and those of $n\notin\mathcal A_P$ are at least
+$\theta_0-C/L\ge3\theta_0/4$ for $L$ large. Since $\theta_1\le\theta_0$, the
 weights are as stated for $t$ small, the apexes are outside the core, and $\mathbb D_P\subseteq\mathcal U_P$. The origin term
 is $\mathfrak b\nu_Z\nu_{Z'}\hat Z\hat Z'=(\mathfrak b/|\mathfrak b|)\hat Z\hat Z'=\vartheta_P\hat Z\hat Z'$, since $\mathfrak b$ is a
 constant, and the monomials of $P$ give $xy-\kappa_P$. The apex terms are $a\hat Z$ and $a'\hat Z'$ with
@@ -353,8 +363,8 @@ $|h|\ge\mathfrak m/16-Ct^\gamma\mathfrak m>\mathcal J$.
 \item If $(\chi_1,\chi_2)$ is within $\theta_2$ of the node point, the deficits of $P$ are at most
 $2\theta_2+C/L<\theta_1/4$, so its weights are one and $\tilde g=xy-\kappa_P$. We have
 $\chi_1\partial_{\chi_1}\tilde g=\mu_P^{1/2}\tilde\chi_1\,y$ and $\chi_2\partial_{\chi_2}\tilde g=\mu_P^{1/2}\tilde\chi_2\,x$, and
-$|xy-\kappa_P|\le Ct^\gamma\mathfrak m$ on $W_s$. If $|y|\ge r$, then, since $|\kappa_P|\le2\eta_0\le r^2/10$ and
-$\mathfrak m\le C(1+|x|)(1+|y|)$, the inequality $|xy-\kappa_P|\le Ct^\gamma\mathfrak m$ gives $|x|\le r/5$ for $t$ small; so
+$|xy-\kappa_P|\le Ct^\gamma\mathfrak m$ on $W_s$. If $|y|\ge r$, then, since $|\kappa_P|\le4\eta_0\le r^2/5$ even on $U^+_\C$ and
+$\mathfrak m\le C(1+|x|)(1+|y|)$, the inequality $|xy-\kappa_P|\le Ct^\gamma\mathfrak m$ gives $|x|\le r/3$ for $t$ small; so
 $|\mu_P^{1/2}\tilde\chi_1|\ge1/2$ and $\mathfrak m\le C(1+|y|)$, hence $|\chi_1\partial_{\chi_1}\tilde g|\ge|y|/2\ge c\,r\,\mathfrak m$.
 The case $|x|\ge r$ is symmetric. If $|x|,|y|<r$, then $\mathfrak m\le C$ and
 $|xy|\ge|\kappa_P|-Ct^\gamma\ge\eta_0/(4C_\eta)$ in the window, so
@@ -365,7 +375,7 @@ $|h|>\mathcal J$ for $t<t_0(r,\eta_0,\mathscr C_0)$.
 (2) Let $s=1$, $c\in U_\C$, and let $x\in\mathcal U_P$ be a singular point of $Y_{t,c}$. All weights are one and
 $\mathcal J=0$. The first case above and the first item of the second case apply verbatim and show that
 $O<t^\gamma\mathfrak m$ and that $(\chi_1,\chi_2)$ is within $\theta_2$ of the node point; the part of the second item with
-$|x|\ge r$ or $|y|\ge r$ uses only $|\kappa_P|\le2\eta_0$ and shows $|x|,|y|<r$. Since $O<t^\gamma\mathfrak m$, the maximum is
+$|x|\ge r$ or $|y|\ge r$ uses only $|\kappa_P|\le4\eta_0$ and shows $|x|,|y|<r$. Since $O<t^\gamma\mathfrak m$, the maximum is
 attained by a monomial of $P$, so Lemma~\ref{lem:nodecomp} applies. At $x$, $\partial_{Z'}f=\mathfrak bZ+A'+\mathcal G_{Z'}=0$,
 where $\mathcal G_{Z'}$ is the sum of the terms $\partial_{Z'}m_n$, $n\notin\mathcal A_P$, and
 $|\mathcal G_{Z'}|\le Ct^{15\theta_0/16}(|\mathfrak bZ|+|A'|_{\rm mon})$ by Lemma~\ref{lem:nodecomp}. Hence
@@ -409,9 +419,9 @@ contains $m$, $m'$ and $p_e$. On $E_e$ the maximal value is $\mathrm{val}_0$, wh
 $d^{\rm tr}_m$ is affine on $E_e$. Let $m_1$ be a lattice point outside $\{0\}\cup\omega$. If $\omega=P$ is a node
 parallelogram, then $d^{\rm tr}_{m_1}(m)\ge\theta_0$ if $m_1\notin\mathcal A_P$, because $\{0\}\cup P\cup\{m_1\}$ is not
 cellular and $0,P$ are maximal at the midpoint $m$ of $J_P$, and $d^{\rm tr}_{m_1}(m)=\mathfrak g_P/2\ge\theta_0$ if $m_1$ is
-an apex, by Lemma~\ref{lem:gaps}(2), (3). If $\omega=\tau$ is a triangle and $m\in J^\flat_\tau$, then
-$d^{\rm tr}_{m_1}(m)\ge3\theta_1/4$ if $m_1\in(\omega_1\cup\omega_2)\setminus\tau$, by the definition of $J^\flat_\tau$, and
-$d^{\rm tr}_{m_1}(m)\ge\theta_0$ otherwise, because $\{0\}\cup\tau\cup\{m_1\}$ is not cellular (proof of (3)). In both cases
+an apex, by Lemma~\ref{lem:gaps}(2), (3). If $\omega$ is a triangle and $m\in J^\flat_\omega$, then
+$d^{\rm tr}_{m_1}(m)\ge3\theta_1/4$ if $m_1\in(\omega_1\cup\omega_2)\setminus\omega$, by the definition of $J^\flat_\omega$, and
+$d^{\rm tr}_{m_1}(m)\ge\theta_0$ otherwise, because $\{0\}\cup\omega\cup\{m_1\}$ is not cellular (proof of (3)). In both cases
 $d^{\rm tr}_{m_1}(m)\ge3\theta_1/4$, hence $d^{\rm tr}_{m_1}(m')\ge3\theta_1/4-D\theta_2/4\ge3\theta_1/4-\theta_1/64$, and
 $d^{\rm tr}_{m_1}(p_e)\ge f_e(p_e)>3\theta_1/4$. By affinity $d^{\rm tr}_{m_1}\ge3\theta_1/4-\theta_1/64$ on $I$, as
 $\theta_0\ge\theta_1$. Now let $n$ be a vertex of $e$, so $e_u(n)=e_{u'}(n)=0$, and pass from a point $y$ of $I$ to $x$.
@@ -428,13 +438,14 @@ $\hat\zeta_{Z'}:=\log|\hat Z'|/L$ and $\bar\theta_2:=\theta_2+C/L$. The monomial
 the origin, whose term in $f^{(0)}$ is $\vartheta_P\hat Z\hat Z'$, has $\mathrm{val}_0=\hat\zeta_Z+\hat\zeta_{Z'}\le\theta_2$.
 Since $\hat\zeta_Z,\hat\zeta_{Z'}\le\theta_P$ and $\hat\zeta_Z+\hat\zeta_{Z'}\le\theta_2$, there is $s\in[-\theta_P,\theta_P]$ with
 $\hat\zeta_Z\le s+\theta_2$ and $\hat\zeta_{Z'}\le-s+\theta_2$ (take $s=\hat\zeta_Z$ if $\hat\zeta_Z\ge-\theta_P$, and
-$s=-\theta_P$ otherwise). Let $y$ be the point of $J_P$ with $(\hat\zeta_Z,\hat\zeta_{Z'})=(s,-s)$ at the node point; the
-normalisation of Definition~\ref{def:morsecoords} puts the midpoint of $J_P$ at $(0,0)$. At $y$ the monomial $a$ is
+$s=-\theta_P$ otherwise). Let $y$ be the point of $J_P$ displaced from its midpoint by $(s,-s)$ in the two Cox
+directions. The normalisation of Definition~\ref{def:morsecoords} puts the midpoint at $(0,0)$ up to $O(1/L)$, as in
+the proof of Lemma~\ref{lem:NM}; these errors are included in $\bar\theta_2$. At $y$ the monomial $a$ is
 maximal; by Lemma~\ref{lem:gaps}(2) the apexes have deficit $\mathfrak g_P/2\mp s\ge\mathfrak g_P/2-\theta_P=\theta_1$; and the
 monomials outside $\mathcal A_P$ have deficit at least $\theta_0\ge\theta_1$, since $\{0\}\cup P\cup\{m\}$ is not cellular and
-$0,P$ are maximal on $J_P$. Passing from $y$ to $x$ raises $\hat\zeta_Z,\hat\zeta_{Z'}$ by at most $\theta_2$ and moves the
+$0,P$ are maximal on $J_P$. Passing from $y$ to $x$ raises $\hat\zeta_Z,\hat\zeta_{Z'}$ by at most $\theta_2+O(1/L)$ and moves the
 torus coordinates by at most $\bar\theta_2$, so it increases $\mathrm{val}_m$ by at most
-$(e_u(m)+e_{u'}(m))\theta_2+|m|_P\bar\theta_2\le2\mathcal E_P\bar\theta_2\le\theta_1/8+C/L$: for $m\notin\mathcal A_P$,
+$(e_u(m)+e_{u'}(m)+|m|_P)\bar\theta_2\le2\mathcal E_P\bar\theta_2\le\theta_1/8+C/L$: for $m\notin\mathcal A_P$,
 $e_u(m)+e_{u'}(m)\le2+2(\max(e_u(m),e_{u'}(m))-1)^+$, so $e_u(m)+e_{u'}(m)+|m|_P\le\mathcal E_P+2\le2\mathcal E_P$ by the
 definition of $\mathcal E_P$, and for an apex $e_u+e_{u'}+|m|_P\le1+A_P\le\mathcal E_P$. So at $x$ every apex and every
 monomial outside $\mathcal A_P$ has $\mathrm{val}_m\le-7\theta_1/8+C/L$, while $\mathrm{val}_a=0$. Hence the maximum at $x$ is at
@@ -442,15 +453,15 @@ most $2\bar\theta_2$, the deficits of the monomials of $P$ are at most $4\bar\th
 $\theta_2\le\theta_1/32$, and those of the apexes and of the monomials outside $\mathcal A_P$ are at least
 $7\theta_1/8-C/L$.
 
-(3) By Lemma~\ref{lem:gaps}(1), on $J_\tau$ the deficit of a lattice point $n$ of $(\omega_1\cup\omega_2)\setminus\tau$ is
-affine in the parameter $s$, with slope $\pm e(n)$, $e(n)\le e_{\max}$; so $J^\flat_\tau$ is a segment. At the midpoint
-$s=s_{\rm mid}$ these deficits are at least $\mathfrak g_\tau/2\ge(\theta_0+1)/2$, by the definition of $\mathfrak g_\tau$
-and~\eqref{eq:lambdagap}. So at the points with $|s-s_{\rm mid}|\le1/(4e_{\max})$, which lie in $J_\tau$ because
-$s_+-s_-=|J_\tau|\ge\mathfrak g_\tau/e_{\max}\ge1/e_{\max}$ by Lemma~\ref{lem:gaps}(2) and~\eqref{eq:lambdagap}, they are at
-least $\mathfrak g_\tau/2-1/4\ge\theta_0/2+1/4\ge3\theta_1/4$, as $\theta_1\le\min(\theta_0,1)$. The cells of $\mathcal F_C$
-containing $\tau$ are $\tau,\omega_1,\omega_2$ (proof of Lemma~\ref{lem:gaps}(1)), so a lattice point
-$m\notin\{0\}\cup\omega_1\cup\omega_2$ forms with $\{0\}\cup\tau$ a set that is not cellular, and has deficit at least
-$\theta_0\ge\theta_1$ on $J_\tau$, where $0$ and $\tau$ are maximal. Moving the tropical position by at most $\theta_2$
+(3) By Lemma~\ref{lem:gaps}(1), on $J_\omega$ the deficit of a lattice point $n$ of $(\omega_1\cup\omega_2)\setminus\omega$ is
+affine in the parameter $s$, with slope $\pm e(n)$, $e(n)\le e_{\max}$; so $J^\flat_\omega$ is a segment. At the midpoint
+$s=s_{\rm mid}$ these deficits are at least $\mathfrak g_\omega/2\ge(\theta_0+1)/2$, by the definition of $\mathfrak g_\omega$
+and~\eqref{eq:lambdagap}. So at the points with $|s-s_{\rm mid}|\le1/(4e_{\max})$, which lie in $J_\omega$ because
+$s_+-s_-=|J_\omega|\ge\mathfrak g_\omega/e_{\max}\ge1/e_{\max}$ by Lemma~\ref{lem:gaps}(2) and~\eqref{eq:lambdagap}, they are at
+least $\mathfrak g_\omega/2-1/4\ge\theta_0/2+1/4\ge3\theta_1/4$, as $\theta_1\le\min(\theta_0,1)$. The cells of $\mathcal F_C$
+containing $\omega$ are $\omega,\omega_1,\omega_2$ (proof of Lemma~\ref{lem:gaps}(1)), so a lattice point
+$m\notin\{0\}\cup\omega_1\cup\omega_2$ forms with $\{0\}\cup\omega$ a set that is not cellular, and has deficit at least
+$\theta_0\ge\theta_1$ on $J_\omega$, where $0$ and $\omega$ are maximal. Moving the tropical position by at most $\theta_2$
 changes the deficits by at most $2D\theta_2\le\theta_1/8$, and lowering $\log|Z|,\log|Z'|$ does not increase
 $\mathrm{val}_m-\mathrm{val}_{n_a}$, since $e_u(n_a)=e_{u'}(n_a)=0$ for the edge $[u,u']$ of $\mathcal T$ in $G^\circ$. So at the
 points of (3) the deficits of $n_a,n_b,n_c$ are at most $\theta_1/8+C/L<\theta_1/4$ and all others except the origin are
@@ -480,7 +491,7 @@ Lemma~\ref{lem:square}, with $\tilde g(x)=0$ and $E=\mathfrak m$, gives
 $\max(|\chi_1\partial_{\chi_1}\tilde g|,|\chi_2\partial_{\chi_2}\tilde g|)\ge\mathfrak m/16$, against
 $\mathcal J\le C\beta'_{\max}t^{\theta_1/4}\mathfrak m/L$ as in the proof of Lemma~\ref{lem:TR}.
 
-On the sets of (1)--(3), $I(x)$ is contained in $\{n,n'\}$, in $P$, or in $\tau$, by the weights computed there and
-because the origin vanishes on $D_{u'}$; $\{n,n'\}$ and $\tau$ are affinely independent. The same arguments apply to $D_u$
+On the sets of (1)--(3), $I(x)$ is contained in $\{n,n'\}$, in $P$, or in $\omega$, by the weights computed there and
+because the origin vanishes on $D_{u'}$; $\{n,n'\}$ and $\omega$ are affinely independent. The same arguments apply to $D_u$
 and, at turning points, to $D_{u_1}$.
 \end{proof}

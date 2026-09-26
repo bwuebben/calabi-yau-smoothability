@@ -267,7 +267,8 @@ In both cases $|Q|-\operatorname{rank}K=13$, the codimension of the nodal locus 
 We give one example on each branch of the $dP_6$ hexagon. On both, the centre $o$ of the hexagon occurs only in the
 circuits of the nodes of the hexagon, each time with coefficient $-1$ in the labelling with the diagonal through the
 centre, so every $\lambda\in K$ satisfies the tie $\sum_{q\text{ at }G}\lambda_q=0$ at the hexagon $G$. The data are in
-Appendix~\ref{app:data-hex}.
+Appendix~\ref{app:data-hex}. The subscripts $88$ and $154$ are census identifiers in the accompanying data;
+the vertex lists in that appendix specify the two polytopes.
 
 \emph{$X_{88}$, the $A_1$ branch.} The polytope $\Delta_{88}$ has $21$ vertices, $22$ unit squares, one hexagon and no
 pentagon. All three $A_1$ subdivisions of the hexagon satisfy~\ref{hyp:P}, and neither $A_2$ subdivision does. On the $A_1$ profile
@@ -324,14 +325,15 @@ the nodes, and they span it.
 The \emph{list} is the following set of $\NVertexSets$ vertex sets of reflexive four-polytopes:
 \begin{itemize}
 \item the $77$ admissible reflexive four-polytopes with at most nine vertices that have a pentagonal two-face
-\cite{Paper4}, together with $\Delta_{19}$ and $\Delta_{20}$, and the polytope $X^\circ$ of \cite{Paper4};
+\cite{Paper4}, together with $\Delta_{19}$ and $\Delta_{20}$, and the $26$-vertex polytope $\Delta_\star$
+whose face fan defines the ambient variety of the hypersurface $X^\circ$ in \cite{Paper4};
 \item the reflexive four-polytopes $\Delta$ for which every edge of $\Delta$ and of $\Delta^\circ$ is primitive, determined in
 \cite{Paper3} from the $473{,}800{,}776$ reflexive four-polytopes of the classification of Kreuzer and Skarke
 \cite{KS00};
 \item the product of two reflexive hexagons, with $36$ vertices \cite{Paper3}.
 \end{itemize}
 Of these, $\NAdmSets$ are admissible (Definition~\ref{def:admissible}), and they form $\NAdm$ polytopes up to $GL_4(\Z)$:
-the only coincidence is that $X^\circ$ is equivalent to a polytope of the second item. All $\NAdm$ occur among the
+the only coincidence is that $\Delta_\star$ is equivalent to a polytope of the second item. All $\NAdm$ occur among the
 admissible polytopes of the Kreuzer--Skarke list found in Appendix~\ref{app:unimodular}.
 Table~\ref{tab:list} gives the counts.
 
@@ -363,11 +365,11 @@ $\NPfail$ of $\NList$, all with a pentagonal two-face. On the $\NHex$ polytopes 
 on $\NHexProj$ and for none on $\NHexNoProj$; the branch patterns are counted in Table~\ref{tab:list}. Where~\ref{hyp:P} fails there is an exact certificate: an effective combination of curves
 contracted by $X'_\sigma\to X$ that is numerically a combination of exceptional curves (Section~\ref{ssec:proj}). The
 polytopes of the list with $K\neq0$ to which Theorems~\ref{thm:main}--\ref{thm:res} apply are therefore the
-$\NScope+\NHexProj=\NScopeAll$ polytopes of the last column; on every profile of a hexagonal polytope examined, $K\ne0$. (Of the $\NHexSets$ admissible vertex sets with a hexagon, $X^\circ$ and its equivalent both fail
+$\NScope+\NHexProj=\NScopeAll$ polytopes of the last column; on every profile of a hexagonal polytope examined, $K\ne0$. (Of the $\NHexSets$ admissible vertex sets with a hexagon, $\Delta_\star$ and its equivalent both fail
 \ref{hyp:P} on every profile.)
 
 \emph{Theorem~\ref{thm:real} on the list.} Theorem~\ref{thm:real} is proved in Section~\ref{sec:cycles}; the following
-computation corroborates it and is not used in the proof. On the bases of the $\NScope$ hexagon-free polytopes in scope
+computation corroborates it and is not used in the proof. On the bases of the $\NScope$ hexagon-free polytopes satisfying~\ref{hyp:P}
 and, in addition, on the bases of $X_9$, $X_{19}$, $X_{20}$ built from the heights in the accompanying data
 (\coderepo; $\NThmCBases$ bases, with $\operatorname{rank}K$ between $1$ and $36$ and up to $60$ nodes) we computed a
 basis of the group $\mathrm{Bal}(\Gamma)$ of balanced networks, checked $\rho(\mathrm{Bal}(\Gamma))=K$ by a Smith normal
@@ -389,21 +391,21 @@ condition~(b) of Corollary~\ref{cor:smooth}. At a hexagon the forced nodes depen
 the three $A_1$ subdivisions give the same centre-free combination $\pm(e_{w_0}-e_{w_1}+e_{w_2}-e_{w_3}+e_{w_4}-e_{w_5})$ of
 their two circuits, and the two $A_2$ subdivisions give the same plane of centre-free combinations of their three circuits,
 with the same three lines on which one node coefficient vanishes (Remark~\ref{rem:tie}). We computed a
-$\Z$-basis of $K$ and the forced nodes in exact integer arithmetic for every polytope in scope and every branch pattern
+$\Z$-basis of $K$ and the forced nodes in exact integer arithmetic for every polytope satisfying~\ref{hyp:P} and every branch pattern
 on which~\ref{hyp:P} holds. For a polytope with several hexagons we first test the profiles found by the search for
 \ref{hyp:P}; where each of them has a forced node, an exact search of the same kind over all profiles whose branch
 pattern has no forced node decides whether one of them satisfies~\ref{hyp:P}; for the count by mixed profiles the same
 search is run over the mixed patterns without forced node whenever the mixed profile found first has a forced node. The
 result:
 \begin{itemize}
-\item among the $\NScope$ hexagon-free polytopes in scope, condition~(b) holds on $\NCorBHexFree$;
-\item among the $\NHexProj$ hexagonal polytopes in scope, it holds for some profile satisfying~\ref{hyp:P} on
+\item among the $\NScope$ hexagon-free polytopes satisfying~\ref{hyp:P}, condition~(b) holds on $\NCorBHexFree$;
+\item among the $\NHexProj$ hexagonal polytopes satisfying~\ref{hyp:P}, it holds for some profile satisfying~\ref{hyp:P} on
 $\NCorBHex$: on $\NCorBHexOne$ of the $\NHexOne$ with one hexagon and on $\NCorBHexMany$ of the $\NHexMany$ with several.
 By branch pattern, it holds on $\NCorBAoneWit$ of the $\NHexAone$ polytopes with an $A_1$ profile satisfying~\ref{hyp:P},
 on $\NCorBAtwoWit$ of the $\NHexAtwo$ with an $A_2$ profile, and on $\NCorBMixedWit$ of the $\NHexMixed$ with a mixed
 profile.
 \end{itemize}
-So on $\NCorBAll$ of the $\NScopeAll$ polytopes in scope, $X'_\sigma$ has a smoothing for some profile, and for that
+So on $\NCorBAll$ of the $\NScopeAll$ polytopes satisfying~\ref{hyp:P}, $X'_\sigma$ has a smoothing for some profile, and for that
 profile the vanishing spheres of the mirror satisfy a relation with every coefficient nonzero. On the other
 $\NCorBFail$ every profile satisfying~\ref{hyp:P} has a forced node; by Corollary~\ref{cor:smooth}, $X'_\sigma$ then has no
 smoothing and every relation among the $\delta_q$ has a zero coefficient. The programs for these computations are
@@ -416,7 +418,7 @@ kinds that definition allows, and whose boundaries pass each node at most once a
 coefficients generating $K$. It is the lattice form, for the bases $B'_\sigma$, of the
 conjecture of Casta\~no-Bernard and Matessi that every good relation among the vanishing cycles is a combination of
 relations coming from tropical $2$-cycles \cite[\S1, Conj.~8.3]{CBM}. We tested it on the $\NScope$ hexagon-free
-polytopes of the list in scope, each on the base built from a height of Theorem~\ref{thm:U}.
+polytopes of the list satisfying~\ref{hyp:P}, each on the base built from a height of Theorem~\ref{thm:U}.
 
 The evidence separates the boundary of a tropical $2$-cycle from its interior. By clauses (d), (e) and (h) of
 \cite[Def.~7.2]{CBM}, the boundary network of a strict tropical $2$-cycle has the following form.
@@ -479,7 +481,7 @@ $k$ trivalent vertices whose node coefficients lie outside a hyperplane of $K\ot
 without trivalent vertices. For $X_9$, $X_{19}$ and $X_{20}$ the values so obtained are $k(X)=0,4,2$, in accordance with
 Table~\ref{tab:x19x20}.
 \end{enumerate}
-On the hexagonal polytopes in scope, strict cycles constructed in the same way generate $K$ with index one on
+On the hexagonal polytopes satisfying~\ref{hyp:P}, strict cycles constructed in the same way generate $K$ with index one on
 $\NHexRealAone$ of the $\NHexAone$ polytopes with an $A_1$ profile satisfying~\ref{hyp:P} and on $\NHexRealAtwo$ of the
 $\NHexProfAtwo$ with an $A_2$ or mixed profile, each on one profile; on the other six the construction stopped with a
 sublattice of smaller rank, or did not produce generators of $K$.
