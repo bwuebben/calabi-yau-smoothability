@@ -1,29 +1,24 @@
-# Tropical 2-cycles and relations among vanishing spheres in Batyrev mirror families
+# Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds
 
 Paper 6 · Bernd Johannes Wuebben · 190 pages
 
 [PDF](cy-vanishing-spheres.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 
-Morrison proposed that mirror symmetry exchanges the two sides of a conifold
-transition. This paper proves that prediction for Batyrev hypersurfaces whose
-singular points are nodes and cones over del Pezzo surfaces of degrees six and
-seven, under the hypothesis that the crepant partial resolution with only nodes
-is induced by a projective toric morphism. Near the maximally degenerate limit,
-the vanishing spheres of the mirror family satisfy exactly the integral
-relations of the exceptional curves of a small resolution, and the members with
-all these nodes form a smooth locus whose codimension is the relative Picard
-number. Consequently the threefold is smoothable exactly when the vanishing
-spheres of its mirror satisfy a relation with every coefficient nonzero.
-
-Every relation is realised by an explicit integral chain lifted from a relative
-tropical 2-cycle on the base of Gross's toric degeneration; that the node
-coefficients of these cycles generate the relation lattice is proved by a
-homology computation in the complement of the discriminant. For the tropical
-2-cycles of Castaño-Bernard and Matessi the paper also constructs the
-corresponding chains on the small resolution. A combinatorial condition used in
-the construction (a unimodular triangulation with a convex height) is verified
-for all admissible reflexive polytopes by a computer-assisted check of the
-Kreuzer–Skarke list.
+We establish and strengthen Morrison's numerical prediction for conifold transitions
+under mirror symmetry for a class of toric Calabi–Yau threefolds. We consider
+anticanonical hypersurfaces with nodes and isolated cones over del Pezzo surfaces of
+degrees six and seven, at most one singularity on each torus orbit, and a nodal crepant
+partial resolution induced by a projective toric morphism. For suitable degenerations of
+the Batyrev mirror family near the maximally degenerate limit, we prove that the
+exceptional curves of a small resolution and the mirror vanishing spheres have the same
+integral relation lattice, and that the spheres generate a torsion-free subgroup. Every
+relation is realised by an explicit integral four-chain lifted from a relative tropical
+two-cycle on the base of Gross's toric degeneration. The corresponding nodal locus is
+smooth of codimension equal to the relative Picard number, as Morrison predicts.
+Consequently, the nodal partial resolution is smoothable precisely when the mirror
+spheres admit a relation with every coefficient nonzero. The required triangulations are
+established by a computer-assisted verification over the specified class of reflexive
+polytopes.
 
 The source consists of `main.tex` and the section files it inputs.
 

@@ -34,7 +34,7 @@ mixed criterion for those degrees.
 | 3. Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau threefolds | [paper3/](paper3/README.md) | [cy-mirror-pairs.pdf](paper3/cy-mirror-pairs.pdf) | 11 |
 | 4. A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds | [paper4/](paper4/README.md) | [cy-vanishing-cycle.pdf](paper4/cy-vanishing-cycle.pdf) | 32 |
 | 5. Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points | [paper5/](paper5/README.md) | [cy-mixed-smoothing.pdf](paper5/cy-mixed-smoothing.pdf) | 61 |
-| 6. Tropical 2-cycles and relations among vanishing spheres in Batyrev mirror families | [paper6/](paper6/README.md) | [cy-vanishing-spheres.pdf](paper6/cy-vanishing-spheres.pdf) | 190 |
+| 6. Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds | [paper6/](paper6/README.md) | [cy-vanishing-spheres.pdf](paper6/cy-vanishing-spheres.pdf) | 190 |
 
 Each `paperN/` directory holds `main.tex` and its compiled PDF. Paper 5's
 source also includes `sections/`. Supporting computations are in `src/`
@@ -160,21 +160,18 @@ the verified inputs to their bounded censuses.
    lattice facets rigid, and **3,005** with a decomposable containing facet. These are
    counts of facet conditions, not an unrestricted smoothability census.
 
-6. **Tropical 2-cycles and relations among vanishing spheres in Batyrev
-   mirror families** ([paper6/](paper6/README.md)) — for Batyrev
-   hypersurfaces whose singular points are nodes and cones over del Pezzo
-   surfaces of degrees six and seven, and whose nodal crepant partial
-   resolution is induced by a projective toric morphism, the vanishing
-   spheres of the mirror family near its maximally degenerate limit satisfy
-   exactly the integral relations of the exceptional curves of a small
-   resolution, and the nodal mirrors have the codimension predicted by
-   Morrison. The threefold is smoothable exactly when the vanishing spheres
-   of its mirror satisfy a relation with every coefficient nonzero. The
-   relations are realised by chains lifted from relative tropical 2-cycles on
-   Gross's affine base. A unimodular-triangulation condition used in the
-   construction is verified for all **51,827** admissible reflexive
-   polytopes of the Kreuzer–Skarke list. The programs and data for this
-   paper will be added to `paper6/`.
+6. **Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds**
+   ([paper6/](paper6/README.md)) — establishes and strengthens Morrison's
+   numerical prediction for the specified class of toric hypersurfaces with
+   nodes and degree-six/seven del Pezzo cone points, assuming a projective
+   toric nodal partial resolution. For suitable degenerations of the Batyrev
+   mirror family, the exceptional curves and mirror vanishing spheres have
+   the same integral relation lattice, and the spheres generate a torsion-free
+   subgroup. Explicit integral four-chains realise every relation. The nearby
+   nodal locus has the predicted codimension, and smoothability of the nodal
+   partial resolution is equivalent to a mirror relation with every coefficient
+   nonzero. The required triangulations are verified for all **51,827**
+   admissible reflexive polytopes. The programs and data will be added to `paper6/`.
 
 The classification-wide counts use a complete set of distinct reflexive
 polytopes up to lattice equivalence. PALP verifies these properties for
