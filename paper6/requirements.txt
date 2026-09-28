@@ -1,0 +1,5 @@
+# Classification filter only; tested with Python 3.14, NumPy 2.5.1 and PyArrow 25.0.0.
+# Integer/example/forced-node/summary checks use only the standard library.
+# SageMath 10.9 and PALP are external tools.
+numpy>=1.26
+pyarrow>=15

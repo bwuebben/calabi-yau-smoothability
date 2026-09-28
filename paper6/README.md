@@ -31,6 +31,16 @@ latexmk -pdf main.tex
 
 ## Computations
 
-The programs and data cited in the paper (the unimodular-height certificates
-and their two checking programs, the data of the examples, and the counts of
-Section 11) will be added to this directory.
+The [computation bundle](COMPUTATIONS.md) contains:
+
+- [Unimodular-height certificates](unimodular/) for all 51,827 admissible
+  polytopes, with integer and exact rational checking programs.
+- [Exact data and checks for the five worked examples](examples/).
+- [Forced-node and projectivity data](forced_nodes/) for the finite input list.
+- [Tropical-cycle census summaries](census/README.md), with their verification
+  scope and retained-evidence limitations stated explicitly.
+- [Classification input provenance](provenance/DATASET_CHECK.md) and a
+  [file-integrity manifest](MANIFEST.json).
+
+See [COMPUTATIONS.md](COMPUTATIONS.md) for dependencies and reproduction commands.
+The large raw classification files are external; their pinned hashes are included.

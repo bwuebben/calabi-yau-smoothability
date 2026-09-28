@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "files": {
+    "README.md": {
+      "bytes": 7737,
+      "sha256": "fc36a96c9145eb271020641470c0222b9bc04b4fa8de79c16358023ab2e30eae"
+    },
+    "census/README.md": {
+      "bytes": 2248,
+      "sha256": "b5811b7b863f7f1de679827d3077b3d3f4f44695fc3ce8465571da91cf90bfd2"
+    },
+    "census/check_census.py": {
+      "bytes": 4026,
+      "sha256": "92f9e4b4efaa7669cc64fb4bf1e1c4747650652eee4d12b2daa3873f41b3f7ff"
+    },
+    "census/results.json": {
+      "bytes": 303027,
+      "sha256": "6b2e68e43ef02c38cbd2edba19e1aff4ef7dd5a2259b74dfa8bafe244ee7a5d7"
+    },
+    "examples/corrupted_examples_test.py": {
+      "bytes": 1686,
+      "sha256": "65851b0bc001aedb2c9f37be1408a588b208466ef33ee8d454bde7d4beab8c31"
+    },
+    "examples/examples_check.py": {
+      "bytes": 58765,
+      "sha256": "ea580829b716c0b1807e4913085557d84deb84d968cb24bc41b7fcc4c7af59a0"
+    },
+    "examples/x154.json": {
+      "bytes": 256872,
+      "sha256": "515fa7e0d45c79719cc5c689a8ed061252434a1e48d1952e67e0df8f9d0b21cf"
+    },
+    "examples/x19.json": {
+      "bytes": 1273766,
+      "sha256": "c06059b6d1ee4205a3faf1de5d6808deb7b626ae158ad231f5c56c8eb6796179"
+    },
+    "examples/x20.json": {
+      "bytes": 729635,
+      "sha256": "3754dc4221189ac6ce73886d125518670c578090eeabc5a762f19783f6074e3c"
+    },
+    "examples/x88.json": {
+      "bytes": 621323,
+      "sha256": "9f3d57f2e2f5e4bb258f2941dd061c2a7d7f1e2a48675c11719eeac526958ed7"
+    },
+    "examples/x9.json": {
+      "bytes": 141919,
+      "sha256": "725866c5f382205bbb85cac55d9bcc6df6324f79050747bf58af3ca4d5ba3f16"
+    },
+    "forced_nodes/forced_nodes_check.py": {
+      "bytes": 40499,
+      "sha256": "0c7c5b6f916d4994e75fe0851d1f8ad7ff5ca6c13291a6f285313f282c2838cc"
+    },
+    "forced_nodes/list_polytopes.json.gz": {
+      "bytes": 214923,
+      "sha256": "b90a36f0e1c28f1897a2060faacd3b6e7ce5599940b7abd3928102182c95004f"
+    },
+    "forced_nodes/proj_certificates_generate.py": {
+      "bytes": 18961,
+      "sha256": "962060e1353435967d18620cbafc7d92ba2f84220ebb9dd415b662633f50c6d1"
+    },
+    "forced_nodes/projectivity_hints.json": {
+      "bytes": 4079,
+      "sha256": "1116d55ba1b6b99f4580bc9ea559170967179fc0e085d9bafd2e910a23e26b75"
+    },
+    "forced_nodes/source_vertices.json": {
+      "bytes": 222828,
+      "sha256": "cd1a3236ac8cd083658f6f6cb14e2c9f5fec83bba1a88beb4a86125baf9593d8"
+    },
+    "provenance/DATASET_CHECK.md": {
+      "bytes": 2182,
+      "sha256": "ff3ca376898056d5aa2e8dce80f347750ab622162a5414fdba9ec8cdb4b940c9"
+    },
+    "provenance/classification_inventory.json": {
+      "bytes": 6226,
+      "sha256": "a9f4654a6da4701597c29168a0dc7d0fed34ce30adad6e1f62b9e0a9c83d6d4f"
+    },
+    "provenance/ks_polytopes_4d_sha256.tsv": {
+      "bytes": 3529,
+      "sha256": "51a41c7e901792a9fdd98481fe781130a6bfeea2083ee9bbcb0b292fc74ea769"
+    },
+    "requirements.txt": {
+      "bytes": 232,
+      "sha256": "9f0df9ad54847ff5f3dede4bed981bf2b8b663397bf1fe7e20accd6eb2c31ed2"
+    },
+    "unimodular/_lib/batyrev_global.py": {
+      "bytes": 20595,
+      "sha256": "2224bde10ccbb5c1dcac09a172dac3889d9d125749b8cf052045964e0409d96b"
+    },
+    "unimodular/_lib/hodge_numbers.py": {
+      "bytes": 3853,
+      "sha256": "9257b1396722d0f20da34ffd808db2415d89b713bd38167a071c6f1f1aa5a3a0"
+    },
+    "unimodular/_lib/ks_sweep.py": {
+      "bytes": 29617,
+      "sha256": "8f3c1b49ae0c16383e29e54349ba015386c431f23d6a022be81f34df1df6f9fc"
+    },
+    "unimodular/_lib/plant_search.py": {
+      "bytes": 18637,
+      "sha256": "12351a0ab9bdcaf4ed6a951afbd063cf210b0d89d2de3a8c4d2631ac1f8db53f"
+    },
+    "unimodular/_lib/toric_census.py": {
+      "bytes": 16337,
+      "sha256": "2c1031d01692101d73ee4a2304fd77cc6663493bb83b5a5796dec427b70e540d"
+    },
+    "unimodular/admissible_filter.py": {
+      "bytes": 9159,
+      "sha256": "64e60922454faf1a3bec89cf841163ad541cbf2340e9c5209c75bc245a75ad3c"
+    },
+    "unimodular/certificates/heights_v05.jsonl.gz": {
+      "bytes": 4076,
+      "sha256": "31bbb2a70748025db893b57aec92be374a6d3510a40eb37a6801bb28e9d60e03"
+    },
+    "unimodular/certificates/heights_v06.jsonl.gz": {
+      "bytes": 17724,
+      "sha256": "c68d5cdd6509675bf91fc23715a47e3ce56b0698f9e0d0cf110688099bf2d4ca"
+    },
+    "unimodular/certificates/heights_v07.jsonl.gz": {
+      "bytes": 54793,
+      "sha256": "b630a197d962f02d4bbfe38460865dd2e60630d9c358222b96ae79be63f5047f"
+    },
+    "unimodular/certificates/heights_v08.jsonl.gz": {
+      "bytes": 128797,
+      "sha256": "d4163a49f01c44ac3e67a534bdb245d8e4db5bebd78b0d330f4494e52543ec93"
+    },
+    "unimodular/certificates/heights_v09.jsonl.gz": {
+      "bytes": 244901,
+      "sha256": "ce4cdd94aaf8304c3fc1b67e3f072322655337deccf2f5558c36657aa8d91824"
+    },
+    "unimodular/certificates/heights_v10.jsonl.gz": {
+      "bytes": 392053,
+      "sha256": "fedb97ede46e21df70364368fe3e361655ac957f60574287db40394e27643135"
+    },
+    "unimodular/certificates/heights_v11.jsonl.gz": {
+      "bytes": 563912,
+      "sha256": "fd3c81fe38c1be05cc49d56e1582b88763c3e15dab05ed3ec69bcbb906dfe6a8"
+    },
+    "unimodular/certificates/heights_v12.jsonl.gz": {
+      "bytes": 734708,
+      "sha256": "b954bad5f41f01fa39ba9ce771a18d516f104691708936f980f1d0a33a484fdc"
+    },
+    "unimodular/certificates/heights_v13.jsonl.gz": {
+      "bytes": 869025,
+      "sha256": "acc10a880e1f7bd8c59431cb03872e9eefb332bf104510ecc16278ae7fb7113a"
+    },
+    "unimodular/certificates/heights_v14.jsonl.gz": {
+      "bytes": 930248,
+      "sha256": "dd7d0b3805d3579ed9b918bdf80de2e8e79aa86ae13cadfc66ee18ce43a84fed"
+    },
+    "unimodular/certificates/heights_v15.jsonl.gz": {
+      "bytes": 931674,
+      "sha256": "eb3be6e5241ce0260aef7948dcbb8eb162bdffac08d05626900c74cc673523fe"
+    },
+    "unimodular/certificates/heights_v16.jsonl.gz": {
+      "bytes": 882539,
+      "sha256": "301bc94e05b74182d3d531554ddf7a9d373610797152632523dfef5fc5133b9c"
+    },
+    "unimodular/certificates/heights_v17.jsonl.gz": {
+      "bytes": 764375,
+      "sha256": "50f250a44d36ae9c206d40fd48406cc76033e33336cf9e8c069c82c4468f2e2a"
+    },
+    "unimodular/certificates/heights_v18.jsonl.gz": {
+      "bytes": 621944,
+      "sha256": "ff22dab9c02967b1d1331c53cfbfb70cac82d73705a4e3b10ff89ff2333890f5"
+    },
+    "unimodular/certificates/heights_v19.jsonl.gz": {
+      "bytes": 480095,
+      "sha256": "2a3573fb2ff21a8a1fec240efb5cfeb167187d18ad21796c03773d7aef8c5b38"
+    },
+    "unimodular/certificates/heights_v20.jsonl.gz": {
+      "bytes": 353089,
+      "sha256": "31691ae1bdaf2e2be06f55414c2f0068219a3b2819cf32bbf3b7d9c93338843b"
+    },
+    "unimodular/certificates/heights_v21.jsonl.gz": {
+      "bytes": 236972,
+      "sha256": "15675611dca8673ad22caea80099a5470fdbcc940d7edb32303be4e88210fe05"
+    },
+    "unimodular/certificates/heights_v22.jsonl.gz": {
+      "bytes": 150414,
+      "sha256": "cd22b8705a6fc63468fae392271197f6b3ad25f3329da47fd8b2eb145d611e09"
+    },
+    "unimodular/certificates/heights_v23.jsonl.gz": {
+      "bytes": 93627,
+      "sha256": "9202433514cfe7aff28f2f26f12d979a93b1ddd65c59a06856a96cef5bd052d7"
+    },
+    "unimodular/certificates/heights_v24.jsonl.gz": {
+      "bytes": 53088,
+      "sha256": "cb72da1c5e5c16b59b3b74e51b8d4e7b985a152b740d8edab87f3920bcd9449d"
+    },
+    "unimodular/certificates/heights_v25.jsonl.gz": {
+      "bytes": 27638,
+      "sha256": "6527161367e5a5c5553124e8e80e4f0e76b1078017b16e9c8c239d11b181bd64"
+    },
+    "unimodular/certificates/heights_v26.jsonl.gz": {
+      "bytes": 15781,
+      "sha256": "232a86a9f9fef81c863922ab14e532cea053588fec4b749de47583470fef34f5"
+    },
+    "unimodular/certificates/heights_v27.jsonl.gz": {
+      "bytes": 7632,
+      "sha256": "49c9c2de13d05c7d1f5c772ad299ffc1a7614a160974277c7979eb6fb23a8792"
+    },
+    "unimodular/certificates/heights_v28.jsonl.gz": {
+      "bytes": 3872,
+      "sha256": "9f32a863f0c013633110cd3af99c1b73bc5a83d0aa27e8ac230ac29fc451b8e8"
+    },
+    "unimodular/certificates/heights_v29.jsonl.gz": {
+      "bytes": 1801,
+      "sha256": "579a856b2309bed8001e1acca4f3de06098cfd99ec93e9d59ae7f9a95da1c9ea"
+    },
+    "unimodular/certificates/heights_v30.jsonl.gz": {
+      "bytes": 1128,
+      "sha256": "bd3c3540979562013ef19c4f4db13f9a74b1d4c11f8f2ccaa1485cbdce23df13"
+    },
+    "unimodular/certificates/heights_v31.jsonl.gz": {
+      "bytes": 672,
+      "sha256": "db4608efc1fb1f866b7c55ca99ac42df5ef7bfd003bbee64332f7291df93a564"
+    },
+    "unimodular/certificates/heights_v32.jsonl.gz": {
+      "bytes": 38,
+      "sha256": "d14f8bba7ad39cf7c0011866974c216b6082def0cce38a5ee3802c5a179f9a56"
+    },
+    "unimodular/certificates/heights_v33.jsonl.gz": {
+      "bytes": 336,
+      "sha256": "1894b4df4e3b3a9d61c5c11f7dd5f3fd8121fe293567830f6f5331bfb061cd25"
+    },
+    "unimodular/certificates/heights_v36.jsonl.gz": {
+      "bytes": 329,
+      "sha256": "db86b8dd681f806ac8f162932d8b210aa52c647829e8f32fc53b8f6490f490dd"
+    },
+    "unimodular/check_certificates_rational.py": {
+      "bytes": 10347,
+      "sha256": "a60092ccafd4007d746e3cb285ebe437de5c7596ff8c3a4ee130c3f239032bf3"
+    },
+    "unimodular/check_unimodular_certificates.py": {
+      "bytes": 18376,
+      "sha256": "f0b345cf2fc36cbc2589a1d537af7768c8ee9507c3c8158ff922e57a6c3ee05a"
+    },
+    "unimodular/corrupted_certificates_test.py": {
+      "bytes": 4118,
+      "sha256": "1e9ce946f883711b17e318774c1c5368391fa8b9f783ede6372b362550821b26"
+    },
+    "verify_manifest.py": {
+      "bytes": 1044,
+      "sha256": "f11e41c6554a0fe0a9596aa4443462f586d2c30cd4b897965094c1e6e930db5c"
+    }
+  },
+  "scope": "Exact examples, forced-node/projectivity and triangulation data; explicitly labelled census summaries."
+}

@@ -172,7 +172,9 @@ the verified inputs to their bounded censuses.
    partial resolution is equivalent to a mirror relation with every coefficient
    nonzero; when a smoothing exists, the mirror admits a symplectic conifold
    transition. The required triangulations are verified for all **51,827**
-   admissible reflexive polytopes. The programs and data will be added to `paper6/`.
+   admissible reflexive polytopes. The [computation bundle](paper6/COMPUTATIONS.md) supplies the
+   certificates and checkers, five worked examples, forced-node data and
+   explicitly labelled census summaries.
 
 The classification-wide counts use a complete set of distinct reflexive
 polytopes up to lattice equivalence. PALP verifies these properties for
