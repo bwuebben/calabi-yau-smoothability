@@ -19,14 +19,14 @@ We write $dP_k$ for a del Pezzo surface of degree $k$.
 
 For a finite set of lattice points $n$ with heights $H(n)$ the tropical polynomial is
 $m\mapsto\min_n\bigl(H(n)+\langle m,n\rangle\bigr)$, $m\in M_\R$, and its tropical hypersurface is the locus where the minimum is
-attained at least twice. This is the convention of \cite{Gross2005} and of Sections~\ref{sec:base}--\ref{sec:legendre}
-and~\ref{sec:resolution}; Sections~\ref{sec:regime}--\ref{sec:periods} use $p=-m$ and maxima of valuations, as stated
+attained at least twice. This convention is compatible with the signs of \cite{Gross2005}, and it is used in
+Sections~\ref{sec:base}--\ref{sec:legendre} and~\ref{sec:resolution}; Sections~\ref{sec:regime}--\ref{sec:periods} use $p=-m$ and maxima of valuations, as stated
 there.
 
 \subsection{Admissible polytopes and profiles}\label{ssec:admissible}
 A \emph{$dP_7$ pentagon} is a lattice pentagon with exactly one interior lattice point, its \emph{centre} $o$, and no
 lattice points on its boundary besides its vertices; a \emph{$dP_6$ hexagon} is a lattice hexagon with the same two
-properties. Up to $GL_2(\Z)$ the hexagon has vertices $w_0,\dots,w_5=(1,0),(1,1),(0,1),(-1,0),(-1,-1),(0,-1)$ and centre
+properties. Up to $GL_2(\Z)$ and translation the hexagon has vertices $w_0,\dots,w_5=(1,0),(1,1),(0,1),(-1,0),(-1,-1),(0,-1)$ and centre
 $o=(0,0)$, and $w_j+w_{j+2}=o+w_{j+1}$ for all $j$ (indices modulo $6$).
 
 \begin{definition}[admissible polytopes]\label{def:admissible}
@@ -101,7 +101,9 @@ has edges called \emph{arcs}. Each arc is a union of \emph{legs}, the segments j
 a two-cell of $\mathscr P$. Each leg $E$ carries a primitive \emph{vanishing vector} $d_E=n'-n\in N$, where
 $\{n,n'\}$ is the lower support of the edge, namely the cell of $\Sigma'$ underlying it in Gross's construction
 (Section~\ref{ssec:gross}); the
-monodromy around $E$ is the transvection $x\mapsto x+\langle\alpha_E,x\rangle d_E$ for a covector $\alpha_E$. The
+monodromy around $E$ is the transvection $x\mapsto x+\langle\alpha_E,x\rangle d_E$ for a covector $\alpha_E$. The legs
+of an arc $A$ have the same lower support, so their vanishing vectors agree up to sign; we write $d_A$ for one of them
+(Section~\ref{ssec:coef}). The
 four-valent vertices of $\Gamma$ are in bijection with $Q$: the vertex $p_q$ lies on the two-cell of $\mathscr P$ over the
 node parallelogram of $q$, and after an isotopy supported in that two-cell it is a negative node in the sense of
 Casta\~no-Bernard and Matessi \cite[Def.~6.3]{CBM} (Proposition~\ref{prop:base}). We write $\Lambda$ for the local system of integral tangent vectors on $B\setminus\Gamma$ and
@@ -112,7 +114,8 @@ Let $\mathfrak K$ be a triangulation of $B$ in which $\Gamma$ is a full subcompl
 $\mathscr P$ is one (Lemma~\ref{lem:full}). For a simplex $s$ of $\mathfrak K$ let $F(s)$ be the group of flat sections of
 $\Lambda$ over $V\setminus\Gamma$ for a small neighbourhood $V$ of the closed simplex $\bar s$; faces restrict. Let
 $C_*(\mathfrak K;F)$ be the simplicial chain complex with these coefficients, and $C_*(\Gamma;\mathcal D)\subset
-C_*(\mathfrak K;F)$ the subcomplex of chains on $\Gamma$ whose coefficient on every edge $E$ of $\mathfrak K$ in $\Gamma$ lies in $\Z d_E$. A
+C_*(\mathfrak K;F)$ the subcomplex of chains on $\Gamma$ whose coefficient on every edge $E$ of $\mathfrak K$ in $\Gamma$ lies in $\Z d_E$,
+where $d_E:=\pm d_A$ for the arc $A$ whose closure contains $E$ (the sign does not affect $\Z d_E$). A
 \emph{relative tropical $2$-cycle} is a chain $z\in C_2(\mathfrak K;F)$ with $\partial z\in C_1(\Gamma;\mathcal D)$. We
 write $Z(\mathfrak K)$ for the group of relative tropical $2$-cycles, and call
 $\partial z=\sum_Ec_E\,d_E\,[E]$ the \emph{boundary network} of $z$.
@@ -123,6 +126,13 @@ whose boundary lies on the discriminant, and runs along each leg in the directio
 coefficient of a triangle is an integral tangent vector of $B$ that is invariant under the local monodromy wherever the
 triangle meets $\Gamma$. The tropical $2$-cycles of Casta\~no-Bernard and Matessi \cite[Def.~7.2]{CBM}, triangulated, are
 relative tropical $2$-cycles (Section~\ref{ssec:cbm}); we call the cycles of their definition \emph{strict}.
+Here and below \cite[Def.~7.2]{CBM} is applied to $B'_\sigma$ with the two readings of Section~\ref{ssec:cbm}: clause~(i)
+is read as conjugacy in $GL_2(\Z)$, and a negative vertex means a vertex of negative type
+(Definition~\ref{def:types}); Theorem~\ref{thm:res} below holds also under the stricter reading of~(i) as conjugacy in
+$SL_2(\Z)$, whose class of cycles is contained in this one, while the content of Conjecture~\ref{conj:strict} depends on
+the reading.
+The definition of Casta\~no-Bernard and Matessi allows a topological embedding $j$; throughout, strict cycles are taken with $j$ piecewise linear,
+which the triangulation requires.
 The relative ones are allowed non-primitive fields, arbitrary
 branching along edges, crossings of $\Gamma$ with any invariant field, and boundary networks that pass a node in both
 directions or with multiplicity.
@@ -152,7 +162,7 @@ Y_{t,c}=\Bigl\{\sum_{n\in\mathcal A}c_n\,t^{H(n)}\,x^n=0\Bigr\}\subset X_{\mathc
 where $x^n$ is the Cox monomial of $n$, $c=(c_n)$ is a coefficient vector, and the height is $H=k_0\varphi+h_C$: here
 $\varphi$ equals $1$ on $\partial\Delta$ and is linear on the cones over the faces of $\Delta$, $h_C$ is a strictly
 convex height with integral slopes inducing the \emph{pulling refinement} $\mathcal F_C$ of $\Sigma'$
-(Section~\ref{ssec:mirrorsub}), and $k_0$ is an integer bounded below by lattice data (Lemma~\ref{lem:gaps}). As
+(Section~\ref{ssec:mirrorsub}), and $k_0$ is an integer bounded below in terms of the lattice data and $h_C$ (Lemma~\ref{lem:gaps}). As
 $t\to0$ the members approach the maximally degenerate limit.
 
 For a node parallelogram $P=abcd$ the \emph{node binomial ratio} of $c$ is $\mu_P=c_ac_c/(c_bc_d)$; the face polynomial
@@ -160,17 +170,17 @@ $c_ax^a+c_bx^b+c_cx^c+c_dx^d$ is a product of two binomials exactly when $\mu_P=
 coefficient vectors with $c_0>0>c_n$ for $n\neq0$ and $\mu_P=1$ for every $P$. Every real $c$ with this sign pattern is
 uniquely $c=c^{(0)}e^{\xi}$ with $c^{(0)}\in\mathcal Z$ and $\xi\in\operatorname{span}_\R\{r_P\}$, where
 $r_P=e_a+e_c-e_b-e_d$, so that $r_P=-\circv_q$ under $\Z^R\subseteq\Z^{\Delta\cap N}$; then $\log\mu_P(c)=r_P\cdot\xi$. For $t$ small and $c$ in the window of Theorem~\ref{thm:main} below,
-in which every $|\log\mu_P|$ lies between two fixed small positive bounds, the defining function of $Y_{t,c}$ has,
-for each $P$, a unique nondegenerate critical point $q_P$ in a polydisc $\mathbb D_P$ about a point of the torus orbit
-associated with the edge dual to $P$ (Section~\ref{ssec:morse}). Its critical value is small and nonzero, and $\delta_q\subset Y_{t,c}$
+in which every $|\log\mu_P|$ lies between two fixed small positive bounds, the defining section of $Y_{t,c}$,
+trivialised by dividing by its term $c_at^{H(a)}x^a$, has, for each $P$, a unique nondegenerate critical point $q_P$ in a polydisc $\mathbb D_P$ about a point of the torus orbit
+associated with the edge dual to $P$ (Section~\ref{ssec:morse}). Its critical value for this trivialisation is small and nonzero, and $\delta_q\subset Y_{t,c}$
 denotes its vanishing $3$-sphere, oriented by the convention of Definition~\ref{def:orient}.
 
 \subsection{Results}\label{ssec:results}
 
 \begin{mainthm}[relations among the vanishing spheres]\label{thm:main}
 Let $\Delta$ be admissible, with a profile $\sigma$ satisfying~\ref{hyp:P}. There are $\eta_1>0$ and $C\ge1$, depending
-only on $\Delta$, $\Sigma'$, $\mathcal T$, the height $H$ and auxiliary lattice vectors fixed in
-Section~\ref{ssec:member}, with the following property. For every $\eta_0\in(0,\eta_1]$
+only on the vectors $r_P$, $P\in Q$, and the auxiliary direction $\bar\xi$ fixed in Lemma~\ref{lem:eta}, with the
+following property. For every $\eta_0\in(0,\eta_1]$
 and every compact set $\mathscr C_0\subset\mathcal Z$ there is $t_0>0$ such that for $0<t<t_0$ and every real coefficient
 vector $c$ with $c_0>0>c_n$ $(n\neq0)$, component $c^{(0)}\in\mathscr C_0$, and
 $\eta_0/C\le|\log\mu_P(c)|\le\eta_0$ for every $P$, the member $Y_t=Y_{t,c}$ is smooth and:
@@ -190,8 +200,13 @@ $\widehat X\to X'_\sigma$.
 \end{mainthm}
 
 Morrison proposed that mirror symmetry exchanges the two sides of a conifold transition, with the number of conditions
-imposed by the nodes on one side equal to the relative Picard number on the other \cite[\S3.1]{Mor99}; item~(3) is
-this count, and item~(1), with Proposition~\ref{prop:integral}, identifies the relations on the two sides
+imposed by the nodes on one side equal to the relative Picard number on the other \cite[\S3.1]{Mor99}. His setting
+is a conifold transition, so $X'_\sigma$ is assumed smoothable there. Item~(3) is this count in the space of
+coefficient vectors of the Batyrev family, for smoothable and non-smoothable $X'_\sigma$ alike. The factoring locus
+of Section~\ref{ssec:periodsremarks}, cut out in $U$ by the equations $\mu_P=1$, that is $\eta_P=r_P\cdot\xi=0$ with
+$\xi\in\C^{\mathcal A}$ as in Definition~\ref{def:window}, has the same codimension, since the $r_P$ span a space of
+dimension $|Q|-\operatorname{rank}K$; item~(3) concerns the nodal locus itself, on which
+all $|Q|$ nodes are present. Item~(1), with Proposition~\ref{prop:integral}, identifies the relations on the two sides
 integrally: the exceptional curves of $\widehat X$ and the vanishing spheres of $Y_t$ have the same relation lattice $K$. For a projective conifold transition
 the relations among the vanishing spheres and among the exceptional curves are mutual annihilators
 \cite[Thm.~1.14]{LLW18}; item~(1) is the statement that crosses the mirror.
@@ -204,18 +219,22 @@ Under the hypotheses of Theorem~\ref{thm:main} the following are equivalent:
 $\lambda_q\neq0$;
 \item[(c)] the vanishing spheres satisfy a relation $\sum_qk_q[\delta_q]=0$ in $H_3(Y_t;\Z)$ with every $k_q\neq0$.
 \end{enumerate}
-If they hold, the spheres $\delta_q$ are smoothly isotopic to pairwise disjoint Lagrangian spheres $L_q$ for the
-restriction of a toric K\"ahler form, and one of the $2^{|Q|}$ conifold transitions of $Y_t$ in the $L_q$ carries a
+The spheres $\delta_q$ are smoothly isotopic to pairwise disjoint Lagrangian spheres $L_q$ for the restriction of a
+toric K\"ahler form. If (a)--(c) hold, one of the $2^{|Q|}$ conifold transitions of $Y_t$ in the $L_q$ carries a
 symplectic structure in which the exceptional curves are symplectic.
 \end{maincor}
 
-Here a \emph{smoothing} is a flat deformation whose general fibre is smooth. Batyrev and Kreuzer, for polytopes whose
-singular two-faces are squares, specialised the mirror family to the locus where the face polynomials of the squares
-factor and observed that a projective small resolution of such a degenerate mirror requires a relation among the
-vanishing spheres with all coefficients nonzero; they did not determine whether such a relation exists
-\cite[\S3]{BK10}. The nodal members of Theorem~\ref{thm:main}(3) approach that locus as $t\to0$ but lie in
-general not on it (Section~\ref{ssec:periodsremarks}). For them Corollary~\ref{cor:smooth} settles the question: a
-relation with all coefficients nonzero exists exactly when the original side is smoothable. The equivalence of~(a)
+Here a \emph{smoothing} is a flat deformation, over a germ of a complex space, whose general fibre is smooth. Batyrev
+and Kreuzer, for polytopes whose singular two-faces are squares, specialised the mirror family to the locus where the
+face polynomials of the squares factor, expected the specialised members to have a node in each of the local toric charts they single out, and observed that a projective small
+resolution of such a nodal mirror requires a relation among the vanishing spheres with all coefficients nonzero;
+they did not determine whether such a relation exists \cite[\S3]{BK10}. For dual edges of lattice length one, the
+case considered here, their local equation near the expected node omits the monomials of the cells next to the
+square, which are linear in the normal coordinates. The nodal members of Theorem~\ref{thm:main}(3) approach the
+factoring locus as $t\to0$. Our estimates do not place them on it, and in a local model at a square node the critical
+value on the factoring locus is nonzero for general coefficients (Section~\ref{ssec:periodsremarks}). For them Corollary~\ref{cor:smooth} settles the question: a
+relation with all coefficients nonzero exists exactly when the original side is smoothable. For hexagon-free
+$\Delta$ satisfying~\ref{hyp:P}, the same relation criterion decides the smoothability of $X$ itself (Corollary~\ref{cor:mixed}). The equivalence of~(a)
 and~(b) is Namikawa's form \cite[Thm.~2.5]{Nam02} of the criterion of Friedman \cite[Rem.~(4.5), Cor.~(4.7)]{Friedman}
 (compare \cite[Thms.~1.2 and~1.3]{RT09}); the symplectic statement is \cite[Thm.~2.9]{STY}.
 
@@ -283,18 +302,26 @@ that is star-shaped from the origin.
 
 The proof is computer-assisted (Appendix~\ref{app:unimodular}). Up to $GL_4(\Z)$ there are $51{,}827$ admissible
 reflexive four-polytopes in the classification of Kreuzer and Skarke \cite{KS00}, $40{,}403$ of them without hexagonal
-two-faces; for each we exhibit integer heights and verify the conclusion in exact arithmetic.
+two-faces; for each we exhibit integer heights and verify the conclusion in exact arithmetic. That these are all the
+admissible polytopes of the classification rests on the admissibility program of Section~\ref{ssec:utrust}, whose
+negative verdicts are only partly replicated by a second implementation.
 
 Finally, the strict tropical $2$-cycles of \cite{CBM} are expected to suffice on their own.
 
 \begin{mainconj}[strict realisation]\label{conj:strict}
-Under the hypotheses of Theorem~\ref{thm:real}, the node coefficients of tropical $2$-cycles on $B'_\sigma$ in the sense
-of \cite[Def.~7.2]{CBM} generate $K$.
+Under the hypotheses of Theorem~\ref{thm:real}, the node coefficients of tropical $2$-cycles $(S,j,v)$ on $B'_\sigma$ in the
+sense of \cite[Def.~7.2]{CBM}, with $j$ piecewise linear, generate $K$.
 \end{mainconj}
 
 By Theorems~\ref{thm:lift} and~\ref{thm:res}, Conjecture~\ref{conj:strict} would realise every relation of $K$ on both
-sides by the same objects. It holds on the five examples of Section~\ref{sec:examples} and on $340$ of the $364$
-hexagon-free polytopes with $K\neq0$ of the list of Section~\ref{ssec:list} that satisfy~\ref{hyp:P}; on the remaining $24$ the
+sides by the same objects. Computations find strict tropical $2$-cycles whose node coefficients generate $K$ on the
+five examples of Section~\ref{sec:examples} and on $340$ of the $364$ hexagon-free polytopes with $K\neq0$ of the list
+of Section~\ref{ssec:list} that satisfy~\ref{hyp:P}. For $X_9$ this is proved in the text (Lemma~\ref{lem:x9belt}), given the triangulation $\mathcal T$ and the triangles of the
+cycle recorded in the accompanying data (Appendix~\ref{app:data}). For the other examples the boundary networks and node
+coefficients of the cycles, and the shape of the belt cycles (a disc with one field that meets $\Gamma$ only along its
+boundary), are checked in the accompanying data (Appendix~\ref{app:data}); for their other cycles the interior conditions of
+\cite[Def.~7.2]{CBM} rest on the computations described in Section~\ref{ssec:evidence}, as do the results on the $340$
+polytopes. On the other $24$ polytopes the
 cycles found generate a sublattice of $K$ of corank between $1$ and $4$, while balanced networks of the shape that such
 cycles have along their boundary already generate $K$ (Section~\ref{ssec:evidence}).
 
@@ -304,11 +331,33 @@ It is needed by the method: without it $X'_\sigma$ is not projective over $X$, a
 It is a genuine restriction. On the list of Section~\ref{ssec:list} ($612$ admissible polytopes up to $GL_4(\Z)$) it holds
 for $364$ of the $375$ hexagon-free polytopes with $K\neq0$; of the $142$ polytopes with a hexagonal two-face it holds
 for some profile on $83$ ($55$ with every hexagon on the $A_2$ branch, $20$ with every hexagon on the $A_1$ branch, and
-$18$ with a mixed profile, with overlaps), and for no profile on $59$. Where it fails there is an explicit obstruction: an
-effective combination of curves contracted by $X'_\sigma\to X$ that is numerically a combination of exceptional curves
-(Section~\ref{ssec:proj}).
+$18$ with a mixed profile, with overlaps), and for no profile on $59$. Where it fails there is an explicit obstruction: a nonzero
+effective combination of the proper transforms $\tilde f_\epsilon\subset\widehat X$ of curves in the fibres of
+$X'_\sigma\to X$ over the del Pezzo points that is homologous in $H_2(\widehat X;\Q)$ to a combination of the
+exceptional curves $C_q$ (Proposition~\ref{prop:projective}(3)).
 
 Theorem~\ref{thm:main} is stated for members with real coefficients of the given sign pattern near $\mathcal Z$, for
 $t$ small. The classes $[\delta_q]$ are flat sections of the local system $H_3(Y_{t,c};\Z)$ over the members of the
 neighbourhood $U$ of item~(3) that lie off the nodal hypersurfaces, and this set is connected; so item~(1) holds for all
-of these members, complex coefficients included (Section~\ref{ssec:relations}).
+of these members, complex coefficients included, with $\delta_q$ at such a member oriented by transport from $c$
+(Section~\ref{ssec:relations}).
+
+\emph{Two-faces with one interior lattice point.} Let $G$ be a lattice polygon with primitive edges and exactly one
+interior lattice point. Up to $GL_2(\Z)$ and translation, $G$ is the polygon spanned by the primitive ray generators
+of the fan of one of the five smooth toric del Pezzo surfaces $S_G$: $\mathbb P^2$, $\mathbb F_1$,
+$\mathbb P^1\times\mathbb P^1$, $dP_7$ or $dP_6$. As in Section~\ref{ssec:partialres}, if $G$ is a two-face of $\Delta$
+with $\ell(G^\circ)=1$, the point of $X$ on the orbit of the cone over $G$ is the anticanonical cone over $S_G$. For
+$\mathbb P^2$ this cone is $\C^3/\mu_3$, with $\mu_3$ acting by scalars, which is rigid \cite{Schlessinger}. For
+$\mathbb F_1$ the cone is not smoothable: $G$ has no nontrivial Minkowski decomposition into lattice polygons, and the
+base space of the versal deformation is $\operatorname{Spec}\C[\varepsilon]/(\varepsilon^2)$
+\cite[(9.1)(iv), (9.2)]{Altmann97}. For $\mathbb P^1\times\mathbb P^1$, $dP_7$ and $dP_6$ the cones are smoothable
+\cite[Table~1, Lemma~3.5]{Paper5}; the components of their reduced versal base spaces correspond to the maximal
+Minkowski decompositions of $G$ into lattice polygons \cite[(2.5), (8.1)]{Altmann97}. Admissibility therefore keeps
+every such type with a smoothable cone point except $\mathbb P^1\times\mathbb P^1$. Its polygon
+$\operatorname{conv}\{(\pm1,0),(0,\pm1)\}$ is a lattice parallelogram of twice the area of a unit parallelogram, and
+its vertices, placed at height one, span a sublattice of index two; so its cone is the quotient of the conifold by
+an involution acting freely off the vertex, not a node. Its only lattice point besides the vertices is the centre,
+so it has no subdivision into unit parallelograms and unimodular triangles that contains a parallelogram, and the
+nodal partial resolutions used here do not exist for it. The smoothing criterion of \cite[Thm.~4.7]{Paper5} for $X$
+itself allows cones over $\mathbb P^1\times\mathbb P^1$; for hexagon-free $\Delta$ satisfying~\ref{hyp:P}, the
+relation criterion of Corollary~\ref{cor:smooth} decides the smoothability of $X$ itself (Corollary~\ref{cor:mixed}).

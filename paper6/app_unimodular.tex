@@ -120,14 +120,14 @@ of each facet is unimodular \cite[Thm.~2.3]{HPPS}, and pulling the boundary latt
 order gives heights as in Lemma~\ref{lem:Ureform}(c). If the facet normals of a facet form a unimodular matrix, that facet
 has a regular unimodular triangulation \cite[Thm.~2.4]{HPPS}, but the triangulations of two adjacent facets obtained in this
 way need not agree on the common face. Compressed facets are rare: of the $3{,}175$ facets of the $418$ admissible
-polytopes with at most eight vertices, $46$ are compressed. Facets with unimodular normals are common ($12{,}350$ of the
-$13{,}469$ facets of the admissible polytopes of the list of Section~\ref{ssec:list}), but their triangulations need not be
+polytopes with at most eight vertices, $46$ are compressed. Facets with unimodular normals are common ($12{,}328$ of the
+$13{,}443$ facets of the $612$ admissible polytopes of the list of Section~\ref{ssec:list}), but their triangulations need not be
 compatible. The facets are also far from small: among the $3{,}175$ there are facets with $242$ lattice points and
 normalised volume $756$, and $2{,}171$ of the $2{,}444$ facets with at most $40$ lattice points contain empty lattice
 tetrahedra of volume greater than one among their lattice points, so that a fine triangulation of such a facet need not be
 unimodular. For lattice
-three-polytopes in general, unimodular triangulations need not exist, and their existence is open even for smooth
-lattice three-polytopes \cite[\S1.5.1]{HPPS}; the facets $F_v$ need not be smooth, since by
+three-polytopes in general, unimodular triangulations need not exist \cite[Ex.~1.2]{HPPS}, and their existence is open
+even for smooth lattice three-polytopes \cite[\S1.5.1]{HPPS}; the facets $F_v$ need not be smooth, since by
 Proposition~\ref{prop:Ufacets} their vertex cones are constrained only through their two-dimensional faces. A general
 proof of Theorem~\ref{thm:U} would therefore produce compatible regular unimodular triangulations for a class of lattice
 three-polytopes, the polytopes of $-K_{\mathbb P_\Delta}|_{D_v}$, for which no such result is known. We know no conceptual
@@ -138,8 +138,10 @@ The proof has three steps: the list of all reflexive four-polytopes, the determi
 exactly checked certificate for each of these.
 
 \emph{Step 1: the classification.} Kreuzer and Skarke classified the reflexive four-polytopes up to $GL_4(\Z)$: there are
-$473{,}800{,}776$ of them \cite{KS00}. We use a copy of their list whose completeness we checked against the published
-count, with every polytope reflexive and no two equivalent (by normal forms). Every polytope of the list is treated as
+$473{,}800{,}776$ of them \cite{KS00}. We use a public electronic copy of their list at a fixed revision, identified in
+the accompanying data together with the digests of its files; its number of rows is the published count. A separate
+computation, not part of the accompanying data, checked every polytope of the copy reflexive and no two equivalent (by
+normal forms). Every polytope of the list is treated as
 $\Delta$; since the list contains the polar of each of its members, this covers every polar pair in both orders.
 
 \emph{Step 2: the admissible polytopes.} Admissibility is decided from the vertices and the facet inequalities of
@@ -187,7 +189,8 @@ The following are then checked in exact integer arithmetic:
 \item[(ii)] every candidate tetrahedron lies in a facet hyperplane of $\Delta^\circ$ and has determinant $\pm1$;
 \item[(iii)] every triangle of a candidate tetrahedron lies in exactly two candidate tetrahedra, and their fourth vertices
 lie on opposite sides of the hyperplane spanned by the triangle and the origin;
-\item[(iv)] each of three fixed rays in general position lies in the cone over exactly one candidate tetrahedron;
+\item[(iv)] of five fixed rays, at least three lie on no wall, that is, in the cone over no triangle of a candidate
+tetrahedron, and each such ray lies in the cone over exactly one candidate tetrahedron;
 \item[(v)] across every wall, the bends of $g$ and of $\check h$ are positive integers.
 \end{enumerate}
 
@@ -269,24 +272,36 @@ Lemma~\ref{lem:Ureform}. How the heights were found plays no role in the proof.
 The proof rests on three computations.
 \begin{enumerate}
 \item \emph{The classification data.} The theorem is as reliable as the classification of \cite{KS00}, itself a computer
-classification, and as our copy of it. The classification was not recomputed. Our copy was checked against the published
-count and published file digests; every member was checked reflexive, and no two members are equivalent.
-\item \emph{The admissibility filter.} The program of Step 2 was run on every polytope of the classification, and the
-statement that the certified polytopes are all the admissible ones rests on it. Every polytope it accepts was checked
-admissible again by an independent program. A second implementation of the whole test, sharing no code with the first
-(its faces come from a different polyhedral library, and the interior lattice points of two-faces from Pick's theorem), was
-run on part of the classification and agrees with the first on every polytope on which both were run. Let $d$ be the
+classification, and as our copy of it. The classification was not recomputed. The files of our copy agree with the
+digests recorded for the fixed revision of the public copy (these are digests of that copy, not digests published by
+Kreuzer and Skarke), and their number of rows is the published count. That every member is reflexive and no two
+members are equivalent was checked by a separate computation, which is not part of the accompanying data.
+\item \emph{The admissibility filter.} The program of Step 2 is published in the accompanying data (\coderepo), as
+\texttt{unimodular/\allowbreak admissible\_\allowbreak filter.py}. The run over every polytope of the classification used an earlier
+copy of this program with the same tests; the published version reproduces the admissible rows of that run on the files for $5$--$8$, $23$, $24$, $30$--$33$
+and $36$ vertices, on which it was rerun. The statement
+that the certified polytopes are all the admissible ones rests on this run. Every polytope it accepts was checked admissible again by an independent
+program. A second implementation of the whole test, sharing no code with the first, was run on part of the
+classification and agrees with the first on every polytope on which both were run. It takes the face lattice of $\Delta$
+from a different polyhedral library instead of from the vertex-facet incidences computed by PALP, tests the edges of
+$\Delta$ directly, and computes twice the area of a two-face, in the lattice of its plane, as a sum over the triangles
+of a fan triangulation from one vertex of the greatest common divisors of the $2\times2$ minors of their edge vectors,
+instead of from coordinates in that lattice. Let $d$ be the
 number of nonzero lattice points of $\Delta$ that are not vertices; all admissible polytopes found have $d\le7$ except two,
 with $d=12$ and $d=20$.
-The second implementation has been run on every polytope with at most $9$ vertices ($3{,}905{,}789$ polytopes), and, for
-$10$ to $13$ vertices, on every polytope with $d\le5$ together with $5{,}000$ further polytopes for each number of vertices
-($2{,}000$ chosen uniformly and $3{,}000$ with $d\in\{6,7\}$): $7{,}644{,}706$ polytopes, containing all $10{,}879$ admissible
-polytopes with at most $13$ vertices. For $14$ or more vertices, which carry $40{,}948$ of the $51{,}827$ admissible
-polytopes, every polytope accepted by the first program was checked admissible by the second, and the rejected
-polytopes rest on the first program alone.
+The second implementation has been run on every polytope with $5$--$9$ or $24$--$33$ or $36$ vertices, and on every
+polytope with $10$--$23$ vertices and $d\le7$, together with seeded samples from the remaining rows. It agrees with the
+first implementation throughout. The two extensions tested $15{,}637{,}714$ and $18{,}627{,}401$ rows; these sets overlap,
+so their sizes are not additive. The earlier checks on $7{,}644{,}706$ rows with at most $13$ vertices were retained, and
+the $10{,}879$ admissible polytopes found there were matched again to the input vertices and face types. Thus all
+$51{,}827$ positive results are accounted for. The negative results are only partly replicated. The polytopes with
+$10$--$23$ vertices form $468{,}609{,}901$ of the $473{,}800{,}776$ rows; of these, the second implementation tested the
+$36{,}648{,}946$ with $d\le7$ and, for each number of vertices, a seeded uniform sample of $2{,}000$ rows with $d>5$, of
+which $26{,}862$ in all have $d>7$. The remaining $431{,}934{,}093$ rows, about $91\%$ of the classification, are
+excluded by the program of Step 2 alone, and these negative verdicts carry no certificates.
 \item \emph{The certificate checks.} The first program checks (i)--(v) in integer arithmetic, with determinants by
 fraction-free elimination; the second checks (i$'$), (ii$'$) and (v$'$) in exact rational arithmetic. Both accept all
 $51{,}827$ certificates. On $135$ corrupted certificates (random, negated, constant or rescaled heights, a point removed)
 the two programs return the same verdicts.
 \end{enumerate}
-The certificates and both checking programs are available at \coderepo.
+The accompanying computation bundle contains the certificates and both checking programs.

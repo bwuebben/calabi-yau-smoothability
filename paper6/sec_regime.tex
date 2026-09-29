@@ -5,8 +5,8 @@ study them near the maximally degenerate limit by comparing monomials in units o
 proved. First, for $t$ small and every coefficient vector in a window around $\mathcal Z$, the member $Y_t$ is smooth
 and isotopic in $X_{\mathcal T}$ to a smooth compact submanifold $W^*$, the \emph{localized mirror}, on which every
 stratum of the tropical picture near the discriminant has an exact algebraic model (Lemma~\ref{lem:W} and
-Proposition~\ref{prop:isotopy}). Second, near the node point (Definition~\ref{def:morsecoords}) of each $P\in Q$ the defining function has exactly one
-critical point; it is nondegenerate, its critical value differs by $O(t^{\theta_0/2})$ from $-\kappa_P=1-\mu_P^{-1}$,
+Proposition~\ref{prop:isotopy}). Second, near the node point (Definition~\ref{def:morsecoords}) of each $P\in Q$ the defining function,
+in the trivialisation of the anticanonical bundle by the monomial $\gamma_ax^a$, has exactly one critical point; it is nondegenerate, its critical value differs by $O(t^{\theta_0/2})$ from $-\kappa_P=1-\mu_P^{-1}$,
 and on a polydisc around it $W^*$ is exactly the conifold smoothing $\{xy+z_1z_2=\kappa_P\}$ (Lemmas~\ref{lem:NM}
 and~\ref{lem:TR}). This defines the vanishing sphere $\delta_q$. Third, a sphere isotopic to $\delta_q$ is the
 boundary, over a Lefschetz thimble, of a four-chain $\Pi_q$ lying over a standard half-plane through the node of the
@@ -15,9 +15,11 @@ standard half at $q$ (defined in Section~\ref{ssec:nodepiece}), with either orie
 Lemma~\ref{lem:SI}). Section~\ref{sec:lift} builds the chains of Theorem~\ref{thm:lift} from these node pieces and from
 pieces along the legs of the discriminant.
 
-The localized mirror follows Mikhalkin \cite{Mikhalkin} and Yamamoto \cite{Ya16}: each monomial is multiplied by a
-cut-off that vanishes where the monomial is far from maximal, so that near each stratum only the monomials of one
-cell of the tropical picture survive. The estimates are comparisons of tropical deficits. The proofs of the one-cell
+The localized mirror is modelled on the tropical localizations of Mikhalkin \cite{Mikhalkin} and Yamamoto
+\cite[Def.~3.1]{Ya16}: each monomial is multiplied by a cut-off that vanishes where the monomial is far from maximal, so
+that near each stratum only the monomials of one cell of the tropical picture survive. Their results assume a unimodular
+subdivision; the mirror subdivision contains the node parallelograms and is not unimodular, so their results do not
+apply here, and the transport lemma and the isotopy are proved directly. The estimates are comparisons of tropical deficits. The proofs of the one-cell
 lemma, of the transport lemma and of the lemmas on the Morse chart are in Appendix~\ref{app:mirror}.
 
 \subsubsection*{Standing assumptions}
@@ -41,22 +43,22 @@ coefficient vector $c$ and $t<t_0$. The principal constants are these.
 \begin{center}\small
 \begin{tabular}{p{2.4cm}p{7.4cm}p{4.6cm}}
 constant & role & fixed in\\\hline
-$h_C$ & strictly convex height inducing $\mathcal F_C$ & Section~\ref{ssec:member}\\
+$h_C$ & strictly convex height inducing $\mathcal F_C$ & Section~\ref{ssec:mirrorsub}\\
 $k_0$ & multiple of $\varphi$ in the height $H$ & \eqref{eq:lambdagap}, Lemma~\ref{lem:gaps}(4)\\
 $\theta_0$ & threshold of the one-cell lemma & Lemma~\ref{lem:onecell}\\
 $\mathfrak g_P$, $\mathfrak g_\omega$ & apex gap of a node, vertex gap of a triangle & Definition~\ref{def:node}\\
 $\mathcal E_P$, $\mathcal E_{\max}$, $e_{\max}$ & exponent constants & Definition~\ref{def:node}\\
-$C_\eta$, $C_R$ & ratio of the largest to the smallest $|\eta_P|$; bound of $\|\xi\|$ by $\max_P|\eta_P|$ &
+$C_\eta$, $C_{\mathbf R}$ & ratio of the largest to the smallest $|\eta_P|$; bound of $\|\xi\|$ by $\max_P|\eta_P|$ &
 Lemma~\ref{lem:eta}; after Definition~\ref{def:window}\\
 $\theta_e$ & maximum on the face $E_e$ of the smallest deficit of a monomial other than $0,n,n'$ & Definition~\ref{def:legcell}\\
 $\theta_1$, $\theta_2$, $\theta_3$ & cut-off constant; sizes in the torus directions and of the first segments of the
 model arcs & Definition~\ref{def:legcell}, Section~\ref{ssec:localized}\\
 $\theta_P$ & reach of the node neighbourhood, $\mathfrak g_P/2-\theta_1$ & after~\eqref{eq:lambdagap}\\
 $\theta_4$ & size of the germs at the model points & Definition~\ref{def:modelpos}(2)\\
-$r_1$, $r$ & radii of the Morse polydisc; $r_1=\min(1/4,(20/C_R)^{1/2})$ & Lemma~\ref{lem:NM}, Definition~\ref{def:window}\\
+$r_1$, $r$ & radii of the Morse polydisc; $r_1=\min(1/4,(20/C_{\mathbf R})^{1/2})$ & Lemma~\ref{lem:NM}, Definition~\ref{def:window}\\
 $\eta_0$ & size of the perturbation of the node binomials, $\eta_0\le r^2/20$ & Definition~\ref{def:window}\\
 $\varsigma_{\max}$, $\varsigma_0$ & depth of the pieces & Lemma~\ref{lem:pieces}; Section~\ref{sec:lift}\\
-$t_0$ & threshold on $t$ & Lemmas~\ref{lem:W}, \ref{lem:NM}, \ref{lem:TR}
+$t_0$ & threshold on $t$, below the threshold $t_1$ of Lemma~\ref{lem:NM} & Lemmas~\ref{lem:W}, \ref{lem:NM}, \ref{lem:TR}
 \end{tabular}
 \end{center}
 These constants exist for every admissible $\Delta$ and every profile satisfying~\ref{hyp:P},
@@ -64,13 +66,13 @@ with the conventions below when there are no nodes. The height $h_C$ exists by t
 $\theta_0$ is the minimum of finitely many positive values of linear programs (Lemma~\ref{lem:onecell}). The gaps and
 the exponent constants are read off from the lattice data, the vectors $w_u$ and the heights, and $k_0$ is any integer
 above the explicit bound of Lemma~\ref{lem:gaps}(4), which involves only lattice data and $h_C$. The constants $C_\eta$
-and $C_R$ come from the linear algebra of the vectors $r_P$ (Lemma~\ref{lem:eta}); $\theta_e$, $\theta_1$, $\theta_2$,
+and $C_{\mathbf R}$ come from the linear algebra of the vectors $r_P$ (Lemma~\ref{lem:eta}); $\theta_e$, $\theta_1$, $\theta_2$,
 $\theta_3$, $\theta_P$ and $r_1$ are explicit; $\theta_4$ and $\varsigma_{\max}$ are bounds over the finitely many
 model data of Section~\ref{sec:lift}; and $t_0$ is the minimum of finitely
 many thresholds, each given by an explicit inequality in Appendix~\ref{app:mirror}.
 
 \paragraph{The case without nodes.}
-When $Q=\emptyset$, we have $K=0$. Put $C_\eta=C_R=1$ and
+When $Q=\emptyset$, we have $K=0$. Put $C_\eta=C_{\mathbf R}=1$ and
 $\mathcal E_{\max}=0$, and replace the direction choice of
 Lemma~\ref{lem:eta} by $\xi_c=0$, $c=c^{(0)}$.
 The window has no binomial-ratio restrictions; the norm bound for $\xi_c$
@@ -107,8 +109,7 @@ $\mathcal F_C$ are denoted $\omega$, as in Section~\ref{sec:dualpair}.
 
 For every edge $[u,u']$ of $\mathcal T$ that lies in a face of $\Delta^\circ$ of dimension at most two we fix an order
 $(u,u')$ of its end points and a lattice vector $w_u\in N$ with $\langle u,w_u\rangle=1$ and $\langle u',w_u\rangle=0$
-(the fan over $\mathcal T$ is unimodular; for the dual edge of a node, compare Lemma~\ref{lem:primheight}). These are the
-auxiliary lattice vectors of Theorem~\ref{thm:main}.
+(the fan over $\mathcal T$ is unimodular; for the dual edge of a node, compare Lemma~\ref{lem:primheight}).
 
 \subsubsection*{Heights and the member}
 The height is $H=k_0\varphi+h_C$ of Section~\ref{ssec:mirrorfamily}, with $h_C$ as in Section~\ref{ssec:mirrorsub}: strictly
@@ -133,7 +134,7 @@ $\Delta$ are the $\operatorname{conv}(0,\omega)$.
 \end{proof}
 
 The integer $k_0$ is fixed subject to one lower bound, \eqref{eq:lambdagap} below; by Lemma~\ref{lem:gaps}(4) this
-bound holds for every $k_0\ge\max\bigl(2e_{\max},\,2\mathcal E_{\max}+2,\,1-\min_{\partial\Delta\cap N}h_C\bigr)$. The
+bound holds for every $k_0\ge\max\bigl(2e_{\max},\,6,\,1-\min_{\partial\Delta\cap N}h_C\bigr)$. The
 \emph{mirror member} is the member $Y_{t,c}$ of Section~\ref{ssec:mirrorfamily},
 \[
 Y_t=\{F_t=0\}\subset X_{\mathcal T},\qquad F_t=\sum_{n\in\mathcal A}\gamma_nx^n,\qquad \gamma_n=c_nt^{H(n)},\qquad
@@ -154,15 +155,15 @@ sign pattern is uniquely $c=c^{(0)}e^\xi$ with $c^{(0)}\in\mathcal Z$ and $\xi\i
 
 \begin{lemma}\label{lem:eta}
 Assume $Q\ne\emptyset$. The map $\xi\mapsto(\eta_P)_P$ has image $V=\{\eta:\sum_Pk_P\eta_P=0$ for every relation $\sum_Pk_Pr_P=0\}$, and no
-coordinate $\eta_P$ vanishes identically on $V$. Consequently there are a direction $\bar\xi\in\operatorname{span}\{r_P\}$
-and a constant $C_\eta\ge1$, depending only on the configuration, such that for every $\eta_0>0$ the multiple $\xi$ of
+coordinate $\eta_P$ vanishes identically on $V$. Consequently there are a direction $\bar\xi\in\operatorname{span}\{r_P\}$,
+which we fix once for the matrix $\mathbf R$ with rows $r_P$, and a constant $C_\eta\ge1$, depending only on $\mathbf R$ and $\bar\xi$, such that for every $\eta_0>0$ the multiple $\xi$ of
 $\bar\xi$ with $\max_P|\eta_P|=\eta_0$ satisfies $\eta_0/C_\eta\le|\eta_P|\le\eta_0$ for all $P$.
 \end{lemma}
 
 \begin{proof}
-The image is the column space of the matrix $R$ with rows $r_P$, which is the annihilator of its left kernel. The
+The image is the column space of the matrix $\mathbf R$ with rows $r_P$, which is the annihilator of its left kernel. The
 coordinate $\eta_P$ vanishes on it if and only if $e_P$ lies in the left kernel, that is $r_P=0$, which never holds. So
-the complement in the image of the hyperplanes $\{\eta_P=0\}$ is dense; take $\bar\xi$ with $R\bar\xi$ in it and
+the complement in the image of the hyperplanes $\{\eta_P=0\}$ is dense; take $\bar\xi$ with $\mathbf R\bar\xi$ in it and
 $C_\eta=\max_P|r_P\cdot\bar\xi|/\min_P|r_P\cdot\bar\xi|$.
 \end{proof}
 
@@ -176,13 +177,16 @@ and $\|\cdot\|_*$ denotes the dual norm, so that $\|r_P\|_*=4$.
 \end{definition}
 
 In the notation of Theorem~\ref{thm:main}, $C=C_\eta$ and $\eta_1=r_1^2/20$; for $\eta_0\le\eta_1$ we take $r=r_1$.
-Every vector in the window lies in $U_\C$: for $\xi$ in the span of the $r_P$ one has $\|\xi\|\le C_R\max_P|\eta_P|$,
-with $C_R$ depending only on the configuration, and $C_R\eta_0\le1$, because $\eta_0\le r^2/20\le r_1^2/20$ and
-$r_1^2\le20/C_R$ (Lemma~\ref{lem:NM}). The union of the sets $U^+_\C(c^{(0)})$, $c^{(0)}\in\mathscr C_0$, is compact, so
+Both depend only on the matrix $\mathbf R$ with rows $r_P$ and on the direction $\bar\xi$ of Lemma~\ref{lem:eta}.
+Every vector in the window lies in $U_\C$: for $\xi$ in the span of the $r_P$ one has $\|\xi\|\le C_{\mathbf R}\max_P|\eta_P|$,
+with $C_{\mathbf R}$ depending only on $\mathbf R$ (the map $\xi\mapsto\mathbf R\xi$ is injective on the span of the rows), and $C_{\mathbf R}\eta_0\le1$, because $\eta_0\le r^2/20\le r_1^2/20$ and
+$r_1^2\le20/C_{\mathbf R}$ (Lemma~\ref{lem:NM}). The union of the sets $U^+_\C(c^{(0)})$, $c^{(0)}\in\mathscr C_0$, is compact, so
 $|c_n|$ and $|c_n|^{-1}$ are bounded on it by a constant depending on $\mathscr C_0$. Constants called $C$, and the
 thresholds on $t$, depend on the configuration and on $\mathscr C_0$ through these bounds, and on $r$ and $\eta_0$ where
-this is indicated; we do not repeat the dependence on $\mathscr C_0$. The statements proved below for $c\in U_\C$ hold
-with the same proofs for $c\in U^+_\C$; we use this for Cauchy estimates in $\xi$. No threshold is uniform on all of
+this is indicated; we do not repeat the dependence on $\mathscr C_0$. Lemmas~\ref{lem:W}(2), \ref{lem:NM}
+and~\ref{lem:TR}(2) are stated for $c\in U^+_\C$, as Section~\ref{sec:periods} requires (Lemma~\ref{lem:U}); their proofs
+use only these two-sided bounds on $|c_n|$, the bound $|\eta_P|\le2\eta_0$ and the standing choices $r\le1/4$,
+$\eta_0\le r^2/20$. No threshold is uniform on all of
 $\mathcal Z$: when $|\log|c^{(0)}_n||$ is comparable to $\theta_0L$ the coefficients move the tropical picture, and the
 estimates below fail.
 
@@ -205,13 +209,16 @@ one finds $c_o=\sum_i\mathsf a_i\mathsf b_i$,
 a_0\mathsf b_2,\mathsf a_1\mathsf b_2),
 \]
 and $\mu_{P_1}=\mu_{P_2}=1+(\mathsf a_0\mathsf b_0+\mathsf a_2\mathsf b_2)/(\mathsf a_1\mathsf b_1)$. A real product has real
-factors after rescaling (a trinomial whose Newton polygon is a unimodular triangle is irreducible); the sign pattern then
-forces all $\mathsf a_i$ to have one sign and all $\mathsf b_i$ the other, so $\mu_{P_i}>1$: no real point of the product
-locus with the sign pattern lies in $\mathcal Z$.
+factors after rescaling (a trinomial whose Newton polygon is a unimodular triangle is irreducible); the sign
+conditions $c_{w_j}<0$ then force all $\mathsf a_i$ to have one sign and all $\mathsf b_i$ the other, so
+$c_o=\sum_i\mathsf a_i\mathsf b_i<0$: no real point of the product locus has the sign pattern, and in particular none lies
+in $\mathcal Z$.
 \item \emph{$A_2$ branch}, parallelograms $P_j$, $j\in\{0,2,4\}$ (the odd subdivision is symmetric). For
 $f_G=(\mathsf a_0+\mathsf a_1\chi^{w_0})(\mathsf b_0+\mathsf b_1\chi^{w_2})(\mathsf e_0+\mathsf e_1\chi^{w_4})$, since
 $w_0+w_2+w_4=0$, $c_o=T_1+T_2$ with $T_1=\mathsf a_0\mathsf b_0\mathsf e_0$, $T_2=\mathsf a_1\mathsf b_1\mathsf e_1$, and
-$\mu_{P_j}=1+T_2/T_1\neq1$ for all three $j$ (for the odd subdivision $1+T_1/T_2$). So the product locus misses $\mathcal Z$. Its
+$\mu_{P_j}=1+T_2/T_1\neq1$ for all three $j$ (for the odd subdivision $1+T_1/T_2$). So the product locus misses $\mathcal Z$.
+Its real points do not have the sign pattern either: the factors are again real after rescaling, their Newton segments
+being distinct, and the conditions $c_{w_j}<0$ force $T_1,T_2<0$, so $c_o<0$. Its
 curve is three curves meeting pairwise transversally in one point each; the three points coincide exactly when $c_o=0$.
 \item \emph{For $t$ small and $c$ in the window}, if the face polynomial $\sum_{n\in G}\gamma_n\chi^n$ of $F_t$ is such a product and
 $|c_n|^{\pm1}$ are bounded, then $|\mu_P-1|\le Ct$ for every node parallelogram $P$ of $G$. On the $A_1$ branch,
@@ -245,7 +252,7 @@ So $d_n$ is, up to $O(1/L)$, the tropical deficit of $n$ at the tropical point $
 $n$ falls short of the maximal one, in units of $L$. We write $\operatorname{val}_n(p):=\langle p,n\rangle-H(n)$, and for
 $I\subseteq\mathcal A$ put $\gamma^*(I):=\min_{p\in M_\R}\max_{n\in I}d^{\rm tr}_n(p)$.
 
-In this section and the next we use the convention $p=-m$ for the tropical variable $m\in M_\R$ and maxima of valuations (Section~\ref{ssec:conventions}).
+In Sections~\ref{sec:regime}--\ref{sec:periods} we use the convention $p=-m$ for the tropical variable $m\in M_\R$ and maxima of valuations (Section~\ref{ssec:conventions}).
 Let $\operatorname{Trop}\subset M_\R$ be the tropical hypersurface of $(\Delta,H)$, the corner locus of
 $p\mapsto\max_n\operatorname{val}_n(p)$. Since $H(0)=0$, the set on which the origin is maximal is $-\nabla^H$, and the
 union of the bounded cells of $\operatorname{Trop}$ is its boundary $-B_Y$ (Section~\ref{sec:dualpair}). We identify
@@ -257,7 +264,9 @@ $\operatorname{Log}$ by $(\log|s|)\,u$; so lowering $|Z_u|$ moves the tropical p
 
 \begin{lemma}[one-cell lemma]\label{lem:onecell}
 $\gamma^*(I)=0$ if and only if $I$ is cellular. Put $\theta_0:=\min\{\gamma^*(I):I\text{ not cellular}\}>0$. For $L$
-larger than a constant, the set $\{n:d_n(x)<3\theta_0/4\}$ is cellular for every $x\in X_{\mathcal T}$.
+larger than a constant depending on the configuration and on $\mathscr C_0$ (through a bound on $|\log|c_m/c_n||$ over the
+union of the sets $U^+_\C(c^{(0)})$, $c^{(0)}\in\mathscr C_0$), and for every $c$ in that union, the set
+$\{n:d_n(x)<3\theta_0/4\}$ is cellular for every $x\in X_{\mathcal T}$.
 \end{lemma}
 
 The proof is in Appendix~\ref{app:deficits}; each $\gamma^*(I)$ is the value of a linear program, and the minimum is over
@@ -333,7 +342,7 @@ $n\in\omega_1\setminus\omega$, and $e_u(n)$, $n\in\omega_2\setminus\omega$, over
 \item $\theta_0\le\mathfrak g_P/2$ for every node parallelogram $P$, and $\theta_0\le\mathfrak g_\omega-|J_\omega|/(2e_{\max})$
 for every triangle $\omega$ as above.
 \item Consequently~\eqref{eq:lambdagap} holds whenever
-$k_0\ge\max\bigl(2e_{\max},\,2\mathcal E_{\max}+2,\,1-\min_{\partial\Delta\cap N}h_C\bigr)$.
+$k_0\ge\max\bigl(2e_{\max},\,6,\,1-\min_{\partial\Delta\cap N}h_C\bigr)$.
 \end{enumerate}
 \end{lemma}
 
@@ -395,9 +404,8 @@ and $v'$ with $e$ and $e'$ smallest on their sides, so that $\min(e,e')=m_\omega
 
 (4) By (1) and (2), $\mathfrak g_P>k_0$ and $\mathfrak g_\omega\ge|J_\omega|>k_0$. So by (3),
 $\mathfrak g_\omega-\theta_0\ge|J_\omega|/(2e_{\max})>k_0/(2e_{\max})\ge1$ when $k_0\ge2e_{\max}$, and, since $\theta_1\le1$,
-$\mathfrak g_P-\theta_0-2\theta_1\ge\mathfrak g_P/2-2>k_0/2-2\ge1$ when $k_0\ge6$, which holds when
-$k_0\ge2\mathcal E_{\max}+2$, as $\mathcal E_P\ge2$. The bound is not circular: $e_{\max}$ and $\mathcal E_P$ depend only on
-the lattice data and the vectors $w_u$, and $\theta_1\le1$ by its definition, whereas $\theta_0$ and the gaps may grow
+$\mathfrak g_P-\theta_0-2\theta_1\ge\mathfrak g_P/2-2>k_0/2-2\ge1$ when $k_0\ge6$. The bound is not circular: $e_{\max}$
+depends only on the lattice data, and $\theta_1\le1$ by its definition, whereas $\theta_0$ and the gaps may grow
 with $k_0$ (Remark~\ref{rem:theta0}). The last condition of~\eqref{eq:lambdagap} is $k_0\ge1-\min h_C$.
 \end{proof}
 
@@ -414,7 +422,8 @@ $\theta_0\ge k_0\min_I\gamma^*(I;\varphi)-2\max|h_C|$ grows linearly in $k_0$.
 \subsection{The localized mirror and the transport lemma}\label{ssec:localized}
 
 We multiply every monomial by a cut-off that vanishes where the monomial is far from maximal. Our rule differs from
-that of \cite{Ya16} in one point: the monomial of the origin is never cut.
+that of \cite[Def.~3.1]{Ya16}, a product of cut-offs of the pairwise differences of the logarithms of the monomials: the
+cut-off of a monomial is a function of its smoothed maximal deficit, and the monomial of the origin is never cut.
 
 \begin{definition}[the faces $E_e$ and their interior polygons]\label{def:legcell}
 Let $e=[n,n']$ be an edge of $\mathcal F_C$ in the two-skeleton of $\partial\Delta$. Its \emph{tropical cell}
@@ -464,7 +473,7 @@ There is a threshold $t_0=t_0(r,\eta_0,\mathscr C_0)>0$ such that for $0<t<t_0$:
 \begin{enumerate}
 \item for every coefficient vector in the window and every $s\in[0,1]$, $F^{(s)}$ has real rank two along $W_s$; so
 $W_s$ is a smooth compact submanifold of real codimension two, and $W_1=Y_t$ is a smooth hypersurface;
-\item at $s=1$, for every $c\in U_\C$, the singular points of $Y_{t,c}$ are exactly the points $q_P$ of
+\item at $s=1$, for every $c\in U^+_\C$, the singular points of $Y_{t,c}$ are exactly the points $q_P$ of
 Lemma~\ref{lem:NM} whose critical value $\varepsilon_P$ vanishes.
 \end{enumerate}
 \end{lemma}
@@ -547,8 +556,8 @@ $|\mathfrak bZZ'|\le C$. The \emph{Morse bidisc} of $P$ is the closed bidisc $\m
 coordinates $(\chi_1,\chi_2)$, the projection of the closure of $\mathbb D_P$.
 
 \begin{lemma}[Morse chart at a node]\label{lem:NM}
-Put $r_1:=\min\bigl(1/4,(20/C_R)^{1/2}\bigr)$, with $C_R$ the constant defined after Definition~\ref{def:window}; it
-depends only on the configuration. For $r\le r_1$ there is $t_1=t_1(r,\mathscr C_0)>0$ such that for $t<t_1$, every $c\in U_\C$ and every $s\in[0,1]$:
+Put $r_1:=\min\bigl(1/4,(20/C_{\mathbf R})^{1/2}\bigr)$, with $C_{\mathbf R}$ the constant defined after Definition~\ref{def:window}; it
+depends only on the matrix $\mathbf R$ of Lemma~\ref{lem:eta}. For $r\le r_1$ there is $t_1=t_1(r,\mathscr C_0)>0$ such that for $t<t_1$, every $c\in U^+_\C$ and every $s\in[0,1]$:
 \begin{enumerate}
 \item on the polydisc $2\mathbb D_P$ with doubled radii, $\tilde\psi_n=1$ for $n\in P\cup\{0\}$ and $\tilde\psi_n=s$ for
 every other $n$. Hence $f^{(s)}=f^{(0)}+s\,(f^{(1)}-f^{(0)})$ is holomorphic on $2\mathbb D_P$, and
@@ -575,10 +584,11 @@ $P$; so the lemma holds whatever these cells are. Besides pyramids and prisms th
 vertices, a node parallelogram together with three or four apexes; at the nodes of a hexagon, for instance, eight-vertex
 cells occur. We write $q_P:=q_P(1)$ and $\varepsilon_P:=\varepsilon_P(1)$.
 
-Since $-\kappa_P=1-e^{-\eta_P}$, the critical value is $\varepsilon_P=\eta_P+O(\eta_P^2)+O(t^{\theta_0/2})$. Other
-normalisations, for instance $\mu_P=1+\eta_P$, or the critical value of $F_t$ in place of that of
-$f^{(1)}=F_t/(\gamma_ax^a)$, multiply $\varepsilon_P$ by a factor that is nonzero near $\mathcal Z$ and depends only on the
-node (to first order a sign, or the value of $\gamma_ax^a$ at $q_P$). Such a factor does not change the loci
+Since $-\kappa_P=1-e^{-\eta_P}$, the critical value is $\varepsilon_P=\eta_P+O(\eta_P^2)+O(t^{\theta_0/2})$. Critical
+points and critical values of $F_t$ off $Y_t$ depend on the trivialisation of the anticanonical bundle; ours are those of
+$f^{(1)}=F_t/(\gamma_ax^a)$, the trivialisation by $\gamma_ax^a$. Other normalisations, for instance $\mu_P=1+\eta_P$, or
+another local trivialisation in place of $\gamma_ax^a$, multiply $\varepsilon_P$ by a factor that is nonzero near $\mathcal Z$ and depends only on the
+node (to first order a sign, or the value at $q_P$ of the ratio of the two trivialisations). Such a factor does not change the loci
 $\{\varepsilon_P=0\}$, the vanishing spheres, or their orientations, since Definition~\ref{def:orient} below applies to
 every argument of $\kappa_P$ (Remark~\ref{rem:kappa}); in particular it does not change the relation lattice of the
 $\delta_q$.
@@ -593,7 +603,7 @@ For $t<t_0(r,\eta_0,\mathscr C_0)$:
 \begin{enumerate}
 \item if $c$ is in the window, every point of $W_s\cap\mathcal U_P$ is a regular point of $F^{(s)}$, for every
 $s\in[0,1]$;
-\item if $c\in U_\C$, every singular point of $Y_{t,c}$ in $\mathcal U_P$ lies in $\mathbb D_P$.
+\item if $c\in U^+_\C$, every singular point of $Y_{t,c}$ in $\mathcal U_P$ lies in $\mathbb D_P$.
 \end{enumerate}
 \end{lemma}
 
@@ -619,7 +629,7 @@ $\Psi_1$ as in Proposition~\ref{prop:isotopy}.
 
 \begin{proof}
 On $\mathbb D_P$ the $f^{(s)}$ form a holomorphic family, smooth in $s$, with one Morse point each and
-$\varepsilon_P(s)\neq0$ (Lemma~\ref{lem:NM}(3)). The holomorphic Morse lemma with parameters \cite{AGZV1} gives Morse
+$\varepsilon_P(s)\neq0$ (Lemma~\ref{lem:NM}(3)). The holomorphic Morse lemma with parameters \cite[\S\S6.2, 9.6]{AGZV1} gives Morse
 coordinates depending smoothly on $s$, so $\Sigma_s$ can be chosen to depend smoothly on $s$; its radius
 $|\varepsilon_P(s)|^{1/2}\le(2\eta_0)^{1/2}\le r/3$ keeps it inside $\mathbb D_P$. Then $\Psi_s^{-1}(\Sigma_s)$ is a smooth
 family of embedded spheres in $W^*$ from $\Sigma_0$ to $\Psi_1^{-1}(\Sigma_1)$, and isotopy extension gives the claim.
@@ -628,7 +638,7 @@ family of embedded spheres in $W^*$ from $\Sigma_0$ to $\Psi_1^{-1}(\Sigma_1)$, 
 That $\varepsilon_P(s)$ does not vanish along the family is the reason for the lower bound $|\eta_P|\ge\eta_0/C_\eta$ in
 the window. For $c\in U_\C$ the loci $\{\varepsilon_P=0\}$ are smooth hypersurfaces, since
 $d\varepsilon_P=e^{-\eta_P}d\eta_P+O(t^{\theta_0/2})$ and the $d\eta_P$ are nonzero. For the estimate of $d\varepsilon_P$: at
-$s=1$ the critical value $\varepsilon_P$ is holomorphic in $c$, and by Lemma~\ref{lem:NM}(2), applied on $U^+_\C$,
+$s=1$ the critical value $\varepsilon_P$ is holomorphic in $c$, and by Lemma~\ref{lem:NM}(2) on $U^+_\C$,
 $\varepsilon_P+\kappa_P=O(t^{\theta_0/2})$ there; every point of $U_\C$ is the centre of a polydisc in $\xi$, of polyradius
 $\min\bigl(1/2,\ \eta_0/(2\max_P\|r_P\|_*)\bigr)$, contained in $U^+_\C$, so the Cauchy estimates bound
 $d(\varepsilon_P+\kappa_P)$ by $C(\eta_0)t^{\theta_0/2}$ on $U_\C$. These loci are the loci $D_q$ of
@@ -680,7 +690,8 @@ $0,n_a,n_b,n_c$ are one and all other weights are zero.
 \item Let $x\in W^*\cap D_{u'}$, and let $I(x)$ be the set of monomials that do not vanish on $D_{u'}$ and have positive
 weight at $x$. If $I(x)$ is affinely independent, or $c$ is in the window and $I(x)\subseteq P$ for a node parallelogram
 $P\subset u'^\vee$, then $W^*$ is transverse to $D_{u'}$ at $x$. In particular $W^*$ is transverse to $D_u$ and $D_{u'}$
-(resp.\ $D_{u_i}$) on the regions of (1)--(3), wherever it meets them.
+(resp.\ $D_{u_i}$) on the regions of (1)--(3), wherever it meets them; on the regions of (2), and of (1$'$) when $\omega$
+is a node parallelogram, this requires $c$ to be in the window.
 \end{enumerate}
 \end{lemma}
 
@@ -715,8 +726,8 @@ $\mathcal N_P$ has equal exponents in $Z$ and $Z'$. So $S^1_\alpha$ acts on $W^*
 $\hat\mu:=|\hat Z|^2-|\hat Z'|^2$.
 
 \begin{lemma}[the quotient]\label{lem:quot}
-The map $\pi\colon(Z,Z',\chi_1,\chi_2)\mapsto(\hat\mu,\chi_1,\chi_2)$ identifies $(W^*\cap\mathcal N_P)/S^1_\alpha$ with an
-open subset of $\R\times(\C^*)^2$. Its fibre over $(\hat\mu,\chi_1,\chi_2)$ is a circle, except when $\hat\mu=0$ and
+The map $\pi\colon(Z,Z',\chi_1,\chi_2)\mapsto(\hat\mu,\chi_1,\chi_2)$ identifies $(W^*\cap\mathcal N_P)/S^1_\alpha$ with a
+subset of $\R\times(\C^*)^2$. Its fibre over $(\hat\mu,\chi_1,\chi_2)$ is a circle, except when $\hat\mu=0$ and
 $g_P(\chi_1,\chi_2)=0$, where it is a point.
 \end{lemma}
 
@@ -909,9 +920,28 @@ $\C^2_{(x,z_1)}$, the round sphere $|x|^2+|z_1|^2=|\kappa_P|$ oriented as the bo
 $\Sigma_0$ and, through Lemma~\ref{lem:carry}, $\delta_q$ accordingly.
 \end{definition}
 
-The convention depends on $q$ through the labelling of $P$, the order of $u,u'$ and $o^{\rm ch}_q$, and on nothing
-else. It does not depend on the passage: the two passages have the same thimble $\mathscr T_q$ and the same sphere
-$\Sigma_q$. Changing the chosen diagonal of $P$ reverses it (Lemma~\ref{lem:diag}).
+The convention is formed from the labelling of $P$, the order of $u,u'$ and the vector $w_u$; of these it depends only
+on the diagonal $\{a,c\}$ of $P$ chosen by the labelling.
+\begin{enumerate}
+\item[(i)] The relabelling $abcd\to adcb$, which keeps the diagonal, exchanges $y_1$ and $y_2$, hence reverses
+$o^{\rm ch}_q$, and exchanges $x$ and $y$; it leaves $\kappa_P$, $z_1$, $z_2$ and the set $\Sigma^1$ unchanged. On
+$\Sigma^1$ we have $y=e^{i\phi}\bar x$, and $(x,z_1)\mapsto(e^{i\phi}\bar x,z_1)$ reverses the orientation of $\C^2$ and
+preserves the round ball, so the projections to $(x,z_1)$ and to $(y,z_1)$ induce opposite orientations. The two sign
+changes cancel.
+\item[(ii)] Exchanging the order of $u,u'$, with the old $w_{u'}$ as the new $w_u$, exchanges $Z$ and $Z'$ and reverses
+$\alpha_q$, hence $o^{\rm ch}_q$. It leaves $f^{(0)}$ and $\Sigma^1$ unchanged, and the new $z_1$ is
+$\bar\vartheta_Pz_2=\bar\vartheta_Pe^{i\phi}\bar z_1$ on $\Sigma^1$; as in (i), the projection orientation is reversed,
+and the two sign changes cancel.
+\item[(iii)] Replacing $w_u$ by $w_u+k$, with $k$ a lattice vector of the plane of $G$, changes $\alpha_q$ by
+$2\langle\,\cdot\,,k\rangle$, a linear combination of $y_1$ and $y_2$ up to a constant, so the chart changes by a
+linear map of determinant one and $o^{\rm ch}_q$ is unchanged. It multiplies $z_1$ by a holomorphic unit and $z_2$ by
+its inverse; the differential of this change at the critical point is complex linear in $z_1$, and the tangent planes of
+the two thimbles there lie in the connected family of maximal positive planes of the proof of Lemma~\ref{lem:diag}, so
+the orientation is unchanged.
+\end{enumerate}
+Together with Lemma~\ref{lem:diag}, which treats the relabelling $abcd\to bcda$, these determine the effect of every
+relabelling of $P$, since the two relabellings generate the symmetry group of the parallelogram. The convention does not
+depend on the passage: the two passages have the same thimble $\mathscr T_q$ and the same sphere $\Sigma_q$. Changing the chosen diagonal of $P$ reverses it (Lemma~\ref{lem:diag}).
 
 \begin{lemma}[sign independence]\label{lem:SI}
 Let a sheet near $q$ be one of the four standard halves, with either orientation, carrying the covector
@@ -1069,8 +1099,28 @@ on which the Hessian form is $2e^{i\phi}(|v_x|^2+|v_{z_1}|^2)$; it is a graph ov
 vanishing spheres of $q_s$ form a continuous family in $W^*\cap\mathbb D_P$, and orienting each as the boundary of its
 thimble with the orientation pulled back from $\C^2_{(x,z_1)}$ is continuous in $s$. At $s=0$ this is the orientation of
 Definition~\ref{def:orient} for $abcd$ (up to the common factor $o^{\rm ch}_q$). At $s=1$, $h_1=-\mu_P^{-1}f'^{(0)}$ has the
-same level sets as $f'^{(0)}$ along the straight paths, so its vanishing sphere is the one of the labelling $bcda$, whose
-convention pulls back the orientation of $\C^2_{(x',z'_1)}$. On $T_1$ (where $c_1=0$) the differential of
+same level sets as $f'^{(0)}$ along the straight paths, so its vanishing sphere is, up to isotopy, the one of the
+labelling $bcda$, whose convention pulls back the orientation of $\C^2_{(x',z'_1)}$. The sphere of that convention is
+linear in the primed coordinates, and the tangent plane $T'$ of its thimble at $q_1$ need not be $T_1$. At $q_1$, where
+$c_1=0$, $\operatorname{Hess}f'^{(0)}=-\mu_P\operatorname{Hess}h_1=-\mu_P\operatorname{Hess}f^{(0)}$, and the path of
+$f'^{(0)}$ runs from its critical value $-\kappa'_P$ towards $0$, in the direction of $\kappa'_P=-\mu_P\kappa_P$; so
+$\bar\kappa'_P\operatorname{Hess}f'^{(0)}=|\mu_P|^2\,\bar\kappa_P\operatorname{Hess}f^{(0)}$.
+Hence $T_1$ and $T'$ are both real four-planes on which $e^{-i\phi}\operatorname{Hess}f^{(0)}$ is real and positive
+definite; in particular both are maximal positive planes of the real quadratic form
+$\operatorname{Re}(e^{-i\phi}\operatorname{Hess}f^{(0)})$ at $q_1$. After a complex-linear change of coordinates in which
+$e^{-i\phi}\operatorname{Hess}f^{(0)}$ becomes $\sum_i\zeta_i^2$, the planes of this kind are the images of $\R^4$ under
+$O(4,\C)$, so they form a family $O(4,\C)/O(4)$, which is connected since $O(4)$ meets both components of $O(4,\C)$; the linear thimbles they contain have their boundary spheres
+in one level set of the quadratic part, and these spheres move by isotopy along the family. Both thimbles at $q_1$ are
+such linear thimbles in one chart. Let $\mathbf w':=(x',y',z'_1,z'_2)$, $A:=d\mathbf w'(q_1)$ and $\mathbf w:=A^{-1}\mathbf w'$.
+Since $\mathbf w'(q_1)=0$ and $Q'\circ A=-\mu_PQ$ for the quadratic parts $Q$, $Q'$ of $h_1$ and $f'^{(0)}$ at $q_1$, we have
+$h_1=-\mu_P^{-1}f'^{(0)}=-\mu_P^{-1}(Q'(A\mathbf w)-\kappa'_P)=Q(\mathbf w)-\kappa_P$ on $\mathbb D_P$, so $\mathbf w$ are
+holomorphic Morse coordinates of $h_1$ at $q_1$ tangent to the identity. In them the thimble of $q_1$ is the linear thimble
+with tangent plane $T_1$, and the thimble of the primed convention is the linear thimble with tangent plane
+$T'=A^{-1}T'_{\rm lin}$, where $T'_{\rm lin}$ is its tangent plane in the coordinates $\mathbf w'$. So the orientations of $\delta_q$ induced
+from oriented thimbles are carried along this family of planes by continuity. On each of them the projections to $(v_x,v_{z_1})$ and to $(v_{x'},v_{z'_1})$, that is to
+$(v_y,v_{z_1})$ up to a complex-linear change, are isomorphisms, because a vector with $v_x=v_{z_1}=0$, or with
+$v_y=v_{z_1}=0$, is isotropic. So the sign relating the two pulled-back orientations is constant on the family, and it
+suffices to compute it on $T_1$. On $T_1$ (where $c_1=0$) the differential of
 $(x,z_1)\mapsto(x',z'_1)$ is $(v_x,v_{z_1})\mapsto(e^{i\phi}\bar v_x,c_Zv_{z_1})$, which reverses orientation. So the two
 conventions orient $\delta_q$ oppositely.
 \end{proof}

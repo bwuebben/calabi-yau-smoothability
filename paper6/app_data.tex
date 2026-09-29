@@ -2,9 +2,15 @@
 This appendix lists the data of the examples of Section~\ref{sec:examples}: for $X_9$, $X_{19}$ and $X_{20}$ the rays of
 $\Sigma'$, the node parallelograms, a $\Z$-basis of $K$ and the tropical $2$-cycles of Lemma~\ref{lem:x9belt} and
 Table~\ref{tab:x19x20}; for $X_{88}$ and $X_{154}$ the vertices, the profile, the node parallelograms and a $\Z$-basis of
-$K$. The lists are generated from the data accompanying the paper by programs that also check each assertion made here.
-The triangulations $\mathcal T$, the heights, the fans $\Sigma'$ and the triangles of the cycles are available at
-\coderepo.
+$K$. The accompanying computation bundle contains the triangulations $\mathcal T$, integral heights, fans $\Sigma'$,
+polyhedral bases and cycle triangles for all five examples. Its checker recomputes the toric data, relation lattices,
+boundary networks and coefficients, and the stated Euler characteristics and numbers of interior intersections with
+$\Gamma$. The printed data below are compared with these records. The checker does not reconstruct the coupled base
+from its two fans or establish every interior condition of \cite[Def.~7.2]{CBM}. For the belt cycles it checks that each
+is a disc with one field that meets $\Gamma$ only along its boundary, and for the cycle of $X_9$ the conditions of
+\cite[Def.~7.2]{CBM} are proved in Lemma~\ref{lem:x9belt}; for the other cycles, those with trivalent vertices and the
+cycle of $X_{88}$ whose boundary is a closed path and which crosses $\Gamma$ at $18$ interior points, the interior
+conditions rest on the computations described in Section~\ref{ssec:evidence}.
 
 \emph{Conventions.} The rays of $\Sigma'$ are numbered $n_0,n_1,\dots$; the vertices of $\Delta$ come first. A node
 parallelogram is written $q=(a,b,c,d)$ with $n_a+n_c=n_b+n_d$, in the labelling of Section~\ref{ssec:admissible}:

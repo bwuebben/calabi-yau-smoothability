@@ -7,7 +7,7 @@ resolution-side counterpart of Theorem~\ref{thm:lift} and forms Part~III of the 
 in Parts~I and~II: Theorems~\ref{thm:main}, \ref{thm:real} and~\ref{thm:lift} and Corollary~\ref{cor:smooth} are proved
 without it; the integral relations among the exceptional curves are established independently in
 Proposition~\ref{prop:integral}. Conversely, this section uses the following results of the other parts. From Section~\ref{sec:base}:
-Proposition~\ref{prop:partialres} and Lemma~\ref{lem:H2} on the small resolutions, Remark~\ref{rem:tie} on the ties, and,
+Proposition~\ref{prop:partialres} on the small resolutions (and, through it, Lemma~\ref{lem:H2}), Remark~\ref{rem:tie} on the ties, and,
 on the base, Lemmas~\ref{lem:monodromy}, \ref{lem:stack} and~\ref{lem:types} and the passages at a node. From
 Section~\ref{sec:cycles}: the clauses (a)--(j) of \cite[Def.~7.2]{CBM} and Lemma~\ref{lem:boundaryfield}
 (Section~\ref{ssec:cbm}), Lemma~\ref{lem:lift}, the node coefficients (Section~\ref{ssec:cycles-bdry}) and, in a remark,
@@ -116,7 +116,7 @@ The last assertion is part of Proposition~\ref{prop:partialres}(3).
 \end{proof}
 
 \emph{Throughout Sections~\ref{ssec:res-base}--\ref{ssec:res-transport}, $\widehat X$ is projective}, and we fix
-$\mathcal F'$ as in Lemma~\ref{lem:regref}, generic inside the facets of $\Delta$, with toric variety $X_{\mathcal F'}$. For
+$\mathcal F'$ as in Lemma~\ref{lem:regref}, with toric variety $X_{\mathcal F'}$. For
 a small resolution that is not projective the chain is constructed on a projective one and carried over by
 Lemma~\ref{lem:flop}. Let $\widehat B$ be Gross's base (Section~\ref{ssec:gross}) built from the same pair
 $(\mathcal T,\check h)$ and the fan side $\mathcal F'$ in place of $\Sigma'$, with the subdivision of the upper and lower
@@ -202,8 +202,11 @@ the same vertex regions, in the same order (Lemma~\ref{lem:twofaces} for the edg
 matching them.
 
 \emph{Two-faces without node points.} On a two-face that contains no node point, the two cell structures, with their vertex
-regions, are isomorphic, compatibly with $g$ on the boundary; $g$ extends over each closed region, a closed disc
-(Lemma~\ref{lem:twofaces}(3)), by the Alexander trick \cite[Lemma~2.1]{FM12}.
+regions, are isomorphic, compatibly with $g$ on the boundary. We first define $g$ on each arc of the graph inside the
+two-face as a piecewise linear homeomorphism onto the corresponding arc, matching the end points. Then $g$ is defined on the
+boundary circle of each closed region, a closed disc (Lemma~\ref{lem:twofaces}(3)), as a piecewise linear homeomorphism onto
+the boundary circle of the corresponding region, and it extends over the region by coning: a piecewise linear homeomorphism
+between the boundaries of two piecewise linear discs extends to one of the discs (identify both with a simplex and cone).
 
 \emph{Two-faces with node points.} Let $F$ be a two-face containing node points, and $G$ the dual face of $\Delta$. It
 contains one node point if $G$ is a square, two if $G$ is a pentagon or a hexagon on the $A_1$ branch, and three if $G$ is a
@@ -235,12 +238,15 @@ if only one does. The subdivision induced by $\mathcal F'$ differs from that of 
 node parallelogram. So the graph of $\widehat B$ is obtained from that of $B'_\sigma$ by replacing each four-valent vertex
 $p_q$ by the tree $y_0\cup e_q\cup y_\infty$, where $y_0$ (the triangle $\{a,b,c\}$) carries the arcs across $[a,b]$ and
 $[b,c]$, and $y_\infty$ (the triangle $\{a,c,d\}$) those across $[c,d]$ and $[d,a]$; every other vertex, every other arc and
-every incidence with a region is unchanged. After removing the discs $F'_q$ from $F$ and the neighbourhoods $\widehat F_q$,
-the two labelled graphs, with their regions, are therefore isomorphic, the four boundary points of each removed disc being
-matched in the cyclic order $ab,bc,cd,da$. Each closed region $\overline{C_B([u,u'],n)}$ is a closed disc
+every incidence with a region is unchanged. After removing the discs $F'_q$ from $F$ and the interiors of the
+neighbourhoods $\widehat F_q$, the two labelled graphs, with their regions, are therefore isomorphic, the four boundary points
+of each removed disc being matched in the cyclic order $ab,bc,cd,da$. We define $g$ on the arcs of the graph in $F$ outside the
+removed discs, and on each circle $\partial F'_q$ onto $\partial\widehat F_q$, as piecewise linear homeomorphisms that match
+the end points of the arcs and the four leg points; then $g$ is defined on the whole boundary circle of each closed region
+that remains. Each closed region $\overline{C_B([u,u'],n)}$ is a closed disc
 (Lemma~\ref{lem:twofaces}(3)), and by the previous paragraph the removed discs meet it in pairwise disjoint discs attached
-along pairwise disjoint arcs of its boundary, so what remains of it is again a closed disc, on both bases. Hence $g$ extends over $F\setminus\bigcup_qF'_q$ region by region, by the
-Alexander trick, and over each $F'_q$ onto $\operatorname{int}\widehat F_q$ by coning.
+along pairwise disjoint arcs of its boundary, so what remains of it is again a closed disc, on both bases. Hence $g$ extends over $F\setminus\bigcup_qF'_q$ region by region, by
+coning, and over each $F'_q$ onto $\operatorname{int}\widehat F_q$ by coning.
 
 The shape of the graph inside $F$ depends on $G$. For a square it has one four-valent vertex. For a pentagon it has two
 four-valent vertices, joined by the arc across the edge that the two parallelograms share, and one negative vertex, the
@@ -263,8 +269,10 @@ $(x,t)\mapsto(\alpha x+\beta t,t)$, which is linear; so $\mathcal G$ is a piecew
 is the identity on the vertical sides. On $D\times[0,1]$, $D$ a two-face, $\mathcal G$ is now defined on the boundary sphere
 $\partial(D\times[0,1])$ as a piecewise linear homeomorphism onto itself, and we extend it by coning from an interior point $c_D$: if the boundary map is simplicial from a
 triangulation $K$ of the sphere onto a triangulation $L$, the cone map is the simplicial isomorphism from the cone $c_D*K$ onto
-$c_D*L$, both of which triangulate the convex cell $D\times[0,1]$. Finally let $c$ be an interior point of $F_u$ and $0<\lambda<1$, triangulate the prisms
-$\phi\times[0,1]$ compatibly and without new vertices, and map each vertex $(w,t)$ to $c+(\lambda+(1-\lambda)t)(w-c)$ and each
+$c_D*L$, both of which triangulate the convex cell $D\times[0,1]$. Finally let $c$ be an interior point of $F_u$ and $0<\lambda<1$. Triangulate the two-faces of $F_u$ without new
+vertices, fix a total order of the vertices of $\partial F_u$, and triangulate each prism $\phi\times[0,1]$, $\phi$ a simplex of
+the resulting triangulation of $\partial F_u$, by the staircase triangulation for this order; these triangulations agree on
+common faces and have no new vertices. Map each vertex $(w,t)$ to $c+(\lambda+(1-\lambda)t)(w-c)$ and each
 simplex linearly. As in the proof of Lemma~\ref{lem:NS} this is a piecewise linear homeomorphism of $\partial F_u\times[0,1]$
 onto the collar between $\partial F_u$ and $c+\lambda(\partial F_u-c)$. Transport $\mathcal G$ to the collar by it, and put $g$
 equal to the identity on $c+\lambda(F_u-c)$; this gives (1). Since $U_q$ meets the two-skeleton only in $\operatorname{ri}F_q$, $\widehat U_q$ is an open ball with
@@ -321,7 +329,8 @@ transverse to the other two leg ends, which it therefore crosses finitely often.
 $\gamma^0_q$ for $r\le r_*$ and as $\gamma_r$ at level $r$ for $r\in[r_*,r_0]$. Different levels are disjoint, so $j'$ is an
 embedding, and it agrees with $j$ near $\partial U^{r_0}_q$. The map $(x,r)\mapsto rx$ from
 $\operatorname{lk}_q\times[r_*,r_0]$ to the shell is not piecewise linear, so we realise the levels differently: triangulate
-the prisms $\sigma\times[r_*,r_0]$, $\sigma$ a simplex of $\operatorname{lk}_q$, compatibly and without new vertices, send each
+the prisms $\sigma\times[r_*,r_0]$, $\sigma$ a simplex of $\operatorname{lk}_q$, compatibly and without new vertices (by the
+staircase triangulations for a fixed order of the vertices of $\operatorname{lk}_q$), send each
 vertex $(w,r)$, $r\in\{r_*,r_0\}$, to $rw$, and extend linearly on each simplex. Since the cone parameter is the linear
 function equal to $1$ on $\sigma$ on the cone over $\sigma$, this map is a level-preserving piecewise linear homeomorphism of
 each prism onto its frustum, and composing the piecewise linear isotopy $(x,r)\mapsto(\gamma_r(x),r)$ with it makes $j'$
@@ -346,18 +355,30 @@ boundary field, which are unchanged.
 
 Clause (i) is read, as in Section~\ref{ssec:cbm}, as conjugacy in $GL_2(\Z)$. With this reading the orientation of the loop
 around a leg plays no role in this section, and we fix no convention for it; in particular no statement here depends on
-the orientation convention for loops in \cite[Prop.~3.15]{Gross2005}. The shell $U_q\setminus U_q^{r_*}$ may contain crossings, other sheets, interior edges and vertices of $S$, and the
+the orientation convention for loops in \cite[Prop.~3.15]{Gross2005}. If clause (i) were read with a fixed orientation
+convention, the new crossings might violate it; the construction below never uses clause (i), only clauses (a)--(h), (j) and
+the invariance of $v$ under the monodromy at the crossings, which holds at the new crossings because
+$\langle\alpha,b-a\rangle=0$ (respectively $\langle\alpha,c-b\rangle=0$). The shell $U_q\setminus U_q^{r_*}$ may contain crossings, other sheets, interior edges and vertices of $S$, and the
 winding of the passing sheet.
 
 \begin{definition}[resolved cycle]\label{def:resolvedcycle}
 Let $j'$, $r_*$ be as in Lemma~\ref{lem:NS} and $g$ as in Lemma~\ref{lem:resmove} for this $r_*$. The \emph{resolved
 cycle} $\hat S=\hat j(S)$ on $\widehat B$ is defined as follows. Off $\bigcup_qj'^{-1}(U^{r_*}_q)$ put $\hat j:=g\circ j'$, and let $v$ be
 transported by $g$. Inside $\widehat U_q$ replace the cone over $\gamma^0_q$ by the \emph{standard half-disc}
-$\mathfrak H_q\subset\widehat U_q$: a piecewise linear disc on side $s_q$ of $F_q$ bounded by
-$g(\gamma^0_q)\subset\partial\widehat U_q$ and by the path formed by the inner segments of the legs of $\widehat B$ with lower
-supports $\{a,b\}$ and $\{c,d\}$ together with $y_0\cup e_q\cup y_\infty$ (for the $c-b$ passage, the legs with lower
-supports $\{b,c\}$ and $\{d,a\}$).
+$\mathfrak H_q\subset\overline{\widehat U_q}$: a piecewise linear disc on side $s_q$ of $F_q$ bounded by the arc
+$g(r_*\gamma^0_q)\subset\partial\widehat U_q$, where $r_*\gamma^0_q$ is the arc in which the cone over $\gamma^0_q$ meets the
+level $r_*$, and by the \emph{boundary path} formed by the inner segments of the legs of $\widehat B$ with lower supports
+$\{a,b\}$ and $\{c,d\}$ together with $y_0\cup e_q\cup y_\infty$ (for the $c-b$ passage, the legs with lower supports
+$\{b,c\}$ and $\{d,a\}$).
 \end{definition}
+
+Such a disc exists. Let $H_q$ be the closed half-ball $g\bigl(\overline{U^{r_*}_q}\cap\overline{F_{u_{s_q}}}\bigr)$, where
+$u_{+1}=u$ and $u_{-1}=u'$ for the ordering $(u,u')$ of $F_q$. Its boundary sphere is the union of the image of the closed
+hemisphere of side $s_q$ at level $r_*$ and of $g(\overline{U^{r_*}_q}\cap F_q)=\widehat F_q$. The arc $g(r_*\gamma^0_q)$ lies in
+the first part, the boundary path in the second, and they have the same end points, the two leg points on
+$\partial\widehat F_q$; so their union is a simple closed curve on this sphere. It bounds a disc in the sphere, and pushing
+the interior of that disc into the interior of $H_q$, relative to its boundary, gives a piecewise linear disc that meets
+$\widehat\Gamma$, which lies in the two-skeleton, only in the boundary path.
 
 Outside $\bigcup_q\widehat U_q$ the data $(S,\hat j,v)$ satisfy the clauses of \cite[Def.~7.2]{CBM} relative to $\widehat B$,
 by Lemma~\ref{lem:resmove}; the image of the shell meets $\widehat\Gamma$ only on the outer segments of the legs at the nodes,
@@ -436,14 +457,17 @@ $[C_0,\infty)$, where $0<C_1<C_0<\frac14$. Put $\beta_m(x)=\prod_{i\in\check{\ma
 \]
 and for $s\in[0,1]$ let $V_s$ be the closure of the zero set of
 $\sum_m\bigl((1-s)+s\beta_m\bigr)(-R)^{-\check h_m}x^m$. The \emph{active set} at $x$ is
-$A(x)=\{m:\beta_m>0\text{ near }x\}$.
+$A(x)=\{m:\beta_m\not\equiv0\text{ on every neighbourhood of }x\}$, for $x\in X_{\mathcal F'}$, the functions $\beta_m$ being
+defined on the dense torus; since $\check{\mathcal A}$ is finite, $x$ has a
+neighbourhood on which $\beta_m\equiv0$ for every $m\notin A(x)$.
 \end{definition}
 
 So $V_0=\widehat X_R$, the proper transform of $X_R=\{f_R=0\}$, and $V_1=W$; a monomial is active only where it is within
 $C_0$ of the maximum of the $T_i$. The hypersurface $W$ is the localization of $X_R$ in the sense of Mikhalkin
 \cite{Mikhalkin}, in the form of \cite[Def.~3.1]{Ya16}: near each point it is the zero set of the monomials that are close to
 maximal there, and it is isotopic to $\widehat X_R$ (Lemma~\ref{lem:T0}). In the notation of \cite[\S3]{Ya16}, with
-$q_{\rm Y}=-R$, $k_m=q_{\rm Y}^{v_m}$ and $v_m=-\check h_m$, the function $f_R$ is $f_{q_{\rm Y}}$, $\tilde f$ is
+$k_m=t^{\check h_m}\in\C\{t\}$, so that $v_m=\operatorname{val}(k_m)=-\check h_m$ for Yamamoto's valuation, and with
+$q_{\rm Y}=-R$, the substitution $t=1/q_{\rm Y}$ turns $k_m$ into $q_{\rm Y}^{v_m}=(-R)^{-\check h_m}$, and the function $f_R$ is $f_{q_{\rm Y}}$, $\tilde f$ is
 $\tilde f_{q_{\rm Y}}$ and $W$ is $W_{q_{\rm Y}}$. The leading coefficients $c_m$ of loc.\ cit.\ are all $1$, so the correction
 term in Yamamoto's interpolating family $\tilde f_{q_{\rm Y},s}$ vanishes, and $V_s$ is the member $V_{q_{\rm Y},s'}$ of that
 family for every $s'$ with $d(s')=s$ \cite[proof of Thm.~3.9]{Ya16}.
@@ -476,21 +500,29 @@ hence unimodular. (3) The last sentence is \cite[Thm.~3.9(2),(3)]{Ya16}. Yamamot
 that the heights are integral, that the subdivision of $\Delta^\circ$ induced by the heights is unimodular, which holds because
 $\mathcal T$ is unimodular (Theorem~\ref{thm:U}), and that the refinement of the normal fan of $\Delta^\circ$ is unimodular;
 statements (2) and (3) of his theorem are local near each orbit met by $W$, and by (1) and (2) above the charts
-$U_\sigma\cong\C^k\times(\C^*)^{4-k}$ of the relevant cones are those of his setting. The regularity statement is asserted in
+$U_\sigma\cong\C^k\times(\C^*)^{4-k}$ of the relevant cones are those of his setting. His proof of (3) takes a maximal cone
+$\tau\supset\sigma$ of the refinement and the basis of $\tau^\vee$; here the maximal cones containing $\sigma$ need not be
+unimodular, and we replace that basis by the basis of $M$ dual to a basis of $N$ extending the primitive generators of the
+unimodular cone $\sigma$. His computation uses only the resulting coordinates on $\bigcup_{\sigma'\preceq\sigma}O(\sigma')$. The regularity statement is asserted in
 the proof of \cite[Thm.~3.9]{Ya16} as a consequence of $\det\mathbf J\neq0$ for a $2\times2$ matrix $\mathbf J$, ``by the
 concrete calculation'', which is not written there. We do not rely on that assertion: the calculation is carried out in
 Appendix~\ref{app:Ufan}, which proves (3), and $\det\mathbf J>0$ there for $R$ large, uniformly in $s$ and in the point.
 \end{proof}
 
 \begin{lemma}[exact local symmetry]\label{lem:symm}
-Let $x$ be a point of $W$ in the dense torus. The subgroup $\bigl((A(x)-A(x))^\perp\cap N\bigr)\otimes U(1)$ of the compact
-torus $N\otimes U(1)$ preserves $W$ near $x$ and near the points of $W$ on the toric strata in the closure of a neighbourhood
-of $x$.
+Let $x$ be a point of $W$, in the dense torus or on a toric stratum, and $V$ an open neighbourhood of $x$ in
+$X_{\mathcal F'}$, invariant under the compact torus $N\otimes U(1)$, such that $\beta_m\equiv0$ on the part of $V$ in the
+dense torus for every $m\notin A(x)$. The subgroup $\bigl((A(x)-A(x))^\perp\cap N\bigr)\otimes U(1)$ of the compact torus
+preserves $W\cap V$.
 \end{lemma}
 \begin{proof}
-Each $\beta_m$ depends only on the moduli $|x^i|$, so for $\lambda$ in the compact torus
-$\tilde f(\lambda x)=\sum_m\beta_m(x)(-R)^{-\check h_m}\lambda^mx^m$. If $\lambda^m$ is constant on $A(x)$, then
-$\tilde f(\lambda x)=\lambda^{m_0}\tilde f(x)$ near $x$, for any $m_0\in A(x)$.
+Each $\beta_m$ depends only on the moduli $|x^i|$, so it is invariant under the compact torus. Such $V$ exist: by
+Definition~\ref{def:W} some open neighbourhood $V_0$ of $x$ has $\beta_m\equiv0$ on its part in the dense torus for every
+$m\notin A(x)$, and $V=(N\otimes U(1))\cdot V_0$ has the same property. For $\lambda$ in the compact torus and $y$ in the
+dense torus, $\tilde f(\lambda y)=\sum_m\beta_m(y)(-R)^{-\check h_m}\lambda^my^m$. If $\lambda^m$ is constant on $A(x)$, then
+$\tilde f(\lambda y)=\lambda^{m_0}\tilde f(y)$ for $y$ in the part of $V$ in the dense torus, for any $m_0\in A(x)$; so
+$\lambda$ preserves the zero set $\{\tilde f=0\}\cap V$. Since $V$ is open, $W\cap V$ is the closure in $V$ of this zero set,
+and $\lambda$, a homeomorphism of $V$, preserves it.
 \end{proof}
 
 \begin{lemma}[no positive points on the strata]\label{lem:stratum}
@@ -532,31 +564,42 @@ polytope is $\{\pi_\perp\ge0\}$, so in the chart $\nabla^{\check h}=(A^\perp_\Ph
 $\widehat B=(A^\perp_\Phi)_\R\times\partial\mathcal O_\perp$, with $\mathcal O_\perp=\R^{A_\Phi\setminus0}_{\ge0}$;
 $\partial\mathcal O_\perp$ is a point, two half-lines or three quadrants. The \emph{tentacle} from $y$ is $y+\R_{\ge0}n$; in the
 chart it is $\{\pi_\parallel(y)\}\times(\pi_\perp(y)+\R_{\ge0}(-1,\dots,-1))$, and it runs into the toric divisor $D_n$.
-Yamamoto's tropical contraction $\varpi$ \cite{Ya21} maps the tropical hypersurface onto $\widehat B$ by the identity on the
-facet interiors and along the tentacles elsewhere.
+Put $d=|A_\Phi\setminus0|$ and, for $p=(p_1,\ldots,p_d)$, $\mu(p)=\min(0,p_1,\ldots,p_d)$. In the chart, near $\Phi$, the
+tropical hypersurface of the heights is $(A^\perp_\Phi)_\R\times\{p:\text{the minimum defining }\mu(p)\text{ is attained at least
+twice}\}$, and the \emph{contraction} of the chart,
+\[
+\varpi(\pi_\parallel,p)=\bigl(\pi_\parallel,\ p-\mu(p)(1,\ldots,1)\bigr),
+\]
+maps it, near $\Phi$, onto $\widehat B$, by the identity on $\widehat B$ and along the tentacles. This is modelled on Yamamoto's tropical
+contraction \cite{Ya21}; below we use only the chart formula.
 
 \begin{definition}[product-shaped sets and regions]\label{def:regions}
 An open set $U\subset\widehat B$ is \emph{product-shaped} at $\Phi$ if in a chart of $(\Phi,n)$ it is
 $\{\pi_\parallel\in U_\parallel,\ \pi_\perp\in U_\perp\}$ with $U_\parallel$ convex and
-$U_\perp=\partial\mathcal O_\perp\cap\{|\pi_\perp|_\infty<r\}$, and its distance to every face not containing $\Phi$ and to
-$\widehat\Gamma$ exceeds $\ell_0$. For such $U$ let $\Omega_U=\varpi^{-1}(U)^\eta$, the $\eta$-neighbourhood in the sup-norm of
-the chart; in the chart
+$U_\perp=\partial\mathcal O_\perp\cap\{|\pi_\perp|_\infty<r\}$, if $\ell_m/|m|>\ell_*$ on $U$ for every
+$m\in\check{\mathcal A}\setminus A_\Phi$, where $\ell_m=\langle m,\cdot\rangle+\check h_m$, and if its distance to
+$\widehat\Gamma$ exceeds $\ell_*$. For such $U$ put
 \[
 \Omega_U=\{\pi_\parallel\in U_\parallel^\eta,\ \pi_\perp\in\Omega_\perp\},\qquad
 \Omega_\perp=S_{d,r}^{\eta},\qquad d=|A_\Phi\setminus0|,
 \]
-where, for $p=(p_1,\ldots,p_d)$ and $\mu(p)=\min(0,p_1,\ldots,p_d)$, we set
+where
 \[
  S_{d,r}=\{p:\text{the minimum defining }\mu(p)\text{ is attained at least twice},\quad
                     p_i-\mu(p)<r\ (1\le i\le d)\}.
 \]
-Thus $S_{1,r}=\{0\}$; $S_{2,r}$ consists of two truncated positive rays and the negative diagonal ray;
+Thus $\{\pi_\parallel\in U_\parallel,\ \pi_\perp\in S_{d,r}\}=\varpi^{-1}(U)$ is the set of points of the tropical hypersurface of
+the chart that the contraction maps into $U$, and $\Omega_U$ is its $\eta$-neighbourhood in the chart norm.
+Also $S_{1,r}=\{0\}$; $S_{2,r}$ consists of two truncated positive rays and the negative diagonal ray;
 and $S_{3,r}$ consists of the truncated boundary of the positive orthant together with its tentacles from the rays and
-vertex. The contraction is $p\mapsto p-\mu(p)(1,\ldots,1)$.
+vertex.
 The \emph{region} of
 $U$ is $W_U=W\cap\operatorname{Log}^{-1}(\Omega_U)$ together with its limit points on the divisor $D_n$ at the ends of the
-tentacles. Here $\eta>C_0$ and $\ell_0=C_{\rm Lip}(C_{\rm ch}\eta+C_{\rm act}C_0)$, where $C_{\rm ch}$ bounds the distortion
-between the chart norms and the Euclidean norm, $C_{\rm Lip}$ is the Lipschitz constant of $\varpi$ over pairs of cells, and
+tentacles. Distances, and the norms $|y|$ on $N_\R$ and $|m|$ on $M_\R$, are Euclidean for the standard inner product in
+lattice coordinates, so $|m|\ge1$ for $0\neq m\in M$; the \emph{chart norm} of $y\in N_\R$ is
+$|y|_\Phi=\max\bigl(|\pi_\parallel(y)-\pi_\parallel(0)|,\,|\pi_\perp(y)-\pi_\perp(0)|_\infty\bigr)$. Here $\eta>C_0$ and
+$\ell_*=C_{\rm act}C_0+(C_{\rm ch}+1)\eta$, where $C_{\rm ch}\ge1$ bounds the distortion between the chart norms and the
+Euclidean norm ($|y|_\Phi\le C_{\rm ch}|y|$ and $|y|\le C_{\rm ch}|y|_\Phi$) over the finitely many charts in use, and
 $C_{\rm act}$ is such that active monomials lie within $C_{\rm act}C_0$ of the maximum.
 \end{definition}
 
@@ -595,7 +638,7 @@ The \emph{domain} $\mathfrak D=\mathfrak D(S)$ is the CW complex obtained by glu
 \item Over each cell $c$ of $\mathfrak T$ on an interior edge, with fields $v_1,v_2,v_3$ on the adjacent sheets and
 $s_1v_1+s_2v_2+s_3v_3=0$ (clause (g)): $c\times\mathcal Q$, where $\mathcal Q$ is a $2$-simplex with its three vertices identified
 to one point, whose three edges are glued to the circles $G_k=\R v_k/\Z v_k$ of the three sheets, and which is oriented so that
-$\partial\mathcal Q=s_1G_1+s_2G_2+s_3G_3$ with $G_k$ oriented by $v_k$. It is the domain of the flat triangle of
+$\partial\mathcal Q=s_1G_1+s_2G_2+s_3G_3$ with $G_k$ oriented by $v_k$. It is the domain of the flat triangle, cf.\
 \cite[Lemma~7.7]{CBM}: the linear map sending the edges of a $2$-simplex to $s_kv_k$, followed by the quotient by the lattice.
 \item Over an interior vertex, where four interior edges and six sheets meet: a $3$-simplex whose four faces are glued to the
 triangles $\mathcal Q$ of the four edges. This is possible because the six fields are the edge vectors, and the four balancing
@@ -700,7 +743,7 @@ f_{\vartheta'}(\xi)=\beta(-\xi)\,\beta(-\xi-\vartheta')\,R^{\xi}-\beta(\xi)+R^{-
 \]
 For $R$ large, every $f_{\vartheta'}$ has exactly one zero $X(\vartheta')$; $X(\vartheta')\in(-C_0,C_0)$, $X$ is continuous, and
 $X(\vartheta')\to-C_0$ as $\vartheta'\to0$. Near the leg, a point of $\mathrm{Ch}_s$ with $z_1z_2\neq0$, $z_2>0$ and
-given $w$ and $|z_1|/|z_2|$ is determined by $(\mu,\vartheta)$, and such points are:
+given $w$ and $|z_1|/|z_2|$ is determined by $(\mu,\vartheta)$, and those with $s\vartheta\ge0$ are:
 \begin{enumerate}
 \item for $s\vartheta>0$, the points with $T_0-T_{u_s}=X(s\vartheta)$, where $u_{+1}=u$ and
 $u_{-1}=u'$;
@@ -748,7 +791,7 @@ $w=w(\mathfrak s(e,\varsigma_0/2))$ fixed along the collar path.
 \end{definition}
 
 Over a transverse segment, the collar paths play the role of the sections $\check\sigma$ with $\check\sigma(\partial S)$ in the
-critical locus that Casta\~no-Bernard and Matessi use in their local models \cite[\S7.4, \S7.5]{CBM}, and the leg piece below is
+critical locus that Casta\~no-Bernard and Matessi use in their local models \cite[\S7.2, (47)--(48), \S7.4, \S7.5]{CBM}, and the leg piece below is
 the orbit of such a section under $S^1_v$. The end point depends continuously on $e$ because $\mathfrak s$ does. In (ii) the positive real point with given
 $|\mathfrak t|$, $w$ and $|z_1|/|z_2|$ is unique and depends continuously on $|\mathfrak t|$: by \eqref{eq:legcoeff} its
 equation is $\beta_0R^\mu=R^{\check h_u}(\alpha_u+\alpha_{u'}|\mathfrak t|)$, whose left side vanishes for
@@ -796,9 +839,12 @@ $\arg\mathfrak t$ from $0$ to $\pi$ as in (iii) and ends with $|Z_1|=|Z_2|=|Z_3|
 (side $-1$), so that $Z_1Z_2Z_3=x^{-u}$ ends in $s\R_{\ge0}$. Let $\mathbb B_j$ be the corner of the $j$-th sheet at the
 vertex: a closed disc in the sheet bounded by a segment of its leg ending at the vertex, a segment of the interior edge, a
 transverse segment of the sheet at the other end of the leg segment, and an arc of the inner boundary; the leg segment contains no
-switching point. The piece is the union of the leg pieces over the rest of the legs, the three sheet pieces $G_j\cdot\Theta_j$
+switching point. On this leg segment the boundary map of $\mathbb B_j$ is a path in the closure of the critical curve
+$\mathrm{Crit}$ of the leg, from the point of $\mathrm{Crit}$ over the far end of the segment to the point $Z=0$,
+$\mathfrak t=\mathfrak t_0$, which lies in that closure; along it $\mathfrak t=\mathfrak t_0$, and it is fixed by $G_j$. The piece
+is the union of the leg pieces over the rest of the legs, the three sheet pieces $G_j\cdot\Theta_j$
 over the $\mathbb B_j$, with $\Theta_j$ given by Lemma~\ref{lem:collar}(2), and the cone, over the vertex path, on the triangle
-$\mathcal Q\subset T^2$ with $\partial\mathcal Q=G_1+G_2+G_3$ \cite[\S7.5]{CBM}. The two-cells $\mathcal Q\cdot\mathfrak s(b)$
+$\mathcal Q\subset T^2$ with $\partial\mathcal Q=s_1G_1+s_2G_2+s_3G_3$ as in Definition~\ref{def:domain} \cite[\S7.5]{CBM}. The two-cells $\mathcal Q\cdot\mathfrak s(b)$
 over the interior edge leaving the vertex lie in $T^2\cdot\mathfrak s(b)$.
 
 \emph{Positive vertices.} Let $\partial S$ turn at the positive vertex $p$ on the edge of $\nabla^{\check h}$ dual to
@@ -855,15 +901,19 @@ boundary path of $\mathfrak H_q$ between points $e'$, $e''$ of the two leg segme
 segments of $\mathfrak H_q^\circ$ at $e'$ and $e''$, and an arc of the inner boundary. The \emph{node piece} is $S^1_v\cdot\Theta_q$ over
 $\mathbb B_q$, together with the leg pieces over the rest of the two leg segments, where $\Theta_q\colon\mathbb B_q\to W$ is given
 by Lemma~\ref{lem:collar}(1): it agrees with the leg collar paths $\gamma_{e'}$, $\gamma_{e''}$ on the transverse segments and
-with $\mathfrak s$ on the inner boundary, maps the boundary path near $y_0$ and $y_\infty$ to $\mathrm{Crit}$, and maps $e_q$ to an arc
-$\gamma_q\subset C^W_q$ from $\zeta=0$ to $\zeta=\infty$.
+with $\mathfrak s$ on the inner boundary, maps $e_q$ to an arc $\gamma_q\subset C^W_q$ from $\zeta=0$ to $\zeta=\infty$, and maps
+the leg segment from $e'$ to $y_0$ to a path in the closure of the critical curve $\mathrm{Crit}$ of that leg, from the point
+of $\mathrm{Crit}$ over $e'$ to the point $\zeta=0$ of $C^W_q$, which lies in that closure, and symmetrically the leg segment
+from $y_\infty$ to $e''$ to a path from $\zeta=\infty$ to the point of $\mathrm{Crit}$ over $e''$. Along these
+paths $\mathfrak t=\mathfrak t_0$, and they are fixed by $S^1_v$.
 
 \begin{lemma}[node degree]\label{lem:nodedeg}
 Let $q$ be a node on $\partial S$. The node piece restricts on $\partial_q\mathfrak D$ to a map onto $C^W_q$ of degree
-$-\rho_q(S)$, for the complex orientation of $C^W_q$. More generally, if $v_q=-(c_{ab}(b-a)+c_{bc}(c-b))$ is the coefficient on
-$e_q$ (oriented from $y_0$ to $y_\infty$) determined by balancing at $y_0$, where $c_{ab}(b-a)$ and $c_{bc}(c-b)$ are the
-coefficients of the legs with lower supports $\{a,b\}$ and $\{b,c\}$, oriented away from the node as in
-Section~\ref{ssec:cycles-bdry}, the degree is $\mathrm{wt}(v_q)=c_{bc}-c_{ab}$.
+$-\rho_q(S)$, for the complex orientation of $C^W_q$. Equivalently, let $c_{ab}(b-a)$ and $c_{bc}(c-b)$ be the coefficients of
+the legs with lower supports $\{a,b\}$ and $\{b,c\}$, oriented away from the node as in Section~\ref{ssec:cycles-bdry}, so
+that, $\partial S$ passing $q$ once along one pair of opposite legs, one of $c_{ab},c_{bc}$ is $0$ and the other is $\pm1$;
+then the degree is $\mathrm{wt}(v_q)=c_{bc}-c_{ab}$, where $v_q=-(c_{ab}(b-a)+c_{bc}(c-b))$ is the coefficient on $e_q$
+(oriented from $y_0$ to $y_\infty$) determined by balancing at $y_0$.
 \end{lemma}
 \begin{proof}
 On $\partial_q\mathfrak D$ the map is $(x,\theta)\mapsto e^{i\theta v}\cdot\gamma_q(x)$, $x\in e_q$, collapsed at the poles,
@@ -899,7 +949,8 @@ respectively $N=N_\omega\oplus\Z\nu_u\oplus\Z\nu_\kappa$. Let $\Omega=\Omega'\op
 $\Omega=\Omega'\oplus I_u\nu_u\oplus I_\kappa\nu_\kappa$, with $\Omega'\subset N_{\omega,\R}$ open and convex,
 $\Omega'+\operatorname{cone}(\omega)=\Omega'$, and $I_u$, $I_\kappa$ bounded open intervals. Assume that only the monomials $0$
 and $u\in\tau$ are active on $\operatorname{Log}^{-1}(\Omega)$, and that $\Omega$ contains the ball of radius $4C_0$ about a point
-of $\operatorname{ri}F_\tau$. Let $W_\Omega$ be the preimage of $\Omega$ in $W\cap X_\omega$ under the extended tropicalisation.
+of $\operatorname{ri}F_\tau$. Here, as in Appendix~\ref{app:AC}, balls and distances in $N_\R$ are Euclidean for the standard
+inner product in lattice coordinates, so that $|m|\ge1$ for $0\neq m\in M$. Let $W_\Omega$ be the preimage of $\Omega$ in $W\cap X_\omega$ under the extended tropicalisation.
 Then $W_\Omega$ is open in $W$ and path connected, and the characters $\mathfrak t_u=x^{u-u_0}$, $u\in\tau'$, induce an
 isomorphism $\pi_1(W_\Omega)\to\Z^{\tau'}$, respectively, together with $w=x^\kappa$, an isomorphism
 $\pi_1(W_\Omega)\to\Z^{\tau'}\times\Z$.
@@ -909,9 +960,9 @@ $\pi_1(W_\Omega)\to\Z^{\tau'}\times\Z$.
 \begin{enumerate}
 \item[(1)] At a node $q$ on $\partial S$, for every arc $\gamma_q\subset C^W_q$ from $\zeta=0$ to $\zeta=\infty$, the map on
 $\partial\mathbb B_q$ given by the leg collar paths $\gamma_{e'}$, $\gamma_{e''}$, by $\mathfrak s$ on the inner boundary arc, by
-$\mathrm{Crit}$ over the leg segments and by $\gamma_q$ over $e_q$ extends to a continuous map $\Theta_q\colon\mathbb B_q\to W$.
+the paths in the closures of the critical curves over the leg segments and by $\gamma_q$ over $e_q$ extends to a continuous map $\Theta_q\colon\mathbb B_q\to W$.
 \item[(2)] At a negative vertex, on each of the three sheet corners $\mathbb B_j$, the map on $\partial\mathbb B_j$ given by the
-leg collar paths, $\mathfrak s$, $\mathrm{Crit}$ and the vertex path extends to a continuous map $\Theta_j\colon\mathbb B_j\to W$.
+leg collar paths, $\mathfrak s$, the path in the closure of $\mathrm{Crit}$ over the leg segment and the vertex path extends to a continuous map $\Theta_j\colon\mathbb B_j\to W$.
 \item[(3)] At a positive vertex, after the slides, the map on the boundary of the corner $\mathbb B_p$ given by the leg collar
 paths, $\mathfrak s$ and the real arc of $\mathrm{Crit}$ extends to a continuous map $\Theta_p\colon\mathbb B_p\to W$.
 \item[(4)] At a switching point $e^*$, the map on $\partial\mathbb B_{e^*}$ given by the leg collar paths $\gamma_{e'}$,
@@ -924,7 +975,8 @@ the leg with lower support $\{a,b\}$ and $(+,s_q)$ on the leg with lower support
 with $(\operatorname{sign}z_4,\operatorname{sign}z_3)=(s_q,+)$ on $\{b,c\}$ and $(+,s_q)$ on $\{d,a\}$ for the
 $c-b$ passage. At side $s_q=+1$ the ends lie in one chamber, and near $C^W_q$ the map $\Theta_q$ can be taken with
 values in the positive real part of the local model $\{\mathfrak t=\mathfrak t_0\}\times\widehat{\mathrm{Con}}_q$, the union of
-whose $S^1_v$-orbits is the set $\pi^{-1}(P_0)$ of \cite[Lemma~4.2]{CBM}, with boundary the exceptional curve; $\gamma_q$ is then
+whose $S^1_v$-orbits is the set $\pi^{-1}(P_0)$ of \cite[Lemma~4.2]{CBM}, with boundary the exceptional curve (compare
+\cite[Lemma~5.7]{CBM}, which writes the local collar $P_0$ as the circle orbit $S^1\cdot\check\sigma(S)$ of a section); $\gamma_q$ is then
 the positive real arc of $C^W_q$. At side $s_q=-1$ the element $e^{i\pi\lambda}$, with $\lambda=c-b$ for the $b-a$
 passage and $\lambda=a-b$ for the $c-b$ passage, acts by $(-1,-1)$ on $(z_1,z_2)$, respectively $(z_4,z_3)$, and exchanges the
 two chambers; $\Theta_q$ can be taken with $\gamma_q$ the positive real arc followed by the half-turn $e^{i\pi\phi(x)\lambda}$
@@ -995,13 +1047,13 @@ adapted coordinates are $z_1^{\rm leg}=z_3$, $z_2^{\rm leg}=z_4$, $w=z_2$, so th
 $z_3,\ z_1=z_3z_4/z_2\in s_q\R$; on the leg with lower support $\{c,d\}$ the roles of $z_1,z_2$ and of $z_3,z_4$ are
 exchanged; the $c-b$ passage is the same with $w=z_3$ on $\{b,c\}$ and $w=z_4$ on $\{d,a\}$. The element $e^{i\pi(c-b)}$ has
 weights $\langle(1,1,0,0),c-b\rangle=-1$ and $\langle(0,0,1,1),c-b\rangle=1$ on $z_1,z_2$ and $0$ on $z_3,z_4$ (vectors of values
-on $a,b,c,d$), and similarly for $e^{i\pi(a-b)}$; both lie in $\Lambda_f\otimes U(1)$, which acts exactly near $C^W_q$ and rotates
-$C^W_q$ with weight $\mp1$.
+on $a,b,c,d$), and similarly for $e^{i\pi(a-b)}$; both lie in $\Lambda_f\otimes U(1)$, which acts exactly near $C^W_q$; both rotate
+$C^W_q$ with weight $-1$, since $\mathrm{wt}(c-b)=\mathrm{wt}(a-b)=-1$.
 
 (2) Here too $\tau'=\{u'\}$. Around $\partial\mathbb B_j$ the lifted phase of $\mathfrak t$ changes by $0$ along $\mathfrak s$, by
 $+\pi$ along the leg collar path, by $0$ on $\mathrm{Crit}$, where it is constantly $\pi$, and by $-\pi$ back along the vertex
 path, which also turns $\arg\mathfrak t$ by $\pi$. On the interior edge $\Theta_j$ is the vertex path for each $j$, so
-$G_j\cdot\Theta_j$ and the cone on $\mathcal Q$ agree there, $T^2$ acting exactly and $\partial\mathcal Q=G_1+G_2+G_3$.
+$G_j\cdot\Theta_j$ and the cone on $\mathcal Q$ agree there, $T^2$ acting exactly and $\partial\mathcal Q=s_1G_1+s_2G_2+s_3G_3$.
 
 (3) Here $\tau'=\{u_2,u_3\}$. Around $\partial\mathbb B_p$ the lifted phases of $(\mathfrak t_2,\mathfrak t_3)$ change by $(0,0)$
 along $\mathfrak s$, by $(\epsilon_{12},\epsilon_{13})\pi$ along the slid collar path at $e_2$ from $\mathfrak s$ to $\mathrm{Crit}$, by
@@ -1046,8 +1098,9 @@ For the choices listed in Appendix~\ref{app:AC}, there are a triangulation $\mat
 N_\Gamma$, adapted to the faces of $\nabla^{\check h}$ (each closed cell meets each closed face in one face of the cell), and for
 each cell $c$ an open set $V_c\subset\widehat B$ such that:
 \begin{enumerate}
-\item $\hat j(c)\subset V_c$, and $V_c$ is product-shaped at the face $\Phi_c$ of lowest dimension met by $\hat j(c)$, in a chart
-of $(\Phi_c,n_c)$ for a vertex $n_c$ whose vertex region contains $\hat j(c)\cap\Phi_c$;
+\item $\hat j(c)\subset V_c$, and $V_c$ is product-shaped at the face $\Phi_c$ of lowest dimension met by $\hat j(c)$: if
+$\Phi_c$ is a two-face or an edge, in a chart of $(\Phi_c,n_c)$ for a vertex $n_c$ whose vertex region contains
+$\hat j(c)\cap\Phi_c$, and if $\Phi_c$ is a facet, in a facet chart (Section~\ref{ssec:res-W});
 \item if $c'\subset c$ then $\Omega_{V_{c'}}\subset\Omega_{V_c}$, hence $W_{V_{c'}}\subset W_{V_c}$;
 \item for every $r>0$ the choices can be made so that $V_c$ lies in the $r$-neighbourhood of $\hat j(c)$.
 \end{enumerate}
@@ -1114,7 +1167,13 @@ $X_{\mathcal F'}$, isotopic to the identity, smooth on the smooth locus and pres
 $\widehat X_R$ to $\widehat X$ and $C_q^R$ to $C_q$ with degree one.
 \end{lemma}
 \begin{proof}
-$X_R\in\mathcal R$ by Lemma~\ref{lem:T0} at $s=0$. For $f\in\mathcal R$ the proper transform $\widehat X_f$ is transverse to
+First, $X_R\in\mathcal R$. Let $\tau$ be a cone of the fan of $\mathbb P_\Delta$, the cone over a face of $\Delta$ or $\{0\}$, and
+$\sigma'$ a cone of $\mathcal F'$ with $\operatorname{relint}\sigma'\subseteq\operatorname{relint}\tau$. Then $\sigma'^*=\tau^*$,
+so the restriction of the defining function of $\widehat X_R=V_0$ to $O(\sigma')$ is, up to a unit, the pullback of that of
+$X_R$ to $O(\tau)$ under the surjective homomorphism of tori $O(\sigma')\to O(\tau)$. If $\tau$ is $\{0\}$ or the cone over a
+face of dimension at most two, $0$ is a regular value of the former by Lemma~\ref{lem:Ufan}(3) at $s=0$, hence of the latter;
+if $\tau$ is the cone over a facet, $V_0$ misses $O(\sigma')$ by Lemma~\ref{lem:Ufan}(1), hence $X_R$ misses $O(\tau)$. So $X_R$
+is $\Delta^\circ$-regular. For $f\in\mathcal R$ the proper transform $\widehat X_f$ is transverse to
 every orbit of $X_{\mathcal F'}$, because each orbit maps to an orbit of $\mathbb P_\Delta$ by a surjective homomorphism of tori,
 which is a submersion. The construction of Lemma~\ref{lem:T0} along the path gives $\Upsilon^1_{\rm res}$. It preserves
 $V(\operatorname{cone}(a,c))$, hence carries $C^R_q$ to $C_q$. By Lemma~\ref{lem:Ufan}(1) and the choice of $\mathcal F'$, the
@@ -1227,9 +1286,12 @@ first assertion,
 with the same coefficients on both sides. This completes the proof of Theorem~\ref{thm:res}. \qed
 
 \begin{remark}\label{rem:res-choices}
-(1) The support of $\Xi(S)$ can be taken inside $\Upsilon_{\rm res}$ of the part of $W$ lying over the $\eta$-neighbourhood of
-$\varpi^{-1}$ of an arbitrarily small neighbourhood of $\hat S$ in $\widehat B$, tentacles included: by Lemma~\ref{lem:AC}(3), and
-because every local piece is a family of local fibres over points of $\hat S\cap\widehat\Gamma$.
+(1) The part of $\Xi(S)$ over the regular part, $\Upsilon_{\rm res}\circ F(\mathfrak D_{\rm reg})$, lies in $\Upsilon_{\rm res}$ of
+the union of the regions $W_{V_c}$, $c\in\mathfrak T$, that is, of the part of $W$ over the union of the sets $\Omega_{V_c}$
+together with its limit points on the divisors at the ends of the tentacles (Lemma~\ref{lem:ext}); by Lemma~\ref{lem:AC}(3)
+the sets $V_c$ can be taken inside an arbitrarily small neighbourhood of $\hat S$ in $\widehat B$. The rest of $\Xi(S)$
+consists of the local pieces over $\mathcal N_\Gamma$, whose collar paths along the legs run into the toric strata, and of
+chains in the exceptional curves.
 
 (2) The relative class of $\Xi(S)$ is not claimed to be independent of the choices; the extensions $\Theta$ (for instance the
 sign of a half-turn), the switching discs, the slides and the path in $\mathcal R$ may change it by closed $3$-cycles.
@@ -1259,7 +1321,9 @@ The construction of this section uses the strictness of $S$ mainly through the s
 sheet, trivalent interior edges and four-valent interior vertices, and a boundary that passes each node at most once, along one
 pair of opposite legs. Its ingredients are nevertheless local: the pieces
 along the legs, at the negative and positive vertices, at the crossings and at the nodes, and the extension over aspherical
-regions. Lemma~\ref{lem:nodedeg} is already stated for arbitrary leg coefficients $c_{ab}$, $c_{bc}$, and the crossing pieces
+regions. At a node passed with arbitrary leg coefficients $c_{ab}$, $c_{bc}$, balancing at $y_0$ suggests the degree
+$c_{bc}-c_{ab}$ on the exceptional curve, which is the formula of Lemma~\ref{lem:nodedeg} for a single passage; we have not
+proved it in general. The crossing pieces
 $S^1_v\cdot\mathfrak s(D_k)$ are solid tori for every monodromy-invariant field. The mirror side removes the corresponding restrictions by building the regular part over an abstract domain and by
 removing fibre-class boundary with the positive real locus (Section~\ref{sec:lift}, Proposition~\ref{lem:F}); on $\widehat X$ we
 have no analogue of the second step, and we do not extend Theorem~\ref{thm:res} to relative tropical $2$-cycles here.

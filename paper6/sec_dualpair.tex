@@ -2,9 +2,12 @@
 
 The base $B'_\sigma$ of $X'_\sigma$ and the base $B_Y$ of the mirror family are built from the same two subdivisions,
 of $\partial\Delta^\circ$ by $\mathcal T$ and of $\partial\Delta$ by a fan-side subdivision, with the roles of Newton side and fan side
-exchanged. Gross proved that the two bases are related by the discrete Legendre transform \cite[Thm.~3.25]{Gross2005},
-which matches the cells of two polyhedral decompositions. The decompositions that the degenerations actually give are in
-general not Legendre dual to one another, and the mirror base is built from the pulling refinement $\mathcal F_C$ of
+exchanged. Gross proved that the base built from $\Sigma'$ is Legendre dual, after a rescaling of the polarization, to a
+base on $\partial\nabla^{m_0h+m_1\varphi}$, for a suitable $h$ inducing $\Sigma'$ and suitable positive integers $m_0,m_1$, built from the
+same $\Sigma'$ with a decomposition that he constructs from the polarization \cite[Thms.~3.21, 3.25, 3.26]{Gross2005}
+(Remark~\ref{rem:DLT}); the discrete Legendre transform matches the cells of two polyhedral decompositions. The
+decompositions attached to the degenerations used here need not be Legendre dual to one another (compare
+\cite[\S3, after Rem.~3.18]{Gross2005}), and the mirror base is built from the pulling refinement $\mathcal F_C$ of
 $\Sigma'$ rather than from $\Sigma'$ itself. This section therefore introduces a coarser structure, used in both parts of
 the paper: a regular cell decomposition of each base whose cells are indexed by pairs of dual cells of $\mathcal T$ and of
 the subdivision of $\partial\Delta$ (Proposition~\ref{prop:L1}). Its face poset is the same on both bases, it needs no
@@ -152,11 +155,15 @@ Lemmas~\ref{lem:faces}--\ref{lem:charts} hold for $B_Y$ with the same proofs, wh
 Newton-side function ($\check h'$, respectively $H'$) and of the fan-side function ($h$, respectively $\check h$). The
 subdivision of $\widetilde\Sigma_Y$ that defines $\mathscr P_Y$ is good in the sense of \cite[Def.~3.8]{Gross2005}, by the
 argument above with the vertices of $\nabla^{H'}$ in place of those of $\nabla^{\check h'}$. So, by
-\cite[Prop.~3.14]{Gross2005} with the roles exchanged, $(B_Y,\mathscr P_Y)$ is the dual intersection complex of the
-degeneration $\{\sum_nc_nt^{H(n)}x^n=0\}\subset X_{\mathcal T}\times\operatorname{Spec}\C[\![t]\!]$. Since $H(0)=0$, the
+\cite[Prop.~3.14]{Gross2005} with the roles exchanged, $(B_Y,\mathscr P_Y)$ is the dual intersection complex of Gross's toric
+degeneration $X'_Y\subset X(\widetilde\Sigma'_Y)$ \cite[Thm.~3.10]{Gross2005} attached to the good subdivision
+$\widetilde\Sigma'_Y$ that defines $\mathscr P_Y$. Its equation is $ts+s^0=0$, with $s^0$ the section given by the lattice
+point $(0,0)$ and $s$ a general section with Newton polytope $\{(n,l):n\in\Delta,\ l\ge H'(n)\}$; the members
+$\{\sum_nc_nt^{H(n)}x^n=0\}$ of the mirror family with $c_0=1$ have this form, with $s=\sum_{n\ne0}c_nt^{H'(n)}x^n$, since
+$H=H'+\varphi$, $\varphi=1$ on $\partial\Delta$ and $H(0)=0$. Since $H(0)=0$, the
 polytope $\nabla^H$ is the region on which the term $n=0$ of the tropical polynomial $m\mapsto\min_n(H(n)+\langle
 m,n\rangle)$ attains the minimum, and $B_Y$ is the target of Yamamoto's tropical contraction of the tropical
-hypersurface \cite[(5.36), Prop.~5.4]{Ya21}; we do not use the contraction. We write $B_X(\mathcal F)$ and
+hypersurface \cite[Thm.~1.2(2), (5.36), Prop.~5.4]{Ya21}; we do not use the contraction. We write $B_X(\mathcal F)$ and
 $B_Y(\mathcal F)$ when the fan-side subdivision must be specified. Thus $B'_\sigma=B_X(\Sigma')$, and the mirror base of this paper is
 $B_Y=B_Y(\mathcal F_C)$ with the height $H$ of Section~\ref{ssec:mirrorfamily}.
 
@@ -206,10 +213,12 @@ barycentre in $C_X(u,[n,n'])$, while the open simplex of the chain $(n+w\subsetn
 $C_X(u,n)$.
 
 Pairs of dual cells were used by Haase and Zharkov \cite{HZ1,HZ2,HZ3}, who realise two mutually dual integral affine
-structures on a sphere subdivided by the pairs of barycentres of dual simplices of coherent triangulations of the boundaries
-of a dual pair of reflexive polytopes \cite[\S2.4]{HZ1}, \cite[\S2.2]{HZ2}. Proposition~\ref{prop:L1} gives the
-corresponding cell structures on Gross's bases $B_X$ and $B_Y$ themselves, for a fan-side subdivision that need not be a
-triangulation, and Proposition~\ref{prop:L3} the duality of the lattices. Posets of pairs of dual cells also underlie the
+structures \cite[\S2.4]{HZ1}, \cite[\S2.2]{HZ2} on a sphere subdivided by the pairs of barycentres of simplices lying in mutually dual faces (the
+analogue of the dual pairs of Definition~\ref{def:DP}) of coherent triangulations of the boundaries of a dual pair of
+reflexive polytopes \cite[\S2.1]{HZ1}; for nef-partitions they work with central subdivisions induced by height functions,
+which need not be triangulations \cite[\S1, \S2.2]{HZ3}. Proposition~\ref{prop:L1} gives the corresponding cell structures on
+Gross's bases $B_X$ and $B_Y$ themselves, for a fan-side subdivision that need not be a triangulation, and
+Proposition~\ref{prop:L3} the duality of the lattices. Posets of pairs of dual cells also underlie the
 mirror isomorphism of tropical homology groups of Matessi and Renaudineau \cite[Thm.~1.1, \S2]{MR25}. A dual-pair homeomorphism is a
 piecewise linear homeomorphism matching two cell decompositions; it is not a discrete Legendre transform in the sense of
 \cite[\S1.4]{GSI}, which requires a polarization.
@@ -217,15 +226,19 @@ piecewise linear homeomorphism matching two cell decompositions; it is not a dis
 \begin{remark}[the discrete Legendre transform]\label{rem:DLT}
 In the proof of \cite[Thm.~3.26]{Gross2005}, Gross takes $\tilde h\equiv0$ on $\widetilde\Sigma_{\rm up}$ and $\tilde h=h$
 on $N_\R\times\{0\}$ and subdivides each cone of $\widetilde\Sigma$ coherently by these values \cite[Rem.~3.18]{Gross2005};
-this is the subdivision $\widetilde\Sigma'$ fixed above. For suitable positive integers $m_0,m_1$ the function
-$m_0\tilde h+m_1\tilde\varphi$ is integral and strictly convex on the same $\widetilde\Sigma'$, and
-$m_0\tilde h+(m_1-1)\tilde\varphi$ is convex; here $\tilde\varphi$, the function of \cite[\S3]{Gross2005} defined by
-$\mathrm{Epi}$, is linear on each cone of $\widetilde\Sigma$. Since $B_X$, its decomposition and $\Lambda_X$ depend only on
-$\check h$ and $\widetilde\Sigma'$, the pair $(B_X,\mathscr P_X)$ is polarized by $m_0\tilde h+m_1\tilde\varphi$, and
-\cite[Thm.~3.25]{Gross2005} identifies its discrete Legendre transform with $B_Y(\mathcal F)$ for $H=m_0h+m_1\varphi$,
-carrying the Legendre-dual decomposition. The decomposition $\mathscr P_Y$ defined by the heights $(\check h,0)$, the one
-attached to the degeneration of the mirror family, is in general a different decomposition, and the dual-pair complex
-avoids comparing the two.
+this is the subdivision $\widetilde\Sigma'$ fixed above. Gross's $h$ is integral, so that $\tilde h$ has rational slopes.
+Here $h$ may be taken with rational slopes: the functions that induce $\mathcal F$ and the same $\widetilde\Sigma'$ form a nonempty set cut
+out by finitely many linear equations and strict linear inequalities with rational coefficients, so they include one with rational
+slopes, and $B_X$, its decomposition and $\Lambda_X$ depend only on $\check h$ and $\widetilde\Sigma'$. For suitable positive
+integers $m_0,m_1$ the function $m_0\tilde h+m_1\tilde\varphi$ is then integral and strictly convex on the same
+$\widetilde\Sigma'$, and $m_0\tilde h+(m_1-1)\tilde\varphi$ is convex; here $\tilde\varphi$, the function of
+\cite[\S3]{Gross2005} defined by $\mathrm{Epi}$, is linear on each cone of $\widetilde\Sigma$. So the pair
+$(B_X,\mathscr P_X)$ is polarized by $m_0\tilde h+m_1\tilde\varphi$, and \cite[Thms.~3.21, 3.25]{Gross2005} identify its
+discrete Legendre transform with the base on $\partial\nabla^H$, $H=m_0h+m_1\varphi$, built from the same $\mathcal F$, carrying
+a decomposition that Gross constructs from the polarization, through the normal fan of a Minkowski sum
+\cite[\S3, the construction before Lemma~3.19, and Thm.~3.21]{Gross2005}. The decomposition $\mathscr P_Y$ defined by the heights $(\check h,0)$, the one attached to the
+degeneration of the mirror family, need not be that decomposition (compare \cite[\S3, after Rem.~3.18]{Gross2005}), and the
+dual-pair complex avoids comparing the two.
 Propositions~\ref{prop:L1} and~\ref{prop:L3} give for the cells of the dual-pair complex the statements that the discrete
 Legendre transform gives for cells, and they apply to $\mathscr P_X$ and $\mathscr P_Y$ alike.
 \end{remark}
@@ -302,7 +315,10 @@ cones $\operatorname{cone}_\tau(\tau')$, are pairwise disjoint. So the set of
 pairs $(\omega,\tau')$ for which $\omega+\nabla^{\check h_i'}_{\tau'}$ is a cell in $F_\tau$, and the inclusions and
 dimensions of these cells, are the same for $i=1,2$; the face label is read from the recession cone of $c^*$
 (Lemma~\ref{lem:onefacet}(5)). Every cell lies in a facet, and two cells $c\subseteq c'$ lie in a common facet $F_u$, $u$ a
-vertex of $\tau(c')$; taking $\tau=u$ gives the bijection with its properties. A chain of cells goes to a chain, so the
+vertex of $\tau(c')$; taking $\tau=u$ gives the bijection with its properties. The maps obtained from different facets agree: a
+cell $c$ lies in every facet $F_u$ with $u$ a vertex of $\tau(c)$, and the pair $(\omega,\tau')$ with
+$c=\omega+\nabla^{\check h_1'}_{\tau'}$ is determined by $c$ (Lemma~\ref{lem:cayley}(2)), so every such facet assigns to $c$ the
+same cell $\omega+\nabla^{\check h_2'}_{\tau'}$. A chain of cells goes to a chain, so the
 barycentric subdivisions are isomorphic; $\lgBar\mathscr P^i_X$ is a triangulation of $B^i_X$, so $\phi$ is a piecewise linear
 homeomorphism, and it preserves the labels of the chains. The last assertions follow from the definitions of the open
 facets, the regions and $\Gamma_X$ through the labels (Lemma~\ref{lem:charts}(2)).
@@ -357,9 +373,10 @@ which on every $C_X(u,n)$ is the restriction of $\langle\ ,\ \rangle\colon(n^\pe
 perfect and flat. Consequently $\mathcal L^*\Lambda_Y\cong\Lambda_X^\vee$, and $T^Y_{\mathcal L\gamma}=(T^X_\gamma)^{-\top}$
 for every loop $\gamma$ in $B_X\setminus\Gamma_X$.
 \end{proposition}
-In the language of \cite[\S1.4]{GSI}, Proposition~\ref{prop:L3} says that $(B_Y,\Lambda_Y)$ is, as a manifold with a
-lattice local system, the Legendre dual of $(B_X,\Lambda_X)$: the tangent lattice of one is the cotangent lattice of the
-other.
+Proposition~\ref{prop:L3} is the analogue, for the dual-pair homeomorphism $\mathcal L$, of the duality of the lattice local
+systems of a base and its discrete Legendre transform, whose linear holonomies satisfy
+$\tilde\rho_{\check B}(\gamma)={}^t\tilde\rho_B(\gamma^{-1})$ \cite[Prop.~1.50(1)]{GSI}: the tangent lattice of one base is the
+cotangent lattice of the other, although $\mathcal L$ is not a discrete Legendre transform.
 
 \begin{proof}[Proof of Proposition~\ref{prop:L2}(1),(2)]
 (1) By Lemma~\ref{lem:charts}(2), $\Gamma_X$ is the union of the open simplices whose label $(\tau(c_k),\omega(c_0))$ has

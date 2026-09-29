@@ -11,7 +11,7 @@ nonzero. Section~\ref{ssec:hexexamples} gives one example on each branch of the 
 Section~\ref{ssec:list} describes the list, counts the polytopes to which the theorems apply and those on which the
 equivalent conditions of Corollary~\ref{cor:smooth} hold, and records a computational verification of
 Theorem~\ref{thm:real} on the bases of $435$ polytopes of the list, $\NScope$ without and $\NHexProfAtwo$ with
-hexagonal two-faces. Section~\ref{ssec:evidence} collects the evidence for Conjecture~\ref{conj:strict}.
+hexagonal two-faces (one of the hexagonal computations survives only as a written report). Section~\ref{ssec:evidence} collects the evidence for Conjecture~\ref{conj:strict}.
 
 Throughout, the lattice points of $\Delta$ that are rays of $\Sigma'$ are numbered $n_0,n_1,\dots$ as in
 Appendix~\ref{app:data}, a node parallelogram is written $q=(a,b,c,d)$ with $n_a+n_c=n_b+n_d$ and chosen diagonal
@@ -40,9 +40,12 @@ with $q_1,q_3$ in the pentagon. Their circuits are
 If $\sum_k\lambda_k\circv_{q_k}=0$, the coefficients of $e_{10}$, $e_6$ and $e_7$ give $\lambda_3=-\lambda_1$,
 $\lambda_2=-\lambda_1$ and $\lambda_4=-\lambda_2$; conversely $\circv_{q_1}-\circv_{q_2}-\circv_{q_3}+\circv_{q_4}=0$. Hence
 \[
-K=\Z\,(q_1-q_2-q_3+q_4),
+K=\Z\,(q_1-q_2-q_3+q_4).
 \]
-and the relative Picard number of $\widehat X_9\to X'_9$ is $|Q|-\operatorname{rank}K=3$. The relation
+Let $\widehat X_9$ be the small resolution of $X'_9$ with the chosen diagonals $\{a,c\}$ of the parallelograms
+$q=(a,b,c,d)$ above. No nonzero multiple of $q_1-q_2-q_3+q_4$ has all coefficients nonnegative, so by
+Proposition~\ref{prop:partialres}(3) $\widehat X_9$ is projective and induced by a regular refinement of $\Sigma'$, and by
+Proposition~\ref{prop:partialres}(2) the relative Picard number of $\widehat X_9\to X'_9$ is $|Q|-\operatorname{rank}K=3$. The relation
 $\lambda_{q_1}+\lambda_{q_3}=0$ holds because the centre $n_{10}$ occurs only in the circuits of the two pentagon nodes;
 this is the tie of Remark~\ref{rem:tie}.
 
@@ -185,8 +188,8 @@ homeomorphism of the bases preserves the facets, $\Gamma$ and its legs with thei
 on the base of every such height, the normalised height of Section~\ref{ssec:gross} included, with the same node
 coefficients.
 
-\emph{The theorems on $X_9$.} Lemma~\ref{lem:x9belt} proves Theorem~\ref{thm:real} for $X_9$ without the argument of
-Section~\ref{sec:cycles}: the chain $v[S]$ lies in $Z(\mathfrak K_0)$, so $K=\Z\rho(S)\subseteq\rho(Z(\mathfrak K_0))$, and the
+\emph{The theorems on $X_9$.} Lemma~\ref{lem:x9belt} proves the node-coefficient statements of Theorem~\ref{thm:real},
+$\rho(\mathrm{Bal}(\Gamma))=\rho(Z(\mathfrak K_0))=K$, for $X_9$ without the argument of Section~\ref{sec:cycles}: the chain $v[S]$ lies in $Z(\mathfrak K_0)$, so $K=\Z\rho(S)\subseteq\rho(Z(\mathfrak K_0))$, and the
 reverse inclusion is $\rho(\mathrm{Bal}(\Gamma))\subseteq K$, the easy half of the boundary level
 (Section~\ref{ssec:cycles-bdry}). The remaining statements take the following
 form.
@@ -210,17 +213,21 @@ count predicts for a small resolution of relative Picard number $3$.
 smoothing, the vanishing spheres satisfy the relation $[\delta_{q_1}]-[\delta_{q_2}]-[\delta_{q_3}]+[\delta_{q_4}]=0$ with
 all coefficients nonzero, and one of the $16$ conifold transitions of $Y_t$ in Lagrangian spheres isotopic to the
 $\delta_q$ carries a symplectic structure with symplectic exceptional curves.
-\item \emph{The resolution side} (Theorem~\ref{thm:res}). The same disc gives an integral $3$-chain $\Xi(S)$ on a
-projective small resolution $\widehat X_9$ with $\partial\Xi(S)=[C_{q_1}]-[C_{q_2}]-[C_{q_3}]+[C_{q_4}]$. So one tropical
+\item \emph{The resolution side} (Theorem~\ref{thm:res}). On the projective small resolution $\widehat X_9$ defined after
+the computation of $K$ above, the same disc gives an integral $3$-chain $\Xi(S)$ on $\widehat X_9$ with
+$\partial\Xi(S)=[C_{q_1}]-[C_{q_2}]-[C_{q_3}]+[C_{q_4}]$. So one tropical
 object bounds on both sides of the conifold transition, with the same coefficients.
 \end{itemize}
 
 \subsection{The examples \texorpdfstring{$X_{19}$}{X19} and \texorpdfstring{$X_{20}$}{X20}}\label{ssec:x19x20}
 The polytopes $\Delta_{19}$ and $\Delta_{20}$ of \cite{Paper4} have $19$ and $20$ vertices, one $dP_7$ pentagon each, and
 $14$ and $17$ unit squares; so $|Q|=16$ and $|Q|=19$. Both satisfy~\ref{hyp:P}. Their data are in
-Appendices~\ref{app:data-x19} and~\ref{app:data-x20}. On each we exhibit tropical $2$-cycles in the sense of
-\cite[Def.~7.2]{CBM} whose node coefficients generate $K$ over $\Z$; they illustrate Theorem~\ref{thm:real} and verify
-Conjecture~\ref{conj:strict} on these two polytopes. Table~\ref{tab:x19x20} lists them. Besides belt cycles there are
+Appendices~\ref{app:data-x19} and~\ref{app:data-x20}. On each, computations find tropical $2$-cycles in the sense of
+\cite[Def.~7.2]{CBM} whose node coefficients generate $K$ over $\Z$; they illustrate Theorem~\ref{thm:real} and are
+evidence for Conjecture~\ref{conj:strict} on these two polytopes. Table~\ref{tab:x19x20} lists them. Their boundary
+networks and node coefficients are checked in the accompanying data, and so is the shape of the belt cycles (a disc with
+one field that meets $\Gamma$ only along its boundary); for the other cycles the interior conditions of
+\cite[Def.~7.2]{CBM} rest on the computations described in Section~\ref{ssec:evidence}. Besides belt cycles there are
 cycles whose boundary graph has trivalent vertices; these vertices are negative vertices of $\Gamma$, and the boundary
 graphs are a complete graph on four vertices ($X_{19}$) and two vertices joined by three paths ($X_{20}$).
 
@@ -238,8 +245,10 @@ $X_{20}$ & $S_1$ & closed path, $3$ nodes & $-q_{14}+q_{16}-q_{17}$\\
  & $S_5$ & closed path, $3$ nodes & $-q_{13}+q_{16}-q_{19}$\\
  & $S_6$ & two vertices, three paths & $q_4-q_5+q_7-q_8+q_{11}-q_{12}+q_{15}-q_{18}$
 \end{tabular}
-\caption{Tropical $2$-cycles on $X_{19}$ ($|Q|=16$, $\operatorname{rank}K=3$) and $X_{20}$ ($|Q|=19$,
+\caption{Tropical $2$-cycles found by computation on $X_{19}$ ($|Q|=16$, $\operatorname{rank}K=3$) and $X_{20}$ ($|Q|=19$,
 $\operatorname{rank}K=6$) whose node coefficients generate $K$; the cycles with a closed path as boundary are belt cycles.
+For the cycles with trivalent vertices the conditions of \cite[Def.~7.2]{CBM} in the interior rest on the computations of
+Section~\ref{ssec:evidence}.
 In the $\Z$-bases of $K$ of Appendix~\ref{app:data} the matrices of the $\rho(S_i)$ have all elementary divisors equal to
 $1$.}\label{tab:x19x20}
 \end{table}
@@ -284,12 +293,13 @@ image in $X'_\sigma$ is $\mathbb P^1\times\mathbb P^1$, with the two nodes at op
 &\qquad-q_{14}-q_{15}-q_{16}+q_{17}-q_{18}-q_{19}+q_{20}+q_{21}-q_{22}+q_{23}-q_{24}
 \end{aligned}
 \]
-lies in $K$. So $X'_{88}$ has a smoothing, and the nodal locus of the mirror has codimension $14$. Ten tropical $2$-cycles
-in the sense of \cite[Def.~7.2]{CBM} have node coefficients generating $K$ with index one: six belt cycles, two cycles
+lies in $K$. So $X'_{88}$ has a smoothing, and the nodal locus of the mirror has codimension $14$. Computations find ten
+tropical $2$-cycles in the sense of \cite[Def.~7.2]{CBM} whose node coefficients generate $K$ with index one: six belt cycles, two cycles
 whose boundary graph has two trivalent vertices joined by three paths, one whose boundary graph is a complete graph on
 four vertices, and one whose boundary network was found by integer programming and which crosses $\Gamma$ transversally
 at $18$ points. The six belt cycles satisfy Definition~\ref{def:belt}: they are discs with one field that meet $\Gamma$
-only along their boundary. Two of the ten pass through the hexagon nodes, with node coefficients $\pm(1,-1)$ there, as the tie requires.
+only along their boundary, as the accompanying data check; for the other four the interior conditions of
+\cite[Def.~7.2]{CBM} rest on the computations of Section~\ref{ssec:evidence}. Two of the ten pass through the hexagon nodes, with node coefficients $\pm(1,-1)$ there, as the tie requires.
 
 \emph{$X_{154}$, the $A_2$ branch.} The polytope $\Delta_{154}$ has $22$ vertices, $20$ unit squares, one hexagon and no
 pentagon. No $A_1$ subdivision of the hexagon satisfies~\ref{hyp:P}, and both $A_2$ subdivisions do; on the $A_1$ branch two nodes
@@ -362,8 +372,10 @@ $h$ hexagons, whether~\ref{hyp:P} holds for some profile with every hexagon on t
 hexagon on the $A_2$ branch, and for some mixed profile, is decided by a depth-first search over the $5^h$ profiles in
 which a certificate for a partial choice of subdivisions excludes all its completions. On the hexagon-free polytopes with $K\ne0$, \ref{hyp:P} fails on
 $\NPfail$ of $\NList$, all with a pentagonal two-face. On the $\NHex$ polytopes with a hexagon it holds for some profile
-on $\NHexProj$ and for none on $\NHexNoProj$; the branch patterns are counted in Table~\ref{tab:list}. Where~\ref{hyp:P} fails there is an exact certificate: an effective combination of curves
-contracted by $X'_\sigma\to X$ that is numerically a combination of exceptional curves (Section~\ref{ssec:proj}). The
+on $\NHexProj$ and for none on $\NHexNoProj$; the branch patterns are counted in Table~\ref{tab:list}. Where~\ref{hyp:P} fails there is an exact certificate: a nonzero effective combination of
+the proper transforms $\tilde f_\epsilon\subset\widehat X$ of curves in the fibres of $X'_\sigma\to X$ over the del Pezzo
+points that is homologous in $H_2(\widehat X;\Q)$ to a combination of the exceptional curves $C_q$
+(Proposition~\ref{prop:projective}(3)). The
 polytopes of the list with $K\neq0$ to which Theorems~\ref{thm:main}--\ref{thm:res} apply are therefore the
 $\NScope+\NHexProj=\NScopeAll$ polytopes of the last column; on every profile of a hexagonal polytope examined, $K\ne0$. (Of the $\NHexSets$ admissible vertex sets with a hexagon, $\Delta_\star$ and its equivalent both fail
 \ref{hyp:P} on every profile.)
@@ -379,7 +391,8 @@ and $\rho(Z(\mathfrak K_0))=K$ with index one. On $\NThmCGlobal$ of the
 bases the balanced networks contained in the boundary of a single facet $F_u$, which bound inside $F_u$, have node
 coefficients spanning a proper sublattice of $K$, so that the global argument of Section~\ref{sec:cycles} is needed
 there. The same computation succeeds on $\NThmCHexBases$ bases
-of $\NHexProfAtwo$ polytopes with hexagonal two-faces: the $\NHexProfAtwo$ polytopes with a profile satisfying~\ref{hyp:P}
+of $\NHexProfAtwo$ polytopes with hexagonal two-faces (one of these computations survives only as a written report;
+Section~\ref{ssec:evidence}): the $\NHexProfAtwo$ polytopes with a profile satisfying~\ref{hyp:P}
 on the $A_2$ branch or a mixed one, each on one such profile, and in addition the product of two hexagons on an $A_1$
 profile. It was not run on the $12$ polytopes whose profiles satisfying~\ref{hyp:P} are all on the $A_1$ branch; $X_{88}$ is
 one of them.
@@ -408,10 +421,16 @@ profile.
 So on $\NCorBAll$ of the $\NScopeAll$ polytopes satisfying~\ref{hyp:P}, $X'_\sigma$ has a smoothing for some profile, and for that
 profile the vanishing spheres of the mirror satisfy a relation with every coefficient nonzero. On the other
 $\NCorBFail$ every profile satisfying~\ref{hyp:P} has a forced node; by Corollary~\ref{cor:smooth}, $X'_\sigma$ then has no
-smoothing and every relation among the $\delta_q$ has a zero coefficient. The programs for these computations are
-available at \coderepo.
+smoothing and every relation among the $\delta_q$ has a zero coefficient. The accompanying computation bundle contains the input vertex sets, projectivity witnesses and infeasibility
+certificates, together with programs that check these assertions in exact arithmetic.
 
 \subsection{Evidence for Conjecture~\ref{conj:strict}}\label{ssec:evidence}
+The bundle also retains summaries of the tropical-cycle computations in this subsection. Its summary checker
+recomputes the totals below but does not reconstruct the hundreds of bases and cycles. In particular, the count of
+$\NBdryEnum$ enumerated boundary cases survives as an aggregate report, and one of the $\NThmCHexBases$ hexagonal
+relative-chain computations survives only as a written report. These records provide computational evidence, not an
+additional proof of the conjecture.
+
 Conjecture~\ref{conj:strict} asks for more than Theorem~\ref{thm:real}: that tropical $2$-cycles in the strict sense of
 \cite[Def.~7.2]{CBM}, whose fields are primitive, whose interior edges and crossings with $\Gamma$ are of the restricted
 kinds that definition allows, and whose boundaries pass each node at most once along two opposite legs, already have node
@@ -453,9 +472,10 @@ a single closed path generate $K$; on $\NBeltsStrict$ they can all be taken to b
 while on the other $\NBeltsCrossPoly$ some of the discs used cross $\Gamma$ transversally at interior points of legs, as
 \cite[Def.~7.2]{CBM} allows. We checked each of the $\NBeltsChecked$ discs of this kind that were constructed: all are
 discs with one field up to sign, and $\NBeltsCross$ of them meet $\Gamma$ off their boundary.
-\item[(c)] \emph{Strict cycles.} On $\NRealised$ polytopes, $X_9$, $X_{19}$ and $X_{20}$ among them, there are strict
-tropical $2$-cycles whose node coefficients generate $K$; the index of the lattice they span in $K$ was computed exactly
-and is one.
+\item[(c)] \emph{Strict cycles.} On $\NRealised$ polytopes, $X_9$, $X_{19}$ and $X_{20}$ among them, the computations find
+strict tropical $2$-cycles whose node coefficients generate $K$; the index of the lattice they span in $K$ was computed
+exactly and is one. For $X_9$ this is also proved in the text (Lemma~\ref{lem:x9belt}), given the triangulation $\mathcal T$ and the
+triangles of the cycle recorded in the accompanying data.
 \item[(d)] \emph{The remaining polytopes.} On the other $\NRemaining$ polytopes the strict cycles constructed generate a
 sublattice of $K$ of corank between $1$ and $\NCorankMax$, and of corank one on $\NCorankOne$. For each network of CBM type
 of a generating set that is not the boundary of a constructed cycle, the construction meets an obstruction of one of
@@ -487,7 +507,7 @@ $\NHexProfAtwo$ with an $A_2$ or mixed profile, each on one profile; on the othe
 sublattice of smaller rank, or did not produce generators of $K$.
 
 The obstructions of (d) sit in the passage from a network of CBM type to a strict cycle, not at the boundary level, where
-(a) holds everywhere; and by (e) a proof of Conjecture~\ref{conj:strict} cannot restrict itself to networks with few
-trivalent vertices. The relative tropical $2$-cycles of Theorem~\ref{thm:real} avoid all three obstructions: they allow
+(a) holds everywhere; and (e) suggests that a proof of Conjecture~\ref{conj:strict} cannot restrict itself to networks
+with few trivalent vertices. The relative tropical $2$-cycles of Theorem~\ref{thm:real} avoid all three obstructions: they allow
 several sheets, arbitrary branching along edges and crossings of $\Gamma$ with any invariant coefficient, which is what the
 filling of Section~\ref{sec:cycles} uses.

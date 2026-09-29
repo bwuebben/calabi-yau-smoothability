@@ -23,7 +23,7 @@ For $i=1,2$ let $B_i$ be a closed piecewise linear three-manifold, $\Gamma_i\sub
 subpolyhedron, $\Lambda_i$ a local system of free abelian groups of rank three on $B_i\setminus\Gamma_i$, and suppose that
 $\Gamma_i$ is the union of finitely many points and open arcs $A$, each carrying a flat section $d_A$ of $\Lambda_i$ over
 $V_A\setminus\Gamma_i$ for a neighbourhood $V_A$ of the closure $\bar A$. For triangulations
-$\mathfrak K$ of $B_i$ in which $\Gamma_i$ is a full subcomplex define $F_i$, $\mathcal D_i(E)=\Z d_A$ for $E\subseteq A$,
+$\mathfrak K$ of $B_i$ in which $\Gamma_i$ is a full subcomplex define $F_i$, $\mathcal D_i(E)=\Z d_A$ for $E\subseteq\bar A$,
 and $Z_i(\mathfrak K)$ as in Definition~\ref{def:relcycle}. Let $f\colon B_1\to B_2$ be a piecewise linear homeomorphism
 with $f(\Gamma_1)=\Gamma_2$, mapping each arc $A$ onto an arc $f(A)$, and $\theta\colon\Lambda_1\to f^*\Lambda_2$ an
 isomorphism of local systems on $B_1\setminus\Gamma_1$ with $\theta(d_A)=d_{f(A)}$ for every arc $A$. Let $\mathfrak K$ be a
@@ -36,7 +36,7 @@ simplices of $\mathfrak K$, the same holds for $f(\mathfrak K)$, and one may tak
 D_1(E)$ onto $\mathcal D_2(f(E))$, hence an isomorphism of chain complexes $f_\#\colon C_*(\mathfrak K_1;F_1)\to
 C_*(f(\mathfrak K_1);F_2)$ mapping $C_*(\Gamma_1;\mathcal D_1)$ onto $C_*(\Gamma_2;\mathcal D_2)$;
 \item the composite $f_*:=f_\#\circ\lgsd\colon Z_1(\mathfrak K)\to Z_2(f(\mathfrak K_1))$, with $\lgsd$ the subdivision
-operator, is an injective homomorphism, and if $\partial z=\sum_Ec_Ed_{A(E)}[E]$, $A(E)$ the arc containing the edge $E$,
+operator, is an injective homomorphism, and if $\partial z=\sum_Ec_Ed_{A(E)}[E]$, $A(E)$ the arc whose closure contains the edge $E$,
 then $\partial f_*z=\sum_Ec_E\sum_{E'\subseteq E}d_{f(A(E))}[f(E')]$, the inner sum over the edges $E'$ of $\mathfrak K_1$
 in $E$ with the orientation of $E$.
 \end{enumerate}
@@ -57,11 +57,91 @@ compatibly with restriction to smaller sets. By hypothesis it carries $d_A$ to $
 (3) The subdivision operator sends an oriented simplex $s$ of $\mathfrak K$ with coefficient $X\in F(s)$ to the sum of the
 simplices $s'$ of $\mathfrak K_1$ of the same dimension in $\bar s$, with the induced orientations and the coefficients
 $X|_{s'}$; the restriction is defined because a neighbourhood of $\bar s$ is a neighbourhood of $\bar s'$. It is a chain
-map, it maps $C_*(\Gamma_1;\mathcal D_1)$ into itself, since the edges of $\mathfrak K_1$ in an edge $E\subseteq A$ of
-$\Gamma_1$ lie in $A$, and it is injective, since restriction of flat sections to a smaller connected set is injective and
+map, it maps $C_*(\Gamma_1;\mathcal D_1)$ into itself, since the edges of $\mathfrak K_1$ in an edge $E\subseteq\bar A$ of
+$\Gamma_1$ lie in $\bar A$, and it is injective, since restriction of flat sections to a smaller connected set is injective and
 $V\setminus\Gamma_1$ is connected for small $V$. So it maps $Z_1(\mathfrak K)$ injectively into $Z_1(\mathfrak K_1)$, with
 the stated boundary, and (2) applies.
 \end{proof}
+
+The hypothesis of Lemma~\ref{lem:transport} concerns neighbourhoods of the closed arcs, including their end points. For the
+bases of this paper it is verified once, by the following lemma.
+
+\begin{lemma}[flatness near the closed arcs]\label{lem:closedarc}
+Let $\mathcal F$ be a fan-side subdivision, $B_X=B_X(\mathcal F)$ the base built from $\mathcal F$ and an integral height
+$\check h$, and $B_Y=B_Y(\mathcal F)$ the base built from a height $H$, as in Section~\ref{ssec:leg-setting}. Let
+$\mathfrak p_e=([u,u'],[n,n'])$ be a dual pair of edges, and let $V_X\subseteq B_X$ and $V_Y\subseteq B_Y$ be the unions of
+the cells $C_X(\mathfrak p)$, respectively $C_Y(\mathfrak p)$, over the dual pairs $\mathfrak p$ with $\mathfrak p\succeq z$ for
+some dual pair $z\prec\mathfrak p_e$.
+\begin{enumerate}
+\item There are exactly two dual pairs $z_\pm=(\tau_\pm,\omega_\pm)\prec\mathfrak p_e$; they have dimension zero, and
+$\tau_\pm\supseteq[u,u']$, $\omega_\pm\supseteq[n,n']$. The closure of the arc $C_X(\mathfrak p_e)$ is
+$C_X(\mathfrak p_e)\cup C_X(z_+)\cup C_X(z_-)$, and $V_X$ is an open neighbourhood of it. The same holds on $B_Y$.
+\item The vector $n'-n$ in the chart of every open facet $\operatorname{int}F_{u''}$ that meets $V_X$, together with its class
+modulo $n''$ in the chart of every region $\widetilde R_{n''}$, defines a flat section of $\Lambda_X$ over
+$V_X\setminus\Gamma_X$.
+\item The covector $\langle\,\cdot\,,n'-n\rangle$, on $n''^\perp\cap M$ over every open facet $\operatorname{int}F^*_{n''}$
+and on $M/\Z u''$ over every region $\widetilde R^*_{u''}$ that meets $V_Y$, defines a flat section of $\Lambda_Y^\vee$ over
+$V_Y\setminus\Gamma_Y$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(1) By Proposition~\ref{prop:L1}(2) the closure of a cell $C_X(\mathfrak p)$ is the union of the cells $C_X(\mathfrak q)$,
+$\mathfrak q\preceq\mathfrak p$, and it is a ball of dimension $\dim\mathfrak p$ whose boundary is the union of the cells with
+$\mathfrak q\prec\mathfrak p$, all of them nonempty. For $\mathfrak p=\mathfrak p_e$ the closure is a one-ball, and its
+boundary, two points, is the disjoint union of the nonempty cells $C_X(\mathfrak q)$, $\mathfrak q\prec\mathfrak p_e$, each of
+dimension less than one. So there are exactly two pairs $z_\pm\prec\mathfrak p_e$, both of dimension zero, and $z_\pm\prec\mathfrak p_e$ means $\tau_\pm\supseteq[u,u']$ and
+$\omega_\pm\supseteq[n,n']$. If $\mathfrak q\not\succeq z_+$ and $\mathfrak q\not\succeq z_-$, the same holds for every
+$\mathfrak q'\preceq\mathfrak q$, so the closed cell $\overline{C_X(\mathfrak q)}$ does not meet $V_X$; hence the complement of
+$V_X$ is the union of these finitely many closed cells, and $V_X$ is open. It contains $C_X(\mathfrak p_e)$ and
+$C_X(z_\pm)$. On $B_Y$ the argument is the same, with Proposition~\ref{prop:L1}(3).
+
+(2) By Lemma~\ref{lem:charts}(2), $V_X\setminus\Gamma_X$ is covered by the sets $\operatorname{int}F_{u''}\cap V_X$ and
+$\widetilde R_{n''}\cap V_X$. As $V_X$ is a union of cells and $\operatorname{int}F_{u''}=\bigcup_\omega C_X(u'',\omega)$
+(Proposition~\ref{prop:L1}(5)), the open facet $\operatorname{int}F_{u''}$ meets $V_X$ only if $(u'',\omega)\succeq z_+$ or
+$(u'',\omega)\succeq z_-$ for some $\omega$, that is, only if $u''$ is a vertex of $\tau_+$ or of $\tau_-$. Since $z_\pm$ is a
+dual pair and $n,n'$ are vertices of $\omega_\pm$, every vertex $u''$ of $\tau_\pm$ has $\langle u'',n\rangle=\langle
+u'',n'\rangle=-1$, so $n'-n\in u''^\perp\cap N$. On $\operatorname{int}F_{u''}$ the local system $\Lambda_X$ is the constant
+lattice $u''^\perp\cap N$ of the facet chart, and on $\widetilde R_{n''}$ it is the constant lattice $N/\Z n''$ of the region
+chart (proof of Proposition~\ref{prop:L3}); so the prescribed values are flat sections over the pieces. On an overlap
+$C_X(u'',n'')=\operatorname{int}F_{u''}\cap\widetilde R_{n''}$ the two charts are related by the reduction
+$u''^\perp\cap N\to N/\Z n''$ modulo $n''$ (Lemma~\ref{lem:charts}(1)), which carries $n'-n$ to its class. So the pieces glue
+to a flat section over $V_X\setminus\Gamma_X$.
+
+(3) On $B_Y$ the roles are exchanged: $\Lambda_Y$ is the constant lattice $n''^\perp\cap M$ on $\operatorname{int}F^*_{n''}$
+and $M/\Z u''$ on $\widetilde R^*_{u''}$, the two being related on $C_Y(u'',n'')$ by the reduction modulo $u''$, and
+$\widetilde R^*_{u''}=\bigcup_\omega C_Y(u'',\omega)$ meets $V_Y$ only if $u''$ is a vertex of $\tau_+$ or of $\tau_-$
+(Proposition~\ref{prop:L1}(5)). For such $u''$, $\langle u'',n'-n\rangle=0$ as in (2), so $\langle\,\cdot\,,n'-n\rangle$ is a
+homomorphism $M/\Z u''\to\Z$; on $n''^\perp\cap M$ it is defined for every $n''$; and it is compatible with the reductions
+modulo $u''$. So it defines a flat section of the dual local system $\Lambda_Y^\vee$ over $V_Y\setminus\Gamma_Y$.
+\end{proof}
+
+At an end point of the arc, Lemma~\ref{lem:closedarc} contains the following statements about monodromy, which are
+recorded for comparison (Proposition~\ref{prop:L2}(3),(4)); we state them for $\mathcal F=\Sigma'$ and $\mathcal F=\mathcal F_C$,
+which agree on the faces of $\Delta$ of dimension at most two (Proposition~\ref{prop:pulling}(2)), so that the two-cells in
+two-faces of $\Delta$ are unimodular triangles and node parallelograms. On $B_X$, at a negative vertex $([u,u'],\omega)$, $\omega$ a
+unimodular triangle, and at a node $([u,u'],P)$, the monodromies around all arcs at the vertex are transvections
+$x\mapsto x\pm\langle u'-u,x\rangle d$ with the common covector $u'-u$, and they fix the edge vector $n'-n$ of $\omega$,
+respectively of $P$ (for $\mathcal F=\Sigma'$ this is Lemma~\ref{lem:types}, and at a node the invariance of $b-a$ and $c-b$
+noted before Lemma~\ref{lem:nodegerm}). At a positive vertex $(\{u_1,u_2,u_3\},[n,n'])$ the three arcs have the common
+vanishing vector $n'-n$ and covectors $u_j-u_i\in(n'-n)^\perp$, so each of their transvections fixes $n'-n$. On $B_Y$ the
+types are exchanged, and for $\mathcal F=\mathcal F_C$ the invariant covectors at the vertices of each type, listed in
+Proposition~\ref{prop:dict}(3), contain $\langle\,\cdot\,,n'-n\rangle$. The lemma gives more than invariance under the loops around the arcs: a flat section
+over the complement of the discriminant in a whole neighbourhood of the closed arc.
+
+Consequently, for every base $B_X(\mathcal F)$ the discriminant, with its arcs and the sections $d_A=n'-n$ of
+Lemma~\ref{lem:closedarc}(2), satisfies the hypothesis of Lemma~\ref{lem:transport} on the sections $d_A$, and so does the discriminant of
+$B_Y(\mathcal F)$ with the dual local system and the sections $\langle\,\cdot\,,n'-n\rangle$ of
+Lemma~\ref{lem:closedarc}(3); for the image of the latter under a piecewise linear homeomorphism $\Upsilon$ of $B_Y$ this
+follows by transport, since $\Upsilon$ maps neighbourhoods of the closed arcs onto neighbourhoods of the closed arcs. In
+particular $d_A$ lies in $F(E)$ for every edge $E\subseteq\bar A$ of a triangulation in which the discriminant is full,
+including the edges that end at a vertex of the discriminant.
+
+When Lemma~\ref{lem:transport} is applied below, the identity $\theta(d_A)=d_{f(A)}$ is checked at one point of $B_1\setminus\Gamma_1$
+near $A$. This suffices. Let $V$ be the connected component containing $\bar A$ of $V_A\cap f^{-1}(V_{f(A)})$, an open
+neighbourhood of $\bar A$ because $f(\bar A)=\overline{f(A)}$. Then $V\setminus\Gamma_1$ is connected, since a subpolyhedron
+of codimension two does not separate a connected piecewise linear manifold, and $\theta(d_A)$ and $f^*d_{f(A)}$ are flat
+sections of $f^*\Lambda_2$ over it; if they agree at one point, they agree on $V\setminus\Gamma_1$.
 
 \begin{proposition}[change of fan-side subdivision]\label{prop:F}
 Let $\mathcal F_1$ and $\mathcal F_2$ be two fan-side subdivisions which agree on the two-skeleton of $\partial\Delta$: a cell of either
@@ -105,7 +185,10 @@ systems are the constant $N/\Z n$, and on $U\cap\operatorname{int}F_u$ the ident
 identity of $N/\Z n$ under $\pi^X_{un}$ on both sides. So $\kappa$ extends over $U$ as the identity of $N/\Z n$, compatibly
 on overlaps, and is an isomorphism of local systems on $\partial\nabla^{\check h}\setminus\Gamma^1_X$. Near the arc
 $C^i([u,u'],[n,n'])$ the vanishing vector is represented in the chart of $F_u$ by $n'-n\in u^\perp\cap N$ on both bases
-(Proposition~\ref{prop:L2}(4)), and $\kappa$ is the identity there.
+(Proposition~\ref{prop:L2}(4)), and $\kappa$ is the identity there. On both bases $n'-n$ is a flat section over the complement
+of the discriminant in a neighbourhood of the closed arc (Lemma~\ref{lem:closedarc}(2)); since the two sections correspond
+under $\kappa$ in the chart of $F_u$, they correspond on such a neighbourhood (the last paragraph after Lemma~\ref{lem:closedarc}), so
+$(g,\kappa)$ satisfies the hypotheses of Lemma~\ref{lem:transport}.
 
 (4) By Lemma~\ref{lem:cayley}(2), the decomposition of a face $F_\tau$ with $\dim\tau\ge1$ depends only on the restriction
 of $h_i$ to $\tau^\vee\cap N$, which lies in the two-skeleton of $\partial\Delta$. So the two decompositions, their
@@ -127,7 +210,8 @@ the transport $(g_C)_*$ of Lemma~\ref{lem:transport}.
 \begin{remark}\label{rem:gCid}
 If every lattice point of $\partial\Delta$ is a vertex of $\Sigma'$, no point is pulled and $\mathcal F_C=\Sigma'$; if in
 addition $B_X(\mathcal F_C)$ is built with the same function $h$ as $B'_\sigma$, then $g_C$ can be taken to be the identity.
-This is the case for the subdivisions of the examples of Section~\ref{sec:examples}. Nothing in this paper uses it.
+This is the case for the subdivisions of the examples $X_9$, $X_{19}$ and $X_{20}$ of Section~\ref{sec:examples}
+(Remark~\ref{rem:Sigmaheight}(1)). Nothing in this paper uses it.
 \end{remark}
 
 \begin{lemma}[change of height]\label{lem:height}
@@ -167,12 +251,17 @@ and no triple intersections (proof of Proposition~\ref{prop:L3}). On $\operatorn
 $u^\perp\cap N$, on $\widetilde R_n$ it is $N/\Z n$, and on $C^i(u,n)$ the two are related by the projection
 $u^\perp\cap N\to N/\Z n$, on both bases. So the identities on the pieces agree on the overlaps and define $\kappa$.
 
-(3) The pair $(\phi,\kappa)$ satisfies the hypotheses of Lemma~\ref{lem:transport}: near the arc of $([u,u'],[n,n'])$ the
-vanishing vector is $n'-n\in u^\perp\cap N$ on both bases and $\kappa$ is the identity there. The integers $c_E$ are
+(3) The pair $(\phi,\kappa)$ satisfies the hypotheses of Lemma~\ref{lem:transport}: the vanishing vector $n'-n$ of the arc of
+$([u,u'],[n,n'])$ is, on both bases, a flat section over the complement of the discriminant in a neighbourhood of the closed
+arc (Lemma~\ref{lem:closedarc}(2)); in the chart of $F_u$ it is $n'-n\in u^\perp\cap N$ on both bases and $\kappa$ is the
+identity there, so $\kappa$ carries the one section to the other on such a neighbourhood (the last paragraph
+after Lemma~\ref{lem:closedarc}). The integers $c_E$ are
 therefore unchanged, and the node coefficients, read from the lower supports of the legs at the node points
 (Definition~\ref{def:nodecoef}), are unchanged by (1). The clauses of \cite[Def.~7.2]{CBM} refer to the topology of $S$
-and $j$, to $\Gamma_i$ with its vertex types and nodes, and to $\Lambda_i$ and its monodromy. An orientation of $B_i$ enters
-only through Definition~\ref{def:types}, and the types do not depend on it (Remark~\ref{rem:sameloop}). By (1) and (2),
+and $j$, to $\Gamma_i$ with its vertex types and nodes, and to $\Lambda_i$ and its monodromy. With clause~(i) read as conjugacy in $GL_2(\Z)$ (Section~\ref{ssec:cbm}), an orientation of $B_i$ enters
+only through Definition~\ref{def:types}, whose types do not depend on it (Remark~\ref{rem:sameloop}), and through the cyclic
+indexing of the three sheets at an interior edge in \cite[Def.~7.2(g); (vii) in the published version]{CBM}, which does not
+affect the balancing condition there. By (1) and (2),
 $\phi$ and $\kappa$ preserve all of these, and $\kappa$ intertwines parallel transport, so $(S,\phi\circ j,\kappa(v))$
 satisfies the clauses if and only if $(S,j,v)$ does; $\phi\circ j$ is piecewise linear if $j$ is. For a tropical
 $2$-cycle, triangulated, the node coefficients are those of the relative cycle it defines (Section~\ref{ssec:cbm}), and
@@ -346,10 +435,11 @@ be the composite of $\kappa_C\colon\Lambda\to g_C^*\Lambda^{\mathcal F_C}_X$ (Pr
 isomorphism $\Lambda^{\mathcal F_C}_X\to(\mathcal L^*\Lambda_Y)^\vee$, $x\mapsto\langle\,\cdot\,,x\rangle_{\mathcal L}$, given by the flat
 perfect pairing of Proposition~\ref{prop:L3}, and of the transport by $\Upsilon$. For an arc
 $A=C^\Upsilon([u,u'],[n,n'])$ of $\Gamma^\Upsilon$ put $d^*_A:=\langle\,\cdot\,,n'-n\rangle$, a flat section of
-$(\Lambda^\Upsilon)^\vee$ near $A$ (Proposition~\ref{prop:dict}(2)). For a triangulation $\mathfrak K^*$ of $B_Y$ in which
+$(\Lambda^\Upsilon)^\vee$ over the complement of $\Gamma^\Upsilon$ in a neighbourhood of the closed arc $\bar A$
+(Lemma~\ref{lem:closedarc}(3), Proposition~\ref{prop:dict}(2)). For a triangulation $\mathfrak K^*$ of $B_Y$ in which
 $\Gamma^\Upsilon$ is full, let $F^*(s)$ be the group of flat sections of $(\Lambda^\Upsilon)^\vee$ over
 $V\setminus\Gamma^\Upsilon$, $V$ a small neighbourhood of $\bar s$, let $\mathcal D^*(E):=\Z d^*_A$ for an edge
-$E\subseteq A$ of $\Gamma^\Upsilon$, and let $Z(\mathfrak K^*;F^*,\mathcal D^*)$ be the group of chains
+$E\subseteq\bar A$ of $\Gamma^\Upsilon$, and let $Z(\mathfrak K^*;F^*,\mathcal D^*)$ be the group of chains
 $z^*\in C_2(\mathfrak K^*;F^*)$ with $\partial z^*\in C_1(\Gamma^\Upsilon;\mathcal D^*)$, as in
 Definition~\ref{def:relcycle}.
 
@@ -375,7 +465,9 @@ triangle) onto the vertices of $\Gamma^\Upsilon$ of positive type, and the posit
 vertices of negative type. At a point of an open facet $\operatorname{int}F_u$, where $\Lambda=u^\perp\cap N$ and
 $\Lambda^\Upsilon=M/\Z u$ at the image point, $\kappa_{\mathfrak h}(x)=\langle\,\cdot\,,x\rangle$.
 \item On the arc $A=C^\Upsilon([u,u'],[n,n'])$: $u'-u$ is a flat section of $\Lambda^\Upsilon$ near $A$;
-$d^*_A=\langle\,\cdot\,,n'-n\rangle$ is a flat section of $(\Lambda^\Upsilon)^\vee$ near $A$, and $d^*_A=\kappa_{\mathfrak h}(n'-n)$;
+$d^*_A=\langle\,\cdot\,,n'-n\rangle$ is a flat section of $(\Lambda^\Upsilon)^\vee$ over the complement of $\Gamma^\Upsilon$ in a
+neighbourhood $V$ of the closed arc $\bar A$, and $\kappa_{\mathfrak h}(n'-n)=d^*_A$ over $\mathfrak h^{-1}(V)\setminus\Gamma$
+for a suitable such $V$;
 \[
 \operatorname{Inv}^*(A)=\{X\in(\Lambda^\Upsilon)^\vee:X(u'-u)=0\},
 \]
@@ -413,8 +505,14 @@ $T(u'-u)=u'-u$, as $\langle u'-u,n'-n\rangle=0$; the fixed sublattice is $\{\zet
 invariant under the dual action if and only if $X(T\zeta)=X(\zeta)$ for all $\zeta$, that is, $\langle\zeta,n'-n\rangle X(u'-u)=0$
 for all $\zeta\in n^\perp\cap M$, that is, $X(u'-u)=0$, since $\langle\,\cdot\,,n'-n\rangle$ does not vanish on $n^\perp\cap M$.
 The covector $\langle\,\cdot\,,n'-n\rangle$ vanishes on $u'-u$, hence is flat, and it is primitive in $N/\Z n$
-(proof of Proposition~\ref{prop:L2}(3)). By (1), $\kappa_{\mathfrak h}(n'-n)=\langle\,\cdot\,,n'-n\rangle$ on the side of $F_u$, and both
-are flat sections near the arc.
+(proof of Proposition~\ref{prop:L2}(3)). Near the closed arc: $\langle\,\cdot\,,n'-n\rangle$ is a flat section of
+$\Lambda_Y^\vee$ over the complement of $\Gamma_Y$ in a neighbourhood of the closure of the arc $C_Y([u,u'],[n,n'])$ of
+$B_Y=B_Y(\mathcal F_C)$ (Lemma~\ref{lem:closedarc}(3)), and transport by $\Upsilon$ carries it to such a section of
+$(\Lambda^\Upsilon)^\vee$ near $\bar A$; and $n'-n$ is a flat section of $\Lambda$ over the complement of $\Gamma$ in a
+neighbourhood of the closed arc of $B'_\sigma=B_X(\Sigma')$ with the same dual pair (Lemma~\ref{lem:closedarc}(2)), which $\kappa_{\mathfrak h}$
+carries to a flat section near $\bar A$, as $\mathfrak h$ maps that closed arc onto $\bar A$ by (1). By (1),
+$\kappa_{\mathfrak h}(n'-n)=\langle\,\cdot\,,n'-n\rangle$ on the side of $F_u$, so the two sections agree on a neighbourhood of
+$\bar A$ (the last paragraph after Lemma~\ref{lem:closedarc}).
 
 (3) At a node or at a vertex of positive type, all arcs share the vector $u'-u$ (Proposition~\ref{prop:L2}(3)) and have
 monodromies $\zeta\mapsto\zeta+\langle\zeta,t_A\rangle(u'-u)$ with $t_A$ the edge vectors of $P$, respectively of
@@ -449,7 +547,9 @@ integers $c_E$, and
 \begin{proof}
 By Proposition~\ref{prop:dict}(1), $\mathfrak h$ is a piecewise linear homeomorphism with $\mathfrak h(\Gamma)=\Gamma^\Upsilon$ mapping arcs
 onto arcs, and by Proposition~\ref{prop:dict}(2), $\kappa_{\mathfrak h}(d_E)=\kappa_{\mathfrak h}(n'-n)=d^*_{\mathfrak h(A)}$ for a leg $E$ with lower support
-$\{n,n'\}$ on the arc $A$ of $([u,u'],[n,n'])$ (Proposition~\ref{prop:L2}(2)). So $(\mathfrak h,\kappa_{\mathfrak h})$ satisfies the hypotheses of
+$\{n,n'\}$ on the arc $A$ of $([u,u'],[n,n'])$ (Proposition~\ref{prop:L2}(2)), as flat sections over the complement of the
+discriminant in neighbourhoods of the closed arcs, on which $d_E$ and $d^*_{\mathfrak h(A)}$ are defined by
+Lemma~\ref{lem:closedarc}(2),(3). So $(\mathfrak h,\kappa_{\mathfrak h})$ satisfies the hypotheses of
 Lemma~\ref{lem:transport}, which gives all but the last statement. The node coefficients of $z$ are computed from the
 integers $c_E$ on the legs at $p_q$ and the lower supports of these legs; those of $\mathfrak h_*z$ from the same integers on the arcs
 at $\mathfrak h(p_q)=C^\Upsilon([u,u'],P_q)$ and the same labels (Proposition~\ref{prop:dict}(1),(4)). Subdivision replaces each leg
@@ -486,7 +586,7 @@ and of $F^*_\omega$ with $\check h$ on $\omega^\vee$ for $C_Y(\tau,\omega)$; the
 coincidence. Second, the transfer of a tropical $2$-cycle is not a tropical $2$-cycle of $B_Y$ in the sense of \cite[Def.~7.2]{CBM}: its coefficients are covectors; its boundary
 vertices, which lie at negative vertices of $B'_\sigma$, lie at vertices of positive type of $B_Y$; and at a node met by its
 boundary, which is of positive type on $B_Y$ by Proposition~\ref{prop:L2}(3), its boundary continues along one line of the
-discriminant, whereas \cite[Def.~7.2(f)]{CBM} requires the boundary to turn from one line to the other at a positive node
+discriminant, whereas \cite[Def.~7.2(f); (vi) in the published version]{CBM} requires the boundary to turn from one line to the other at a positive node
 \cite[Fig.~14(3)]{CBM}. The transfer $\mathfrak h_*$ records the data from which the lift is built, in the affine structure of $B_Y$,
 without asking them to be a tropical object there.
 \end{remark}

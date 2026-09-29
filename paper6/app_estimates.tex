@@ -1,7 +1,8 @@
 \section{Estimates for the localized mirror}\label{app:mirror}
 
-This appendix proves Lemmas~\ref{lem:onecell}, \ref{lem:W}, \ref{lem:NM} and~\ref{lem:TR} of
-Section~\ref{sec:regime}, and Lemma~\ref{lem:windows} of Section~\ref{sec:lift}, under the standing assumptions of
+This appendix proves Lemmas~\ref{lem:onecell}, \ref{lem:W}, \ref{lem:NM}, \ref{lem:TR} and~\ref{lem:windows} of
+Section~\ref{sec:regime}, together with the auxiliary Lemmas~\ref{lem:refined}, \ref{lem:wirt}, \ref{lem:cases},
+\ref{lem:slide}, \ref{lem:square} and~\ref{lem:nodecomp}, under the standing assumptions of
 Section~\ref{sec:regime} and in its notation. At a point $x$ of a chart $U_{\mathsf c}$ the Cox monomials are evaluated in
 the chart, and we put
 \[
@@ -39,14 +40,19 @@ $n\in\operatorname{Trans}(x)$.
 \item For $\ell\in M_\R$ let $\partial_\ell$ be the holomorphic vector field of the torus action with
 $\partial_\ell\chi^m=\langle\ell,m\rangle\chi^m$, and $v_\ell:=2\operatorname{Re}\partial_\ell$ the corresponding real field.
 Then $d\psi_n(Jv_\ell)=0$ and $|d\psi_n(v_\ell)|\le\beta'_{\max}|\ell|D/L$.
-\item Let $Z$ be a Cox coordinate of the chart, $e(m)$ the $Z$-exponent of $m$, and $v=\partial/\partial\operatorname{Re}Z$.
-Then $\partial_Z\tilde d_n=(\bar e-e(n))/(2LZ)$ with $\bar e=\sum_mp_me(m)$, $p_m=|\gamma_mx^m|^2/\mathfrak S$, and
+\item Let $Z$ be a holomorphic coordinate near $x$ such that, after division of all monomials by one nowhere vanishing
+function, each monomial $m$ is $Z^{e(m)}$ times a function independent of $Z$, with integers $0\le e(m)\le e_{\max}$: a Cox
+coordinate of the chart, with $e(m)$ the $Z$-exponent of $m$, or one of the coordinates $Z$, $Z'$ of
+Section~\ref{ssec:morse} on $U_{u,u'}$, after division by $\gamma_ax^a$, with $e=e_u$ or $e=e_{u'}$. Moduli of monomials
+below are taken after this division, and $v=\partial/\partial\operatorname{Re}Z$. Then, where $Z\ne0$,
+$\partial_Z\tilde d_n=(\bar e-e(n))/(2LZ)$ with $\bar e=\sum_mp_me(m)$, $p_m=|\gamma_mx^m|^2/\mathfrak S$, and
 \[
 \sum_n|\gamma_nx^n|\bigl(|d\tilde\psi_n(v)|+|d\tilde\psi_n(Jv)|\bigr)\le\frac{2\beta'_{\max}}L\Bigl[\Bigl(\sum_{\substack{n\in\operatorname{Trans}\\
 e(n)=0}}\frac{|\gamma_nx^n|}{\mathfrak S^{1/2}}\Bigr)\mathcal D_Z+\sum_{\substack{n\in\operatorname{Trans}\\ e(n)\ge1}}\bigl(e(n)+e_{\max}\bigr)
 \Bigl|\frac{\gamma_nx^n}Z\Bigr|\Bigr],
 \]
-where $\mathcal D_Z:=\sum_me(m)|\gamma_mx^m/Z|$.
+where $\mathcal D_Z:=\sum_me(m)|\gamma_mx^m/Z|$. Both sides of the inequality are continuous, since every term with
+$e(m)\ge1$ is divisible by $Z$, so it holds also where $Z=0$.
 \end{enumerate}
 \end{lemma}
 
@@ -55,8 +61,9 @@ where $\mathcal D_Z:=\sum_me(m)|\gamma_mx^m/Z|$.
 $|\gamma_nx^n|^2\le t^{\theta_1/2}\mathfrak S$. (2) The weights depend only on the moduli, which the compact torus
 preserves, so $d\psi_n(Jv_\ell)=0$. Since $v_\ell\log|\chi^m|^2=2\langle\ell,m\rangle$,
 $v_\ell\tilde d_n=\frac1L\bigl(\sum_mp_m\langle\ell,m\rangle-\langle\ell,n\rangle\bigr)$, of modulus at most $|\ell|D/L$.
-(3) $|\gamma_mx^m|^2$ depends on $Z$ through $|Z|^{2e(m)}$, so $\partial_Z\log|\gamma_mx^m|^2=e(m)/Z$, which gives the
-formula. For a real function $\phi$, $|d\phi(v)|+|d\phi(Jv)|\le4|\partial_Z\phi|$, and
+(3) The common factor cancels in $\tilde d_n$, and it multiplies both sides of the inequality by its modulus. After the
+division, $|\gamma_mx^m|^2$ depends on $Z$ through $|Z|^{2e(m)}$, so $\partial_Z\log|\gamma_mx^m|^2=e(m)/Z$ where $Z\ne0$,
+which gives the formula. For a real function $\phi$, $|d\phi(v)|+|d\phi(Jv)|\le4|\partial_Z\phi|$, and
 $d\tilde\psi_n=(1-s)\beta'(\tilde d_n)\,d\tilde d_n$ vanishes unless $n\in\operatorname{Trans}$ (the origin has constant weight).
 For $e(n)=0$, $|\bar e|\,|\gamma_nx^n|/|Z|\le(|\gamma_nx^n|/\mathfrak S^{1/2})\sum_me(m)|\gamma_mx^m|/|Z|$ because
 $p_m\le|\gamma_mx^m|/\mathfrak S^{1/2}$; for $e(n)\ge1$, $|\bar e-e(n)|\le e(n)+e_{\max}$.
@@ -177,8 +184,8 @@ of the cells is used.
 two. The thresholds on $t$ are finitely many and depend on the configuration, on $\mathscr C_0$ and, in case (C), on $r$
 and $\eta_0$. At $s=1$ the section is holomorphic, so $W_1=Y_t$ is a complex hypersurface, smooth by the above.
 
-(2) At $s=1$ all weights equal $1$ and $\mathcal J=0$. The arguments of cases (A) and (B) use only bounds on $|c_n|$, so
-they apply to every $c\in U_\C$ and show that $Y_{t,c}$ is smooth outside the sets $\mathcal U_P$. In $\mathcal U_P$,
+(2) At $s=1$ all weights equal $1$ and $\mathcal J=0$. The arguments of cases (A) and (B) use only the two-sided bounds on
+$|c_n|$, so they apply to every $c\in U^+_\C$ and show that $Y_{t,c}$ is smooth outside the sets $\mathcal U_P$. In $\mathcal U_P$,
 Lemma~\ref{lem:TR}(2) places the singular points in $\mathbb D_P$, where by Lemma~\ref{lem:NM}(2) the only critical point of
 $f^{(1)}$ is $q_P$; it lies on $Y_{t,c}$ exactly when $\varepsilon_P=0$, and is then a singular point.
 \end{proof}
@@ -372,7 +379,7 @@ $\max(|\chi_1\partial_{\chi_1}\tilde g|,|\chi_2\partial_{\chi_2}\tilde g|)\ge\tf
 $|h|>\mathcal J$ for $t<t_0(r,\eta_0,\mathscr C_0)$.
 \end{itemize}
 
-(2) Let $s=1$, $c\in U_\C$, and let $x\in\mathcal U_P$ be a singular point of $Y_{t,c}$. All weights are one and
+(2) Let $s=1$, $c\in U^+_\C$, and let $x\in\mathcal U_P$ be a singular point of $Y_{t,c}$. All weights are one and
 $\mathcal J=0$. The first case above and the first item of the second case apply verbatim and show that
 $O<t^\gamma\mathfrak m$ and that $(\chi_1,\chi_2)$ is within $\theta_2$ of the node point; the part of the second item with
 $|x|\ge r$ or $|y|\ge r$ uses only $|\kappa_P|\le4\eta_0$ and shows $|x|,|y|<r$. Since $O<t^\gamma\mathfrak m$, the maximum is

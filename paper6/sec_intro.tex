@@ -2,7 +2,7 @@
 
 Morrison proposed that mirror symmetry reverses conifold transitions of Calabi--Yau threefolds, exchanging
 exceptional curves with vanishing three-spheres \cite{Mor99}. For the class of Batyrev hypersurfaces considered here,
-we establish his numerical prediction and strengthen it to an equality of integral relation lattices. Every relation
+we establish his numerical prediction, as a count in the coefficient space of the mirror family, and strengthen it to an equality of integral relation lattices. Every relation
 is realised by an explicit integral bounding chain on the mirror hypersurface. The comparison also characterises
 smoothability in terms of mirror vanishing cycles and yields a symplectic conifold transition whenever the original
 nodal threefold is smoothable.
@@ -16,14 +16,18 @@ through $X'$ is a conifold transition.
 In Morrison's picture, a mirror family of $\widehat X$ acquires nodes with vanishing spheres $\delta_q$ corresponding
 to the curves $C_q$, and the nodal members admit small resolutions mirror to $X_s$. His numerical prediction is that
 the $|Q|$ mirror nodes impose only $\rho_{\rm rel}$ conditions on the complex moduli, where $\rho_{\rm rel}$ is the
-relative Picard number of $\widehat X\to X'$ \cite[\S3.1]{Mor99}. For the families below we prove this count and the
-following integral comparison. Let $K\subset\Z^Q$ be the lattice of relations among the classes $[C_q]$ in
+relative Picard number of $\widehat X\to X'$ \cite[\S3.1]{Mor99}; his setting is a conifold transition, so $X'$ is
+assumed smoothable. For the families below we prove this count in the space of coefficient vectors of the Batyrev
+mirror family, whether or not $X'$ is smoothable, together with the following integral comparison. Let $K\subset\Z^Q$ be the lattice of relations among the classes $[C_q]$ in
 $H_2(\widehat X;\Z)$, of rank $|Q|-\rho_{\rm rel}$. On a suitable smooth member $Y$ of the mirror family,
 \begin{equation}\label{eq:intro-prediction}
 \Bigl\{k\in\Z^Q:\ \sum_qk_q[\delta_q]=0\text{ in }H_3(Y;\Z)\Bigr\}=K,
 \end{equation}
-and the classes $[\delta_q]$ generate a torsion-free subgroup. We also show that the members on which all these
-spheres collapse form a nonempty smooth locus of codimension $|Q|-\operatorname{rank}K=\rho_{\rm rel}$.
+and the classes $[\delta_q]$ generate a torsion-free subgroup. We also show that, near that member, the members on which all these
+spheres collapse form a nonempty smooth locus of codimension $|Q|-\operatorname{rank}K=\rho_{\rm rel}$ in the space of
+coefficient vectors. The \emph{factoring locus}, where the face polynomials of the node parallelograms introduced
+below factor into binomials, has the same codimension there; the result concerns the nodal locus itself, on which all
+$|Q|$ nodes are present.
 The integral equality specifies exactly which combinations of the mirror spheres are null-homologous.
 
 This equality compares curves on $\widehat X$ with spheres on its mirror. Within a single conifold transition,
@@ -44,7 +48,8 @@ Let $\Delta$ be an admissible reflexive four-polytope (Definition~\ref{def:admis
 $X\subset\mathbb P_\Delta$ a $\Delta^\circ$-regular anticanonical hypersurface. Its singularities are nodes and isolated
 cones over del Pezzo surfaces of degrees six and seven. A \emph{profile} $\sigma$ is a choice of subdivisions of its
 singular two-faces into unit parallelograms and unimodular triangles (Definition~\ref{def:profile}). It determines a
-nodal crepant partial resolution $X'_\sigma\to X$, with one node for each parallelogram \cite{Paper4,Paper5}.
+nodal crepant partial resolution $X'_\sigma\to X$, with one node for each parallelogram (Section~\ref{ssec:partialres};
+for the hexagons compare \cite[Prop.~3.7(2),(3)]{Paper5}).
 We assume that this partial resolution is induced by a projective toric morphism, Hypothesis~\ref{hyp:P}.
 The precise combinatorial restrictions are recalled below and in Section~\ref{sec:statements}.
 
@@ -56,7 +61,7 @@ K=\Bigl\{\lambda\in\Z^Q:\ \sum_q\lambda_q\,\circv_q=0\Bigr\}
 (Proposition~\ref{prop:integral}). Here $\circv_q=e_b+e_d-e_a-e_c$ is the \emph{circuit} of the corresponding
 parallelogram $abcd$, with the sign fixed by the chosen diagonal, and $e_v$ is the formal basis vector indexed by
 the lattice point $v$. On the mirror side, $Y_t$ is a member of the Batyrev family near its maximally degenerate
-limit $t\to0$. The construction starts with real coefficients of a fixed sign pattern, close to the locus where
+limit $t\to0$. The construction starts with real coefficients of a fixed sign pattern, close to the factoring locus, where
 the face polynomial of each parallelogram factors into two binomials. For coefficients in the window specified
 in Theorem~\ref{thm:main}, there is one nondegenerate critical point with small nonzero critical value near each
 parallelogram; its vanishing sphere is $\delta_q\subset Y_t$.
@@ -71,7 +76,7 @@ torsion trivially.
 \item Every relation $k\in K$ is the boundary of an explicit integral $4$-chain on $Y_t$ lifted from a relative
 tropical $2$-cycle on the base of Gross's toric degeneration of $X'_\sigma$.
 \item Near the given member, the members with a node at every one of these critical points form a nonempty complex
-submanifold of codimension $|Q|-\operatorname{rank}K$, the relative Picard number of a projective small resolution
+submanifold of the space of coefficient vectors, of codimension $|Q|-\operatorname{rank}K$, the relative Picard number of a projective small resolution
 $\widehat X\to X'_\sigma$.
 \end{enumerate}
 \end{theorem*}
@@ -79,12 +84,14 @@ $\widehat X\to X'_\sigma$.
 \emph{Smoothings and symplectic transitions.} Friedman's relation criterion
 \cite[Rem.~(4.5), Cor.~(4.7)]{Friedman}, in Namikawa's necessary and sufficient form \cite[Thm.~2.5]{Nam02},
 characterises smoothability of $X'_\sigma$ by the existence of a relation among the exceptional curves with every
-coefficient nonzero; compare \cite[Thm.~1.3]{RT09}. The integral comparison transfers this criterion to the mirror:
+coefficient nonzero; compare \cite[Thms.~1.2 and~1.3]{RT09}. The integral comparison transfers this criterion to the mirror:
 $X'_\sigma$ is smoothable if and only if the $[\delta_q]$ satisfy an integral relation with every coefficient nonzero.
-In that case the spheres are smoothly isotopic to pairwise disjoint Lagrangian spheres for the restriction of a
-toric K\"ahler form. By Smith--Thomas--Yau \cite[Thm.~2.9]{STY}, one of their $2^{|Q|}$ conifold transitions carries
-a symplectic structure in which the exceptional curves are symplectic (Corollary~\ref{cor:smooth}). Thus algebraic
-smoothability on the original side yields a symplectic conifold transition on the mirror.
+The spheres are smoothly isotopic to pairwise disjoint Lagrangian spheres for the restriction of a
+toric K\"ahler form, whether or not such a relation exists. When it exists, by Smith--Thomas--Yau \cite[Thm.~2.9]{STY},
+one of their $2^{|Q|}$ conifold transitions carries a symplectic structure in which the exceptional curves are symplectic (Corollary~\ref{cor:smooth}). Thus algebraic
+smoothability on the original side yields a symplectic conifold transition on the mirror. For hexagon-free $\Delta$
+satisfying~\ref{hyp:P}, the same relation criterion decides the smoothability of $X$ itself
+(Corollary~\ref{cor:mixed}).
 
 The further geometric assertion in Morrison's proposal, that the nodal mirror members admit small resolutions
 mirror to smoothings of $X'_\sigma$, remains open here.
@@ -94,15 +101,16 @@ $dP_7$ pentagon, so $X'_\sigma$ has four nodes, and
 $K=\Z\,(1,-1,-1,1)$. On the base $B$ of Gross's degeneration there is a disc whose boundary runs along the discriminant
 through the four nodes along opposite legs, and whose node coefficients are $(1,-1,-1,1)$
 (Section~\ref{ssec:x9}). Its lift is a $4$-chain on $Y_t$ bounded by $\delta_1-\delta_2-\delta_3+\delta_4$, and by the
-theorem this is the only relation: the four spheres span a free group of rank three, and the members of the mirror family
-with all four nodes form a locus of codimension three. Since $K$ contains a vector with no zero entry, $X'_\sigma$ is
+theorem this is the only relation: the four spheres span a free group of rank three, and, near the given member, the
+members of the mirror family with all four nodes form a submanifold of codimension three in the space of coefficient
+vectors. Since $K$ contains a vector with no zero entry, $X'_\sigma$ is
 smoothable, and the four spheres admit a symplectic conifold transition.
 
 \subsection{Geometric realisation of the relations}
 Let $B=B'_\sigma$ be the dual intersection complex of Gross's toric degeneration
 of $X'_\sigma$ \cite{Gross2005}: an integral affine three-sphere whose singularities lie along a graph $\Gamma$, the
-discriminant. Each node $q$ gives a four-valent vertex $p_q$ of $\Gamma$, which is a negative node in the sense of
-\cite{CBM} (Proposition~\ref{prop:base}); the other vertices of $\Gamma$ are trivalent of the two standard types. Each arc
+discriminant. Each node $q$ gives a four-valent vertex $p_q$ of $\Gamma$, which, after an isotopy supported in the two-cell over its
+parallelogram, is a negative node in the sense of \cite{CBM} (Proposition~\ref{prop:base}); the other vertices of $\Gamma$ are trivalent of the two standard types. Each arc
 of $\Gamma$ carries a vanishing vector, the direction of the image of the monodromy minus the identity.
 
 In the definition of relative tropical $2$-cycles, the coefficient sheaf is $\iota_*\Lambda$, where
@@ -155,17 +163,19 @@ step in the filling theorem (Section~\ref{sec:cycles}).
 \emph{The lift.} The bases $B'_\sigma$ and $B_Y$ of the original and mirror degenerations have different cell
 decompositions. A complex of pairs of dual cells gives a piecewise linear homeomorphism between them, matching the
 discriminants and dualising the tangent local systems (Sections~\ref{sec:dualpair} and~\ref{sec:legendre}). We then
-use a localized hypersurface $W^*$ in the sense of Mikhalkin and Yamamoto \cite{Mikhalkin,Ya16}, isotopic to $Y_t$.
+use a localized hypersurface $W^*$, isotopic to $Y_t$, modelled on the localization of Mikhalkin and Yamamoto
+\cite{Mikhalkin,Ya16}; since the mirror subdivision is not unimodular, their results do not apply here, and the isotopy
+is proved directly.
 Near each node it has the conifold smoothing model $\{xy+z_1z_2=\kappa\}$ with $\kappa$ small and nonzero
 (Section~\ref{sec:regime}). The chain is assembled from thimbles at the nodes, pieces of toric divisors along its
-boundary, and two-torus bundles over its interior. Each summand is lifted over its own domain, so crossings or
-coincident sheets contribute separate chains. The local extensions leave a possible boundary in the class of the
+boundary, and two-torus bundles over its interior. Each summand is lifted over its own domain, so summands that
+cross in $B_Y$ contribute separate chains; sheets that coincide are merged, with their coefficients added. The local extensions leave a possible boundary in the class of the
 fibre three-torus. This obstruction vanishes because the positive real locus meets each fibre torus once and misses
 every vanishing sphere (Section~\ref{sec:lift}). The isotopy carries the resulting integral chain to $Y_t$.
 
 \emph{Periods.} The chains give $K\subseteq\Rel(\delta)$. The periods
 $\wp_q=\int_{\delta_q}\Omega$ extend holomorphically to the nodal members and equal their critical values
-$\varepsilon_P$ times nonvanishing functions, where $P$ is the parallelogram of $q$. Up to nonzero scalars, the
+$\varepsilon_P$ times functions that do not vanish near the nodal locus, where $P$ is the parallelogram of $q$. Up to nonzero scalars, the
 differentials of the critical values are close to the linear forms defined by the circuits. The period differentials have rank
 $|Q|-\operatorname{rank}K$, which bounds the rank of $\Rel(\delta)$ from above by $\operatorname{rank}K$.
 Since $K$ is saturated, the inclusion is an equality; the same argument excludes nonzero torsion combinations of
@@ -189,15 +199,18 @@ $K\neq0$ and for every profile on $59$ of the $142$ polytopes with a hexagon (Se
 
 The initial mirror construction uses the real coefficient window of Theorem~\ref{thm:main}; the resulting relations
 extend to neighbouring smooth complex members as explained in Section~\ref{ssec:relations}. Near the maximally
-degenerate limit the nodal locus lies close to, but in general not on, the locus where the face polynomials factor.
-The terms from the cells next to each parallelogram move the critical values
+degenerate limit the nodal locus lies close to the factoring locus. Our estimates do not place it on the factoring
+locus, and in a local model at a square node, which keeps the constant and linear terms of the apex sums of the cells next to
+the square, the critical value on the factoring locus is nonzero unless an apex sum vanishes at the node point
 (Section~\ref{ssec:periodsremarks}).
 
 Two further conditions enter the construction and hold automatically. The base requires a regular unimodular
 triangulation of $\partial\Delta^\circ$ with a height
 satisfying Gross's convexity conditions; Theorem~\ref{thm:U} shows that one exists for every admissible polytope, by
 a computer-assisted verification over the $51{,}827$ admissible polytopes of the Kreuzer--Skarke classification,
-with each triangulation and its height verified in exact arithmetic (Appendix~\ref{app:unimodular}). This larger computation
+with each triangulation and its height verified in exact arithmetic (Appendix~\ref{app:unimodular}); that these are all
+the admissible polytopes rests on an admissibility program whose negative verdicts are only partly replicated
+(Section~\ref{ssec:utrust}). This larger computation
 is distinct from the test set of $612$ polytopes used for the other statistics. The mirror side requires a subdivision of $\partial\Delta$
 in which the cells next to each node parallelogram have their other vertices at lattice height one; the pulling
 refinement of the subdivision given by~\ref{hyp:P} has this property (Proposition~\ref{prop:pulling}).
@@ -205,11 +218,29 @@ refinement of the subdivision given by~\ref{hyp:P} has this property (Propositio
 \subsection{Relation to other work}
 Batyrev and Kreuzer studied conifold transitions for Batyrev hypersurfaces whose singular two-faces are unit squares
 \cite{BK10}. They identified the curve classes with the circuits of the squares and specialised the mirror family to
-the locus where each square's face polynomial factors into two binomials. They observed that a projective, hence
-symplectic, small resolution of such a degenerate mirror requires a relation among the vanishing spheres with every
-coefficient nonzero, but did not determine whether such a relation exists \cite[\S3]{BK10}.
-Corollary~\ref{cor:smooth} answers the analogous question for the nodal members constructed here: the relation exists
-exactly when $X'_\sigma$ is smoothable. As noted above, these members approach the factorisation locus as $t\to0$.
+the locus where each square's face polynomial factors into two binomials. They expected the specialised members to have a node in each of
+the local toric charts they single out, and observed that a projective, hence symplectic, small resolution of such a nodal
+mirror requires a relation among the vanishing spheres with every coefficient nonzero, but did not determine whether
+such a relation exists \cite[\S3]{BK10}. For dual edges of lattice length one, the case considered here, their
+local equation at the expected node omits the monomials of the cells next to the square, which are linear in the normal coordinates.
+The nodal members constructed here approach the factoring locus as $t\to0$; our estimates do not place them on it, and
+in a local model at a square node the critical value on the factoring locus is nonzero for general coefficients
+(Section~\ref{ssec:periodsremarks}). Corollary~\ref{cor:smooth} answers the
+analogous question for these nodal members: the relation exists exactly when $X'_\sigma$ is smoothable.
+
+Prince associates with a reflexive four-polytope and a choice of Minkowski decompositions of its two-faces (scaled
+by the lattice lengths of the dual edges) into standard simplices, for the $dP_6$ hexagon into two triangles or into
+three segments, a locally rigid toric log Calabi--Yau space; when a regularity condition holds it admits a
+polarisation and is smoothed by the Gross--Siebert algorithm \cite[\S1, Thm.~1.1, Rem.~1.2]{Prince}, and he expects
+the resulting threefolds to degenerate to Calabi--Yau toric hypersurfaces with certain Gorenstein singularities
+\cite[Abstract]{Prince}. For his example $P_{6,6}$, whose anticanonical hypersurfaces have $36$ nodes and $12$ cones over $dP_6$, he
+asks for a description of his regularity condition in terms similar to the homological conditions of Friedman and
+Tian \cite[Rem.~5.4]{Prince}. His two decompositions of a hexagon correspond to the two smoothing components of the
+cone over $dP_6$ \cite[\S5]{Prince}, \cite[(8.1)]{Altmann97}, while the profiles used here subdivide the same faces for
+a partial resolution. Corollary~\ref{cor:smooth} is a homological criterion of this kind for the nodal threefolds
+$X'_\sigma$, and Corollary~\ref{cor:mixed} one for $X$ itself when $\Delta$ is hexagon-free and
+satisfies~\ref{hyp:P}; neither concerns the smoothing of the $dP_6$ points, and we do not compare them with his
+regularity condition.
 
 Casta\~no-Bernard and Matessi constructed Lagrangian torus fibrations over integral affine three-manifolds with
 singularities \cite{CBM09} and the topological conifolds and cycles described above \cite{CBM}. Their
@@ -223,7 +254,7 @@ Legendre transform that exchanges the two sides of the mirror \cite{GSI}; Haase 
 constructed the integral affine spheres of toric hypersurfaces and their torus fibrations \cite{HZ1}. Cycles in
 Calabi--Yau hypersurfaces near a maximally degenerate limit have been built from tropical data in other settings:
 Lagrangian rational homology spheres from tropical curves with ends on the discriminant by Mak and Ruddat
-\cite{MR20}, and lifts of closed tropical $(p,q)$-cycles in hypersurfaces with unimodular tropicalisation by
+\cite{MR20}, and lifts of a class of closed tropical $(p,q)$-cycles in hypersurfaces with unimodular tropicalisation by
 Yamamoto \cite{Ya26}, who notes that the tropical $2$-cycles of \cite{CBM} can be regarded as tropical $(1,2)$-cycles
 \cite[\S1, footnote]{Ya26}. Ruddat and Siebert compute period integrals over lifts of tropical one-cycles \cite{RS20},
 Ruddat develops a homology theory of tropical cycles on integral affine manifolds with a perfect pairing \cite{Ru21},
@@ -239,9 +270,8 @@ Section~\ref{sec:base} describes the partial resolution and Gross's base, Sectio
 complex of pairs of dual cells, and Section~\ref{sec:cycles} proves Theorem~\ref{thm:real}. In Part~II,
 Section~\ref{sec:legendre} transfers cycles to the mirror base, Section~\ref{sec:regime} constructs the localized
 mirror and Morse charts, Section~\ref{sec:lift} lifts the cycles (Theorem~\ref{thm:lift}), and
-Section~\ref{sec:periods} proves Theorem~\ref{thm:main} and Corollary~\ref{cor:smooth}. Part~III,
-Section~\ref{sec:resolution}, gives the resolution-side chains (Theorem~\ref{thm:res}), independently of Parts~I
-and~II. Part~IV, Section~\ref{sec:examples}, treats examples and the evidence for Conjecture~\ref{conj:strict}.
+Section~\ref{sec:periods} proves Theorem~\ref{thm:main} and Corollaries~\ref{cor:smooth} and~\ref{cor:mixed}. Part~III,
+Section~\ref{sec:resolution}, gives the resolution-side chains (Theorem~\ref{thm:res}); it uses Parts~I and~II, which
+do not use Part~III. Part~IV, Section~\ref{sec:examples}, treats examples and the evidence for Conjecture~\ref{conj:strict}.
 Appendix~\ref{app:unimodular} proves the triangulation theorem, Theorem~\ref{thm:U}; the remaining appendices
 contain deferred proofs and data.
-

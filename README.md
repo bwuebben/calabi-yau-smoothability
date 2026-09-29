@@ -34,7 +34,7 @@ mixed criterion for those degrees.
 | 3. Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau threefolds | [paper3/](paper3/README.md) | [cy-mirror-pairs.pdf](paper3/cy-mirror-pairs.pdf) | 11 |
 | 4. A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds | [paper4/](paper4/README.md) | [cy-vanishing-cycle.pdf](paper4/cy-vanishing-cycle.pdf) | 32 |
 | 5. Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points | [paper5/](paper5/README.md) | [cy-mixed-smoothing.pdf](paper5/cy-mixed-smoothing.pdf) | 61 |
-| 6. Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds | [paper6/](paper6/README.md) | [cy-vanishing-spheres.pdf](paper6/cy-vanishing-spheres.pdf) | 192 |
+| 6. Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds | [paper6/](paper6/README.md) | [cy-vanishing-spheres.pdf](paper6/cy-vanishing-spheres.pdf) | 206 |
 
 Each `paperN/` directory holds `main.tex` and its compiled PDF. Paper 5's
 source also includes `sections/`. Supporting computations are in `src/`
@@ -171,7 +171,8 @@ the verified inputs to their bounded censuses.
    nodal locus has the predicted codimension, and smoothability of the nodal
    partial resolution is equivalent to a mirror relation with every coefficient
    nonzero; when a smoothing exists, the mirror admits a symplectic conifold
-   transition. The required triangulations are verified for all **51,827**
+   transition. When no two-face is a hexagon, the same criterion decides the
+   smoothability of the hypersurface itself, with its degree-seven cone points. The required triangulations are verified for all **51,827**
    admissible reflexive polytopes. The [computation bundle](paper6/COMPUTATIONS.md) supplies the
    certificates and checkers, five worked examples, forced-node data and
    explicitly labelled census summaries.

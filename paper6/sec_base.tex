@@ -85,7 +85,7 @@ and the segments $[o,w_j]$, which are primitive by (1).
 \end{proof}
 
 The remaining subdivisions of the hexagon in (2), with no parallelogram, with one, or with two parallelograms sharing an
-edge, do not occur in profiles. The $A_1$ and $A_2$ subdivisions are the local models $W_{6,1}$ and $W_{6,2}$ of
+edge, do not occur in profiles. Up to rotation, the $A_1$ and $A_2$ subdivisions are the local models $W_{6,1}$ and $W_{6,2}$ of
 \cite[Prop.~3.7(2),(3)]{Paper5}. The pentagon subdivision gives the two-node model described in
 Section~\ref{ssec:partialres}.
 
@@ -179,9 +179,13 @@ complements are the orbits of the cones that meet the interior of $\tau_G$ in di
 vertex of $U_G$ and are compact curves and points. Hence there are compact unions of curves
 $Z\subset\widehat X$ and $Z_0\subset\widehat X_0$, lying over the points $x_G$, and an isomorphism
 $\widehat X\setminus Z\cong\widehat X_0\setminus Z_0=:U$, compatible with the maps to $X$, that carries $D_r\cap(\widehat X\setminus Z)$
-to $D_r\cap U$ for every $r\in R$. By Lefschetz duality in the oriented six-manifold $\widehat X$,
-$H^k(\widehat X,\widehat X\setminus Z;\Q)\cong H_{6-k}(Z;\Q)$, which vanishes for $k\le3$ because $Z$ has real dimension
-two. The exact sequence of the pair gives
+to $D_r\cap U$ for every $r\in R$. The set $Z$ is a compact analytic subset of the compact complex manifold $\widehat X$,
+hence a subcomplex of a triangulation of $\widehat X$ \cite[Thm.~2]{Loj64} and locally contractible. The duality
+$H_i(M,M\setminus K;\Z)\cong H^{n-i}(K;\Z)$ for a compact, locally contractible subset $K$ of a closed oriented
+$n$-manifold $M$ \cite[Thm.~3.44]{Hat02} gives $H_k(\widehat X,\widehat X\setminus Z;\Z)\cong H^{6-k}(Z;\Z)$, which
+vanishes for $k\le3$ because $Z$ is a polyhedron of dimension at most two. By universal coefficients over the field $\Q$,
+$H^k(\widehat X,\widehat X\setminus Z;\Q)\cong\operatorname{Hom}(H_k(\widehat X,\widehat X\setminus Z;\Z),\Q)=0$ for $k\le3$.
+The exact sequence of the pair gives
 \begin{equation}\label{eq:H2restr}
 H^2(\widehat X;\Q)\xrightarrow{\ \cong\ }H^2(U;\Q),
 \end{equation}
@@ -235,9 +239,12 @@ dimension.
 $\sum_q\lambda_q[C_q]=0$ with $\lambda\ge0$ forces $\lambda=0$. Conversely, suppose no nonzero $\lambda\ge0$ lies in $K$. By
 Gordan's alternative there is $\psi\in\Q^R$ with $\langle\circv_q,\psi\rangle>0$ for every $q$; extend $\psi$ by $0$ to the
 other lattice points of $\partial\Delta$. Let $h$ be a strictly convex function inducing $\Sigma'$. For $\epsilon>0$ small,
-the strict inequalities that cut out the cells of $\Sigma'$ persist for $h+\epsilon\psi$, so the subdivision it induces
-refines $\Sigma'$ and subdivides each cell $\omega$ of $\Sigma'$ by the regular subdivision induced by $\psi|_\omega$. A
-unimodular triangle or a primitive segment is not subdivided, and $\psi$ subdivides a parallelogram $abcd$ by the diagonal
+the strict inequalities by which $h$ exceeds its linear piece on the cone over a cell of $\Sigma'$ at the lattice points
+outside that cell persist for $h+\epsilon\psi$, so the subdivision it induces refines $\Sigma'$ and subdivides each cell
+$\omega$ of $\Sigma'$ by the regular subdivision of $\omega\cap N$ induced by $\psi|_\omega$. This subdivision may use
+lattice points of $\omega$ that are not vertices of $\omega$; these lie in the relative interiors of facets of $\Delta$,
+and the proper transform of $X$ meets no orbit of a cone containing one of them, since such an orbit lies over a
+torus-fixed point of $\mathbb P_\Delta$. A unimodular triangle or a primitive segment is not subdivided, and $\psi$ subdivides a parallelogram $abcd$ by the diagonal
 $\{a,c\}$ if and only if $\psi(a)+\psi(c)<\psi(b)+\psi(d)$, that is, $\langle\circv_q,\psi\rangle>0$. The toric variety of
 the refined fan is projective, it is smooth along the orbits that $X$ meets, and the proper transform of $X$ in it is the
 small resolution with the chosen diagonals. For the last sentence take $\psi$ equal to $-1$ at the centres and to small
@@ -305,8 +312,8 @@ extends to a basis $y_1,\dots,y_4$ of $N$, and every basis vector $y_i\wedge y_k
 The second lemma is a Lefschetz theorem for the hypersurface $W$ and for its intersections with the torus orbits of
 the vertices. It follows from Oka's theorem on the complement of a nondegenerate hypersurface. A Laurent polynomial $g$
 is \emph{nondegenerate} if for every face $\Theta$ of its Newton polytope, including the polytope itself, the
-truncation $g_\Theta$ and its logarithmic derivatives have no common zero in the torus; this is Batyrev's regularity
-condition \cite[\S3]{Batyrev} and Oka's global non-degeneracy \cite[Def.~(5.1)]{Oka80}.
+truncation $g_\Theta$ and its logarithmic derivatives have no common zero in the torus; this is equivalent to Batyrev's
+regularity condition \cite[\S3]{Batyrev} and to Oka's global non-degeneracy \cite[Def.~(5.1)]{Oka80}.
 
 \begin{lemma}\label{lem:lefschetz}
 Let $T'$ be an algebraic torus of dimension $n\ge2$, let $g$ be a nondegenerate Laurent polynomial on $T'$ whose Newton
@@ -363,7 +370,7 @@ $\Phi(p,s)=(s,\Phi_0(p,s))$ and $\Phi_0(p,0)=p$. The $3$-chain $\Phi(\gamma\time
 $\widehat X$, and its boundary $\tau=\Phi(\gamma\times\partial D_\epsilon)$ lies in $W$. The maps
 $h_u(p,\vartheta)=\bigl(\epsilon e^{i\vartheta},\Phi_0(p,u\epsilon e^{i\vartheta})\bigr)$, $u\in[0,1]$, take values in $T$ and
 join $\tau$ to the product of the circle $\{|t|=\epsilon\}$ with $\gamma$; so $i_*[\tau]=\pm y\wedge n_0$ in
-$H_2(T)=\Lambda^2N$; note that $y\wedge m=y\wedge n_0$ for $m=ay+n_0$. Hence the class of $H_2(W)$ corresponding to $\pm y\wedge n_0$ is a boundary in $\widehat X$. Take a
+$H_2(T)=\Lambda^2N$, and $y\wedge m=y\wedge n_0$ for $m=ay+n_0$. Hence the class of $H_2(W)$ corresponding to $\pm y\wedge n_0$ is a boundary in $\widehat X$. Take a
 unimodular triple $y_1,y_2,y_3$ of some two-face (Lemma~\ref{lem:triple}); the $y_i$ are vertices of $\Delta$, and the
 classes $y_i\wedge n$ span $\Lambda^2N$. So $H_2(W;\Z)$ is spanned by classes that vanish in $H_2(\widehat X;\Z)$.
 
@@ -371,8 +378,11 @@ classes $y_i\wedge n$ span $\Lambda^2N$. So $H_2(W;\Z)$ is spanned by classes th
 $H_2(\widehat X;\Z)\to H_2(\widehat X,W;\Z)$ is injective.
 
 \emph{Step C: $H_2(\widehat X,W;\Z)\cong\Z^R$, and the composite with Step B is $\mathrm{ev}_D$.} Triangulate $\widehat X$ so
-that every $D_r$ is a subcomplex \cite[Thm.~2]{Loj64}. Then $D$ is a compact subcomplex, hence locally contractible, and
-$W=\widehat X\setminus D$. The duality theorem for compact subsets of a closed oriented manifold \cite[Thm.~3.44]{Hat02} gives
+that every $D_r$ is a subcomplex \cite[Thm.~2]{Loj64}; that theorem applies because $\widehat X$, a compact complex
+manifold, is a real-analytic manifold with countable basis and the $D_r$ are analytic, hence semi-analytic, subsets. Then $D$
+is a compact subcomplex, hence locally contractible, and $W=\widehat X\setminus D$. The duality
+$H_i(M,M\setminus K;\Z)\cong H^{n-i}(K;\Z)$ for a compact, locally contractible subset $K$ of a closed oriented
+$n$-manifold $M$ \cite[Thm.~3.44]{Hat02} gives
 \[
 H_2(\widehat X,\widehat X\setminus D;\Z)\cong H^4(D;\Z).
 \]
@@ -394,8 +404,9 @@ has vanishing $H^3$ and $H^4$. The Mayer--Vietoris sequence, applied $|R|-1$ tim
 $H^4(D;\Z)\cong\bigoplus_{r\in R}H^4(D_r;\Z)=\Z^R$, the $r$-th component being restriction to $D_r$. By the naturality
 above, the $r$-th component of $H_2(\widehat X;\Z)\to H_2(\widehat X,\widehat X\setminus D;\Z)\cong\Z^R$ is the map
 $H_2(\widehat X)\to H_2(\widehat X,\widehat X\setminus D_r)\cong H^4(D_r)=\Z$. Through the Thom isomorphism of the normal bundle
-of the smooth surface $D_r$, this map is the intersection number with $D_r$, that is, $C\mapsto D_r\cdot C$. So the
-composite of Step B with this isomorphism is $\mathrm{ev}_D$, and $\mathrm{ev}_D$ is injective.
+of the smooth surface $D_r$, this map is the intersection number with $D_r$ up to sign, $C\mapsto\pm D_r\cdot C$, where
+the sign is fixed by the orientation conventions for the cap product and the Thom isomorphism and is the same for every
+$r$. So the composite of Step B with this isomorphism is $\pm\mathrm{ev}_D$, and $\mathrm{ev}_D$ is injective.
 \end{proof}
 
 \begin{remark}
@@ -492,7 +503,9 @@ In each case every $\lambda_q$ with $q\subset G$ is nonzero if and only if the l
 coordinate: $\lambda_{q_1}\neq0$ at a pentagon or an $A_1$ hexagon, and $\mu_1\mu_2\mu_3\neq0$ at an $A_2$ hexagon. When
 every singular point of $X$ is a node or a $dP_7$ point, that is, when $\Delta$ has no hexagonal two-face, the criterion
 \cite[Thm.~4.7]{Paper5} therefore says that $X$ has a convergent one-parameter smoothing if and only if some
-$\lambda\in K$ has all $\lambda_q\neq0$. For the nodal
+$\lambda\in K$ has all $\lambda_q\neq0$; the proof of Corollary~\ref{cor:mixed} verifies the hypotheses of
+\cite[Thm.~4.7]{Paper5} and the identification of its criterion with this condition, and that part of the proof does not
+use~\ref{hyp:P}. For the nodal
 threefold $X'_\sigma$, with any profile, the corresponding criterion is Corollary~\ref{cor:smooth}.
 \end{remark}
 
@@ -513,14 +526,26 @@ the faces of $\Delta^\circ$. The two conditions of Theorem~\ref{thm:U} are
 \end{enumerate}
 Since $\mathcal T$ is unimodular, the linear function $\ell_\kappa$ that agrees with $\check h$ on the cone over a tetrahedron
 $\kappa$ is integral, and strict convexity gives $\check h(m)\ge\ell_\kappa(m)+1$ for every lattice point $m$ outside that
-cone. Convexity of $\check h$ and $\check h'$ is the standing hypothesis of Gross's construction \cite[\S3]{Gross2005};
-strictness in (G2) is an additional requirement. Replacing $\check h$ by $\nu\check\varphi+2\check h$ with $\nu$ an odd
+cone. The standing hypotheses of Gross's construction \cite[\S3]{Gross2005} are that $\check h$ is integral, piecewise
+linear and strictly convex and that $\check h'$ is convex, together with the corresponding conditions on the fan side ($h$
+integral and strictly convex, $h-\varphi$ convex, with $\varphi$ as in Section~\ref{ssec:mirrorfamily}); the fan-side function enters the construction of the base and of its
+decomposition only through the subdivision $\widetilde\Sigma'$ below \cite[Prop.~3.12, Def.~3.13, Prop.~3.14]{Gross2005}.
+Some $h$ that satisfies these fan-side hypotheses induces $\Sigma'$ and the same $\widetilde\Sigma'$: the functions $h$ as above
+that induce $\Sigma'$ and $\widetilde\Sigma'$ form a nonempty set cut out by finitely many linear equations and strict linear
+inequalities with rational coefficients, so it contains one with rational slopes. Let $m$ be a positive integer with $mh$
+integral. Replacing $h$
+by $mh+\varphi$ changes the heights $h(a)$ of the points $(a,0)$ in the construction of $\widetilde\Sigma'$ below to
+$mh(a)+1$ and leaves the heights $0$ of the points $(w,1)$ unchanged; this is a scaling by $m$ followed by the addition of the
+affine function $(y,l)\mapsto1-l$, which changes no regular subdivision. And $mh+\varphi$ is integral and strictly convex on
+the fan over $\Sigma'$, with $(mh+\varphi)-\varphi=mh$ convex.
+Strictness in (G2) is an additional requirement. Replacing $\check h$ by $\nu\check\varphi+2\check h$ with $\nu\ge-1$ an odd
 integer preserves (G1) and (G2), because $\check\varphi$ is convex and linear on the cones over the simplices of
-$\mathcal T$, and $(\nu\check\varphi+2\check h)-\check\varphi=2\check h'+(\nu+1)\check\varphi$; for $\nu$ large it makes
+$\mathcal T$, $2\check h-\check\varphi=\check h+\check h'$, and $(\nu\check\varphi+2\check h)-\check\varphi=2\check h'+(\nu+1)\check\varphi$; for $\nu$ large it makes
 $\check h(m)$ odd and positive for every $m\in\partial\Delta^\circ\cap M$. We assume this normalisation, which
 Section~\ref{sec:resolution} uses, and build the base from the normalised height. It is not a restriction: two heights on the same
 $\mathcal T$ satisfying (G1) and (G2) give bases related by a piecewise linear homeomorphism that preserves the cells, their
-lower supports and face labels, the discriminant and the local system $\Lambda$ (Lemma~\ref{lem:indepheight}).
+lower supports and face labels, the discriminant and the local system $\Lambda$ (Lemmas~\ref{lem:indepheight}
+and~\ref{lem:height}(2)).
 
 \emph{The polytope.} Put
 \[
@@ -537,8 +562,8 @@ $\operatorname{cone}(\tau)$ (Lemma~\ref{lem:faces}), and these sets are the ones
 from \cite[(5.36) and Prop.~5.4]{Ya21}, cf.\ \cite[Ex.~5.16]{Ya21}.
 
 \emph{The decomposition.} Let $\widetilde\Sigma$ be the normal fan of the epigraph
-$\mathrm{Epi}=\{(m,l):m\in\Delta^\circ,\ l\ge\check h'(m)\}$, a fan in $N_\R\oplus\R$ with support $\{l\ge0\}$
-\cite[Prop.~3.5, 3.7]{Gross2005}. By (G1) and (G2) its maximal cones are the normal cones $\widetilde\Sigma_u$ at the vertices
+$\mathrm{Epi}=\{(m,l):m\in\Delta^\circ,\ l\ge\check h'(m)\}$ \cite[Prop.~3.5, 3.7]{Gross2005}, a fan in $N_\R\oplus\R$
+whose support is $\{l\ge0\}$, the dual of the recession cone $\{0\}\times\R_{\ge0}$ of $\mathrm{Epi}$. By (G1) and (G2) its maximal cones are the normal cones $\widetilde\Sigma_u$ at the vertices
 $(u,\check h'(u))$, $u\in\partial\Delta^\circ\cap M$, and the cone $\widetilde\Sigma_{\rm up}=\operatorname{cone}(\nabla^{\check h'}\times\{1\})$
 at $(0,0)$ \cite[Prop.~3.7]{Gross2005}. We fix the following subdivision $\widetilde\Sigma'$ of $\widetilde\Sigma$: on each
 $\widetilde\Sigma_u$ it is the cone over the regular subdivision of the point configuration
@@ -679,16 +704,17 @@ Let $p$ be a point of $\Gamma$ at which three legs meet, and let $T_1,T_2,T_3$ b
 based near $p$ and oriented compatibly with an orientation of $B$. The point $p$ is of \emph{negative type} if
 $T_i(x)=x+\langle\alpha,x\rangle d_i$ with a common primitive covector $\alpha$ and $d_1+d_2+d_3=0$ spanning a saturated
 sublattice of rank two of $\alpha^\perp$; it is of \emph{positive type} if $T_i(x)=x+\langle\alpha_i,x\rangle d$ with a common
-primitive $d$ and $\alpha_1+\alpha_2+\alpha_3=0$ spanning a saturated sublattice of rank two of $d^\perp$. As in \cite{CBM}, an
-\emph{edge point} of $\Gamma$ is a point of $\Gamma$ that is not a vertex of the graph $\Gamma$: an interior point of a leg, or a
+primitive $d$ and $\alpha_1+\alpha_2+\alpha_3=0$ spanning a saturated sublattice of rank two of $d^\perp$. An
+\emph{edge point} of $\Gamma$, the term used in \cite[Def.~7.2(b); (ii) in the published version]{CBM}, is a point of $\Gamma$ that is not a vertex of the graph $\Gamma$: an interior point of a leg, or a
 point at which exactly two legs meet.
 \end{definition}
 
 These are the local monodromies at the two kinds of trivalent vertex of the discriminant in Gross's topological torus
-fibrations \cite{Gross01}, the negative vertex \cite[Ex.~2.3]{CBM} and the positive vertex \cite[Ex.~2.4]{CBM}. At a point
+fibrations \cite[Thm.~1.11(2)]{Gross01}, the negative vertex \cite[Ex.~2.3]{CBM} and the positive vertex \cite[Ex.~2.4]{CBM}. At a point
 where two legs meet, the two legs have the same vanishing vector and the same covector up to sign (Lemma~\ref{lem:types}), so
-near every edge point the monodromy is that of an edge point of the discriminant in \cite[Ex.~2.2]{CBM}, given in
-\cite[\S3.2, (4)]{CBM}.
+near every edge point the monodromy is that of an edge point of the discriminant in \cite[Ex.~2.2]{CBM}, the product of
+the focus-focus singularity of \cite[Ex.~2.1]{CBM} with an interval; \cite[\S3.2, (4)]{CBM} gives the corresponding
+monodromy on the first homology of the fibres of the model torus fibration.
 
 \begin{lemma}[vertex types]\label{lem:types}
 The points of $\Gamma$ at which the number of legs is not zero are the following, and no others:
@@ -735,7 +761,7 @@ volume two, the three covectors at a positive vertex span a sublattice of index 
 produce the four-valent vertices.
 
 \emph{Carrying cells.} Let $q\in Q$, with node parallelogram $P$ in the two-face $G$ and $G^\circ=[u_-,u_+]$. By the stack
-lemma and $\lambda(P)=\ell(G^\circ)=1$, exactly one of the two-cells of $\mathscr P$ with lower support $P$ separates maximal cells
+lemma and $\ell(G(P)^\circ)=\ell(G^\circ)=1$, exactly one of the two-cells of $\mathscr P$ with lower support $P$ separates maximal cells
 with different facet indices. We call it the \emph{carrying cell} $\mathfrak c_q$ of $q$; it lies in the two-face
 $F_{u_-u_+}$, and we put $p_q:=b_{\mathfrak c_q}$. Likewise every unimodular triangle $L$ of $\sigma$ in a two-face $G$ is the lower
 support of exactly one two-cell $\mathfrak c_L\subset F_{u_-u_+}$ with different facet indices on its two sides.
@@ -758,13 +784,21 @@ Fullness is Lemma~\ref{lem:full}. By Lemma~\ref{lem:types}, $\Gamma$ is a graph 
 positive type and whose other points are edge points, except at the barycentres of two-cells with a node parallelogram as lower
 support. By the stack lemma these barycentres, on cells carrying legs, are exactly the $p_q$; the other two-cells over a node
 parallelogram, and all two-cells over parallelograms interior to facets of $\Delta$, carry no leg. Four-valent points $b_e$ do not
-occur (Lemma~\ref{lem:edge}), so $B'_\sigma$ has no positive node, whose four-valent vertex lies on an edge of the decomposition
-\cite[Ex.~6.2]{CBM}.
+occur (Lemma~\ref{lem:edge}), so every four-valent vertex of $\Gamma$ is a point $p_q$. The legs at $p_q$ are the flags
+$(e,\mathfrak c_q)$ with $e$ an edge of $\mathfrak c_q$ over an edge of the node parallelogram, and $\mathfrak c_q$ separates maximal
+cells with facet indices $u_\pm$; by Lemma~\ref{lem:monodromy} their monodromies are transvections with the common covector
+$\pm(u_+-u_-)$ and with vanishing vectors the edge vectors of the parallelogram, two of which are linearly independent. The flat
+sections of $\Lambda$ near $p_q$ form the rank-two lattice $\{u_-,u_+\}^\perp\cap N$ (Lemma~\ref{lem:stalks}(2)). At a positive
+node the monodromies of the two loops computed in \cite[Ex.~6.2]{CBM} are transvections with a common vanishing vector $e_1$, and
+the vectors invariant under both form the line $\R e_1$. An integral affine isomorphism of neighbourhoods carries flat sections to
+flat sections, so no $p_q$ is a positive node, and $B'_\sigma$ has none.
 \end{proof}
 
 \emph{The node germ.} Let $q\in Q$ with node parallelogram $P=abcd$ in the two-face $G$, $G^\circ=[u_-,u_+]$, carrying cell
-$\mathfrak c=\mathfrak c_q$ and adjacent maximal cells $C_\pm$ with facet indices $u_\pm$. By the stack lemma
-$\mathfrak c=P+\operatorname{conv}\tau$, where $\tau$ is a point, a segment or a polygon parallel to the plane of $P$. Put
+$\mathfrak c=\mathfrak c_q$ and adjacent maximal cells $C_\pm$ with facet indices $u_\pm$. By Lemma~\ref{lem:cayley}(2), applied to
+the face $F_{u_-u_+}$ that contains $\mathfrak c$, $\mathfrak c=P+\operatorname{conv}\tau$, where
+$\operatorname{conv}\tau=\nabla^{\check h'}_{\tau'}$ for a simplex $\tau'\supseteq[u_-,u_+]$ of $\mathcal T$; it lies in a translate of
+$\{u_-,u_+\}^\perp$, so $\tau$ is a point, a segment or a polygon parallel to the plane of $P$. Put
 $\alpha=u_+-u_-$ and $\check h_\pm=\check h(u_\pm)$, so that $C_\pm\subset\{\langle u_\pm,\cdot\rangle=-\check h_\pm\}$ and
 $\alpha\equiv\check h_--\check h_+$ on $\mathfrak c$. The four edges of $\mathfrak c$ with a two-point lower support have lower
 supports $\{a,b\}$, $\{b,c\}$, $\{c,d\}$, $\{d,a\}$, one for each edge of $P$, and the four legs at $p_q$ join $p_q$ to their
@@ -877,8 +911,8 @@ complementary regions by the same rule, and $\phi_{\rm pl}$ preserves the region
 
 The open stars of distinct points $p_q$ in $\operatorname{Bar}\mathscr P$ are disjoint, because no chain of cells contains two
 different two-cells; so the modifications at different nodes do not interact. This holds even when the closed carrying cells of
-two nodes meet, which happens: at a pentagon or an $A_1$ hexagon they may share a vertex with lower ray $o$, at an $A_2$ hexagon they
-may share an edge with lower support $\{o,w\}$, and across an edge of $\Delta$ they may share an edge whose barycentre is a positive
+two nodes meet, which happens: at an $A_1$ hexagon they may share a vertex with lower ray $o$, at a pentagon or an $A_2$ hexagon
+they may share an edge with lower support $\{o,w\}$, and across an edge of $\Delta$ they may share an edge whose barycentre is a positive
 vertex of $\Gamma$.
 
 \begin{proof}[Proof of Proposition~\ref{prop:base}(2)]
@@ -988,7 +1022,7 @@ subdivision induced by $g_\eta$, which is therefore $\operatorname{pull}_j\mathc
 $\operatorname{conv}(\{j\}\cup F)$, and a vertex $v\ne j$ of $\mathcal S$ is kept because $j\notin\operatorname{conv}\{v\}$.
 
 For the last statement, a maximal cell of $\mathcal S$ with $j$ in its convex hull is $\operatorname{conv}(\{0\}\cup C)$ with $C$ a cell on
-$\partial\Delta$, and $j\in C$ because $j\in\partial\Delta$ and $C$ lies in a supporting hyperplane of $\Delta$. The facets of
+$\partial\Delta$, and $j\in\operatorname{conv}C$ because $j\in\partial\Delta$ and $C$ lies in a supporting hyperplane of $\Delta$. The facets of
 $\operatorname{conv}(\{0\}\cup C)$ are $C$ and the cones $\operatorname{conv}(\{0\}\cup F')$ over the facets $F'$ of $C$; those not containing
 $j$ are of the second kind and contain $0$.
 \end{proof}
@@ -1050,7 +1084,9 @@ every lattice point of $\omega_2$ not in $P$ has $e_u=1$.
 \end{proposition}
 
 \begin{proof}
-(1) is Lemma~\ref{lem:pullreg}, applied at each step. (2) Pulling $j$ changes only the cells whose convex hull contains $j$, and refines
+(1) By Lemma~\ref{lem:pullreg}, applied at each step, $\mathcal F_C$ is induced by a height on $\mathcal A$ and every maximal cell of
+the corresponding subdivision of $\mathcal A$ contains $0$; the integral slopes of $h_C$ come from the choice of $h_C$ after the
+definition of $\mathcal F_C$. (2) Pulling $j$ changes only the cells whose convex hull contains $j$, and refines
 them. Every lattice point of a face of dimension at most two lies in $R$ and is a vertex of $\Sigma'$ (Section~\ref{ssec:faces}), so every
 pulled point lies in the relative interior of a facet of $\Delta$, and no cell in a face of dimension at most two contains it. By induction
 these cells are never changed. (3) Each pulled point becomes a vertex, and vertices are never lost (Lemma~\ref{lem:pullreg}).
@@ -1080,10 +1116,10 @@ vertex of $\Sigma'$; this is the case for the subdivisions $\Sigma'$ of the exam
 $\mathcal F_C=\Sigma'$.
 \item In general a subdivision $\Sigma'$ satisfying~\ref{hyp:P} does not satisfy the height condition. The polytope $\Delta_9$ of the example
 $X_9$ has a subdivision satisfying~\ref{hyp:P} whose vertices are all the lattice points of $\partial\Delta_9$ except $(-1,0,0,0)$; in it the three-cell over one of the pentagon parallelograms $P$, in the facet $u=(1,-1,-1,-1)$ with
-$u'=(0,1,-1,-1)$, is the pyramid $\operatorname{conv}(P\cup\{e_2\})$ with $e_{u'}(e_2)=2$, whose only lattice point at height one is $(-1,0,0,0)$.
+$u'=(0,1,-1,-1)$, is the pyramid $\operatorname{conv}(P\cup\{(0,1,0,0)\})$ with $e_{u'}((0,1,0,0))=2$, whose only lattice point at height one is $(-1,0,0,0)$.
 Pulling this point gives the $\Sigma'$ of Section~\ref{sec:examples}. On the list of Section~\ref{ssec:list}, the subdivisions $\Sigma'$ that
 the linear program of~\ref{hyp:P} returns violate the height condition on $7$ of the $364$ hexagon-free polytopes satisfying~\ref{hyp:P}, with apexes
-at height $2$ or $3$, while $\mathcal F_C$ satisfies it on all of them (exact computation over the list; see Section~\ref{ssec:list}).
+at height $2$ or $3$, while $\mathcal F_C$ satisfies it on all of them (exact computation).
 \end{enumerate}
 \end{remark}
 
