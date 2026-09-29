@@ -48,7 +48,12 @@ What is checked, for every polytope of the data file:
  (3) every witness psi and every Farkas certificate is verified, and every list of nogoods is shown to cover the set
      of profiles of its statement;
  (4) the counts of Section 11.4 are recomputed and compared with the numbers printed in the paper, and the per
-     polytope results with the results stored in the data file (which record the original computation).
+     polytope results with the results stored in the data file (which record the original computation);
+ (5) for the hexagon examples X_88 and X_154 of Section 11.3, the file example_profile_witnesses.json gives a witness
+     psi for every subdivision of the hexagon on the stated branch (the three A1 subdivisions of the hexagon of
+     Delta_88, the two A2 subdivisions of that of Delta_154); each is verified, with the number of nodes, rank K and
+     the forced nodes of its profile, and the subdivisions of the other branch are those excluded by the verified
+     Farkas certificates of (3).  So (Proj) holds for exactly these subdivisions of the hexagon.
 It also checks, on every polytope with one hexagon and all five subdivisions of the hexagon, that the forced nodes
 depend on the profile only through its branch (Remark "the tie" of the paper), and on the other hexagonal polytopes
 it compares, for each profile used, a second profile with the same branch pattern.
@@ -70,6 +75,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]                      # the repository root (paper6/forced_nodes/ -> ../..)
 DATA = HERE / "list_polytopes.json.gz"
+EXAMPLE_PROFILES = HERE / "example_profile_witnesses.json"
 T0 = time.time()
 
 
@@ -639,9 +645,38 @@ EXPECTED = dict(hexfree=470, hexfree_smooth=8, hexfree_K0=87, hexfree_Knz=375, h
                 corB_A1=18, corB_A2=22, corB_mixed=10, scope_all=447, corB_all=161, corB_fail=286)
 
 
+def check_example_profiles(D, path):
+    """(5): a (Proj) witness for every subdivision of the hexagon on the stated branch of X_88 and X_154."""
+    E = json.loads(Path(path).read_text())
+    rec = {p["id"]: p for p in D["polytopes"]}
+    seen = {pid: set() for pid in E["branches"]}
+    for w in E["witnesses"]:
+        pid = w["id"]
+        need(pid in seen, f"{pid}: an example with a stated branch")
+        P = Polytope(rec[pid])
+        P.check_faces()
+        need(len(P.hexes) == 1 and not P.pent, f"{pid}: one hexagon and no pentagon")
+        check_witness(P, w["profile"], w["psi"])
+        nd, Kb, forced = P.lattice(w["profile"])
+        need(len(nd) == w["nodes"] and len(Kb) == w["rank_K"] and forced == w["forced"],
+             f"{pid} {w['profile']['0']}: nodes, rank K and forced nodes")
+        seen[pid].add(w["profile"]["0"])
+    for pid, branch in E["branches"].items():
+        need(seen[pid] == {c for c in HEX_TILINGS if c.startswith(branch + ":")},
+             f"{pid}: a witness for every {branch} subdivision of the hexagon")
+        other = "A2" if branch == "A1" else "A1"
+        need(rec[pid]["stored"]["feasible"] == {branch: True, other: False, "mixed": False},
+             f"{pid}: (Proj) fails on the {other} subdivisions (verified certificates)")
+        log(f"{pid}: (Proj) holds for all {len(seen[pid])} {branch} subdivisions of the hexagon and for no {other} "
+            f"subdivision")
+    return len(E["witnesses"])
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--data", default=str(DATA))
+    ap.add_argument("--example-profiles", default=str(EXAMPLE_PROFILES),
+                    help="(Proj) witnesses for the subdivisions of the hexagon of X_88 and X_154")
     ap.add_argument("--summary", type=Path, help="write verified counts to JSON after a successful check")
     ap.add_argument("--sources", action="store_true", help="also rebuild the list from the repository files")
     A = ap.parse_args()
@@ -830,6 +865,13 @@ def main():
         if (idx + 1) % 100 == 0:
             log(f"{idx + 1} polytopes checked")
 
+    try:
+        nexample = check_example_profiles(D, A.example_profiles)
+    except CheckError as e:
+        print(f"FAILED on the example profiles: {e}", flush=True)
+        sys.exit(1)
+    log(f"(Proj) witnesses for the subdivisions of the hexagon of X_88 and X_154 verified: {nexample}")
+
     cnt["scope_all"] = cnt["hexfree_proj"] + cnt["hex_proj"]
     cnt["corB_all"] = cnt["corB_hexfree"] + cnt["corB_hex"]
     cnt["corB_fail"] = cnt["scope_all"] - cnt["corB_all"]
@@ -861,7 +903,7 @@ def main():
     if A.summary:
         import hashlib
         A.summary.write_text(json.dumps(dict(counts=cnt, vertex_sets=len(polys),
-            projectivity_witnesses=ncert[0], farkas_certificates=ncert[1],
+            projectivity_witnesses=ncert[0], farkas_certificates=ncert[1], example_profile_witnesses=nexample,
             data_sha256=hashlib.sha256(Path(A.data).read_bytes()).hexdigest()), indent=2) + "\n")
     log("all counts agree with the paper")
 

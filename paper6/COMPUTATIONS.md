@@ -60,8 +60,8 @@ cycle has a closed boundary and a more complicated interior.
 
 The public checker does **not** reconstruct the coupled base from the two
 fans, or verify all CBM interior conditions for non-belt cycles. Its docstring
-states this limit. Those constructions and broader proof checks remain in the
-research record; the exporter is not a substitute for final correctness review.
+states this limit. Those constructions are the subject of the proofs in the
+paper; the checker verifies the printed data and does not replace the proofs.
 The printed boundary paths, coefficients, cycle coordinates and specified Euler
 characteristics are compared with the exported data. Interior intersections
 with the discriminant are counted and their circular links checked; this alone
@@ -78,6 +78,20 @@ This recomputes the reported totals, including 340 strict realisations among
 not a replay of those geometric constructions. Two entries rely on written or
 aggregate reports; `census/README.md` identifies them.
 
+```sh
+python3 census/check_height_condition.py
+```
+
+`census/height_condition.json` records, for each of the 364 hexagon-free
+polytopes satisfying (Proj), the height condition at the node parallelograms
+for the subdivision Sigma' returned by the (Proj) linear program and for its
+pulling refinement F_C (Remark 3.27). The checker reconciles these records with
+`census/results.json` and `forced_nodes/list_polytopes.json.gz` and recomputes
+the totals: Sigma' violates the condition on 7 polytopes (62 of 19,746 pairs of
+a node parallelogram and a facet), with largest apex height 2 or 3, and F_C
+satisfies it on all 364. The subdivisions are not stored, so this, too, checks
+recorded results rather than recomputing the cells.
+
 ## Forced nodes and projectivity
 
 ```sh
@@ -91,7 +105,11 @@ projectivity witnesses and Farkas certificates covering negative assertions.
 The checker recomputes the faces, integral kernels, forced nodes, witness
 inequalities, certificates and profile coverage. It reproduces the manuscript's
 612-polytope count, 447 cases in scope and 161 satisfying Corollary B's
-no-forced-node condition. Its `stored` fields are generated summaries checked
+no-forced-node condition. `example_profile_witnesses.json` adds a (Proj) witness
+for each of the three A1 subdivisions of the hexagon of Delta_88 and the two A2
+subdivisions of that of Delta_154; the same command verifies them, so that,
+with the certificates for the other branch, (Proj) holds for exactly these
+subdivisions of the hexagons of the examples X_88 and X_154. Its `stored` fields are generated summaries checked
 against these recomputations, not independent proofs.
 
 `source_vertices.json` retains the 670 original labelled input entries (668

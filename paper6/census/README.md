@@ -25,6 +25,18 @@ The records have the following provenance and limits:
 - `enumerated_boundary_summary`: the number 327 is retained from the aggregate
   enumeration report. Individual enumeration records are unavailable; the
   complementary number 37 is derived from 364 minus 327.
+- `height_condition.json`: per-polytope results of an exact computation (in
+  SageMath) on the 364 polytopes satisfying (Proj). For each pair of a node
+  parallelogram P and a facet containing it, the program took the three-cell of
+  the subdivision containing P and computed the heights of its lattice points
+  off P over the two-face of P (the height condition asks that all be one). It
+  did so for the subdivision Sigma' of the (Proj) linear program and for its
+  pulling refinement F_C, obtained by pulling the boundary lattice points that
+  are not rays of Sigma'; for F_C it also checked facet volumes, that every
+  boundary lattice point is a vertex and no cell contains another lattice point,
+  that the two-skeleton is that of Sigma', and regularity with an exactly
+  re-checked rational height. `check_height_condition.py` checks consistency
+  and recomputes the totals of Remark 3.27; it does not recompute the cells.
 - `belt_summary`: retained conformance counts for 3,389 belts, including 28
   meeting the discriminant in their interiors. Belt lattices span K in 179
   polytopes, and do so using conforming belts in 171. The excluded eight are

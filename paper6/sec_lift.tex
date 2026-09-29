@@ -519,7 +519,7 @@ lies between $\mathfrak m$ and $|\mathcal A|\mathfrak m$, $\mathfrak m$ the larg
 $O(1/L)$, $w/L$ lies within $O(1/L)$ of $B_Y$, and $|w|=O(L)$. A monomial $n\ne0$ of positive weight has
 $d_n\le\tilde d_n<\theta_1/2\le1/2$, so $|\gamma_nx^n|\ge t^{1/2}\mathfrak m$, that is $\langle w,n\rangle\ge
 L(H(n)-\tfrac12)-O(1)\ge\tfrac L2-O(1)$, since $H(n)\ge1$ by~\eqref{eq:lambdagap}. The function
-$\mathfrak S(\lambda):=\sum_{n\ne0}\psi_n|\gamma_n/\gamma_0|e^{\langle w,n\rangle}$ equals $1$ at a crossing; with the weights
+$\mathscr R(\lambda):=\sum_{n\ne0}\psi_n|\gamma_n/\gamma_0|e^{\langle w,n\rangle}$ equals $1$ at a crossing; with the weights
 held constant its derivative with respect to $\log\lambda$ is at least $L/2-O(1)$ there, and the derivatives of the weights
 are $O(1)$ (Lemma~\ref{lem:refined}(2)) and multiply monomials in transition, of total size $O(t^{\theta_1/4})$ relative to
 the origin. So each ray crosses $\Sigma^+_0$ exactly once, transversally.
@@ -872,7 +872,7 @@ described above.
 \end{proof}
 
 By Lemma~\ref{lem:interface} below, the ends of the collar paths of a summand over an edge of its inner boundary curve
-$C^{(g)}_{2\varsigma_0}$ lie in the region $W^*_{V_\kappa}$ associated with the adjacent simplex $\kappa$ of the
+$C^{(g)}_{2\varsigma_0}$ lie in the region $W^*_{V_{\mathsf s}}$ associated with the adjacent simplex $\mathsf s$ of the
 triangulation $\mathfrak T$ (Section~\ref{ssec:lift-regular}); these regions are defined in Definition~\ref{def:regionsB}.
 By the same lemma, the collar paths over a compact subset $\mathcal W$ of a regular set $V$ lie in $W^*_V$ once $t$ is
 below a threshold depending on $V$, $\mathcal W$ and $\epsilon$. The loop classes in the proof of
@@ -978,11 +978,11 @@ the triangulations agree on the identified curves and $y^\natural$ simplicially,
 $C^{(g)}_{2\varsigma_0}$ as subcomplexes, whose vertices are the ends of the transverse collar segments issuing from the
 vertices of a fixed triangulation of $C^{(g)}_{\varsigma_0}$ (the strips $g_{\le2\varsigma_0}\cap g_{\ge\varsigma_0}$ themselves are
 not part of $\mathscr S$; they are lifted by the collar paths). The
-inclusions define a continuous map $j^\natural\colon\mathscr S\to B_Y\setminus\Gamma^M$. Put on each $2$-simplex $\kappa$ of
-$\mathscr S$ the coefficient $v_\kappa$ of its summand, a flat section of $(j^\natural)^*(\Lambda^M)^\vee$ over $\kappa$.
+inclusions define a continuous map $j^\natural\colon\mathscr S\to B_Y\setminus\Gamma^M$. Put on each $2$-simplex $\mathsf s$ of
+$\mathscr S$ the coefficient $v_{\mathsf s}$ of its summand, a flat section of $(j^\natural)^*(\Lambda^M)^\vee$ over $\mathsf s$.
 
 \begin{lemma}[the coefficient chain]\label{lem:Xichain}
-$v=\sum_\kappa v_\kappa[\kappa]$ is a $2$-chain on $\mathscr S$ whose boundary is supported on the inner boundary curves, where it is
+$v=\sum_{\mathsf s} v_{\mathsf s}[\mathsf s]$ is a $2$-chain on $\mathscr S$ whose boundary is supported on the inner boundary curves, where it is
 $\sum_g(\text{coefficient of }g)\,[C^{(g)}_{2\varsigma_0}]$.
 \end{lemma}
 
@@ -1009,53 +1009,53 @@ Proposition~\ref{prop:L1}, there is $\mathfrak l>0$, depending only on $j^\natur
 $\mathfrak l$-neighbourhood in $B_Y$ of every subset of $j^\natural(\mathscr S)$ of diameter at most $\mathfrak l$ lies in the
 open star of a cell $C^M(u,\omega)$ or $C^M(\tau,n)$. Then let $\mathfrak T$ be a subdivision of the triangulation of
 $\mathscr S$, fine enough that the image of every simplex has diameter small compared with $\mathfrak l$; so the
-$\mathfrak l$-neighbourhood of each $j^\natural(\kappa)$ lies in such an open star. Let $V_\kappa$ be the preimage in
-$\operatorname{Vis}(u)$ under $\pi_u$, or in $\{\operatorname{val}_n=0\}$ under $\varpi_n$, of the convex hull of the image under that map of the $\mathfrak r_{\dim \kappa}$-neighbourhood of
-$j^\natural(\kappa)$ in $B_Y$, with radii $\mathfrak r_0<\mathfrak r_1<\mathfrak r_2$, each small compared with the next, and
-$\mathfrak r_2$ small compared with $\mathfrak l$. We take type $u$, with $\pi_u$, whenever $j^\natural(\kappa)$ lies in a vertex region $R^M_u$ and the set so
+$\mathfrak l$-neighbourhood of each $j^\natural(\mathsf s)$ lies in such an open star. Let $V_{\mathsf s}$ be the preimage in
+$\operatorname{Vis}(u)$ under $\pi_u$, or in $\{\operatorname{val}_n=0\}$ under $\varpi_n$, of the convex hull of the image under that map of the $\mathfrak r_{\dim \mathsf s}$-neighbourhood of
+$j^\natural(\mathsf s)$ in $B_Y$, with radii $\mathfrak r_0<\mathfrak r_1<\mathfrak r_2$, each small compared with the next, and
+$\mathfrak r_2$ small compared with $\mathfrak l$. We take type $u$, with $\pi_u$, whenever $j^\natural(\mathsf s)$ lies in a vertex region $R^M_u$ and the set so
 formed has compact closure in the open star of a cell $C^M(u,\omega)$; this holds if the $\mathfrak l$-neighbourhood lies in
 such an open star. Otherwise we take type $n$, with $\varpi_n$, for a cell $C^M(\tau,n)$ whose open star contains the
-$\mathfrak l$-neighbourhood. In that case $\overline{V_\kappa}$ lies in no vertex region: otherwise it would lie in
+$\mathfrak l$-neighbourhood. In that case $\overline{V_{\mathsf s}}$ lies in no vertex region: otherwise it would lie in
 $R^M_u\cap\operatorname{int}F^*_n=C^M(u,n)$ (Lemma~\ref{lem:modelcx}(3)), where $\pi_u$ and $\varpi_n$ restrict to affine
 isomorphisms of the hyperplane $\{\operatorname{val}_n=0\}$, so the set formed with $\pi_u$ would be the same and of type
-$u$. Then $V_\kappa$ is a regular set, $V_\kappa\supset j^\natural(\kappa)$, and $\overline{V_{\kappa'}}\subset V_\kappa$ for
-$\kappa'\subsetneq \kappa$; if $\kappa$ is of type $u$, so is $\kappa'$, so a set of type $n$ never lies in one of type $u$.
+$u$. Then $V_{\mathsf s}$ is a regular set, $V_{\mathsf s}\supset j^\natural(\mathsf s)$, and $\overline{V_{\mathsf s'}}\subset V_{\mathsf s}$ for
+$\mathsf s'\subsetneq \mathsf s$; if $\mathsf s$ is of type $u$, so is $\mathsf s'$, so a set of type $n$ never lies in one of type $u$.
 We take $\epsilon$ and $t$ so small that
 Lemmas~\ref{lem:R1} and~\ref{lem:interface} hold for these finitely many sets, with $\mathcal W$ the images of the
 simplices. This uses only that $j^\natural$ is continuous and $|\mathfrak T|$ compact, not that $\mathfrak T$ triangulates an
 embedded surface.
 
 \subsubsection*{The domain over the regular part}
-For a simplex $\kappa$ of $\mathfrak T$ let $\Lambda_\kappa$ be the lattice of flat sections of $\Lambda^M$ over $V_\kappa$, which is
-$\pi_1(W^*_{V_\kappa})$ (Lemma~\ref{lem:R1}); for $\kappa'\subset \kappa$ the inclusion $W^*_{V_{\kappa'}}\subseteq W^*_{V_\kappa}$ induces the
-transport $\Lambda_{\kappa'}\cong\Lambda_\kappa$. We orient $\Lambda_\kappa\otimes\R$ by the orientation of $B_Y$, and put
-$\mathbb T^3_\kappa:=\Lambda_\kappa\otimes\R/\Z$, a $K(\Lambda_\kappa,1)$. For a primitive covector $v^0$ on $\Lambda_\kappa$ the
-\emph{canonical torus} is $\mathbb T(v^0):=(\ker v^0\otimes\R)/\ker v^0\subset\mathbb T^3_\kappa$, with the tautological
-identification $\pi_1(\mathbb T(v^0))=\ker v^0\subseteq\Lambda_\kappa$, oriented so that $\operatorname{or}(\ker v^0)\wedge n=
-\operatorname{or}(\Lambda_\kappa\otimes\R)$ for $v^0(n)>0$. Then $[\mathbb T(v^0)]\mapsto v^0$ is the restriction of the
-linear isomorphism $H_2(\mathbb T^3_\kappa)=\Lambda^2\Lambda_\kappa\to\Lambda_\kappa^\vee$, $a\wedge b\mapsto\det(a,b,\cdot)$: for an oriented
+For a simplex $\mathsf s$ of $\mathfrak T$ let $\Lambda_{\mathsf s}$ be the lattice of flat sections of $\Lambda^M$ over $V_{\mathsf s}$, which is
+$\pi_1(W^*_{V_{\mathsf s}})$ (Lemma~\ref{lem:R1}); for $\mathsf s'\subset \mathsf s$ the inclusion $W^*_{V_{\mathsf s'}}\subseteq W^*_{V_{\mathsf s}}$ induces the
+transport $\Lambda_{\mathsf s'}\cong\Lambda_{\mathsf s}$. We orient $\Lambda_{\mathsf s}\otimes\R$ by the orientation of $B_Y$, and put
+$\mathbb T^3_{\mathsf s}:=\Lambda_{\mathsf s}\otimes\R/\Z$, a $K(\Lambda_{\mathsf s},1)$. For a primitive covector $v^0$ on $\Lambda_{\mathsf s}$ the
+\emph{canonical torus} is $\mathbb T(v^0):=(\ker v^0\otimes\R)/\ker v^0\subset\mathbb T^3_{\mathsf s}$, with the tautological
+identification $\pi_1(\mathbb T(v^0))=\ker v^0\subseteq\Lambda_{\mathsf s}$, oriented so that $\operatorname{or}(\ker v^0)\wedge n=
+\operatorname{or}(\Lambda_{\mathsf s}\otimes\R)$ for $v^0(n)>0$. Then $[\mathbb T(v^0)]\mapsto v^0$ is the restriction of the
+linear isomorphism $H_2(\mathbb T^3_{\mathsf s})=\Lambda^2\Lambda_{\mathsf s}\to\Lambda_{\mathsf s}^\vee$, $a\wedge b\mapsto\det(a,b,\cdot)$: for an oriented
 basis $(a,b)$ of $\ker v^0$, $\det(a,b,\cdot)$ vanishes on $\ker v^0$, is positive where $v^0$ is, and is primitive.
 
 \emph{Three kinds of edges.} An edge $e$ of $\mathfrak T$ is a \emph{sheet edge} if the coefficients of all its adjacent
-$2$-simplices are, after transport to $\Lambda_e$, integer multiples $\mu_\kappa\,v^0_e$ of one primitive covector $v^0_e$; by
-Lemma~\ref{lem:Xichain}, $\sum_\kappa[\kappa:e]\mu_\kappa=0$ unless $e$ lies on an inner boundary curve. Edges inside a summand and on junction
+$2$-simplices are, after transport to $\Lambda_e$, integer multiples $\mu_{\mathsf s}\,v^0_e$ of one primitive covector $v^0_e$; by
+Lemma~\ref{lem:Xichain}, $\sum_{\mathsf s}[\mathsf s:e]\mu_{\mathsf s}=0$ unless $e$ lies on an inner boundary curve. Edges inside a summand and on junction
 segments are sheet edges. An edge is a \emph{tripod edge} if it lies on the half-edge $C^M(u',\omega)$ of a tripod
 summand. All other edges, the branching edges of $y^\natural$ and the edges on identified curves of type (ii) where
 several summands meet, are \emph{general edges}. We take $\mathfrak T$ so fine that every edge meeting an inner boundary curve is a
 sheet edge or a tripod edge; the identified curves of type (ii) lie at distance at least $r_\natural$ from $\Gamma^M$, hence at depth at least
 $r_\natural/C_T\ge4\varsigma_0$.
 
-\emph{Fibre complexes.} For a $2$-simplex $\kappa$ with $v_\kappa\ne0$ write $v_\kappa=m_\kappa\,v^0_\kappa$ with $m_\kappa\ge1$ and $v^0_\kappa$
-primitive, and put $F_\kappa:=\mathbb T_\kappa:=\mathbb T(v^0_\kappa)$; if $v_\kappa=0$, $F_\kappa$ is a point. For $\kappa'\subset \kappa$ the transport maps
+\emph{Fibre complexes.} For a $2$-simplex $\mathsf s$ with $v_{\mathsf s}\ne0$ write $v_{\mathsf s}=m_{\mathsf s}\,v^0_{\mathsf s}$ with $m_{\mathsf s}\ge1$ and $v^0_{\mathsf s}$
+primitive, and put $F_{\mathsf s}:=\mathbb T_{\mathsf s}:=\mathbb T(v^0_{\mathsf s})$; if $v_{\mathsf s}=0$, $F_{\mathsf s}$ is a point. For $\mathsf s'\subset \mathsf s$ the transport maps
 kernels to kernels and induces an isomorphism of canonical tori; these transports are induced by inclusions of regions, so
 they compose consistently around every vertex of $\mathfrak T$, and no composite of identifications below is a nontrivial
 automorphism of a torus. For an edge $e$:
 \begin{itemize}
-\item at a sheet edge, all adjacent $\mathbb T_\kappa$ are identified with $F_e:=\mathbb T(v^0_e)$ by the canonical maps, with the
-orientation sign of $\mu_\kappa$, so that $m_\kappa[\mathbb T_\kappa]=\mu_\kappa[F_e]$; and $\mathscr Q_e:=0$;
+\item at a sheet edge, all adjacent $\mathbb T_{\mathsf s}$ are identified with $F_e:=\mathbb T(v^0_e)$ by the canonical maps, with the
+orientation sign of $\mu_{\mathsf s}$, so that $m_{\mathsf s}[\mathbb T_{\mathsf s}]=\mu_{\mathsf s}[F_e]$; and $\mathscr Q_e:=0$;
 \item at a tripod edge, of a tripod summand of multiplicity $m_e$, the three adjacent sectors carry the covectors
 $m_e\langle\,\cdot\,,e_k\rangle$, whose kernels meet in a rank-one sublattice $\ell$ (the three $e_k$ span a plane). Let
-$F_e:=\mathbb T^3_e$, with a cell structure in which the three subtori $\mathbb T_\kappa$ are subcomplexes, and
+$F_e:=\mathbb T^3_e$, with a cell structure in which the three subtori $\mathbb T_{\mathsf s}$ are subcomplexes, and
 $\mathscr Q_e:=m_e\,\mathscr Q_e^0$, $\mathscr Q_e^0:=(\ell\otimes U(1))\times\mathcal Q'_e$, where $\mathcal Q'_e$ is a $2$-chain in
 $\mathbb T^3_e/(\ell\otimes U(1))$ with $\partial\mathcal Q'_e=\sum_ks_kG_k$, the images of the three tori with the signs of the
 boundary orientations \cite[\S7.7, Step~2]{CBM}. The branching half-edge of each tripod summand meets its inner
@@ -1064,7 +1064,7 @@ beyond the collar region. At $p_0$ the choices are made in the following order. 
 $p_0\times\mathbb T^3_{e_0}$, as a diffeomorphism onto the fibre torus through $\mathfrak s^\vee(b_1)$, $b_1:=j^\natural(p_0)$
 (the level set of $\hat\mu$ and of the moduli of the torus coordinates that contains $\mathfrak s^\vee(b_1)$, in which
 the collar family ends; the argument of Lemma~\ref{lem:quot} applied to the vertex model of Lemma~\ref{lem:pieces}(2)),
-that realises the labels, as Lemma~\ref{lem:extB} requires, sends the base point to $\mathfrak s^\vee(b_1)$, carries each $\mathbb T_\kappa$ onto the corresponding torus orbit
+that realises the labels, as Lemma~\ref{lem:extB} requires, sends the base point to $\mathfrak s^\vee(b_1)$, carries each $\mathbb T_{\mathsf s}$ onto the corresponding torus orbit
 through $\mathfrak s^\vee(b_1)$, where the collar paths over $b_1$ end, and carries the $\ell\otimes U(1)$-orbits onto the
 $S^1_\alpha$-orbits (here $\ell\otimes U(1)$ is $S^1_\alpha$, Lemma~\ref{lem:pieces}(2)); such a map, affine in the torus coordinates, exists because the
 fibre torus projects diffeomorphically onto the torus factor of the graph description of $W^*_{V_{p_0}}$ in
@@ -1075,31 +1075,31 @@ $F^\vee_*$ of a filling as above. Finally $\mathcal Q'_{e_0}$ is the pull-back o
 of quotient tori induced by $F^\vee$. It is a $2$-chain with boundary $\sum_ks_kG_k$, and $F^\vee_*\mathscr
 Q^0_{e_0}=\mathcal Q(1)$ as chains. On the other edges of the half-edge,
 $\mathscr Q^0_e$ is any filling as above, with the incidence orientation on each edge;
-\item at a general edge, let $Y_e:=\bigvee_{\kappa\supset e}F_\kappa$, realise the labels by a cellular map $\gamma_e\colon Y_e\to\mathbb T^3_e$,
+\item at a general edge, let $Y_e:=\bigvee_{\mathsf s\supset e}F_{\mathsf s}$, realise the labels by a cellular map $\gamma_e\colon Y_e\to\mathbb T^3_e$,
 and let $F_e$ be its mapping cylinder, a cell complex containing $Y_e$ and retracting onto $\mathbb T^3_e$, labelled by
 $\operatorname{lab}_e\colon\pi_1(F_e)\cong\Lambda_e$.
 \end{itemize}
-For a vertex $p$ of $\mathfrak T$, $F_p$ is the union of the $F_e$, $e\ni p$, glued along the common $F_\kappa$; the labels agree on
-the $F_\kappa$ and define $\operatorname{lab}_p\colon\pi_1(F_p)\to\Lambda_p$, which kills the boundary of every $2$-cell, since each $2$-cell
+For a vertex $p$ of $\mathfrak T$, $F_p$ is the union of the $F_e$, $e\ni p$, glued along the common $F_{\mathsf s}$; the labels agree on
+the $F_{\mathsf s}$ and define $\operatorname{lab}_p\colon\pi_1(F_p)\to\Lambda_p$, which kills the boundary of every $2$-cell, since each $2$-cell
 lies in some $F_e$.
 
-\emph{Fillings over general edges.} At a general edge, $\sum_{\kappa\supset e}[\kappa:e]\,v_\kappa=0$ in $\Lambda_e^\vee$ by
+\emph{Fillings over general edges.} At a general edge, $\sum_{\mathsf s\supset e}[\mathsf s:e]\,v_{\mathsf s}=0$ in $\Lambda_e^\vee$ by
 Lemma~\ref{lem:Xichain}. Under the linear isomorphism $H_2(F_e)=H_2(\mathbb T^3_e)\cong\Lambda^\vee_e$ above, the class of
-$\sum_{\kappa\supset e}[\kappa:e]\,m_\kappa[\mathbb T_\kappa]$ is $\sum_\kappa[\kappa:e]\,m_\kappa v^0_\kappa=\sum_\kappa[\kappa:e]\,v_\kappa=0$, so there is a cellular $3$-chain
+$\sum_{\mathsf s\supset e}[\mathsf s:e]\,m_{\mathsf s}[\mathbb T_{\mathsf s}]$ is $\sum_{\mathsf s}[\mathsf s:e]\,m_{\mathsf s} v^0_{\mathsf s}=\sum_{\mathsf s}[\mathsf s:e]\,v_{\mathsf s}=0$, so there is a cellular $3$-chain
 $\mathscr Q_e$ in $F_e$ with
 \[
-\partial \mathscr Q_e=\sum_{\kappa\supset e}[\kappa:e]\,m_\kappa\,[\mathbb T_\kappa].
+\partial \mathscr Q_e=\sum_{\mathsf s\supset e}[\mathsf s:e]\,m_{\mathsf s}\,[\mathbb T_{\mathsf s}].
 \]
 No common rank-one sublattice of the kernels and no bound on the valency of $e$ is needed.
 
-\emph{The domain.} Let $\mathcal D^\vee_{\rm reg}$ be the union of the $|\kappa|\times F_\kappa$ over the simplices $\kappa$ of $\mathfrak T$,
-glued along $|\kappa'|\times F_\kappa\subseteq|\kappa'|\times F_{\kappa'}$ for $\kappa'\subset \kappa$, with the fundamental chain
+\emph{The domain.} Let $\mathcal D^\vee_{\rm reg}$ be the union of the $|\mathsf s|\times F_{\mathsf s}$ over the simplices $\mathsf s$ of $\mathfrak T$,
+glued along $|\mathsf s'|\times F_{\mathsf s}\subseteq|\mathsf s'|\times F_{\mathsf s'}$ for $\mathsf s'\subset \mathsf s$, with the fundamental chain
 \[
-[\mathcal D^\vee_{\rm reg}]:=\sum_{\kappa\in\mathfrak T_2}m_\kappa\,[\kappa\times\mathbb T_\kappa]+\sum_{e\in\mathfrak T_1\setminus\text{inner boundary}}[e\times \mathscr Q_e],
+[\mathcal D^\vee_{\rm reg}]:=\sum_{\mathsf s\in\mathfrak T_2}m_{\mathsf s}\,[\mathsf s\times\mathbb T_{\mathsf s}]+\sum_{e\in\mathfrak T_1\setminus\text{inner boundary}}[e\times \mathscr Q_e],
 \]
-each $\kappa\times\mathbb T_\kappa$ oriented as the product. Over an inner boundary edge $e$ the adjacent triangles lie in one summand
-$g$, the other side of the inner boundary being the strip lifted by the collar paths, and the cells $e\times\mathbb T_\kappa$ are glued
-to the ends of the collar paths over $e$, the union of the $\mathbb T_\kappa$-orbits through $\mathfrak s^\vee$; over the point
+each $\mathsf s\times\mathbb T_{\mathsf s}$ oriented as the product. Over an inner boundary edge $e$ the adjacent triangles lie in one summand
+$g$, the other side of the inner boundary being the strip lifted by the collar paths, and the cells $e\times\mathbb T_{\mathsf s}$ are glued
+to the ends of the collar paths over $e$, the union of the $\mathbb T_{\mathsf s}$-orbits through $\mathfrak s^\vee$; over the point
 where the inner boundary meets a tripod edge, the filling $m_e\mathscr Q_e^0$ is glued to $m_e$ times the collar cells
 $\mathcal Q\times(\text{transverse interval})$ of Lemma~\ref{lem:collarB}(2).
 
@@ -1137,21 +1137,21 @@ $d^*_A$ summing to zero with the orientation signs; these faces cancel.
 \item[(c)] The outer parts over $C^{(g)}_{\varsigma_0}$. They are matched by the collar cells over the strips
 $g_{\le2\varsigma_0}\cap g_{\ge\varsigma_0}$, which cancel along the junction segments (Lemma~\ref{lem:collarB}(3)) and end at
 the unions of the torus orbits through $\mathfrak s^\vee$ over the curves $C^{(g)}_{2\varsigma_0}$; these are the cells
-$e\times\mathbb T_\kappa$ over the inner boundary edges.
+$e\times\mathbb T_{\mathsf s}$ over the inner boundary edges.
 \end{enumerate}
 Pieces of different summands that intersect in $W^*$ (the two node halves, a transverse disc and a sheet) are separate
 chains, and their intersection contributes no boundary.
 
-Over the regular part, $\partial(\kappa\times\mathbb T_\kappa)=\partial \kappa\times\mathbb T_\kappa$, so the faces over an edge $e$ are
-$e\times\sum_{\kappa\supset e}[\kappa:e]m_\kappa\mathbb T_\kappa$. At a sheet edge off the inner boundary this is
-$e\times(\sum_\kappa[\kappa:e]\mu_\kappa)F_e=0$. At a tripod edge and
+Over the regular part, $\partial(\mathsf s\times\mathbb T_{\mathsf s})=\partial \mathsf s\times\mathbb T_{\mathsf s}$, so the faces over an edge $e$ are
+$e\times\sum_{\mathsf s\supset e}[\mathsf s:e]m_{\mathsf s}\mathbb T_{\mathsf s}$. At a sheet edge off the inner boundary this is
+$e\times(\sum_{\mathsf s}[\mathsf s:e]\mu_{\mathsf s})F_e=0$. At a tripod edge and
 at a general edge, $\partial(e\times \mathscr Q_e)=\partial e\times \mathscr Q_e-e\times\partial \mathscr Q_e$, and $e\times\partial \mathscr Q_e$ cancels the faces
 over $e$ by the choice of $\mathscr Q_e$ (for tripod edges this is \cite[\S7.7, Step~2]{CBM}, multiplied by $m_e$). What remains
 of the edge terms at a vertex $p$ off the inner boundary is $p\times z_p$, and
 \[
-\partial z_p=\sum_{e\ni p}[e:p]\sum_{\kappa\supset e}[\kappa:e]\,m_\kappa[\mathbb T_\kappa]=\sum_{\kappa\ni p}m_\kappa[\mathbb T_\kappa]\sum_{e}[e:p][\kappa:e]=0,
+\partial z_p=\sum_{e\ni p}[e:p]\sum_{\mathsf s\supset e}[\mathsf s:e]\,m_{\mathsf s}[\mathbb T_{\mathsf s}]=\sum_{\mathsf s\ni p}m_{\mathsf s}[\mathbb T_{\mathsf s}]\sum_{e}[e:p][\mathsf s:e]=0,
 \]
-because every $2$-simplex $\kappa\ni p$ contributes through its two edges at $p$ with opposite signs.
+because every $2$-simplex $\mathsf s\ni p$ contributes through its two edges at $p$ with opposite signs.
 At an inner boundary vertex the boundary of the collar must also be included. Along a sheet it cancels the product
 faces exactly. Where a tripod half-edge meets the inner boundary, its endpoint term $[e:p]\mathscr Q_e$ is cancelled by the
 oppositely oriented terminal fillings of the collar cells, taken $m_e$ times, since $F^\vee_*\mathscr Q_e$ is $m_e$
@@ -1162,18 +1162,18 @@ fillings of the two adjacent edges; it need not vanish, and it is kept in the su
 
 \subsubsection*{The extension}
 \begin{lemma}[extension]\label{lem:extB}
-There is a continuous map $F^\vee\colon\mathcal D^\vee_{\rm reg}\to W^*$ which maps the cells over each simplex $\kappa$ of
-$\mathfrak T$ into $W^*_{V_\kappa}$, sends fibre loops to loops representing their labels, is $\mathfrak s^\vee\circ j^\natural$ on the
-base cells $\kappa\times\{\star\}$, and on the inner boundary cells agrees with the collar ends.
+There is a continuous map $F^\vee\colon\mathcal D^\vee_{\rm reg}\to W^*$ which maps the cells over each simplex $\mathsf s$ of
+$\mathfrak T$ into $W^*_{V_{\mathsf s}}$, sends fibre loops to loops representing their labels, is $\mathfrak s^\vee\circ j^\natural$ on the
+base cells $\mathsf s\times\{\star\}$, and on the inner boundary cells agrees with the collar ends.
 \end{lemma}
 
 \begin{proof}
-We extend cell by cell in order of dimension. On $0$-cells use $\mathfrak s^\vee$, which lies in $W^*_{V_\kappa}$ by
+We extend cell by cell in order of dimension. On $0$-cells use $\mathfrak s^\vee$, which lies in $W^*_{V_{\mathsf s}}$ by
 Lemma~\ref{lem:interface}. On $1$-cells, base cells go along $\mathfrak s^\vee$ and fibre $1$-cells to loops of the labelled
-classes. A $2$-cell extends if its boundary loop is trivial in the abelian group $\Lambda_\kappa=\pi_1(W^*_{V_\kappa})$: for $\kappa\times\{\star\}$,
-$\kappa$ a $2$-simplex, the boundary loop lies in $\mathfrak s^\vee(j^\natural \kappa)$, which is contractible in $W^*_{V_\kappa}$; for
-$e\times s^1$, the two fibre loops represent the same parallel class (Lemma~\ref{lem:R1}(3)); for $p\times s^2$,
-$s^2$ a $2$-cell of $F_p$, $\operatorname{lab}_p(\partial s^2)=0$. Cells of dimension three and four extend because $W^*_{V_\kappa}$ is
+classes. A $2$-cell extends if its boundary loop is trivial in the abelian group $\Lambda_{\mathsf s}=\pi_1(W^*_{V_{\mathsf s}})$: for $\mathsf s\times\{\star\}$,
+$\mathsf s$ a $2$-simplex, the boundary loop lies in $\mathfrak s^\vee(j^\natural \mathsf s)$, which is contractible in $W^*_{V_{\mathsf s}}$; for
+$e\times\mathsf f^1$, the two fibre loops represent the same parallel class (Lemma~\ref{lem:R1}(3)); for $p\times\mathsf f^2$,
+$\mathsf f^2$ a $2$-cell of $F_p$, $\operatorname{lab}_p(\partial\mathsf f^2)=0$. Cells of dimension three and four extend because $W^*_{V_{\mathsf s}}$ is
 aspherical (Lemma~\ref{lem:R1}). The inner boundary cells, including the cells $p_0\times\mathbb T^3_{e_0}$ at the tripods
 fixed in the tripod clause, are prescribed by the collars, which satisfy the same loop conditions
 (Lemma~\ref{lem:collarB}) and lie in the right regions (Lemma~\ref{lem:interface}).
@@ -1275,10 +1275,10 @@ by~\eqref{eq:nf1}; the local replacements with $\varepsilon_A$, $\varepsilon'_A$
 (Lemma~\ref{lem:nfY});
 \item $\varsigma_0\le\min(\varsigma_{\max}/2,r_S/4,r_\natural/(4C_T),r_{\rm far}/(4C_T),c_Br_B/8)$, so that $2\varsigma_0$ is small against the
 radius of the balls $B^0_p$; the complex $\mathscr S$, the constant $\mathfrak l$ and the triangulation
-$\mathfrak T$, the regular sets $V_\kappa$, the finitely many regular sets $V$ over the strips (Lemma~\ref{lem:collarB}(1)),
+$\mathfrak T$, the regular sets $V_{\mathsf s}$, the finitely many regular sets $V$ over the strips (Lemma~\ref{lem:collarB}(1)),
 and $\epsilon$ so small that Lemma~\ref{lem:R1} applies to all these sets;
 \item $t'\le\min(t,t(z))$, where $t(z)$ is a threshold for which Lemmas~\ref{lem:R1} and~\ref{lem:interface} hold for the sets
-$V_\kappa$ and for the finitely many regular sets over the strips used in Lemma~\ref{lem:collarB}(1) (the errors $O(1/L)$ of
+$V_{\mathsf s}$ and for the finitely many regular sets over the strips used in Lemma~\ref{lem:collarB}(1) (the errors $O(1/L)$ of
 Lemma~\ref{lem:interface} must be small compared with the margins of these sets and with $\epsilon$), and which lies below
 the thresholds of Lemmas~\ref{lem:windows}, \ref{lem:possec}, \ref{lem:pieces} and~\ref{lem:crossing} (the last two for the
 depths $\varsigma\le2\varsigma_0$);
@@ -1355,11 +1355,11 @@ which the boundary $\sum_q\rho_q(z)[\delta_q]$ of the lift is additive, and thei
 Let $(S,j,v)$ be a tropical $2$-cycle in the sense of \cite[Def.~7.2]{CBM} and $z=[S]$ its triangulation.
 
 \emph{Away from the discriminant.} Outside $U$ the normal form is the transfer of $S$ itself: $y$ agrees there with
-$\operatorname{sd}z^M$. Over that part the domain is the bundle of the cells $\kappa\times\mathbb T_\kappa$ with $m_\kappa=1$
-and $\mathbb T_\kappa=\ker\kappa_{\mathfrak h}(v)\otimes U(1)$, the fibre of the object $\widetilde S$ that Casta\~no-Bernard and Matessi
+$\operatorname{sd}z^M$. Over that part the domain is the bundle of the cells $\mathsf s\times\mathbb T_{\mathsf s}$ with $m_{\mathsf s}=1$
+and $\mathbb T_{\mathsf s}=\ker\kappa_{\mathfrak h}(v)\otimes U(1)$, the fibre of the object $\widetilde S$ that Casta\~no-Bernard and Matessi
 attach to $S$ \cite[\S7, (46)]{CBM}, written in the affine structure of $B_Y$ through the flat pairing of
 Proposition~\ref{prop:L3} (Remark~\ref{rem:CBMfibre}). The map $F^\vee$ is built cell by cell in the regions
-$W^*_{V_\kappa}$ (Lemma~\ref{lem:extB}), so over this part the chain is the bundle of the two-tori $\ker\kappa_{\mathfrak h}(v)\otimes U(1)$
+$W^*_{V_{\mathsf s}}$ (Lemma~\ref{lem:extB}), so over this part the chain is the bundle of the two-tori $\ker\kappa_{\mathfrak h}(v)\otimes U(1)$
 up to homotopy in each region.
 
 \emph{Near the discriminant.} Since $\partial S$ is an embedded curve passing each vertex of the discriminant at most once,

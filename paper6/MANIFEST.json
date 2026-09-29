@@ -3,16 +3,24 @@
   "status": "complete",
   "files": {
     "README.md": {
-      "bytes": 7737,
-      "sha256": "fc36a96c9145eb271020641470c0222b9bc04b4fa8de79c16358023ab2e30eae"
+      "bytes": 8806,
+      "sha256": "aa4661b055cf5287d399ac1fae6103a52f04f30d02c31e912ee198e8518106d5"
     },
     "census/README.md": {
-      "bytes": 2248,
-      "sha256": "b5811b7b863f7f1de679827d3077b3d3f4f44695fc3ce8465571da91cf90bfd2"
+      "bytes": 3178,
+      "sha256": "026df48ac7563746cb0ef0f573682769cf2660d4e94824aefe607c943c2bf3c2"
     },
     "census/check_census.py": {
       "bytes": 4026,
       "sha256": "92f9e4b4efaa7669cc64fb4bf1e1c4747650652eee4d12b2daa3873f41b3f7ff"
+    },
+    "census/check_height_condition.py": {
+      "bytes": 5697,
+      "sha256": "2ef1bd39946eb5ce9a477889c8ac72a23b56dcbd627438de654972a07f8a78f1"
+    },
+    "census/height_condition.json": {
+      "bytes": 154363,
+      "sha256": "ce475da2f4fa07e8bb79d657ea697713076db25c88db0eb6352a33f23e7a8fc6"
     },
     "census/results.json": {
       "bytes": 303027,
@@ -23,8 +31,8 @@
       "sha256": "65851b0bc001aedb2c9f37be1408a588b208466ef33ee8d454bde7d4beab8c31"
     },
     "examples/examples_check.py": {
-      "bytes": 58765,
-      "sha256": "ea580829b716c0b1807e4913085557d84deb84d968cb24bc41b7fcc4c7af59a0"
+      "bytes": 59120,
+      "sha256": "5181e498184058f3683bbb9241c7274b52a9fdc04239ed15270f5f5cc785fc61"
     },
     "examples/x154.json": {
       "bytes": 256872,
@@ -46,9 +54,13 @@
       "bytes": 141919,
       "sha256": "725866c5f382205bbb85cac55d9bcc6df6324f79050747bf58af3ca4d5ba3f16"
     },
+    "forced_nodes/example_profile_witnesses.json": {
+      "bytes": 2062,
+      "sha256": "b6aa18c0d9aa6d01a36c4d2731e69c326b5f5f85cf62e962ffb3d35d44a3ff08"
+    },
     "forced_nodes/forced_nodes_check.py": {
-      "bytes": 40499,
-      "sha256": "0c7c5b6f916d4994e75fe0851d1f8ad7ff5ca6c13291a6f285313f282c2838cc"
+      "bytes": 43083,
+      "sha256": "a44ea23fd31f68c0d7b46387cab8461e4ddeedd9f8b5bedd9a9a5d6272b7aa67"
     },
     "forced_nodes/list_polytopes.json.gz": {
       "bytes": 214923,

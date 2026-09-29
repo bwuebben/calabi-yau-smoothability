@@ -7,13 +7,14 @@ resolution-side counterpart of Theorem~\ref{thm:lift} and forms Part~III of the 
 in Parts~I and~II: Theorems~\ref{thm:main}, \ref{thm:real} and~\ref{thm:lift} and Corollary~\ref{cor:smooth} are proved
 without it; the integral relations among the exceptional curves are established independently in
 Proposition~\ref{prop:integral}. Conversely, this section uses the following results of the other parts. From Section~\ref{sec:base}:
-Proposition~\ref{prop:partialres} on the small resolutions (and, through it, Lemma~\ref{lem:H2}), Remark~\ref{rem:tie} on the ties, and,
+Proposition~\ref{prop:partialres} on the small resolutions (and, through it, Lemma~\ref{lem:H2}), Proposition~\ref{prop:classical} on the exceptional surfaces (in
+Remark~\ref{rem:res-roots}), Remark~\ref{rem:tie} on the ties, and,
 on the base, Lemmas~\ref{lem:monodromy}, \ref{lem:stack} and~\ref{lem:types} and the passages at a node. From
 Section~\ref{sec:cycles}: the clauses (a)--(j) of \cite[Def.~7.2]{CBM} and Lemma~\ref{lem:boundaryfield}
 (Section~\ref{ssec:cbm}), Lemma~\ref{lem:lift}, the node coefficients (Section~\ref{ssec:cycles-bdry}) and, in a remark,
 Proposition~\ref{prop:containment}. From Section~\ref{sec:dualpair}: Propositions~\ref{prop:L1} and~\ref{prop:L2} on the
-dual-pair complex, whose proofs do not use the present section. Theorems~\ref{thm:real} and~\ref{thm:lift}, and
-Proposition~\ref{lem:F}, enter only the last assertion of Theorem~\ref{thm:res} and Section~\ref{ssec:res-relative}.
+dual-pair complex, whose proofs do not use the present section. Theorems~\ref{thm:real} and~\ref{thm:lift},
+Proposition~\ref{lem:F}, and Definition~\ref{def:orient} of the orientations of the vanishing spheres enter only the last assertion of Theorem~\ref{thm:res} and Section~\ref{ssec:res-relative}.
 Of the hypotheses we use~\ref{hyp:P} and the pair $(\mathcal T,\check h)$ of Theorem~\ref{thm:U}, with $\check h$
 normalised as in Section~\ref{ssec:gross}, so that $\check h(m)$ is odd and positive for every
 $m\in\partial\Delta^\circ\cap M$; the pulling refinement and the mirror family play no role. Throughout, $j$ is piecewise
@@ -444,8 +445,8 @@ $\operatorname{Log}(x)=-\log|x|/\log R\in N_\R$ for $x$ in the torus $N\otimes\C
 \[
 T_m(x)=\log_R\bigl|(-R)^{-\check h_m}x^m\bigr|=-\check h_m-\langle m,\operatorname{Log}x\rangle .
 \]
-In this section the tropical variable is $\xi=\operatorname{Log}x\in N_\R$, and the tropical polynomial of the heights
-$\check h_m$ is $\xi\mapsto\min_m\bigl(\check h_m+\langle m,\xi\rangle\bigr)=-\max_mT_m$; this is the convention of
+In this section the tropical variable is $y=\operatorname{Log}x\in N_\R$, and the tropical polynomial of the heights
+$\check h_m$ is $y\mapsto\min_m\bigl(\check h_m+\langle m,y\rangle\bigr)=-\max_mT_m$; this is the convention of
 Section~\ref{ssec:conventions}, with the monomials in $M$ and the variable in $N_\R$. The constant term dominates exactly over
 the interior of $\nabla^{\check h}$, and $\widehat B=\partial\nabla^{\check h}$ is where it ties with other terms.
 
@@ -720,10 +721,10 @@ $-1$ accordingly. At every point of $W$ near the leg, $\alpha_u-\alpha_{u'}|\mat
 $T_u-T_{u'}=\check h_{u'}-\check h_u-\log_R|\mathfrak t|$, because
 $\alpha_{u'}|\mathfrak t|/\alpha_u=R^{T_{u'}-T_u}\beta_{u'}/\beta_u$ and $\beta_{u'}\le\beta_u$ if and only if $T_{u'}\le T_u$.
 The \emph{chamber} of side $s$ at the leg is
-\[
-\mathrm{Ch}_s=W\cap U_\sigma\cap\{z_1z_2\in s\R_{\ge0},\ \mathfrak t\in\R_{<0},\ w\in\R_{>0}\}
-=W\cap U_\sigma\cap\{x^{-u}\in s\R_{\ge0},\ \mathfrak t\in\R_{<0},\ w\in\R_{>0}\};
-\]
+\begin{align*}
+\mathrm{Ch}_s&=W\cap U_\sigma\cap\{z_1z_2\in s\R_{\ge0},\ \mathfrak t\in\R_{<0},\ w\in\R_{>0}\}\\
+&=W\cap U_\sigma\cap\{x^{-u}\in s\R_{\ge0},\ \mathfrak t\in\R_{<0},\ w\in\R_{>0}\};
+\end{align*}
 it is $S^1_v$-invariant, contains $\mathrm{Crit}\cap\{w>0\}$, and on it
 $s\beta_0|z_1z_2|=\alpha_u-\alpha_{u'}|\mathfrak t|$.
 
@@ -739,7 +740,7 @@ R^{\check h_u}\alpha_{u'}|\mathfrak t|=R^{-\vartheta}\,\beta(\mu+\vartheta)\,\be
 \begin{lemma}[real points of a chamber]\label{lem:chamber}
 For $\vartheta'>0$ put
 \[
-f_{\vartheta'}(\xi)=\beta(-\xi)\,\beta(-\xi-\vartheta')\,R^{\xi}-\beta(\xi)+R^{-\vartheta'}\beta(\vartheta')\,\beta(\xi+\vartheta') .
+f_{\vartheta'}(\mathsf r)=\beta(-\mathsf r)\,\beta(-\mathsf r-\vartheta')\,R^{\mathsf r}-\beta(\mathsf r)+R^{-\vartheta'}\beta(\vartheta')\,\beta(\mathsf r+\vartheta') .
 \]
 For $R$ large, every $f_{\vartheta'}$ has exactly one zero $X(\vartheta')$; $X(\vartheta')\in(-C_0,C_0)$, $X$ is continuous, and
 $X(\vartheta')\to-C_0$ as $\vartheta'\to0$. Near the leg, a point of $\mathrm{Ch}_s$ with $z_1z_2\neq0$, $z_2>0$ and
@@ -758,18 +759,18 @@ multiplication by $-R^{\check h_u-\vartheta'}$ it reads $f_{\vartheta'}(\mu')=0$
 $\vartheta=0$ it reads $\beta(-\mu)^2R^{\mu}=0$, which holds exactly when $\mu\le-C_0$. So (1) and (2) follow from the
 statements on $f_{\vartheta'}$.
 
-Let $\vartheta'>0$. For $\xi\le-C_0$, $\beta(-\xi)=0$ and $\beta(\xi)=1$, so $f_{\vartheta'}(\xi)\le
-R^{-\vartheta'}\beta(\vartheta')-1<0$; for $\xi\ge C_0$, $f_{\vartheta'}(\xi)=R^\xi>0$. For $\xi>-C_0$ we have
-$\beta(-\xi-\vartheta')\ge\beta(-\xi)>0$, and since $\beta'\le0$,
+Let $\vartheta'>0$. For $\mathsf r\le-C_0$, $\beta(-\mathsf r)=0$ and $\beta(\mathsf r)=1$, so $f_{\vartheta'}(\mathsf r)\le
+R^{-\vartheta'}\beta(\vartheta')-1<0$; for $\mathsf r\ge C_0$, $f_{\vartheta'}(\mathsf r)=R^{\mathsf r}>0$. For $\mathsf r>-C_0$ we have
+$\beta(-\mathsf r-\vartheta')\ge\beta(-\mathsf r)>0$, and since $\beta'\le0$,
 \[
-f'_{\vartheta'}(\xi)\ \ge\ R^\xi\log R\cdot\beta(-\xi)^2+R^{-\vartheta'}\beta(\vartheta')\,\beta'(\xi+\vartheta').
+f'_{\vartheta'}(\mathsf r)\ \ge\ R^{\mathsf r}\log R\cdot\beta(-\mathsf r)^2+R^{-\vartheta'}\beta(\vartheta')\,\beta'(\mathsf r+\vartheta').
 \]
-The last term vanishes unless $C_1<\xi+\vartheta'<C_0$ and $\vartheta'<C_0$. Then $\xi>C_1-C_0$, so
-$\beta(-\xi)\ge\beta(C_0-C_1)>0$ and $R^\xi>R^{C_1-\vartheta'}$, and
-$f'_{\vartheta'}(\xi)\ge R^{-\vartheta'}\bigl(R^{C_1}\log R\cdot\beta(C_0-C_1)^2-\max|\beta'|\bigr)$, which is positive for $R$
+The last term vanishes unless $C_1<\mathsf r+\vartheta'<C_0$ and $\vartheta'<C_0$. Then $\mathsf r>C_1-C_0$, so
+$\beta(-\mathsf r)\ge\beta(C_0-C_1)>0$ and $R^{\mathsf r}>R^{C_1-\vartheta'}$, and
+$f'_{\vartheta'}(\mathsf r)\ge R^{-\vartheta'}\bigl(R^{C_1}\log R\cdot\beta(C_0-C_1)^2-\max|\beta'|\bigr)$, which is positive for $R$
 large. So $f_{\vartheta'}$ has positive derivative on $(-C_0,\infty)$ and exactly one zero $X(\vartheta')\in(-C_0,C_0)$, which
 depends smoothly on $\vartheta'$ by the implicit function theorem. As $\vartheta'\to0$, $f_{\vartheta'}$ converges uniformly on
-$[-C_0,C_0]$ to $\beta(-\xi)^2R^\xi$, which is bounded below by a positive constant on $[-C_0+\eta',C_0]$ for every $\eta'>0$;
+$[-C_0,C_0]$ to $\beta(-\mathsf r)^2R^{\mathsf r}$, which is bounded below by a positive constant on $[-C_0+\eta',C_0]$ for every $\eta'>0$;
 so $X(\vartheta')\to-C_0$.
 \end{proof}
 

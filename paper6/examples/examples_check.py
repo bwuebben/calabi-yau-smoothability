@@ -20,8 +20,10 @@ For each example the script recomputes, in exact integer or rational arithmetic:
     printed relations with all coefficients nonzero lie in K; |Q| - rank K.
  4. The unimodular triangulation T of the boundary of Delta° and its height h: every recorded point is a nonzero
     lattice point of Delta° (and all of them are recorded), every tetrahedron lies in a facet and has determinant
-    +-1, every triangle lies in two tetrahedra on opposite sides, three generic rays are covered once, and the bends
-    of h and of h - phi across every wall are positive (Theorem F; Appendix A, conditions (i)-(v)).
+    +-1, every triangle lies in two tetrahedra on opposite sides, each of three fixed rays (three of the five rays of
+    condition (iv) of Appendix A) lies on no wall, that is, in the cone over no triangle of a tetrahedron, and lies in
+    the cone over exactly one tetrahedron, and the bends of h and of h - phi across every wall are positive
+    (Theorem F; Appendix A, conditions (i)-(v), with (iv) required of all three rays).
  5. The fan Sigma' of (Proj) and its height: the rays are lattice points of the boundary of Delta; the cells are the
     cells of the subdivision induced by the height (strict convexity, with a linear function on each cell below the
     height at every other ray); the cells of each facet of Delta fill it (volumes); on every non-triangular two-face
@@ -513,8 +515,10 @@ def check_triangulation(ex, V, Fdelta):
     rays = [(1000003, 999983, -1000037, 1000039), (-7919, 104729, 1299709, -15485863),
             (104723, -104717, 104711, 104707)]
     for r in rays:
-        hits = sum(1 for t in tets if all(x > 0 for x in solve([pts[i] for i in t], r)))
-        check(hits == 1, f"{ex}: a generic ray lies in exactly one cone of T")
+        coords = [solve([pts[i] for i in t], r) for t in tets]
+        check(not any(min(c) == 0 for c in coords), f"{ex}: a fixed ray lies on no wall of T")
+        hits = sum(1 for c in coords if min(c) > 0)
+        check(hits == 1, f"{ex}: a fixed ray lies in the cone over exactly one tetrahedron of T")
     # (v)
     minb = None
     for tau, (a, b) in walls.items():

@@ -1,0 +1,59 @@
+{
+ "description": "Hypothesis (Proj) for every subdivision of the hexagon on the branch of the examples X_88 and X_154 (Section 11.3): an integral vector psi on R, in the order of the field R of the polytope in list_polytopes.json.gz, for each of the three A1 subdivisions of the hexagon of Delta_88 and each of the two A2 subdivisions of the hexagon of Delta_154, with the number of nodes, rank K and forced nodes of that profile. The subdivisions of the other branch are excluded by the Farkas certificates of list_polytopes.json.gz. Checked by forced_nodes_check.py.",
+ "branches": {
+  "Delta_88": "A1",
+  "Delta_154": "A2"
+ },
+ "witnesses": [
+  {
+   "id": "Delta_88",
+   "profile": {
+    "0": "A1:0"
+   },
+   "psi": [-1000, -999, -1000, -1000, -999, -999, -999, -1000, -999, -999, -1000, -1000, -1000, -1000, -999, -1000, -999, -999, -999, -1000, -1000, -1000],
+   "nodes": 24,
+   "rank_K": 10,
+   "forced": []
+  },
+  {
+   "id": "Delta_88",
+   "profile": {
+    "0": "A1:1"
+   },
+   "psi": [-1999, -1999, -1998, -2000, -1998, -1999, -1999, -1999, -1999, -2000, -2000, -1999, -1999, -2000, -2000, -1999, -1999, -2000, -2000, -2000, -2000, -2000],
+   "nodes": 24,
+   "rank_K": 10,
+   "forced": []
+  },
+  {
+   "id": "Delta_88",
+   "profile": {
+    "0": "A1:2"
+   },
+   "psi": [-1998, -1999, -1999, -2000, -1999, -1999, -1998, -1999, -2000, -1999, -1999, -2000, -1999, -1999, -2000, -2000, -2000, -2000, -1999, -2000, -2000, -2000],
+   "nodes": 24,
+   "rank_K": 10,
+   "forced": []
+  },
+  {
+   "id": "Delta_154",
+   "profile": {
+    "0": "A2:0"
+   },
+   "psi": [-1000, -1000, -999, -1000, -1000, -999, -999, -1000, -1000, -1000, -1000, -1000, -1000, -1000, -1000, -1000, -999, -1000, -1000, -1000, -1000, -1000, -1000],
+   "nodes": 23,
+   "rank_K": 9,
+   "forced": []
+  },
+  {
+   "id": "Delta_154",
+   "profile": {
+    "0": "A2:1"
+   },
+   "psi": [-999, -999, -1000, -1000, -999, -1000, -1000, -1000, -1000, -1000, -1000, -1000, -1000, -1000, -1000, -999, -1000, -1000, -1000, -1000, -1000, -1000, -1000],
+   "nodes": 23,
+   "rank_K": 9,
+   "forced": []
+  }
+ ]
+}

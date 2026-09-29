@@ -38,7 +38,10 @@ The [computation bundle](COMPUTATIONS.md) contains:
 - [Unimodular-height certificates](unimodular/) for all 51,827 admissible
   polytopes, with integer and exact rational checking programs.
 - [Exact data and checks for the five worked examples](examples/).
-- [Forced-node and projectivity data](forced_nodes/) for the finite input list.
+- [Forced-node and projectivity data](forced_nodes/) for the finite input list, including
+  projectivity witnesses for every profile of the examples on the branch that admits one.
+- [Height-condition results](census/height_condition.json) for the 364 hexagon-free
+  polytopes of the list, with a [checker](census/check_height_condition.py).
 - [Tropical-cycle census summaries](census/README.md), with their verification
   scope and retained-evidence limitations stated explicitly.
 - [Classification input provenance](provenance/DATASET_CHECK.md) and a
