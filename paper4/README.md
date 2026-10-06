@@ -1,6 +1,6 @@
 # A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds
 
-Paper 4 · Bernd Johannes Wuebben · 32 pages
+Paper 4 · Bernd Johannes Wuebben · 34 pages
 
 [PDF](cy-vanishing-cycle.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 
@@ -10,8 +10,8 @@ Vanishing periods force nonzero coefficients in the appropriate relation
 space for analytic arcs of arbitrary order. The 26-node/four-cone mirror
 example has no smoothing, although all its germs are smoothable.
 
-The crepant resolution is small at nodes and has the specified exceptional
-surface over each cone point. The equality between the matrix kernel and
+The crepant resolution is small at the nodes and is the blowup of the vertex
+at each cone point. The equality between the matrix kernel and
 the topological link-homology kernel uses these isolated-germ hypotheses;
 the more general ambient-divisor spanning assertion is stated separately.
 Single-germ obstructions require injectivity into the resolution homology.
