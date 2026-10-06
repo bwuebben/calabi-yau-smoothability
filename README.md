@@ -33,7 +33,7 @@ mixed criterion for those degrees.
 | 2. Deformations of toric pairs and the smoothing of Batyrev Calabi–Yau threefolds | [paper2/](paper2/README.md) | [cy-toric-pairs.pdf](paper2/cy-toric-pairs.pdf) | 18 |
 | 3. Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau threefolds | [paper3/](paper3/README.md) | [cy-mirror-pairs.pdf](paper3/cy-mirror-pairs.pdf) | 11 |
 | 4. A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds | [paper4/](paper4/README.md) | [cy-vanishing-cycle.pdf](paper4/cy-vanishing-cycle.pdf) | 35 |
-| 5. Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points | [paper5/](paper5/README.md) | [cy-mixed-smoothing.pdf](paper5/cy-mixed-smoothing.pdf) | 61 |
+| 5. Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points | [paper5/](paper5/README.md) | [cy-mixed-smoothing.pdf](paper5/cy-mixed-smoothing.pdf) | 62 |
 | 6. Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds | [paper6/](paper6/README.md) | [cy-vanishing-spheres.pdf](paper6/cy-vanishing-spheres.pdf) | 206 |
 
 Each `paperN/` directory holds `main.tex` and its compiled PDF. Paper 5's
@@ -284,7 +284,8 @@ additional local and deformation-space computations are listed below.
   (6 checks).
 - `locking.py` — the forcing rules and the locking closure,
   including the cube counterexample that shows why the adjacent-pair rule needs
-  consecutive edges (13 checks).
+  consecutive edges, and rigidity of the pentagon facets of Δ₁₉ at lattice
+  cross-sections (12 checks).
 - `one_facet.py` — the reachability lemma and its scope (7 checks).
 - `slice_rigidity.py` and `slice_rigidity.sage` — cell rigidity by the forcing
   chain, implemented twice, in pure Python with an integer chain and in Sage
@@ -338,7 +339,9 @@ standard library. Their saved JSON results are included, so the replay
 has its required input immediately after cloning.
 
 `d19_quadric_partial_resolution.py` additionally checks the X₁₉ fan,
-quadric-cone cohomology, Hodge data and relation matrices. The two standard
+quadric-cone cohomology, Hodge data and relation matrices.
+`flop_weight_zero.py` computes the weight-zero Hodge cohomology across the
+degree-seven flop used in Lemma 4.4 (7 checks). The two standard
 Python scripts in `paper5/figures/code/` check the degree-five pencil
 lattice, permutations, intersection numbers and exterior-product ranks,
 and the degree-eight Cayley and ruling-difference lattices. The analytic
@@ -399,6 +402,7 @@ sage -python paper5/certificates/branch_smoothness_inputs.py
 sage -python paper5/certificates/counterexample_deformation_germ.py
 python3 paper5/certificates/a2_counterexample_rational_replay.py
 sage -python paper5/certificates/d19_quadric_partial_resolution.py
+sage -python paper5/certificates/flop_weight_zero.py
 python3 paper5/figures/code/compute01_degree5_local.py
 python3 paper5/figures/code/compute01_degree8_local.py
 python3 paper5/figures/code/compute01_cubic_scope.py

@@ -111,29 +111,36 @@ def chain_closes(twofaces_in_facet):
         ra, rb = find(a), find(b)
         if ra != rb: par[ra] = rb
 
-    seed = None
+    seeded = False
     for A, cyc in zip(twofaces_in_facet, cycles):
         if len(A) == 3:
             es = [tuple(sorted((cyc[j], cyc[(j + 1) % 3]))) for j in range(3)]
             union(es[0], es[1]); union(es[1], es[2])
-            if seed is None: seed = es[0]
-    if seed is None:
+            seeded = True
+    if not seeded:
         return False
+    # Rules (S) and (A) are applied to EVERY class of the partition, not only
+    # to the class of one seed triangle, until no rule applies.  The terminal
+    # partition is the least fixed point of a monotone closure operator, so it
+    # does not depend on the order in which faces are visited.
     progress = True
     while progress:
         progress = False
-        big = find(seed)
         for cyc in cycles:
             fe = [tuple(sorted((cyc[j], cyc[(j + 1) % len(cyc)])))
                   for j in range(len(cyc))]
-            rest = [e for e in fe if find(e) != big]
-            if not rest:
-                continue
-            if len(rest) == 1:
-                union(rest[0], big); big = find(big); progress = True
-            elif len(rest) == 2 and len(set(rest[0]) & set(rest[1])) == 1:
-                union(rest[0], big); union(rest[1], big)
-                big = find(big); progress = True
+            classes = {}
+            for e in fe:
+                classes.setdefault(find(e), []).append(e)
+            for c, members in classes.items():
+                rest = [e for e in fe if find(e) != c]
+                if len(members) == len(fe) - 1 and len(rest) == 1:
+                    union(rest[0], c); progress = True
+                    break
+                if (len(members) == len(fe) - 2 and len(rest) == 2
+                        and len(set(rest[0]) & set(rest[1])) == 1):
+                    union(rest[0], c); union(rest[1], c); progress = True
+                    break
     return len({find(e) for e in edges}) == 1
 
 

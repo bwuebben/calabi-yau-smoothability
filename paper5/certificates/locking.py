@@ -111,21 +111,26 @@ def lock(edges, cycles, seed_edges=None):
     if not seeded:
         return set(), len({find(e) for e in edges})
 
-    big = find(seed)
+    # Rules SINGLE and ADJACENT are applied to every class of the partition
+    # until none applies; the terminal partition does not depend on the order.
     progress = True
     while progress:
         progress = False
         for cyc in cycles:
             fe = [tuple(sorted((cyc[j], cyc[(j + 1) % len(cyc)])))
                   for j in range(len(cyc))]
-            rest = [e for e in fe if find(e) != big]
-            if not rest:
-                continue
-            if len(rest) == 1:
-                union(rest[0], big); big = find(big); progress = True
-            elif len(rest) == 2 and len(set(rest[0]) & set(rest[1])) == 1:
-                union(rest[0], big); union(rest[1], big)
-                big = find(big); progress = True
+            classes = {}
+            for e in fe:
+                classes.setdefault(find(e), []).append(e)
+            for c, members in classes.items():
+                rest = [e for e in fe if find(e) != c]
+                if len(members) == len(fe) - 1 and len(rest) == 1:
+                    union(rest[0], c); progress = True
+                    break
+                if (len(members) == len(fe) - 2 and len(rest) == 2
+                        and len(set(rest[0]) & set(rest[1])) == 1):
+                    union(rest[0], c); union(rest[1], c); progress = True
+                    break
     big = find(seed)
     return {e for e in edges if find(e) == big}, len({find(e) for e in edges})
 
@@ -172,8 +177,25 @@ def summand_dim(points, edges, cycles):
     return n - r
 
 
-def rescale(V, idx, weights):
-    return {i: tuple(Fraction(c, 1) / weights[i] for c in V[i]) for i in idx}
+def cross_section(V, idx, R):
+    """The vertices v/<R,v> of the cross-section sigma_F cap [R = 1]."""
+    out = {}
+    for i in idx:
+        r = sum(a * b for a, b in zip(R, V[i]))
+        assert r > 0
+        out[i] = tuple(Fraction(c, r) for c in V[i])
+    return out
+
+
+def positive_degrees(V, idx, box=2, limit=40):
+    """Lattice degrees R in a box that are positive on every vertex of F."""
+    found = []
+    for R in itertools.product(range(-box, box + 1), repeat=len(V[0])):
+        if all(sum(a * b for a, b in zip(R, V[i])) > 0 for i in idx):
+            found.append(R)
+            if len(found) >= limit:
+                break
+    return found
 
 
 # ----------------------------------------------------------------- self-tests
@@ -224,7 +246,7 @@ ok("a quadrilateral can have two OPPOSITE edges parallel, and then the two "
    f"summand dim {summand_dim(pts, edges, faces)}, so a rule firing on "
    "opposite pairs would be unsound", summand_dim(pts, edges, faces) == 3)
 
-print("\n== DEGREE-INDEPENDENCE: locking survives every rescaling ==")
+print("\n== DEGREE-INDEPENDENCE: locked facets are rigid at every cross-section ==")
 sys.path.insert(0, HERE)
 from examples import V_19                                            # noqa: E402
 V = [tuple(v) for v in V_19]
@@ -235,52 +257,17 @@ pentfacets = sorted({f for I, fp in tf if I == PENT for f in fp})
 ok(f"the pentagon of Delta_19 lies in exactly two facets, {pentfacets}",
    len(pentfacets) == 2)
 
-WEIGHTS = [
-    ("lattice facet",   lambda i: Fraction(1)),
-    ("uniform 3",       lambda i: Fraction(3)),
-    ("index+1",         lambda i: Fraction(i + 1)),
-    ("primes",          lambda i: Fraction([2,3,5,7,11,13,17,19,23,29,31,37,
-                                            41,43,47,53,59,61,67][i % 19])),
-    ("lopsided",        lambda i: Fraction(1 if i % 3 else 1000)),
-    ("reciprocals",     lambda i: Fraction(1, i + 2)),
-]
 for fi in pentfacets:
     idx, tfs, edges, cycles = facet_complex(V, facs, tf, fi)
     forced, ncl = lock(edges, cycles)
     locked = len(forced) == len(edges) and ncl == 1
     ok(f"facet {fi}: {len(idx)} vertices, {len(edges)} edges, 2-face types "
        f"{sorted(len(c) for c in cycles)}; LOCKED", locked)
-    dims = [(nm, summand_dim(rescale(V, idx, {i: w(i) for i in idx}),
-                             edges, cycles)) for nm, w in WEIGHTS]
-    ok(f"facet {fi}: summand dim stays 1 under all {len(WEIGHTS)} rescalings "
-       f"({', '.join(f'{n} {d}' for n, d in dims)})",
-       all(d == 1 for _, d in dims))
-
-print("\n== the CONTROL: an UNLOCKED facet's dimension does move ==")
-moved, unlocked = [], 0
-for fi in range(len(facs)):
-    fc = facet_complex(V, facs, tf, fi)
-    if fc is None:
-        continue
-    idx, tfs, edges, cycles = fc
-    forced, ncl = lock(edges, cycles)
-    if len(forced) == len(edges) and ncl == 1:
-        continue
-    unlocked += 1
-    base = summand_dim(rescale(V, idx, {i: Fraction(1) for i in idx}),
-                       edges, cycles)
-    for nm, w in WEIGHTS[1:]:
-        d = summand_dim(rescale(V, idx, {i: w(i) for i in idx}), edges, cycles)
-        if d != base:
-            moved.append((fi, base, nm, d))
-            break
-for fi, base, nm, d in moved[:4]:
-    print(f"    facet {fi:>2}: summand dim {base} on the lattice facet, "
-          f"{d} under '{nm}'")
-ok(f"of the {len(facs)} facets of Delta_19, {unlocked} are unlocked and "
-   f"{len(moved)} of those change summand dimension under rescaling.  So the "
-   "numerical dimension is NOT a degree-independent invariant, and the "
-   "criterion has to be combinatorial", len(moved) > 0)
+    degs = positive_degrees(V, idx)
+    dims = {summand_dim(cross_section(V, idx, R), edges, cycles) for R in degs}
+    ok(f"facet {fi}: the cross-section v/<R,v> has summand dim 1 at each of "
+       f"{len(degs)} lattice degrees R positive on the facet (dims {sorted(dims)})",
+       len(degs) > 0 and dims == {1})
 
 print(f"\n{CH[0]} checks passed.")
 print("""
@@ -288,6 +275,6 @@ CONCLUSION.  Locking is a property of the FACE LATTICE of a facet together
 with which 2-faces are triangles.  It implies Minkowski rigidity of the cell
 at every degree in the interior of sigma_F^dual, because the three rules use
 only that edge vectors close up around a 2-face and that consecutive edges of
-a convex polygon are independent.  It is sufficient and not necessary.  And it
-is the right notion rather than the numerical summand dimension, which the
-control above shows is degree-dependent.""")
+a convex polygon are independent.  It is sufficient and not necessary.  Being
+combinatorial, it applies to all bounded cross-sections at once, without
+computing the summand dimension degree by degree.""")

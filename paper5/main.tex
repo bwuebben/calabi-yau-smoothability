@@ -122,9 +122,11 @@ Theorem~\ref{thm04:criterion} supplies the stronger criterion at $A_2$
 points.
 
 \begin{recollection}[mixed necessity; {\cite[Thm.~6.1]{PaperIV}}]\label{thm:companion}
-Let $X$ be a compact complex threefold with $\omega_X\cong\cO_X$ and
+Let $X$ be a connected compact complex threefold with $\omega_X\cong\cO_X$ and
 $h^1(\cO_X)=0$ whose singular points are ordinary double points and
-anticanonical cones over $\dP_6$ or $\dP_7$, and suppose $X$ admits a
+anticanonical cones over $\dP_6$ or $\dP_7$, let $\Xh\to X$ be a crepant
+resolution that is small over the nodes and the blowup of the vertex at each
+cone point, for instance $Y_0$, and suppose $X$ admits a
 one-parameter smoothing.  Set
 \[
   K(X)=\Bigl\{\kappa\in\ker\Bigl(\bigoplus_pH_2(L_p;\QQ)\to H_2(\Xh;\QQ)\Bigr)
@@ -171,8 +173,9 @@ $\PP_\Delta = \TV(\Sigma)$ the associated toric fourfold, which is Gorenstein
 Fano.  For a facet $F$ we write $u_F \in M$ for the primitive inner normal,
 normalised by $\langle u_F, v\rangle = -1$ for $v \in F$; reflexivity is exactly
 the statement that $u_F$ is a lattice point for every facet.  $X \subset
-\PP_\Delta$ denotes a $\Delta$-regular anticanonical hypersurface in the sense
-of \cite[Def.~3.1.1]{Batyrev94}; it is a Calabi--Yau threefold with at worst
+\PP_\Delta$ denotes an anticanonical hypersurface that is regular in the sense
+of \cite[Def.~3.1.1]{Batyrev94} (Batyrev's polytope there is the Newton
+polytope, here $\Delta^\circ$); it is a Calabi--Yau threefold with at worst
 Gorenstein canonical singularities.
 \end{convention}
 
@@ -234,10 +237,10 @@ toric framework.
 
 \subsection{Nodes, coloops, and when the nodal mechanism is unavailable}
 Let $X$ have nodes $x_1,\dots,x_k$, and let $\widehat X \to X$ be a small
-resolution of the nodes with exceptional curves $C_1,\dots,C_k$.  Following
-\cite[\S5.2]{PaperIV} we call the matroid of the vectors $[C_j]$ the \emph{node
-relation system}, and a node $x_j$ a \emph{coloop} when $[C_j]$ lies in no
-circuit; equivalently, when every relation $\sum\lambda_i[C_i]=0$ has
+resolution of the nodes with exceptional curves $C_1,\dots,C_k$.  We call the
+matroid of the vectors $[C_j]$ the \emph{node relation system}, and, as in
+\cite[\S\S1.1 and~5.3]{PaperIV}, a node $x_j$ a \emph{coloop} when $[C_j]$ lies
+in no circuit; equivalently, when every relation $\sum\lambda_i[C_i]=0$ has
 $\lambda_j = 0$.
 
 \begin{remark}\label{rem:coloop}
@@ -342,14 +345,17 @@ of it.
 \begin{recollection}[{\cite[Thm.~4.4]{IV12}}]\label{thm:iv44}
 A Minkowski decomposition of the slice complex in the sense of
 Definition~\ref{def:iv} determines a flat family
-$\pi \colon \cP \to B$ over a curve germ $B$, with $\cP_0 = \PP_\Delta$ and
-with $T$-action on every fibre.
+$\pi \colon \cP \to B$ over a smooth base germ $B$, with one parameter for each
+decomposed slice, with $\cP_0 = \PP_\Delta$ and with $T$-action on every fibre.
 \end{recollection}
 
 \begin{definition}\label{def:singledegree}
 The family of Recollection~\ref{thm:iv44}, for a fixed primitive $R \in M$ and a
-fixed decomposition of the slice complex at $R$, is the \emph{single-degree
-family at $R$}.  Its fibre over $b\in B$ is denoted $\cP_b$, and the base
+fixed decomposition of the slice complex at $R$, restricted to a curve germ
+through the origin and assumed proper over it, is the \emph{single-degree
+family at $R$}.  When only one slice is decomposed, properness holds
+automatically \cite[Thm.~3.2]{HI11}; for decompositions of both slices it is
+asserted in \cite[Rem.~3.3]{HI11}, and we include it in the definition.  Its fibre over $b\in B$ is denoted $\cP_b$, and the base
 parameter is written $b$ throughout, the letter $t$ being reserved for edge
 dilations.
 \end{definition}
@@ -359,8 +365,8 @@ dilations.
 Suppose the polyhedral divisor at a germ has \emph{affine locus}.  Then the
 singularities of the general fibre at that germ are the cones over the summands
 $C^0$, $C^1$.  In particular the germ is smoothed if and only if each summand
-cone is smooth; for the bounded summands used below, this means a point or a
-unimodular simplex, in particular a primitive segment in dimension one.
+cone is smooth; for the bounded lattice summands used below, this means a point
+or a unimodular simplex, in particular a primitive segment in dimension one.
 \end{recollection}
 
 \begin{recollection}[{\cite[Rem.~2.13]{IV12}}]\label{thm:rem213}
@@ -385,8 +391,7 @@ $\cL|_{\cP_b}\cong\omega_{\cP_b}^{-1}$ for every $b\in B$.
 \end{proposition}
 
 \begin{proof}
-The divisorial fan of the special fibre is complete, so
-\cite[Thm.~3.2 and Rem.~3.3]{HI11} makes $\pi$ proper; flatness is
+The morphism $\pi$ is proper by Definition~\ref{def:singledegree}; flatness is
 Recollection~\ref{thm:iv44}.  The special fibre $\PP_\Delta$ is Gorenstein.  The
 fibrewise Gorenstein locus of a flat morphism of finite presentation is open
 \cite[Tag~0C09]{Stacks}; it contains the whole proper fibre $\cP_0$, so
@@ -466,6 +471,14 @@ therefore contains a nonconstant homogeneous unit $f\chi^u$ and its inverse.
 No point can be fixed by the acting torus while this unit is nonzero there.
 The singular locus is torus-invariant, so every one of its nonempty orbits has
 positive dimension.
+
+Altmann's theorem gives an independent check of the first step.  The chart is
+$Y_G\times\mathbb G_m$, whose $T^1$ is concentrated in degrees restricting to
+$-R_G^*$ on $L_G$ \cite[Thm.~(6.5)]{Altmann95}.  The homogeneous family at $R$
+has its terms in degrees $-kR$ with $k\ge1$, and no multiple of $R$ restricts
+to $R_G^*$, because $R$ takes both signs on the rays of $\sigma_G$.  Hence the
+Kodaira--Spencer class of the family, and each of its higher-order terms,
+vanishes on this chart.
 \end{proof}
 
 \begin{corollary}\label{cor:reach}
@@ -574,9 +587,9 @@ decomposition is type A, so (5.7) again makes the induced family trivial.
 
 \subsection{Locking: a combinatorial rigidity criterion}
 
-The dimension of a Minkowski summand cone depends on the chosen
-cross-section.  We use a rigidity criterion depending only on the
-face lattice.
+A Minkowski summand cone is computed from one cross-section.  We use a
+rigidity criterion depending only on the face lattice, which therefore applies
+to all bounded cross-sections at once.
 
 \begin{definition}\label{def:rigid}
 A positive-dimensional polytope $C$ is \emph{Minkowski-rigid} if every
@@ -595,12 +608,11 @@ condition.  Thus the summand cone has dimension at least one.
 Only bounded positive-dimensional cross-sections are used below.
 
 \begin{remark}\label{rem:dimmoves}
-The dimension of the Minkowski summand cone is \emph{not} an invariant of the cone
-$\sigma_F$: it depends on the degree.  On $\Delta_{19}$, facet~$12$ has summand
-cone of dimension $2$ at the lattice facet and dimension $1$ at other cells of
-$\sigma_{12}$.  The summand dimension at one degree therefore does not determine
-rigidity at all degrees.  The following criterion applies uniformly
-to all bounded cross-sections.
+A computation of the Minkowski summand cone at one degree concerns that
+cross-section only, and the degrees form an infinite set.  The criterion below
+depends only on the face lattice of the facet and on which of its $2$-faces are
+triangles, so by Lemma~\ref{lem:crosssection} it applies uniformly to all
+bounded cross-sections.
 \end{remark}
 
 The reason such a criterion exists is elementary.
@@ -820,8 +832,10 @@ Corollary~\ref{cor:thresholds}.
 \begin{proof}
 Let $R$ be primitive.  If $\sigma_G$ is two-sided at $R$, Lemma~\ref{lem:reach}
 already gives a singular curve in the corresponding chart.  If $R$ vanishes
-on $L_G$, neither slice changes $U_{\sigma_G}$, so its singular locus remains
-$\Sing(Y_G)\times\mathbb G_m$.
+on $L_G$, the coefficients of the polyhedral divisor of $\sigma_G$ are
+empty or equal to its tail, and the decomposition is trivial on them; the
+corresponding chart of the general fibre is the product of $Y_G$ with an open
+curve, and is singular along a curve.
 
 It remains to consider the one-sided case with nonzero restriction.  Choose
 $r=R$ or $-R$ nonnegative on $\sigma_G$.  If
@@ -841,7 +855,7 @@ divisors.
 \end{proof}
 
 \subsection{The ambient obstruction for \texorpdfstring{$X_{19}$}{X19}}
-Let
+Let $\Delta_{19}$ be the polytope of \cite[\S5.3]{PaperIII}:
 \begin{equation}\label{eq:V19}
 \begin{aligned}
 \Delta_{19} = \conv\bigl\{
@@ -866,8 +880,6 @@ F_{21}&:\ u=(-1,0,-1,0), &&\{v_3,v_9,v_{10},v_{13},v_{14},v_{15},v_{16},v_{17},v
 F_{24}&:\ u=(-1,-1,0,0), &&\{v_4,v_8,v_{11},v_{12},v_{14},v_{15},v_{16},v_{17},v_{18}\},
 \end{aligned}
 \]
-and the facet $F_{12}$ of Remark~\ref{rem:dimmoves} is
-$u=(0,1,1,1)$ on $\{v_1,v_2,v_6,v_7,v_{12},v_{13},v_{17},v_{18}\}$.
 
 \begin{theorem}\label{thm:A}
 $\Delta_{19}$ satisfies the hypothesis of Theorem~\ref{thm:Aprime} at $P$.
@@ -948,7 +960,7 @@ a nonhomothetic Minkowski summand.
 \end{enumerate}
 The first condition implies rigidity for all bounded cross-sections
 of both facet cones.  The second asserts rigidity only at their
-lattice cross-sections.
+lattice cross-sections; in the range searched it does not occur.
 
 \begin{table}[ht]
 \caption{Facet rigidity in the Kreuzer--Skarke classification.
@@ -966,24 +978,23 @@ $5$ & $1\,561$ & $0$ & n/a & n/a & n/a \\
 $6$ & $24\,189$ & $0$ & n/a & n/a & n/a \\
 $7$ & $177\,446$ & $30$ & $30$ & $0$ & $0$ \\
 $8$ & $834\,638$ & $882$ & $763$ & $0$ & $119$ \\
-$9$ & $2\,867\,955$ & $11\,596$ & $8\,673$ & $37$ & $2\,886$ \\
+$9$ & $2\,867\,955$ & $11\,596$ & $8\,710$ & $0$ & $2\,886$ \\
 \midrule
-total & $3\,905\,789$ & $12\,508$ & $9\,466$ & $37$ & $3\,005$ \\
+total & $3\,905\,789$ & $12\,508$ & $9\,503$ & $0$ & $3\,005$ \\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
 \end{table}
 
-The three classes exhaust the pentagonal faces:
-$8\,673+37+2\,886=11\,596$ at nine vertices, and
-$9\,466+37+3\,005=12\,508$ in total.
+The classes exhaust the pentagonal faces:
+$8\,710+2\,886=11\,596$ at nine vertices, and
+$9\,503+3\,005=12\,508$ in total.  The middle class is empty.
 
-Exactly $9\,466$ of the $12\,508$ pentagonal faces satisfy
-{\rm(L)}.  Including the $37$ cases where the criterion is
-inconclusive, $9\,503$ have rigid containing lattice facets.
-The latter is a statement about those specific cross-sections:
-Remark~\ref{rem:dimmoves} explains why it does not imply rigidity at
-every degree.  Neither number is an all-degree immovability count,
+Exactly $9\,503$ of the $12\,508$ pentagonal faces satisfy
+{\rm(L)}, and these are also exactly the faces whose two containing
+lattice facets are Minkowski-rigid.  By Proposition~\ref{prop:locked},
+locking gives rigidity at every bounded cross-section of both facet cones.
+The count is nevertheless not an all-degree immovability count,
 because the broad census does not impose {\rm(C)}.
 The $77$ polytopes of Section~\ref{sec:classify} are counted separately.
 
@@ -1005,11 +1016,10 @@ framework of Definition~\ref{def:framework}.
 
 \begin{remark}\label{rem:censuscorrection}
 A filter that classified a $2$-face by its numbers of vertices and interior
-points alone would return two admissible polytopes at eight vertices instead of
-none, because it misses the lattice smoothness condition.  A triangle with no interior point need not be smooth: it
-is smooth only if \emph{unimodular}, and one with an edge of lattice length two
-gives a non-isolated germ.  Exactly two of the $49$ at eight vertices carry such
-a face.
+points alone would admit polytopes at eight vertices that are not in the
+framework, because it misses the lattice smoothness condition.  A triangle with
+no interior point need not be smooth: it is smooth only if \emph{unimodular},
+and one with an edge of lattice length two gives a non-isolated germ.
 \end{remark}
 
 \subsection{Nine vertices, and \texorpdfstring{$\Delta_9$}{Delta9}}
@@ -1476,8 +1486,8 @@ statement & script & checks \\
 \endhead
 Rem.~\ref{rem:reachscope}
   & \texttt{one\_facet.py} & $7$ \\
-Prop.~\ref{prop:rules}, Def.~\ref{def:locked}, Rem.~\ref{rem:dimmoves}
-  & \texttt{locking.py} & $13$ \\
+Prop.~\ref{prop:rules}, Def.~\ref{def:locked}, Prop.~\ref{prop:locked}
+  & \texttt{locking.py} & $12$ \\
 Thm.~\ref{thm:A}, the line $\cA_P$, its two ranges, and cell rigidity
   & \texttt{slice\_rigidity.py} & $49$ \\
 \quad independent reimplementation
@@ -1554,11 +1564,12 @@ classes and their relation with every coefficient nonzero.
 The file \path{theoremB_class.py} reconstructs this relation and
 checks that the degree-seven component lies on the $(-2)$-line.
 
-The summand cone of facet $12$ of $\Delta_{19}$ has dimension two
-at the lattice cross-section and one at the other cross-sections
-in Remark~\ref{rem:dimmoves}.  The file \path{locking.py} verifies
-these dimensions and the necessity of consecutive edges in
-Proposition~\ref{prop:rules}.  Its edge partitions agree with
+The file \path{locking.py} validates the rules of
+Proposition~\ref{prop:rules} on polytopes with known summand cones, checks the
+necessity of consecutive edges, and verifies for the two facets of
+$\Delta_{19}$ containing the pentagon that their cross-sections at lattice
+degrees positive on the facet are Minkowski-rigid, as
+Proposition~\ref{prop:locked} predicts.  Its edge partitions agree with
 those computed by \path{dp7_facet_sweep.py} on all $27$ facets
 of $\Delta_{19}$.
 
@@ -1588,6 +1599,9 @@ intersection, and the resulting dimensions ($57$ assertions).
 repeats the counterexample's rational linear algebra and Hodge
 input with Python's standard-library rational arithmetic
 ($50$ assertions).
+\item \path{flop_weight_zero.py} computes the weight-zero Hodge cohomology
+of the degree-seven cone, its two crepant resolutions and their common open
+set, used in the proof of Lemma~\ref{lem04:globaltangent} ($7$ assertions).
 \item \path{d19_quadric_partial_resolution.py} checks the $X_{19}$
 partial fan, local quadric-cone cohomology, Hodge input, and the
 matrices printed in Corollary~\ref{cor:x19smooth}.
@@ -1661,10 +1675,10 @@ here by the revision's numbers.  In particular the obstructed example is
 Example~2.19 of the revision and Example~2.8 of the 1995 preprint.
 \bibitem[HI13]{HI11} A.~Hochenegger and N.~O. Ilten, \emph{Families of
 invariant divisors on rational complexity-one $T$-varieties}, J.\ Algebra
-\textbf{392} (2013), 58--69; arXiv:0906.4292;
+\textbf{392} (2013), 52--68; arXiv:0906.4292;
 \href{https://doi.org/10.1016/j.jalgebra.2013.06.019}{doi:10.1016/j.jalgebra.2013.06.019}.
 \bibitem[IV12]{IV12} N.~O. Ilten and R.~Vollmert, \emph{Deformations of
-rational $T$-varieties}, J.\ Algebraic Geom.\ \textbf{21} (2012), 473--493;
+rational $T$-varieties}, J.\ Algebraic Geom.\ \textbf{21} (2012), 531--562;
 arXiv:0903.1393.
 \bibitem[KS00]{KS00} M.~Kreuzer and H.~Skarke, \emph{Complete classification of
 reflexive polyhedra in four dimensions}, Adv.\ Theor.\ Math.\ Phys.\ \textbf{4}
@@ -1684,15 +1698,25 @@ $3$-folds with terminal singularities}, Topology \textbf{33} (1994), 429--446.
 Israel J.\ Math.\ \textbf{182} (2011), 481--504; arXiv:0811.0517.
 \bibitem[RT09]{RT09} S.~Rollenske and R.~Thomas, \emph{Smoothing nodal
 Calabi--Yau $n$-folds}, J.\ Topol.\ \textbf{2} (2009), 405--421.
+\bibitem[Sch71]{Schlessinger71} M.~Schlessinger, \emph{Rigidity of quotient
+singularities}, Invent.\ Math.\ \textbf{14} (1971), 17--26.
 \bibitem[S\"u08]{Suess08} H.~S\"u\ss, \emph{Canonical divisors on
 $T$-varieties}, arXiv:0811.0626.
 \bibitem[Stacks]{Stacks} The Stacks Project Authors, \emph{The Stacks Project},
 \url{https://stacks.math.columbia.edu}.
 \bibitem[Wue26a]{PaperI} B.~J. Wuebben, \emph{Non-smoothable Calabi--Yau
-threefolds from reflexive polytopes}, preprint, 2026; available at
+threefolds from reflexive polytopes}, preprint, 2026; arXiv:2609.28499.
+\bibitem[Wue26b]{PaperII} B.~J. Wuebben, \emph{Deformations of toric pairs and
+the smoothing of Batyrev Calabi--Yau threefolds}, preprint, 2026; available at
 \url{https://github.com/bwuebben/calabi-yau-smoothability}.
-\bibitem[Wue26b]{PaperIV} B.~J. Wuebben, \emph{A vanishing-cycle obstruction to
+\bibitem[Wue26c]{PaperIII} B.~J. Wuebben, \emph{Doubly isolated Batyrev mirror
+pairs and non-smoothable Calabi--Yau threefolds}, preprint, 2026; available at
+\url{https://github.com/bwuebben/calabi-yau-smoothability}.
+\bibitem[Wue26d]{PaperIV} B.~J. Wuebben, \emph{A vanishing-cycle obstruction to
 smoothing Calabi--Yau threefolds}, preprint, 2026; available at
+\url{https://github.com/bwuebben/calabi-yau-smoothability}.
+\bibitem[Wue26f]{PaperVI} B.~J. Wuebben, \emph{Mirror symmetry for conifold
+relations in Calabi--Yau threefolds}, preprint, 2026; available at
 \url{https://github.com/bwuebben/calabi-yau-smoothability}.
 \end{thebibliography}
 

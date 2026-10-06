@@ -1,6 +1,6 @@
 # Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points
 
-Paper 5 · Bernd Johannes Wuebben · 61 pages
+Paper 5 · Bernd Johannes Wuebben · 62 pages
 
 [PDF](cy-mixed-smoothing.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 
@@ -26,7 +26,8 @@ the same mixed criterion for degrees one through four.
 The bounded census uses the at-most-nine-vertex part of the fully verified
 database copy. [Input verification and provenance](../DATASET_CHECK.md)
 establish completeness and absence of repetitions up to lattice equivalence;
-the census counts remain the original computations.
+the facet-rigidity counts are those computed by
+`certificates/dp7_facet_sweep.py` on these files.
 
 ## Build
 

@@ -102,7 +102,7 @@ The scheme-theoretic local bases are, in analytic coordinates,
 The degree-five entry is proved in
 Proposition~\ref{prop03:degree5family}; the other cone entries are
 Altmann's calculations.  At degree six the $A_1$ branch is $u=v=0$ and the $A_2$ branch is
-$s=0$ \cite[\S\S5--8]{Altmann97}.  Fix analytic classifying maps from
+$s=0$ \cite[(2.5), (9.1)(v), \S\S5--8]{Altmann97}.  Fix analytic classifying maps from
 a semiuniversal base $\Def(X)$ to these local bases.  Their
 scheme-theoretic inverse image of the selected components is denoted
 $\Def^S(X)$; the chosen maps form part of this notation.  Write
@@ -177,7 +177,7 @@ crepant resolution containing $\widehat Y_p$.
 \begin{proof}
 The identifications
 $T^1_{Y,p}\cong H^1(U_p;\Theta_{U_p})\cong H^1(U_p;\Omega^2_{U_p})$
-are Schlessinger's comparison and contraction with the prescribed crepant volume
+are Schlessinger's comparison \cite{Schlessinger71} and contraction with the prescribed crepant volume
 form.  The comparison applies to the non-lci cones: the hypothesis in
 \cite[Lem.~1.17 and Lem.~4.1]{FL22a} is weakened in
 \cite[Rem.~4.2]{FL22a} to an isolated singularity of depth at least $3$.
@@ -221,7 +221,8 @@ $-(k+1)K_E$ is ample for every $k\ge0$.  For the other surfaces
 it is the usual toric Bott vanishing.
 Thus
 $H^1(\widehat Y_p;\Omega^2(\log E)(-E))=0$.  The exact sequence of
-\cite[Thm.~2.1(v)]{FL22a}, whose theorem explicitly allows every
+\cite[Thm.~2.1(v)]{FL22a}, applied to the good equivariant resolution
+$\operatorname{Tot}(K_E)$, whose theorem explicitly allows every
 three-dimensional isolated canonical Gorenstein germ, now gives
 \eqref{eq:localhodge}.  Moreover \cite[Thm.~2.1(vi)]{FL22a} gives a natural
 inclusion
@@ -290,10 +291,16 @@ There is one unit-edge reflexive pentagon up to $\operatorname{GL}_2(\ZZ)$.  Tak
 Its nontrivial decomposition has dilation vector
 $t=(0,1,0,1,0)$, up to replacing $t$ by $1-t$, and spans the reduced versal
 base.  The reflection $s(x,y)=(y,x)$ fixes $[t]\in\mathcal M(P_7)$ and has
-determinant $-1$.  On
+determinant $-1$.  It acts trivially on the tangent line of the reduced
+branch, not merely on $[t]$ up to a character: it preserves the segment and the
+triangle of the decomposition, hence both Cayley characters, and so fixes the
+parameter of Altmann's family.  On
 $H_2(L_p)=K_E^\perp$ it acts by $-1$ on the unique root line and by $+1$ on
 the complementary line.  The determinant twist therefore forces the Hodge
-image of $[t]$ to be the root line.
+image of $[t]$ to be the root line.  Independently, the smooth fibre of this
+branch is the complement $M$ of a smooth member of $|-\tfrac12K|$ in
+$\operatorname{Bl}_{\mathrm{pt}}\PP^3$, and the kernel of
+$H_2(L_p;\QQ)\to H_2(M;\QQ)$ is the root line \cite[Prop.~2.1]{PaperIV}.
 
 Likewise there is one unit-edge reflexive hexagon.  Take
 \[

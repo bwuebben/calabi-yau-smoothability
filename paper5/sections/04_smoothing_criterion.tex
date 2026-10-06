@@ -81,8 +81,9 @@ between compact complex manifolds
 \end{proof}
 
 Let $Y\to Z$ be the smooth crepant resolution obtained by resolving the
-new nodes on the sides specified in Proposition~\ref{prop03:localmodels}
-and resolving the degree-five and quadric cones by their vertex blowups.
+original nodes as in $Y_0$, the
+new nodes on the sides specified in Proposition~\ref{prop03:localmodels},
+and the degree-five and quadric cones by their vertex blowups.
 At a degree-six
 point this recovers the original neighborhood in $\operatorname{Tot}K_E$.
 At a degree-seven point it differs from $Y_0$ by the described flop.
@@ -333,6 +334,37 @@ at a degree-seven point it sends the ruling difference to the original
 root; at a degree-five or original $\PP^1\times\PP^1$ cone
 it is the identity.
 These are exactly the local components of $\kappa$.
+
+At a degree-seven point $p$ this comparison is made across the flop, and we
+give the details.  Let $A=\operatorname{Tot}(K_E)$ be the neighbourhood of
+$p$ in $Y_0$ and $A'$ the corresponding neighbourhood in $Y$, let
+$c\subset E$ be the curve $h-e_1-e_2$ flopped in
+Proposition~\ref{prop03:localmodels}, let $c'\subset A'$ be its flop, and put
+$O=A\smallsetminus c=A'\smallsetminus c'$.  The open set $O$ contains the
+punctured neighbourhood $U_p$ of $p$ and the surface $E\smallsetminus c$.
+For $x\in T^1_{X,p}\cong H^1(U_p;\Omega^2)$ the connecting images
+$\delta_A(x)\in H^2_E(A;\Omega^2)$ and
+$\delta_{A'}(x)\in H^2_{E'}(A';\Omega^2)$, where $E'$ is the exceptional set of
+$A'$, both restrict to the connecting image
+$\delta_O(x)\in H^2_{E\smallsetminus c}(O;\Omega^2)$.  The kernel of
+$\delta_O$ is the image of $H^1(O;\Omega^2)$.  After contraction with the
+toric volume form, Altmann's concentration of $T^1$ in the Gorenstein degree
+places $T^1$ in torus weight zero; the restriction of $\Omega$ differs from
+the toric form by a unit, which acts on $T^1$ through a nonzero scalar as in
+the proof of Lemma~\ref{lem:branchhodge}.  The weight-zero part of
+$H^1(O;\Omega^2)$ vanishes: on the affine toric charts of $O$, the
+weight-zero regular $q$-forms on the chart of a smooth cone $\sigma$ are
+$\wedge^q(\sigma^\perp\otimes\CC)$, and the resulting \v{C}ech complex is
+exact in degree one (Appendix~\ref{app:cert}).  Hence $\delta_O$ is
+injective on $T^1$, and restriction to $O$ is injective on
+$K_p^{\mathrm{cr}}=\delta_A(T^1)$.  The class $\delta_{A'}(x)$ is the Hodge
+class of the ruling difference $\lambda(f_1-f_2)$ supplied by the
+construction above.  The two rulings are represented by members of the
+pencils $|h-e_1|$ and $|h-e_2|$ disjoint from $c$, which are the same curves
+in $O$.  Thus $\delta_O(x)$ is also the restriction of the Hodge class of
+$\lambda(e_2-e_1)\in K_p^{\mathrm{cr}}$, and injectivity gives
+$\delta_A(x)=\lambda(e_2-e_1)$, the prescribed root component.
+
 The construction of blow-down agrees with restriction on the common
 regular locus.  Thus $d\beta(\eta)$ has the prescribed local
 tangent on $X$, including at points where its coefficient is zero.
@@ -369,7 +401,7 @@ degree-five or degree-seven points, or $\PP^1\times\PP^1$ cones.
 Let $B$ be the completed local ring of $\Def(Z)$.  By
 Lemma~\ref{lem04:unobstructed} it is a formal power-series ring, in
 particular a domain.  At a degree-seven point the local base is
-$\CC[[s,v]]/(v^2,sv)$, so the pullback of $v$ to $B$ vanishes.
+$\CC[[s,w]]/(w^2,sw)$, so the pullback of $w$ to $B$ vanishes.
 At a degree-six point the local base is
 $\CC[[s,u,v]]/(su,sv)$, with $A_1$ component $u=v=0$ and
 $A_2$ component $s=0$.  If $A_1$ was selected, the nonzero
@@ -406,7 +438,8 @@ the intermediate space need not be projective.
 \begin{lemma}[period necessity]\label{lem04:periodnecessity}
 Let $T$ be a connected compact normal Gorenstein threefold with
 $\omega_T\cong\cO_T$, $H^1(T,\cO_T)=0$, and a smooth crepant
-resolution $\widetilde T\to T$.  Suppose its singularities are nodes
+resolution $\widetilde T\to T$ that is small over the nodes and the blowup of
+the vertex at each cone point.  Suppose its singularities are nodes
 and anticanonical cones over $\dP_5$, $\dP_6$, $\dP_7$, or
 $\PP^1\times\PP^1$, and that it has a
 convergent proper smoothing which uses the $A_1$ component at every
@@ -494,8 +527,9 @@ is $\ZZ/2$, as required in the preceding canonical-bundle argument.
 For the degree-six and degree-seven branches in the lemma, the smooth affine fibre is
 $M=V\setminus E$, with $V=(\PP^1)^3$ for degree six and
 $V=\operatorname{Bl}_{\mathrm{pt}}\PP^3$ for degree seven, and
-$E\in|-\tfrac12K_V|$.  The comparison with a compact local Milnor
-fibre, including its boundary marking, is
+$E\in|-\tfrac12K_V|$.  Every such pair $(V,E)$ is isomorphic to the toric
+pair described below \cite[\S3.3]{PaperIV}.  The comparison with a compact
+local Milnor fibre, including its boundary marking, is
 \cite[Lem.~4.2]{PaperIV}.  Weak Lefschetz makes
 $H^2(V;\QQ)\to H^2(E;\QQ)$ injective; the respective Picard
 ranks are $(3,4)$ and $(2,3)$.  Since $H^3(V;\QQ)=0$, the pair
@@ -610,7 +644,7 @@ by a convergent curve in $\Def^S(X)$.  At each rank-one point the
 local smoothing parameter has nonzero derivative.  At each $A_2$
 point all three local discriminant factors have nonzero derivatives,
 by the normalized identifications of
-Proposition~\ref{prop03:localmodels}.  At each degree-five point
+Proposition~\ref{prop03:a2family}.  At each degree-five point
 the five discriminant factors have nonzero derivatives by
 Lemma~\ref{lem03:degree5marking}.  Thus the local fibres are
 smooth for every sufficiently small nonzero parameter.  Properness
