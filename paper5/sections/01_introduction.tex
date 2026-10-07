@@ -87,10 +87,30 @@ that discriminant to higher order.
 At degree five, the five excluded hyperplanes are likewise the
 exact local discriminant, and necessity holds for arbitrary arcs.
 
-The integrability statement is stronger than the existence assertion.
 Fix analytic local classifying maps for a semiuniversal deformation of
 $X$, and let $\Def^S(X)$ be the scheme-theoretic inverse image of the
-chosen local branches.  Denote the tangent sheaf by $\Theta_X$.
+chosen local branches.  Allowing smoothings over arbitrary complex analytic
+base germs does not change the criterion.  Indeed, take a small
+representative of $B=\Def^S(X)_{\mathrm{red}}$ and restrict the
+proper semiuniversal family to $B$.  The locus $D\subset B$ of singular
+fibres is closed analytic by properness.  If smooth fibres occur
+arbitrarily close to the origin, complex curve selection
+\cite[Lem.~2.36]{LeMassey05} gives a holomorphic map
+$\gamma:(\Delta,0)\to(B,0)$ with
+$\gamma(\Delta\setminus\{0\})\subset B\setminus D$ after shrinking
+the disc.  Pullback gives a convergent proper one-parameter smoothing
+inducing $S$.  Conversely, a disc is itself an analytic base germ.
+For an unrestricted smoothing, first apply the same argument in
+$\Def(X)_{\mathrm{red}}$; the irreducibility of the disc forces each
+local classifying map to factor through a reduced local component,
+and hence determines a profile.  Thus $X$ is smoothable if and only if
+the criterion holds for at least one profile $S$.  This argument is
+independent of the singularity types, and applies in particular to
+degree-five cones and anticanonical $\PP^1\times\PP^1$ cones;
+compare \cite[proof of Cor.~6.7]{PaperIV}.
+
+The integrability statement is stronger than the existence assertion.
+Denote the tangent sheaf by $\Theta_X$.
 
 \begin{thmletter}[smooth selected deformation spaces]\label{thm:smoothintro}
 If $K_S\to R_{p,S_p}$ is nonzero at every degree-six point, then

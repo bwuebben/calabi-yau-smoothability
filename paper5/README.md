@@ -11,6 +11,9 @@ degrees five, six and seven, or over P¹×P¹. A homological relation must avoid
 every local discriminant. The selected global deformation base is smooth
 when the relation space projects nontrivially to each selected degree-six
 local parameter space; its tangent vectors then integrate convergently.
+Curve selection identifies the one-parameter criterion with smoothability
+over arbitrary complex analytic base germs, including degree-five and
+anticanonical P¹×P¹ cone points.
 
 The paper determines the full reduced analytic deformation ring of a
 nonsmoothable example with four smooth components. It proves that X₁₉

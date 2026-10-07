@@ -32,7 +32,7 @@ mixed criterion for those degrees.
 | 1. Non-smoothable Calabi–Yau threefolds from reflexive polytopes | [paper1/](paper1/README.md) | [cy-non-smoothable.pdf](paper1/cy-non-smoothable.pdf) | 18 | [arXiv:2609.28499](https://arxiv.org/abs/2609.28499) |
 | 2. Deformations of toric pairs and the smoothing of Batyrev Calabi–Yau threefolds | [paper2/](paper2/README.md) | [cy-toric-pairs.pdf](paper2/cy-toric-pairs.pdf) | 18 | [arXiv:2610.06884](https://arxiv.org/abs/2610.06884) |
 | 3. Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau threefolds | [paper3/](paper3/README.md) | [cy-mirror-pairs.pdf](paper3/cy-mirror-pairs.pdf) | 11 | [arXiv:2610.03753](https://arxiv.org/abs/2610.03753) |
-| 4. A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds | [paper4/](paper4/README.md) | [cy-vanishing-cycle.pdf](paper4/cy-vanishing-cycle.pdf) | 35 | |
+| 4. A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds | [paper4/](paper4/README.md) | [cy-vanishing-cycle.pdf](paper4/cy-vanishing-cycle.pdf) | 34 | |
 | 5. Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points | [paper5/](paper5/README.md) | [cy-mixed-smoothing.pdf](paper5/cy-mixed-smoothing.pdf) | 62 | |
 | 6. Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds | [paper6/](paper6/README.md) | [cy-vanishing-spheres.pdf](paper6/cy-vanishing-spheres.pdf) | 206 | |
 
