@@ -17,8 +17,10 @@ anticanonical P¹×P¹ cone points.
 
 The paper determines the full reduced analytic deformation ring of a
 nonsmoothable example with four smooth components. It proves that X₁₉
-smooths and has a smooth 30-dimensional deformation base, and constructs an
-ambient smoothing of X₉. Corollary 8.15 specifies positivity on the common
+smooths and has a smooth 30-dimensional deformation base, although no
+proper ambient family in the stated class of single-degree Minkowski
+decompositions induces a smoothing. It also constructs an ambient smoothing
+of X₉. Corollary 8.15 specifies positivity on the common
 face and counts threshold points: at most 2m+1 sign patterns for m distinct
 thresholds, including the m+1 open chambers.
 

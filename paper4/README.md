@@ -6,9 +6,13 @@ Paper 4 · Bernd Johannes Wuebben · 34 pages
 
 A homological necessary condition for smoothings with nodes and exact
 anticanonical cones over smooth del Pezzo surfaces of degrees six and seven.
-Vanishing periods force nonzero coefficients in the appropriate relation
-space for analytic arcs of arbitrary order. The 26-node/four-cone mirror
-example has no smoothing, although all its germs are smoothable.
+Vanishing periods force a relation among link classes bounding in the local
+Milnor fibers, for smoothing arcs of arbitrary contact order. The relation
+is nonzero at every node and degree-seven point, and at each degree-six
+point smoothed through the one-dimensional component. The 26-node/four-cone
+mirror example has no smoothing, even over a formal disc, although all its
+germs are smoothable. On its mirror partner, two nodes cannot be smoothed
+by any analytic deformation, independently of a locally nonsmoothable cone.
 
 The crepant resolution is small at the nodes and is the blowup of the vertex
 at each cone point. The equality between the matrix kernel and

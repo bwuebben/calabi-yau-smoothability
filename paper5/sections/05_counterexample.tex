@@ -26,7 +26,7 @@ Theorem~\ref{thm04:criterion}.
 
 \subsection{The threefold and its relation matrix}
 
-Let $P\subset\ZZ^4\otimes\RR$ be the convex hull of the following
+Let $\Delta_{25}\subset\ZZ^4\otimes\RR$ be the convex hull of the following
 vertices.  All indices in this section start at zero.
 \begin{equation}\label{eq05:vertices}
 \begin{gathered}
@@ -50,8 +50,8 @@ $i$&$v_i$&$i$&$v_i$&$i$&$v_i$\\
 \end{gathered}
 \end{equation}
 This is the fan polytope: the ambient fan consists of the cones over its
-proper faces, and the anticanonical Newton polytope is $P^\circ$.
-The polytope $P$ is reflexive.  It has $23$ facets, $71$ primitive edges,
+proper faces, and the anticanonical Newton polytope is $\Delta_{25}^\circ$.
+The polytope $\Delta_{25}$ is reflexive.  It has $23$ facets, $71$ primitive edges,
 and $69$ two-faces: $37$ unimodular triangles, $30$ unit parallelograms,
 and two unit-edge hexagons.  The latter have cyclic orders
 \begin{equation}\label{eq05:hexagons}
@@ -59,7 +59,7 @@ and two unit-edge hexagons.  The latter have cyclic orders
  F_1=(14,16,19,24,23,17)
 \end{equation}
 and centres $(0,-1,0,0)$ and $(-1,0,0,0)$.  These two centres and the
-origin are the only lattice points of $P$ other than its vertices.
+origin are the only lattice points of $\Delta_{25}$ other than its vertices.
 Every parallelogram and hexagon has dual edge of lattice length one.
 The complete list of parallelograms, in the cyclic orders used below, is
 \begin{equation}\label{eq05:nodes}
@@ -146,7 +146,7 @@ The two additional columns for the centre rays are zero, because the
 root classes pair trivially with $K_{E_i}$.
 
 The ambient divisor intersections detect precisely the homological
-relations.  Indeed, $P$ has $28$ lattice points and no facet-interior
+relations.  Indeed, $\Delta_{25}$ has $28$ lattice points and no facet-interior
 lattice points.  The only two-faces with interior points are the two
 hexagons, and their dual edges have no interior lattice points.
 Batyrev's divisor formula therefore has zero correction term and gives
@@ -309,8 +309,8 @@ For this threefold,
 \end{lemma}
 
 \begin{proof}
-The polar $P^\circ$ has $26$ lattice points and no facet-interior lattice
-points.  Every edge of $P$ is primitive, so the correction term in
+The polar $\Delta_{25}^\circ$ has $26$ lattice points and no facet-interior lattice
+points.  Every edge of $\Delta_{25}$ is primitive, so the correction term in
 Batyrev's formula for $h^{2,1}$ vanishes.  Thus
 \[
  h^{2,1}(Y_0)=26-5=21
@@ -390,9 +390,16 @@ coordinates has dimension $16-11=5$.  The second identity in
  =\{(\lambda_0,a_0,b_0,\lambda_1,a_1,b_1):b_0+b_1=0\}.
 \end{equation}
 
+\Needspace{8\baselineskip}
 For a profile $S$, let $M_S$ consist of the nodal rows and the selected
 root rows, and let $\rho_i:K_S\to R_{i,S_i}$ be its projection to the
-$i$th cone summand.  The ranks and resulting dimensions are
+$i$th cone summand.  The ranks and resulting dimensions are listed in
+Table~\ref{tab05:profiles}.
+In particular both cone projections are nonzero on every profile.
+Theorem~\ref{thm04:smoothbase} applies and proves that all four selected
+deformation spaces are smooth, with the dimensions in the final column.
+These dimensions use Lemma~\ref{lem05:locallytrivial} and the exact
+sequence of Theorem~\ref{thm:D}.
 \begin{table}[htbp]
 \caption{Relation spaces and selected deformation spaces of $X$.}
 \label{tab05:profiles}
@@ -410,11 +417,6 @@ $PP$&34&20&14&2&2&35\\
 \end{tabular}
 \end{adjustbox}
 \end{table}
-In particular both cone projections are nonzero on every profile.
-Theorem~\ref{thm04:smoothbase} applies and proves that all four selected
-deformation spaces are smooth, with the dimensions in the final column.
-These dimensions use Lemma~\ref{lem05:locallytrivial} and the exact
-sequence of Theorem~\ref{thm:D}.
 
 For the unrestricted deformation space the same theorem gives
 \begin{equation}\label{eq05:globaltangent}
