@@ -4,6 +4,10 @@ Paper 5 · Bernd Johannes Wuebben · 62 pages
 
 [PDF](cy-mixed-smoothing.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 
+The [7 October source archive](../arxiv/arxiv-upload-paper5-2026-10-07.tar.gz)
+contains the complete manuscript sources and ancillary computations. Its
+[SHA-256 checksum](../arxiv/SHA256SUMS) identifies this package.
+
 A necessary and sufficient smoothing criterion for connected normal
 projective complex threefolds with trivial dualizing sheaf, H¹(O_X)=0,
 and nodes or exact anticanonical cones over smooth del Pezzo surfaces of
