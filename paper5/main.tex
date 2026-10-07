@@ -84,9 +84,9 @@ quadric surface. For some choice of local smoothing components, the
 criterion requires a relation on a crepant resolution among link classes
 whose associated local parameters avoid every discriminant. The
 complexified relation space describes first-order deformations modulo
-locally trivial ones. Necessity extends the vanishing-cycle obstruction of
-the companion paper; sufficiency applies Friedman's unobstructedness
-theorem to a crepant partial resolution. Whenever the criterion holds, the
+locally trivial ones. Necessity follows from local period and vanishing-cycle
+arguments; sufficiency applies Friedman's unobstructedness theorem to a
+crepant partial resolution. Whenever the criterion holds, the
 deformation space on the chosen components is smooth. A nonsmoothable
 example, whose deformation space is reduced with four smooth components,
 shows why nonvanishing at every singular point is insufficient. We also
@@ -470,10 +470,11 @@ positive dimension.
 
 Altmann's theorem gives an independent check of the first step.  The chart is
 $Y_G\times\mathbb G_m$, whose $T^1$ is concentrated in degrees restricting to
-$-R_G^*$ on $L_G$ \cite[Thm.~(6.5)]{Altmann95}.  The homogeneous family at $R$
-has its terms in degrees $-kR$ with $k\ge1$, and no multiple of $R$ restricts
-to $R_G^*$, because $R$ takes both signs on the rays of $\sigma_G$.  Hence the
-Kodaira--Spencer class of the family, and each of its higher-order terms,
+$-R_G^*$ on $L_G$ \cite[Thm.~(6.5)]{Altmann95}.  The parameters displacing
+the two slices have opposite full-torus weights, so every homogeneous term
+in the formal expansion has degree $jR$ for some $j\in\ZZ$.  No such degree
+restricts to $-R_G^*$, because $R$ takes both signs on the rays of $\sigma_G$.
+Consequently, at each formal order the possible local deformation class
 vanishes on this chart.
 \end{proof}
 
@@ -867,8 +868,8 @@ lattice length one.  It lies in the admissible framework: its singular
 $2$-faces are fourteen unit squares and one pentagon
 $P = \{v_{14},v_{15},v_{16},v_{17},v_{18}\}$ with one interior point, each with
 dual edge of length one.  So $X_{19}$ has fourteen nodes and one $\dP_7$ cone
-point, all isolated.  The pentagon lies in exactly two facets, which we call $F_{21}$ and $F_{24}$
-after their zero-based position in the ordering the certificates use.  Their
+point, all isolated.  The pentagon lies in exactly two facets, which we
+denote by $F_{21}$ and $F_{24}$.  Their
 supporting equations $\langle u,\cdot\rangle=1$ and vertex sets are
 \[
 \begin{aligned}
@@ -1289,8 +1290,9 @@ faces, although the original cells are disjoint.
 The positive slice uses $C=C+\tail(C)$; its tail summand contains
 zero in every minimizing face.  The same face comparisons verify
 (D1)--(D4) there.  The complete rational intersection enumeration
-is implemented in \path{slice_admissible.sage} from the vertex
-and dilation data printed here.  It gives $86$ distinct pairs
+from the vertex and dilation data printed here\footnote{The program
+\path{slice_admissible.sage} reproduces this enumeration.}
+gives $86$ distinct pairs
 and $5\,934$ extensions on the negative slice, and $29$ pairs
 and $841$ extensions on the positive slice.
 \end{proof}
@@ -1435,9 +1437,9 @@ vector equation per $2$-face in the edge dilations.  $\Delta_{19}$ has $f$-vecto
 $(19,64,72,27)$, so the system has $64$ unknowns and $72$ vector equations, and
 its solution space is one-dimensional, spanned by the all-ones vector, which is
 the homothety direction.  A polytope whose summand space is a single ray is
-indecomposable.  The rank computation is exact over $\QQ$ in
-\texttt{global\_decomp.py}, which also verifies the $f$-vector against Euler's
-relation.
+indecomposable.  The rank computation is exact over $\QQ$ and
+the $f$-vector satisfies Euler's relation.\footnote{The program
+\texttt{global\_decomp.py} reproduces these two calculations.}
 \end{proof}
 
 Thus the global Minkowski construction has no nontrivial input on
@@ -1597,7 +1599,7 @@ input with Python's standard-library rational arithmetic
 ($50$ assertions).
 \item \path{flop_weight_zero.py} computes the weight-zero Hodge cohomology
 of the degree-seven cone, its two crepant resolutions and their common open
-set, used in the proof of Lemma~\ref{lem04:globaltangent} ($7$ assertions).
+set, used in the proof of Lemma~\ref{lem04:globaltangent} ($12$ assertions).
 \item \path{d19_quadric_partial_resolution.py} checks the $X_{19}$
 partial fan, local quadric-cone cohomology, Hodge input, and the
 matrices printed in Corollary~\ref{cor:x19smooth}.
@@ -1628,6 +1630,10 @@ Invent.\ Math.\ \textbf{29} (1975), 245--274.
 deformations for singular Calabi--Yau varieties},
 \href{https://arxiv.org/abs/2506.09857v3}{arXiv:2506.09857v3},
 13 February 2026.
+\bibitem[Ima26]{Imagi26} Y.~Imagi, \emph{Deformations of compact
+Calabi--Yau and Fano varieties with isolated singularities},
+\href{https://arxiv.org/abs/2609.00758v1}{arXiv:2609.00758v1},
+1 September 2026.
 \bibitem[Gra60]{grauert1960} H.~Grauert, \emph{Ein Theorem der
 analytischen Garbentheorie und die Modulr\"aume komplexer Strukturen},
 Publ.\ Math.\ Inst.\ Hautes \'Etudes Sci.\ \textbf{5} (1960), 5--64;

@@ -1,16 +1,14 @@
-"""Sing(P_t), chart by chart -- replacing step 4 of smoothing.md.
+"""Sing(P_t), chart by chart.
 
-An adversarial round showed the cell-dimension bookkeeping of
-final_check.sage is FALSE on Delta_9: applied to the special fibre it reports
-eleven singular 2-cells where sing_locus.py certifies three.  The eight
+Counting singular slice cells on Delta_9 gives eleven on the special fibre,
+whereas its fan has three singular two-faces.  The eight
 artefacts all contain the unique level-(+1) vertex, i.e. all have COMPLETE
 locus, where neither Suess Thm 3.3 nor Ilten-Vollmert Cor. 2.12 applies.  The
 criterion is also not sufficient there: for sigma = cone((1,1),(-1,1)) in Z^2
 with R = e_1^*, every cell of every slice has a smooth cone while X(D) is the
 A_1 singularity.
 
-So the singular locus is computed here the honest way, one maximal chart at a
-time, with the right tool for each:
+The singular locus is computed one maximal chart at a time:
 
   * AFFINE locus (some coefficient empty) -- Ilten-Vollmert Cor. 2.12 applies
     verbatim: the general fibre's singularities are the cones over the

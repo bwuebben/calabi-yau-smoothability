@@ -15,6 +15,10 @@ Curve selection identifies the one-parameter criterion with smoothability
 over arbitrary complex analytic base germs, including degree-five and
 anticanonical P¹×P¹ cone points.
 
+The criterion does not assume Q-factoriality. The scope discussion compares
+Imagi's recent Q-factorial sufficient theorem with the selected-profile
+criterion and selected-base smoothness proved here.
+
 The paper determines the full reduced analytic deformation ring of a
 nonsmoothable example with four smooth components. It proves that X₁₉
 smooths and has a smooth 30-dimensional deformation base, although no

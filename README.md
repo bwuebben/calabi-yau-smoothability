@@ -341,7 +341,7 @@ has its required input immediately after cloning.
 `d19_quadric_partial_resolution.py` additionally checks the X₁₉ fan,
 quadric-cone cohomology, Hodge data and relation matrices.
 `flop_weight_zero.py` computes the weight-zero Hodge cohomology across the
-degree-seven flop used in Lemma 4.4 (7 checks). The two standard
+degree-seven flop used in Lemma 4.4 (12 checks). The two standard
 Python scripts in `paper5/figures/code/` check the degree-five pencil
 lattice, permutations, intersection numbers and exterior-product ranks,
 and the degree-eight Cayley and ruling-difference lattices. The analytic

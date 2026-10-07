@@ -103,12 +103,58 @@ def weight_zero_cohomology(maxcones, p, n=3):
 P = [(0, 0, 1), (1, 0, 1), (2, 1, 1), (1, 2, 1), (0, 1, 1)]
 c = (1, 1, 1)
 star = [[c, P[i], P[(i + 1) % 5]] for i in range(5)]                     # A = Tot(K_E)
-flop = [[P[0], P[1], P[4]], [c, P[1], P[2]], [c, P[2], P[3]], [c, P[3], P[4]]]  # A'
+flop = [[P[0], P[1], P[4]], [c, P[1], P[4]],
+        [c, P[1], P[2]], [c, P[2], P[3]], [c, P[3], P[4]]]             # A'
 punct = [[P[i], P[(i + 1) % 5]] for i in range(5)]                     # U_p
 # O: remove the cone of c = (c, P0) from the star fan (equivalently c' = (P1, P4)
 # from the flopped fan); the remaining maximal cones:
 common_open = [[c, P[1], P[2]], [c, P[2], P[3]], [c, P[3], P[4]],
                [P[0], P[1]], [P[4], P[0]]]
+
+def triangulates_pentagon(cones):
+    """Unimodularity, total area and boundary of the marked subdivision."""
+    triangles = {frozenset(cone) for cone in cones}
+    if len(triangles) != 5 or any(len(t) != 3 for t in triangles):
+        return False
+    determinants = [abs(Matrix(sorted(t)).det()) for t in triangles]
+    polygon_area = abs(sum(P[i][0] * P[(i + 1) % 5][1]
+                           - P[i][1] * P[(i + 1) % 5][0]
+                           for i in range(5)))
+    edges = {}
+    for t in triangles:
+        for edge in itertools.combinations(t, 2):
+            edge = frozenset(edge)
+            edges[edge] = edges.get(edge, 0) + 1
+    boundary = {frozenset((P[i], P[(i + 1) % 5])) for i in range(5)}
+    return (all(d == 1 for d in determinants)
+            and sum(determinants) == polygon_area
+            and {edge for edge, count in edges.items() if count == 1} == boundary
+            and all(count in (1, 2) for count in edges.values()))
+
+
+def complement_fan(cones, removed_face):
+    """Maximal cones remaining after removing an invariant curve."""
+    remaining = set()
+    for cone in cones:
+        for size in range(len(cone) + 1):
+            for face in itertools.combinations(cone, size):
+                face = frozenset(face)
+                if not removed_face <= face:
+                    remaining.add(face)
+    return {face for face in remaining
+            if not any(face < other for other in remaining)}
+
+
+print("== the marked fan subdivisions ==")
+ok("flop circuit: c + P0 = P1 + P4",
+   all(c[i] + P[0][i] == P[1][i] + P[4][i] for i in range(3)))
+ok("star fan triangulates the entire pentagon", triangulates_pentagon(star))
+ok("flopped fan triangulates the entire pentagon", triangulates_pentagon(flop))
+marked_open = {frozenset(cone) for cone in common_open}
+ok("common open is the star fan minus the flopping curve",
+   complement_fan(star, frozenset((c, P[0]))) == marked_open)
+ok("common open is the flopped fan minus the flopped curve",
+   complement_fan(flop, frozenset((P[1], P[4]))) == marked_open)
 
 print("== controls ==")
 p2 = [[(1, 0, 0), (0, 1, 0)], [(0, 1, 0), (-1, -1, 0)], [(-1, -1, 0), (1, 0, 0)]]
