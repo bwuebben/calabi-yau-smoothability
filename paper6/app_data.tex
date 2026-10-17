@@ -4,7 +4,9 @@ $\Sigma'$, the node parallelograms, a $\Z$-basis of $K$ and the tropical $2$-cyc
 Table~\ref{tab:x19x20}; for $X_{88}$ and $X_{154}$ the vertices, the profile, the node parallelograms and a $\Z$-basis of
 $K$.
 
-\emph{Data availability.} The data accompanying the paper (\coderepo) contain, for the five examples, the triangulations
+\emph{Data availability.} The accompanying data and programs are available at \coderepo.
+
+\emph{Example cycles.} For the five examples, the data contain the triangulations
 $\mathcal T$, the integral heights, the fans $\Sigma'$, the polyhedral decompositions of the bases and the triangles of
 the cycles, together with programs that recompute from them the toric data, the relation lattices, the boundary networks
 and node coefficients of the cycles, and their Euler characteristics and numbers of interior intersections with $\Gamma$;
@@ -13,10 +15,13 @@ $(\mathcal T,\check h)$, and do not verify every interior condition of \cite[Def
 verify that each is a disc with one field that meets $\Gamma$ only along its boundary; for the cycle of $X_9$ the
 conditions of \cite[Def.~7.2]{CBM} are proved in Lemma~\ref{lem:x9belt}; for the other cycles, those with trivalent
 vertices and the cycle of $X_{88}$ whose boundary is a closed path and which crosses $\Gamma$ at $18$ interior points, the
-interior conditions rest on the computations described in Section~\ref{ssec:evidence}. For the list of
-Section~\ref{ssec:list}, the data contain the input vertex sets, the integral solutions and Farkas certificates for
-Hypothesis~\ref{hyp:P}, and programs that verify these and the computation of the forced nodes in exact arithmetic. For
-Theorem~\ref{thm:U} they contain the height certificates, the two certificate checkers, the published admissibility
+interior conditions rest on the computations described in Section~\ref{ssec:evidence}.
+
+\emph{Projectivity.} For the list of Section~\ref{ssec:list}, the data contain the input vertex sets, the integral
+solutions and Farkas certificates for Hypothesis~\ref{hyp:P}, and programs that verify these and the computation of
+the forced nodes in exact arithmetic.
+
+\emph{Unimodular heights and classification.} For Theorem~\ref{thm:U} the data contain the height certificates, the two certificate checkers, the published admissibility
 filter and the classification-file digests; the program of Step~2 of Appendix~\ref{ssec:uproof} is
 \texttt{unimodular/\allowbreak admissible\_\allowbreak filter.py}. The run of that step over the whole classification used an
 earlier copy of this program with the same tests; the published version reproduces the admissible rows of that run on the files for $5$--$8$, $23$,
@@ -25,7 +30,9 @@ of Section~\ref{ssec:utrust}, with $d$ as there, tested the $36{,}648{,}946$ wit
 $15{,}637{,}714$ and $18{,}627{,}401$ polytopes, in overlapping sets; and earlier checks on $7{,}644{,}706$ polytopes with
 at most $13$ vertices, with the $10{,}879$ admissible polytopes among them matched again to their vertices and face types,
 were retained. On $135$ altered height data (random, negated, constant or rescaled heights, a point removed) the two
-programs that verify (i)--(v) and (i$'$), (ii$'$), (v$'$) reach the same conclusions. For the computations of Section~\ref{ssec:evidence} they contain summaries for each polytope,
+programs that verify (i)--(v) and (i$'$), (ii$'$), (v$'$) reach the same conclusions.
+
+\emph{Reported computational evidence.} For the computations of Section~\ref{ssec:evidence}, the data contain summaries for each polytope,
 from which the totals there are recomputed; the bases and cycles themselves are not rebuilt from these summaries. Two
 outcomes are reported without data from which they can be verified: the count of $\NBdryEnum$ polytopes in~(a) of
 Section~\ref{ssec:evidence}, which is available only as a total, and one of the $\NThmCHexBases$ hexagonal bases of the

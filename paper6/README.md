@@ -1,6 +1,6 @@
 # Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds
 
-Paper 6 · Bernd Johannes Wuebben · 214 pages
+Paper 6 · Bernd Johannes Wuebben · 215 pages
 
 [PDF](cy-vanishing-spheres.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 
