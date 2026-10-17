@@ -34,7 +34,7 @@ mixed criterion for those degrees.
 | 3. Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau threefolds | [paper3/](paper3/README.md) | [cy-mirror-pairs.pdf](paper3/cy-mirror-pairs.pdf) | 11 | [arXiv:2610.03753](https://arxiv.org/abs/2610.03753) |
 | 4. A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds | [paper4/](paper4/README.md) | [cy-vanishing-cycle.pdf](paper4/cy-vanishing-cycle.pdf) | 34 | |
 | 5. Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points | [paper5/](paper5/README.md) | [cy-mixed-smoothing.pdf](paper5/cy-mixed-smoothing.pdf) | 62 | |
-| 6. Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds | [paper6/](paper6/README.md) | [cy-vanishing-spheres.pdf](paper6/cy-vanishing-spheres.pdf) | 206 | |
+| 6. Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds | [paper6/](paper6/README.md) | [cy-vanishing-spheres.pdf](paper6/cy-vanishing-spheres.pdf) | 214 | |
 
 Each `paperN/` directory holds `main.tex` and its compiled PDF. Paper 5's
 source also includes `sections/`. Supporting computations are in `src/`
@@ -172,8 +172,10 @@ the verified inputs to their bounded censuses.
    partial resolution is equivalent to a mirror relation with every coefficient
    nonzero; when a smoothing exists, the mirror admits a symplectic conifold
    transition. When no two-face is a hexagon, the same criterion decides the
-   smoothability of the hypersurface itself, with its degree-seven cone points. The required triangulations are verified for all **51,827**
-   admissible reflexive polytopes. The [computation bundle](paper6/COMPUTATIONS.md) supplies the
+   smoothability of the hypersurface itself, with its degree-seven cone points. The required triangulations are verified for a fixed list of **51,827**
+   admissible reflexive polytopes; the claim that this list is complete is stated
+   separately from the height theorem. A supplementary geometric realization on
+   the small resolution is explained in §10, with its complete proof in Appendix F. The [computation bundle](paper6/COMPUTATIONS.md) supplies the
    certificates and checkers, five worked examples, forced-node data and
    explicitly labelled census summaries.
 

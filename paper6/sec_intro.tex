@@ -3,7 +3,7 @@
 Morrison proposed that mirror symmetry reverses conifold transitions of Calabi--Yau threefolds, exchanging
 exceptional curves with vanishing three-spheres \cite{Mor99}. For the class of Batyrev hypersurfaces considered here,
 we establish his numerical prediction, as a count in the coefficient space of the mirror family, and strengthen it to an equality of integral relation lattices. Every relation
-is realised by an explicit integral bounding chain on the mirror hypersurface. The comparison also characterises
+is realised by an integral bounding chain on the mirror hypersurface, constructed from a relative tropical two-cycle. The comparison also characterises
 smoothability in terms of mirror vanishing cycles and yields a symplectic conifold transition whenever the original
 nodal threefold is smoothable.
 
@@ -62,21 +62,21 @@ K=\Bigl\{\lambda\in\Z^Q:\ \sum_q\lambda_q\,\circv_q=0\Bigr\}
 parallelogram $abcd$, with the sign fixed by the chosen diagonal, and $e_v$ is the formal basis vector indexed by
 the lattice point $v$. On the mirror side, $Y_t$ is a member of the Batyrev family near its maximally degenerate
 limit $t\to0$. The construction starts with real coefficients of a fixed sign pattern, close to the factoring locus, where
-the face polynomial of each parallelogram factors into two binomials. For coefficients in the window specified
-in Theorem~\ref{thm:main}, there is one nondegenerate critical point with small nonzero critical value near each
+the face polynomial of each parallelogram factors into two binomials. For coefficients satisfying the bounds of
+Theorem~\ref{thm:main}, there is one nondegenerate critical point with small nonzero critical value near each
 parallelogram; its vanishing sphere is $\delta_q\subset Y_t$.
 
 \begin{theorem*}[Theorem~\ref{thm:main}]
-Let $\Delta$ be admissible and let $\sigma$ satisfy Hypothesis~\ref{hyp:P}. For $t$ sufficiently small and real
-coefficients in the window of Theorem~\ref{thm:main}:
+Let $\Delta$ be admissible and satisfy Hypothesis~\ref{hyp:U}, and let $\sigma$ satisfy Hypothesis~\ref{hyp:P}. For $t$
+sufficiently small and real coefficients satisfying the bounds of Theorem~\ref{thm:main}:
 \begin{enumerate}
 \item $\sum_qk_q[\delta_q]$ is a torsion class of $H_3(Y_t;\Z)$ only if $k\in K$, and it vanishes for $k\in K$. So the
 relation lattice of the vanishing spheres is exactly $K$, and the $[\delta_q]$ span a free group $\Z^Q/K$ that meets the
 torsion trivially.
-\item Every relation $k\in K$ is the boundary of an explicit integral $4$-chain on $Y_t$ lifted from a relative
+\item Every relation $k\in K$ is the boundary of an integral $4$-chain on $Y_t$ lifted from a relative
 tropical $2$-cycle on the base of Gross's toric degeneration of $X'_\sigma$.
-\item Near the given member, the members with a node at every one of these critical points form a nonempty complex
-submanifold of the space of coefficient vectors, of codimension $|Q|-\operatorname{rank}K$, the relative Picard number of a projective small resolution
+\item Near the given member, the coefficient vectors whose members have a node at every one of these critical points
+form a nonempty complex submanifold of the space of coefficient vectors, of codimension $|Q|-\operatorname{rank}K$, the relative Picard number of a projective small resolution
 $\widehat X\to X'_\sigma$.
 \end{enumerate}
 \end{theorem*}
@@ -118,8 +118,9 @@ $\Lambda$ is the local system of integral tangent vectors on $B\setminus\Gamma$ 
 Its sections across $\Gamma$ are monodromy-invariant. The boundary of a relative cycle is a
 \emph{balanced network} on $\Gamma$, and at each node it has a \emph{node coefficient} $\rho_q\in\Z$, the jump of the
 boundary coefficient across $q$ measured against the circuit $\circv_q$ (Definition~\ref{def:nodecoef}). The tropical
-$2$-cycles of \cite{CBM} are examples; relative tropical $2$-cycles may in addition carry non-primitive fields, branch
-arbitrarily, cross the discriminant with any invariant field, and pass a node in both directions. Their node
+$2$-cycles of \cite{CBM}, which carry a primitive parallel vector field $v$ as coefficient, are examples; relative
+tropical $2$-cycles may in addition carry non-primitive coefficients, branch arbitrarily, cross the discriminant with any
+invariant coefficient, and pass a node in both directions. Their node
 coefficients always lie in $K$ (Section~\ref{ssec:cycles-bdry}). The converse is the integral filling theorem:
 
 \begin{theorem*}[Theorem~\ref{thm:real}]
@@ -135,14 +136,22 @@ The mirror lift takes every relative tropical $2$-cycle $z$ to an integral $4$-c
 hypersurface. The period argument then proves that there are no further relations and no nonzero torsion
 combinations of the spheres.
 
-We call the tropical $2$-cycles $(S,j,v)$ of \cite[Def.~7.2]{CBM} \emph{strict}, to distinguish them from relative
-cycles. Away from the discriminant, their mirror lifts are, up to homotopy in each region, the bundles of two-tori
+We call the tropical $2$-cycles $(S,j,v)$ of \cite[Def.~7.2]{CBM}, with $j$ piecewise linear and two points of that
+definition made precise (the group in which a monodromy conjugacy is taken, and the meaning of a negative vertex;
+Definition~\ref{def:strict}), \emph{strict}, to distinguish them from relative cycles. Away from the discriminant, their mirror lifts are, up to homotopy in each region, the bundles of two-tori
 annihilated by $v$ in the dual torus fibres, as in the topological construction of \cite{CBM}.
 Remark~\ref{rem:strict-statement} specifies the comparison near the discriminant and the corrections needed to
-complete the chains. On the resolution side we construct, for every such strict cycle with $j$ piecewise linear,
-an integral $3$-chain
-on $\widehat X$ with boundary $\sum_q\rho_q(S)[C_q]$ (Theorem~\ref{thm:res}). Thus the same tropical cycle constructs
-a relation among the exceptional curves of the original threefold and among the vanishing spheres of the mirror.
+complete the chains.
+
+Theorem~\ref{thm:res} is a supplementary geometric realisation on the resolution side. The integral relations among
+$[C_q]$ are already known from Proposition~\ref{prop:integral}; the additional result constructs, from a strict cycle,
+a completed circle domain and a continuous map to $\widehat X$ whose boundary spheres have degrees $-\rho_q(S)$ on
+the exceptional curves. Its negative fundamental chain, adjusted within those curves, has boundary
+$\sum_q\rho_q(S)[C_q]$. Thus the same tropical cycle gives geometric representatives of the corresponding relations
+on the original small resolution and the mirror hypersurface. This construction is independent of the proof of the
+central comparison, Theorem~\ref{thm:main}, and of its smoothing consequences. Section~\ref{sec:resolution} states
+its geometric content and explains the mechanisms through $X_9$; Appendix~\ref{app:original} contains the complete proof.
+
 Whether strict cycles already generate $K$ is Conjecture~\ref{conj:strict}; the evidence is discussed in
 Section~\ref{ssec:evidence}. The integral exhaustion proved here uses relative cycles and addresses the
 relation-generating aspect of \cite[Conj.~8.3]{CBM} for that enlarged class. It does not settle their full conjecture.
@@ -168,12 +177,12 @@ use a localized hypersurface $W^*$, isotopic to $Y_t$, modelled on the localizat
 is proved directly.
 Near each node it has the conifold smoothing model $\{xy+z_1z_2=\kappa\}$ with $\kappa$ small and nonzero
 (Section~\ref{sec:regime}). The chain is assembled from thimbles at the nodes, pieces of toric divisors along its
-boundary, and two-torus bundles over its interior. Each summand is lifted over its own domain, so summands that
-cross in $B_Y$ contribute separate chains; sheets that coincide are merged, with their coefficients added. The local extensions leave a possible boundary in the class of the
+boundary, and two-torus bundles over its interior. The local extensions leave a possible boundary in the class of the
 fibre three-torus. This obstruction vanishes because the positive real locus meets each fibre torus once and misses
 every vanishing sphere (Section~\ref{sec:lift}). The isotopy carries the resulting integral chain to $Y_t$.
 
-\emph{Periods.} The chains give $K\subseteq\Rel(\delta)$. The periods
+\emph{Periods.} The chains give $K\subseteq\Rel(\delta)$, where $\Rel(\delta)$ is the relation lattice of the spheres, the left
+side of~\eqref{eq:intro-prediction}. The periods
 $\wp_q=\int_{\delta_q}\Omega$ extend holomorphically to the nodal members and equal their critical values
 $\varepsilon_P$ times functions that do not vanish near the nodal locus, where $P$ is the parallelogram of $q$. Up to nonzero scalars, the
 differentials of the critical values are close to the linear forms defined by the circuits. The period differentials have rank
@@ -192,27 +201,24 @@ and six. The edge of the polar polytope $\Delta^\circ$ dual to each non-triangul
 length one, so that each such face contributes exactly one singular point. A profile specifies the subdivisions of
 these faces into unit parallelograms and unimodular triangles; the choices occur at the hexagons.
 
-For the polytope and profile, Hypothesis~\ref{hyp:P} is the only restriction beyond admissibility. It is needed for
-the projective partial resolution and Gross degeneration used here, and is a genuine restriction. In the test set of
+For the polytope and profile, two hypotheses are made beyond admissibility. Hypothesis~\ref{hyp:P} is needed for
+the projective partial resolution and Gross degeneration used here, and is a genuine restriction. On the list of
 $612$ admissible polytopes of Section~\ref{ssec:list}, it fails for $11$ of the $375$ hexagon-free polytopes with
 $K\neq0$ and for every profile on $59$ of the $142$ polytopes with a hexagon (Section~\ref{ssec:scope}).
 
-The initial mirror construction uses the real coefficient window of Theorem~\ref{thm:main}; the resulting relations
-extend to neighbouring smooth complex members as explained in Section~\ref{ssec:relations}. Near the maximally
-degenerate limit the nodal locus lies close to the factoring locus. Our estimates do not place it on the factoring
-locus, and in a local model at a square node, which keeps the constant and linear terms of the apex sums of the cells next to
-the square, the critical value on the factoring locus is nonzero unless an apex sum vanishes at the node point
-(Section~\ref{ssec:periodsremarks}).
+The initial mirror construction uses real coefficients satisfying the bounds of Theorem~\ref{thm:main}; the resulting relations
+extend to neighbouring smooth complex members as explained in Section~\ref{ssec:relations}.
 
-Two further conditions enter the construction and hold automatically. The base requires a regular unimodular
-triangulation of $\partial\Delta^\circ$ with a height
-satisfying Gross's convexity conditions; Theorem~\ref{thm:U} shows that one exists for every admissible polytope, by
-a computer-assisted verification over the $51{,}827$ admissible polytopes of the Kreuzer--Skarke classification,
-with each triangulation and its height verified in exact arithmetic (Appendix~\ref{app:unimodular}); that these are all
-the admissible polytopes rests on an admissibility program whose negative verdicts are only partly replicated
-(Section~\ref{ssec:utrust}). This larger computation
-is distinct from the test set of $612$ polytopes used for the other statistics. The mirror side requires a subdivision of $\partial\Delta$
-in which the cells next to each node parallelogram have their other vertices at lattice height one; the pulling
+Hypothesis~\ref{hyp:U} asks for the input of Gross's construction of the base: a regular unimodular triangulation of
+$\partial\Delta^\circ$ with a height satisfying his convexity conditions. Theorem~\ref{thm:U} verifies it, by computer,
+for every member of the fixed $51{,}827$-class list $\mathcal L_{\rm adm}$ (Definition~\ref{def:admlist}), with each
+triangulation and its height checked in exact arithmetic (Appendix~\ref{app:unimodular}). The separate
+Proposition~\ref{prop:admissible-completeness} asserts that these are all admissible polytopes; it relies on the
+exhaustive filter, whose exclusions have been independently checked only in part (Appendix~\ref{ssec:utrust}).
+The geometric theorems retain~\ref{hyp:U} explicitly and so apply to any admissible polytope for which it holds.
+This larger computation is distinct from the list of $612$ polytopes used for the
+other statistics. One further condition holds automatically: the mirror side requires a subdivision of $\partial\Delta$
+in which the cells next to each node parallelogram have their other vertices at lattice height one, and the pulling
 refinement of the subdivision given by~\ref{hyp:P} has this property (Proposition~\ref{prop:pulling}).
 
 \subsection{Relation to other work}
@@ -271,9 +277,9 @@ complex of pairs of dual cells, and Section~\ref{sec:cycles} proves Theorem~\ref
 Section~\ref{sec:legendre} transfers cycles to the mirror base, Section~\ref{sec:regime} constructs the localized
 mirror and Morse charts, Section~\ref{sec:lift} lifts the cycles (Theorem~\ref{thm:lift}), and
 Section~\ref{sec:periods} proves Theorem~\ref{thm:main} and Corollaries~\ref{cor:smooth} and~\ref{cor:mixed}. Part~III,
-Section~\ref{sec:resolution}, gives the resolution-side chains (Theorem~\ref{thm:res}); it uses Parts~I and~II, which
-do not use Part~III. Part~IV, Section~\ref{sec:examples}, treats examples and the evidence for Conjecture~\ref{conj:strict}.
-Appendix~\ref{app:unimodular} proves the triangulation theorem, Theorem~\ref{thm:U}; the remaining appendices
+Section~\ref{sec:resolution}, explains the resolution-side realisation (Theorem~\ref{thm:res}); the detailed construction
+is in Appendix~\ref{app:original}. It uses results of Parts~I and~II, whose proofs are independent of it. Part~IV, Section~\ref{sec:examples}, treats examples and the evidence for Conjecture~\ref{conj:strict}.
+Appendix~\ref{app:unimodular} proves Theorem~\ref{thm:U} and the separate classification-completeness assertion; the remaining appendices
 contain deferred proofs and data.
 
 \subsection*{Acknowledgements}

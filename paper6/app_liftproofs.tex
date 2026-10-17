@@ -1,4 +1,4 @@
-\section{Proofs of the lemmas of Section~\ref{sec:lift} on model arcs, pieces and regions}\label{app:liftproofs}
+\section{Deferred proofs for Section~\ref{sec:lift}}\label{app:liftproofs}
 
 This appendix contains the proofs of ten lemmas of Section~\ref{sec:lift}. They use only the statements that precede
 the lemma in question in Section~\ref{sec:lift} and the results of Sections~\ref{sec:dualpair}--\ref{sec:regime}.
@@ -230,6 +230,70 @@ base points are disjoint, and $\mathbb T_d\cdot\mathfrak s^\vee(\mathfrak D_\var
 The phase of $\chi^{n'-n}$ is $0$ on it, matching the section.
 \end{proof}
 
+\begin{proof}[Proof of Lemma~\ref{lem:tripodcollar}]
+(1) Given $(\zeta,\ell,\varphi,\vartheta_\alpha)\in \mathsf K\times T^2\times S^1$, put $\chi_j:=\kappa_j^{-1}e^{L\ell_j+i\varphi_j}$,
+$\hat\mu:=e^{L\zeta}$ and $\hat f:=1+\kappa_1\chi_1+\kappa_2\chi_2$, and let $x$ be the point with these torus coordinates and
+with normalised Cox coordinates
+\begin{equation}\label{eq:Psiv}
+|\hat Z|^2=\tfrac12\bigl(\hat\mu+(\hat\mu^2+4|\hat f|^2)^{1/2}\bigr),\qquad\arg\hat Z=\vartheta_\alpha,\qquad\hat Z'=-\hat f/(\vartheta\hat Z).
+\end{equation}
+Then $\vartheta\hat Z\hat Z'+\hat f=0$ and $|\hat Z|^2-|\hat Z'|^2=\hat\mu$. On $\mathsf K$, $\hat\mu\ge e^{L\varsigma_0/2}\mathcal S_G\ge\mathcal
+S_G\ge|\hat f|$, since $\mathcal S_G=e^{L\Lambda_L(\ell)}$; so $\hat\mu\le|\hat Z|^2\le\hat\mu+\mathcal S_G$ and
+$|\hat Z'|\le\mathcal S_G/|\hat Z|$. Let $x^*$ have the same torus coordinates as $x$, $|\hat Z(x^*)|=|\hat Z(x)|$ and
+$|\hat Z'(x^*)|=\mathcal S_G/|\hat Z(x)|$; then $x$ is obtained from $x^*$ by lowering $\log|Z'|$. At $x^*$ the origin
+monomial is $\mathcal S_G$ times the reference monomial, at least the largest monomial of $[u,u']^\vee$ and at most three
+times it, the torus coordinates satisfy $|\ell|_\infty\le2r_\rho$, with $\ell=0$ on $J_\omega$, and the offset
+$\frac1L\log(|\hat Z|/|\hat Z'|)=\frac1L\log(|\hat Z|^2/\mathcal S_G)$ lies between $\varsigma_0/2$ and $4\varsigma_0+2r_\rho+O(1/L)\le
+6r_\rho+O(1/L)$. So, in the chart of $B_Y$ near $m_v$ whose inverse has Lipschitz constant at most $C_T$, the tropical
+position of $x^*$ lies within $C_T(4r_\rho+6r_\rho)+C/L=10C_Tr_\rho+C/L<\theta_2$ of $m_v\in J^\flat_\omega$, by the choice of
+$r_\rho$, and by Lemma~\ref{lem:windows}(3) the weights at $x^*$, and hence at $x$, are those of the vertex model.
+Therefore $x\in W^*$. Conversely, a point of $W^*$ in this region with $\hat\mu>0$ is determined by $(\hat\mu,\chi_1,\chi_2,\arg\hat
+Z)$: the equation fixes $\hat Z\hat Z'$, and $\hat\mu$ then fixes $|\hat Z|$ and $|\hat Z'|$, as in Lemma~\ref{lem:quot}. So the
+map $\Psi_v$ defined by~\eqref{eq:Psiv} is a smooth bijection of $\mathsf K\times T^2\times S^1$ onto its image $W^*_{\mathsf K}$, with smooth
+inverse $\Phi_v$. The circle $S^1_\alpha$ acts by $(\hat Z,\hat Z')\mapsto(e^{i\vartheta}\hat Z,e^{-i\vartheta}\hat Z')$ and fixes
+$\hat\mu$ and the torus coordinates, so it rotates the last factor. As $\mathsf K$ is convex, $W^*_{\mathsf K}\simeq T^3$.
+
+(2) The piece of depth $2\varsigma_0$ is the vertex piece $\Pi_v$, on which $Z'=0$ and $\hat f=0$, so its outer part is
+$\{\hat f=0,\ \hat\mu=|\hat Z|^2=\mathcal S_G\sinh(2L\varsigma_0)\}$. Over $S'_v$ the base map is given by the vertex description,
+and the retraction moves a point by at most a constant times its distance from the tripod, which is $O(1/L)$ on
+$\{\hat f=0\}$; so the points of $A$ have $|\ell|_\infty\le r_\rho+C/L$ and
+$\zeta=\Lambda_L(\ell)+\frac1L\log\sinh(2L\varsigma_0)=\Lambda_L(\ell)+2\varsigma_0-\frac1L\log2+o(1/L)$, which lies in $\mathsf K$ because
+$\Lambda_L(\ell)\le2r_\rho+\frac1L\log3$. For $b\in S'_v$, $|\operatorname{Log}\mathfrak s^\vee(b)/L-b|\le C/L$ (Lemma~\ref{lem:possec}(2)); at
+this positive point $\hat f=\mathcal S_G$, so $|\hat Z\hat Z'|=\mathcal S_G$, and $|\hat Z/\hat Z'|=e^{2L\varsigma_0+O(1)}$ since $b$
+lies at offset $2\varsigma_0$; hence $\zeta=\Lambda_L(\ell)+2\varsigma_0+O(1/L)$ and $|\ell|_\infty\le r_\rho+C/L$. The
+$\mathbb T(\langle\,\cdot\,,e_k\rangle)$-orbits through these points and $\mathbb T_{b_1}$ have the same $(\zeta,\ell)$ and so lie
+in $W^*_{\mathsf K}$. At the points $c_k$, where $|\ell|_\infty=r_\rho$, the third monomial of $\hat f$ is at most $Ct^{c\,r_\rho}$ times
+the other two on the slice of $\Pi_v$, so the slice is a graph over a $\mathbb T(\langle\,\cdot\,,e_k\rangle)$-orbit with phase
+of $\chi^{e_k}$ equal to $\pi+O(t^{c\,r_\rho})$, and $B_k$ is defined. Its second stage has the $(\zeta,\ell)$ of points of $A$.
+In its third stage $\hat\mu$ lies between its values at the two end points and $\ell$ lies on the segment between theirs;
+since these end points have $|\ell_0-\ell_1|_\infty\le C/L$ and $\zeta_i\ge\Lambda_L(\ell_i)+2\varsigma_0-C/L$, and $\Lambda_L$ is
+convex and $1$-Lipschitz for $|\cdot|_\infty$, the point satisfies $\zeta\ge\min_i\zeta_i\ge\Lambda_L(\ell)+2\varsigma_0-C'/L$ and
+$\zeta\le\max_i\zeta_i$, so it lies in $\mathsf K$. The vertex piece, the orbits, the fibre $\mathbb T_{b_1}$ and the collar paths are
+invariant under $S^1_\alpha$, the collar paths because they keep the position on the $S^1_\alpha$-orbit fixed.
+
+(3) The boundary of $A$ consists of its fibres over $c_1,c_2,c_3$. The second stage of $B_k$ begins on the fibre of $A$ over
+$c_k$ and its third stage ends on the fibre of $A^+$ over $c_k$, so these terms cancel in $\partial D$. The orbits of $A^+$
+over the three arms of $S'_v$, oriented as part of $\partial g_{\le2\varsigma_0}$, run towards $b_1$, so $\partial A^+$ contains
+$+\sum_k\Phi_v^{-1}(G_k\times S^1)=-\sum_ks_k\Phi_v^{-1}(G_k\times S^1)$ over $b_1$; and $\partial(\mathcal Q'(1)\times
+S^1)=\sum_ks_kG_k\times S^1$ cancels it. So $D$ is a cycle. By
+(2), $D=\Phi_v^{-1}(D'\times S^1)$ for a $2$-cycle $D'$ in $\mathsf K\times T^2$, the product being taken with the fundamental cycle of
+the $S^1_\alpha$-orbits. The $G_k$ are the circles through the phases of $\mathfrak s^\vee(b_1)$ in the directions of
+$\ker\langle\,\cdot\,,e_k\rangle$ modulo $\ell$, and $\sum_ks_k[G_k]=0$ in $H_1(T^2)$ \cite[\S7.7, Step~2]{CBM}; so there is a
+$2$-chain $\mathcal Q'_0$ in $\{k_1\}\times T^2$ with $\partial\mathcal Q'_0=\sum_ks_kG_k$. With $\mathcal Q'_0$ in place of
+$\mathcal Q'(1)$ the cycle $D'$ has a class $n[\{k_1\}\times T^2]$ in $H_2(\mathsf K\times T^2)\cong\Z$; put
+$\mathcal Q'(1):=\mathcal Q'_0-n[\{k_1\}\times T^2]$, so that $[D']=0$. This fixes $\mathcal Q'(1)$ modulo boundaries.
+
+Let $h\colon[0,1]\times \mathsf K\times T^2\to \mathsf K\times T^2$, $h(s,k,\varphi)=((1-s)k+sk_1,\varphi)$, which takes values in $\mathsf K\times T^2$ as
+$\mathsf K$ is convex, and let $P_h(c):=h_*([0,1]\times c)$ be its prism operator, so that $\partial P_h(c)+P_h(\partial c)=h_1(c)-c$.
+Then $\partial P_h(D')=h_1(D')-D'$. The cycle $h_1(D')$ lies in the surface $\{k_1\}\times T^2$ and is homologous there to $0$,
+since $[h_1(D')]=[D']=0$ and the inclusion of the fibre is a homotopy equivalence; let $E'_1$ be a $3$-chain in
+$\{k_1\}\times T^2$ with $\partial E'_1=h_1(D')$. Put
+\begin{equation}\label{eq:Cv}
+\mathscr C_v:=\Phi_v^{-1}\bigl((E'_1-P_h(D'))\times S^1\bigr).
+\end{equation}
+Then $\partial\mathscr C_v=\Phi_v^{-1}\bigl((h_1(D')-h_1(D')+D')\times S^1\bigr)=D$, and $\mathscr C_v\subset W^*_{\mathsf K}$.
+\end{proof}
+
 \begin{proof}[Proof of Lemma~\ref{lem:R1}]
 (1) The open star of $C^M(u,\omega)$ consists of cells $C^M(u,\omega')$, $\omega'\subseteq\omega$, in the relative interiors of
 the faces $F^*_{\omega'}$, on which exactly the monomials of $\{0\}\cup\omega'$ are maximal. By compactness of $\overline V$
@@ -255,8 +319,9 @@ $\overline V$. At $p=b+\lambda m_n$ with $b\in\overline V$ and $|\lambda|<\epsil
 and $\operatorname{val}_n(p)-\operatorname{val}_0(p)=\lambda$. Write the torus as $\operatorname{Hom}(m_n^\perp\cap
 N,\C^*)\times\C^*$, with coordinates $\mathbf z$ and $w=\chi^n$. For $\epsilon\le\theta_V/(2D|m_n|)$ and $t$ small,
 $F^{(0)}=\gamma_0x^0(1+(\gamma_n/\gamma_0)\chi^n+E)$ with $E$ small in $C^1$ relative to the two tied terms
-(Lemma~\ref{lem:refined}); so $W^*_V$ is the graph $w=\varphi(\mathbf z)$, with $|\log|\varphi||$ bounded, and its loops do
-not wind in $w$.
+(Lemma~\ref{lem:refined}); so $W^*_V$ is the graph $w=\varphi(\mathbf z)$, with $|\log|(\gamma_n/\gamma_0)\varphi||$
+bounded uniformly in $t$ (equivalently $\log|\varphi|=H(n)L+O(1)$, since $\gamma_n=c_nt^{H(n)}$ and $H(0)=0$), and for each
+$t$ the function $(\gamma_n/\gamma_0)\varphi$ stays close to $-1$; so its loops do not wind in $w$.
 
 (3) For regions of the same type the inclusion is immediate. Let $V'$ be of type $u$ and $V$ of type $n$. Then
 $V'\subseteq R^M_u\cap\operatorname{int}F^*_n=C^M(u,n)$ (Lemma~\ref{lem:modelcx}(3)). Let $x\in W^*_{V'}$ in the torus, with
@@ -324,14 +389,22 @@ points on $B_Y$ applies with $\gamma=1$.
 
 \emph{Collar paths and the section.} The first stage of a collar path lies on the pieces of depths between $\varsigma$ and
 $2\varsigma$. In the second stage $\hat\mu$ and $|\chi_1|,|\chi_2|$ are those of the piece at depth $2\varsigma$ and only the
-phase of $\chi^{\tilde v}$ changes, so $|g_e|$ stays between $|e^{x_1}-1|$ and $\mathcal S_G$. The points of the third stage and
-$\mathfrak s^\vee(b)$ are positive real, with $|g_e|=\mathcal S_G$ up to a bounded factor, and $|\operatorname{Log}\mathfrak s^\vee
-(b)/L-b|\le C/L$ by Lemma~\ref{lem:possec}(2). The points of the fillings $\mathcal Q(\tau)$ of the collar family of a
-tripod summand over the strip along its half-edge have, in the phase-turning and final stages, the moduli of the vertex
-piece at depth $2\varsigma$ up to a factor bounded in terms of the configuration, and arbitrary phases. Then $\hat\mu\ge
-\mathcal S_G\sinh(L\varsigma/2)$ once $L\varsigma$ is large compared with the logarithm of that factor, which holds for
-$L\ge1/\varsigma_1$ when $\varsigma_1$ is small compared with $\varsigma$ in terms of it; the paragraph on the side of
-$D_{u'}$ uses only these moduli, so they too have shadows within $C/L$ of $\pi_g(x)$.
+phase of $\chi^{\tilde v}$ changes. Along an arc $|g_e|$ then stays between $|e^{x_1}-1|$ and $\mathcal S_G$, and the
+dichotomy used for the pieces applies; near a node or a model vertex the piece lies on the side of $D_{u'}$, with
+$\hat\mu=\mathcal S_G\sinh(2L\varsigma)$, and the paragraph on the side of $D_{u'}$ applies, since it uses only $\hat\mu$ and
+the moduli. The point $\mathfrak s^\vee(b)$ satisfies $|\operatorname{Log}\mathfrak s^\vee(b)/L-b|\le C/L$ by
+Lemma~\ref{lem:possec}(2), and the end point of the second stage has, by the preceding paragraphs, its shadows within $C/L$
+of $b$; so the logarithms of the moduli of the torus coordinates at the two points differ by $O(1)$, and their offsets
+$\frac1L\operatorname{arsinh}(\hat\mu/\mathcal S_G)$ differ by $O(1/L)$. In the third stage the phase of $\chi^{\tilde v}$ is
+$0$, $\hat\mu$ lies between its values at these two points and the logarithms of the moduli lie between theirs. Along an
+arc $\chi_1$ is then positive real, so $g_e=\mathcal S_G$, and the paragraph on points on $B_Y$ applies with $\gamma=1$ and
+$|\alpha_e|\le2\varsigma+C/L$, or the paragraph on the side of $D_u$ or $D_{u'}$ applies where $|\alpha_e|\ge\varsigma/2$;
+near a node or a model vertex, $\hat\mu\ge\mathcal S_G\sinh(L\varsigma)$ along the stage, and the paragraph on the side of
+$D_{u'}$ applies. So the points of the collar paths have shadows within $C/L$ of $b$. For a tripod summand, the points of
+the orbits $A^+$ of Lemma~\ref{lem:tripodcollar} over $b\in S'_v$ and of its fibre $\mathbb T_{b_1}$ have the $\hat\mu$ and
+the moduli of the torus coordinates of $\mathfrak s^\vee(b)$, respectively $\mathfrak s^\vee(b_1)$, and arbitrary phases; by Lemma~\ref{lem:tripodcollar}(1),
+$\hat\mu\ge\mathcal S_Ge^{L\varsigma_0/2}$ there, and the paragraph on the side of $D_{u'}$ uses only these moduli, so these
+points too have shadows within $C/L$ of $b$.
 
 \emph{Consequence.} If $V$ is of type $u$, then $\pi_g(x)\in V\subseteq R^M_u$, and by (1) $\operatorname{sh}_u(x)\in V$ and
 $\lambda_u(x)<\epsilon$ for $t$ small, uniformly for $\pi_g(x)\in\mathcal W$; if $x$ is not in the torus, it lies on $D_u$. If

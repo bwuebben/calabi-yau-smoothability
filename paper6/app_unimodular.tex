@@ -1,14 +1,29 @@
 \section{Unimodular heights: proof of Theorem~\ref{thm:U}}\label{app:unimodular}
 
-Theorem~\ref{thm:U} asks, for every admissible $\Delta$, for a unimodular triangulation $\mathcal T$ of $\partial\Delta^\circ$
-refining its faces and an integral height $\check h$ on the fan over $\mathcal T$ such that $\check h$ and
-$\check h-\check\varphi$ are strictly convex. Section~\ref{ssec:ureform} shows that this is equivalent to the existence of
+Hypothesis~\ref{hyp:U} asks for a unimodular triangulation $\mathcal T$ of $\partial\Delta^\circ$ refining its faces and an
+integral height $\check h$ on the fan over $\mathcal T$ such that $\check h$ and $\check h-\check\varphi$ are strictly convex;
+Theorem~\ref{thm:U} establishes it for every member of the fixed finite set $\mathcal L_{\rm adm}$ defined below.
+Proposition~\ref{prop:admissible-completeness} asserts separately that this set contains every admissible class. Appendix~\ref{ssec:ureform} shows that Hypothesis~\ref{hyp:U} is equivalent to the existence of
 a fine, regular, unimodular triangulation of $\Delta^\circ$ that is star-shaped from the origin, and that strict convexity
 of $\check h-\check\varphi$ implies that of $\check h$. Section~\ref{ssec:ufacets} explains why admissibility does not
 yield such a triangulation by a general argument: it constrains the facets of $\Delta^\circ$ only along their edges, and
 lattice polytopes of dimension three need not have unimodular triangulations at all. Section~\ref{ssec:uproof} proves the
-theorem by exhaustion over the classification of Kreuzer and Skarke, with a certificate for each polytope checked in
-exact integer arithmetic, and Section~\ref{ssec:utrust} states on what the proof rests.
+finite-list theorem using explicit heights verified in exact integer arithmetic and proves the completeness proposition
+using the classification and admissibility filter. Appendix~\ref{ssec:utrust} distinguishes the evidence for these two claims.
+
+\begin{definition}[the finite list of admissible polytopes]\label{def:admlist}
+Let $I=\{5,6,\ldots,33,36\}$. For $v\in I$, let $\mathscr R_v$ be the records in
+\texttt{heights\_vNN.jsonl.gz}, with \texttt{NN} the two-digit value of $v$, in the fixed version of the accompanying
+data identified in Appendix~\ref{app:data}. If $V_r\subset\Z^4$ is the vertex array in the field \texttt{V} of record
+$r$, put
+\[
+\mathcal L_{\rm adm}=\bigl\{[\operatorname{conv}(V_r)]_{GL_4(\Z)}:
+ r\in\bigcup_{v\in I}\mathscr R_v\bigr\}.
+\]
+\end{definition}
+The vertex arrays determine this set independently of the programs used to find or check it. Admissibility and
+pairwise inequivalence of its $51{,}827$ records are verified in Step~2 below; completeness is the separate assertion of
+Proposition~\ref{prop:admissible-completeness}.
 
 Throughout, a piecewise linear function $g$ on a complete simplicial fan is \emph{strictly convex} if it is convex and its
 maximal domains of linearity are the maximal cones. A \emph{wall} is a common facet of two maximal cones $\kappa,\kappa'$,
@@ -65,7 +80,7 @@ piecewise linear function; this is the conversion used below. A triangulation of
 the origin} if the origin is a vertex of each of its maximal simplices.
 
 \begin{corollary}\label{cor:Ureform}
-The conclusion of Theorem~\ref{thm:U} holds for $\Delta$ if and only if $\Delta^\circ$ has a fine, regular, unimodular
+Hypothesis~\ref{hyp:U} holds for $\Delta$ if and only if $\Delta^\circ$ has a fine, regular, unimodular
 triangulation that is star-shaped from the origin.
 \end{corollary}
 
@@ -129,13 +144,14 @@ unimodular. For lattice
 three-polytopes in general, unimodular triangulations need not exist \cite[Ex.~1.2]{HPPS}, and their existence is open
 even for smooth lattice three-polytopes \cite[\S1.5.1]{HPPS}; the facets $F_v$ need not be smooth, since by
 Proposition~\ref{prop:Ufacets} their vertex cones are constrained only through their two-dimensional faces. A general
-proof of Theorem~\ref{thm:U} would therefore produce compatible regular unimodular triangulations for a class of lattice
+proof of Hypothesis~\ref{hyp:U} for all admissible $\Delta$ would therefore produce compatible regular unimodular triangulations for a class of lattice
 three-polytopes, the polytopes of $-K_{\mathbb P_\Delta}|_{D_v}$, for which no such result is known. We know no conceptual
 proof, and we prove the theorem by exhaustion.
 
-\subsection{Proof of Theorem~\ref{thm:U}}\label{ssec:uproof}
-The proof has three steps: the list of all reflexive four-polytopes, the determination of the admissible ones, and an
-exactly checked certificate for each of these.
+\subsection{Certificates and classification completeness}\label{ssec:uproof}
+Steps~1--2 prove Proposition~\ref{prop:admissible-completeness}, using the classification and the original exhaustive
+filter. Step~3 proves Theorem~\ref{thm:U} by verifying the heights of each member of $\mathcal L_{\rm adm}$ in exact
+arithmetic; it does not use exclusions made by the filter.
 
 \emph{Step 1: the classification.} Kreuzer and Skarke classified the reflexive four-polytopes up to $GL_4(\Z)$: there are
 $473{,}800{,}776$ of them \cite{KS00}. We use a public electronic copy of their list at a fixed revision, identified in
@@ -179,13 +195,13 @@ vertices & polytopes & admissible & with hexagon & vertices & polytopes & admiss
 two-face.}\label{tab:Ucounts}
 \end{table}
 
-\emph{Step 3: certificates.} For each admissible $\Delta$ we record an integer height $h(m)$ at every nonzero lattice point
+\emph{Step 3: heights.} For each admissible $\Delta$ we give an integer height $h(m)$ at every nonzero lattice point
 $m$ of $\Delta^\circ$. It determines a candidate triangulation: in each facet $F$ of
 $\Delta^\circ$, the lower faces of the convex hull of the lifted points $(m,h(m))$, $m\in F\cap M$. For an integer $\lambda$, computed in the check, put $g=h+\lambda$
 on $\partial\Delta^\circ\cap M$, extended linearly on the cones over the candidate tetrahedra, and $\check h=g+\check\varphi$.
 The following are then checked in exact integer arithmetic:
 \begin{enumerate}
-\item[(i)] every recorded point is a lattice point of $\partial\Delta^\circ$, and every height is an integer;
+\item[(i)] every point with a given height is a lattice point of $\partial\Delta^\circ$, and every height is an integer;
 \item[(ii)] every candidate tetrahedron lies in a facet hyperplane of $\Delta^\circ$ and has determinant $\pm1$;
 \item[(iii)] every triangle of a candidate tetrahedron lies in exactly two candidate tetrahedra, and their fourth vertices
 lie on opposite sides of the hyperplane spanned by the triangle and the origin;
@@ -246,15 +262,19 @@ vertex. By (v) and the wall criterion, $g=\check h-\check\varphi$ and $\check h$
 vertices are integers, so $\check h$ is integral on $M$ as in the proof of Lemma~\ref{lem:Ureform}.
 \end{proof}
 
-All $51{,}827$ certificates pass, with $12{,}001{,}172$ tetrahedra in all. By Lemma~\ref{lem:Ucert} each
-certificate proves the conclusion of Theorem~\ref{thm:U} for its polytope, and by Step 2, which examined every polytope of
-the classification, the certified polytopes are all admissible reflexive four-polytopes. This proves
-Theorem~\ref{thm:U}. \qed
+Conditions (i)--(v) hold for the heights of all $51{,}827$ records defining $\mathcal L_{\rm adm}$, with $12{,}001{,}172$ tetrahedra in
+all. By Lemma~\ref{lem:Ucert}, Hypothesis~\ref{hyp:U} therefore holds for each of them. This proves Theorem~\ref{thm:U}.
+\qed
 
-A second program proves the conclusion from the same heights by a different set of sufficient checks, in exact rational
-arithmetic: (i$'$) the recorded points are exactly the nonzero lattice points of $\Delta^\circ$, enumerated independently,
+Step~2 examined every polytope of the classification and its accepted records are exactly those defining
+$\mathcal L_{\rm adm}$. Together with Step~1 and the positive admissibility checks, this proves
+Proposition~\ref{prop:admissible-completeness}. The exclusions are an input to this proposition, rather than to the
+height certificates; Appendix~\ref{ssec:utrust} specifies their verification coverage.
+
+A second program proves Theorem~\ref{thm:U} from the same heights by a different set of sufficient checks, in exact rational
+arithmetic: (i$'$) the points with given heights are exactly the nonzero lattice points of $\Delta^\circ$, enumerated independently,
 and lie on its boundary; (ii$'$) in each facet $F$, every cell of the lower convex hull of the points $(m,h(m))$,
-$m\in F\cap M$, is a tetrahedron of determinant $\pm1$; (v$'$) for each tetrahedron and each recorded point $m$ outside its
+$m\in F\cap M$, is a tetrahedron of determinant $\pm1$; (v$'$) for each tetrahedron and each such point $m$ outside its
 cone, $g(m)$ and $\check h(m)$ exceed the values at $m$ of the linear functions that agree with $g$, respectively $\check h$,
 on the cone. By (ii$'$) each facet is triangulated by the regular subdivision induced by $h$, and since the heights are
 global, the triangulations of two facets restrict to the same regular subdivision of their common face; so the tetrahedra
@@ -269,39 +289,25 @@ facets; the constant $\lambda$ makes the bends across walls between different fa
 Lemma~\ref{lem:Ureform}. How the heights were found plays no role in the proof.
 
 \subsection{What the proof rests on}\label{ssec:utrust}
-The proof rests on three computations.
-\begin{enumerate}
-\item \emph{The classification data.} The theorem is as reliable as the classification of \cite{KS00}, itself a computer
-classification, and as our copy of it. The classification was not recomputed. The files of our copy agree with the
-digests recorded for the fixed revision of the public copy (these are digests of that copy, not digests published by
-Kreuzer and Skarke), and their number of rows is the published count. That every member is reflexive and no two
-members are equivalent was checked by a separate computation, which is not part of the accompanying data.
-\item \emph{The admissibility filter.} The program of Step 2 is published in the accompanying data (\coderepo), as
-\texttt{unimodular/\allowbreak admissible\_\allowbreak filter.py}. The run over every polytope of the classification used an earlier
-copy of this program with the same tests; the published version reproduces the admissible rows of that run on the files for $5$--$8$, $23$, $24$, $30$--$33$
-and $36$ vertices, on which it was rerun. The statement
-that the certified polytopes are all the admissible ones rests on this run. Every polytope it accepts was checked admissible again by an independent
-program. A second implementation of the whole test, sharing no code with the first, was run on part of the
-classification and agrees with the first on every polytope on which both were run. It takes the face lattice of $\Delta$
-from a different polyhedral library instead of from the vertex-facet incidences computed by PALP, tests the edges of
-$\Delta$ directly, and computes twice the area of a two-face, in the lattice of its plane, as a sum over the triangles
-of a fan triangulation from one vertex of the greatest common divisors of the $2\times2$ minors of their edge vectors,
-instead of from coordinates in that lattice. Let $d$ be the
-number of nonzero lattice points of $\Delta$ that are not vertices; all admissible polytopes found have $d\le7$ except two,
-with $d=12$ and $d=20$.
-The second implementation has been run on every polytope with $5$--$9$ or $24$--$33$ or $36$ vertices, and on every
-polytope with $10$--$23$ vertices and $d\le7$, together with seeded samples from the remaining rows. It agrees with the
-first implementation throughout. The two extensions tested $15{,}637{,}714$ and $18{,}627{,}401$ rows; these sets overlap,
-so their sizes are not additive. The earlier checks on $7{,}644{,}706$ rows with at most $13$ vertices were retained, and
-the $10{,}879$ admissible polytopes found there were matched again to the input vertices and face types. Thus all
-$51{,}827$ positive results are accounted for. The negative results are only partly replicated. The polytopes with
-$10$--$23$ vertices form $468{,}609{,}901$ of the $473{,}800{,}776$ rows; of these, the second implementation tested the
-$36{,}648{,}946$ with $d\le7$ and, for each number of vertices, a seeded uniform sample of $2{,}000$ rows with $d>5$, of
-which $26{,}862$ in all have $d>7$. The remaining $431{,}934{,}093$ rows, about $91\%$ of the classification, are
-excluded by the program of Step 2 alone, and these negative verdicts carry no certificates.
-\item \emph{The certificate checks.} The first program checks (i)--(v) in integer arithmetic, with determinants by
-fraction-free elimination; the second checks (i$'$), (ii$'$) and (v$'$) in exact rational arithmetic. Both accept all
-$51{,}827$ certificates. On $135$ corrupted certificates (random, negated, constant or rescaled heights, a point removed)
-the two programs return the same verdicts.
-\end{enumerate}
-The accompanying computation bundle contains the certificates and both checking programs.
+The completeness proposition uses the first two inputs below; the finite-list height theorem uses the third. The first is the classification of Kreuzer and Skarke \cite{KS00}, itself computer-assisted, which was
+not recomputed: we use a public copy at a fixed revision whose files agree with digests of that copy (not digests published
+by Kreuzer and Skarke) and whose number of rows is the published count, and a separate computation, not part of the
+accompanying data, checked its members reflexive and pairwise inequivalent.
+
+The second is the identification of the admissible polytopes in Step 2. Let $d$ be the number of nonzero lattice points of
+$\Delta$ that are not vertices; all admissible polytopes found have $d\le7$ except two, with $d=12$ and $d=20$. Every
+polytope that the first implementation accepts was checked admissible again by an independent program. A second
+implementation of the whole test, sharing no code with the first, takes the face lattice of $\Delta$ from a different polyhedral
+library instead of from the vertex-facet incidences computed by PALP, tests the edges of $\Delta$ directly, and computes
+twice the area of a two-face, in the lattice of its plane, as a sum over the triangles of a fan triangulation from one
+vertex of the greatest common divisors of the $2\times2$ minors of their edge vectors. It agrees with the first
+implementation on every polytope on which both were run: all polytopes with $5$--$9$, $24$--$33$ or $36$ vertices, all polytopes with $10$--$23$ vertices and $d\le7$, and,
+for each number of vertices, a uniform sample of $2{,}000$ polytopes with $d>5$. The remaining $431{,}934{,}093$ polytopes,
+about $91\%$ of the classification, all with $10$--$23$ vertices and $d>7$, are excluded by the first implementation
+alone, so the completeness of the list of $51{,}827$ admissible polytopes rests on these exclusions. The programs and the
+runs are described in Appendix~\ref{app:data}.
+
+The third is the verification of (i)--(v), which by Lemma~\ref{lem:Ucert} proves Hypothesis~\ref{hyp:U} for each
+polytope found. One program checks (i)--(v) in integer arithmetic, with determinants by fraction-free elimination, and a
+second checks (i$'$), (ii$'$) and (v$'$) in exact rational arithmetic; both accept the heights of all $51{,}827$
+polytopes.

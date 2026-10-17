@@ -2,15 +2,41 @@
 This appendix lists the data of the examples of Section~\ref{sec:examples}: for $X_9$, $X_{19}$ and $X_{20}$ the rays of
 $\Sigma'$, the node parallelograms, a $\Z$-basis of $K$ and the tropical $2$-cycles of Lemma~\ref{lem:x9belt} and
 Table~\ref{tab:x19x20}; for $X_{88}$ and $X_{154}$ the vertices, the profile, the node parallelograms and a $\Z$-basis of
-$K$. The accompanying computation bundle contains the triangulations $\mathcal T$, integral heights, fans $\Sigma'$,
-polyhedral bases and cycle triangles for all five examples. Its checker recomputes the toric data, relation lattices,
-boundary networks and coefficients, and the stated Euler characteristics and numbers of interior intersections with
-$\Gamma$. The printed data below are compared with these records. The checker does not reconstruct the coupled base
-from its two fans or establish every interior condition of \cite[Def.~7.2]{CBM}. For the belt cycles it checks that each
-is a disc with one field that meets $\Gamma$ only along its boundary, and for the cycle of $X_9$ the conditions of
-\cite[Def.~7.2]{CBM} are proved in Lemma~\ref{lem:x9belt}; for the other cycles, those with trivalent vertices and the
-cycle of $X_{88}$ whose boundary is a closed path and which crosses $\Gamma$ at $18$ interior points, the interior
-conditions rest on the computations described in Section~\ref{ssec:evidence}.
+$K$.
+
+\emph{Data availability.} The data accompanying the paper (\coderepo) contain, for the five examples, the triangulations
+$\mathcal T$, the integral heights, the fans $\Sigma'$, the polyhedral decompositions of the bases and the triangles of
+the cycles, together with programs that recompute from them the toric data, the relation lattices, the boundary networks
+and node coefficients of the cycles, and their Euler characteristics and numbers of interior intersections with $\Gamma$;
+the data printed below agree with these. The programs do not rebuild the base $B'_\sigma$ from $\Sigma'$ and
+$(\mathcal T,\check h)$, and do not verify every interior condition of \cite[Def.~7.2]{CBM}. For the belt cycles they
+verify that each is a disc with one field that meets $\Gamma$ only along its boundary; for the cycle of $X_9$ the
+conditions of \cite[Def.~7.2]{CBM} are proved in Lemma~\ref{lem:x9belt}; for the other cycles, those with trivalent
+vertices and the cycle of $X_{88}$ whose boundary is a closed path and which crosses $\Gamma$ at $18$ interior points, the
+interior conditions rest on the computations described in Section~\ref{ssec:evidence}. For the list of
+Section~\ref{ssec:list}, the data contain the input vertex sets, the integral solutions and Farkas certificates for
+Hypothesis~\ref{hyp:P}, and programs that verify these and the computation of the forced nodes in exact arithmetic. For
+Theorem~\ref{thm:U} they contain the height certificates, the two certificate checkers, the published admissibility
+filter and the classification-file digests; the program of Step~2 of Appendix~\ref{ssec:uproof} is
+\texttt{unimodular/\allowbreak admissible\_\allowbreak filter.py}. The run of that step over the whole classification used an
+earlier copy of this program with the same tests; the published version reproduces the admissible rows of that run on the files for $5$--$8$, $23$,
+$24$, $30$--$33$ and $36$ vertices. Of the $468{,}609{,}901$ polytopes with $10$--$23$ vertices, the second implementation
+of Section~\ref{ssec:utrust}, with $d$ as there, tested the $36{,}648{,}946$ with $d\le7$ and samples containing $26{,}862$ with $d>7$; two runs of it tested
+$15{,}637{,}714$ and $18{,}627{,}401$ polytopes, in overlapping sets; and earlier checks on $7{,}644{,}706$ polytopes with
+at most $13$ vertices, with the $10{,}879$ admissible polytopes among them matched again to their vertices and face types,
+were retained. On $135$ altered height data (random, negated, constant or rescaled heights, a point removed) the two
+programs that verify (i)--(v) and (i$'$), (ii$'$), (v$'$) reach the same conclusions. For the computations of Section~\ref{ssec:evidence} they contain summaries for each polytope,
+from which the totals there are recomputed; the bases and cycles themselves are not rebuilt from these summaries. Two
+outcomes are reported without data from which they can be verified: the count of $\NBdryEnum$ polytopes in~(a) of
+Section~\ref{ssec:evidence}, which is available only as a total, and one of the $\NThmCHexBases$ hexagonal bases of the
+computation of Theorem~\ref{thm:real} on the list (Section~\ref{ssec:list}).
+
+\emph{Fixed version of $\mathcal L_{\rm adm}$.} The $30$ files of Definition~\ref{def:admlist} are
+\texttt{heights\_vNN.jsonl.gz} in \texttt{paper6/}\allowbreak\texttt{unimodular/}\allowbreak\texttt{certificates/} at public version
+\href{https://github.com/bwuebben/calabi-yau-smoothability/tree/000380bcebe1f7beed6f3db0e6f16c8a79307243/paper6/unimodular/certificates}{\texttt{000380bcebe1}}.
+The manifest \texttt{paper6/MANIFEST.json} at that version records their sizes and SHA-256 digests. The vertex counts
+are $5$--$33$ and $36$; the file for $32$ vertices is empty. This immutable version fixes membership of the list even
+if the accompanying programs are subsequently revised.
 
 \emph{Conventions.} The rays of $\Sigma'$ are numbered $n_0,n_1,\dots$; the vertices of $\Delta$ come first. A node
 parallelogram is written $q=(a,b,c,d)$ with $n_a+n_c=n_b+n_d$, in the labelling of Section~\ref{ssec:admissible}:
@@ -27,7 +53,7 @@ returns to its first pair after the last node listed. Reversing the direction of
 signs, so the difference of the lifts after and before $q_k$ does not depend on it; by Definition~\ref{def:nodecoef},
 $\rho_{q_k}(S)$ is the coefficient of $\circv_{q_k}$ in this difference, and can therefore be read off from the lists
 below. For the cycles with trivalent vertices, we also give the number of four-valent interior vertices of $S$, the
-number of points at which $S$ crosses $\Gamma$ transversally (clause (b) of \cite[Def.~7.2]{CBM}), and the Euler
+number of points at which $S$ crosses $\Gamma$ transversally (the discriminant-intersection clause of \cite[Def.~7.2]{CBM}), and the Euler
 characteristic of $S$. Vectors in $\Z^Q$ are written as combinations of the nodes: $q_2-q_3$ stands for the vector with
 coordinate $1$ at $q_2$, $-1$ at $q_3$ and $0$ elsewhere.
 
@@ -121,8 +147,8 @@ Node coefficients: $\rho(S_{6})=q_{4}-q_{5}+q_{7}-q_{8}+q_{11}-q_{12}+q_{15}-q_{
 \emph{Index.} In the basis above, the node coefficient vectors of $S_1,\dots,S_{6}$ have coordinates $(-1,0,0,0,0,0)$, $(0,0,1,0,0,0)$, $(0,0,0,0,-1,0)$, $(0,0,0,1,0,0)$, $(0,-1,0,0,0,0)$, $(0,0,0,0,0,1)$; the elementary divisors of this matrix are $1,1,1,1,1,1$, so the vectors $\rho(S_i)$ generate $K$.
 
 \subsection{The hexagon examples \texorpdfstring{$X_{88}$}{X88} and \texorpdfstring{$X_{154}$}{X154}}\label{app:data-hex}
-For these two examples the rays listed are the vertices of $\Delta$ and the centre of the hexagon; the fan $\Sigma'$ of the
-witness of~\ref{hyp:P} may have further rays, which are in the accompanying data. The hexagon is listed in cyclic order
+For these two examples the rays listed are the vertices of $\Delta$ and the centre of the hexagon; the fan $\Sigma'$ of a
+$P'_\sigma$ as in~\ref{hyp:P} may have further rays, which are in the accompanying data. The hexagon is listed in cyclic order
 $w_0,\dots,w_5$, and an asterisk marks its node parallelograms. The $\Z$-bases of $K$ are reduced (by the LLL algorithm)
 bases of the lattice computed from the circuits.
 

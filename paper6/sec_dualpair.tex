@@ -1,4 +1,4 @@
-\section{The dual-pair complex}\label{sec:dualpair}
+\section{The complex of dual cell pairs}\label{sec:dualpair}
 
 The base $B'_\sigma$ of $X'_\sigma$ and the base $B_Y$ of the mirror family are built from the same two subdivisions,
 of $\partial\Delta^\circ$ by $\mathcal T$ and of $\partial\Delta$ by a fan-side subdivision, with the roles of Newton side and fan side
@@ -167,14 +167,14 @@ hypersurface \cite[Thm.~1.2(2), (5.36), Prop.~5.4]{Ya21}; we do not use the cont
 $B_Y(\mathcal F)$ when the fan-side subdivision must be specified. Thus $B'_\sigma=B_X(\Sigma')$, and the mirror base of this paper is
 $B_Y=B_Y(\mathcal F_C)$ with the height $H$ of Section~\ref{ssec:mirrorfamily}.
 
-\subsection{The dual-pair complex}\label{ssec:leg-mixed}
-\begin{definition}[dual pairs]\label{def:DP}
-A \emph{dual pair} is a pair $(\tau,\omega)\in\mathcal T\times\mathcal F$ with $\langle u,n\rangle=-1$ for all vertices $u$
+\subsection{The complex of dual cell pairs}\label{ssec:leg-mixed}
+\begin{definition}[dual cell pairs]\label{def:DP}
+A \emph{dual cell pair} is a pair $(\tau,\omega)\in\mathcal T\times\mathcal F$ with $\langle u,n\rangle=-1$ for all vertices $u$
 of $\tau$ and $n$ of $\omega$; equivalently $\omega\subseteq\tau^\vee$, or $\tau\subseteq\omega^\vee$. The set $\lgDP$ of
-dual pairs is ordered by $(\tau,\omega)\preceq(\tau',\omega')$ if $\tau\supseteq\tau'$ and $\omega\supseteq\omega'$. We
+dual cell pairs is ordered by $(\tau,\omega)\preceq(\tau',\omega')$ if $\tau\supseteq\tau'$ and $\omega\supseteq\omega'$. We
 put $\dim{\mathfrak p}=3-\dim\tau-\dim\omega$ for ${\mathfrak p}=(\tau,\omega)$; since $\dim\omega\le\dim\tau^\vee\le3-\dim\tau$, $\dim{\mathfrak p}\ge0$.
 \end{definition}
-In the language of Batyrev duality, $(\tau,\omega)$ is a dual pair if and only if $\tau$ and $\omega$ lie in a pair of
+In the language of Batyrev duality, $(\tau,\omega)$ is a dual cell pair if and only if $\tau$ and $\omega$ lie in a pair of
 mutually dual faces of $\Delta^\circ$ and $\Delta$.
 
 \begin{definition}[labels]\label{def:strata}
@@ -184,7 +184,7 @@ the open simplex of a chain $c_0\subsetneq\dots\subsetneq c_k$ of $\mathscr P_Y$
 $\operatorname{lab}_Y(b)=(\tau_Y(c_0),\omega_Y(c_k))$. For ${\mathfrak p}\in\lgDP$ let $C_X({\mathfrak p})=\operatorname{lab}_X^{-1}({\mathfrak p})$ and $C_Y({\mathfrak p})=\operatorname{lab}_Y^{-1}({\mathfrak p})$.
 \end{definition}
 
-\begin{proposition}[the dual-pair complex]\label{prop:L1}
+\begin{proposition}[the complex of dual cell pairs]\label{prop:L1}
 \begin{enumerate}
 \item $\operatorname{lab}_X$ and $\operatorname{lab}_Y$ take values in $\lgDP$.
 \item The sets $C_X({\mathfrak p})$, ${\mathfrak p}\in\lgDP$, are the open cells of a regular CW decomposition of $B_X$ with face poset
@@ -202,24 +202,24 @@ $\mathcal L(\operatorname{int}F_u)=\widetilde R^*_u$ and $\mathcal L(\widetilde 
 $\mathcal L$ exchanges the open facets with the regions.
 \end{enumerate}
 \end{proposition}
-We call the decomposition of (2) and (3) the \emph{dual-pair complex} of $B_X$ and of $B_Y$, and a homeomorphism as in
-(4) a \emph{dual-pair homeomorphism}. On a face $F_\tau$ the cells $C_X(\tau,\omega)$ correspond to the cells of the polyhedral
+We call the decomposition of (2) and (3) the \emph{complex of dual cell pairs} of $B_X$ and of $B_Y$, and a homeomorphism as in
+(4) a \emph{label-preserving cellular homeomorphism}. On a face $F_\tau$ the cells $C_X(\tau,\omega)$ correspond to the cells of the polyhedral
 complex dual to the regular subdivision $\mathcal F|_{\tau^\vee}$, that is, of the tropical hypersurface of
 $m\mapsto\min_{a\in\tau^\vee\cap N}(h(a)+\langle m,a\rangle)$ \cite[\S3.1]{MS}, refined by the normal fan of
 $\nabla^{\check h'}_\tau$ and truncated by a level set of a gauge function of $\nabla^{\check h'}_\tau$, which makes the
 unbounded cells bounded (Lemmas~\ref{lem:onefacet} and~\ref{lem:trunc}). The cells of $\mathscr P_X$ are in general not
-unions of cells of the dual-pair complex: a maximal cell $c\subset F_u$ with lower support an edge $[n,n']$ has its
+unions of cells of the complex of dual cell pairs: a maximal cell $c\subset F_u$ with lower support an edge $[n,n']$ has its
 barycentre in $C_X(u,[n,n'])$, while the open simplex of the chain $(n+w\subsetneq c)$, for a vertex $n+w$ of $c$, lies in
 $C_X(u,n)$.
 
 Pairs of dual cells were used by Haase and Zharkov \cite{HZ1,HZ2,HZ3}, who realise two mutually dual integral affine
 structures \cite[\S2.4]{HZ1}, \cite[\S2.2]{HZ2} on a sphere subdivided by the pairs of barycentres of simplices lying in mutually dual faces (the
-analogue of the dual pairs of Definition~\ref{def:DP}) of coherent triangulations of the boundaries of a dual pair of
+analogue of the dual cell pairs of Definition~\ref{def:DP}) of coherent triangulations of the boundaries of a polar pair of
 reflexive polytopes \cite[\S2.1]{HZ1}; for nef-partitions they work with central subdivisions induced by height functions,
 which need not be triangulations \cite[\S1, \S2.2]{HZ3}. Proposition~\ref{prop:L1} gives the corresponding cell structures on
 Gross's bases $B_X$ and $B_Y$ themselves, for a fan-side subdivision that need not be a triangulation, and
 Proposition~\ref{prop:L3} the duality of the lattices. Posets of pairs of dual cells also underlie the
-mirror isomorphism of tropical homology groups of Matessi and Renaudineau \cite[Thm.~1.1, \S2]{MR25}. A dual-pair homeomorphism is a
+mirror isomorphism of tropical homology groups of Matessi and Renaudineau \cite[Thm.~1.1, \S2]{MR25}. A label-preserving cellular homeomorphism is a
 piecewise linear homeomorphism matching two cell decompositions; it is not a discrete Legendre transform in the sense of
 \cite[\S1.4]{GSI}, which requires a polarization.
 
@@ -238,15 +238,15 @@ discrete Legendre transform with the base on $\partial\nabla^H$, $H=m_0h+m_1\var
 a decomposition that Gross constructs from the polarization, through the normal fan of a Minkowski sum
 \cite[\S3, the construction before Lemma~3.19, and Thm.~3.21]{Gross2005}. The decomposition $\mathscr P_Y$ defined by the heights $(\check h,0)$, the one attached to the
 degeneration of the mirror family, need not be that decomposition (compare \cite[\S3, after Rem.~3.18]{Gross2005}), and the
-dual-pair complex avoids comparing the two.
-Propositions~\ref{prop:L1} and~\ref{prop:L3} give for the cells of the dual-pair complex the statements that the discrete
+complex of dual cell pairs avoids comparing the two.
+Propositions~\ref{prop:L1} and~\ref{prop:L3} give for the cells of the complex of dual cell pairs the statements that the discrete
 Legendre transform gives for cells, and they apply to $\mathscr P_X$ and $\mathscr P_Y$ alike.
 \end{remark}
 
 \begin{proof}[Proof of Proposition~\ref{prop:L1}]
 (1) For a chain $c_0\subsetneq\dots\subsetneq c_k$ we have $\tau(c_0)\supseteq\tau(c_k)$, and
 $\omega(c_0)\subseteq\tau(c_0)^\vee\subseteq\tau(c_k)^\vee$ by Lemma~\ref{lem:cayley}(2); so $(\tau(c_k),\omega(c_0))$ is a
-dual pair. On $B_Y$ the argument is the same with the roles exchanged.
+dual cell pair. On $B_Y$ the argument is the same with the roles exchanged.
 
 (2) and (3) are proved in Appendix~\ref{app:leg-balls}. In outline: fix ${\mathfrak p}=(\tau,\omega)$. On the face $F_\tau$ the cells of
 $\mathscr P_X$ are in inclusion-reversing bijection with the cells of a polyhedral complex $\mathcal R_\tau$ in the dual
@@ -328,7 +328,7 @@ facets, the regions and $\Gamma_X$ through the labels (Lemma~\ref{lem:charts}(2)
 A loop \emph{around an arc} $C_X(\tau,\omega)$, $\tau=[u,u']$, $\omega=[n,n']$, is a loop in a small neighbourhood of a
 point of the arc which passes once through each of the cells whose closures contain the arc. These are the cells
 $C_X({\mathfrak p})$ with ${\mathfrak p}\succ(\tau,\omega)$, that is, ${\mathfrak p}=(\tau',\omega')\neq(\tau,\omega)$ with $\tau'\subseteq\tau$ and
-$\omega'\subseteq\omega$: four three-cells and four two-cells. Since the dual-pair complex is a regular cell decomposition
+$\omega'\subseteq\omega$: four three-cells and four two-cells. Since the complex of dual cell pairs is a regular cell decomposition
 of a three-manifold with face poset $(\lgDP,\preceq)$ (Proposition~\ref{prop:L1}(2)), a small circle linking the arc
 meets these eight cells in a cyclic order in which a three-cell and a two-cell are consecutive exactly when the two-cell
 lies in the boundary of the three-cell, that is, when their pairs are comparable. The comparability graph of the eight
@@ -373,7 +373,7 @@ which on every $C_X(u,n)$ is the restriction of $\langle\ ,\ \rangle\colon(n^\pe
 perfect and flat. Consequently $\mathcal L^*\Lambda_Y\cong\Lambda_X^\vee$, and $T^Y_{\mathcal L\gamma}=(T^X_\gamma)^{-\top}$
 for every loop $\gamma$ in $B_X\setminus\Gamma_X$.
 \end{proposition}
-Proposition~\ref{prop:L3} is the analogue, for the dual-pair homeomorphism $\mathcal L$, of the duality of the lattice local
+Proposition~\ref{prop:L3} is the analogue, for the label-preserving cellular homeomorphism $\mathcal L$, of the duality of the lattice local
 systems of a base and its discrete Legendre transform, whose linear holonomies satisfy
 $\tilde\rho_{\check B}(\gamma)={}^t\tilde\rho_B(\gamma^{-1})$ \cite[Prop.~1.50(1)]{GSI}: the tangent lattice of one base is the
 cotangent lattice of the other, although $\mathcal L$ is not a discrete Legendre transform.
@@ -387,7 +387,7 @@ and the face label $\omega_Y(c_k)$ of the top have dimension at least one; this 
 zero-cells are the pairs (triangle, edge) and (edge, two-cell), as $\mathcal T$ is a triangulation. By
 Proposition~\ref{prop:L1}(2) each arc is a one-ball whose two end points are zero-cells, and the arcs at a zero-cell
 $(\tau,\omega)$ are the pairs of edges $(\tau_1,\omega_1)$ with $\tau_1\subseteq\tau$, $\omega_1\subseteq\omega$, all of
-which are dual pairs: three for a triangle $\tau$, and one for each edge of a two-cell $\omega$. A leg $[b_e,b_f]$ is the
+which are dual cell pairs: three for a triangle $\tau$, and one for each edge of a two-cell $\omega$. A leg $[b_e,b_f]$ is the
 closed simplex of a chain $e\subsetneq f$ with label $(\tau(f),\omega(e))$, a pair of edges, so each arc is a union of
 legs; since the arc is an open one-cell and the legs of other arcs lie in other cells, a point of the arc at which legs
 meet, a barycentre in the interior of a two-face, lies on exactly two legs. A two-cell $\omega$ paired with an edge $\tau$ lies in $\tau^\vee$, a face of $\Delta$ of

@@ -4,11 +4,11 @@ This section proves Theorem~\ref{thm:lift}. Fix an admissible $\Delta$ with a pr
 configuration of Section~\ref{ssec:member}, a triangulation $\mathfrak K$ of $B=B'_\sigma$ in which $\Gamma$ is full, and a
 relative tropical $2$-cycle $z\in Z(\mathfrak K)$. We construct an integral $4$-chain on the localized mirror $W^*$ of
 Definition~\ref{def:Ws} whose boundary is $\sum_q\rho_q(z)\,\Sigma_q$, where $\Sigma_q\subset W^*$ is a three-sphere
-isotopic to the vanishing sphere, and carry it to $Y_t$ by the transport lemma. The construction has four steps.
+isotopic to the vanishing sphere, and carry it to $Y_t$ by the isotopy of Proposition~\ref{prop:isotopy}. The construction has four steps.
 
 \begin{enumerate}
 \item \emph{Transfer and normal form} (Section~\ref{ssec:lift-model}). The cycle $z$ is carried to the mirror base $B_Y$ by
-the dual-pair homeomorphism of Section~\ref{sec:legendre}, and the discriminant of $B_Y$ is moved onto the positions over
+the label-preserving cellular homeomorphism of Section~\ref{sec:legendre}, and the discriminant of $B_Y$ is moved onto the positions over
 which $W^*$ has exact local models (the \emph{model complex}). Near the discriminant the transferred cycle is then
 replaced, without changing its boundary network, by a sum of finitely many fixed surfaces with integer coefficients: the
 \emph{model germs} at the vertices of the discriminant and along its arcs, taken with the multiplicities read off from
@@ -33,26 +33,34 @@ pairing with the positive real locus of $W^*$, which meets a fibre torus once an
 the multiples sum to zero.
 \end{enumerate}
 
-So the lift is built summand by summand on an abstract domain; summands are glued only along curves where
-their boundaries cancel; its boundary, $\sum_q\rho_q(z)\Sigma_q$, is additive in $z$; and the only global input is
-Proposition~\ref{lem:F}. The strict tropical
-$2$-cycles of \cite{CBM} are a special case, in which every multiplicity of a model germ is $0$ or $\pm1$
-(Section~\ref{ssec:lift-cbm}).
-
-The local terms used below refer to the following geometric objects. On $B_Y$, the images of the negative
-vertices of $B'_\sigma$ have positive type; these are the \emph{model vertices}. The images of the positive
-vertices are the \emph{turning points} (Proposition~\ref{prop:dict}).
+The construction follows the local lifts, torus bundles and edge fillings of Casta\~no-Bernard and Matessi
+\cite[\S7]{CBM}. Here the exact local equations occur at prescribed positions, and relative cycles may have arbitrary
+multiplicities and invariant crossing coefficients. Moving the discriminant and putting the cycle in normal form
+address the first issue; Proposition~\ref{lem:F} removes the residual fibre boundary in the second.
+The principal objects used below are as follows.
+{\small\begin{longtable}{p{3cm}p{10cm}}
+term & meaning\\\hline
+model complex & the base cell complex after the discriminant has been moved to the positions of the exact local equations\\
+model vertex & a positive-type vertex of $B_Y$, the image of a negative-type vertex of $B'_\sigma$\\
+turning point & a negative-type vertex of $B_Y$, the image of a positive-type vertex of $B'_\sigma$\\
+model germ & one of the fixed local surfaces, with its coefficient, used in the normal form near the discriminant\\
+summand & a connected part with constant total coefficient, with the tripod convention of Definition~\ref{def:summand}\\
+junction & a curve along which boundaries of adjacent summands cancel; transverse intersections are not junctions\\
+piece and collar & a local lift near the discriminant and its connection to the lift of the regular part\\
+region & an open subset of the localized mirror homotopy equivalent to the torus of the local lattice
+\end{longtable}}
+For strict cycles, the local models have multiplicity $0$ or $\pm1$. Under the position conditions of
+Remark~\ref{rem:CBMlift}, their correspondence with \cite{CBM} is given by the following table.
 \begin{center}\small
-\begin{tabular}{p{3.4cm}p{10.8cm}}
-term & meaning in the construction\\\hline
-model complex & the mirror base with the discriminant moved to the positions of the exact local equations\\
-model germ & one of the fixed local surfaces used in the normal form near a discriminant vertex or arc\\
-summand & a germ, transverse disc or part of the remainder, with its integral coefficient\\
-depth & the nonnegative transverse coordinate measuring distance from the discriminant within a summand\\
-inner boundary & the frontier where a local piece joins the lift over the regular part\\
-collar & the family of paths, together with its torus orbits, joining these two parts\\
-region & an open subset of the localized mirror homotopy equivalent to the torus of the local lattice\\
-fibre complex & the cell complex of tori and filling chains used over a simplex of the abstract domain
+\begin{tabular}{p{5.2cm}p{4.3cm}p{4.6cm}}
+part of the lift & constructed in & counterpart in \cite{CBM}\\\hline
+over the sheets: torus bundle & Section~\ref{ssec:lift-regular} & \cite[\S7, (46)]{CBM}\\
+over interior edges & Section~\ref{ssec:lift-regular} & \cite[\S7.7, Step~2]{CBM}\\
+node piece & Lemmas~\ref{lem:NQ}, \ref{lem:nodesum} & \cite[Lemma~5.14]{CBM}\\
+pieces at the model vertices & Lemma~\ref{lem:pieces}(2) & \cite[\S7.5; \S7.7, Steps~2--3]{CBM}\\
+pieces at turning points & Lemma~\ref{lem:pieces}(3) & \cite[Lemma~7.6]{CBM}\\
+pieces at crossings & Lemma~\ref{lem:crossing}(2) & \cite[\S7.7, Step~6]{CBM}\\
+interior vertices & Proposition~\ref{lem:F} & replaces \cite[\S7.7, Step~5]{CBM}
 \end{tabular}
 \end{center}
 
@@ -66,7 +74,7 @@ $\Lambda^M$ are lattices of integral tangent vectors of $B_Y$, contained in $M$;
 coefficients in the dual local system, the covectors, whose values on $\operatorname{int}F^*_n$ are the classes in
 $N/\Z n$ of the elements of $N$.
 
-\subsection{The model complex, the transferred cycle and its normal form}\label{ssec:lift-model}
+\subsection{Moving the discriminant to the local models; a normal form for the transferred cycle}\label{ssec:lift-model}
 
 We first move the discriminant to the positions of the exact local models and transfer the cycle to the mirror base.
 The normal-form lemma then separates its boundary germs, transverse discs and a remainder disjoint from the discriminant.
@@ -76,7 +84,7 @@ The local models of $W^*$ sit over definite points of $B_Y$: the Morse chart ove
 Lemma~\ref{lem:gaps}, the models at the vertices of positive type over the segments $J^\flat_\omega$ of
 Lemma~\ref{lem:windows}(3), and the leg models over the interior polygons $\Omega_e$ of Definition~\ref{def:legcell}. In general the discriminant $\Gamma_Y$
 does not pass through these positions (Remark~\ref{rem:literalpos}). We move it there by a homeomorphism of $B_Y$ that
-preserves the dual-pair complex of Proposition~\ref{prop:L1}; Section~\ref{sec:legendre} uses only the combinatorics of
+preserves the complex of dual cell pairs of Proposition~\ref{prop:L1}; Section~\ref{sec:legendre} uses only the combinatorics of
 the cells of that complex, not their positions inside the faces of $B_Y$.
 
 We use the faces $E_e$, the interior polygons $\Omega_e$ and the turning points of Definition~\ref{def:legcell} and the
@@ -189,7 +197,7 @@ The proof is in Appendix~\ref{app:liftproofs}.
 Fix model positions and model arc systems. There are a regular cell decomposition $\{C^M({\mathfrak p})\}_{{\mathfrak p}\in\mathrm{DP}}$ of $B_Y$
 with face poset $(\mathrm{DP},\preceq)$ and a piecewise linear homeomorphism $\Upsilon^M$ of $B_Y$ such that:
 \begin{enumerate}
-\item $\Upsilon^M(C_Y({\mathfrak p}))=C^M({\mathfrak p})$ for every dual pair ${\mathfrak p}$; $\Upsilon^M$ maps every face $F^*_\omega$ of $B_Y$ onto
+\item $\Upsilon^M(C_Y({\mathfrak p}))=C^M({\mathfrak p})$ for every dual cell pair ${\mathfrak p}$; $\Upsilon^M$ maps every face $F^*_\omega$ of $B_Y$ onto
 itself, and it is isotopic to the identity through homeomorphisms with this property;
 \item the zero-cells $C^M([u,u'],\omega)$, $\omega$ a two-cell of a two-face, are the model nodes and model vertices, the
 zero-cells $C^M(\tau,e)$, $\tau$ a triangle of $\mathcal T$, are the interior vertices of the model arc systems, and the
@@ -368,8 +376,8 @@ tripod at a model vertex, $\mathrm{Turn}(u_1),\mathrm{Turn}(u_2)$ at a turning p
 $b_p=\sum_gm_g(b)\,\partial g$ at every $\Gamma^M$-vertex $p$, with integers $m_g(b)$ ($g$ running over the
 unit germs of the basis at $p$).
 
-\begin{definition}[the standard chain]\label{def:std}
-For $b\in\mathrm{Bal}(\Gamma^M)$ the \emph{standard chain} $\mathrm{Std}^M(b)$ is the sum over all $\Gamma^M$-vertices $p$ of
+\begin{definition}[the chain of germs]\label{def:std}
+For $b\in\mathrm{Bal}(\Gamma^M)$ the \emph{chain of germs} $\mathrm{Std}^M(b)$ is the sum over all $\Gamma^M$-vertices $p$ of
 $\sum_gm_g(b)\,g$, each unit germ with its exit sheets, cut transversally at $y^0_A$ or $y^1_A$, plus, on every arc
 $A$, the reference sheet with covector $c_Ad^*_A$ between $y^0_A$ and $y^1_A$, where $c_Ad^*_A[A]$ is the part of $b$
 on $A$.
@@ -378,9 +386,9 @@ on $A$.
 Along $A$ the exit sheets arriving from each end carry, on the reference side, covectors summing to $c_Ad^*_A$ with the
 orientation of the reference sheet, by the balance of $b$ along the arc; so the transverse cut segments cancel. The rest of
 the boundary of $\mathrm{Std}^M(b)$ off $\Gamma^M$ lies where the germs are truncated (at $\varrho_{\mathsf P}=r_0$ along the
-arcs, and on their outer frontier near the $\Gamma^M$-vertices); this \emph{truncation locus} is compact and disjoint from
+arcs, and on their outer frontier near the $\Gamma^M$-vertices); this set $\Theta_{\rm tr}$, where the germs are cut off, is compact and disjoint from
 $\Gamma^M$. So $\mathrm{Std}^M(b)$ is a
-relative cycle of $(N_0,\Theta_{\rm tr}\cup\Gamma^M)$, $\Theta_{\rm tr}$ the truncation locus, with boundary network $b$. It is
+relative cycle of $(N_0,\Theta_{\rm tr}\cup\Gamma^M)$ with boundary network $b$. It is
 linear in $b$.
 
 Where sheets of $\mathrm{Std}^M(b)$ coincide as sets, namely sheets on the reference side of one arc, their
@@ -389,8 +397,8 @@ coefficients add.
 \subsubsection*{The normal form on \texorpdfstring{$B_Y$}{BY}}
 Let $z^M=\mathfrak h_*z$ and $b^M=\partial z^M$. Choose a triangulation $\mathfrak K_2^0$ of $B_Y$ refining $\mathfrak h(\mathfrak K_1)$, in which
 $\Gamma^M$, the germs (M1)--(M5) and their junction segments are subcomplexes, and which is so fine near $\Gamma^M$ that
-the simplicial neighbourhoods below lie in the interior of $N_0$ and are disjoint from the truncation locus
-$\Theta_{\rm tr}$ of the germs. Let $\mathfrak K_2$ be a derived subdivision of
+the simplicial neighbourhoods below lie in the interior of $N_0$ and are disjoint from the set
+$\Theta_{\rm tr}$ where the germs are cut off. Let $\mathfrak K_2$ be a derived subdivision of
 $\mathfrak K_2^0$, in which $\Gamma^M$ is full and the germs are subcomplexes; choose its derived points off the points
 $\mathfrak x_A$, so that $\mathfrak x_A$ lies in the interior of an edge $E_A$ of $\mathfrak K_2$ in $A$; and let
 $\mathfrak K_2'$ be a derived subdivision of $\mathfrak K_2$ whose new vertex on $E_A$ is $\mathfrak x_A$. Put
@@ -399,7 +407,7 @@ $\mathfrak K_2'$, and $\mathrm{Std}^M(b^M)\cap U$ is a relative cycle of $(U,\pa
 boundary network $b^M$: its coefficients lie in the stalks, since near a $\Gamma^M$-vertex only the germs of that vertex
 occur and along an arc only covectors in $\operatorname{Inv}^*(A)$; and an edge of $U$ not in $\partial U$ meets
 $\Gamma^M$, so that all $2$-simplices at it lie in $U$ and intersecting with $U$ creates boundary only on $\partial U$,
-while the truncation locus $\Theta_{\rm tr}$ lies outside $U$. By
+while the set $\Theta_{\rm tr}$ where the germs are cut off lies outside $U$. By
 Lemma~\ref{lem:normalform}, with the edge $E_A$ chosen in each arc $A$,
 \begin{equation}\label{eq:nf1}
 \operatorname{sd}z^M-\partial w=\mathrm{Std}^M(b^M)\cap U+\sum_Av_A\,\bar D(E_A)+y,\qquad v_A\in\operatorname{Inv}^*(A),
@@ -408,7 +416,7 @@ with $w$ a $3$-chain in $U$, $v_A\bar D(E_A)$ the transverse disc at $E_A$ in $\
 supported in $B_Y\setminus\operatorname{int}U$. Of Lemma~\ref{lem:nbhd} only the surjectivity in part~(1) enters, applied to the chain
 $\operatorname{sd}z^M|_U-\mathrm{Std}^M(b^M)\cap U$, which has zero boundary on $\Gamma^M$.
 
-We then make two local replacements. A \emph{local replacement} replaces a chain $C$ by a chain $C'$ with the same
+We then make two local modifications. Each replaces a chain $C$ by a chain $C'$ with the same
 boundary on $\Gamma^M$ and adds a chain $R$ supported off $\Gamma^M$ with $\partial R=\partial C-\partial C'$ off $\Gamma^M$;
 it preserves the boundary network.
 \begin{itemize}
@@ -449,7 +457,7 @@ Lemma~\ref{lem:place} and normal discs at the points $\mathfrak x_A$.
 \end{lemma}
 
 \begin{proof}
-The local replacements preserve the boundary network. The strips of the smoothing lie at distance at least
+The two modifications preserve the boundary network. The strips of the smoothing lie at distance at least
 $\varrho_0/C_{\mathsf P}$ from $\Gamma^M$, $C_{\mathsf P}$ the equivalence constant of $\varrho_{\mathsf P}$ and the
 Euclidean norm; the annuli lie in compact subsets of $N_{\varepsilon_A}\setminus\Gamma^M$; $y$ lies off
 $\operatorname{int}U$; and the transverse discs meet $\Gamma^M$ only at their centres. So $r_\natural>0$, with
@@ -459,35 +467,48 @@ $r_\natural\le\min(\varepsilon'_A,\varrho_0/C_{\mathsf P})$.
 The homology class of $z$ plays no role: what follows needs only a relative cycle with the boundary network of $z$, and
 Lemma~\ref{lem:nfY} provides one of the required shape.
 
-\emph{Summands.} Near $\Gamma^M$ the normal form~\eqref{eq:nf2} is a finite sum of surfaces with integer
-coefficients: for each $\Gamma^M$-vertex $p$ and each unit germ $g$ at $p$, the surface of $g$ (its component at $p$ in
+\emph{The surfaces near $\Gamma^M$.} Near $\Gamma^M$ the normal form~\eqref{eq:nf2} is a finite sum of surfaces with
+integer coefficients:
+\begin{itemize}
+\item[(S1)] for each $\Gamma^M$-vertex $p$ and each unit germ $g$ at $p$, the surface of $g$ (its component at $p$ in
 $N_0$ together with its exit sheets, rotated and smoothed where required, up to $y^0_A$ or $y^1_A$), with coefficient
-$m_g(b^M)$ times the covector of $g$; the reference sheets, with coefficients $c_Ad^*_A$; and the transverse discs
-$v_A\mathfrak N_A$. Where surfaces of this list coincide as sets, which happens only for sheets on the reference side of
-one arc, we add their coefficients. A \emph{summand} is a maximal connected part of one of these surfaces, or of a
-union of coincident sheets, on which the total coefficient is constant, except that the three sectors of a tripod, with
-their exit strips, form one summand: its half-edge $C^M(u',\omega)$ is an interior branching curve, along which the
-three coefficients $m\langle\,\cdot\,,e_k\rangle$ sum to zero with the orientations of (M2). In particular the part of a unit germ at its
-vertex and its exit strips, including the start of a rotation, belong to one summand up to the first place where
-another sheet joins them: the transverse segments where a germ continues as its own exit strip carry the same
-coefficient on both sides and are interior to one summand. Two summands are \emph{adjacent} along a
-\emph{junction segment}, a curve other than the half-edge of a tripod across which the total coefficient on one side of
-the arc changes. Junction segments occur only where a rotated exit strip reaches a reference side that already carries a
-strip (inside the polygonal cylinder at the far end of the stretch; outside it, where the piecewise linear normal
-half-disc of the rotation at $y^*_{A,p}$ meets the reference-side strip). Where a rotated strip reaches an empty
-reference side, it simply continues there, and where the exit strips on the reference side meet the reference sheet, at
-$y^0_A$ and $y^1_A$, they already total $c_Ad^*_A$ with the orientation of the reference sheet (by the balance of $b^M$
-along $A$); in both cases the total coefficient does not change and the curve is interior to one summand. Along a
-junction segment every
-adjacent coefficient is a multiple of $d^*_A$, and the multiples sum to zero with the orientation signs, because
-$z^\natural$ is a relative cycle with boundary only on $\Gamma^M$. Inside the stretch, after $y^*_{A,p}$, the reference-side
-sheet carries one coefficient inside the cylinder $\{\varrho_{\mathsf P}<\varrho_0\}$, where the smoothed strip is still
-rotating, and another outside it, where the piecewise linear rotated sheet has already arrived; they meet the correction
-strip of the smoothing along the seam $\{\varrho_{\mathsf P}=\varrho_0\}$, at distance at least $\varrho_0/C_{\mathsf P}\ge
-r_\natural$ from $\Gamma^M$. Summands may also meet transversally (a transverse disc and a sheet; the two node halves
-along $C^M(u',P)$; exit sheets of different germs meeting only on $\Gamma^M$); such meetings are not junctions.
+$m_g(b^M)$ times the covector of $g$;
+\item[(S2)] the reference sheets, with coefficients $c_Ad^*_A$;
+\item[(S3)] the transverse discs $v_A\mathfrak N_A$.
+\end{itemize}
+Surfaces of this list coincide as sets only for sheets on the reference side of one arc; there we add their coefficients.
 
-\subsection{Pieces along legs, at vertices and at turning points}\label{ssec:lift-legs}
+\begin{definition}[summands and junctions]\label{def:summand}
+First add the coefficients of coincident sheets in (S1)--(S3). Except at a tripod, a \emph{summand} is a maximal
+connected part of one surface, or of coincident sheets, on which the total coefficient is constant. At a tripod, its three sectors and their exit strips
+form one summand. The half-edge $C^M(u',\omega)$ is its interior branching curve, and the three coefficients
+$m\langle\,\cdot\,,e_k\rangle$ balance with the orientations of (M2).
+
+Two summands are \emph{adjacent} along a \emph{junction segment} if they meet along a curve across which the total
+coefficient on one side of the arc changes. The half-edge of a tripod is excluded from this definition.
+\end{definition}
+
+The following observations locate the junction segments. Where a germ continues as its own exit strip, including at the
+start of a rotation, the coefficient is the same on both sides, so the transverse segment is interior to one summand;
+thus the part of a unit germ at its vertex and its exit strips belong to one summand up to the first place where another
+sheet joins them. Junction segments occur only where a rotated exit strip reaches a reference side that already carries a
+strip: inside the polygonal cylinder at the far end of the stretch, and outside it where the piecewise linear normal
+half-disc of the rotation at $y^*_{A,p}$ meets the reference-side strip. Where a rotated strip reaches an empty reference
+side, it continues there; where the exit strips on the reference side meet the reference sheet, at $y^0_A$ and $y^1_A$,
+they already total $c_Ad^*_A$ with the orientation of the reference sheet, by the balance of $b^M$ along $A$. In both
+cases the total coefficient does not change and the curve is interior to one summand. Along a junction segment every
+adjacent coefficient is a multiple of $d^*_A$, and the multiples sum to zero with the orientation signs, because
+$z^\natural$ is a relative cycle with boundary only on $\Gamma^M$. Inside the stretch, after $y^*_{A,p}$, the
+reference-side sheet carries one coefficient inside the cylinder $\{\varrho_{\mathsf P}<\varrho_0\}$, where the smoothed
+strip is still rotating, and another outside it, where the piecewise linear rotated sheet has already arrived; they meet
+the correction strip of the smoothing along the seam $\{\varrho_{\mathsf P}=\varrho_0\}$, at distance at least
+$\varrho_0/C_{\mathsf P}\ge r_\natural$ from $\Gamma^M$.
+
+Summands may also meet transversally: a transverse disc and a sheet, the two node halves along $C^M(u',P)$, and exit
+sheets of different germs meeting only on $\Gamma^M$. Such meetings are not junctions, and the summands are lifted
+separately (Section~\ref{ssec:lift-regular}).
+
+\subsection{Local lifts along the discriminant and at its three-valent vertices}\label{ssec:lift-legs}
 
 We lift the boundary germs in the binomial and pair-of-pants models of the localized hypersurface.
 The positive real section fixes compatible base points for the torus orbits, and Lemma~\ref{lem:windows} places these orbits in regions where the equations are exact.
@@ -542,8 +563,8 @@ $\chi_2=\chi^{n_y}$. The \emph{normalised coordinates} along $A$ are $\hat Z=Z/\
 $\nu_Z,\nu_{Z'}>0$ are smooth functions of $\log|\chi_1|$ and $\log|\chi_2|$ such that $|\gamma_0x^0|=|\gamma_nx^n|\,|\hat
 Z\hat Z'|$, and $\nu_Z/\nu_{Z'}$ is a function of $\log|\chi_2|$ alone with $\frac1L\log(\nu_Z/\nu_{Z'})=\bar\alpha(\log
 |\chi_2|/L)+O(1/L)$; where the torus coordinates are within $2\theta_4$ of those of a model node they are the constants of
-Definition~\ref{def:morsecoords}, with the reference monomial $a$ in place of $n$, and near a model vertex they are
-constants with $|\hat Z|=|\hat Z'|$ at the vertex; on these sets $\bar\alpha$ is constant, so the two requirements agree.
+Definition~\ref{def:morsecoords}, with the reference monomial $a$ in place of $n$, and near a model vertex, for the
+reference monomial $n_0$ of the definition of $w_{u'}$, they are constants with $|\hat Z|=|\hat Z'|$ at the vertex; on these sets $\bar\alpha$ is constant, so the two requirements agree.
 Put $\hat\mu:=|\hat Z|^2-|\hat Z'|^2$ and
 \[
 \mathcal S_G:=\sum_m\psi_m\,|\gamma_mx^m|/|\gamma_nx^n|,
@@ -605,9 +626,9 @@ and at the turning points, and by (3) near a model vertex.
 $W^*=\{\mathfrak bZZ'+\hat f(\chi_1,\chi_2)=0\}$ with $\hat f$ the weighted trinomial of $\omega$. The \emph{vertex piece}
 $\Pi_v$ is the set of points of $W^*\cap D_{u'}=\{Z'=0,\ \hat f=0\}$ whose torus coordinates are within $\theta_4$ of those
 of $m$ and with $|\hat Z|^2\le\mathcal S_G\sinh(L\varsigma)$: a smooth pair of pants times a disc, as in
-\cite[\S7.5]{CBM}. Over the three sectors its fibres are $S^1_\alpha$ times the circle of the tentacle; over the half-edge
-$C^M(u',\omega)$ its fibre is $S^1_\alpha$ times the truncated pair of pants, which is the filling $\mathcal Q=\ell\times
-\mathcal Q'$ of \cite[\S7.7, Steps~2--3]{CBM} with $\ell=S^1_\alpha$. Along the tentacles it agrees with the divisor pieces
+\cite[\S7.5]{CBM}. It is invariant under $S^1_\alpha$; along each tentacle its level sets of the leg coordinate and of $|\hat Z|^2/\mathcal S_G$ are $S^1_\alpha$ times the circle of the
+tentacle, and its outer part is $S^1_\alpha$ times the truncated pair of pants $\{\hat f=0\}$ near $m$, which plays the role
+of the filling $\mathcal Q=\ell\times\mathcal Q'$ of \cite[\S7.7, Steps~2--3]{CBM} with $\ell=S^1_\alpha$. Along the tentacles it agrees with the divisor pieces
 of the three arcs, and its boundary consists of the outer part $\{|\hat Z|^2=\mathcal S_G\sinh(L\varsigma)\}$ and the
 ends of the tentacles, where it continues as those divisor pieces.
 \item \emph{Turning points.} Over $C^M(\tau,e)$, $\tau=[u_1,u_2,u_3]$, $W^*=\{\mathfrak b\,z_1z_2z_3+\gamma_n(1+\kappa_e
@@ -715,10 +736,10 @@ disc: the orientation of $\mathfrak N_A$ followed by that of $\mathbb T(v_0)$.
 The proof is in Appendix~\ref{app:liftproofs}.
 
 For a strict tropical $2$-cycle of \cite{CBM}, the covector at a crossing is primitive and $|k_1|=1$
-(\cite[Def.~7.2(c), (i)]{CBM}; clauses (iii), (ix) in the published version); then (2) is the piece of \cite[\S7.7, Step~6]{CBM}. For relative cycles no splitting of $v$ is
+(the primitive-field and crossing clauses of \cite[Def.~7.2]{CBM}); then (2) is the piece of \cite[\S7.7, Step~6]{CBM}. For relative cycles no splitting of $v$ is
 needed: when $k_g\ne0$ the piece $\Pi(v_0)$ is used directly, for every $|k_g|\ge1$, and the only additional case is $k_g=0$.
 
-\subsection{Local pieces and collar paths}\label{ssec:lift-collar}
+\subsection{Joining the local lifts to the positive real section}\label{ssec:lift-collar}
 
 We truncate the local lifts and join their boundary tori to the positive real section by collar paths.
 The estimates below keep these paths in the regions used to extend the lift over the regular part.
@@ -751,7 +772,9 @@ $\varsigma$, the \emph{inner boundary} $C^{(g)}_\varsigma$ is its frontier in $g
 trivalent point on the half-edge $C^M(u',\omega)$.
 \end{definition}
 
-Fix a metric on $B_Y$ and a common Lipschitz constant $C_T\ge1$ of the inverse charts $T_e^{-1}$, $T_q^{-1}$ and of the
+Fix a metric on $B_Y$ and a common Lipschitz constant $C_T\ge1$ of the inverse charts $T_e^{-1}$, $T_q^{-1}$, of the
+inverses of the charts $p\mapsto(\ell(p),\alpha_{uu'}(p)-\alpha_{uu'}(m))$ of $B_Y$ near the model vertices $m$ (with $\ell$ as
+in the next paragraph, in the dual norm of Section~\ref{ssec:localized}), and of the
 inverse depth parametrisations near the model vertices and turning points. Fix
 \[
 \varsigma_0\le\min\bigl(\varsigma_{\max}/2,\ r_S/4,\ r_\natural/(4C_T),\ r_{\rm far}/(4C_T),\ c_Br_B/8\bigr).
@@ -770,12 +793,19 @@ Lemma~\ref{lem:nodemodel}(4) up to an additive constant), and with the tropical 
 $(y_e,\alpha_e)=E_t^{-1}(\log|\kappa_e\chi_1(x)|,\hat\mu(x))$ on $\Pi_{\mathfrak a,\varsigma}$ and on the crossing
 pieces, and the offset $\frac1L\operatorname{arsinh}(\hat\mu(x)/\mathcal S_G(x))$ from the arc on the divisor pieces, the
 node pieces and the vertex pieces. Near a model vertex, the position on the three sectors and the half-edge is given by a
-fixed retraction, onto the tripod of the three arcs, of a neighbourhood of it in the plane of the torus coordinates of
+fixed Lipschitz retraction (for instance a piecewise linear one), onto the tripod of the three arcs, of a neighbourhood of it in the plane of the torus coordinates of
 $\omega$, which contains the image of the pair of pants; near a turning point, the offsets from the two arcs are given by
 the moduli of the two Cox coordinates $z_2,z_3$. Where two of these descriptions overlap they differ by $O(1/L)$, and
 $\pi_g$ is obtained by interpolating them with a partition of unity in the tropical coordinates; since
 $E_t^{-1}(0,x_2)=(0,\frac1L\operatorname{arsinh}(x_2/2))$ and $\mathcal S_G=2$ on the branch over $\Omega_e$, the
-descriptions agree to this order.
+descriptions agree to this order. At a model vertex we fix $r_\rho\in(0,\min(\theta_4/4,\theta_2/(11C_T))]$, with $C_T$
+as above. In the torus coordinates $\ell:=(\operatorname{val}_{n_b}-\operatorname{val}_{n_a},\operatorname{val}_{n_c}-\operatorname{val}_{n_a})$
+of $\omega=[n_a,n_b,n_c]$, which vanish on $J_\omega$, we take the retraction to send a point near the $k$-th arc with
+$|\ell|_\infty\ge r_\rho/2$ to the point of that arc with the same value of the coordinate $y$ of
+Lemma~\ref{lem:tropcharts}(2) for the arc, and the partition of unity to use the vertex description alone over the points
+of the three sectors with $|\ell|_\infty\le r_\rho$. Where the vertex
+description and the description along a tentacle overlap, they then give the
+same leg coordinate and the same offset, so $\pi_g$ maps the pieces of a tripod into its three sectors and its half-edge.
 
 \emph{The piece of a summand.} For a summand $g$ and $0<\varsigma\le2\varsigma_0$ let $\Pi^\varsigma(g)$ be the set of
 points $x$ of the local pieces of depth $\varsigma$ along $g$ with $\pi_g(x)\in g$: the node piece $\Pi^\varsigma_q$ over the
@@ -783,18 +813,23 @@ branch of its passage near a model node, the vertex piece $\Pi_v$ near a model v
 near a turning point if $g$ contains $\mathrm{Turn}(u_i)$, the divisor pieces along its exit strips and reference sheets,
 the pieces $\Pi_{\mathfrak a,\varsigma}$ along its rotating stretch, and the crossing piece if $g$ is a transverse disc. The
 local pieces agree where they overlap (Lemma~\ref{lem:pieces}(1) and Section~\ref{ssec:lift-node}), so $\Pi^\varsigma(g)$ is
-one subset of $W^*$, each point counted once, and $\pi_g$ maps it onto $g_{\le\varsigma}$, a homeomorphism up to the collapse
-of the torus orbits. If the coefficient of $g$ is $m\,v_0$ with $m\in\Z$ and $v_0$ primitive (for a tripod see below), the \emph{piece} of $g$ is
+one subset of $W^*$, each point counted once, and $\pi_g$ is a proper continuous map of it onto $g_{\le\varsigma}$, so it
+induces a homeomorphism from the quotient of $\Pi^\varsigma(g)$ by its fibres onto $g_{\le\varsigma}$. Over the points of
+$g$ at positive depth away from the node cubes and from the points of a tripod with $|\ell|_\infty<r_\rho/2$ the fibre is a
+two-torus, collapsing to a circle over the points of the arcs other than the crossing points $\mathfrak x_A$
+(Lemma~\ref{lem:crossing}); the fibres near a model node are those of the node pieces
+(Section~\ref{ssec:lift-node}). Near the half-edge of a tripod the fibres depend on the retraction, and nothing below uses
+them. If the coefficient of $g$ is $m\,v_0$ with $m\in\Z$ and $v_0$ primitive (for a tripod see below), the \emph{piece} of $g$ is
 $m\,[\Pi^\varsigma(g)]$, with $\Pi^\varsigma(g)$ oriented as the lift of $g$: the orientation of $g$ followed by that of
 $\mathbb T(v_0)$. The piece of $-v_0$ is minus that of $v_0$, since the set is the same and the torus orientation is
 reversed. The \emph{outer part} of the piece is $\pi_g^{-1}(C^{(g)}_\varsigma)\cap\Pi^\varsigma(g)$. For a summand containing
 the node half of $g_{ab}$, respectively $g_{bc}$, the part of the piece over the node cube is $c_{ab}\,\Pi^\varsigma_q(g_{ab})$,
 respectively $c_{bc}\,\Pi^\varsigma_q(g_{bc})$, restricted to base points in $g$; the thimble lies over $m_P\in g$. A tripod
 summand of multiplicity $m$ carries $m\langle\,\cdot\,,e_k\rangle$ on its $k$-th sector; its piece is $m\,\Pi_v$ near the
-vertex, continued by the divisor pieces of its exit strips, oriented sector-wise as the lift: over the $k$-th sector by the
-orientation of that sector followed by that of $\mathbb T(\langle\,\cdot\,,e_k\rangle)$, and over the half-edge, where its
-fibre is the filling $\mathcal Q=S^1_\alpha\times\mathcal Q'$ of Lemma~\ref{lem:pieces}(2), with the sign convention of
-\cite[\S7.7, Step~2]{CBM}; $\Pi_v$ is counted once; at a turning point the pieces of the summands
+vertex, continued by the divisor pieces of its exit strips, oriented as the lift over each sector: over the $k$-th sector
+by the orientation of that sector followed by that of $\mathbb T(\langle\,\cdot\,,e_k\rangle)$. These three orientations are
+the restrictions of one orientation of the connected four-manifold $\Pi_v$, by the orientations of (M2) and the sign
+convention of \cite[\S7.7, Step~2]{CBM}; $\Pi_v$ is counted once; at a turning point the pieces of the summands
 containing $\mathrm{Turn}(u_1)$ and $\mathrm{Turn}(u_2)$, the latter oriented by $-o_e$ as in (M3), lie in the different
 divisors $D_{u_1}$ and $D_{u_2}$ and are separate chains. For example, a turning point with away-oriented leg data
 $(c_{12},c_{13},c_{23})=(1,1,-2)$, which arises from a positive vertex of $B'_\sigma$ with two turns ending on the same leg,
@@ -805,42 +840,65 @@ run along the common arc on opposite sides, one of them rotated to the reference
 separate, their inner boundaries and pieces may cross in $B_Y$ and in $W^*$; nothing below refers to such crossings.
 
 \subsubsection*{Collar paths}
-Every piece of Lemma~\ref{lem:pieces}, and every node piece, has phase $\pi$ for the character $\chi^{\tilde v}$ of its
-covector $v$, up to $O(\eta_0^{1/2})$ near the nodes, while the union of the $\mathbb T(v)$-orbits through $\mathfrak s^\vee$
-has phase $0$. On the strip $g_{\le2\varsigma_0}\cap g_{\ge\varsigma_0}$ of a summand $g$ the lift consists of
-\emph{collar paths}, paths of $\mathbb T(v)$-orbits in the exact models over the strip. Over the transverse segment from
-$b_0\in C^{(g)}_{\varsigma_0}$ to $b_1\in C^{(g)}_{2\varsigma_0}$ the collar path first runs through the pieces of depths
-between $\varsigma_0$ and $2\varsigma_0$ over that segment, at phase $\pi$; then, at fixed $\hat\mu$ and fixed moduli of the
-torus coordinates, which determine the point up to the action of $S^1_\alpha$ once the phases of the torus coordinates are
-given (Lemma~\ref{lem:quot} and its analogue for the leg model; where two monomials are in transition, their weights depend
-on $|\hat Z\hat Z'|$ with logarithmic derivatives $O(1/L)$, and $|\hat Z\hat Z'|$ is the fixed point of a contraction), it
-turns the phase of $\chi^{\tilde v}$ from $\pi$ to $0$ along one of the two arcs of the circle joining them, ending at a
-point of $\Sigma^+_W$; finally it moves in $\Sigma^+_W$ to $\mathfrak s^\vee(b_1)$, along the image under $\mathfrak s^\vee$
-of a segment of length $O(1/L)$. The two choices of the arc differ by the fibre loop $\gamma_v$ with $\langle v,\gamma_v\rangle
-=1$. The collar path of a summand with coefficient $m\,v_0$ is $m$ times that of $v_0$. Around a crossing no phase is
+In the exact models a point is determined by $\hat\mu$, the moduli and phases of the torus coordinates $\chi_1,\chi_2$, and
+its position on its $S^1_\alpha$-orbit, which is free where $\hat\mu\neq0$ or $g_e\ne0$ (Lemma~\ref{lem:quot}, and the same
+computation for the leg model and, as in Lemma~\ref{lem:tripodcollar}(1), for the vertex model; where two monomials are in transition, their weights
+depend on $|\hat Z\hat Z'|$ with logarithmic derivatives $O(1/L)$, and $|\hat Z\hat Z'|$ is the fixed point of a
+contraction). Near a turning point the moduli of the Cox coordinates $z_2,z_3$ take the place of $\hat\mu$. For a covector
+$v$ with lift $\tilde v$, the \emph{$\mathbb T(v)$-orbit} of a point $x$ is the set of points with the same $\hat\mu$, the same
+moduli of the torus coordinates and the same phase of $\chi^{\tilde v}$; it is a two-torus, and where the model has the
+exact torus $\mathbb T_d$ and $v\in\Z d^*_A$ it is the $\mathbb T_d$-orbit of $x$. Every piece of Lemma~\ref{lem:pieces}, and every node
+piece, has phase $\pi$ for $\chi^{\tilde v}$, $v$ its covector, up to $O(\eta_0^{1/2})$ near the nodes and up to
+$O(t^{c\,r_\rho})$ on the sectors of a tripod where $|\ell|_\infty\ge r_\rho$, with $c>0$ depending only on
+the configuration; there the fibres of the pieces are graphs over $\mathbb T(v)$-orbits. The $\mathbb T(v)$-orbits through
+$\mathfrak s^\vee$ have phase $0$.
+
+On the strip $g_{\le2\varsigma_0}\cap g_{\ge\varsigma_0}$ of a summand $g$ the lift consists of \emph{collar paths}, except
+that near the half-edge of a tripod their second and third stages are replaced by one chain
+(Lemma~\ref{lem:tripodcollar}). Over the transverse segment from
+$b_0\in C^{(g)}_{\varsigma_0}$ to $b_1\in C^{(g)}_{2\varsigma_0}$ the collar path of a point runs in three stages. First it runs
+through the pieces of depths between $\varsigma_0$ and $2\varsigma_0$ over that segment. Then, from a point $x$ of the piece
+of depth $2\varsigma_0$ over $b_1$, at fixed $\hat\mu$, fixed moduli of the torus coordinates and fixed position on the
+$S^1_\alpha$-orbit, it turns the phase of $\chi^{\tilde v}$ from its value at $x$ to $0$ along one of the two arcs of the
+circle joining them, keeping the phase of $\chi^{n_y}$ fixed, $n_y$ as in Lemma~\ref{lem:tropcharts}(2) (for a node passage,
+the phase of the other node coordinate). Finally, at these phases, $\hat\mu$ and the logarithms of the moduli of the torus
+coordinates move linearly to their values at $\mathfrak s^\vee(b_1)$. For the point at which every phase, including the
+position on the $S^1_\alpha$-orbit, is that of the positive real locus, this last stage is a path in $\Sigma^+_W$ ending
+at $\mathfrak s^\vee(b_1)$. Since the fibre of the piece over $b_1$ is a graph over a $\mathbb T(v)$-orbit, the collar paths
+of its points end on the $\mathbb T(v)$-orbit through $\mathfrak s^\vee(b_1)$, which they cover with degree one; where the
+model has the exact torus, the second and third stages are paths of $\mathbb T(v)$-orbits. The conventions in the second stage matter only where the fibres are not exact
+$\mathbb T_d$-orbits, that is, near the nodes, along the leaf paths and on the sectors of a tripod; there the collar lies on the side
+$\hat\mu>0$, the position on the $S^1_\alpha$-orbit is measured by $\arg\hat Z$, and $n_y$ is the one used by the base map.
+Where the fibres are exact $\mathbb T_d$-orbits, two choices of the fixed phase or of the trivialisation of $S^1_\alpha$
+differ at each stage by an element of $\mathbb T_d$, so the sets swept do not depend on them; at a turning point the second
+stage fixes the phases of $z_2$ and $z_3$, and where the two ends of an arc prescribe different $n_y$ the change is made over
+a divisor piece in $\Omega_e$. The two choices of the arc differ by the fibre loop $\gamma_v$ with
+$\langle v,\gamma_v\rangle=1$. The collar path of a summand with coefficient $m\,v_0$ is $m$ times that of $v_0$. Around a crossing no phase is
 turned, since the crossing piece has phase $0$: the collar path runs in $\Sigma^+_W$ from the positive point of the piece
 over $b_0$ to $\mathfrak s^\vee(b_1)$, and the union of the torus orbits through these paths is the crossing piece over the
 strip.
 
-\emph{Direction convention.} Call two arcs of $\Gamma^M$ \emph{linked} if they are the two arcs of a turning germ, or the
-two legs of one passage at a model node, and call the classes of the equivalence relation they generate \emph{linkage
-classes}. All arcs of a class carry the same covector $d^*_A$ up to sign: through a turning point all arcs of $E_e$ have
+\emph{Orientation of the collar paths.} Consider the equivalence relation on the arcs of $\Gamma^M$ generated by
+declaring equivalent the two arcs of a turning germ and the two legs of one passage at a model node. All arcs of an
+equivalence class carry the same covector $d^*_A$ up to sign: through a turning point all arcs of $E_e$ have
 $d^*_A=\pm\langle\,\cdot\,,n'-n\rangle$, and through a node passage $b-a=c-d$. So a class determines a set of edges of
 $\mathcal F_C$, closed under the translations $e\mapsto e+(d-a)$ and $e\mapsto e+(b-a)$ across node parallelograms, and a
 translation preserves the vector of an edge. Orient these edges compatibly and let $d_{\rm cl}:=n'-n$ for the oriented
 edge $[n,n']$; no cycle of translations reverses the orientation. At an $A_2$ hexagon the two legs of a node that lie on
-node-to-node arcs are adjacent and belong to different passages, so a linkage class enters the hexagon along an outer
+node-to-node arcs are adjacent and belong to different passages, so an equivalence class enters the hexagon along an outer
 leg, passes two of its nodes and leaves along an outer leg; it does not run around the cycle of node-to-node arcs. On
-every arc of a class, and for every summand other than a transverse disc, the geometric collar path turns the phase of $\chi^{d_{\rm cl}}$ from $\pi$ to $0$ in the positive
-direction; for a summand with covector $m(\pm d^*_A)$ the collar is $\pm m$ times this geometric family, which does not
-depend on the sign, since the phases $\pi$ and $0$ of $\chi^{\pm d_{\rm cl}}$ coincide.
+every arc of a class, and for every summand other than a transverse disc, the geometric collar path turns the phase of
+$\chi^{d_{\rm cl}}$ from its value near $\pi$ to $0$ in the positive direction; for a summand with covector $m(\pm d^*_A)$
+the collar is $\pm m$ times this geometric family, which does not depend on the sign, since a positive turn of the phase of
+$\chi^{d_{\rm cl}}$ is a negative turn of that of $\chi^{-d_{\rm cl}}$ along the same paths.
 
 \begin{lemma}[collar paths]\label{lem:collarB}
 \begin{enumerate}
-\item Along every summand, and through a turning germ or a node passage, the direction of the collar paths is
-constant.
-\item At a model vertex the three directions are independent. For a tripod of multiplicity $m$ the collar cells
-$\mathcal Q\times(\text{transverse interval})$ below are taken $m$ times.
+\item Along every sector or arc of a summand, and through a turning germ or a node passage, the direction of the collar
+paths is constant.
+\item At a model vertex the three directions are independent: near the half-edge of a tripod of multiplicity $m$ the
+collar is $m$ times the chain $\mathscr C_v$ of Lemma~\ref{lem:tripodcollar}, which joins the collars of the three
+sectors.
 \item At every junction segment the collars of the adjacent summands cancel.
 \item Around a crossing no phase is turned, and the collar runs in the positive locus.
 \end{enumerate}
@@ -849,27 +907,77 @@ $\mathcal Q\times(\text{transverse interval})$ below are taken $m$ times.
 \begin{proof}
 (1) The strip cells along an arc are rectangles (segment $\times$ collar path) filled by the explicit family; a change of
 direction would leave the loop class $\pm\gamma_v\ne0$ on the boundary of a rectangle. Through a turning point and through a
-node passage the character is the same on both arcs, by the direction convention. The two legs of a passage, say the
+node passage the character is the same on both arcs, by the choice of orientations above. The two legs of a passage, say the
 $b-a$ passage, are joined inside the node piece. On it, at the depths in $[\varsigma_0,2\varsigma_0]$ and including over
 the neck, the coordinate $x$ is $O(|\kappa_P|^{1/2})$, since $|x|\le|\kappa_P|^{1/2}$ on $\mathscr C$; so
 $\tilde\chi_1=-\mu_P^{-1}+\mu_P^{-1/2}x$ has phase $\pi+O(|\kappa_P|^{1/2})$. For $\hat\mu>0$ a point is determined up to
 the free action of $S^1_\alpha$ by $(\hat\mu,\chi_1,\chi_2)$ (Lemma~\ref{lem:quot}), so the turn of the phase of
-$\tilde\chi_1$ from $\pi+O(|\kappa_P|^{1/2})$ to $0$ in the positive direction, at fixed $\hat\mu$ and fixed moduli, is
-defined pointwise and continuously over the whole strip at the node, and its direction is constant through the node. The
+$\tilde\chi_1$ from $\pi+O(|\kappa_P|^{1/2})$ to $0$ in the positive direction, at fixed $\hat\mu$ and fixed moduli, and the
+subsequent linear motion of $\hat\mu$ and of the logarithms of the moduli, are defined pointwise and continuously over the
+whole strip at the node, and the direction is constant through the node. The
 same holds for the $c-b$ passage with $y$ and $\tilde\chi_2$. The
 second circle of the node, the rotation of $\tilde\chi_2$ for the $b-a$ passage or of $\tilde\chi_1$ for the $c-b$
 passage, lies in the fibre torus of the germ, so no half-turn correction arises.
-(2) The only cells joining the three strips at a model vertex are the fillings $\mathcal Q$ over the half-edge times the
-transverse interval of the strip. A filling of three circles with $\sum_ks_k[G_k]=0$ in $T^3/S^1_\alpha$ exists for every
-triple of phases, including the concurrent one at $\mathfrak s^\vee$, and a continuous family of fillings along a path of
-triples is obtained by translating the three circles in the universal cover of $T^3/S^1_\alpha$ and carrying the
-$2$-chain along; so every path of triples lifts. The tripod clause of Section~\ref{ssec:lift-regular} adapts the filling over the half-edge to the end of the family that is
-lifted.
+(2) The three sectors of a tripod meet only along its half-edge, and near it their collars are replaced by the chain
+$\mathscr C_v$ of Lemma~\ref{lem:tripodcollar}, whose boundary contains the collars of the three sectors over the
+points $c_k$ where $|\ell|_\infty=r_\rho$, with whatever directions these have. So no relation among the three
+directions is needed.
 (3) The collars on the two sides of a junction segment are given by the same formula, with the same direction and
 covectors that are multiples of $d^*_A$ summing to zero.
 (4) The crossing pieces have phase $0$ (Lemma~\ref{lem:crossing}), so the collar paths there run in $\Sigma^+_W$, as
 described above.
 \end{proof}
+
+Near the half-edge of a tripod the vertex model has no exact torus, and the fibres of the vertex piece over points of the
+sectors close to the half-edge need not be graphs over $\mathbb T(v)$-orbits, so the second and third stages of the collar
+paths are not used there. They are replaced by one explicit chain in a region with a product structure.
+
+\begin{lemma}[the collar at a tripod]\label{lem:tripodcollar}
+Let $g$ be a tripod summand of multiplicity $m$ at the model vertex $m_v=m_{\omega,i}$, $\omega=[n_a,n_b,n_c]$, with edge
+$[u,u']$ of $\mathcal T$, half-edge $h=C^M(u',\omega)$, and let $b_1$ be the point where $C^{(g)}_{2\varsigma_0}$ meets $h$.
+Put $\chi_1:=\chi^{n_b-n_a}$ and $\chi_2:=\chi^{n_c-n_a}$, and use the normalised coordinates for the reference monomial
+$n_a$; near $m_v$ the localized mirror is $\vartheta\hat Z\hat Z'+\hat f=0$ with $\hat f=1+\kappa_1\chi_1+\kappa_2\chi_2$, $\kappa_1,\kappa_2>0$ and $|\vartheta|=1$, and
+$\mathcal S_G=1+|\kappa_1\chi_1|+|\kappa_2\chi_2|$. Write $\ell_j:=\frac1L\log|\kappa_j\chi_j|$, $\zeta:=\frac1L\log\hat\mu$
+where $\hat\mu>0$, $\Lambda_L(\ell):=\frac1L\log(1+e^{L\ell_1}+e^{L\ell_2})$, and let $\mathsf K\subset\R^3$ be the compact convex set
+\[
+\mathsf K:=\bigl\{(\zeta,\ell):\ |\ell|_\infty\le2r_\rho,\ \ \Lambda_L(\ell)+\tfrac12\varsigma_0\le\zeta\le4\varsigma_0+2r_\rho+\tfrac1L\log3\bigr\}.
+\]
+Assume $\varsigma_0\le r_\rho$. Then for $t$ small:
+\begin{enumerate}
+\item the map $\Phi_v\colon x\mapsto(\zeta,\ell,\arg\chi_1,\arg\chi_2,\arg\hat Z)$ restricts to a diffeomorphism from a compact
+subset $W^*_{\mathsf K}\subset W^*$ onto $\mathsf K\times T^2\times S^1$, under which $S^1_\alpha$ rotates the last factor; so $W^*_{\mathsf K}$ is
+homotopy equivalent to a three-torus and $H_3(W^*_{\mathsf K};\Z)\cong\Z$;
+\item let $S'_v$ be the set of points of $C^{(g)}_{2\varsigma_0}$ with $|\ell|_\infty\le r_\rho$, with end points
+$c_1,c_2,c_3$ on the three sectors. Then $W^*_{\mathsf K}$ contains the part $A$ over $S'_v$ of the outer part of the piece of depth
+$2\varsigma_0$, the union $A^+$ of the $\mathbb T(\langle\,\cdot\,,e_k\rangle)$-orbits through the points $\mathfrak s^\vee(b)$,
+$b\in S'_v$ on the $k$-th sector, the second and third stages $B_k$ of the collar paths of the $k$-th sector over $c_k$,
+and the fibre $\mathbb T_{b_1}:=\Phi_v^{-1}(\{k_1\}\times T^2\times S^1)$, where $k_1$ is the $(\zeta,\ell)$ of
+$\mathfrak s^\vee(b_1)$; all of them are invariant under $S^1_\alpha$;
+\item there are an integral $2$-chain $\mathcal Q'(1)$ in $\{k_1\}\times T^2$ with $\partial\mathcal Q'(1)=\sum_ks_kG_k$, where
+$G_k$ is the image of the $\mathbb T(\langle\,\cdot\,,e_k\rangle)$-orbit through $\mathfrak s^\vee(b_1)$, oriented so that
+$\Phi_v^{-1}(G_k\times S^1)$ is that orbit with its canonical orientation (Section~\ref{ssec:lift-regular}), and
+$s_k=-1$ is the sign with which the $k$-th sector induces the orientation of the half-edge pointing away from $m_v$
+\cite[\S7.7, Step~2]{CBM}, and an integral $4$-chain $\mathscr C_v$ in $W^*_{\mathsf K}$, explicit up to the choice of a
+filling in $\mathbb T_{b_1}$, with
+\[
+\partial\mathscr C_v=D:=A^++\Phi_v^{-1}\bigl(\mathcal Q'(1)\times S^1\bigr)-A-\sum_kB_k.
+\]
+Here $S'_v$ carries its orientation as part of the boundary of $g_{\le2\varsigma_0}$; $A$ is oriented as part of the
+boundary of the piece, $B_k$ as part of the boundary of the collar of the $k$-th sector beyond $c_k$, and $A^+$ and the
+filling term as the lift (the orientation of the base followed by that of the fibre); with these orientations $D$ is a
+cycle. The class of $\mathcal Q'(1)$ modulo boundaries in $\{k_1\}\times T^2$ is
+determined by the condition $[D]=0$ in $H_3(W^*_{\mathsf K};\Z)$.
+\end{enumerate}
+Over the points of its strip with $|\ell|_\infty\le r_\rho$ the collar of $g$ is the first stage, $m$ times the vertex
+piece between depths $\varsigma_0$ and $2\varsigma_0$ over these points, followed by $m\,\mathscr C_v$; over the rest of the strip it
+consists of the collar paths of the three sectors.
+\end{lemma}
+
+The proof is in Appendix~\ref{app:liftproofs}. The chain $\mathscr C_v$ is obtained by contracting the moduli
+$(\zeta,\ell)$ linearly to $k_1$, which carries $D$ into the single fibre $\mathbb T_{b_1}$, and filling the image there;
+the contraction stays in $W^*_{\mathsf K}$ because $\mathsf K$ is convex. Only the boundary of $\mathscr C_v$ enters the later gluing, and
+its terminal part $A^+$ and the filling term lie in the regions of Section~\ref{ssec:lift-regular} by
+Lemma~\ref{lem:interface}.
 
 By Lemma~\ref{lem:interface} below, the ends of the collar paths of a summand over an edge of its inner boundary curve
 $C^{(g)}_{2\varsigma_0}$ lie in the region $W^*_{V_{\mathsf s}}$ associated with the adjacent simplex $\mathsf s$ of the
@@ -878,8 +986,8 @@ By the same lemma, the collar paths over a compact subset $\mathcal W$ of a regu
 below a threshold depending on $V$, $\mathcal W$ and $\epsilon$. The loop classes in the proof of
 Lemma~\ref{lem:collarB}(1) are taken in such regions, over a subdivision of the strip into finitely many compact
 pieces, each in a regular set (the strip is a compact subset of $B_Y\setminus\Gamma^M$, covered by the open stars of
-Proposition~\ref{prop:L1}); these regular sets are chosen in step~5 of the order of choices, and their thresholds enter
-step~6.
+Proposition~\ref{prop:L1}); these regular sets are chosen after $\varsigma_0$, and their thresholds enter the final
+choice of $t$ (Section~\ref{ssec:lift-assembly}).
 
 \subsection{Extending the lift over the regular part}\label{ssec:lift-regular}
 
@@ -938,10 +1046,10 @@ The proof is in Appendix~\ref{app:liftproofs}.
 \begin{lemma}[inner boundary]\label{lem:interface}
 Let $\varsigma:=\varsigma_0$, and let $x$ be a point of $W^*$ of one of the following kinds: a point of the piece
 of depth $2\varsigma$ of a summand $g$ whose base point $\pi_g(x)$ lies at depth at least $\varsigma$; a point of a
-collar path of $g$ over a point $b$ of its strip, or, for a tripod summand $g$, a point of a filling of its collar family
-over a point $b$ of the strip along its half-edge, and then $\pi_g(x):=b$; or a point $\mathfrak s^\vee(b)$, and then
-$\pi_g(x):=b$. There are $\varsigma_1\in(0,\varsigma/2]$ and $C$, depending only on the configuration, the model arc
-systems, $\Upsilon^M$, the choices of step~2 of the order of choices (the balls $B^0_p$, the retraction at the model
+collar path of $g$ over a point $b$ of its strip, and then $\pi_g(x):=b$; for a tripod summand $g$, a point of the
+orbits $A^+$ of Lemma~\ref{lem:tripodcollar} over a point $b$ of $S'_v$, or of its fibre $\mathbb T_{b_1}$, and then
+$\pi_g(x):=b$, respectively $b_1$; or a point $\mathfrak s^\vee(b)$, and then $\pi_g(x):=b$. There are $\varsigma_1\in(0,\varsigma/2]$ and $C$, depending only on the configuration, the model arc
+systems, $\Upsilon^M$, the model germs and their auxiliary choices (the balls $B^0_p$, the retraction at the model
 vertices and the partition of unity defining the base maps $\pi_g$), the bounds on the coefficients over $\mathscr C_0$,
 and $\varsigma$, such that:
 \begin{enumerate}
@@ -961,7 +1069,7 @@ Let $\mathscr S$ be the finite $2$-complex obtained from the disjoint union of
 \begin{itemize}
 \item every summand of~\eqref{eq:nf2} near $\Gamma^M$ (the transverse discs $\mathfrak N^{\varepsilon'_A}_A$ included),
 restricted to depth at least $2\varsigma_0$ and continued inside $U$ up to $\partial U$,
-\item the correction strips and annuli of the two local replacements,
+\item the correction strips and annuli of the two local modifications,
 \item the simplices of $y^\natural$ outside $U$,
 \end{itemize}
 by identifying (i) the junction segments of adjacent summands, beyond depth $2\varsigma_0$, and (ii) the curves along
@@ -1058,23 +1166,9 @@ $m_e\langle\,\cdot\,,e_k\rangle$, whose kernels meet in a rank-one sublattice $\
 $F_e:=\mathbb T^3_e$, with a cell structure in which the three subtori $\mathbb T_{\mathsf s}$ are subcomplexes, and
 $\mathscr Q_e:=m_e\,\mathscr Q_e^0$, $\mathscr Q_e^0:=(\ell\otimes U(1))\times\mathcal Q'_e$, where $\mathcal Q'_e$ is a $2$-chain in
 $\mathbb T^3_e/(\ell\otimes U(1))$ with $\partial\mathcal Q'_e=\sum_ks_kG_k$, the images of the three tori with the signs of the
-boundary orientations \cite[\S7.7, Step~2]{CBM}. The branching half-edge of each tripod summand meets its inner
-boundary once, at a vertex $p_0$ of $\mathfrak T$ on an edge $e_0$ of the half-edge, and its other end lies on $\partial U$
-beyond the collar region. At $p_0$ the choices are made in the following order. First $F^\vee$ is fixed on
-$p_0\times\mathbb T^3_{e_0}$, as a diffeomorphism onto the fibre torus through $\mathfrak s^\vee(b_1)$, $b_1:=j^\natural(p_0)$
-(the level set of $\hat\mu$ and of the moduli of the torus coordinates that contains $\mathfrak s^\vee(b_1)$, in which
-the collar family ends; the argument of Lemma~\ref{lem:quot} applied to the vertex model of Lemma~\ref{lem:pieces}(2)),
-that realises the labels, as Lemma~\ref{lem:extB} requires, sends the base point to $\mathfrak s^\vee(b_1)$, carries each $\mathbb T_{\mathsf s}$ onto the corresponding torus orbit
-through $\mathfrak s^\vee(b_1)$, where the collar paths over $b_1$ end, and carries the $\ell\otimes U(1)$-orbits onto the
-$S^1_\alpha$-orbits (here $\ell\otimes U(1)$ is $S^1_\alpha$, Lemma~\ref{lem:pieces}(2)); such a map, affine in the torus coordinates, exists because the
-fibre torus projects diffeomorphically onto the torus factor of the graph description of $W^*_{V_{p_0}}$ in
-Lemma~\ref{lem:R1}, so that its inclusion into $W^*_{V_{p_0}}$ is a homotopy equivalence and the labels
-identify $\Lambda_{e_0}$ with its fundamental group. Then the collar family of Lemma~\ref{lem:collarB}(2) is lifted; its
-terminal filling $\mathcal Q(1)=S^1_\alpha\times\mathcal Q'(1)$ lies in that fibre torus and has the same boundary as
-$F^\vee_*$ of a filling as above. Finally $\mathcal Q'_{e_0}$ is the pull-back of $\mathcal Q'(1)$ under the diffeomorphism
-of quotient tori induced by $F^\vee$. It is a $2$-chain with boundary $\sum_ks_kG_k$, and $F^\vee_*\mathscr
-Q^0_{e_0}=\mathcal Q(1)$ as chains. On the other edges of the half-edge,
-$\mathscr Q^0_e$ is any filling as above, with the incidence orientation on each edge;
+boundary orientations \cite[\S7.7, Step~2]{CBM}. On the edge $e_0$ of the half-edge at the inner boundary, $\mathcal Q'_{e_0}$
+is the filling fixed in the next paragraph; on the other edges of the half-edge it is any such filling, with the incidence
+orientation on each edge;
 \item at a general edge, let $Y_e:=\bigvee_{\mathsf s\supset e}F_{\mathsf s}$, realise the labels by a cellular map $\gamma_e\colon Y_e\to\mathbb T^3_e$,
 and let $F_e$ be its mapping cylinder, a cell complex containing $Y_e$ and retracting onto $\mathbb T^3_e$, labelled by
 $\operatorname{lab}_e\colon\pi_1(F_e)\cong\Lambda_e$.
@@ -1082,6 +1176,25 @@ $\operatorname{lab}_e\colon\pi_1(F_e)\cong\Lambda_e$.
 For a vertex $p$ of $\mathfrak T$, $F_p$ is the union of the $F_e$, $e\ni p$, glued along the common $F_{\mathsf s}$; the labels agree on
 the $F_{\mathsf s}$ and define $\operatorname{lab}_p\colon\pi_1(F_p)\to\Lambda_p$, which kills the boundary of every $2$-cell, since each $2$-cell
 lies in some $F_e$.
+
+\emph{The tripod edge at the inner boundary.} The branching half-edge of each tripod summand meets its inner boundary
+once, at a vertex $p_0$ of $\mathfrak T$ on an edge $e_0$ of the half-edge, and its other end lies on $\partial U$ beyond the
+collar region. We orient $e_0$ away from $p_0$, so that $[e_0:p_0]=-1$ and the signs $s_k$ of
+Lemma~\ref{lem:tripodcollar}(3) are the incidence numbers $[\mathsf s_k:e_0]=-1$. At $p_0$ the choices are made in the following order, so that the terminal chains agree.
+\begin{enumerate}
+\item[(i)] $F^\vee$ is fixed on $p_0\times\mathbb T^3_{e_0}$ as a diffeomorphism onto the fibre $\mathbb T_{b_1}$ of
+Lemma~\ref{lem:tripodcollar}(2), $b_1:=j^\natural(p_0)$, which realises the labels, as Lemma~\ref{lem:extB} requires, sends
+the base point to $\mathfrak s^\vee(b_1)$, carries each $\mathbb T_{\mathsf s}$ onto the corresponding $\mathbb T(v)$-orbit
+through $\mathfrak s^\vee(b_1)$, and carries the $\ell\otimes U(1)$-orbits onto the $S^1_\alpha$-orbits (here $\ell\otimes U(1)$
+is $S^1_\alpha$, Lemma~\ref{lem:pieces}(2)). Such a map, affine in the phase coordinates of $\Phi_v$, exists: $\mathbb T_{b_1}$
+projects diffeomorphically onto the torus factor of the graph description of $W^*_{V_{p_0}}$ in Lemma~\ref{lem:R1}, so its
+inclusion into $W^*_{V_{p_0}}$ is a homotopy equivalence, and the labels identify $\Lambda_{e_0}$ with its fundamental group.
+\item[(ii)] The filling $\mathcal Q'(1)$ in $\{k_1\}\times T^2$ and the chain $\mathscr C_v$ of
+Lemma~\ref{lem:tripodcollar}(3) are chosen.
+\item[(iii)] $\mathcal Q'_{e_0}$ is the pull-back of $\mathcal Q'(1)$ under the diffeomorphism of quotient tori induced by
+$F^\vee$. It is a $2$-chain with boundary $\sum_ks_kG_k$, and $F^\vee_*\mathscr Q^0_{e_0}=\Phi_v^{-1}(\mathcal Q'(1)\times
+S^1)$ as chains.
+\end{enumerate}
 
 \emph{Fillings over general edges.} At a general edge, $\sum_{\mathsf s\supset e}[\mathsf s:e]\,v_{\mathsf s}=0$ in $\Lambda_e^\vee$ by
 Lemma~\ref{lem:Xichain}. Under the linear isomorphism $H_2(F_e)=H_2(\mathbb T^3_e)\cong\Lambda^\vee_e$ above, the class of
@@ -1099,13 +1212,15 @@ glued along $|\mathsf s'|\times F_{\mathsf s}\subseteq|\mathsf s'|\times F_{\mat
 \]
 each $\mathsf s\times\mathbb T_{\mathsf s}$ oriented as the product. Over an inner boundary edge $e$ the adjacent triangles lie in one summand
 $g$, the other side of the inner boundary being the strip lifted by the collar paths, and the cells $e\times\mathbb T_{\mathsf s}$ are glued
-to the ends of the collar paths over $e$, the union of the $\mathbb T_{\mathsf s}$-orbits through $\mathfrak s^\vee$; over the point
-where the inner boundary meets a tripod edge, the filling $m_e\mathscr Q_e^0$ is glued to $m_e$ times the collar cells
-$\mathcal Q\times(\text{transverse interval})$ of Lemma~\ref{lem:collarB}(2).
+to the ends of the collar paths over $e$, the union of the $\mathbb T_{\mathsf s}$-orbits through $\mathfrak s^\vee$ (near a
+tripod, the orbits $A^+$ of Lemma~\ref{lem:tripodcollar}); over the point where the inner boundary meets a tripod edge, the
+filling $m_e\mathscr Q_e^0$ is glued to $m_e$ times the filling term $\Phi_v^{-1}(\mathcal Q'(1)\times S^1)$ in the boundary
+of the chain $\mathscr C_v$ of that lemma.
 
 \begin{lemma}[boundary of the domain]\label{lem:Mbd}
 Let $\check\Xi_{\rm loc}$ be the sum of the pieces of depth $\varsigma_0$ of the summands, with their multiplicities,
-and of their collar paths (Section~\ref{ssec:lift-collar}). Then
+and of their collars: the collar paths, and near the half-edge of each tripod the chain $m\,\mathscr C_v$ of
+Lemma~\ref{lem:tripodcollar} (Section~\ref{ssec:lift-collar}). Then
 $\partial(\check\Xi_{\rm loc}+[\mathcal D^\vee_{\rm reg}])$, with $[\mathcal D^\vee_{\rm reg}]$ glued as above, is
 \[
 \sum_q\rho_q(z)\,\Sigma_q+\sum_p\,[p\times z_p],\qquad
@@ -1118,8 +1233,7 @@ the second sum over the vertices $p$ of $\mathfrak T$, where $z_p$ is a $3$-cycl
 \end{lemma}
 
 \begin{proof}
-The piece of a summand $g$ is $m\,[\Pi^{\varsigma_0}(g)]$, a four-manifold with corners fibred over $g_{\le\varsigma_0}$ up
-to the collapse of the torus orbits. The orbits collapse to circles over the arcs, and to points over the turning points, without
+The piece of a summand $g$ is $m\,[\Pi^{\varsigma_0}(g)]$, a four-manifold with corners mapped properly onto $g_{\le\varsigma_0}$ by $\pi_g$. The orbits collapse to circles over the arcs, and to points over the turning points, without
 creating boundary (Lemma~\ref{lem:pieces}(1),(3)), and the crossing pieces have no boundary over $\mathfrak x_A$
 (Lemma~\ref{lem:crossing}). The seams inside $g$, where the description near a vertex passes to the description along an
 exit strip or where a rotation starts, contribute nothing: $\Pi^{\varsigma_0}(g)$ is one set with one coefficient, the local
@@ -1137,7 +1251,10 @@ $d^*_A$ summing to zero with the orientation signs; these faces cancel.
 \item[(c)] The outer parts over $C^{(g)}_{\varsigma_0}$. They are matched by the collar cells over the strips
 $g_{\le2\varsigma_0}\cap g_{\ge\varsigma_0}$, which cancel along the junction segments (Lemma~\ref{lem:collarB}(3)) and end at
 the unions of the torus orbits through $\mathfrak s^\vee$ over the curves $C^{(g)}_{2\varsigma_0}$; these are the cells
-$e\times\mathbb T_{\mathsf s}$ over the inner boundary edges.
+$e\times\mathbb T_{\mathsf s}$ over the inner boundary edges. Near the half-edge of a tripod the first stage of the collar
+paths ends on the part $A$ of the outer part at depth $2\varsigma_0$, and $\partial(m\,\mathscr C_v)=m D$ replaces $A$ by the
+orbits $A^+$ and the filling term, while the terms $B_k$ cancel against the collars of the sectors beyond the points $c_k$
+(Lemma~\ref{lem:tripodcollar}(3)).
 \end{enumerate}
 Pieces of different summands that intersect in $W^*$ (the two node halves, a transverse disc and a sheet) are separate
 chains, and their intersection contributes no boundary.
@@ -1154,8 +1271,8 @@ of the edge terms at a vertex $p$ off the inner boundary is $p\times z_p$, and
 because every $2$-simplex $\mathsf s\ni p$ contributes through its two edges at $p$ with opposite signs.
 At an inner boundary vertex the boundary of the collar must also be included. Along a sheet it cancels the product
 faces exactly. Where a tripod half-edge meets the inner boundary, its endpoint term $[e:p]\mathscr Q_e$ is cancelled by the
-oppositely oriented terminal fillings of the collar cells, taken $m_e$ times, since $F^\vee_*\mathscr Q_e$ is $m_e$
-times the terminal filling by the choice of $\mathscr Q^0_{e_0}$ in the tripod clause. There are no general edges at the inner boundary. Thus no residual chain remains there,
+oppositely oriented filling term of $\partial(m_e\mathscr C_v)$, since $F^\vee_*\mathscr Q_e$ is $m_e$ times
+$\Phi_v^{-1}(\mathcal Q'(1)\times S^1)$ by the choice of $\mathscr Q^0_{e_0}$ at the tripod edge at the inner boundary. There are no general edges at the inner boundary. Thus no residual chain remains there,
 giving $z_p=0$ as stated. At the vertices of a tripod half-edge off the inner boundary, $z_p$ is the difference of the
 fillings of the two adjacent edges; it need not vanish, and it is kept in the sum over $p$.
 \end{proof}
@@ -1174,14 +1291,17 @@ classes. A $2$-cell extends if its boundary loop is trivial in the abelian group
 $\mathsf s$ a $2$-simplex, the boundary loop lies in $\mathfrak s^\vee(j^\natural \mathsf s)$, which is contractible in $W^*_{V_{\mathsf s}}$; for
 $e\times\mathsf f^1$, the two fibre loops represent the same parallel class (Lemma~\ref{lem:R1}(3)); for $p\times\mathsf f^2$,
 $\mathsf f^2$ a $2$-cell of $F_p$, $\operatorname{lab}_p(\partial\mathsf f^2)=0$. Cells of dimension three and four extend because $W^*_{V_{\mathsf s}}$ is
-aspherical (Lemma~\ref{lem:R1}). The inner boundary cells, including the cells $p_0\times\mathbb T^3_{e_0}$ at the tripods
-fixed in the tripod clause, are prescribed by the collars, which satisfy the same loop conditions
+aspherical (Lemma~\ref{lem:R1}). The inner boundary cells, including the cells $p_0\times\mathbb T^3_{e_0}$ fixed in step~(i) at the
+tripod edges, are prescribed by the collars, which satisfy the same loop conditions
 (Lemma~\ref{lem:collarB}) and lie in the right regions (Lemma~\ref{lem:interface}).
 \end{proof}
 
 \subsection{The positive real locus and the fibre class}\label{ssec:lift-fibre}
 The extension leaves a sum of residual three-cycles, each homologous to a multiple of a torus fibre.
-Intersection with the positive real three-sphere shows that their total fibre coefficient is zero.
+Intersection with the positive real three-sphere shows that their total fibre coefficient is zero. This replaces the local
+argument of \cite[\S7.7, Step~5]{CBM}, which shows that the lift of a strict cycle is a manifold at its interior vertices:
+with arbitrary multiplicities and branching the residual cycles at the vertices of $\mathfrak T$ need not vanish one by
+one, and only their total class is controlled.
 
 Put $\check\Xi_0:=\check\Xi_{\rm loc}+F^\vee_*[\mathcal D^\vee_{\rm reg}]$, an integral four-chain on $W^*$. By
 Lemma~\ref{lem:Mbd},
@@ -1260,9 +1380,9 @@ the constants $r_S$, $\varsigma_{\max}$ and $C_T$.
 \item The model germs: the points $y^*_{A,0},y^0_A,\mathfrak x_A,y^1_A,y^*_{A,1}$ in $A\cap\Omega_e$ on every arc, then
 $r_0$, at most $r_S/4$ and at most a quarter of the mutual distances of these points, of their distances from
 $A\setminus\Omega_e$ and of their distances from the ends of $A$; the polygon $\mathsf P$, the unit germs with their orientations, the reference sides and the normal
-discs; the balls $B^0_p$ of radius $r_B\le r_0$ and the constants $c_B$ and $r_{\rm far}$ of Section~\ref{ssec:lift-collar}; the retraction at the model vertices and the
+discs; the balls $B^0_p$ of radius $r_B\le r_0$ and the constants $c_B$ and $r_{\rm far}$ of Section~\ref{ssec:lift-collar}; the radius $r_\rho$, the retraction at the model vertices and the
 partition of unity defining the base maps $\pi_g$; the orientations
-of the linkage classes; the maps $\mathfrak h$, $\kappa_{\mathfrak h}$.
+of the edges used for the collar paths; the maps $\mathfrak h$, $\kappa_{\mathfrak h}$.
 \item A compact set $\mathscr C_0\subset\mathcal Z$, $r\le r_1$ (Lemma~\ref{lem:NM}), $\eta_0\le r^2/20$,
 $t<t_0(r,\eta_0,\mathscr C_0)$ as in Lemmas~\ref{lem:W}, \ref{lem:NM} and~\ref{lem:TR}, and $c$ as at the beginning of this
 section.
@@ -1271,19 +1391,21 @@ These do not depend on $z$. Then, for the given $z\in Z(\mathfrak K)$:
 \begin{enumerate}
 \setcounter{enumi}{3}
 \item $\mathfrak K_1$ and $z^M=\mathfrak h_*z$; $\mathfrak K_2^0$, $\mathfrak K_2$, $\mathfrak K_2'$ and $U$; $w$, $v_A$ and $y$
-by~\eqref{eq:nf1}; the local replacements with $\varepsilon_A$, $\varepsilon'_A$ and $\varrho_0$; $z^\natural$ and $r_\natural$
+by~\eqref{eq:nf1}; the two local modifications with $\varepsilon_A$, $\varepsilon'_A$ and $\varrho_0$; $z^\natural$ and $r_\natural$
 (Lemma~\ref{lem:nfY});
-\item $\varsigma_0\le\min(\varsigma_{\max}/2,r_S/4,r_\natural/(4C_T),r_{\rm far}/(4C_T),c_Br_B/8)$, so that $2\varsigma_0$ is small against the
+\item $\varsigma_0\le\min(\varsigma_{\max}/2,r_S/4,r_\natural/(4C_T),r_{\rm far}/(4C_T),c_Br_B/8,r_\rho)$, so that $2\varsigma_0$ is small against the
 radius of the balls $B^0_p$; the complex $\mathscr S$, the constant $\mathfrak l$ and the triangulation
 $\mathfrak T$, the regular sets $V_{\mathsf s}$, the finitely many regular sets $V$ over the strips (Lemma~\ref{lem:collarB}(1)),
 and $\epsilon$ so small that Lemma~\ref{lem:R1} applies to all these sets;
 \item $t'\le\min(t,t(z))$, where $t(z)$ is a threshold for which Lemmas~\ref{lem:R1} and~\ref{lem:interface} hold for the sets
 $V_{\mathsf s}$ and for the finitely many regular sets over the strips used in Lemma~\ref{lem:collarB}(1) (the errors $O(1/L)$ of
 Lemma~\ref{lem:interface} must be small compared with the margins of these sets and with $\epsilon$), and which lies below
-the thresholds of Lemmas~\ref{lem:windows}, \ref{lem:possec}, \ref{lem:pieces} and~\ref{lem:crossing} (the last two for the
-depths $\varsigma\le2\varsigma_0$);
+the thresholds of Lemmas~\ref{lem:windows}, \ref{lem:possec}, \ref{lem:pieces}, \ref{lem:crossing} and~\ref{lem:tripodcollar}
+(the second and third for the depths $\varsigma\le2\varsigma_0$);
 \item at $t'$: the pieces of depth $\varsigma_0$, the collar paths, the fibre complexes, $F^\vee$ on the cells
-$p_0\times\mathbb T^3_{e_0}$ and then the fillings $\mathscr Q_e$ (tripod clause), the rest of the map $F^\vee$, and the chain $\check\Xi^W(z)$ of Proposition~\ref{lem:F}.
+$p_0\times\mathbb T^3_{e_0}$, the fillings $\mathcal Q'(1)$ and the chains $\mathscr C_v$ of Lemma~\ref{lem:tripodcollar}, and
+then the fillings $\mathscr Q_e$ (the tripod edge at the inner boundary), the rest of the map $F^\vee$, and the chain
+$\check\Xi^W(z)$ of Proposition~\ref{lem:F}.
 \end{enumerate}
 In particular $\varsigma_0$ is chosen after $U$ and $r_\natural$, and $t(z)$ after $\mathfrak T$; the threshold $t_0$ is that of
 Lemmas~\ref{lem:W}--\ref{lem:TR} and does not depend on $z$.
@@ -1305,7 +1427,7 @@ constructed from $z$ and the choices listed above, with
 
 \begin{proof}
 Smoothness of $Y_t$ and the Morse points are Lemmas~\ref{lem:W}(1) and~\ref{lem:NM}. Let $t'\le\min(t,t(z))$. The transfer,
-the normal form and the choices of steps 4 and 5 do not depend on $t$. At $t'$, the pieces, the collar paths, the domain
+the normal form and the choices of steps 4 and 5 do not depend on $t$. At $t'$, the pieces, the collars, the domain
 and the extension give the chain $\check\Xi_0$, and Proposition~\ref{lem:F} gives $\check\Xi^W(z)$ on $W^*$ with boundary
 $\sum_q\rho_q(z)\Sigma_q$. Transport it by the diffeomorphism $\Psi_1\colon W^*\to Y_{t'}$ of
 Proposition~\ref{prop:isotopy}. By Lemmas~\ref{lem:NQ}(4) and~\ref{lem:carry}, $\Psi_1(\Sigma_q)$ is isotopic to
@@ -1322,8 +1444,8 @@ $\eta_1=r_1^2/20$ and $C=C_\eta$ of Section~\ref{ssec:member}, take $r=r_1$, so 
 with $c_0>0>c_n$ is $c^{(0)}e^\xi$ for a unique $c^{(0)}\in\mathcal Z$ and a unique $\xi\in\operatorname{span}_\R\{r_P\}$
 (Section~\ref{ssec:mirrorfamily}), with $\eta_P=\log\mu_P(c)$, so the conditions of Theorem~\ref{thm:main} on $c$ say that
 $c$ is in the window. So Proposition~\ref{prop:Bprecise} gives $\check\Xi(z)$ with
-$\partial\check\Xi(z)=\sum_q\rho_q(z)[\delta_q]$ for every $z\in Z(\mathfrak K)$. For a tropical $2$-cycle $(S,j,v)$ in the
-sense of \cite[Def.~7.2]{CBM}, triangulated so that it is a relative tropical $2$-cycle (Section~\ref{ssec:cbm}), the chain
+$\partial\check\Xi(z)=\sum_q\rho_q(z)[\delta_q]$ for every $z\in Z(\mathfrak K)$. For a strict tropical $2$-cycle $(S,j,v)$
+(Definition~\ref{def:strict}), triangulated so that it is a relative tropical $2$-cycle (Section~\ref{ssec:cbm}), the chain
 $\check\Xi(S)$ realises $\widetilde S$ as stated in Remark~\ref{rem:CBMlift}.
 \end{proof}
 
@@ -1333,16 +1455,16 @@ The proof uses from a relative tropical $2$-cycle only three pieces of data: its
 multiplicities of the model germs; the coefficients $v_A$ of the transverse discs, which are arbitrary monodromy-invariant
 covectors; and the remainder off a neighbourhood of the discriminant, which is an arbitrary chain with coefficients in the
 local system. The strict tropical $2$-cycles of \cite[Def.~7.2]{CBM} impose conditions that the construction does not use,
-as follows. The embeddedness of $S$ (clause (a)) and the condition that $S$ meets the discriminant only in $\partial S$ and
-in finitely many crossings (clause (b)) are replaced by the normal form: the germs are embedded surfaces by construction,
-and summands that cross in $B_Y$ are lifted separately over $\mathscr S$. Primitivity of the field (clause (c)) is
+as follows. The embeddedness of $S$ (the embedding clause) and the condition that $S$ meets the discriminant only in $\partial S$ and
+in finitely many crossings (the discriminant-intersection clause) are replaced by the normal form: the germs are embedded surfaces by construction,
+and summands that cross in $B_Y$ are lifted separately over $\mathscr S$. Primitivity of the field (the primitive-field clause) is
 replaced by pieces and tori with integer multiplicities. The boundary vertices at the negative vertices of $B'_\sigma$
-(clause (d)) become tripods with any multiplicity (Lemma~\ref{lem:unitgerms}), and the node passages (clause (e)) become
+(the boundary-vertex clause) become tripods with any multiplicity (Lemma~\ref{lem:unitgerms}), and the node passages (the node-passage clause) become
 superpositions of the two unit halves, with both passages allowed (Lemma~\ref{lem:nodesum}). The trivalent interior edges
-with a common rank-one sublattice (clause (g)) are replaced by fillings $\mathscr Q_e$ that exist for any valency. The condition
-$|k_1|=1$ at the crossings (clause (i)) is replaced by monodromy invariance of the disc coefficient
-(Lemma~\ref{lem:crossing}), and the interior vertices (clause (j)) are not used, on either route: Proposition~\ref{lem:F} disposes
-of the fibre cycles there. The one condition that is used is the boundary condition (clause (h)): along the discriminant the
+with a common rank-one sublattice (the interior-edge balancing clause) are replaced by fillings $\mathscr Q_e$ that exist for any valency. The condition
+$|k_1|=1$ at the crossings (the crossing clause) is replaced by monodromy invariance of the disc coefficient
+(Lemma~\ref{lem:crossing}), and the interior vertices (the interior-vertex clause) are not used, on either route: Proposition~\ref{lem:F} disposes
+of the fibre cycles there. The one condition that is used is the boundary condition (the boundary-monodromy clause): along the discriminant the
 coefficient is a multiple of the vanishing covector $d^*_A$, so that the torus of a sheet along an arc is the exact torus
 $\mathbb T_d$, which collapses to a circle over the arc and gives a piece without boundary there
 (Lemma~\ref{lem:pieces}(1)). This is the relative condition $\mathcal D=\Z d$ of Definition~\ref{def:relcycle}, and the
@@ -1352,7 +1474,7 @@ $2$-cycles are therefore the natural class for the lift: they are the chains who
 which the boundary $\sum_q\rho_q(z)[\delta_q]$ of the lift is additive, and their node coefficients already exhaust $K$ (Theorem~\ref{thm:real}).
 
 \begin{remark}[the strict case]\label{rem:CBMlift}
-Let $(S,j,v)$ be a tropical $2$-cycle in the sense of \cite[Def.~7.2]{CBM} and $z=[S]$ its triangulation.
+Let $(S,j,v)$ be a strict tropical $2$-cycle (Definition~\ref{def:strict}) and $z=[S]$ its triangulation.
 
 \emph{Away from the discriminant.} Outside $U$ the normal form is the transfer of $S$ itself: $y$ agrees there with
 $\operatorname{sd}z^M$. Over that part the domain is the bundle of the cells $\mathsf s\times\mathbb T_{\mathsf s}$ with $m_{\mathsf s}=1$
@@ -1374,14 +1496,14 @@ the side of $u'$, and along each arc of $\partial S$ it lies on the model sides 
 Under (C1) and (C2), the part of $\operatorname{sd}z^M$ on $U$ minus $\mathrm{Std}^M(b^M)\cap U$ is a sum of normal discs at the crossings, homologous relative to
 $\partial U$, by moving discs along the arcs, to $\sum_Av_A\bar D(E_A)$ with $v_A$ the crossing coefficient of $S$ on $A$
 (and $v_A=0$ on arcs without crossing); so the normal form may be taken with these $v_A$, which are primitive with
-$|k_1|=1$ (\cite[Def.~7.2(c), (i)]{CBM}; clauses (iii), (ix) in the published version), and all pieces are the local models of \cite{CBM} listed below. Without (C1) or (C2) the
+$|k_1|=1$ (the primitive-field and crossing clauses of \cite[Def.~7.2]{CBM}), and all pieces are the local models of \cite{CBM} listed below. Without (C1) or (C2) the
 transverse disc on an arc collects the crossings on that arc and the differences of sides and windings, and its piece is
 that of Lemma~\ref{lem:crossing} for the collected coefficient, which need not be a local model of \cite{CBM}: two crossings
 with $k_g=1$ on one arc give, when the sum of their covectors is primitive, $k_g=2$, a two-sheeted cover with a fibre of
 type $I_2$; a sheet of $S$ on the side $\alpha_q\le0$ at
 a node gives a coefficient in $\Z d^*_A$ and the piece $\mathbb T_d\cdot\mathfrak s^\vee(\mathfrak D_{\varsigma_0})$.
 
-Condition (C2) refers to conventions fixed before $z$ (step~2 of the order of choices): the basis
+Condition (C2) refers to conventions fixed with the model germs, before $z$ (Section~\ref{ssec:lift-assembly}): the basis
 $(\mathrm{Turn}(u_1),\mathrm{Turn}(u_2))$ at each turning point, the side $\alpha_q\ge0$ at the model nodes and the side of
 $u'$ at the model vertices, and the reference side $\alpha_e\ge0$ of each arc. With these fixed conventions (C2) fails for
 many strict cycles: for instance when $\partial S$ turns through the sector $C(u_3)$, which has multiplicities $(-1,1)$ in
@@ -1392,18 +1514,7 @@ Theorem~\ref{thm:lift} hold for every choice of these conventions, and they may 
 conventions are chosen as those used by $S$ (at each turning point a basis containing the turning
 germ of $\partial S$, at each model node and model vertex the side of $S$, on each arc the side of $S$ as reference
 side), and if (C1) holds and within $U$ the transfer of $S$ is the sum of the germs so chosen and of normal discs at its
-crossings, then all pieces are the local models of \cite{CBM}. This comparison assumes the stated position of $S$.
-\begin{center}\small
-\begin{tabular}{p{5.2cm}p{4.3cm}p{4.6cm}}
-part of $\check\Xi(S)$ & constructed in & counterpart in \cite{CBM}\\\hline
-over the sheets: torus bundle & Section~\ref{ssec:lift-regular} & \cite[\S7, (46)]{CBM}\\
-over interior edges & Section~\ref{ssec:lift-regular} & \cite[\S7.7, Step~2]{CBM}\\
-node piece & Lemmas~\ref{lem:NQ}, \ref{lem:nodesum} & \cite[Lemma~5.14]{CBM}\\
-pieces at the model vertices & Lemma~\ref{lem:pieces}(2) & \cite[\S7.5; \S7.7, Steps~2--3]{CBM}\\
-pieces at turning points & Lemma~\ref{lem:pieces}(3) & \cite[Lemma~7.6]{CBM}\\
-pieces at crossings & Lemma~\ref{lem:crossing}(2) & \cite[\S7.7, Step~6]{CBM}\\
-interior vertices & Proposition~\ref{lem:F} & replaces \cite[\S7.7, Step~5]{CBM}
-\end{tabular}
-\end{center}
+crossings, then all pieces are the local models of \cite{CBM}, in the correspondence of the table at the
+beginning of this section. This comparison assumes the stated position of $S$.
 We do not use that $\widetilde S$ is a manifold at the interior vertices of $S$ \cite[\S7.7, Step~5]{CBM}.
 \end{remark}

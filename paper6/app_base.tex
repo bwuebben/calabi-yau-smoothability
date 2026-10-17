@@ -1,0 +1,159 @@
+\section{Proofs for Section~\ref{sec:base}}\label{app:base}
+
+This appendix contains the proofs of the toric and topological facts of Section~\ref{sec:base} that are standard in
+substance: the second homology of the small resolution, the integrality of the relations among the exceptional curves,
+and the classical description of the exceptional surfaces.
+
+\begin{proof}[Proof of Lemma~\ref{lem:H2}]
+Let $\mathcal S_0$ be a regular fine triangulation of $\partial\Delta$, that is, one whose vertices are all the lattice
+points of $\partial\Delta$, let $P_0$ be the projective toric variety of the fan over it, and let $\widehat X_0$ be the
+proper transform of $X$ in $P_0$. It is a maximal projective crepant partial resolution in the sense of Batyrev, and a
+smooth threefold. By \cite[Prop.~8.3]{Paper4} the restrictions of the toric divisors of $P_0$ span $H^2(\widehat X_0;\Q)$.
+That proposition applies because every two-face of $\Delta$ is a unimodular triangle or has a dual edge of lattice length
+one, so that the correction term in Batyrev's formula for $h^{1,1}$ vanishes. The toric divisors of rays outside $R$
+restrict to zero, so the $D_r$, $r\in R$, span $H^2(\widehat X_0;\Q)$.
+
+Near the preimage of each singular point $x_G$, both $\widehat X$ and $\widehat X_0$ are toric resolutions of $U_G$ given by
+triangulations of $G$ with the same vertex set, the lattice points of $G$. Both fans contain the subfan consisting of the
+rays and of the cones over the edges of $G$, so both toric varieties contain its toric variety as an open subset. The
+complements are the orbits of the cones that meet the interior of $\tau_G$ in dimension two or three; these lie over the
+vertex of $U_G$ and are compact curves and points. Hence there are compact unions of curves
+$Z\subset\widehat X$ and $Z_0\subset\widehat X_0$, lying over the points $x_G$, and an isomorphism
+$\widehat X\setminus Z\cong\widehat X_0\setminus Z_0=:U$, compatible with the maps to $X$, that carries $D_r\cap(\widehat X\setminus Z)$
+to $D_r\cap U$ for every $r\in R$. The set $Z$ is a compact analytic subset of the compact complex manifold $\widehat X$,
+hence a subcomplex of a triangulation of $\widehat X$ \cite[Thm.~2]{Loj64} and locally contractible. The duality
+$H_i(M,M\setminus K;\Z)\cong H^{n-i}(K;\Z)$ for a compact, locally contractible subset $K$ of a closed oriented
+$n$-manifold $M$ \cite[Thm.~3.44]{Hat02} gives $H_k(\widehat X,\widehat X\setminus Z;\Z)\cong H^{6-k}(Z;\Z)$, which
+vanishes for $k\le3$ because $Z$ is a polyhedron of dimension at most two. By universal coefficients over the field $\Q$,
+$H^k(\widehat X,\widehat X\setminus Z;\Q)\cong\operatorname{Hom}(H_k(\widehat X,\widehat X\setminus Z;\Z),\Q)=0$ for $k\le3$.
+The exact sequence of the pair gives
+\begin{equation}\label{eq:H2restr}
+H^2(\widehat X;\Q)\xrightarrow{\ \cong\ }H^2(U;\Q),
+\end{equation}
+and likewise $H^2(\widehat X_0;\Q)\cong H^2(U;\Q)$. The two isomorphisms carry $D_r$ to the class of $D_r\cap U$. So the
+$D_r$, $r\in R$, span $H^2(\widehat X;\Q)$, and~\eqref{eq:injection} is injective because the evaluation pairing
+$H_2(\widehat X;\Q)\times H^2(\widehat X;\Q)\to\Q$ is perfect.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:triple}]
+If $G$ is a triangle, it is unimodular and its vertices form a unimodular triple; if $G$ is a unit square, any three of
+its vertices do. If $G$ is a pentagon or a hexagon, choose $j$ such that $P_j$ is a unit parallelogram
+(Lemma~\ref{lem:subdiv}(1)). The diagonal $[w_j,w_{j+2}]$ cuts $P_j$ into the triangles $\operatorname{conv}\{w_j,w_{j+1},w_{j+2}\}$
+and $\operatorname{conv}\{o,w_j,w_{j+2}\}$, which are exchanged by the point reflection of $P_j$ in its centre and
+therefore have equal area. As $P_j$ has normalised area two, $w_j,w_{j+1},w_{j+2}$ is a unimodular triple.
+
+Let $u$ be a vertex of $\Delta^\circ$ with $G\subset u^\vee$, so that $\langle u,\cdot\rangle=-1$ on $\operatorname{aff}(G)$. For
+$x\in L_G$ we have $x+\langle u,x\rangle y_1\in L_G\cap u^\perp$, so $L_G=\Z y_1\oplus(L_G\cap u^\perp)$. The lattice
+$L_G\cap u^\perp$ is the lattice of translations of $\operatorname{aff}(G)\cap N$, and unimodularity of the triangle means that
+$y_2-y_1$ and $y_3-y_1$ form a basis of it. Hence $y_1,y_2,y_3$ is a basis of $L_G$. A basis of a saturated sublattice
+extends to a basis $y_1,\dots,y_4$ of $N$, and every basis vector $y_i\wedge y_k$ ($i<k$) of $\Lambda^2N$ has $i\le3$.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:lefschetz}]
+Put $Y'=T'\setminus W'$ and $\Phi=(\mathrm{incl},g)\colon Y'\to T'\times\C^*$. By \cite[Thm.~(5.3)(ii)]{Oka80},
+$\pi_1(Y')$ is free abelian of rank $n+1$ and $\pi_i(Y')=0$ for $1<i<n$. The map $H_1(Y')\to H_1(T')$ is onto, since $W'$
+has real codimension two, and a small meridian loop of $W'$ is null-homotopic in $T'$ and is mapped by $g$ with degree
+one, since $dg\ne0$ along $W'$. So $\Phi_*$ maps $H_1(Y')\cong\Z^{n+1}$ onto $H_1(T'\times\C^*)\cong\Z^{n+1}$, hence
+isomorphically, and $\Phi$ is an isomorphism on $\pi_1$. As $T'\times\C^*$ is aspherical, $\Phi$ is an $n$-equivalence,
+so $\Phi_*\colon H_i(Y')\to H_i(T'\times\C^*)$ is an isomorphism for $i<n$ and onto for $i=n$ \cite[proof of
+Prop.~4.21]{Hat02}.
+
+By the Thom isomorphism of the normal bundle of $W'$ and excision, $H_i(T',Y')\cong H_{i-2}(W')$, and the connecting
+map $H_i(T',Y')\to H_{i-1}(Y')$ sends the class of a cycle $c$ to the class of the circle bundle $S(c)$ of the normal
+bundle over $c$. In the Künneth decomposition
+$H_{i-1}(T'\times\C^*)=H_{i-1}(T')\oplus H_{i-2}(T')\otimes H_1(\C^*)$, the first component of $\Phi_*[S(c)]$ is zero,
+because $S(c)$ bounds the disc bundle in $T'$, and the second is $\pm j_*[c]$: for $\omega\in H^{i-2}(T')$ and the
+generator $\theta$ of $H^1(\C^*)$, integration over the fibre circles, on which $g$ has degree one, gives
+$\langle\omega\cup g^*\theta,S(c)\rangle=\pm\langle j^*\omega,c\rangle$, and $H^*(T')$ is free. In the exact sequence
+\[
+H_i(Y')\to H_i(T')\to H_i(T',Y')\to H_{i-1}(Y')\to H_{i-1}(T')
+\]
+the first map is the composite of $\Phi_*$ with the projection, which is onto for $i\le n$. So for $i\le n$ the
+connecting map is injective, with image the kernel of $H_{i-1}(Y')\to H_{i-1}(T')$; for $i-1<n$ this kernel is the
+preimage under the isomorphism $\Phi_*$ of the second Künneth summand. The composite
+$H_{i-2}(W')\to H_{i-2}(T')\otimes H_1(\C^*)=H_{i-2}(T')$ is therefore an isomorphism, and it is $\pm j_*$. Put
+$k=i-2$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:integral}(1)]
+The manifold $\widehat X$ is compact, complex and of dimension three, hence a closed oriented $6$-manifold. Let
+$D=\widehat X\setminus W$. The toric boundary of $\mathbb P_\Delta$ is the union of the divisors $D^\Delta_y$ of the vertices $y$
+of $\Delta$, so $D$ is the union of the surfaces $D_y$ and of the exceptional set of $\widehat X\to X$. Over a square the
+exceptional set is $C_q$; over a pentagon or a hexagon $G$ it is the fibre over $x_G$ in the local toric model, the union of
+$D_o$ and of the curves of the diagonals not through $o$. In the local model each such curve lies in the toric divisor of
+an endpoint of its diagonal, and $C_q\subset D_a$ at a square. Hence $D=\bigcup_{r\in R}D_r$.
+
+\emph{Step A: the map $j_*\colon H_2(W;\Z)\to H_2(\widehat X;\Z)$ is zero.} The Laurent polynomial of $X$ is nondegenerate
+with Newton polytope $\Delta^\circ$ of dimension four, so the inclusion induces an isomorphism
+$i_*\colon H_2(W;\Z)\to H_2(T;\Z)=\Lambda^2N$
+(Lemma~\ref{lem:lefschetz}). Let $y$ be a vertex of $\Delta$, a primitive vector, and choose a splitting $N=\Z y\oplus N_0$.
+The affine toric variety of the ray through $y$ is $U_y=T\cup O(y)\cong\C_t\times(N_0\otimes\C^*)$, with
+$O(y)=\{t=0\}$, and the factor $\C^*_t$ of $T$ is the one-parameter subgroup of $y$. The surface $X\cap O(y)$ is the zero
+set of the face polynomial of the facet $\{y\}^\circ$ of $\Delta^\circ$, a nondegenerate Laurent polynomial on
+$O(y)\cong N_0\otimes\C^*$ whose Newton polytope, a translate of that facet, has dimension three. By
+Lemma~\ref{lem:lefschetz} with $n=3$, for every $n_0\in N_0$ there is a loop $\gamma\subset X\cap O(y)$ with class
+$n_0$ in $H_1(O(y))=N_0$. Since $X$ is transverse to $O(y)$ and $U_y$ is smooth, $t|_X$ is a submersion along
+$X\cap O(y)$, so there are $\epsilon>0$ and an embedding $\Phi\colon\gamma\times D_\epsilon\to X\cap U_y$ with
+$\Phi(p,s)=(s,\Phi_0(p,s))$ and $\Phi_0(p,0)=p$. The $3$-chain $\Phi(\gamma\times D_\epsilon)$ lies in
+$\widehat X$, and its boundary $\tau=\Phi(\gamma\times\partial D_\epsilon)$ lies in $W$. The maps
+$h_u(p,\vartheta)=\bigl(\epsilon e^{i\vartheta},\Phi_0(p,u\epsilon e^{i\vartheta})\bigr)$, $u\in[0,1]$, take values in $T$ and
+join $\tau$ to the product of the circle $\{|t|=\epsilon\}$ with $\gamma$; so $i_*[\tau]=\pm y\wedge n_0$ in
+$H_2(T)=\Lambda^2N$, and $y\wedge m=y\wedge n_0$ for $m=ay+n_0$. Hence the class of $H_2(W)$ corresponding to $\pm y\wedge n_0$ is a boundary in $\widehat X$. Take a
+unimodular triple $y_1,y_2,y_3$ of some two-face (Lemma~\ref{lem:triple}); the $y_i$ are vertices of $\Delta$, and the
+classes $y_i\wedge n$ span $\Lambda^2N$. So $H_2(W;\Z)$ is spanned by classes that vanish in $H_2(\widehat X;\Z)$.
+
+\emph{Step B.} By Step A and the exact sequence of the pair $(\widehat X,W)$, the map
+$H_2(\widehat X;\Z)\to H_2(\widehat X,W;\Z)$ is injective.
+
+\emph{Step C: $H_2(\widehat X,W;\Z)\cong\Z^R$, and the composite with Step B is $\mathrm{ev}_D$.} Triangulate $\widehat X$ so
+that every $D_r$ is a subcomplex \cite[Thm.~2]{Loj64}; that theorem applies because $\widehat X$, a compact complex
+manifold, is a real-analytic manifold with countable basis and the $D_r$ are analytic, hence semi-analytic, subsets. Then $D$
+is a compact subcomplex, hence locally contractible, and $W=\widehat X\setminus D$. The duality
+$H_i(M,M\setminus K;\Z)\cong H^{n-i}(K;\Z)$ for a compact, locally contractible subset $K$ of a closed oriented
+$n$-manifold $M$ \cite[Thm.~3.44]{Hat02} gives
+\[
+H_2(\widehat X,\widehat X\setminus D;\Z)\cong H^4(D;\Z).
+\]
+The isomorphism is the direct limit over open neighbourhoods $U\supset D$ of cap products with the image of the
+fundamental class of $\widehat X$ (loc.\ cit., proof of Thm.~3.44); by naturality of the cap product it commutes, for a
+compact subset $D'\subset D$, with the maps $H_2(\widehat X,\widehat X\setminus D)\to H_2(\widehat X,\widehat X\setminus D')$
+and $H^4(D)\to H^4(D')$.
+
+Each $D_r$ is a compact, smooth and connected complex surface. For a centre $o$, $D_o$ is the orbit closure of the ray
+through $o$ in the smooth local toric model over $x_G$, a smooth complete toric surface. For a vertex $y$, $D_y$ is smooth
+near the fibres over the points $x_G$, where it is a toric divisor of the local model, and elsewhere because $X$ is
+transverse to the orbits of the cones over vertices, edges and unimodular triangles, which are smooth. Its open subset
+$X\cap O(y)$ is connected by Lemma~\ref{lem:lefschetz}, and it is dense: $X\cap D^\Delta_y$ has pure dimension two and meets
+every smaller orbit in dimension at most one. So $D_y$ is connected. Hence $H^4(D_r;\Z)=\Z$ for every $r\in R$.
+
+Two distinct surfaces $D_r$ meet in a
+union of compact curves and points, so every intersection $\bigl(\bigcup_{s<r}D_s\bigr)\cap D_r$, for any ordering of $R$,
+has vanishing $H^3$ and $H^4$. The Mayer--Vietoris sequence, applied $|R|-1$ times, gives
+$H^4(D;\Z)\cong\bigoplus_{r\in R}H^4(D_r;\Z)=\Z^R$, the $r$-th component being restriction to $D_r$. By the naturality
+above, the $r$-th component of $H_2(\widehat X;\Z)\to H_2(\widehat X,\widehat X\setminus D;\Z)\cong\Z^R$ is the map
+$H_2(\widehat X)\to H_2(\widehat X,\widehat X\setminus D_r)\cong H^4(D_r)=\Z$. Through the Thom isomorphism of the normal bundle
+of the smooth surface $D_r$, this map is the intersection number with $D_r$ up to sign, $C\mapsto\pm D_r\cdot C$, where
+the sign is fixed by the orientation conventions for the cap product and the Thom isomorphism and is the same for every
+$r$. So the composite of Step B with this isomorphism is $\pm\mathrm{ev}_D$, and $\mathrm{ev}_D$ is injective.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:classical}]
+The fibre over $x_G$ in the local model is the orbit closure of the ray through $o$, the toric surface of the star of $o$,
+whose fan in $\operatorname{span}_\R(G)/\R o\cong N_G\otimes\R$ has the rays $w_j-o$ (the isomorphism holds
+because $\langle u,o\rangle=-1$ and $N_G\subset u^\perp$, so that $N\cap\operatorname{span}_\R(G)=N_G\oplus\Z o$) and the two-dimensional cones over the $T_j$. By
+Lemma~\ref{lem:subdiv}(1) consecutive rays form lattice bases, so $E$ is smooth, and $f_j^2=-a_j$ where
+$(w_{j-1}-o)+(w_{j+1}-o)=a_j(w_j-o)$. For the hexagon $a_j=1$ for every $j$; contracting the disjoint $(-1)$-curves $f_0,f_2,f_4$
+leaves the fan with rays $w_1,w_3,w_5$, which is that of $\mathbb P^2$, and gives~\eqref{eq:marking6}. For the pentagon
+$(a_0,\dots,a_4)=(1,1,1,0,0)$; contracting $f_0$ and $f_2$ leaves the rays $w_1,w_3,w_4$ of $\mathbb P^2$ and
+gives~\eqref{eq:marking7}. The exceptional curve of $P_j$ is the curve of the wall $\operatorname{cone}(o,w_{j+1})$ (proof of
+Proposition~\ref{prop:partialres}(2)), which is $D_o\cap D_{w_{j+1}}=f_{j+1}$. In the three cases this gives the curves
+listed; in (2), exactly one of $j+1$, $j+4$ is even, and $f_{2m}=e_{m+1}$, while $f_{2m+1}$ is a line through two of the
+blown-up points.
+
+The fibre $E'$ is the orbit closure of the ray through $o$ in $U'_{G,\sigma}$: the toric surface whose fan in $N_G$ has the
+rays $w_j-o$ for the interior edges $[o,w_j]$ of $\sigma|_G$ and the two-dimensional cones over the cells of $\sigma|_G$. The
+edge vectors of a unit parallelogram form a lattice basis, so the fan is smooth. For the pentagon and for $A_2$ it has three
+rays and $E'\cong\mathbb P^2$. For $A_1$ the rays are $w_j-o$, $w_{j+2}-o$, $w_{j+3}-o=-(w_j-o)$ and $w_{j+5}-o=-(w_{j+2}-o)$, as
+$w_i+w_{i+3}=2o$ in the hexagon; so $E'\cong\mathbb P^1\times\mathbb P^1$. The node of a parallelogram is the torus-fixed point
+of $E'$ of the cone over it.
+\end{proof}

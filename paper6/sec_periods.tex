@@ -423,8 +423,8 @@ $\operatorname{Im}(e^{-i\arg\varepsilon_P}f_P)=0$, so its boundary is the regula
 isotropic three-sphere in $Y_{t,b_1}$, hence Lagrangian; the flow lines reach this level by Step~1. Seidel credits the
 definition of the thimble to a suggestion of Donaldson; compare \cite{Donaldson}. The
 polydiscs are disjoint, so the $L_P(b_1)$ are. Replacing $\omega_{\mathcal T}$ on $\mathsf B_P$ by
-$(1-\tau)\omega_{\mathcal T}+\tau\,\mathcal X_*\omega_{\rm std}$, $\tau\in[0,1]$, where $\mathcal X$ is the Morse chart
-$\zeta$ of Step~1, keeps the estimates of Step~1 with the same constant $C$, since $C\ge1$, and gives a smooth isotopy in
+$(1-\tau)\omega_{\mathcal T}+\tau\,\zeta^*\omega_{\rm std}$, $\tau\in[0,1]$, where $\zeta$ is the holomorphic Morse chart of
+Step~1 and $\omega_{\rm std}$ the standard K\"ahler form of $\C^4$, keeps the estimates of Step~1 with the same constant $C$, since $C\ge1$, and gives a smooth isotopy in
 $\mathbb D_P\cap Y_{t,b_1}$ from $L_P(b_1)$ to the Morse-chart sphere $\delta_P(b_1)$.
 
 \emph{Step 3: symplectic parallel transport.} Choose a smooth path $\gamma$ in the connected set $U^\circ$ from $b_1$ to
@@ -537,9 +537,28 @@ node of $X'_\sigma$ survives every flat deformation. Whether (b) holds is a fini
 $\circv_q$; Section~\ref{ssec:list} records its outcome on the list.
 \end{remark}
 
+The next corollary uses the smoothing criterion of \cite{Paper5} in the following special case, which we restate in
+the present notation.
+
+\begin{theorem}[{\cite[Thm.~4.7]{Paper5}}, for nodes and degree-seven points]\label{thm:paper5crit}
+Let $Z$ be a connected normal projective threefold with $\omega_Z\cong\mathcal O_Z$ and $H^1(Z,\mathcal O_Z)=0$, whose singular
+points are ordinary double points and points analytically isomorphic to the anticanonical cone over the del Pezzo
+surface of degree seven. Let $\widehat Z\to Z$ be the crepant resolution given by a small resolution at each node $q$, with
+exceptional curve $C_q$, and by the exceptional surface $E_p\cong\mathrm{Bl}_2\mathbb P^2$ over each cone point $p$. Put
+$R_q:=\Q$ for a node, mapped to $H_2(\widehat Z;\Q)$ by $1\mapsto[C_q]$, and $R_p:=\Q(e_1-e_2)\subset H_2(E_p;\Q)$ for a cone
+point, the line spanned by the $(-2)$-classes of $E_p$ orthogonal to $K_{E_p}$, mapped by the inclusion of $E_p$. Then $Z$ has a convergent
+one-parameter smoothing if and only if the kernel of $\bigoplus_qR_q\oplus\bigoplus_pR_p\to H_2(\widehat Z;\Q)$ contains a vector
+with every component nonzero.
+\end{theorem}
+
+In \cite{Paper5} the statement is made for a choice of a reduced local deformation component at each singular point; at a
+node and at a degree-seven point there is only one, a line, so the choice is unique, and the subspace selected at a cone
+point is the line $R_p$ (\cite[\S1, \S2.1]{Paper5}). Every summand is then of rank one, and the condition of
+\cite[Thm.~4.7]{Paper5} is that every component is nonzero.
+
 \begin{corollary}[smoothings of $X$ with $dP_7$ points]\label{cor:mixed}
-Let $\Delta$ be admissible with no hexagonal two-face, so that the profile $\sigma$ is unique, and assume~\ref{hyp:P}. Let
-$Y_t$ be a member as in Theorem~\ref{thm:main}. Then the following are equivalent:
+Let $\Delta$ be admissible with no hexagonal two-face, so that the profile $\sigma$ is unique, and assume~\ref{hyp:U}
+and~\ref{hyp:P}. Let $Y_t$ be a member as in Theorem~\ref{thm:main}. Then the following are equivalent:
 \begin{enumerate}
 \item[(a)] $X$ admits a smoothing;
 \item[(b)] $X'_\sigma$ admits a smoothing;
@@ -551,43 +570,38 @@ nodes $q_1,q_2$ of each pentagon.
 \end{corollary}
 
 \begin{proof}
-\emph{$X$ satisfies the hypotheses of \cite[Thm.~4.7]{Paper5}}, which are stated in \cite[\S1]{Paper5}. The argument of
-Lemma~\ref{lem:Xprime}, with $\mathbb P_\Delta$ in place of $P'_\sigma$, shows that $X$ is a connected normal projective
-threefold with $\omega_X\cong\mathcal O_X$ and $H^1(X,\mathcal O_X)=0$. By Section~\ref{ssec:partialres} its singular points
-are the nodes $x_G$ of the squares and, at each pentagon $G$, a point analytically isomorphic to the vertex of $U_G$, the
-anticanonical cone over the toric surface of $G$, which is $dP_7$. So \cite[Thm.~4.7]{Paper5} applies. At a $dP_7$ point
-the local base is $\C\{s,w\}/(w^2,sw)$ \cite[\S2.1]{Paper5}, whose reduction is a line; so there is exactly one branch
-profile $S$ \cite[Def.~2.1]{Paper5}, and every one-parameter deformation over a disc induces it, since a morphism from a
-reduced space factors through the reduction of the target. A smoothing in our sense, a flat deformation over a germ of
-complex space whose general fibre is smooth, gives a convergent one-parameter smoothing, that is, a flat proper family over
-a disc with smooth fibres off the centre: by \cite[Cor.~6.7]{Paper4}, whose hypotheses (a compact threefold with trivial
-canonical sheaf, $H^1(\mathcal O)=0$, only nodes and anticanonical cones over $dP_6$ or $dP_7$ as singularities, and a crepant resolution, small over the nodes
-and with an exceptional del Pezzo surface over each cone point) $X$ satisfies by the above and by the resolution
-$\widehat X\to X$ constructed below, a threefold of this kind without a one-parameter smoothing is not smoothable over any base germ;
-its proof applies the curve selection lemma to the complement of the discriminant in the base of a miniversal deformation. The converse is
-trivial. So (a) holds if and only if the criterion of
-\cite[Thm.~4.7]{Paper5} holds: the space $K_S=\ker\bigl(\bigoplus_pR_{p,S_p}\to H_2(Y_0;\Q)\bigr)$ of
-\cite[\S1, Def.~2.1]{Paper5}, where every summand $R_{p,S_p}$ is a line, contains a vector with nonzero component at every
-node and at every $dP_7$ point.
+\emph{$X$ satisfies the hypotheses of Theorem~\ref{thm:paper5crit}.} The argument of Lemma~\ref{lem:Xprime}, with $\mathbb
+P_\Delta$ in place of $P'_\sigma$, shows that $X$ is a connected normal projective threefold with $\omega_X\cong\mathcal O_X$ and
+$H^1(X,\mathcal O_X)=0$. By Section~\ref{ssec:partialres} its singular points are the nodes $x_G$ of the squares and, at each
+pentagon $G$, a point analytically isomorphic to the vertex of $U_G$, the anticanonical cone over the toric surface of $G$,
+which is $dP_7$.
+
+\emph{Smoothings over a germ.} A smoothing in our sense, a flat deformation over a germ of complex space whose general
+fibre is smooth, gives a convergent one-parameter smoothing, that is, a flat proper family over a disc with smooth fibres
+off the centre, by \cite[Cor.~6.7]{Paper4}: a compact threefold with trivial canonical sheaf, $H^1(\mathcal O)=0$, only nodes
+and anticanonical cones over $dP_6$ or $dP_7$ as singularities, and a crepant resolution small over the nodes with an
+exceptional del Pezzo surface over each cone point, has a smoothing over some base germ only if it has a convergent
+one-parameter smoothing. Its proof applies the curve selection lemma to the complement of the discriminant in the base of
+a miniversal deformation. $X$ satisfies these hypotheses by the above and by the resolution $\widehat X\to X$ below. The
+converse is trivial. So (a) holds if and only if the criterion of Theorem~\ref{thm:paper5crit} holds for $Z=X$.
 
 \emph{The resolution.} Let $\widehat X$ be the small resolution of $X'_\sigma$ with the chosen diagonals, which pass
 through the centres at the pentagons. Near the fibre over a pentagon point it is the toric variety of the star subdivision
 of the cone over $G$, that is, a neighbourhood of the zero section of $\operatorname{Tot}(K_E)$ with
-$E=D_o\cong\mathrm{Bl}_2\mathbb P^2$; at the squares it is a small resolution of the node. So $\widehat X\to X$ is the
-resolution $Y_0\to X$ of \cite[\S2.1]{Paper5}. By Proposition~\ref{prop:classical}(1), $C_{q_1}=e_1$ and $C_{q_2}=e_2$ are
-two disjoint $(-1)$-curves of $E$. The line $R_{p,S_p}=\Q(e_1-e_2)\subset K_E^\perp=H_2(L_p;\Q)$ of \cite[\S2.1]{Paper5}
-is spanned by the $(-2)$-classes of $K_E^\perp$, which are $\pm(e_1-e_2)$ in every marking, so it does not depend on the
-marking, and its image in $H_2(\widehat X;\Q)$ is spanned by $[C_{q_1}]-[C_{q_2}]$. At a node, $R_{p,S_p}=\Q[C_q]$.
+$E=D_o\cong\mathrm{Bl}_2\mathbb P^2$; at the squares it is a small resolution of the node. So $\widehat X\to X$ is the resolution
+of Theorem~\ref{thm:paper5crit}. By Proposition~\ref{prop:classical}(1), $C_{q_1}=e_1$ and $C_{q_2}=e_2$ are two disjoint
+$(-1)$-curves of $E$. The $(-2)$-classes of $E$ orthogonal to $K_E$ are $\pm(e_1-e_2)$ in every marking, so the line $R_p$
+does not depend on the marking, and its image in $H_2(\widehat X;\Q)$ is spanned by $[C_{q_1}]-[C_{q_2}]$.
 
-\emph{The dictionary.} Define $\Phi\colon K_S\to\Q^Q$ by $\Phi(\mathbf k)_q=\mathbf k_q$ at a square and
-$\Phi(\mathbf k)_{q_1}=\mathbf k_p$, $\Phi(\mathbf k)_{q_2}=-\mathbf k_p$ at a pentagon $p$, where $\mathbf k_p(e_1-e_2)$ is the component
-of $\mathbf k$ at $p$. Then $\sum_q\Phi(\mathbf k)_q[C_q]$ is the image of $\mathbf k$ in $H_2(\widehat X;\Q)$, which vanishes. By
-Proposition~\ref{prop:partialres}(2), $\Phi(K_S)\subseteq K\otimes\Q$. Conversely, every $\lambda\in K\otimes\Q$ satisfies
-$\lambda_{q_1}+\lambda_{q_2}=0$ at each pentagon (Remark~\ref{rem:tie}), so it equals $\Phi(\mathbf k)$ for the $\mathbf k$ with
-$\mathbf k_q=\lambda_q$ at the squares and $\mathbf k_p=\lambda_{q_1}$ at the pentagons. So $\Phi$ is an isomorphism onto
-$K\otimes\Q$. The components of $\mathbf k$ are all nonzero if and only if every coordinate of $\Phi(\mathbf k)$ is nonzero, both
-nodes of each pentagon included. By Lemma~\ref{lem:allnonzero}, (a) is therefore equivalent to the existence of
-$\lambda\in K$ with every $\lambda_q\neq0$.
+\emph{The dictionary.} Let $\mathsf V_X$ be the kernel of Theorem~\ref{thm:paper5crit} for $Z=X$, and define $\Phi\colon \mathsf V_X\to\Q^Q$ by
+$\Phi(\mathbf k)_q=\mathbf k_q$ at a square and $\Phi(\mathbf k)_{q_1}=\mathbf k_p$, $\Phi(\mathbf k)_{q_2}=-\mathbf k_p$ at a pentagon $p$,
+where $\mathbf k_p(e_1-e_2)$ is the component of $\mathbf k$ at $p$. Then $\sum_q\Phi(\mathbf k)_q[C_q]$ is the image of $\mathbf k$ in
+$H_2(\widehat X;\Q)$, which vanishes. By Proposition~\ref{prop:partialres}(2), $\Phi(\mathsf V_X)\subseteq K\otimes\Q$. Conversely, every
+$\lambda\in K\otimes\Q$ satisfies $\lambda_{q_1}+\lambda_{q_2}=0$ at each pentagon (Remark~\ref{rem:tie}), so it equals
+$\Phi(\mathbf k)$ for the $\mathbf k$ with $\mathbf k_q=\lambda_q$ at the squares and $\mathbf k_p=\lambda_{q_1}$ at the pentagons. So
+$\Phi$ is an isomorphism onto $K\otimes\Q$. The components of $\mathbf k$ are all nonzero if and only if every coordinate of
+$\Phi(\mathbf k)$ is nonzero, both nodes of each pentagon included. By Lemma~\ref{lem:allnonzero}, (a) is therefore equivalent
+to the existence of $\lambda\in K$ with every $\lambda_q\neq0$.
 
 \emph{Conclusion.} By Corollary~\ref{cor:smooth} and Lemma~\ref{lem:allnonzero}, the same condition is equivalent to (b).
 By Theorem~\ref{thm:main}(1), $K=\Rel(\delta)$, so it is equivalent to (c). The tie holds on $\Rel(\delta)=K$.
@@ -632,3 +646,14 @@ symplectic conifold transition, by \cite[Thm.~2.9]{STY}, and not a projective sm
 Theorem~\ref{thm:main}(3) is the mirror half of Morrison's count (Section~\ref{sec:statements}) at the members of $U$. The
 other half of the proposal in \cite[\S3.1]{Mor99}, that the members of $D_Q$ have a small resolution mirror to a smoothing
 of $X'_\sigma$, is not addressed here.
+
+\begin{remark}[polytopes without nodes]\label{rem:nonodes}
+If $Q=\emptyset$, then $K=0$ and the window of Definition~\ref{def:window} imposes no condition on binomial ratios. The
+constructions of Sections~\ref{sec:regime}--\ref{sec:periods} then need no node-indexed constants: one puts
+$C_\eta=C_{\mathbf R}=1$, $\mathcal E_{\max}=0$ and $\xi_c=0$, so that $c=c^{(0)}$, and keeps the conditions on the triangle
+gaps, the heights, the edges and the three-valent vertices. Only cases~(A) and~(B) of the proof of Lemma~\ref{lem:W}
+occur, and they use only bounds on the moduli of the coefficients, so compactness of $\mathscr C_0$ gives one threshold on $t$ for the smoothness of every member of
+$U^+_\C$, and $U^\circ=D_\emptyset=U$. Theorem~\ref{thm:main} then holds with no vanishing spheres, item~(3) with
+codimension and relative Picard number zero, and Corollary~\ref{cor:smooth} with the trivial smoothing of the smooth
+threefold $X'_\sigma$. The constructions that do not involve nodes apply as stated.
+\end{remark}
