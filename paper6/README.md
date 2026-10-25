@@ -4,26 +4,22 @@ Paper 6 · Bernd Johannes Wuebben · 234 pages
 
 [PDF](cy-vanishing-spheres.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 
-For a class of Calabi–Yau hypersurfaces in toric fourfolds, we identify the integral relations
-among exceptional curves of a small resolution with those among vanishing three-spheres in the
-Batyrev mirror family, and exclude nonzero torsion combinations of the spheres. Near the
-maximally degenerate limit, every relation is realised by an integral four-chain lifted from a
-tropical two-cycle, relative to the discriminant, on Gross's degeneration base. The locus of
-mirror hypersurfaces with the prescribed number of nodes and no other singularities is smooth,
-with local equations given by independent vanishing-cycle periods. After marking and orienting
-the nodes, the integral comparison extends along every connected component of this locus
-meeting the near-limit construction, and the bounding chains continue by transport. On each
-such component the codimension equals the relative Picard number, establishing Morrison's
-predicted count there. In an explicit four-node family, we classify the entire codimension-
-three locus as one such component; all other components have codimension four and no relation.
-Every member of the former component has a projective small resolution, and for general members
-these resolutions are birational to Batyrev mirrors of smoothings of the original nodal
-threefold. The comparison characterises smoothability and yields a symplectic conifold
-transition on the mirror whenever a smoothing exists. The results apply to nodal crepant
-partial resolutions, induced by projective toric morphisms, of anticanonical hypersurfaces
-whose singular points are nodes and cones over del Pezzo surfaces of degrees six and seven, one
-on each singular two-face. The required unimodular triangulations are verified by computer for
-the 51,827 such polytopes identified in the Kreuzer–Skarke list.
+For a class of Batyrev mirror families, we establish Morrison's predicted codimension for
+nodal degenerations and strengthen it to an equality of integral relation lattices. The
+result holds on every connected component of the nodal coefficient locus meeting our
+construction near the maximally degenerate limit. After marking and orienting the nodes, the
+relations among exceptional curves of the original small resolution coincide with those
+among mirror vanishing three-spheres, which generate a torsion-free subgroup. Each such
+component is smooth of codimension equal to the relative Picard number. We realise every
+relation near the limit by an integral four-chain lifted from a tropical two-cycle relative
+to the discriminant on Gross's degeneration base. The comparison characterises smoothability
+of the nodal partial resolution and, when it is smoothable, yields a symplectic conifold
+transition on the mirror. We treat specified projective toric partial resolutions of
+hypersurfaces with nodes and degree-six or degree-seven del Pezzo cone points. In an
+explicit four-node family, every member of the unique codimension-three nodal component
+admits a projective small resolution. For general members, these resolutions are birational
+to Batyrev mirrors of smoothings of the original nodal threefold, giving the reversed
+transition predicted by Morrison in this family.
 
 Theorem E supplies a supplementary geometric realization on the small resolution:
 a continuous map from a completed circle domain, with signed degrees on its boundary
