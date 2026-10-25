@@ -1,24 +1,29 @@
 # Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds
 
-Paper 6 · Bernd Johannes Wuebben · 215 pages
+Paper 6 · Bernd Johannes Wuebben · 234 pages
 
 [PDF](cy-vanishing-spheres.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 
-For a class of Calabi–Yau hypersurfaces in toric fourfolds, and for suitable members of the Batyrev
-mirror family near the maximally degenerate limit, we prove that the exceptional curves of a small
-resolution and the mirror vanishing three-spheres have the same integral relation lattice, and that
-the spheres generate a torsion-free subgroup. Every relation is realised by an integral four-chain
-on the mirror hypersurface, constructed from a tropical two-cycle, relative to the discriminant, on
-the base of Gross's toric degeneration. Near these members the locus where all the spheres collapse
-is smooth of codimension equal to the relative Picard number; this establishes, locally in the
-coefficient space of the mirror family, Morrison's prediction that the mirror nodes impose exactly
-that number of conditions. We characterise smoothability by relations among the mirror spheres and
-obtain a symplectic conifold transition on the mirror whenever a smoothing exists. The results apply
-to nodal crepant partial resolutions, induced by projective toric morphisms, of anticanonical
-hypersurfaces whose singular points are nodes and cones over del Pezzo surfaces of degrees six and
-seven, one on each singular two-face of the polytope. The unimodular triangulations needed for
-Gross's construction are verified to exist by computer for the 51,827 such polytopes identified in
-the Kreuzer–Skarke list.
+For a class of Calabi–Yau hypersurfaces in toric fourfolds, we identify the integral relations
+among exceptional curves of a small resolution with those among vanishing three-spheres in the
+Batyrev mirror family, and exclude nonzero torsion combinations of the spheres. Near the
+maximally degenerate limit, every relation is realised by an integral four-chain lifted from a
+tropical two-cycle, relative to the discriminant, on Gross's degeneration base. The locus of
+mirror hypersurfaces with the prescribed number of nodes and no other singularities is smooth,
+with local equations given by independent vanishing-cycle periods. After marking and orienting
+the nodes, the integral comparison extends along every connected component of this locus
+meeting the near-limit construction, and the bounding chains continue by transport. On each
+such component the codimension equals the relative Picard number, establishing Morrison's
+predicted count there. In an explicit four-node family, we classify the entire codimension-
+three locus as one such component; all other components have codimension four and no relation.
+Every member of the former component has a projective small resolution, and for general members
+these resolutions are birational to Batyrev mirrors of smoothings of the original nodal
+threefold. The comparison characterises smoothability and yields a symplectic conifold
+transition on the mirror whenever a smoothing exists. The results apply to nodal crepant
+partial resolutions, induced by projective toric morphisms, of anticanonical hypersurfaces
+whose singular points are nodes and cones over del Pezzo surfaces of degrees six and seven, one
+on each singular two-face. The required unimodular triangulations are verified by computer for
+the 51,827 such polytopes identified in the Kreuzer–Skarke list.
 
 Theorem E supplies a supplementary geometric realization on the small resolution:
 a continuous map from a completed circle domain, with signed degrees on its boundary
@@ -26,6 +31,18 @@ spheres. Section 10 explains the construction and X₉; Appendix F contains the 
 Theorem F verifies unimodular heights for the fixed list of 51,827 polytopes. The separate
 classification-completeness proposition retains the claim that this list contains every
 admissible class, with the coverage of the independent checks stated explicitly.
+
+The componentwise extension is Proposition 9.13 (§9.7); the exact-node
+locus is smooth everywhere by Lemma 9.17. Theorem 9.21 (§9.9) classifies the
+entire codimension-three four-node locus of X₉, including members with zero
+coefficients. It is one reached determinantal component, and every member
+has a projective small resolution. Other four-node components have
+codimension four and no relation. Theorem 9.25 (§9.10) identifies the general
+resolved mirror with the Batyrev partner family of a smoothing of the exact
+original nodal partial resolution, up to birational equivalence. The
+original smoothing is proper and analytic with projective fibres; quantum
+compatibility and the geometric reverse transition for the entire
+admissible class remain open.
 
 The source consists of `main.tex` and the section files it inputs.
 
@@ -44,7 +61,8 @@ The [computation bundle](COMPUTATIONS.md) contains:
 - [Unimodular-height certificates](unimodular/) for the fixed list of 51,827 admissible
   polytopes, with integer and exact rational checking programs; completeness of the
   list is a separate assertion supported by the classification and admissibility filter.
-- [Exact data and checks for the five worked examples](examples/).
+- [Exact data and checks for the five worked examples](examples/), including
+  the full X₉ four-node component classification and reverse-transition inputs.
 - [Forced-node and projectivity data](forced_nodes/) for the finite input list, including
   projectivity witnesses for every profile of the examples on the branch that admits one.
 - [Height-condition results](census/height_condition.json) for the 364 hexagon-free

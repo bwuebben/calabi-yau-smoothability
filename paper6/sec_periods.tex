@@ -14,6 +14,11 @@ relations have rank at most $\operatorname{rank}K$, and saturation of $K$ gives 
 The same matrix, with a contraction argument and the holomorphic implicit function theorem, describes the nodal locus
 (Section~\ref{ssec:nodal}). Section~\ref{ssec:lagrangian} replaces the spheres $\delta_q$ by pairwise disjoint Lagrangian
 spheres, and Section~\ref{ssec:smooth} proves Corollary~\ref{cor:smooth}.
+Section~\ref{ssec:componentwise} proves smoothness of the locus with exactly $|Q|$ nodes and extends the integral
+comparison along every connected component meeting the near-limit construction.
+Section~\ref{ssec:x9components} exhibits a component outside this comparison in the $X_9$ family.
+Section~\ref{ssec:x9global} classifies its entire codimension-three four-node locus, and
+Section~\ref{ssec:x9reverse} identifies the reverse transition for general members of that component.
 
 Throughout, the configuration of Section~\ref{ssec:member} is fixed: $\mathcal T$ and $\check h$, the pulling
 refinement $\mathcal F_C$ and the height $h_C$, the vectors $w_u$, the integer $k_0$ and $H=k_0\varphi+h_C$. We use the
@@ -643,9 +648,12 @@ Corollary~\ref{cor:smooth} settles the analogue of the question left open in \ci
 satisfy a relation with every coefficient nonzero exactly when $X'_\sigma$ is smoothable. The corollary produces a
 symplectic conifold transition, by \cite[Thm.~2.9]{STY}, and not a projective small resolution.
 
-Theorem~\ref{thm:main}(3) is the mirror half of Morrison's count (Section~\ref{sec:statements}) at the members of $U$. The
-other half of the proposal in \cite[\S3.1]{Mor99}, that the members of $D_Q$ have a small resolution mirror to a smoothing
-of $X'_\sigma$, is not addressed here.
+Theorem~\ref{thm:main}(3) is the mirror half of Morrison's count (Section~\ref{sec:statements}) at the members of $U$.
+Proposition~\ref{prop:componentwise} extends this count along every connected nodal component meeting the construction.
+The further assertion in \cite[\S3.1]{Mor99}, that the nodal mirror members have a small resolution mirror to a smoothing
+of $X'_\sigma$, is proved for $X_9$ in Theorem~\ref{thm:x9reverse},
+in the sense of Batyrev families up to birational equivalence. The assertion
+for the whole admissible class remains open.
 
 \begin{remark}[polytopes without nodes]\label{rem:nonodes}
 If $Q=\emptyset$, then $K=0$ and the window of Definition~\ref{def:window} imposes no condition on binomial ratios. The
@@ -657,3 +665,8 @@ $U^+_\C$, and $U^\circ=D_\emptyset=U$. Theorem~\ref{thm:main} then holds with no
 codimension and relative Picard number zero, and Corollary~\ref{cor:smooth} with the trivial smoothing of the smooth
 threefold $X'_\sigma$. The constructions that do not involve nodes apply as stated.
 \end{remark}
+
+\input{sec_componentwise}
+\input{sec_x9_components}
+\input{sec_x9_global}
+\input{sec_x9_reverse}

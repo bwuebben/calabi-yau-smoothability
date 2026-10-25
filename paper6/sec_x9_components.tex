@@ -1,0 +1,256 @@
+\subsection{Two components of the four-node locus for \texorpdfstring{$X_9$}{X9}}\label{ssec:x9components}
+
+The reached-component restriction in Proposition~\ref{prop:componentwise} is necessary.
+
+Use the smooth projective toric fourfold $P=X_{\mathcal T}$ specified
+by the $X_9$ triangulation of Section~\ref{ssec:x9} and Appendix~\ref{app:data-x9}. Its fan has $161$ rays
+and $813$ maximal cones; this is the smooth triangulation used for
+the example in the current manuscript. Put
+\[
+ V=H^0(P,-K_P)\setminus\{0\}.
+\]
+Let $S_4\subset V$ be the locus where $Y_f$ has exactly four nodes
+and no other singularities.
+The hypersurfaces in this locus are required to be reduced.
+By Lemmas~\ref{lem:component-rank} and~\ref{lem:component-smoothness} and the local-system argument of Proposition~\ref{prop:componentwise}, $S_4$
+is smooth, its local codimension is the rank of the vanishing-cycle
+map, and that rank is locally constant along $S_4$.
+The near-limit construction gives a member for which the rank is three
+and the marked integral relation lattice is $\Z(1,-1,-1,1)$.
+
+\begin{proposition}\label{prop:x9different}
+The locus $S_4$ has at least two connected components. One has
+codimension three and meets the near-limit construction. Another has
+codimension four and does not meet that construction. For a sufficiently
+small smoothing of any member of the latter component, the four
+vanishing spheres are linearly independent over $\Q$. Consequently
+their integral relation lattice and the preimage of ambient torsion
+are both zero.
+\end{proposition}
+
+We prove the assertion by an explicit member. The Newton polytope
+$\Delta_9$ has precisely the following twelve lattice points.
+The first nine are its vertices. In the standard character lattice,
+write $f_*=\sum_{i=0}^{11}c_i\chi^{n_i}$, with
+\begin{equation}\label{eq:x9coefficients}
+\begin{array}{c|r|r}
+i&n_i&c_i\\\hline
+0&(1,0,0,0)&1\\
+1&(0,1,0,0)&1\\
+2&(-1,-1,0,0)&668\\
+3&(0,0,1,0)&324\\
+4&(0,0,0,1)&324\\
+5&(-4,-2,-1,0)&1944\\
+6&(-4,-2,0,-1)&1944\\
+7&(3,1,1,1)&108\\
+8&(2,1,1,1)&432\\
+9&(-1,0,0,0)&-21\\
+10&(-2,-1,0,0)&2496\\
+11&(0,0,0,0)&0
+\end{array}
+\end{equation}
+The support assertion can be checked by testing the integer points
+of $[-4,3]\times[-2,1]\times[-1,1]^2$ against the polar inequalities.
+All boundary coefficients are nonzero.
+
+For torus coordinates $t_1,t_2,t_3,t_4$, make the unimodular monomial
+change
+\begin{equation}\label{eq:x9coordinates}
+ x=t_1,\qquad y=t_1t_2,\qquad
+ z=t_1^2t_2t_3,\qquad w=t_1^2t_2t_4.
+\end{equation}
+Multiplying $f_*$ by the torus unit $xy=t_1^2t_2$ gives
+\begin{equation}\label{eq:x9counterF}
+\begin{split}
+ F={}&y^2+(x^2-21)y+668x+2496\\
+ &+324(z+w)+1944(z^{-1}+w^{-1})+108(x+4)zw.
+\end{split}
+\end{equation}
+
+\subsubsection*{The four torus singularities}
+
+The singular points of \eqref{eq:x9counterF} in the torus are the
+following two pairs:
+\begin{equation}\label{eq:x9nodepairs}
+\begin{aligned}
+ &x=5,\quad y=-2,\quad z+w=18,\quad zw=-6;\\
+ &z=w=\xi,\quad \xi^2=-3,\quad
+   x=-4+3\xi,\quad y=16+12\xi.
+\end{aligned}
+\end{equation}
+Here the first pair has $z=9\pm\sqrt{87}$ and $w=9\mp\sqrt{87}$.
+All four points are distinct and all coordinates are nonzero.
+
+To prove completeness, subtract two logarithmic derivatives:
+\[
+ zF_z-wF_w=324(z-w)\left(1+\frac6{zw}\right).
+\]
+On the branch $zw=-6$, the equation reduces to
+\[
+ h(x,y)=y^2+(x^2-21)y+20x-96=0.
+\]
+The equations $h=h_x=h_y=0$ require a multiple root of the
+$y$-discriminant
+\[
+ (x^2-21)^2-4(20x-96)=(x-5)^2(x^2+10x+33).
+\]
+The only multiple root is $x=5$, giving $y=-2$.
+An individual logarithmic derivative then gives $z+w=18$.
+
+On the branch $z=w$, the equations $F_z=F_y=0$ give
+\[
+ x=18z^{-3}-3z^{-1}-4,\qquad y=-\frac{x^2-21}{2}.
+\]
+After substitution, the numerators of $F_x$ and $F$, up to nonzero
+rational constants, are respectively
+\begin{align*}
+ P_{11}={}&4z^{11}+24z^9+3z^8+4z^7-17z^6-48z^5-18z^4
+            +144z^3+108z^2-216,\\
+ Q_{13}={}&48z^{13}-27z^{12}+576z^{11}-18z^{10}+1712z^9+213z^8\\
+          &+288z^7-576z^6-1728z^5-648z^4+3456z^3+2592z^2-3888.
+\end{align*}
+Their monic greatest common divisor is $z^2+3$. An exact certificate is
+\[
+ P_{11}=(z^2+3)P_9,\qquad Q_{13}=(z^2+3)^2Q_9,
+\]
+where
+\begin{align*}
+ P_9={}&4z^9+12z^7+3z^6-32z^5-26z^4+48z^3+60z^2-72,\\
+ Q_9={}&48z^9-27z^8+288z^7+144z^6-448z^5-408z^4
+          +384z^3+576z^2-432,
+\end{align*}
+and the nonzero resultant values are
+\[
+ \operatorname{Res}(P_9,Q_9)=2^{59}3^{13}13^2 29^2 31\cdot9311,
+ \qquad \operatorname{Res}(P_9,z^2+3)=3^7\cdot13\cdot31.
+\]
+This gives exactly the second pair in \eqref{eq:x9nodepairs}.
+
+The Hessian determinants of $F$ in the coordinates $(x,y,z,w)$ are
+\begin{equation}\label{eq:x9hessians}
+ \det\operatorname{Hess}F=
+ \begin{cases}
+  2^6 3^9\cdot87,&\text{at either point of the first pair},\\
+  -2^6 3^9(21+16\xi),&\text{at the second pair, }\xi^2=-3.
+ \end{cases}
+\end{equation}
+They are nonzero, so each singularity is an ordinary double point.
+
+\subsubsection*{Compactification and the boundary}
+
+It remains to exclude singular points on the toric boundary of $P$.
+For a cone $\tau$ with ray generators $r_j$, let
+\[
+ E_0(\tau)=\{i:\langle n_i,r_j\rangle=-1\text{ for every }r_j\in\tau\}.
+\]
+These are the exponents surviving on the orbit of $\tau$.
+If they are affinely independent, the equation and its logarithmic
+tangent derivatives cannot vanish simultaneously, since all their
+coefficients are nonzero. The complete cone calculation for the fixed
+triangulation is
+\[
+\begin{array}{c|r|r|r}
+\dim\tau&\text{cones}&\text{independent }E_0&\text{remaining}\\\hline
+1&161&157&4\\
+2&974&971&3\\
+3&1626&1626&0\\
+4&813&813&0
+\end{array}
+\]
+The four relevant rays, in the accompanying data's ordering, are
+\[
+ r_5=(-1,2,-1,1),\quad r_6=(-1,2,1,-1),\quad
+ r_8=(1,-1,-1,-1),\quad r_{11}=(0,1,-1,-1).
+\]
+All seven remaining cases are listed below. A normal derivative is
+computed in a smooth toric chart, then restricted to the orbit; a
+singleton support gives a nonzero monomial and hence a unit there.
+\begin{equation}\label{eq:x9boundarytable}
+\begin{array}{c|l|l}
+\tau&E_0(\tau)&\text{exclusion or additional calculation}\\\hline
+(5)&0,2,3,6,7&n_0\text{ outside the affine span of the others}\\
+(6)&0,2,4,5,7&n_0\text{ outside the affine span of the others}\\
+(8)&1,3,4,5,6,8,9,10&x=0\text{ in \eqref{eq:x9counterF}}\\
+(11)&2,3,4,5,6,7,8,10&y=0\text{ in \eqref{eq:x9counterF}}\\
+(5,11)&2,3,6,7&\text{normal derivative supported on }n_0\\
+(6,11)&2,4,5,7&\text{normal derivative supported on }n_0\\
+(8,11)&3,4,5,6,8,10&\text{normal derivative supported on }n_9
+\end{array}
+\end{equation}
+The first two cases are excluded by taking an affine-linear combination
+of the equation and tangent derivatives which retains only the
+nonzero $n_0$-term. The last three normal derivatives have respective
+coefficients $1,1,-21$.
+
+For the remaining two divisor orbits, \eqref{eq:x9coordinates} identifies
+the chart of $\langle r_8,r_{11}\rangle$ with
+$\C_x\times\C_y\times(\C^*)^2_{z,w}$, and its anticanonical equation
+is precisely \eqref{eq:x9counterF}. On either divisor orbit a singular
+point would satisfy
+\[
+ zw=-\frac{167}{27},\qquad
+ (z-w)\left(324+\frac{1944}{zw}\right)=0.
+\]
+The second factor in parentheses is $1620/167\ne0$; hence
+$z=w$ and $z^2=-167/27$.
+On $y=0$, the other normal equation and either logarithmic derivative give
+\[
+ x^2=21,\qquad (x+4)z=-\frac{987}{167}.
+\]
+The number $x$ is real and $z$ is nonzero and purely imaginary, whereas
+the last right-hand side is nonzero real, a contradiction.
+On $x=0$, an individual logarithmic derivative instead gives
+$z=-987/668$, contradicting $z^2=-167/27$.
+At $x=y=0$, the derivative $F_y=-21$ already excludes a singularity.
+Thus there are no boundary singularities.
+
+The finite checks in this section consist only of the lattice-point
+list, the unimodular cone determinants, the orbit supports and their
+affine ranks, and the indicated normal derivative supports. They are
+reproduced from the fixed example's fan in the accompanying exact
+calculation (\coderepo; \texttt{examples/verify\_x9\_components.py}). The two remaining exclusions above are over $\C$.
+In particular, $Y_{f_*}$ has exactly the four nodes displayed earlier.
+It is reduced: a nonreduced divisor would be singular along a
+positive-dimensional subset of its support.
+
+\subsubsection*{Smoothing rank and distinct components}
+
+The coefficient directions indexed by $n_{10},n_2,n_3,n_4$ are the
+functions $1,x,z,w$ after the trivialization used in
+\eqref{eq:x9counterF}. Their evaluations at the four nodes are linearly
+independent. Indeed, suppose
+\[
+ \alpha+\beta x+\gamma z+\delta w=0
+\]
+at all four points. Subtracting the values at the first pair gives
+$\gamma=\delta$. The second pair then gives
+$\alpha=4\beta$ and $\gamma=-3\beta/2$.
+Substitution into either point of the first pair gives $-18\beta=0$.
+All four coefficients therefore vanish.
+
+\begin{proof}[Proof of Proposition~\ref{prop:x9different}]
+At an ordinary double point, the differential of its local smoothing
+parameter is, up to a nonzero factor, evaluation of the coefficient
+variation at that point. The preceding calculation gives rank four.
+Lemmas~\ref{lem:component-rank} and~\ref{lem:component-smoothness} imply
+that the four vanishing classes are independent over $\Q$, and that
+$S_4$ has codimension four near $f_*$. A nonzero integral combination
+cannot be zero or torsion, since either would vanish after tensoring
+with $\Q$.
+
+The rank of the vanishing-cycle map is locally constant along $S_4$,
+as follows from the exterior-of-the-nodes local system used in the
+componentwise continuation proof. It is therefore four on the connected
+component containing $f_*$. On every component meeting the near-limit
+construction it is three. These components are distinct, proving all
+assertions.
+\end{proof}
+
+\begin{remark}
+This proves failure of coverage for the full four-node locus in this
+fixed toric ambient. It does not classify all its components, nor
+determine whether every component having the rank-one full-support
+relation lattice meets the near-limit construction. The original
+$X'_9$ remains smoothable; the counterexample shows why its mirror
+relation criterion must retain the reached-component hypothesis.
+\end{remark}

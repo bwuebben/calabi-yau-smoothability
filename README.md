@@ -7,8 +7,11 @@ singularity types, ambient smoothing constructions, and isolated mirror
 pairs. Paper 4 develops a global obstruction using vanishing periods.
 Paper 5 proves a necessary and sufficient mixed smoothing criterion and
 convergent integrability for its specified deformation spaces. Paper 6 proves
-the mirror counterpart: the vanishing spheres of the Batyrev mirror satisfy
-exactly the relations of the exceptional curves.
+the mirror counterpart on nodal components meeting its near-limit construction:
+the vanishing spheres of the Batyrev mirror satisfy exactly the relations
+of the exceptional curves. For X₉ it classifies the full codimension-three
+four-node component and constructs a geometric reverse transition, up to
+birational equivalence with the Batyrev partner family.
 
 Papers 1–3 give explicit examples, local classifications and computer-assisted
 database-wide counts using the verified input copy described below. Paper 4
@@ -34,7 +37,7 @@ mixed criterion for those degrees.
 | 3. Doubly isolated Batyrev mirror pairs and non-smoothable Calabi–Yau threefolds | [paper3/](paper3/README.md) | [cy-mirror-pairs.pdf](paper3/cy-mirror-pairs.pdf) | 11 | [arXiv:2610.03753](https://arxiv.org/abs/2610.03753) |
 | 4. A vanishing-cycle obstruction to smoothing Calabi–Yau threefolds | [paper4/](paper4/README.md) | [cy-vanishing-cycle.pdf](paper4/cy-vanishing-cycle.pdf) | 34 | |
 | 5. Smoothing Calabi–Yau threefolds with nodes and del Pezzo cone points | [paper5/](paper5/README.md) | [cy-mixed-smoothing.pdf](paper5/cy-mixed-smoothing.pdf) | 62 | |
-| 6. Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds | [paper6/](paper6/README.md) | [cy-vanishing-spheres.pdf](paper6/cy-vanishing-spheres.pdf) | 215 | |
+| 6. Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds | [paper6/](paper6/README.md) | [cy-vanishing-spheres.pdf](paper6/cy-vanishing-spheres.pdf) | 234 | |
 
 Each `paperN/` directory holds `main.tex` and its compiled PDF. Paper 5's
 source also includes `sections/`. Supporting computations are in `src/`
@@ -161,22 +164,28 @@ the verified inputs to their bounded censuses.
    counts of facet conditions, not an unrestricted smoothability census.
 
 6. **Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds**
-   ([paper6/](paper6/README.md)) — establishes and strengthens Morrison's
-   numerical prediction for the specified class of toric hypersurfaces with
-   nodes and degree-six/seven del Pezzo cone points, assuming a projective
-   toric nodal partial resolution. For suitable degenerations of the Batyrev
-   mirror family, the exceptional curves and mirror vanishing spheres have
-   the same integral relation lattice, and the spheres generate a torsion-free
-   subgroup. Explicit integral four-chains realise every relation. The nearby
-   nodal locus has the predicted codimension, and smoothability of the nodal
-   partial resolution is equivalent to a mirror relation with every coefficient
-   nonzero; when a smoothing exists, the mirror admits a symplectic conifold
-   transition. When no two-face is a hexagon, the same criterion decides the
-   smoothability of the hypersurface itself, with its degree-seven cone points. The required triangulations are verified for a fixed list of **51,827**
-   admissible reflexive polytopes; the claim that this list is complete is stated
-   separately from the height theorem. A supplementary geometric realization on
-   the small resolution is explained in §10, with its complete proof in Appendix F. The [computation bundle](paper6/COMPUTATIONS.md) supplies the
-   certificates and checkers, five worked examples, forced-node data and
+   ([paper6/](paper6/README.md)) — identifies the integral relations among
+   exceptional curves and mirror vanishing spheres for the stated class of
+   toric hypersurfaces with nodes and degree-six/seven del Pezzo cone points,
+   under the projective-partial-resolution and unimodular-height hypotheses.
+   It excludes nonzero torsion combinations and constructs integral bounding
+   chains near the maximally degenerate limit. The exact-node locus is smooth
+   everywhere; the marked comparison and predicted codimension extend along
+   every component meeting that construction. For X₉, the entire
+   codimension-three four-node locus is one reached determinantal component,
+   including zero-coefficient members, and every member has a projective small
+   resolution. Other four-node components have codimension four and no relation.
+   General resolutions on the determinantal component are birational to the
+   Batyrev mirror family of a smoothing of the exact original nodal partial
+   resolution. The general comparison characterises smoothability and yields
+   a symplectic conifold transition; the geometric converse beyond X₉ remains
+   open. The required triangulations are verified for the fixed list of
+   **51,827** admissible polytopes; classification completeness is a separate
+   assertion with the independent-check coverage stated in the paper.
+   The supplementary resolution-side construction is explained in §10, with
+   its complete proof in Appendix F. The [computation bundle](paper6/COMPUTATIONS.md)
+   supplies certificates and checkers, five worked examples, exact X₉
+   component and reverse-transition calculations, forced-node data and
    explicitly labelled census summaries.
 
 The classification-wide counts use a complete set of distinct reflexive

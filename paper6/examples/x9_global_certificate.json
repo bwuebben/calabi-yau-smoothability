@@ -1,0 +1,1214 @@
+{
+  "schema_version": 1,
+  "input_sha256": "725866c5f382205bbb85cac55d9bcc6df6324f79050747bf58af3ca4d5ba3f16",
+  "newton_lattice_points": [
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      -4,
+      -2,
+      -1,
+      0
+    ],
+    [
+      -4,
+      -2,
+      0,
+      -1
+    ],
+    [
+      3,
+      1,
+      1,
+      1
+    ],
+    [
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      -1,
+      0,
+      0,
+      0
+    ],
+    [
+      -2,
+      -1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "ambient_ray_count": 161,
+  "unimodular_maximal_cone_count": 813,
+  "boundary_orbit_census": {
+    "1": 161,
+    "2": 974,
+    "3": 1626,
+    "4": 813
+  },
+  "boundary": {
+    "essential_nonzero_coefficients": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "forced_positive_dimensional_orbits": [
+      {
+        "coefficient": 0,
+        "cone": [
+          19,
+          120
+        ],
+        "orbit_dimension": 2,
+        "orbit_support": [
+          0
+        ],
+        "normal_supports": [
+          [],
+          []
+        ]
+      },
+      {
+        "coefficient": 1,
+        "cone": [
+          136,
+          141
+        ],
+        "orbit_dimension": 2,
+        "orbit_support": [
+          1
+        ],
+        "normal_supports": [
+          [],
+          []
+        ]
+      },
+      {
+        "coefficient": 3,
+        "cone": [
+          112,
+          134,
+          155
+        ],
+        "orbit_dimension": 1,
+        "orbit_support": [
+          3
+        ],
+        "normal_supports": [
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "coefficient": 4,
+        "cone": [
+          121,
+          144,
+          149
+        ],
+        "orbit_dimension": 1,
+        "orbit_support": [
+          4
+        ],
+        "normal_supports": [
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "coefficient": 5,
+        "cone": [
+          127,
+          149,
+          150
+        ],
+        "orbit_dimension": 1,
+        "orbit_support": [
+          5
+        ],
+        "normal_supports": [
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "coefficient": 6,
+        "cone": [
+          8,
+          132,
+          157
+        ],
+        "orbit_dimension": 1,
+        "orbit_support": [
+          6
+        ],
+        "normal_supports": [
+          [],
+          [],
+          []
+        ]
+      }
+    ],
+    "c7_c8_zero_witness": {
+      "cone": [
+        136,
+        154,
+        156
+      ],
+      "orbit_support": [
+        7,
+        8
+      ],
+      "normal_supports": [
+        [],
+        [],
+        []
+      ]
+    },
+    "c7_zero_fixed_points": [
+      {
+        "cone": [
+          9,
+          80,
+          114,
+          136
+        ],
+        "orbit_support": [
+          7
+        ],
+        "normal_supports": [
+          [],
+          [],
+          [],
+          []
+        ],
+        "quadratic_support": {
+          "0": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "8": [
+            0,
+            1,
+            1,
+            0
+          ]
+        }
+      },
+      {
+        "cone": [
+          10,
+          85,
+          117,
+          136
+        ],
+        "orbit_support": [
+          7
+        ],
+        "normal_supports": [
+          [],
+          [],
+          [],
+          []
+        ],
+        "quadratic_support": {
+          "0": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "8": [
+            0,
+            1,
+            1,
+            0
+          ]
+        }
+      },
+      {
+        "cone": [
+          114,
+          131,
+          136,
+          154
+        ],
+        "orbit_support": [
+          7
+        ],
+        "normal_supports": [
+          [],
+          [],
+          [],
+          []
+        ],
+        "quadratic_support": {
+          "0": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "8": [
+            1,
+            1,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "cone": [
+          117,
+          131,
+          136,
+          156
+        ],
+        "orbit_support": [
+          7
+        ],
+        "normal_supports": [
+          [],
+          [],
+          [],
+          []
+        ],
+        "quadratic_support": {
+          "0": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "8": [
+            1,
+            1,
+            0,
+            0
+          ]
+        }
+      }
+    ],
+    "c7_zero_c8_nonzero_binomial_orbits": [
+      {
+        "cone": [
+          9,
+          114,
+          154
+        ],
+        "orbit_support": [
+          7
+        ],
+        "normal_supports": [
+          [],
+          [
+            3,
+            8
+          ],
+          []
+        ],
+        "primitive_exponent_difference": [
+          -2,
+          -1,
+          0,
+          -1
+        ]
+      },
+      {
+        "cone": [
+          10,
+          117,
+          156
+        ],
+        "orbit_support": [
+          7
+        ],
+        "normal_supports": [
+          [],
+          [
+            4,
+            8
+          ],
+          []
+        ],
+        "primitive_exponent_difference": [
+          -2,
+          -1,
+          -1,
+          0
+        ]
+      },
+      {
+        "cone": [
+          9,
+          80,
+          136
+        ],
+        "orbit_support": [
+          7
+        ],
+        "normal_supports": [
+          [],
+          [
+            1,
+            8
+          ],
+          []
+        ],
+        "primitive_exponent_difference": [
+          -2,
+          0,
+          -1,
+          -1
+        ]
+      },
+      {
+        "cone": [
+          10,
+          85,
+          136
+        ],
+        "orbit_support": [
+          7
+        ],
+        "normal_supports": [
+          [],
+          [
+            1,
+            8
+          ],
+          []
+        ],
+        "primitive_exponent_difference": [
+          -2,
+          0,
+          -1,
+          -1
+        ]
+      }
+    ],
+    "joint_chart_cones": [
+      [
+        8
+      ],
+      [
+        11
+      ],
+      [
+        8,
+        11
+      ]
+    ],
+    "uniform_exclusion_counts": {
+      "essential_affine_coloop": 3555,
+      "essential_singleton_normal": 16
+    },
+    "unexcluded_orbits_outside_joint_chart": []
+  },
+  "compact_four_node_witness": {
+    "coefficients": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "polynomial_after_multiplication_by_zw": "x^2*y*z*w + x*z^2*w^2 + y^2*z*w + z^2*w^2 + x*z*w + y*z*w + z^2*w + z*w^2 + z*w + z + w",
+    "singular_groebner_basis": [
+      "w^3 - 2*w^2 - z + 2",
+      "z^2 + w^2 - 2*z - 2*w",
+      "z*w + 1",
+      "x - z - w + 1",
+      "y",
+      "iv + 1"
+    ],
+    "radical": true,
+    "degree": 4,
+    "hessian_determinant_modulo_singular_ideal": "-8*z - 8*w - 8",
+    "hessian_is_unit_modulo_singular_ideal": true,
+    "coefficient_normal_forms": [
+      "0",
+      "0",
+      "z + w - 1",
+      "z",
+      "w",
+      "-w",
+      "-z",
+      "-z - w + 1",
+      "-1",
+      "0",
+      "1",
+      "0"
+    ],
+    "coefficient_evaluation_rank": 3,
+    "compactness_argument": "The uniform boundary exclusion and this full joint-chart ideal exhaust the compact singular locus."
+  },
+  "compact_surface": {
+    "divisor_ray": 11,
+    "character": [
+      4,
+      2,
+      1,
+      1
+    ],
+    "star_maximal_cones": [
+      [
+        5,
+        8,
+        11,
+        132
+      ],
+      [
+        5,
+        8,
+        11,
+        154
+      ],
+      [
+        5,
+        11,
+        131,
+        132
+      ],
+      [
+        5,
+        11,
+        131,
+        154
+      ],
+      [
+        6,
+        11,
+        131,
+        133
+      ],
+      [
+        6,
+        11,
+        131,
+        156
+      ],
+      [
+        6,
+        11,
+        133,
+        158
+      ],
+      [
+        6,
+        11,
+        156,
+        158
+      ],
+      [
+        7,
+        8,
+        11,
+        132
+      ],
+      [
+        7,
+        8,
+        11,
+        159
+      ],
+      [
+        7,
+        11,
+        131,
+        132
+      ],
+      [
+        7,
+        11,
+        131,
+        133
+      ],
+      [
+        7,
+        11,
+        133,
+        159
+      ],
+      [
+        8,
+        11,
+        154,
+        156
+      ],
+      [
+        8,
+        11,
+        156,
+        158
+      ],
+      [
+        8,
+        11,
+        158,
+        159
+      ],
+      [
+        11,
+        131,
+        154,
+        156
+      ],
+      [
+        11,
+        133,
+        158,
+        159
+      ]
+    ],
+    "quotient_map_rows": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        1
+      ]
+    ],
+    "saturated_kernel_basis": [
+      [
+        1,
+        0,
+        -4
+      ],
+      [
+        0,
+        1,
+        -1
+      ]
+    ],
+    "fibre_ray_order": [
+      5,
+      8,
+      158,
+      6,
+      131
+    ],
+    "fibre_rays": {
+      "5": [
+        -1,
+        1
+      ],
+      "8": [
+        1,
+        -2
+      ],
+      "131": [
+        -1,
+        2
+      ],
+      "6": [
+        -1,
+        3
+      ],
+      "158": [
+        0,
+        1
+      ]
+    },
+    "fibre_maximal_cones": [
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        131
+      ],
+      [
+        6,
+        131
+      ],
+      [
+        6,
+        158
+      ],
+      [
+        8,
+        158
+      ]
+    ],
+    "self_intersections": [
+      0,
+      1,
+      -1,
+      -1,
+      -2
+    ],
+    "surface_K_squared": 7
+  },
+  "original_side_cayley_model": {
+    "rays": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        1
+      ]
+    ],
+    "primitive_relation": [
+      -1,
+      1,
+      2,
+      -1,
+      -1
+    ],
+    "maximal_cones": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        0,
+        1,
+        2,
+        4
+      ],
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "determinants": [
+      1,
+      -1,
+      1
+    ],
+    "coherent_heights": [
+      1,
+      0,
+      0,
+      1,
+      1
+    ],
+    "strict_convexity_gaps": [
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ]
+    ],
+    "central_slice_cells": [
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    ],
+    "canonical_cells_T3_P4_P1": [
+      [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "local_critical_points": 2,
+    "node_hessian_determinants": [
+      1,
+      1
+    ]
+  },
+  "mirror_mutation": {
+    "newton_lattice_points": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        4,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        -1
+      ],
+      [
+        -2,
+        0,
+        0,
+        -1
+      ],
+      [
+        -4,
+        -1,
+        0,
+        -1
+      ],
+      [
+        -4,
+        0,
+        -1,
+        -1
+      ]
+    ],
+    "newton_vertices": [
+      [
+        -4,
+        -1,
+        0,
+        -1
+      ],
+      [
+        -4,
+        0,
+        -1,
+        -1
+      ],
+      [
+        -2,
+        0,
+        0,
+        -1
+      ],
+      [
+        -1,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        1,
+        1,
+        1
+      ]
+    ],
+    "unimodular_map_rows": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ]
+    ],
+    "unimodular_determinant": -1,
+    "smoothing_fan_rays": [
+      [
+        -1,
+        -3,
+        -1,
+        0
+      ],
+      [
+        -1,
+        -3,
+        0,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        1,
+        3,
+        1,
+        1
+      ]
+    ],
+    "smoothing_fan_maximal_cones": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        5,
+        6
+      ],
+      [
+        0,
+        1,
+        3,
+        4
+      ],
+      [
+        0,
+        1,
+        4,
+        5
+      ],
+      [
+        0,
+        2,
+        3,
+        6
+      ],
+      [
+        0,
+        3,
+        4,
+        6
+      ],
+      [
+        0,
+        4,
+        5,
+        6
+      ],
+      [
+        1,
+        2,
+        3,
+        6
+      ],
+      [
+        1,
+        3,
+        4,
+        6
+      ],
+      [
+        1,
+        4,
+        5,
+        6
+      ]
+    ],
+    "polar_vertices": [
+      [
+        -2,
+        -1,
+        -2,
+        6
+      ],
+      [
+        -2,
+        -1,
+        6,
+        -2
+      ],
+      [
+        -2,
+        -1,
+        6,
+        6
+      ],
+      [
+        0,
+        1,
+        -2,
+        -2
+      ],
+      [
+        1,
+        -1,
+        -2,
+        3
+      ],
+      [
+        1,
+        -1,
+        3,
+        -2
+      ],
+      [
+        1,
+        -1,
+        3,
+        3
+      ],
+      [
+        1,
+        0,
+        -2,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        -2
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "polar_lattice_point_count": 162,
+    "laurent_substitution_verified": true,
+    "logarithmic_jacobian_determinant": 1,
+    "all_one_mutant_nondegenerate": true,
+    "tested_face_counts": {
+      "1": 18,
+      "2": 21,
+      "3": 10,
+      "4": 1
+    },
+    "vertex_faces": 7
+  },
+  "result": "All exact finite checks passed.",
+  "scope": "Uniform boundary exclusions, compact four-node witness and rank, toric surface, local Cayley model, and mutant Newton family.",
+  "limits": "Connected-component classification, integral relation and torsion, projective small resolution, and analytic gluing additionally use the written proofs. This program does not prove a quantum or categorical mirror statement."
+}

@@ -67,6 +67,54 @@ characteristics are compared with the exported data. Interior intersections
 with the discriminant are counted and their circular links checked; this alone
 does not establish affine transversality. The X88 tenth-cycle count is 18.
 
+## Components of the four-node locus for X9
+
+```sh
+sage -python examples/verify_x9_components.py --output /tmp/x9_components.json
+```
+
+This exact calculation checks the explicit four-node member in §9.8. It
+reconstructs the coefficient polynomial from `examples/x9.json`, verifies the
+complete torus singular scheme and nonzero Hessians, excludes singularities
+on all 3,574 boundary orbits, and computes rank four for the coefficient
+smoothing map. The retained output is `examples/x9_components_certificate.json`.
+Together with the manuscript's smoothing-rank and local-system results, this
+member proves that the full four-node locus has a component distinct from
+those reached by the near-limit construction. That checker alone does not
+classify the rank-three components; the additional calculation below supplies
+the finite inputs for their classification.
+
+## Global X9 component and reverse transition
+
+```sh
+sage -python examples/verify_x9_global.py --output /tmp/x9_global.json
+```
+
+This standalone exact checker reads only `examples/x9.json`. It verifies the
+first-jet supports forcing seven coefficients to be nonzero at every compact
+four-node member, and excludes all 3,571 toric orbits outside the joint affine
+chart by 3,555 affine-coloop calculations and 16 singleton normal derivatives.
+The retained certificate prints the forced-singularity witnesses, including
+the eight disjoint singular points forced when `c7=0` and `c8≠0`,
+and the positive-dimensional singular locus when both vanish. This analysis allows all other coefficients to vanish.
+
+It also verifies the compact all-one boundary-coefficient member's radical
+four-point singular scheme, nonzero Hessians and coefficient rank three; the
+compact smooth five-ray surface and its saturated lattice; the Cayley fan and
+its exact two-node central partial resolution; and the nine-point mutant
+Newton polytope, its unimodular identification with the smoothing ambient's
+seven rays and ten maximal cones, and Newton nondegeneracy of the all-one
+mutant. All 3,574 toric boundary orbits are accounted for. The retained output
+is `examples/x9_global_certificate.json`; it is reproduced byte-for-byte with
+SageMath 10.9 in both the repository and an isolated public layout.
+
+The connected-component classification, integral relation and torsion
+statements, projective small resolution, and analytic gluing use the written
+proofs in the manuscript. The finite calculations supply their explicit
+polynomial and lattice inputs; they are not a quantum or categorical mirror
+comparison. Neither this command nor the earlier component checker reruns the
+large classification or tropical-cycle computations.
+
 ## Tropical-cycle summaries
 
 ```sh

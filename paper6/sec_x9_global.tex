@@ -1,0 +1,421 @@
+\subsection{The codimension-three component for \texorpdfstring{$X_9$}{X9}}
+\label{ssec:x9global}
+
+We retain the toric fourfold $P$, the full coefficient space $V$ and the
+exact four-node locus $S_4$ of Section~\ref{ssec:x9components}. Thus zero
+coefficients are allowed, but additional singularities are excluded.
+Number the lattice points as in \eqref{eq:x9coefficients}, and put
+\begin{equation}\label{eq:x9determinantal}
+ \mathcal D=\left\{c\in\C^{12}:\operatorname{rank}
+ \begin{pmatrix}c_2&c_{10}&c_5&c_6\\c_7&c_8&c_4&c_3\end{pmatrix}
+ \leq1\right\}.
+\end{equation}
+This irreducible determinantal variety has dimension nine. The special
+form of $\Delta_9$ permits a classification of the part of $S_4$ carrying
+a relation, as well as a projective small resolution on that entire part.
+
+\begin{theorem}\label{thm:x9global}
+The locus $S_4$ has exactly one connected component of codimension three,
+namely $\mathcal D\cap S_4$. It meets the near-limit nodal construction of
+Theorem~\ref{thm:main}. After marking and orienting the nodes by transport
+from that construction, the integral relation lattice and the preimage of
+ambient torsion are both $\Z(1,-1,-1,1)$.
+Every other connected component of $S_4$ has codimension four and has
+zero relation lattice and zero preimage of torsion. Every member of
+$\mathcal D\cap S_4$ admits a projective small resolution.
+\end{theorem}
+
+The theorem does not count the codimension-four components;
+Proposition~\ref{prop:x9different} shows that at least one exists. Its proof
+uses the compact toric boundary, an evaluation-rank argument, and a
+surface through the four nodes. The finite fan comparisons below use the
+triangulation in Appendix~\ref{app:data-x9} and its accompanying data.\footnote{The
+program \texttt{examples/verify\_x9\_global.py} reproduces the boundary
+supports, singular ideals, surface fan and polytope comparisons used in
+Sections~\ref{ssec:x9global}--\ref{ssec:x9reverse}.}
+
+\subsubsection*{The compact boundary and a common affine chart}
+
+Write $r_j$ for the primitive ray generators of the fan of $P$, in the
+order of the accompanying triangulation. For a cone $\tau$, in addition
+to $E_0(\tau)$ from Section~\ref{ssec:x9components}, define
+\[
+ E_{1,j}(\tau)=\{i:\langle n_i,r_j\rangle+1=1,
+       \ \langle n_i,r_k\rangle+1=0\text{ for }k\in\tau,\ k\ne j\}.
+\]
+These are the supports of the first normal derivatives along the orbit
+of $\tau$. Smoothness of the maximal cones makes this an ordinary
+coordinate-derivative calculation.
+
+\begin{lemma}\label{lem:x9boundaryglobal}
+For every $c\in S_4$, the coefficients $c_0,c_1,c_3,c_4,c_5,c_6,c_7$
+are nonzero. Every singular point lies in
+\[
+ U_{\langle r_8,r_{11}\rangle}
+       =\C_x\times\C_y\times(\C^*)^2_{z,w},
+ \qquad r_8=(1,-1,-1,-1),\quad r_{11}=(0,1,-1,-1),
+\]
+where the local equation is
+\begin{equation}\label{eq:x9generalF}
+\begin{split}
+ F={}&c_1y^2+q(x)y+c_2x+c_3z+c_4w+c_5/z+c_6/w
+                    +c_7xzw+c_8zw+c_{10},\\
+ q(x)={}&c_0x^2+c_{11}x+c_9.
+\end{split}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The character change \eqref{eq:x9coordinates} is unimodular, and its
+pairings with $r_8,r_{11}$ are the $x,y$ coordinate valuations. Multiplying
+the Laurent equation by $xy$ gives \eqref{eq:x9generalF} on this chart.
+
+The following cones have $E_0(\tau)=\{i\}$ and every $E_{1,j}(\tau)$
+empty:
+\[
+\begin{array}{c|c|c}
+i&\tau&\dim O(\tau)\\\hline
+0&(19,120)&2\\
+1&(136,141)&2\\
+3&(112,134,155)&1\\
+4&(121,144,149)&1\\
+5&(127,149,150)&1\\
+6&(8,132,157)&1
+\end{array}
+\]
+If the indicated coefficient vanishes, the whole positive-dimensional
+orbit is singular. This proves the first six nonvanishing assertions.
+
+Suppose $c_7=0$. If $c_8=0$ also, the cone $(136,154,156)$ has
+$E_0=\{7,8\}$ and all first-normal supports empty, again giving a
+singular curve. If $c_8\ne0$, the four maximal cones
+\[
+ (9,80,114,136),\quad(10,85,117,136),\quad
+ (114,131,136,154),\quad(117,131,136,156)
+\]
+give singular fixed points: each has $E_0=\{7\}$ and all
+$E_{1,j}$ empty. There is a further singular point on each of the
+following one-dimensional orbits:
+\[
+\begin{array}{c|c}
+\tau&\text{only nonempty first-normal support}\\\hline
+(9,114,154)&\{3,8\}\\
+(10,117,156)&\{4,8\}\\
+(9,80,136)&\{1,8\}\\
+(10,85,136)&\{1,8\}
+\end{array}
+\]
+Their orbit equations vanish identically, since $E_0=\{7\}$.
+The remaining normal derivative is a binomial with nonzero coefficients
+and distinct characters of $\C^*$, so has a zero on the orbit. At such a
+zero every first derivative vanishes. These four orbits and the four
+fixed points are disjoint, giving at least eight singular points.
+Therefore $c_7\ne0$ on $S_4$.
+
+Put $I=\{0,1,3,4,5,6,7\}$. For all $3,571$ nonzero cones outside
+$\langle r_8,r_{11}\rangle$, the finite support calculation gives
+\[
+\begin{array}{l|r}
+\text{an }i\in I\text{ outside the affine span of }
+                  E_0(\tau)\setminus\{i\}&3,555\\
+\text{otherwise, an }E_{1,j}(\tau)=\{i\},\quad i\in I&16.
+\end{array}
+\]
+In the first row an affine-linear functional on the supported exponents
+isolates the $i$th monomial. On the orbit it is a linear combination of
+the equation and its logarithmic tangent derivatives, and cannot vanish
+because $c_i\ne0$. In the second row a normal derivative is already a
+nonzero monomial. Both arguments remain valid when any of the other
+coefficients vanish. Together with the three nonzero cones $(8),(11)$
+and $(8,11)$ in the stated chart, these exhaust the $3,574$ boundary
+orbits. The dense torus is in the same chart.
+\end{proof}
+
+\subsubsection*{The coefficient-smoothing rank}
+
+At a node in this chart the coefficient directions are evaluations of
+\begin{equation}\label{eq:x9evalfunctions}
+ x^2y,\ y^2,\ x,\ z,\ w,\ z^{-1},\ w^{-1},\ xzw,\ zw,\ y,\ 1,\ xy.
+\end{equation}
+These are directions in the full coefficient space even when a
+coefficient of the defining equation is zero. Multiplying a local
+equation by a unit only rescales the corresponding evaluation row.
+
+\begin{lemma}\label{lem:x9rankglobal}
+For $c\in S_4$, the coefficient-smoothing map has rank three if and
+only if $c\in\mathcal D$. It never has rank at most two.
+\end{lemma}
+
+\begin{proof}
+First, every three distinct singular points have independent evaluation
+rows. If not, choose a minimally supported relation among at most three
+rows. Two rows cannot be proportional, since $1,x,y,z,w$ distinguish
+points, so all three weights are nonzero. The functions $1,y,y^2$ force
+all three $y$-values to agree: three distinct values give a Vandermonde
+matrix, and two values leave a singleton with zero weight. If their
+common value is nonzero, $1,x,x^2y$ force common $x$ by the same argument.
+If it is zero, $F_y=q(x)=0$ gives at most two $x$-values, and $1,x$ again
+force common $x$. Now
+\begin{equation}\label{eq:x9criticalpair}
+ F_x=(2c_0x+c_{11})y+c_2+c_7zw=0,\qquad
+ c_3z^2+(c_7x+c_8)(zw)z-c_5=0
+\end{equation}
+fix $p=zw$ and allow at most two $z$-values. Since $w=p/z$, three
+distinct points are impossible. Lemma~\ref{lem:x9boundaryglobal}
+supplies all nonzero coefficients used here.
+
+Suppose now that the four rows have rank three, and let $\lambda$ be
+their relation. It has full support by the preceding paragraph. Let
+$W\subset\C^4$ be the space of evaluation vectors of the functions
+in \eqref{eq:x9evalfunctions}. It has dimension three.
+
+If the four $y$-values are distinct, $W=\langle1,y,y^2\rangle$.
+The inclusions $x,xy\in W$, by interpolation at these four values,
+give $x=\alpha+\beta y$. Then $x^2y\in W$ forces $\beta^2=0$.
+Thus $x$ is constant, whereas $F_y=2c_1y+q(x)=0$ forces $y$ constant
+as well, a contradiction. Three distinct $y$-values are also impossible:
+the equations for $1,y,y^2$ make the sum of weights in each equal-value
+group zero, and at least one group is a singleton.
+
+If there are two $y$-values, the points form two pairs with opposite
+weights within each pair. The equations for $x,xy$ force common $x$
+within each pair. The two $x$-values differ, because $F_y=0$ determines
+$y$ from $x$. Equation~\eqref{eq:x9criticalpair} fixes $p=zw$ within
+each pair; its two $z$-values differ. Write $\Delta z_a,\Delta z_b$
+for their differences, $S_a,S_b$ for their products, and
+$\lambda_a,\lambda_b$ for the opposite weights. The functions $z,z^{-1}$
+give
+\[
+ \lambda_a\Delta z_a+\lambda_b\Delta z_b=0,\qquad
+ \frac{\lambda_a\Delta z_a}{S_a}
+       +\frac{\lambda_b\Delta z_b}{S_b}=0.
+\]
+Both summands are nonzero, so $S_a=S_b$. Since
+$\Delta w=-p\Delta z/S$, the equation for $w$ implies a common
+product $p$ for both pairs. At each point, $zF_z-wF_w=0$ says
+\begin{equation}\label{eq:x9cancel}
+ (c_3+c_6/p)z^2=c_5+c_4p.
+\end{equation}
+If the left coefficient is nonzero, the two $z$-values in either pair
+are opposite. The quadratic in \eqref{eq:x9criticalpair} then forces
+$c_7x+c_8=0$ for both pairs, contradicting their distinct $x$-values.
+Consequently both sides' coefficients in \eqref{eq:x9cancel} vanish.
+On $zw=p$, the remaining equation is
+\[
+ h(x,y)=c_1y^2+q(x)y+Lx+M=0,\qquad
+ L=c_2+c_7p,\quad M=c_{10}+c_8p.
+\]
+We have $h=h_x=h_y=0$ at two distinct $x$-values. Therefore
+$q(x)^2-4c_1(Lx+M)$ has two distinct double roots and is the square of
+a quadratic $s(x)$ with leading coefficient $c_0$. But
+\[
+ (q-s)(q+s)=4c_1(Lx+M)
+\]
+has right side of degree at most one and $\deg(q+s)=2$. Hence $q=s$
+and $L=M=0$. Using both $h=0$ and $h_y=0$ now gives $y=0$, a
+contradiction to two $y$-values.
+
+There remains a common value $y_0$. If $y_0\ne0$, $F_y=0$ and the
+quadratic in \eqref{eq:x9criticalpair} put the points in two pairs with
+distinct $x$-values. The equations for $1,x$ give opposite weights in
+each pair. The same calculation with $z,z^{-1},w$ gives common $p$.
+Subtracting the two equations $F_x=0$ yields
+$2c_0y_0(x_a-x_b)=0$, again impossible. Thus all four points have $y=0$.
+
+Now $q(x)=0$ and $p=-c_2/c_7$ is fixed and nonzero. There must be two
+distinct $x$-values, each with two distinct $z$-values. Equation
+\eqref{eq:x9cancel} and the quadratic in \eqref{eq:x9criticalpair}
+again force $c_3+c_6/p=c_5+c_4p=0$; the equation $F=0$ gives
+$c_{10}+c_8p=0$. With $r=-1/p$ this is precisely
+\[
+ c_7=rc_2,\quad c_8=rc_{10},\quad c_4=rc_5,\quad c_3=rc_6,
+\]
+so $c\in\mathcal D$.
+
+Conversely, at $c\in\mathcal D\cap S_4$, the nonvanishing of
+$c_7,c_4,c_5$ forces $c_2\ne0$. Put
+\begin{equation}\label{eq:x9factorparameters}
+ A=c_2,\quad B=c_{10},\quad C=c_5,\quad D_0=c_6,\quad
+ r=c_4/c_5.
+\end{equation}
+Then
+\begin{equation}\label{eq:x9factorF}
+ F=c_1y^2+q(x)y+G H,\qquad
+ G=1+rzw,\quad H=Ax+B+C/z+D_0/w.
+\end{equation}
+The points $y=q=G=H=0$ are singular. Above each root of $q$, they are
+given by
+\begin{equation}\label{eq:x9fibrequadratic}
+ -rD_0z^2+(Ax+B)z+C=0,\qquad w=-1/(rz).
+\end{equation}
+The leading and constant coefficients are nonzero. A repeated root of
+$q$, or of \eqref{eq:x9fibrequadratic} above it, gives an actual singular
+point with degenerate Hessian: at that point the differentials of
+$y,q,G,H$ are dependent. Such a point is excluded by $S_4$. Thus there
+are four distinct points, and
+\begin{equation}\label{eq:x9nodejacobian}
+ \det\frac{\partial(q,G,H)}{\partial(x,z,w)}
+       =q'(x)r(C/z-D_0/w)\ne0.
+\end{equation}
+They are nodes by \eqref{eq:x9factorF}, and exhaust the singularities.
+This includes a simple root $x=0$ when $c_9=0$.
+At the nodes the evaluation functions span $\langle1,x,z,w\rangle$,
+with relation $rD_0z+rCw=Ax+B$. The functions $1,x,z$ are independent
+because $x$ takes two values and $z$ takes two values above each. Their
+rank is exactly three.
+\end{proof}
+
+\subsubsection*{A compact surface and its small resolution}
+
+\begin{lemma}\label{lem:x9surface}
+For every $c\in\mathcal D\cap S_4$, the closure $S_r$ of
+$\{y=0,\ 1+rzw=0\}$ is a smooth compact toric surface in $Y_f$.
+Blowing up its ideal gives a projective small resolution of $Y_f$.
+The surface has five toric boundary curves and $K_{S_r}^2=7$.
+\end{lemma}
+
+\begin{proof}
+Set $R=r_{11}$ and $m=(4,2,1,1)$. The character $\chi^m=zw$ on the
+toric divisor $E_R$ extends to a morphism $E_R\to\mathbb P^1$.
+Indeed its pairings with the rays of each of the $18$ maximal cones of
+the star of $R$ have one weak sign. The quotient lattice has coordinates
+\[
+ M/\Z R\longrightarrow\Z^3,\qquad
+ v\longmapsto(v_0,v_1+v_2,v_1+v_3).
+\]
+The induced character is $(4,1,1)$, so its saturated kernel has
+coordinates $(a,b)\mapsto(a,b,-4a-b)$. In this basis the fibre fan,
+in positive cyclic order, is
+\[
+\begin{array}{c|rrrrr}
+\text{ray index}&5&8&158&6&131\\\hline
+\text{fibre ray}&(-1,1)&(1,-2)&(0,1)&(-1,3)&(-1,2).
+\end{array}
+\]
+Its maximal cones are consecutive pairs, each of determinant one.
+The self-intersections are $(0,1,-1,-1,-2)$, giving $K^2=12-5=7$.
+The fibre over $-1/r\in\C^*$ is this smooth projective toric surface;
+primitivity of the character makes its kernel torus connected. Fibres
+over nonzero finite values are its torus translates.
+
+The factorization \eqref{eq:x9factorF} shows that this fibre lies in
+$Y_f$. It is $S_r$, and contains all four nodes. At a node, use
+\eqref{eq:x9nodejacobian} and put $U=y$, $V=-(q+c_1y)$. The local
+equation and centre become
+\[
+ UV=GH,\qquad S_r=\{U=G=0\}.
+\]
+The blowup is the incidence variety
+\[
+ U\beta=G\alpha,\qquad H\beta=V\alpha,
+                  \qquad[\alpha:\beta]\in\mathbb P^1.
+\]
+On $\beta=1$ its free coordinates are $(G,V,\alpha)$, and on
+$\alpha=1$ they are $(U,H,\beta)$. Thus it is smooth and replaces the
+node by a $\mathbb P^1$ with normal bundle
+$\mathcal O(-1)\oplus\mathcal O(-1)$. Away from the nodes, $S_r$ is a
+Weil divisor in a smooth threefold and hence Cartier, so the blowup is
+an isomorphism. The ideal blowup is projective over projective $Y_f$;
+therefore the small resolution is projective.
+
+Smallness and adjunction give trivial canonical bundle. The
+anticanonical restriction sequence and toric vanishing give
+$H^1(Y_f,\mathcal O)=H^2(Y_f,\mathcal O)=0$. The local small
+resolution has vanishing higher direct images of $\mathcal O$:
+the symmetric powers of the dual of its exceptional normal bundle are
+sums of $\mathcal O(k)$, $k\ge0$, whose $H^1$ vanishes, and formal
+functions applies. Leray gives the same cohomology vanishings on the
+resolution. It is consequently a smooth projective Calabi--Yau threefold.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:x9global}]
+We first exhibit a nonempty algebraic open subset of $\mathcal D$
+contained in $S_4$. In \eqref{eq:x9factorparameters} take all boundary
+coefficients equal to one and $c_{11}=0$. Its equation is
+\[
+ F=y^2+(x^2+1)y+(1+zw)(x+1+z^{-1}+w^{-1}).
+\]
+In $\Q[x,y,z,w,u]$, put $P_*=zwF$. The saturated singularity calculation is
+\begin{equation}\label{eq:x9onenodeideal}
+ (P_*,(P_*)_x,(P_*)_y,(P_*)_z,(P_*)_w,uzw-1)
+   =(y,x^2+1,z+w-x-1,zw+1,uzw-1).
+\end{equation}
+The ideal is radical of degree four, and adjoining
+$\det\operatorname{Hess}P_*$ gives the unit ideal. These facts also
+follow by substituting $w=-1/z$, solving $x^2+1=0$ and
+$z^2-(x+1)z-1=0$, and using \eqref{eq:x9nodejacobian}.
+The boundary calculation in Lemma~\ref{lem:x9boundaryglobal} excludes
+all other compact singularities for these nonzero essential
+coefficients. Hence this member belongs to $S_4$.
+
+On the parameter open where $r,A,C,D_0,c_0,c_1,c_9$ are nonzero,
+$q$ has simple roots, and
+\[
+ \operatorname{Res}_x\bigl(q(x),(Ax+B)^2+4rCD_0\bigr)\ne0,
+\]
+the four expected nodes form a finite \'{e}tale degree-four scheme.
+The nondegenerate Hessian makes it an open part of the relative singular
+scheme; its finiteness makes it closed. The complementary singular
+scheme is proper over the parameter space, as a closed subset of the
+proper universal compact hypersurface. Removing its closed image gives
+a Zariski-open subset $\mathcal D^{\rm good}\subset\mathcal D$ whose
+members have precisely these four nodes. A finite singular locus also
+implies reducedness. Equation~\eqref{eq:x9onenodeideal} proves that
+this open subset is nonempty. It is connected and Euclidean dense in
+the irreducible variety $\mathcal D$.
+
+By Lemmas~\ref{lem:component-rank}, \ref{lem:component-smoothness} and
+\ref{lem:x9rankglobal}, $\mathcal D^{\rm good}$ lies in a connected
+component $C$ of $S_4$ of dimension nine, and is open in that component.
+Every minor defining $\mathcal D$ vanishes on this open subset, hence
+on $C$ by the identity theorem. Conversely, every point of
+$\mathcal D\cap S_4$ is a limit of points of $\mathcal D^{\rm good}$
+inside $S_4$; connected components are closed in $S_4$. Thus
+$C=\mathcal D\cap S_4$. Lemma~\ref{lem:x9rankglobal} proves that all
+other components have codimension four.
+
+To meet the actual near-limit construction, choose $\mathscr C_0$
+to contain the normalized coefficient vector $c^{(0)}$ with origin
+coefficient $+1$ and all boundary coefficients $-1$. This vector lies
+in $\mathcal Z$, since every parallelogram relation has two terms of
+each sign. Use the height $H=k_0\varphi+h_C$ and coefficients
+\[
+ \gamma_i=-\tau^{H(n_i)}\quad(0\le i\le10),\qquad
+ \gamma_{11}=1,\qquad0<\tau\ll1.
+\]
+These correspond to $c^{(0)}$. Linearity of $H$ on the four node
+parallelograms gives
+\[
+ H(n_7)-H(n_2)=H(n_8)-H(n_{10})
+             =H(n_4)-H(n_5)=H(n_3)-H(n_6).
+\]
+Thus $\gamma\in\mathcal D$, with $r>0$ and $A,B,C,D_0<0$.
+The quadratic $q(x)=\gamma_0x^2+x+\gamma_9$ has two distinct positive
+roots for small $\tau$, since all boundary heights are at least one.
+Above each, the discriminant $(Ax+B)^2+4rCD_0$ is positive and
+\eqref{eq:x9fibrequadratic} has two distinct nonzero roots.
+These give four nodes. Lemma~\ref{lem:U}(1) puts $c^{(0)}$ in the
+actual neighbourhood $U\subset U^+_\C$. Lemma~\ref{lem:W}(2) says
+all compact singularities are among the four
+unique critical points $q_P$. The four exhibited nodes therefore
+exhaust them, so all critical values vanish and the member lies in the
+actual $D_Q$ of Section~\ref{ssec:nodal}. This proves that $C$ is reached.
+
+Lemma~\ref{lem:x9surface} gives the projective resolutions. It also
+provides the integral relation directly. Remove small node balls from
+the compact oriented surface $S_r$. Each boundary sphere is a primitive
+generator of the third homology of the node link: it is the circle bundle
+$\mathcal O(-1,-1)$ restricted to a ruling of the exceptional quadric.
+The punctured surface and Lemma~\ref{lem:component-topology} therefore
+give the relation $v=(1,1,1,1)$ after choosing these sphere orientations.
+The rational kernel has rank one, so for the sphere map $d$,
+\[
+ \Z v\subseteq\ker d\subseteq d^{-1}(\Tors H_3)
+       \subseteq\Q v\cap\Z^4=\Z v.
+\]
+All groups in this chain are equal. Proposition~\ref{prop:componentwise}
+identifies the signs with $(1,-1,-1,1)$ using the marking transported
+from the near-limit construction. On every other component the rational
+sphere map has rank four, so both its integral kernel and its preimage
+of torsion are zero.
+\end{proof}

@@ -2,7 +2,8 @@
 
 Morrison proposed that mirror symmetry reverses conifold transitions of Calabi--Yau threefolds, exchanging
 exceptional curves with vanishing three-spheres \cite{Mor99}. For the class of Batyrev hypersurfaces considered here,
-we establish his numerical prediction, as a count in the coefficient space of the mirror family, and strengthen it to an equality of integral relation lattices. Every relation
+we establish his numerical prediction on the connected components of the nodal coefficient locus meeting our
+near-limit construction, and strengthen it to an equality of integral relation lattices. Every relation near the limit
 is realised by an integral bounding chain on the mirror hypersurface, constructed from a relative tropical two-cycle. The comparison also characterises
 smoothability in terms of mirror vanishing cycles and yields a symplectic conifold transition whenever the original
 nodal threefold is smoothable.
@@ -29,6 +30,13 @@ coefficient vectors. The \emph{factoring locus}, where the face polynomials of t
 below factor into binomials, has the same codimension there; the result concerns the nodal locus itself, on which all
 $|Q|$ nodes are present.
 The integral equality specifies exactly which combinations of the mirror spheres are null-homologous.
+The locus of hypersurfaces with exactly $|Q|$ nodes and no other singularities is smooth at every point.
+On each connected component meeting the constructed neighbourhood, its codimension is $\rho_{\rm rel}$ and the
+integral comparison continues with the nodes marked and oriented (Proposition~\ref{prop:componentwise}).
+The component restriction is necessary: for $X_9$, Proposition~\ref{prop:x9different} exhibits another
+four-node component of codimension four, whose vanishing spheres have no nonzero relation.
+Theorem~\ref{thm:x9global} identifies the entire codimension-three part of this family as one connected
+component defined by a rank-one coefficient matrix.
 
 This equality compares curves on $\widehat X$ with spheres on its mirror. Within a single conifold transition,
 the relation spaces among exceptional curves and vanishing spheres are instead mutual annihilators
@@ -81,6 +89,14 @@ $\widehat X\to X'_\sigma$.
 \end{enumerate}
 \end{theorem*}
 
+\emph{Continuation along the nodal locus.} Let $S_{|Q|}$ be the locus in the full coefficient space whose members
+have exactly $|Q|$ nodes and no other singularities. This locus is smooth at every point, with local ideal generated
+by independent vanishing-cycle periods (Lemma~\ref{lem:component-smoothness}). On every connected component meeting
+the nodal members of Theorem~\ref{thm:main}, its codimension is $|Q|-\operatorname{rank}K$.
+After marking and orienting the nodes, both the integral relation lattice and the preimage of ambient torsion
+remain equal to $K$ throughout that component. The bounding chains continue by transport
+(Proposition~\ref{prop:componentwise}); their tropical construction is made near the limit.
+
 \emph{Smoothings and symplectic transitions.} Friedman's relation criterion
 \cite[Rem.~(4.5), Cor.~(4.7)]{Friedman}, in Namikawa's necessary and sufficient form \cite[Thm.~2.5]{Nam02},
 characterises smoothability of $X'_\sigma$ by the existence of a relation among the exceptional curves with every
@@ -93,8 +109,10 @@ smoothability on the original side yields a symplectic conifold transition on th
 satisfying~\ref{hyp:P}, the same relation criterion decides the smoothability of $X$ itself
 (Corollary~\ref{cor:mixed}).
 
-The further geometric assertion in Morrison's proposal, that the nodal mirror members admit small resolutions
-mirror to smoothings of $X'_\sigma$, remains open here.
+For $X_9$ we also establish the geometric reverse transition in the sense of Batyrev families, up to
+birational equivalence (Theorem~\ref{thm:x9reverse}). The projective small resolution of a general member of the
+codimension-three four-node component is birational to the Batyrev mirror of a smoothing of the exact partial resolution $X'_9$ used here.
+The corresponding geometric assertion for the whole admissible class remains open.
 
 \emph{A four-node example.} The polytope $\Delta_9$ of \cite{Paper5} has two unit squares and one
 $dP_7$ pentagon, so $X'_\sigma$ has four nodes, and
@@ -103,8 +121,13 @@ through the four nodes along opposite legs, and whose node coefficients are $(1,
 (Section~\ref{ssec:x9}). Its lift is a $4$-chain on $Y_t$ bounded by $\delta_1-\delta_2-\delta_3+\delta_4$, and by the
 theorem this is the only relation: the four spheres span a free group of rank three, and, near the given member, the
 members of the mirror family with all four nodes form a submanifold of codimension three in the space of coefficient
-vectors. Since $K$ contains a vector with no zero entry, $X'_\sigma$ is
-smoothable, and the four spheres admit a symplectic conifold transition.
+vectors. Theorem~\ref{thm:x9global} shows that the whole codimension-three four-node locus is one determinantal
+component, including its zero-coefficient members. Every member of this component has a projective small resolution,
+obtained by blowing up a compact surface through the four nodes. Other four-node components have independent
+vanishing spheres and codimension four. To identify the reverse transition, we construct a simultaneous modification
+of the degree-seven cone smoothing whose central fibre is the two-node partial model of $X'_9$. Its smooth fibres
+are those of the toric smoothing in \cite{Paper5}. An explicit Laurent birational substitution then identifies the
+resolved mirror family with their Batyrev partner (Section~\ref{ssec:x9reverse}).
 
 \subsection{Geometric realisation of the relations}
 Let $B=B'_\sigma$ be the dual intersection complex of Gross's toric degeneration
@@ -193,6 +216,16 @@ critical values vanish on their intersection. This gives the smooth nodal locus 
 (Section~\ref{sec:periods}). The period argument is classical \cite{GMS95,LLW18}; here it is made uniform near the
 maximally degenerate limit and combined with the integral chains.
 
+\emph{Continuation.} Admissibility makes the correction term in Batyrev's formula for polynomial deformations
+vanish. Toric cohomology then shows that coefficient deformations induce all first-order deformations of a nodal
+member. The Friedman--Rollenske--Thomas node-smoothing sequence, applied to the blow-up of the nodes, identifies
+the rank of the local smoothing parameters with the rank of the vanishing cycles. Exact linear identities among
+their periods show that independent periods generate the whole nodal ideal, proving smoothness at every point
+of $S_{|Q|}$. Along this locus the complements of the nodes form a differentiably locally trivial family.
+Integral Mayer--Vietoris identifies their link maps with the vanishing-cycle maps, including the preimages of
+torsion. These data transport the near-limit comparison along every component meeting the construction
+(Section~\ref{ssec:componentwise}).
+
 \subsection{Hypotheses}
 Admissibility means that the edges of $\Delta$ are primitive and its two-faces are unimodular triangles, unit squares,
 or lattice pentagons and hexagons with one interior lattice point and no boundary lattice points besides their
@@ -207,7 +240,8 @@ $612$ admissible polytopes of Section~\ref{ssec:list}, it fails for $11$ of the 
 $K\neq0$ and for every profile on $59$ of the $142$ polytopes with a hexagon (Section~\ref{ssec:scope}).
 
 The initial mirror construction uses real coefficients satisfying the bounds of Theorem~\ref{thm:main}; the resulting relations
-extend to neighbouring smooth complex members as explained in Section~\ref{ssec:relations}.
+extend to neighbouring smooth complex members as explained in Section~\ref{ssec:relations}, and to small smoothings
+along every reached nodal component by Proposition~\ref{prop:componentwise}.
 
 Hypothesis~\ref{hyp:U} asks for the input of Gross's construction of the base: a regular unimodular triangulation of
 $\partial\Delta^\circ$ with a height satisfying his convexity conditions. Theorem~\ref{thm:U} verifies it, by computer,
