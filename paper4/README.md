@@ -2,6 +2,8 @@
 
 Paper 4 · Bernd Johannes Wuebben · 34 pages
 
+[arXiv:2610.35911 [math.AG]](https://arxiv.org/abs/2610.35911) · [DOI:10.48550/arXiv.2610.35911](https://doi.org/10.48550/arXiv.2610.35911) · [BibTeX](CITATION.bib)
+
 [PDF](cy-vanishing-cycle.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 
 A homological necessary condition for smoothings with nodes and exact

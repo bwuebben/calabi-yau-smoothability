@@ -2,6 +2,8 @@
 
 Paper 5 · Bernd Johannes Wuebben · 62 pages
 
+[arXiv:2610.35915 [math.AG]](https://arxiv.org/abs/2610.35915) · [DOI:10.48550/arXiv.2610.35915](https://doi.org/10.48550/arXiv.2610.35915) · [BibTeX](CITATION.bib)
+
 [PDF](cy-mixed-smoothing.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
 
 The [7 October source archive](../arxiv/arxiv-upload-paper5-2026-10-07.tar.gz)
