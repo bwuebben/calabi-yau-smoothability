@@ -2,7 +2,7 @@
 
 Paper 2 · Bernd Johannes Wuebben · 18 pages · [arXiv:2610.06884](https://arxiv.org/abs/2610.06884)
 
-[PDF](cy-toric-pairs.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
+[PDF](cy-toric-pairs.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md) · [Paper page](https://bwuebben.github.io/papers/cy-toric-pairs/)
 
 Trinomial deformations of toric pairs smooth the points over a chosen
 smoothable two-face when the dual edge has an interior lattice point.

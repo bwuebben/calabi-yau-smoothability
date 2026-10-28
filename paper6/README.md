@@ -2,7 +2,9 @@
 
 Paper 6 · Bernd Johannes Wuebben · 234 pages
 
-[PDF](cy-vanishing-spheres.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
+[Zenodo:23643206](https://zenodo.org/records/23643206) · [DOI:10.5281/zenodo.23643206](https://doi.org/10.5281/zenodo.23643206)
+
+[PDF](cy-vanishing-spheres.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md) · [Paper page](https://bwuebben.github.io/papers/cy-conifold-relations/)
 
 For a class of Batyrev mirror families, we establish Morrison's predicted codimension for
 nodal degenerations and strengthen it to an equality of integral relation lattices. The

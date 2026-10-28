@@ -30,6 +30,8 @@ mixed criterion for those degrees.
 
 **Author:** Bernd Johannes Wuebben (wuebben@gmail.com)
 
+**Website:** [bwuebben.github.io](https://bwuebben.github.io/) · [six-paper reading guide](https://bwuebben.github.io/research/calabi-yau/#six-paper-guide)
+
 | paper | guide | compiled PDF | pages | arXiv |
 |---|---|---|---:|---|
 | 1. Non-smoothable Calabi–Yau threefolds from reflexive polytopes | [paper1/](paper1/README.md) | [cy-non-smoothable.pdf](paper1/cy-non-smoothable.pdf) | 18 | [arXiv:2609.28499](https://arxiv.org/abs/2609.28499) |
@@ -159,8 +161,8 @@ the verified inputs to their bounded censuses.
    **one singular point per singular two-face**), exactly **77** have a
    pentagonal face: X₉ is smoothable and the other **76** are not. The
    larger facet-rigidity census has **12,508** pentagonal faces:
-   **9,466** locked, **37** additional unlocked cases with both containing
-   lattice facets rigid, and **3,005** with a decomposable containing facet. These are
+   **9,503** locked, none rigid but unlocked, and **3,005** with a
+   decomposable containing facet. These are
    counts of facet conditions, not an unrestricted smoothability census.
 
 6. **Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds**

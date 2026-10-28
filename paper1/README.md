@@ -2,7 +2,7 @@
 
 Paper 1 · Bernd Johannes Wuebben · 18 pages · [arXiv:2609.28499](https://arxiv.org/abs/2609.28499)
 
-[PDF](cy-non-smoothable.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
+[PDF](cy-non-smoothable.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md) · [Paper page](https://bwuebben.github.io/papers/cy-non-smoothable/)
 
 Explicit projective Calabi–Yau threefolds with one nonsmoothable singular
 point: an anticanonical cone over F₁, or a pentagon cone with a

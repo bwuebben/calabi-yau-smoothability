@@ -4,7 +4,7 @@ Paper 4 · Bernd Johannes Wuebben · 34 pages
 
 [arXiv:2610.35911 [math.AG]](https://arxiv.org/abs/2610.35911) · [DOI:10.48550/arXiv.2610.35911](https://doi.org/10.48550/arXiv.2610.35911) · [BibTeX](CITATION.bib)
 
-[PDF](cy-vanishing-cycle.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
+[PDF](cy-vanishing-cycle.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md) · [Paper page](https://bwuebben.github.io/papers/cy-vanishing-cycle/)
 
 A homological necessary condition for smoothings with nodes and exact
 anticanonical cones over smooth del Pezzo surfaces of degrees six and seven.

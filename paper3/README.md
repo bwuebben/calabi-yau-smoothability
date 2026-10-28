@@ -2,7 +2,7 @@
 
 Paper 3 · Bernd Johannes Wuebben · 11 pages · [arXiv:2610.03753](https://arxiv.org/abs/2610.03753)
 
-[PDF](cy-mirror-pairs.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md)
+[PDF](cy-mirror-pairs.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md) · [Paper page](https://bwuebben.github.io/papers/cy-mirror-pairs/)
 
 The scan of the verified database copy classifies 590
 reflexive four-polytopes whose two associated Batyrev hypersurfaces have
