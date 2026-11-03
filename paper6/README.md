@@ -2,7 +2,10 @@
 
 Paper 6 · Bernd Johannes Wuebben · 234 pages
 
-[Zenodo:23643206](https://zenodo.org/records/23643206) · [DOI:10.5281/zenodo.23643206](https://doi.org/10.5281/zenodo.23643206)
+Original manuscript: September 29, 2026. This version: November 2, 2026.
+The bibliography now includes the arXiv identifiers of Papers 4 and 5; the mathematical text and abstract are unchanged.
+
+[Zenodo:23904357](https://zenodo.org/records/23904357) · [DOI:10.5281/zenodo.23904357](https://doi.org/10.5281/zenodo.23904357)
 
 [PDF](cy-vanishing-spheres.pdf) · [LaTeX source](main.tex) · [Series overview](../README.md) · [Paper page](https://bwuebben.github.io/papers/cy-conifold-relations/)
 
