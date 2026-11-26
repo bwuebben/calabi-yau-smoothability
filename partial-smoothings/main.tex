@@ -1,0 +1,166 @@
+\pdfoutput=1
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{booktabs,array,adjustbox,needspace}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdfauthor={Bernd Johannes Wuebben},pdftitle={Partial smoothings of Calabi--Yau threefolds with degree-six del Pezzo cone points}}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\cO}{\mathcal O}
+\DeclareMathOperator{\Def}{Def}
+\title[Partial smoothings of Calabi--Yau threefolds]{Partial smoothings of Calabi--Yau threefolds\\ with degree-six del Pezzo cone points}
+\author{Bernd Johannes Wuebben}
+\date{26 November 2026}
+\subjclass[2020]{14J32 (primary); 14B07, 14D15, 14E15 (secondary)}
+\keywords{Calabi--Yau threefold, partial smoothing, deformation of singularities, del Pezzo surface, vanishing period}
+\begin{document}
+\begin{abstract}
+Let $X$ be a projective Calabi--Yau threefold with ordinary double points
+and anticanonical cones over smooth del Pezzo surfaces of degree six.
+Assume that $X$ has a smooth projective crepant resolution which is small
+at the nodes and blows up the cone vertices. Each cone has two local
+smoothing components. For every choice of these components we prove that
+their scheme-theoretic inverse image in the semiuniversal deformation
+base of $X$ is smooth. If no global first-order deformation on this base
+moves a given cone, its local classifying map is constant. Blowing up
+precisely these vertices identifies the completed selected deformation
+bases before and after the blow-up. On the resulting smooth base the
+vanishing periods of a simultaneous nodal modification give a submersion
+onto the space of relations among its exceptional curves. The zero sets of the coordinate
+functions determine exactly which singularities can persist together on
+a projective deformation. We describe the integral degree-two cohomology
+of the regular locus of each partial smoothing and compute the restrictions
+to the remaining links from divisor classes on the resolution.
+\end{abstract}
+\maketitle
+\section{Introduction}
+A cone over a degree-six del Pezzo surface admits two ways of smoothing.
+Its reduced local deformation base is a line and a plane meeting at the
+origin. A compact threefold can have many such points, with a global
+deformation moving several at once. Fix either the line or the plane at
+each vertex. What happens if the global first-order deformation map
+vanishes at one of the chosen components? A vanishing derivative alone
+would allow the cone to move at higher order. Even when all tangents
+integrate, an arc tangent to a local discriminant can leave it.
+
+We address both questions for a connected normal projective complex
+threefold $X$ with $\omega_X\simeq\cO_X$ and $H^1(X,\cO_X)=0$.
+Its singularities are ordinary double points and germs analytically
+isomorphic to the anticanonical cone over the smooth degree-six del
+Pezzo surface $E=\operatorname{Bl}_3\PP^2$. We assume a smooth projective
+crepant resolution $Y\to X$, small at each node and given by the vertex
+blow-up at each cone. Choose markings of the local germs, compatible
+small resolutions in the local nodal modifications described below, and
+analytic classifying maps from a semiuniversal base of $X$ to
+semiuniversal bases of these germs. For a choice $S$ of the local
+components, let $B=\Def^S(X)$ be the scheme-theoretic inverse image
+of their product. At the ordinary nodes the full local bases are retained.
+
+We recall the homological description of its tangent space.
+A node contributes one signed exceptional curve. Over a cone the six
+boundary curves of $E$ have self-intersection $-1$ and form a cycle.
+The local line contributes the difference of two opposite boundary
+curves. The plane contributes the two independent differences of
+three alternating boundary curves. These choices mark the $A_1$ and
+$A_2$ summands orthogonal to $K_E$. Denote the selected rational summand
+at each singularity $p$ by $R_{p,S}$, including the exceptional line
+at an original node. The inclusion of these curves in $Y$ gives
+\[
+ K_S=\ker\!\left(\bigoplus_p R_{p,S}\longrightarrow H_2(Y;\QQ)\right).
+\]
+Contraction with one global volume form identifies $K_S\otimes\CC$
+with the image of $T_0B$ in the selected local tangent spaces
+\cite[Lemma~4.4 and Theorem~4.5]{W5}. The earlier smoothness theorem
+assumed that $K_S$ projects nontrivially at every cone. The first result
+of this paper, Theorem~\ref{thm:regular}, removes this hypothesis for
+the singularities considered here.
+
+The step that permits its removal is to blow up the vertices at which
+the chosen projection is zero. Over a small Stein neighborhood of such
+a vertex, the resulting smooth neighborhood of $E$ is rigid. Its
+contraction in any formal deformation of the blow-up is therefore locally
+trivial. At the remaining vertices the earlier smoothness theorem
+applies. Blow-down induces isomorphisms both on locally trivial tangents
+and on the relation spaces. We obtain an isomorphism on the completed
+local rings. This detects the scheme structure even where the images
+of global first-order deformations miss an entire local component.
+
+To determine partial smoothings we use the simultaneous modifications
+over the local line and plane. Their central fibres replace a cone by
+two or three nodes, respectively, and the new nodes have marked
+exceptional curves on $Y$. Write $C_1,\ldots,C_n$ for these and the
+original exceptional lines. The degree on each exceptional surface
+forces the coefficients in its block to sum to zero. Consequently the
+complex space of relations $R$ among the $C_i$ is canonically
+$K_S\otimes\CC$ in these markings. A common holomorphic three-form
+gives a period for each node of the modification. Stokes' theorem and
+the tangent-space identification make this period map a submersion
+onto $R$ (Theorem~\ref{thm:marked-periods}). In particular all coordinate
+sections of $R$, including those on which a whole block vanishes, have
+their actual geometric meaning on the selected analytic base. A nonzero
+block on the plane with one zero period gives a residual node; an
+identically zero block on an arc leaves the original cone.
+
+For ordinary double points the description by relations among exceptional
+curves goes back to Friedman \cite{Fried}. Lee, Lin and Wang identify
+vanishing periods as coordinates transverse to the equisingular locus in
+a projective conifold transition \cite[Lemma~3.13 and Proposition~3.16]{LLW}.
+Namikawa studies strata obtained from small projective modifications of
+terminal Calabi--Yau threefolds and compares deformation spaces of
+terminal small modifications \cite[Proposition~2.3 and Theorems~2.5,~2.7]{Nam}.
+The degree-six cone has a crepant exceptional divisor. Its local line
+and plane are the two components of Altmann's versal toric deformation
+\cite{Alt}; Gross discusses them in his analysis of primitive
+contractions \cite[\S5]{Gross}. The full-smoothing criterion of
+\cite[Theorem~4.7]{W5} asks whether a global relation avoids every
+local discriminant. Here the nodal intermediate may itself be
+nonprojective or nonsmoothable. We work on the selected deformation
+base of $X$ and retain the marked zero periods as well as the nonzero
+ones.
+
+Finally, Proposition~\ref{prop:marked-generators} determines the
+degree-two classes on the regular locus of a partially smoothed fibre
+from their evaluations on the marked curves. In a fluxless reduction
+of M-theory these data identify the surviving bulk gauge generators,
+including their action on the remaining links. Two compact hypersurface
+examples illustrate the difference between the rank of this group and
+its measured charges. They also give choices of components for which
+the omitted nonzero-projection hypothesis fails.
+
+\input{sections/rigidity}
+\input{sections/periods}
+\input{sections/examples}
+\begin{thebibliography}{Wue26b}
+\bibitem[Alt97]{Alt} K.~Altmann, \emph{The versal deformation of an isolated toric
+Gorenstein singularity}, Invent. Math. \textbf{128} (1997), 443--479.
+\bibitem[Che83]{Cheeger} J.~Cheeger, \emph{Spectral geometry of singular Riemannian spaces},
+J. Differential Geom. \textbf{18} (1983), 575--657.
+\bibitem[Fri86]{Fried} R.~Friedman, \emph{Simultaneous resolution of threefold double points},
+Math. Ann. \textbf{274} (1986), 671--689.
+\bibitem[Gro97]{Gross} M.~Gross, \emph{Deforming Calabi--Yau threefolds}, Math. Ann.
+\textbf{308} (1997), 187--220; corrected version,
+\href{https://arxiv.org/abs/alg-geom/9506022v2}{arXiv:alg-geom/9506022v2}.
+\bibitem[LLW18]{LLW} Y.-P.~Lee, H.-W.~Lin and C.-L.~Wang, \emph{Towards $A+B$ theory in
+conifold transitions for Calabi--Yau threefolds}, J. Differential Geom. \textbf{110}
+(2018), 495--541.
+\bibitem[Nam02]{Nam} Y.~Namikawa, \emph{Stratified local moduli of Calabi--Yau threefolds},
+Topology \textbf{41} (2002), 1219--1237.
+\bibitem[Wue26a]{W5} B.~J. Wuebben, \emph{Smoothing Calabi--Yau threefolds with nodes
+and del Pezzo cone points}, \href{https://arxiv.org/abs/2610.35915}{arXiv:2610.35915}.
+\bibitem[Wue26b]{Higgs} B.~J. Wuebben, \emph{Global constraints on Higgsing localized
+five-dimensional sectors in compact M-theory vacua}, preprint (2026),
+\href{https://doi.org/10.5281/zenodo.23643226}{doi:10.5281/zenodo.23643226}.
+\bibitem[Zha25]{Zhang} J.~Zhang, \emph{On polynomial convergence to tangent cones for
+singular K\"ahler--Einstein metrics}, J. Reine Angew. Math. \textbf{826} (2025), 271--302.
+\end{thebibliography}
+\end{document}

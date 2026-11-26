@@ -1,0 +1,174 @@
+\section{Two compact hypersurfaces}\label{sec:examples}
+
+Let $X_-$ be the anticanonical threefold for the fan polytope
+$\Delta_{25}$ of \cite[\S5]{W5}. For the second example take the
+four-dimensional fan polytope whose first four vertices are the
+standard basis vectors and whose remaining vertices, in order, are the
+columns of
+\[
+{\setlength{\arraycolsep}{1.2pt}\scriptscriptstyle
+\left(\begin{array}{*{23}{r}}
+-1&1&1&0&0&-1&-1&1&0&0&-1&0&-1&1&0&-1&1&-2&0&-1&-2&0&-1\\
+1&-1&-1&0&0&1&1&-1&0&0&1&-1&0&-2&-1&0&-2&1&-1&0&1&-1&0\\
+1&0&-1&1&-1&1&0&-1&0&-1&0&0&1&-1&-1&1&-1&1&0&-1&0&-1&-1\\
+0&0&1&-1&1&-1&0&0&-1&0&-1&1&0&1&1&-1&0&-1&-1&0&-1&-1&-1
+\end{array}\right).}
+\]
+This is polytope 528 in the census accompanying \cite{W5}. Number
+its vertices from zero. Its four hexagonal faces, written in cyclic
+order, are
+\[
+\begin{aligned}
+ F_0&=(19,22,20,17,15,16),& F_1&=(18,15,16,21,24,23),\\
+ F_2&=(25,26,23,18,17,20),& F_3&=(25,22,19,21,24,26).
+\end{aligned}
+\]
+Take a general anticanonical hypersurface and subdivide at the
+centres of $F_2,F_3$. Write $X_+$ for its proper transform. The two
+threefolds $X_-,X_+$ each have thirty ordinary double points and two
+anticanonical cones over del Pezzo surfaces of degree six. For $X_+$
+this follows by taking the two-faces of the displayed convex hull.
+The parallelograms are unit squares up to integral affine
+equivalence, the other two-faces apart from the four hexagons are
+unimodular triangles, and the dual edge of each parallelogram or
+hexagon is primitive. The two centre subdivisions resolve the
+corresponding cone points. Resolving the two remaining vertices and
+refining projectively gives a common smooth crepant resolution
+compatible with the local contractions used below. Its Picard rank is
+$27$ for $X_+$ and $23$ for $X_-$. The only nonvertex boundary
+lattice points are the hexagon centres, and the dual-edge lengths
+give zero correction in the toric divisor count.
+
+\subsection{Supports on the local components}
+Write $L$ and $P$ for the line and plane of the local deformation
+space. On both threefolds order the two components by $F_0,F_1$, using
+the cyclic face markings of \cite[\S5]{W5} on $X_-$. Put the thirty
+parallelograms in lexicographic order on their increasing lists of
+vertices. The circuit has sign $+1$ at its least vertex and the
+opposite vertex. On a marked hexagon let $B_0,\dots,B_5$ denote
+the cyclic boundary curves of its vertex resolution. The curve
+columns for $L$ are $B_0,B_3$ and those for $P$ are $B_0,B_2,B_4$.
+The divisor degrees of $B_j$ are $-1$ at its vertex and the
+centre, and $1$ at the two neighboring vertices. The remaining
+degrees vanish. These rules give the entire curve matrix.\footnote{The
+standalone SageMath supplement \texttt{check\_examples.sage}
+reconstructs the faces from the two vertex lists and repeats the
+integral calculations of this section.}
+
+In Table~\ref{tab:maximal-support} the node indices run from $0$ to
+$29$ and are followed by the two ordered groups of curve indices
+over the marked cones. Write $r$ for the rank of all curve classes,
+and $r_I$ for the rank of those on a support $I$ of greatest
+cardinality. The indicated missing indices vanish in every relation.
+The last column records the singularities of a fibre realizing $I$.
+\begin{table}[ht]
+\centering
+\caption{Largest supports for four choices of local components.}
+\label{tab:maximal-support}
+\begin{tabular}{cccccccl}
+\hline
+& choice & curves & $r$ & $\dim R$ & $r_I$ & missing indices & singularities\\
+\hline
+$X_-$&$LP$&35&22&13&21&33&one node\\
+$X_+$&$LP$&35&22&13&22&none&smooth\\
+$X_+$&$LL$&34&23&11&20&17, 32, 33&node 17 and cone at $F_1$\\
+$X_+$&$PP$&36&24&12&21&30, 31, 32&cone at $F_0$\\
+\hline
+\end{tabular}
+\end{table}
+
+Here are integral relations with the asserted supports. The entries
+of each vector $d,p,q$ give the thirty old nodal coefficients in
+three successive groups of ten.
+\[
+\begin{array}{c|*{10}{r}}
+d&1&-2&1&1&1&-2&-1&1&-1&2\\
+ &-2&2&1&1&-1&-1&-1&1&-1&1\\
+ &1&1&-1&-2&2&-1&2&1&-2&2\\[2pt]
+p&1&2&1&-2&-1&-2&2&-1&2&-1\\
+ &1&-1&1&1&-1&2&-2&0&-1&1\\
+ &2&-1&2&-1&1&-1&1&-1&-1&1\\[2pt]
+q&-2&-1&1&1&-1&-1&2&1&-1&-1\\
+ &-2&-2&2&-1&-1&1&1&-2&-1&1\\
+ &1&-3&-1&2&-1&2&1&2&2&-2
+\end{array}
+\]
+In table order the four relations are
+\[
+\begin{aligned}
+ &(d,\ 1,-1,\ -1,0,1),&& (p+3q,\ 2,-2,\ 6,-9,3),\\
+ &(p,\ 2,-2,\ 0,0),&& (q,\ 0,0,0,\ 2,-3,1).
+\end{aligned}
+\]
+Each relation follows by summing the signed curve columns just
+described. Row reduction gives the ranks in the table. Every nonzero
+Smith invariant of each active matrix is one.
+
+Write $D(j_1,\ldots,j_t)=\sum_{k=1}^tD_{j_k}$ for the sum of the
+indicated prime divisors. The centre rays follow the vertices in face
+order. On $X_-$ the divisor $D(2,3,13,14,15,16)$ has degree one on
+curve $33$ and degree zero on all other $LP$ columns.
+On $X_+$ with choice $LL$, the divisor $D(2,3,4,15,16)$ isolates
+the coefficient of node $17$ after the sum-zero relation over
+each cone is imposed. The divisor $D(3,6,8,15,17,18,23)$ similarly
+isolates the line coefficient at $F_1$. Thus that cone and node
+$17$ persist. The two divisor evaluations in the next paragraph
+account for the vanished plane at $F_0$ in the last row.
+
+Theorem~\ref{thm:marked-periods} realizes all four displayed
+supports. For the two examples with a constant cone, their existence
+can also be seen inside the $LP$ deformation space of $X_+$.
+Both marked projections are nonzero there. To obtain the $LL$ fibre,
+take the line at $F_0$ with coefficients $(2,-2)$ and keep the
+plane at $F_1$ at its origin. To obtain the $PP$ fibre, keep the
+line at $F_0$ at its origin and take the plane at $F_1$ with
+coefficients $(2,-3,1)$. A locally trivial cone deformation belongs
+to both components.
+
+\subsection{Divisor classes at the persistent cone}
+On each hexagon use the ordered root classes
+\[
+ \ell=B_0-B_3,\qquad A=B_4-B_0,\qquad B=B_2-B_4 .
+\]
+They form an integral basis of $K_E^\perp$ in the Picard group of
+the degree-six del Pezzo surface. Consider the $PP$ example on
+$X_+$. Put
+\[
+ D_A=-D(11,13,20,22,25,26),\qquad
+ D_B=D(3,6,8,15,17,18,23,28).
+\]
+Both divisors annihilate the thirty old nodes and all three plane
+curves over $F_1$. Their degrees on
+$(\ell_0,A_0,B_0;\ell_1,A_1,B_1)$, where subscripts now specify
+the face, are respectively
+\[
+ (0,1,0;0,0,0),\qquad (0,0,1;1,0,0).
+\]
+In particular they isolate the two independent plane coefficients
+at $F_0$ when both components are planes. If $N$ denotes the
+matrix of the thirty old curve rows, its rank is $20$. Appending
+all six root rows increases its rank to $22$. Thus restrictions
+of classes annihilating the old curves have rank at most two.
+The two tuples above span a primitive sublattice of $\ZZ^6$,
+so they give the whole integral image of the surviving classes in
+the original marking. On the link of the persistent cone their
+degrees span the two plane coordinates. The last three entries in
+each tuple retain the marking at the other cone of the central fibre.
+
+The regular locus of this fibre has second Betti number
+$27-21-1=5$ by Proposition~\ref{prop:marked-generators}. There are
+three further independent classes with zero marked degrees.
+Let $H$ be the pullback of the anticanonical polarization on the
+original toric fourfold, and let $E_2=D_{29}$ and $E_3=D_{30}$ be the
+two exceptional surfaces retained in forming $X_+$. Together
+$D_A,D_B,H,E_2,E_3$ give an integral basis modulo torsion. Indeed,
+on the resolution one has $H^3=83$ and $H^2D_0=12$, the normalized
+volumes of the polar polytope and its facet dual to $v_0$.
+The integral class $7HD_0-H^2$ therefore pairs to one with $H$
+and pairs to zero with every centre divisor. A boundary line on
+each $E_2,E_3$ pairs to $-1$ with its own surface and to zero with
+the other surface and $H$. These three functionals annihilate the
+class of $E_0$ removed in Proposition~\ref{prop:marked-generators}.
+They show that $H,E_2,E_3$ span a primitive sublattice of rank
+three in the kernel of the marked degrees. The two displayed root
+tuples then give the assertion.

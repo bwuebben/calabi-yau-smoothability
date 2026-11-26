@@ -1,0 +1,271 @@
+\section{Periods and the discriminant on a selected deformation space}
+\label{sec:marked-periods}
+
+Write $B=\Def^S(X)$. At each degree-six vertex take the simultaneous
+incidence modification on the chosen local component. Its central fibre
+has two ordinary double points on the line component and three on the
+plane component. All the original ordinary double points are retained.
+Write $Z\to X$ for this modification on the central fibre and
+$C_1,\ldots,C_n$ for the exceptional curves of the compatible small
+resolution $Y\to Z$. The index of each curve records its original node
+or its position over a marked cone. Orient the curves over a cone by
+their complex orientations. At an original node a change of small
+resolution changes the sign of its marked class. Put
+\[
+ R=\ker\!\left(\CC^n\longrightarrow H_2(Y;\CC),\quad
+                         w\longmapsto\sum_iw_i[C_i]\right).
+\]
+The support of $w$ is the set of indices with $w_i\ne0$.
+
+\begin{theorem}\label{thm:marked-periods}
+The marked nodal periods define a holomorphic submersion of germs
+$P\colon(B,0)\to(R,0)$. There are local analytic coordinates on $B$
+in which $P$ is projection onto $R$. For each $i$ the ordinary double
+point of the simultaneous modification persists exactly on
+$P_i^{-1}(0)$, with its scheme structure as the pullback of the local
+nodal discriminant. In particular every support occurring in $R$ occurs
+on a projective deformation of $X$ inducing the selected profile.
+\end{theorem}
+
+\begin{proof}
+Restrict the analytic family of $X$ over $B$ to representatives of the
+marked germs. Pull back the simultaneous families of
+\cite[\S3.4 and Proposition~3.8]{W5} along their classifying maps.
+The modifications are proper, are flat over the parameter line or
+plane, and are isomorphisms away from the vertex over the local
+parameter origin. Thus the pullbacks glue to the identity on the
+complement of smaller vertex neighborhoods. Properness is local on
+the target, and flatness over $B$ follows from the two types of
+charts. This gives a proper flat analytic family $g\colon\mathcal Z\to B$
+with central fibre $Z$. A block whose local parameter is zero has the
+central modification over that vertex, even on a fibre where another
+vertex has moved. At a nonzero local parameter the map to the
+corresponding part of the fibre of $X$ is an isomorphism, including
+on the plane discriminant.
+
+We use one relative volume form for all the nodes. Indeed, $Z$ is
+connected and Gorenstein with $\omega_Z\simeq\cO_Z$ and
+$H^1(Z,\cO_Z)=0$ by \cite[Proposition~4.1]{W5}. Serre duality
+gives $H^2(Z,\cO_Z)=0$. After shrinking $B$, the relative dualizing
+sheaf is invertible and commutes with base change. Semicontinuity
+gives $h^0(\cO_{Z_b})=1$ and $h^1(\cO_{Z_b})=h^2(\cO_{Z_b})=0$.
+Constancy of the holomorphic Euler characteristic in the proper flat
+family gives $h^3(\cO_{Z_b})=1$. By duality and Grauert's base change
+theorem a generator of $H^0(Z,\omega_Z)$ extends to a relative section
+$\Omega$. Its zero locus misses the central fibre, so properness lets
+us shrink $B$ until $\Omega$ generates $\omega_{\mathcal Z/B}$.
+
+Remove mutually disjoint Milnor neighborhoods of the $n$ nodes of
+$Z$. The compact exterior $W$ and its boundary are differentiably
+locally trivial over $B$, by the proper submersion theorem with
+boundary. The boundary component $L_i$ is diffeomorphic to
+$S^2\times S^3$. Let $\gamma_i$ generate $H_3(L_i;\ZZ)$, oriented
+so that the boundary of the Poincar\'e--Lefschetz dual on $W$ of
+$D|_W$, for $D\in H^2(Y;\ZZ)$, has $i$th component
+$\langle D,C_i\rangle\gamma_i$. This convention is possible since
+restriction from a small-resolution neighborhood to the link is an
+isomorphism on $H^2$. Transport the boundary cycles and set
+$P_i(b)=\int_{\gamma_i}\Omega_b$. On the exterior $\Omega_b$ is
+closed. Stokes' theorem on the transported relative four-cycle gives
+\[
+              \sum_i\langle D,C_i\rangle P_i(b)=0 .
+\]
+Integral degree-two classes span $H^2(Y;\CC)$ over $\CC$. The
+evaluation pairing therefore gives $P(b)\in R$ on every fibre.
+
+In a nodal chart write $\sum_{j=1}^4 x_j^2=\tau_i(b)$. The relative
+form is $u(x,b)$ times the residue form, for $u$ a holomorphic unit.
+When $\tau_i(b)\ne0$, inclusion of the link into the local Milnor
+fibre induces an isomorphism on $H_3$: the fibre is a disc cotangent
+bundle of $S^3$, with trivial sphere bundle as boundary. Up to the
+chosen sign, $\gamma_i$ thus represents the sphere
+$\sqrt{\tau_i(b)}\,S^3$. Scaling the residue form shows that its
+integral is a fixed nonzero constant times $\tau_i(b)$ times the
+spherical average of $u(\sqrt{\tau_i(b)}\,x,b)$. The odd Taylor
+terms have zero average and the even terms converge normally on
+a smaller chart. The average is holomorphic in $b$ and has nonzero
+constant term $u(0,0)$. When $\tau_i(b)=0$, the cycle bounds in
+the local small resolution and the form extends there by crepancy.
+Consequently, also for an identically persistent node, we have
+\begin{equation}\label{eq:period-unit}
+               P_i(b)=\tau_i(b)v_i(b),\qquad v_i(0)\ne0
+\end{equation}
+with $v_i$ holomorphic. The units in this calculation come from the
+same global form. Rescaling that form multiplies the whole vector
+$P$ by a single unit on $B$.
+
+Intersecting a relation with a vertex divisor $E_p$ gives
+$\sum_{i\text{ over }p}w_i=0$: each of its marked curves has
+$E_p$-degree $-1$, and all the other marked curves have degree zero.
+The line block is consequently $(\lambda,-\lambda)$, and the plane
+block can be written $(-a,b,a-b)$. The curve identifications of
+\cite[Proposition~3.7 and Lemma~4.4]{W5} identify $R$ in these
+coordinates with $K_S\otimes_{\QQ}\CC$. The local-to-global
+tangent sequence in that lemma gives the image of the differential
+of the selected local classifying map, of dimension $\dim R$.
+Its subsequent differential to the tuple of nodal parameters is
+injective on the local target: it is the identity at an original
+node, records a nonzero multiple of the line parameter at a line
+vertex, and on the plane records the three differences of the three
+diagonal entries modulo simultaneous translation. These differences
+separate tangent vectors in the plane. By \eqref{eq:period-unit},
+multiplication by the diagonal matrix with entries $v_i(0)$ leaves
+this rank unchanged. Since $P$ takes values in $R$, its differential
+at zero is surjective.
+
+Theorem~\ref{thm:regular} and the holomorphic submersion theorem
+now give the asserted coordinates. Given $w\in R$, take a
+local section through the origin and lift $t\mapsto tw$. Equation
+\eqref{eq:period-unit} puts this entire disc in every prescribed
+zero divisor and off every other one for $t\ne0$. A zero block is the
+branch origin, since the nodal parameters jointly separate the
+points of each local line or plane. A nonzero plane block with one
+zero coordinate leaves precisely one ordinary double point. Outside
+the marked neighborhoods the family is smooth after shrinking.
+
+Let $f\colon\mathcal X\to\Delta$ denote the resulting disc family
+of $X$, and fix an ample bundle $L$ on $X$. Topological proper base
+change identifies $H^2(X;\ZZ)$ with the direct limit of
+$H^2(f^{-1}(U);\ZZ)$ over discs $U$ about zero. Thus $c_1(L)$
+extends after shrinking. Serre duality gives $H^2(X,\cO_X)=0$.
+By semicontinuity, Grauert's theorem and the Stein property of the
+disc, $H^2(\mathcal X,\cO_{\mathcal X})=0$ there. The exponential
+sequence lifts the extended class to a line bundle, which restricts
+to $L$ since $H^1(X,\cO_X)=0$. Openness of ampleness gives a
+projective family even when $Z$ is nonprojective.
+\end{proof}
+
+For a projective conifold transition this arrangement is the one
+described by Lee, Lin and Wang \cite[Lemma~3.13 and
+Proposition~3.16]{LLW}. In the present construction $Z$ may itself
+have a node which persists on the whole base. Such an index contributes
+the zero functional on $R$. Two nonzero proportional coordinate
+functionals give the same hyperplane, with both node markings retained.
+The submersion concerns periods. The local equation parameters in
+\eqref{eq:period-unit} may differ from them by different units.
+
+\section{Cohomology of the regular locus and the marked torus}
+\label{sec:marked-generators}
+
+Let $I$ be a support in $R$. Denote by $F(I)$ the set of degree-six
+vertices for which every index over the vertex lies outside $I$.
+Put $H=H^2(Y;\ZZ)$, write $[E_p]\in H$ for the Poincar\'e dual
+of the vertex divisor, and let
+\[
+ A_I=\{D\in H:\langle D,C_i\rangle=0\ \text{for all }i\in I\}.
+\]
+For a nearby fibre $X_b$ with $\operatorname{supp}P(b)=I$, the
+following statement uses the markings transported from the central
+fibre. Write $X_b^{\rm reg}$ for its smooth locus.
+
+\begin{proposition}\label{prop:marked-generators}
+There is an identification
+\[
+ H^2(X_b^{\rm reg};\ZZ)
+       \simeq A_I\Big/\sum_{p\in F(I)}\ZZ[E_p].
+\]
+It identifies this group with a subgroup of
+$H^2(X^{\rm reg};\ZZ)=H/\sum_p\ZZ[E_p]$. A class with lift $D\in H$
+belongs to the image precisely when it has degree zero on every
+original node in $I$ and its degrees on the curves in $I$ over each
+one vertex are equal. For a representative $D\in A_I$, the restriction
+at a residual ordinary double point is its degree on the marked
+exceptional line. At a persistent cone $p$ it is
+\[
+ [D|_{E_p}]\in H^2(E_p;\ZZ)/\ZZ K_{E_p}\simeq H^2(L_p;\ZZ),
+\]
+where $L_p$ denotes the link of that cone.
+\end{proposition}
+
+\begin{proof}
+Use the coordinates of Theorem~\ref{thm:marked-periods} to join the
+origin to $b$ by an arc along which the support is $I$ away from the
+origin. On a block in $F(I)$ the incidence family is the product of
+the central model with that arc. Fill the exterior $W$ at the
+indices in $I$ by the Milnor fibres, and at the remaining indices
+by the compatible local small resolutions. Write $M_I$ for the
+resulting smooth compact manifold. The filling which uses small
+resolutions at all indices gives $Y$.
+
+For either filling, each $H^1(L_i;\ZZ)$ is zero. On $H^2$ the
+restriction of a small-resolution neighborhood to its boundary is an
+isomorphism, and the Milnor fibre has $H^2=0$. Mayer--Vietoris first
+identifies $H^2(Y;\ZZ)$ with $H^2(W;\ZZ)$ and then identifies the
+image of $H^2(M_I;\ZZ)$ there with $A_I$. A vertex in $F(I)$
+reconstructs the original smooth surface $E_p\subset M_I$, with
+the marking of its divisor class preserved in the common exterior.
+Remove these pairwise disjoint surfaces. By the Thom sequence,
+the degree-two cohomology of the complement is obtained by quotienting
+by their divisor classes, since $H^1(E_p;\ZZ)=0$. The exceptional
+curves at all other retained nodes are disjoint from the removed
+surfaces. Removing them has no effect in degree two, by the Thom
+isomorphism in real codimension four. This complement is the smooth
+locus of $X_b$. The case $I=\varnothing$ gives the central
+identification in the statement.
+
+The resulting map to $H^2(X^{\rm reg};\ZZ)$ is induced by
+$A_I\hookrightarrow H$. A combination $\sum_pc_p[E_p]$ which
+annihilates the curves in $I$ has $c_p=0$ for each vertex with an
+index in $I$, as one sees by evaluating on any such curve. This
+gives injectivity on the stated quotient. Changing a lift by
+$c_p[E_p]$ subtracts the integer $c_p$ from each degree over $p$
+and has no effect at other vertices or original nodes. The degrees
+in a nonempty block can all be made zero precisely when they are
+equal. At an ordinary double point restriction to the link agrees
+with the degree on the exceptional line by the same filling calculation.
+At a persistent cone the link is the circle bundle of $K_{E_p}$.
+The Gysin sequence gives the stated quotient since $H^1(E_p;\ZZ)=0$;
+adding $[E_p]$ to the lift adds $K_{E_p}$ to the restriction by adjunction.
+This also describes the link classes outside the selected root summand.
+\end{proof}
+
+For the rigid abelian gauging, one can see both the supports and
+the stabilizers directly. Work at zero triplet moment-map level with
+just the marked fields. Use one charged hypermultiplet at each
+original node and the presentation by two or three homogeneous
+hypermultiplets at a chosen cone component, divided there by the
+diagonal circle \cite[\S\S2--3]{Higgs}. The three moment maps for
+one homogeneous hypermultiplet $(q_i,\widetilde q_i)$ comprise its
+complex product $q_i\widetilde q_i$ and its real moment
+$(|q_i|^2-|\widetilde q_i|^2)/2$. Their joint vanishing is equivalent
+to $(q_i,\widetilde q_i)=0$. A common rotation of the three moment
+maps makes the complex projection nonzero on all the nonzero
+triplets of a given solution: the discarded real axis need only
+avoid finitely many lines. The resulting complex products satisfy
+the linear charge relations and give a vector of $R$ with exactly
+that support. Conversely, for $w\in R$ take each product equal to
+$w_i$ and both absolute values equal to $\sqrt{|w_i|}$. This solves
+all three equations, including each diagonal-circle equation.
+Together with Theorem~\ref{thm:marked-periods}, this gives equality
+of the sets of supports realized on the two sides.
+
+For the connected bulk torus take the cocharacter lattice
+$H^2(X^{\rm reg};\ZZ)$ modulo torsion, with the original marked
+degrees. Its action fixes the class of a configuration precisely
+when a diagonal-circle action at each cone compensates the bulk
+action on every nonzero homogeneous hypermultiplet there. On the
+Lie algebra this requires equal degrees on the participating curves
+over that cone and zero degree at each participating original node.
+For a cocharacter with integral degrees the compensating common
+degree is integral as well. Proposition~\ref{prop:marked-generators}
+thus gives the marked lattice of the identity component of the
+stabilizer, including spectator directions. An empty block leaves
+its diagonal circle redundant, as accounted for by the quotient
+by $[E_p]$. Finite components of a stabilizer depend in addition
+on saturation of the subgroup of the character lattice generated
+by the active weights.
+
+With a conical Ricci-flat metric on the regular locus, its
+degree-two $L^2$ cohomology identifies with middle-perversity
+intersection cohomology \cite{Cheeger}. At an isolated point of
+real codimension six, the middle-perversity truncation retains
+the link cohomology through degree two. Thus
+$IH^2(X_b;\mathbb R)=H^2(X_b^{\rm reg};\mathbb R)$. In a fluxless
+three-form reduction these classes give the linearized normalizable
+bulk vector fields. The local conicality criterion for bounded-potential
+Ricci-flat metrics at isolated Calabi--Yau cones with smooth link is
+given in \cite[Theorem~1.4]{Zhang}. The cohomological calculation
+identifies the marked vector space on the geometric fibre. A
+microscopic identification of the complete Higgs vacuum at finite
+Planck mass would require further information about the localized
+interacting theory.

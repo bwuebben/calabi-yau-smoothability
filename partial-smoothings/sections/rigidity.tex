@@ -1,0 +1,161 @@
+\section{Deformations at cone points with zero projection}
+\label{sec:rigidity}
+
+Fix a component $S_p$ of the local deformation base at each cone point
+$p$, and let $B=\Def^S(X)$ be the inverse image of their product under
+the local classifying maps. We use the scheme structure on this inverse
+image. Write $F$ for the set of cone points at which the projection of
+$K_S$ to the selected local summand is zero. We first study deformations
+of the vertex blow-up at a point of $F$.
+
+\begin{lemma}\label{lem:blowup-rigidity}
+Let $U$ be a sufficiently small Stein representative of the
+anticanonical cone over a smooth del Pezzo surface $E$ of degree six.
+Let $f:V\to U$ be the blow-up of its vertex. Then
+\[
+ f_*\Theta_V=\Theta_U,\qquad R^1 f_*\Theta_V=0.
+\]
+Every marked deformation of $V$ over a local Artin $\CC$-algebra is
+trivial. Across a small extension the trivialization can be chosen to
+extend any specified trivialization of the preceding order.
+\end{lemma}
+
+\begin{proof}
+The singular locus of $U$ consists of the vertex. The local flow of a
+vector field on $U$ therefore preserves the vertex ideal and lifts to
+its blow-up. In the opposite direction a vector field descends on the
+punctured germ and extends across the vertex by reflexivity of
+$\Theta_U$. This proves the direct-image assertion.
+
+Near the exceptional divisor $V$ is a neighborhood of the zero section in
+the total space of $K_E$. If $I$ is its ideal, the graded quotients of
+$\Theta_V$ for the $I$-adic filtration are
+\[
+ \bigl(\Theta_E\oplus K_E\bigr)\otimes\mathcal O_E(-kK_E),
+ \qquad k\geq 0.
+\]
+Their first cohomology vanishes, as in the local calculation
+in~\cite[proof of Lemma~5.2, (47)--(48)]{W5}. Indeed,
+$H^1(E,\mathcal O_E((1-k)K_E))=0$ by rationality, Serre duality and
+Kodaira vanishing. For the tangent summand, the toric Euler sequence
+has middle term $\bigoplus_{j=1}^6\mathcal O_E(C_j)$, where the $C_j$
+are the six boundary curves, and left term $\mathcal O_E^{\oplus4}$.
+When $k=0$, the restriction $\mathcal O_{C_j}(C_j)$ has degree $-1$,
+giving $H^1(E,\mathcal O_E(C_j))=0$. When $k\geq1$, the divisor
+$C_j-kK_E$ has nonnegative degree on each of the six generators of the
+cone of curves, so toric vanishing applies. The last term needed in the
+cohomology sequence is $H^2(E,\mathcal O_E(-kK_E))=0$.
+Induction on the thickenings of $E$ and the theorem on formal functions
+give $R^1f_*\Theta_V=0$. Here the powers of $I$ are cofinal with the
+pullbacks of the powers of the vertex ideal.
+
+Cartan's theorem~B and Leray now give $H^1(V,\Theta_V)=0$. Consider a
+small extension of local Artin algebras with kernel $J$. Once a
+trivialization over its quotient is fixed, the differences of local
+trivializations lifting it define a class in
+$H^1(V,\Theta_V)\otimes J$. The local lifts exist since $V$ is smooth.
+The class vanishes, so the lifts can be made to agree. Induction from
+the given central marking proves the assertion.
+\end{proof}
+
+We shall use the following consequence of semiuniversality. Let $(G,0)$
+be a semiuniversal base of an isolated analytic singularity $(U,p)$,
+and let $D$ be a formal power-series ring over $\CC$. If a map
+$\operatorname{Spf}D\to\widehat G$ induces a trivial marked local
+deformation at every Artin quotient, that map is constant. To see this,
+choose a generic formal line through the origin on which a first nonzero
+term survives, and call its order $m$. The map modulo $t^{m+1}$ factors
+through the first infinitesimal neighborhood of $0\in G$, with tangent
+coefficient in $(t^m)/(t^{m+1})$. The Kodaira--Spencer isomorphism
+identifies this coefficient with a nonzero element of
+$T^1_{U,p}\otimes (t^m)/(t^{m+1})$, using the product trivialization
+modulo $t^m$. A change of lower-order trivialization cannot erase this
+class. In fact every marked automorphism of the product modulo $t^m$
+lifts to the product modulo $t^{m+1}$. Its logarithm is a derivation
+with coefficients in $(t)$: the finite binomial formula for powers of a
+unipotent automorphism is multiplicative at every integer exponent,
+hence at every complex exponent, and differentiation at zero gives
+the Leibniz rule. Lift the coefficients of this derivation and
+exponentiate. Any automorphism of the central germ lifts constantly.
+Thus a trivial deformation modulo $t^{m+1}$ would have zero class for
+the specified product identification, a contradiction.
+
+\begin{theorem}\label{thm:regular}
+For every choice of the local components $S_p$, the analytic germ
+$\Def^S(X)$ is smooth of dimension
+\[
+ h^1(X,\Theta_X)+\dim_{\QQ} K_S.
+\]
+At every $p\in F$ the local classifying map is constant on this entire
+germ. Let $X_F\to X$ be the blow-up of the vertices in $F$, and let
+$S'$ denote the induced choices at the remaining cone points.
+Blow-down induces an isomorphism of the completions of
+$\Def^{S'}(X_F)$ and $\Def^S(X)$.
+\end{theorem}
+
+\begin{proof}
+The blow-up $\pi:X_F\to X$ is projective and crepant. It replaces each
+vertex in $F$ by the smooth zero section of its canonical bundle and
+is an isomorphism near the remaining singularities. Rationality of
+these cone singularities gives $R\pi_*\mathcal O_{X_F}=\mathcal O_X$.
+In particular $X_F$ is projective with trivial dualizing sheaf and
+$H^1(X_F,\mathcal O_{X_F})=0$. The same smooth threefold $Y$ resolves
+$X$ and $X_F$. Its marked curves at the remaining singularities are
+unchanged. Extension of a tuple by zero at $F$ identifies
+$K_{S'}(X_F)$ with $K_S$, since every relation in $K_S$ already
+vanishes there. In particular every remaining selected cone summand
+has nonzero projection.
+
+Write $B'=\Def^{S'}(X_F)$. The selected-base theorem
+\cite[Theorem~4.5]{W5} makes $B'$ smooth. Let
+$D=\widehat{\mathcal O}_{B',0}$. Analytic blow-down over Artin
+algebras gives a formal morphism from $\operatorname{Spf}D$ to
+$\widehat{\Def}(X)$ compatible with restriction to open sets and with
+base change \cite[Lemmas~4.2--4.3]{W5}. At each vertex in $F$,
+Lemma~\ref{lem:blowup-rigidity} trivializes its source over the
+inverse image of a Stein neighborhood, to every order. Pushing forward
+the product structure sheaf gives the trivial deformation of that
+neighborhood. The preceding consequence of semiuniversality shows
+that all coordinates of its fixed local classifying map therefore
+vanish in $D$.
+
+At every other cone the morphism $\pi$ is a local isomorphism. The
+differential of blow-down on its local components agrees with the
+original restriction, using the pullback of one global volume form
+for the homological identifications. The selected tangent sequence
+\cite[Lemma~4.4]{W5} for $X_F$ and the nonzero projection at this cone
+show that at least one coordinate of the chosen component has nonzero
+linear term in $D$. The completed local deformation ring of the cone is
+$\CC[[s,u,v]]/(su,sv)$, with line $(u,v)=0$ and plane $s=0$.
+Since $D$ is a domain, the complementary coordinates vanish. Thus the
+formal morphism factors through $\widehat B$ at every cone. Nodes
+impose no further choice. Denote the factored morphism by $\beta$.
+
+The map $d\beta$ identifies the two selected tangent spaces. Indeed,
+Lemma~\ref{lem:blowup-rigidity} and the local isomorphism away from $F$
+give $\pi_*\Theta_{X_F}=\Theta_X$ and $R^1\pi_*\Theta_{X_F}=0$.
+Leray identifies $H^1(X_F,\Theta_{X_F})$ with $H^1(X,\Theta_X)$.
+On locally trivial deformations this is the differential of blow-down:
+a vector-field cocycle on overlaps descends by the direct image of
+its vector fields. On the local quotient the differential extends the
+tuple by zero at $F$, hence gives the identification of relation
+spaces above. For each of the pairs $(T,S_T)=(X_F,S')$ and $(X,S)$
+we have the exact sequence
+\[
+ 0\longrightarrow H^1(T,\Theta_T)
+ \longrightarrow T_0\Def^{S_T}(T)
+ \longrightarrow K_{S_T}(T)\otimes_{\QQ}\CC\longrightarrow0.
+\]
+The isomorphisms on its two ends give the assertion about $d\beta$.
+
+Write $\widehat{\mathcal O}_{B,0}=\CC[[x_1,\ldots,x_r]]/I$
+minimally. The images of the $x_i$ in the regular complete local ring
+$D$ form a basis of its cotangent space. They form a system of formal
+coordinates, so the composite $\CC[[x_1,\ldots,x_r]]\to D$ is an
+isomorphism. It follows that $I=0$ and that $\beta$ is an isomorphism.
+Regularity of the completion proves smoothness of $B$, and the
+tangent sequence gives its dimension. At any $p\in F$ the local
+classifying coordinates vanish after pullback to $D$. They therefore
+vanish in $\widehat{\mathcal O}_{B,0}$ and in its analytic local
+ring. This proves constancy on $B$.
+\end{proof}
