@@ -1,0 +1,166 @@
+\pdfoutput=1
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.2in]{geometry}
+
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdfauthor={Bernd Johannes Wuebben},pdftitle={Local equations for deformations of Calabi-Yau threefolds with del Pezzo cone points}}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\PP}{\mathbb P}
+\DeclareMathOperator{\Def}{Def}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rk}{rank}
+\title[Local equations for Calabi--Yau deformations]{Local equations for deformations of Calabi--Yau threefolds with del Pezzo cone points}
+\author{Bernd Johannes Wuebben}
+\date{November 26, 2026}
+\subjclass[2020]{14J32 (primary); 14B07, 14D15, 14E15 (secondary)}
+\keywords{Calabi--Yau threefold, deformation space, del Pezzo surface, partial smoothing, vanishing period}
+\begin{document}
+\begin{abstract}
+We determine the analytic deformation space of a projective Calabi--Yau
+threefold with ordinary double points and anticanonical cones over smooth
+del Pezzo surfaces of degrees five and six, admitting a smooth projective
+crepant resolution small at the nodes and given by the vertex blow-up at
+the cones. Up to a smooth factor, its semiuniversal base is the
+scheme-theoretic intersection of the product of the marked local bases with
+the space of homological relations on the resolution. Link periods identify
+the strata on which prescribed singularities persist. We construct two
+projective examples with the same smooth reduced germ and the same
+tangent dimension. The nilradical has square zero in one and nonzero
+square in the other. The proof establishes compatibility of link periods with
+Artin base change and detects global obstructions to lifting by
+localization and pairing with Cartier divisor classes.
+\end{abstract}
+\maketitle
+\section{Introduction}
+Friedman's criterion for a nodal Calabi--Yau threefold asks for a
+homological relation among exceptional curves with nonzero coefficient
+at every node \cite{Fri86}. In a projective conifold transition the
+individual nodal discriminants are linear hyperplanes in vanishing-period
+coordinates \cite[Lemma~3.13 and Proposition~3.16]{LLW}. A cone over a
+degree-six del Pezzo surface presents a further issue. Its local
+deformation space has two components, a line and a plane. A global
+first-order deformation can have nonzero projections to both at one
+vertex. Such a direction lies on neither component and can occur even
+when all deformations over reduced bases are locally trivial.
+
+Let $X$ be a connected normal projective complex threefold with
+$\omega_X\simeq\OO_X$ and $H^1(X,\OO_X)=0$. Its singularities are
+ordinary double points and germs analytically isomorphic to the
+anticanonical cones over smooth del Pezzo surfaces of degrees five and
+six. We assume a smooth projective crepant resolution $\pi:Y\to X$,
+small at the nodes and given by the blow-up of each cone vertex. Fix the
+analytic identifications of the singularities, the markings of their
+exceptional curves and the corresponding choices of small resolution
+in the local modifications which replace a degree-six vertex by two
+or three nodes (Section~\ref{sec:periods}).
+
+For each singular point $p$ let $L_p$ be its oriented link and put
+$V_p=H_2(L_p;\C)$. The map to the local resolution identifies $V_p$
+with the signed exceptional-curve line at a node and, at a vertex, with
+the perpendicular to the canonical class of the exceptional surface $E_p$
+in $H_2(E_p;\C)$. A reversal of a nodal marking changes the sign of that
+coordinate. Set
+\begin{equation}\label{eq:kernel}
+ V=\bigoplus_p V_p,\qquad
+ K=\ker\left(V\longrightarrow H_2(Y;\C)\right),\qquad
+ h=h^1(X,\Theta_X).
+\end{equation}
+The arrow is induced by the inclusions of the links and adds the marked
+classes. At a node or a degree-five vertex put $G_p=V_p$. At a degree-six
+vertex fix the cyclically ordered six boundary curves $B_0,\ldots,B_5$
+of $E_p$. In a compatible marking put
+\[
+ V_{p,L}=\C(B_0-B_3),\qquad
+ V_{p,P}=\Big\{\sum_{i=0,2,4}c_i B_i:\ \sum c_i=0\Big\}.
+\]
+These complementary summands have dimensions one and two. Write
+$G_p=V_{p,L}\cup V_{p,P}$ with its reduced structure, and $G=\prod_pG_p$.
+Thus $G$ is a fixed closed subscheme of $V$. The local marked
+discriminants in these coordinates are described below.
+
+\begin{theorem}\label{thm:main}
+With these hypotheses and markings there is an isomorphism of complex
+analytic germs
+\[
+ (\Def(X),0)\ \simeq\
+ \big(\C^h\times (K\times_V G),0\big).
+\]
+Its projection to $K$ is the tuple of marked link periods of one relative
+volume form, with each cohomology class identified with its Poincar\'e
+dual. It identifies the inverse image of each product of local components
+and of its marked discriminant hyperplanes with the corresponding
+scheme-theoretic linear sections.
+\end{theorem}
+
+In coordinates $(s_p,u_p,v_p)$ in which the local line and plane are
+respectively $u_p=v_p=0$ and $s_p=0$, the ideal on $K$ is generated by
+the restrictions of $s_pu_p$ and $s_pv_p$ at every degree-six vertex.
+The smooth coordinates along $\C^h$ are auxiliary. Replacing the global
+relative generator by a base unit multiplies all its period coordinates
+by that unit. The assertion concerns the marked semiuniversal space.
+
+The two degree-six branches and their scheme structure are due to
+Altmann \cite{Alt}. For the local models considered here, the image of
+global tangent localization is computed in \cite[Theorem~2.5]{W5};
+the existence of full smoothings is characterized in
+\cite[Theorem~4.7]{W5}. Theorem~5.3 of the same paper determines a
+reduced four-component unrestricted germ in a two-cone example.
+For nodes and degree-six cones,
+\cite[Theorems~2.2 and~3.1]{Partial} proves smoothness and determines
+all marked vanishing-period divisors after a component is chosen at
+each cone. In Theorem~\ref{thm:main} the same coordinates apply across
+all choices and determine the ideal of the unrestricted germ. In
+particular the local equations retain their meaning for an Artin family
+which belongs to neither branch at a given cone.
+
+Namikawa's stratification for terminal Calabi--Yau threefolds uses
+projective small modifications \cite[Proposition~2.3 and
+Theorems~2.5,~2.7]{Nam}. A crepant exceptional surface places the cone
+points here outside the terminal case. Gross proves a local-to-global
+comparison for canonical threefolds and gives nonreduced examples
+\cite[Theorems~1.16,~2.2 and Example~2.19]{Gross}. Generalized
+$T^1$-lifting gives comparisons of support and tangent space, with a
+product description for surjective tangent localization
+\cite[Theorems~3.8,~3.10]{Friedman}. Imagi studies concentration
+of obstructions along curvilinear extensions
+\cite[Theorem~1.2 and Definition~8.16]{Imagi25} and the singularity
+invariants of generic fibres \cite[Theorems~1.7--1.8]{Imagi}. In the situation at hand the local
+periods give equations for the actual image when the tangent image is a
+proper subspace. Section~\ref{sec:examples} gives two compact examples with the same
+reduced germ and tangent dimension. Their transverse rings are
+$\C[x,y]/(x^2,xy,y^2)$ and $\C[x,y]/(x^2,y^2)$.
+Their functors agree on curvilinear test rings: two square-zero
+elements of $\C[t]/(t^m)$ have product zero by their orders in $t$.
+
+The proof has two steps. Periods on the original links commute with
+base change to Artin rings. Stokes' theorem then makes every linear
+equation in \eqref{eq:kernel} hold on the full deformation space.
+Conversely, a point of the proposed intersection over a small extension
+supplies lifts of all the local germs. In Lemma~\ref{lem:obstruction}
+we show that an actual global
+obstruction which vanishes locally pairs trivially with a spanning set
+in $H^1(X,\Omega^1_X)$. This gives a global lift, whose periods can be
+adjusted by its Kodaira--Spencer class. The convergent map constructed
+by the periods consequently identifies the full ideals.
+
+\input{sections/periods}
+\input{sections/lifting}
+\input{sections/strata}
+\input{sections/examples}
+\input{references}
+\end{document}

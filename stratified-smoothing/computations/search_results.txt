@@ -1,0 +1,6 @@
+248: 57 subsets; pure node relations 0; two cone directions, zero selected cone image (count, first subset) {}
+439: 120 subsets; pure node relations 0; two cone directions, zero selected cone image (count, first subset) {}
+484: 120 subsets; pure node relations 4; two cone directions, zero selected cone image (count, first subset) {}
+575: 21679 subsets; pure node relations 0; two cone directions, zero selected cone image (count, first subset) {3: [240, (0, 1, 2, 4, 5)], 2: [60, (0, 1, 2, 5, 6)]}
+seven-face master, faces 0..6: tangent span 8, quadratic span 22/36;
+  target (0,1,2,5,6) missing socle tensor lies outside that span

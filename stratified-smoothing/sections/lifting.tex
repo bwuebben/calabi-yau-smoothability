@@ -1,0 +1,118 @@
+\section{Lifting over small extensions}\label{sec:lifting}
+
+The following obstruction calculation applies to isolated canonical
+singularities beyond the local models of Theorem~\ref{thm:main}.
+
+\begin{lemma}\label{lem:obstruction}
+Let $X$ be a normal projective complex threefold with isolated Gorenstein
+canonical singularities, $\omega_X\simeq\OO_X$ and $H^1(X,\OO_X)=0$.
+Let $A'\twoheadrightarrow A$ be a small extension of local Artin
+$\C$-algebras and let $X_A$ be a flat deformation of $X$.
+If the restriction of $X_A$ at each singular point admits a lift to $A'$,
+then $X_A$ admits a lift to $A'$.
+\end{lemma}
+
+\begin{proof}
+Write $I$ for the kernel of the extension, so $\mathfrak m_{A'}I=0$.
+We first explain the use of projective embeddings on the given Artin
+deformation. Serre duality gives $H^2(X,\OO_X)=0$. The exact sequence of
+units for a square-zero thickening therefore lifts any line bundle on $X$
+to $X_A$, by induction on the length of $A$. For a very ample $M$ with
+$H^1(X,M)=0$, a basis of $H^0(X,M)$ lifts to sections generating
+the lifted bundle. They give a morphism $f_A:X_A\to\PP^N_A$ inducing
+the embedding $f$ by $M$. This is a closed immersion: it is proper
+with finite fibres, hence finite, and the map on structure sheaves is
+surjective by Nakayama's lemma. In particular an analytic Artin
+deformation can be treated algebraically, by GAGA for its ideal in
+$\PP^N_A$. Local analytic lifts induce lifts of the completed local
+rings. In comparing obstruction classes there we complete a
+finite-type cotangent presentation, using continuous differentials.
+Completion commutes with the finite free terms through each fixed
+degree and is faithfully flat on the local obstruction module.
+
+Put $L_X=L_{X/\C}$. The canonical obstruction to lifting $X_A$ is
+\[
+ o\in\Ext^2_X(L_X,\OO_X)\otimes I.
+\]
+Indeed the relative obstruction with coefficients in $I\otimes_\C\OO_X$ has
+this target by flat base change for the cotangent complex and derived
+adjunction. It is the composite of the transitivity boundary for
+$X_A\to\Spec A\to\Spec A'$ with the shifted projection of
+$L_{A/A'}$ onto $I[1]$. Its vanishing is equivalent to a flat lift
+\cite[Tags 08UZ and 063Y]{Stacks}.
+For the morphism $f_A$ above, functoriality of the transitivity triangle
+identifies the image of $o$ under
+\[
+ \Ext^2_X(L_X,\OO_X)\otimes I
+    \longrightarrow H^2(X,f^*T_{\PP^N})\otimes I
+\]
+with the pullback of the obstruction of $\PP^N_A$. Thus this image is
+zero.
+
+The negative cohomology sheaves of $L_X$ are supported on the finite
+singular set $Z$. Finite-length modules over the local rings at these
+points have grade three. The truncation of $L_X$ to $\Omega_X^1$ hence
+induces an isomorphism in $\Ext^2(-,\OO_X)$, globally and locally
+\cite[Lemma~2.2]{W5}. By Serre duality, $o$ is an $I$-valued functional
+on $H^1(X,\Omega_X^1)$. The last vanishing says that this functional
+kills the image of
+\[
+ H^1(X,f^*\Omega^1_{\PP^N})\longrightarrow H^1(X,\Omega_X^1).
+\]
+The connecting class of $1$ in the pulled-back Euler sequence maps to
+$d\log M$, up to sign. Every line bundle is the difference, in
+$\operatorname{Pic}(X)$, of two very ample bundles with the required
+vanishing. Consequently $o$ annihilates $d\log\operatorname{Pic}(X)$.
+
+By local duality, localization on $\Ext^2$ is dual to the map
+\[
+ H^1_Z(X,\Omega_X^1)\longrightarrow H^1(X,\Omega_X^1)
+\]
+\cite[Lemma~2.4(c)]{Gross}. At a singular point the image of $o$
+with coefficients in the completed local ring is obtained by
+precomposing the obstruction of the completed germ with the map
+of cotangent complexes. The given local lift makes it zero, by the
+same functoriality. Thus $o$ annihilates this second image. Write $j:X\setminus Z\hookrightarrow X$ and
+$F=j_*\Omega^1_{X\setminus Z}$. The quotient by the displayed image is
+$H^1(X,F)$. Indeed $H^1(X,F)$ embeds in $H^1(X\setminus Z,\Omega^1)$
+by Leray, and $H^1(X,\Omega_X^1)\to H^1(X,F)$ is surjective since the
+kernel and cokernel on sheaves have finite support. The local cohomology
+sequence gives the assertion. Gross proves that the images of
+$d\log\operatorname{Pic}(X)$ span $H^1(X,F)$
+\cite[Lemma~2.5]{Gross}. Thus $o=0$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Write $B=\Def(X)$, let $G\subset V$ be the product of the marked local
+period images, and put $T=\C^h\times(K\times_VG)$, with the indicated
+scheme structure. Proposition~\ref{prop:period} gives the analytic
+period map $P:B\to K\times_VG$. Its differential maps onto $K$ with
+kernel $H^1(X,\Theta_X)$. Choose $h$ analytic functions $z$ vanishing
+at the origin whose differentials restrict to a basis of the dual of this kernel. Then $F=(z,P):B\to T$ is a closed immersion of germs. Indeed
+$dF$ is an isomorphism at the origin, and functions spanning the
+cotangent space give a closed immersion by the analytic inverse
+function theorem in a minimal smooth embedding.
+
+Let $A'\twoheadrightarrow A$ be a small extension with kernel $I$.
+Suppose $b\in B(A)$ and $y'\in T(A')$ restricts to $F(b)$. In the
+construction of Proposition~\ref{prop:period}, lift the auxiliary
+ambient parameter of $b$ to $A'$, which is possible since its ambient
+germ is smooth. Over that lift, the inverse local period isomorphisms,
+applied to the period coordinates of $y'$, give local hull parameters
+extending those of $b$. In particular every singular germ of the
+deformation over $b$ lifts to $A'$. Lemma~\ref{lem:obstruction} gives
+a global lift, and the formal versality of $B$ gives an $A'$-point
+$b'$ above $b$.
+
+The difference of two lifts of the same point through a small
+extension, viewed on local rings, is a derivation at the closed point
+with values in $I$. Thus $y'-F(b')$ belongs to $T_0T\otimes I$.
+Translate $b'$ by its inverse image under $dF\otimes 1_I$. The
+resulting lift maps to $y'$. This proves formal smoothness of the
+closed immersion $F$. More explicitly, successive lifting on the
+Artin quotients of $\OO_{T,0}$ gives a section of $F$ on completions.
+The completed quotient homomorphism is therefore an isomorphism.
+Faithful flatness of completion gives the asserted analytic
+isomorphism. The identifications on local branches and their marked
+persistence loci follow from Proposition~\ref{prop:period}.
+\end{proof}

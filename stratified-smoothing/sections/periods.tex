@@ -1,0 +1,186 @@
+\section{Periods on the original links}\label{sec:periods}
+
+Let $B=\Def(X)$ and fix a representative of its proper flat family near
+the given compact fibre. The morphism is Gorenstein after shrinking,
+and its relative dualizing line commutes with base change. A generator
+of $\omega_X$ extends to a generator $\Omega$ of this line, including
+over the nonreduced base. Indeed $H^1(X,\omega_X)=0$ by duality and
+$H^2(X,\OO_X)=0$. In a finite free complex computing the cohomology of
+the relative dualizing line and its base changes, split the invertible
+entries at the origin. The remaining complex has a rank-one term in
+degree zero and zero terms in degrees $-1$ and $1$. Thus its generator
+extends and properness permits us to remove the image of its zero
+locus. Applied to $\OO$, the same argument shows that any other
+generator differs by a unit on the base. Compare \cite[Lemma~3.1]{Friedman}.
+
+On the punctured germ at $p$ a holomorphic relative three-form
+determines a class on the oriented five-dimensional link. We use its
+Poincar\'e dual in $V_p$. We give the details of its variation because
+the possible Artin families include maps into a union of local
+components which factor through none of them.
+
+\begin{lemma}\label{lem:linkperiods}
+Let $\mathcal U\to D_p$ be a marked semiuniversal family of one of the
+local germs and let $D$ be a smooth parameter germ. Choose a relative
+dualizing generator on $\mathcal U$ and multiply it by any holomorphic
+unit on $\mathcal U\times D$. Its marked link class gives an analytic
+isomorphism over $D$,
+\[
+       (D_p\times D,0)\longrightarrow (G_p\times D,0).
+\]
+It induces the cohomological link class on every Artin pullback. It
+identifies the two components at a degree-six vertex and all the marked
+local discriminant hyperplanes, with their ideals.
+\end{lemma}
+\begin{proof}
+At an ordinary double point use the equation
+$\sum_{j=1}^4 x_j^2=\tau$. The boundary three-cycle represents the
+vanishing sphere in a smooth fibre. Its residue period is $\tau$ times
+a unit. Scaling by $\sqrt{\tau}$ gives the spherical average of the
+multiplier; odd terms integrate to zero and the constant term is
+nonzero. This proves the assertion also in the presence of the extra
+parameters.
+
+At a degree-six vertex the analytic base has ring
+$\C\{s,u,v\}/(su,sv)$ \cite[\S\S5--8]{Alt}. Work first on either
+of its two smooth branches. The simultaneous modifications of
+\cite[\S3, Proposition~3.8]{W5} have two marked nodes on the central
+fibre over the line and three over the plane. Their total spaces are
+respectively the total spaces of $\OO(-1,-1)^{\oplus2}$ over
+$\PP^1\times\PP^1$ and $\OO(-1)^{\oplus3}$ over $\PP^2$. The map is
+an isomorphism off the exceptional zero section, of codimension at
+least two in each smooth total space. Since both maps to the branch
+are flat Gorenstein, Hartogs extension for the pullback relative
+generator and its inverse gives a relative generator on the incidence
+space, also after taking its product with $D$. Let $q_j$ be the signed
+nodal periods there. On the line both equation parameters have nonzero
+derivative. On the plane the three are cyclic differences of three
+diagonal entries modulo translation, so they have joint rank two at
+the origin. Each $q_j$ is its equation parameter times a unit.
+
+To identify the periods on the original link, use the cobordism between
+that link and the links of the incidence nodes. On the central fibre
+it is the region in the resolved neighborhood of $E_p$ obtained by
+removing the inner small-resolution neighborhoods and truncating at
+the outer boundary. It transports smoothly in the incidence family
+by local triviality of its compact exterior with boundary. Each
+$D_0\in H^2(E_p;\C)$ extends to the local resolution by retraction.
+On this cobordism the boundary of the relative Poincar\'e dual of its
+restriction has outer term $\operatorname{PD}(D_0|_{L_p})$ and inner
+terms $(D_0\cdot C_j)\gamma_j$, where $C_j$ is the marked exceptional
+curve at the inner node and $\gamma_j$ its signed link cycle. This
+follows by restriction of Poincar\'e duality to each boundary component.
+Stokes' theorem for the closed relative volume form gives the outer
+period as $\sum_j(D_0\cdot C_j)q_j$. The circle-bundle sequence
+identifies the outer class with $\sum_jq_j[C_j]$ in $H_2(E_p;\C)$.
+Taking $D_0=K_{E_p}$ gives $\sum_j q_j=0$. The two or three marked
+curves are the opposite pair or the alternating triple in the
+introduction \cite[Proposition~3.7]{W5}. Their weighted sums identify
+the sum-zero coefficient spaces with $V_{p,L}$ and $V_{p,P}$.
+
+The resulting maps have invertible derivative along the respective
+branches and vanish at their origins for all parameters in $D$.
+Their inverses over $D$ therefore agree along $\{0\}\times D$.
+The analytic ring of the union is the fibre product of the two branch
+rings over $\OO_D$, so both maps and their inverses glue. A nonzero
+plane parameter with one zero $q_j$ leaves a single ordinary double
+point. The origin of either branch retains the original cone.
+
+At a degree-five vertex the base is smooth of dimension four.
+Write $E_p=\operatorname{Bl}_4\PP^2$ with line and exceptional classes
+$H,e_1,\dots,e_4$. In the marking by the conic pencils put
+\[
+ f_i=H-e_i\ (1\leq i\leq4),\qquad f_5=2H-\textstyle\sum e_i,\qquad
+ \lambda_i(c)=c\cdot f_i .
+\]
+These functionals identify $V_p=K_{E_p}^{\perp}$ with
+$\{\sum\lambda_i=0\}\subset\C^5$. The local Grassmannian
+family has five discriminant hyperplanes $\alpha_i(b)=0$ and one
+residual node per vanishing $\alpha_i$ at a noncentral parameter
+\cite[Proposition~3.1 and Lemma~3.2]{W5}. Its five marked boundary
+cycles evaluate the link class by nonzero multiples of the $\lambda_i$.
+For the homogeneous generator their periods are nonzero multiples of
+$\alpha_i$ \cite[Lemma~3.4]{W5}. For a multiplier depending on $D$,
+the period still vanishes on $\{\alpha_i=0\}\times D$ by the nodal
+calculation on a dense open subset of that hyperplane. Holomorphic
+division gives an $\alpha_i$ factor. Scaling the homogeneous generator
+along a general line gives first derivative equal to the original
+derivative multiplied by the value of the unit at the vertex. This is
+the calculation of \cite[proof of Lemma~3.4]{W5}, with $D$ in place
+of a disc. Consequently each remaining factor is a unit, the
+derivative has rank four, and all five hyperplanes have the asserted
+ideals.
+
+We finish by checking the assertion over Artin rings. On the smooth
+exterior of the central singularity in an Artin family over $A$, the
+relative holomorphic de Rham complex resolves the constant sheaf $A$.
+Indeed local relative polydisc coordinates exist by smoothness and
+the radial Poincar\'e homotopy is coefficientwise. A relative closed
+form thus defines a class in $H^3(L_p;\C)\otimes A$ on a small
+punctured neighborhood, compatibly with restriction and base change.
+For a smooth local base the analytic period just computed has this
+class as its Taylor expansion. One way to see the compatibility is
+to restrict the relative de Rham resolution of the inverse-image
+sheaf of base functions to the compact boundary of a Milnor tube in
+the smooth locus. That boundary is a differentiable product over a
+small ball. Its degree-three direct image is the constant marked
+cohomology tensored with the holomorphic base functions, computed
+on a finite good cover of the link. Restriction of sheaves to the
+boundary is exact, and in product charts the local relative de Rham
+resolution commutes with evaluation in $A$. This proves the claim for
+the Taylor jets, with any additional smooth parameters.
+
+At the degree-six vertex apply this comparison to the Artin quotients
+by powers of the maximal ideal of $\OO_{D_p\times D,0}$. Each such
+quotient injects into the direct sum of the two corresponding branch
+quotients: in the coordinates $(s,u,v)$ and the parameters of $D$ a
+surviving monomial involves either $s$ or $u,v$, or neither. The
+cohomological class and the Taylor jet of the glued analytic functions
+agree in each branch quotient. Injectivity gives their equality on
+the whole quotient. Every Artin point factors through one of these
+quotients, proving the claim also on points outside either branch
+functor.
+\end{proof}
+
+\begin{proposition}\label{prop:period}
+The periods of $\Omega$ define an analytic morphism $P:B\to K\times_VG$.
+Its differential has image $K$ and kernel $H^1(X,\Theta_X)$.
+In each singular neighborhood it is the pullback of the local
+isomorphism of Lemma~\ref{lem:linkperiods} over a smooth ambient germ
+containing $B$.
+\end{proposition}
+\begin{proof}
+Embed $B$ in a smooth germ $D$. Fix classifying maps $\phi_p:B\to
+D_p$ with isomorphisms of the pulled-back local families. In the
+family $\mathcal U_p\times D$ the restriction of the global family near $p$ is the closed
+subgerm cut out by the graph of $\phi_p$. The ratio of the global
+form to a pullback local generator is a holomorphic unit there.
+It lifts to a holomorphic unit near the central point of
+$\mathcal U_p\times D$. The preceding lemma gives a period morphism
+over $D$ whose pullback is $P_p$. This construction respects the
+fixed markings and records the dependence of the multiplier on global
+parameters, even on a nonreduced base.
+
+For every Artin point of $B$ the restricted global form gives one class
+on the regular locus with coefficients in its base algebra. Its
+restrictions to all the links are the classes just constructed.
+Take the exterior in $Y$ of the local resolution neighborhoods.
+For any degree-two cohomology class on $Y$, the Poincar\'e duals
+of its restrictions to the boundaries together bound a relative
+four-cycle in the exterior. Thus the corresponding sum of evaluations
+of the global three-class is zero. With the oriented link identifications
+this says precisely that the period tuple lies in the kernel
+\eqref{eq:kernel}, with coefficients in the Artin algebra.
+Apply this to every maximal-ideal jet of $B$. Separatedness of its
+analytic local ring gives the linear equations of $K$ on $B$.
+The equations of $G$ already hold on the individual local bases.
+
+The derivative in directions tangent to $D$ at the vertex vanishes, as
+all the central link classes are zero for every multiplier. The local
+period derivatives on the local tangent spaces are isomorphisms.
+Hence the full period map has precisely the kernel of tangent
+localization. The local-to-global sequence and the marked
+identification in \cite[Theorem~2.5]{W5} give that kernel and show
+that the rank is $\dim K$. The linear equations just proved identify
+its image with $K$ itself.
+\end{proof}

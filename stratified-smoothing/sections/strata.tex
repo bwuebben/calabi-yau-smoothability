@@ -1,0 +1,61 @@
+\section{Which singularities can persist?}\label{sec:strata}
+
+Choose one of the two local components at each degree-six vertex and
+denote this choice by $S$. Let $V_S$ be the direct sum of the chosen
+summands and the full spaces at all other points. Put $K_S=K\cap V_S$.
+On $V_S$ take the following linear forms, with a separate index for
+each marked cycle. At an original node take its coordinate. At a
+degree-six vertex take the two or three signed nodal periods $q_j$ of
+the chosen modification. At a degree-five vertex take the five forms
+$\lambda_i$ of Lemma~\ref{lem:linkperiods}. Denote the resulting list
+by $(\ell_j)_{j\in J_S}$. Its support at a point is the subset on
+which the evaluations are nonzero.
+
+\begin{corollary}\label{cor:strata}
+The reduction of $\Def(X)$ is the product of $\C^h$ with the reduced
+union of the $K_S$. The scheme-theoretic intersection of any nonempty collection
+of selected bases equals $\C^h$ times the intersection of the corresponding
+$K_S$. For $I\subset J_S$ put
+\[
+ F_I=K_S\cap\bigcap_{j\notin I}\ker\ell_j .
+\]
+The support $I$ occurs precisely when $\ell_i|_{F_I}\ne0$ for every
+$i\in I$. Its stratum has dimension $h+\dim F_I$ and closure
+$\C^h\times F_I$.
+\end{corollary}
+\begin{proof}
+On taking the reduction of the intersection in Theorem~\ref{thm:main},
+its support is the union of the linear sections $K_S$. The sum of the
+ideals of any selected components is generated on $K$ by their defining
+linear forms, since these already imply the local quadratic equations.
+This gives the asserted intersection with its scheme structure.
+Inside $F_I$ the required support is the complement of the kernels
+of $\ell_i$ for $i\in I$. A complex vector space is never the union
+of finitely many proper linear subspaces. This proves both existence and
+density, including for empty $I$.
+\end{proof}
+
+Within a choice $S$ the closure contains exactly the feasible
+subsets of $I$. Where two choices differ, their local link spaces meet
+at zero, which represents the original cone. The preceding intersection
+formula therefore also identifies strata represented on several choices.
+A zero coordinate at an original node retains that node. At a nonzero
+parameter for a vertex there is one residual node per vanishing marked
+form, while the zero block retains the vertex itself.
+Every feasible support is attained on a disc: take a line in $F_I$
+through a point of that support and use Theorem~\ref{thm:main}.
+The disc can be chosen projective over its base since an ample line
+bundle on $X$ extends locally in the deformation when $H^2(X,\OO_X)=0$.
+
+When only nodes and degree-six vertices occur, let $C_j$ be the
+marked curves of the original and incidence nodes on the chosen
+modification, represented on $Y$ as in Lemma~\ref{lem:linkperiods}.
+In the coefficient coordinates $q_j$, $K_S$ is the kernel of
+$(q_j)\mapsto\sum q_j[C_j]$ in $H_2(Y;\C)$. Indeed pairing with
+each exceptional surface imposes the local sum-zero condition, and
+then the remaining equation is \eqref{eq:kernel}. Thus, writing
+$r_I=\dim\langle[C_i]:i\in I\rangle$, the dimension is
+$h+|I|-r_I$. The existence criterion says that removing any single
+$i\in I$ leaves $r_I$ unchanged. For a nodal threefold and $I$ the
+set of all nodes, this is precisely the existence of a relation with
+all coefficients nonzero in Friedman's criterion.

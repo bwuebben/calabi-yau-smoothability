@@ -1,0 +1,170 @@
+\section{Projective examples with different nilpotent structures}
+\label{sec:examples}
+
+We construct two partial resolutions of the same anticanonical
+hypersurface. Their deformation spaces have smooth reductions of
+dimension six and Zariski tangent spaces of dimension eight. The
+nilradical has square zero in the first example and nonzero square in
+the second.
+
+Let $N=\{y\in\Z^5:\sum_i y_i=0\}$ and take the reflexive polytope
+\[
+  \Pi=[-1,1]^5\cap N_{\mathbb R}.
+\]
+Its thirty vertices are the permutations of $(1,1,-1,-1,0)$.
+Fixing two coordinates with equal signs gives a unimodular triangle.
+Fixing $y_i=1$, $y_j=-1$ gives a hexagon $H_{ij}$ whose remaining
+coordinates are the permutations of $(1,0,-1)$. These are all the
+two-dimensional faces. Each of the twenty hexagons has one interior
+lattice point, its centre, and primitive edges. The polar has vertices
+$\pm\bar e_i$ in $\Z^5/\Z(1,1,1,1,1)$, so the edge dual to each
+hexagon is primitive.
+
+Take a general anticanonical hypersurface in the toric fourfold
+defined by the face fan. For a set $T$ of hexagons let $X_T$ be its
+proper transform after star subdivision at the centres of all hexagons
+outside $T$. These projective crepant subdivisions leave one exact
+degree-six cone at each member of $T$. Indeed, the hypersurface meets
+its one-dimensional orbit transversely in a single point, and the
+transverse toric threefold is the cone of the marked hexagon. The unit
+triangles and primitive edges give smooth germs elsewhere. Inserting
+the remaining centres and taking a coherent maximal crepant
+triangulation refining the resulting fan gives the required smooth
+projective resolution $Y$. Its local restriction is the vertex blow-up
+at each remaining cone \cite[\S8.1]{W4}.
+The primal and polar lattice-point counts are $51$ and $11$,
+respectively. Neither has a lattice point interior to a facet.
+The dual-edge corrections in Batyrev's Hodge number formula vanish,
+so $(h^{1,1}(Y),h^{2,1}(Y))=(46,6)$
+\cite[Corollary~4.5.1]{Batyrev}.
+The direct-image and higher-direct-image calculations for the tangent
+sheaf at the vertex blow-up give $h=h^{2,1}(Y)=6$,
+as in \cite[proof of Lemma~5.2]{W5}.
+
+We take the ordered triples
+\[
+ A=(H_{54},H_{53},H_{51}),\qquad
+ B=(H_{54},H_{24},H_{14}),\qquad
+ C=(H_{24},H_{23},H_{21}).
+\]
+Thus $A$ and $B$ have the common face $H_{54}$, whereas $A$ and $C$
+are disjoint. At each $H_{ij}$ read the free coordinates in increasing
+order of their indices. Order its vertices $v_0,\ldots,v_5$ by the
+successive triples
+\[
+ (-1,0,1),\ (0,-1,1),\ (1,-1,0),\ (1,0,-1),\ (0,1,-1),\ (-1,1,0).
+\]
+Write $D_k$ for the intersection vector of the $k$th boundary curve
+against the ambient prime divisors. If $e_v$ denotes the coordinate of
+the ray through $v$ and $c$ is the centre, the wall relation gives
+\[
+ D_k=e_{v_{k-1}}+e_{v_{k+1}}-e_{v_k}-e_c
+ \qquad(k\bmod 6).
+\]
+Use the three rows $D_0-D_3,D_4-D_0,D_2-D_4$ for the coordinates
+$(s,u,v)$. The first spans the line and the last two span the plane.
+By \cite[Proposition~8.3]{W4} the ambient degrees detect all homology
+relations here. This also follows from the vanishing correction term in
+$h^{1,1}$, since the invariant divisors then span $H^2(Y;\Q)$.
+
+\begin{proposition}\label{prop:cube-examples}
+Put $R=\C\{w_1,\ldots,w_6\}$. The analytic deformation rings of
+$X_{A\cup B}$ and $X_{A\cup C}$ are respectively
+\[
+ R\{x,y\}/(x^2,xy,y^2)
+ \qquad\text{and}\qquad
+ R\{x,y\}/(x^2,y^2).
+\]
+Every deformation over a reduced base is locally trivial at the
+marked vertices in both examples.
+\end{proposition}
+
+\begin{proof}
+The following table gives the unique relation, normalized by its first
+entry, on each ordered triple. Entries are the $(s,u,v)$ coefficients
+on successive faces. Extend each relation by zero on the other faces.
+\[
+\begin{array}{c|rrr|rrr|rrr}
+ &\multicolumn{3}{c|}{1}&\multicolumn{3}{c|}{2}&\multicolumn{3}{c}{3}\\
+ A &1&0&-1&-1&0&1&-1&-1&-1\\
+ B &1&1&0&1&0&1&-1&0&-1\\
+ C &1&-1&0&-1&1&0&1&-1&0
+\end{array}
+\]
+The left kernels for $A\cup B$ and $A\cup C$ have the indicated
+pairs of rows as bases. More explicitly, after dropping the centre
+columns, which cancel, the five-face matrix has $15$ rows of rank
+$13$, and the six-face matrix has $18$ rows of rank $16$. All entries
+are given by the wall formula above.
+
+On $A\cup B$ let $x,y$ be the coefficients of the two displayed
+relations. The face $H_{51}$ gives $x^2=0$, and $H_{24}$ gives
+$y^2=0$. The common face $H_{54}$ has block $(x+y,y,-x)$, giving
+$xy=0$. On $A\cup C$, the two relations have disjoint support and
+each has a nonzero product of a line and a plane coefficient on one
+of its faces. The restricted quadrics thus span precisely $x^2,y^2$.
+Theorem~\ref{thm:main} gives the two rings. In each case their
+reductions are defined by $x=y=0$, where all local maps are constant.
+\end{proof}
+
+The nilradical in the second ring has cube zero and its square is
+the free $R$-module generated by $xy$. Its successive quotients,
+including the reduction, have ranks $(1,2,1)$ over $R$. The
+corresponding ranks for the first ring are $(1,2)$. In particular, the distinction
+between the two unrestricted germs persists after any analytic change
+of coordinates.
+
+\subsection{Two cones in the presence of original nodes}
+For comparison consider the following partial resolutions, also obtained
+by inserting selected hexagon centres. For the first, take in
+$\Z\oplus\Z^3$ the convex hull of $(1,0)$, the six points
+$(0,\pm e_i)$, and the sixteen points $(-1,a)$ where $a$ runs through
+the permutations of $(\pm1,\pm1,0)$ and the sign triples with
+$a_1a_2a_3=1$. Retain the hexagons with centres $(-1,e_1)$ and
+$(-1,e_2)$. For the second take $X_+$ of \cite[\S5]{Partial},
+with the two markings specified there. The two polytopes are entries
+248 and 528 in the census accompanying \cite{W5}.
+
+In both cases all primal edges and all dual edges of singular faces
+are primitive. Every triangle is unimodular, every quadrilateral is
+a unit square, and the remaining two-faces are degree-six hexagons.
+The same coherent refinement as above resolves the retained vertices
+and selects a small resolution at every square. The following counts
+and ranks use the two retained hexagons in each case. Here $N_0$ is
+the matrix of square circuits $e_i+e_j-e_k-e_l$, for opposite pairs
+$(i,j),(k,l)$, and $M$ adjoins
+the three rows for $(s,u,v)$ from each retained hexagon.
+\[
+\begin{array}{c|rrr|rr|rr}
+ &\text{triangles}&\text{squares}&\text{hexagons}&
+ h^{1,1}(Y)&h^{2,1}(Y)&\rk N_0&\rk M\\ \hline
+ 248&52&12&6&25&25&12&17\\
+ 528&32&30&4&27&18&20&22
+\end{array}
+\]
+The accompanying computation reconstructs the faces from the ordered
+vertices, checks unimodularity and the Hodge counts, and forms the
+curve matrices from the wall formula and square circuits. The input
+files contain only vertices and cyclic hexagon orders.
+
+For the first threefold the unique relation has cone coefficients
+$(1,1,1;-1,-1,-1)$. No choice of local branches contains this
+direction. The reduced base is smooth of dimension $25$, and the
+unrestricted ring is $\C\{w_1,\ldots,w_{25},t\}/(t^2)$ by
+Theorem~\ref{thm:main}. In particular the nilpotent direction is
+free over the entire reduced base.
+
+For $X_+$ the kernel on the original nodes has dimension ten.
+In the cyclic markings of \cite[\S5]{Partial}, the image on the two
+cones has precisely the equations $u_0=0$ and $v_0+s_1=0$.
+Writing $t=s_1$, $x=s_0$, $y=u_1$, $z=v_1$, the unrestricted ring is
+\[
+ \C\{w_1,\ldots,w_{28},t,x,y,z\}/(tx,ty,tz).
+\]
+The $28$ free coordinates include the ten original-node relations.
+The two components have dimensions $31$ and $29$ and intersect along
+the smooth germ of dimension $28$. A general point of the
+$31$-dimensional component gives a smoothing. A general fibre on the other
+component has one original node and one node near the first cone. In the ordering of \cite[\S5]{Partial}, the marked incidence relations
+force precisely the period of original node $17$ and one of the three
+plane periods to vanish on this component.

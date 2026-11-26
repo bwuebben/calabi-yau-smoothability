@@ -1,0 +1,45 @@
+record 248: f-vector = (23, 70, 70, 23)
+  polygons {3: 52, 4: 12, 6: 6} lattice points/interior-to-facet ((31, 1), (31, 1)) Hodge numbers (25, 25)
+  unique relation (0, 1, -1, 0, -1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, -1, -1, -1)
+  every selected kernel = 0; transverse Hilbert function (1,1)
+record 528: f-vector = (27, 72, 66, 21)
+  polygons {3: 32, 4: 30, 6: 4} lattice points/interior-to-facet ((32, 0), (23, 0)) Hodge numbers (27, 18)
+  cone equations [(0, 1, 0, 0, 0, 0), (0, 0, 1, 1, 0, 0)]
+  LL 29 forced incidence nodes [17, 32, 33]
+  LP 31 forced incidence nodes []
+  PL 29 forced incidence nodes [17, 30]
+  PP 30 forced incidence nodes [30, 31, 32]
+  00 28 forced incidence nodes [17]
+  maximal component dimensions 31,29; intersection dimension 28
+record 575: f-vector = (30, 60, 40, 10)
+  polygons {3: 20, 6: 20} lattice points/interior-to-facet ((51, 0), (11, 0)) Hodge numbers (46, 6)
+  cluster (0, 1, 2, 3) triple tangent (1, 0, -1, 1, 1, 1, 1, 0, -1, 0, 0, 0)
+    LPPP, PLPP, PPLP summands [(1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0), (0, 1, 0, 1, 0, 0, 0, -1, -1, 0, 0, 1), (0, -1, -1, 0, 0, 1, 1, 0, 0, 0, -1, -1)]
+  cluster (0, 4, 5, 6) triple tangent (1, 1, 0, 1, 1, 1, 1, 0, -1, 0, 0, 0)
+    LPPP, PLPP, PPLP summands [(1, 0, 0, 0, 1, 0, 0, 1, 0, 0, -1, 0), (0, 0, -1, 1, 0, 0, 0, -1, -1, 0, 1, 1), (0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, -1)]
+  cluster (4, 7, 10, 11) triple tangent (1, 1, 0, -1, 1, 1, -1, 0, -1, 0, 0, 0)
+    LPPP, PLPP, PPLP summands [(1, 0, 0, 0, 0, 1, 0, -1, -1, 0, -1, 0), (0, 1, 1, -1, 0, 0, 0, 1, 0, 0, 0, -1), (0, 0, -1, 0, 1, 0, -1, 0, 0, 0, 1, 1)]
+  retained (0, 1, 2, 4, 5) relation basis [(1, 0, -1, 1, 1, 1, 1, 0, -1, 0, 0, 0, 0, 0, 0), (0, 1, 1, -1, -1, -1, -1, 0, 1, 1, 1, 1, 1, 0, -1)]
+    restricted quadrics (x^2,xy,y^2) [(1, 0, 0), (0, 1, 0), (0, 0, 1)]
+    selected dimensions all zero; unrestricted tangent 8
+  retained (0, 1, 2, 4, 7, 10) relation basis [(1, 0, -1, 1, 1, 1, 1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0), (0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, -1, 1, 1, -1, 0, -1)]
+    restricted quadrics (x^2,xy,y^2) [(1, 0, 0), (0, 0, 1)]
+    selected dimensions all zero; unrestricted tangent 8
+  retained (0, 1, 2, 5, 6) relation basis [(1, 0, 0, '1/2', '1/2', '1/2', '1/2', 0, '-1/2', '1/2', '1/2', '1/2', '1/2', '-1/2', '-1/2'), (0, 0, 1, '-1/2', '-1/2', '-1/2', '-1/2', 0, '1/2', '1/2', '1/2', '1/2', '1/2', '-1/2', '-1/2')]
+    restricted quadrics (x^2,xy,y^2) [(1, 0, 1), (0, 1, 0)]
+    selected dimensions all zero; unrestricted tangent 8
+  symmetric cube slice, triples in cyclic markings of the manuscript
+    [(5, 4), (5, 3), (5, 1)] (1, 0, -1, -1, 0, 1, -1, -1, -1)
+  cluster ((5, 4), (5, 3), (5, 1), (5, 2)) triple tangent (1, 0, -1, -1, 0, 1, -1, -1, -1, 0, 0, 0)
+    LPPP, PLPP, PPLP summands [(1, 0, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0), (0, 1, 0, -1, 0, 0, 0, 0, -1, 0, 0, 1), (0, -1, -1, 0, 1, 1, -1, 0, 0, 0, -1, -1)]
+    [(5, 4), (2, 4), (1, 4)] (1, 1, 0, 1, 0, 1, -1, 0, -1)
+  cluster ((5, 4), (2, 4), (1, 4), (3, 4)) triple tangent (1, 1, 0, 1, 0, 1, -1, 0, -1, 0, 0, 0)
+    LPPP, PLPP, PPLP summands [(1, 0, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0), (0, 0, -1, 1, 0, 0, 0, -1, -1, 0, 0, 1), (0, 1, 1, 0, 1, 1, -1, 0, 0, 0, -1, -1)]
+    [(2, 4), (2, 3), (2, 1)] (1, -1, 0, -1, 1, 0, 1, -1, 0)
+  cluster ((2, 4), (2, 3), (2, 1), (2, 5)) triple tangent (1, -1, 0, -1, 1, 0, 1, -1, 0, 0, 0, 0)
+    LPPP, PLPP, PPLP summands [(1, 0, 0, 0, 0, -1, 0, 0, 1, 0, -1, 0), (0, 0, 1, -1, 0, 0, 0, -1, -1, 0, 0, -1), (0, -1, -1, 0, 1, 1, 1, 0, 0, 0, 1, 1)]
+    union [(5, 4), (5, 3), (5, 1), (2, 4), (1, 4)] curve matrix rank 13
+    union [(5, 4), (5, 3), (5, 1), (2, 4), (2, 3), (2, 1)] curve matrix rank 16
+  overlapping completed clusters: transverse Hilbert function (1,2)
+  disjoint completed clusters: transverse Hilbert function (1,2,1)
+  retained (0,1,2,5,6): predicted transverse Hilbert function (1,2,1)
