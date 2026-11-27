@@ -1,0 +1,125 @@
+\section{The node and two nonreduced deformation spaces}\label{sec:examples}
+
+\subsection*{The period at a node}
+Write the deformation of the ordinary double point as
+\[
+ x_1y_1=z,\qquad x_2y_2=z-s.
+\]
+On the open torus the relative volume form is
+$\Omega=dz\wedge d\log x_1\wedge d\log x_2$.
+For $s>0$ the equations $y_1=\overline{x}_1$ and
+$y_2=-\overline{x}_2$ cut out the vanishing sphere
+$|x_1|^2+|x_2|^2=s$. The map to $z=|x_1|^2$ fibres the interior
+of the interval $[0,s]$ by two-tori, with a different circle collapsing
+at either end. Orient the sphere by $dz\wedge d\arg x_1\wedge d\arg x_2$.
+For a holomorphic unit $g=g(z,s)$ the two angular integrations give
+\begin{equation}\label{ex:nodeintegral}
+ \int_{S^3}g\Omega=(2\pi i)^2\int_0^s g(z,s)\,dz.
+\end{equation}
+The Milnor fibre is a cotangent disc bundle of $S^3$, whose boundary
+is $S^3\times S^2$ since $S^3$ is parallelizable. Inclusion of the
+boundary induces an isomorphism on $H_3$. Thus
+\eqref{ex:nodeintegral} evaluates the marked link class on a generator.
+For $g=1+cz$ this period is $(2\pi i)^2(s+cs^2/2)$. Even on a smooth
+local base, the choice of relative form can give a nonlinear period
+coordinate.
+
+\subsection*{A length-ten base}
+Consider the hexagon with cyclic primitive edge vectors
+\[
+ (1,0),\ (1,1),\ (0,1),\ (-4,1),\ (1,-2),\ (1,-1).
+\]
+For edge vectors $d_i$ write $M_k=\sum_i d_i t_i^k$. For an $n$-gon
+the moments through degree $n-1$ generate the full ideal. Indeed,
+$M_0=0$ and the polynomial $\prod_i(T-t_i)$ gives a recurrence of
+order $n$ for $M_k$. Here $t_6=0$ and $M_1=0$ give
+\[
+ (t_1,\ldots,t_6)=(x+5y-3z,-x-y+2z,x,y,z,0).
+\]
+Let $I\subset\C[x,y,z]$ be the resulting moment ideal. In graded
+lexicographic order $x>y>z$, a Gr\"obner basis is
+\[
+\begin{gathered}
+ 5x^2-7xz-5y^2+5yz-z^2,\qquad
+ 5xy-3xz+10y^2-15yz+6z^2,\\
+ 3xz^2+5yz^2-z^3,\qquad y^3+yz^2-z^3,\qquad 2y^2z-z^3,\\
+ yz^3,\qquad z^4.
+\end{gathered}
+\]
+It is obtained from the two components of $M_2$ and $M_3$.
+Every quartic monomial is divisible by one of its leading monomials.
+By homogeneity, all moments of higher degree vanish in this quotient.
+The standard monomials in degrees
+two and three are $xz,y^2,yz,z^2$ and $yz^2,z^3$, respectively.
+The base is supported at the origin and its Hilbert function is $(1,3,4,2)$.
+
+On this base one can see the restriction imposed by a common change of
+height. The shear $x\mapsto x+z^2$ fixing $y,z$ induces the identity on
+the tangent space. For $q=x^2+xy-2xz+y^2-2yz+z^2\in I$, however,
+the normal form of its pullback is
+\[
+ q(x+z^2,y,z)\equiv -(7yz^2+4z^3)/3\pmod I.
+\]
+Both monomials on the right are standard. The shear therefore fails to
+restrict to the base. In the same coordinates the substitution
+\[
+ t_i\longmapsto H(t_i),\qquad
+ H(T)=(1+x-y)T+(\alpha+z)T^2+\beta T^3,\quad \alpha,\beta\in\C,
+\]
+defines an automorphism. Indeed each $H(t_i)^k$ has an expansion in
+$t_i$ with coefficients independent of $i$, and its moment vanishes.
+The linear part of the induced endomorphism is the identity, so it is
+invertible on the finite local algebra. The two edge rows give, for
+the divided differences $U_i=(H(\zeta)-H(t_i))/(\zeta-t_i)$,
+\[
+ U_1U_2U_5U_6=U_4^4,\qquad U_2U_3U_4=U_5^2U_6.
+\]
+These are the identities that lift the substitution to the family.
+
+\subsection*{The nilradical of the octagon}
+For the octagon of \cite[\S9.3]{Alt} the two moment equations equate
+the power sums of the triples
+\[
+ (t_1,t_2,t_8),\ (t_4,t_5,t_6)\qquad\text{and}\qquad
+ (t_2,t_3,t_4),\ (t_6,t_7,t_8),
+\]
+respectively. Degrees one through three suffice by Newton's identities.
+Set
+\[
+ (t_1,\ldots,t_8)=(a+2b+c-e,-a-b+d+e,a,b,c,d,e,0).
+\]
+The two linear equations now hold. Write $I\subset\C[a,b,c,d,e]$
+for the four remaining equations, in degrees two and three.
+The three components of the reduced base have ideals
+\[
+ J_1=(a-e,b),\qquad J_2=(a-d,b,c-e),\qquad J_3=(a,b-e,c).
+\]
+Their dimensions are $3,2,2$. To compute the thickening along their
+union, put
+\[
+ u=ab,\qquad v=b(b-e),\qquad w=bc,\qquad
+ f=(a-e)(a-d),\quad h=(a-e)(c-e).
+\]
+Then $J_1\cap J_2=(b,f,h)$. Modulo $J_3$, the elements $b,f,h$
+become $e,ed,e^2$. It follows that
+\[
+ J_1\cap J_2\cap J_3=(f-db,h-eb,u,v,w).
+\]
+Indeed $f-db$ and $h-eb$ belong to $J_3$ and $b$ is a
+nonzerodivisor modulo $J_3$. The two quadratic moment equations give
+$f-db=-u-v$ and $h-eb=-2u-v-2w$ modulo $I$.
+
+It remains to determine the powers of $(u,v,w)$ in the quotient.
+Division by a Gr\"obner basis of the four moment equations, in graded
+lexicographic order $a>b>c>d>e$, gives
+\[
+ u(u+v)=v(u+v)=uw=vw=v^3=w^3=0,\qquad
+ \operatorname{NF}(v^2)=b^2d^2-b^2de-bd^2e+bde^2.
+\]
+Here $\operatorname{NF}$ denotes the polynomial normal form for that
+order. The product relations kill every cubic in $u,v,w$. The displayed
+quartic is nonzero. Since $I$ is contained in each
+$J_i$, this proves that $\sqrt I/I=(u,v,w)$ and that its nilpotency
+index is three. Both polygon calculations concern the local deformation
+space. In a compact threefold its period image is further intersected
+with the subspace of global homological relations.

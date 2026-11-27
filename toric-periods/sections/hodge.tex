@@ -1,0 +1,200 @@
+\section{The differential of the link period}\label{sec:hodge}
+
+We first compute the coefficient of $\varepsilon$ in a period over the
+dual numbers. Its component of Hodge degree two is contraction by the
+Kodaira--Spencer class. Logarithmic forms on a resolution identify
+this component in the Hodge
+filtration of the link. To compare it with the period itself we construct
+a holomorphic primitive for every holomorphic three-form on the punctured
+toric germ.
+
+\subsection{Logarithmic forms at a toric point}
+Let $(S,p)$ be an isolated Gorenstein toric threefold singularity. Take
+a sufficiently small contractible Stein representative and write
+$S^\circ=S\setminus\{p\}$. On a good resolution $M\to S$, let $D$ be
+the reduced exceptional divisor. We take representatives for which $M$
+retracts onto $D$ and $M\setminus D=S^\circ$ has the homotopy type of
+the link $L$. Put $\mathcal F^a=\Omega_M^a(\log D)$. Unless indicated
+otherwise, topological cohomology has complex coefficients.
+
+Steenbrink's toric vanishing theorem gives
+\begin{equation}\label{hg:vanishing}
+ H^q(M,\mathcal F^a(-D))=0\qquad (q>0)
+\end{equation}
+on any good resolution \cite[\S2, Theorem~2]{Ste}. Local duality
+identifies the dimension of this group with that of
+$H_D^{3-q}(M,\mathcal F^{3-a})$ \cite[Definition~1.4]{FL}.
+In particular $H^1_D(M,\mathcal F^2)=H^2_D(M,\mathcal F^2)=0$.
+The exact sequence for cohomology with support and the restriction
+sequence for $D$ now give isomorphisms
+\begin{equation}\label{hg:restrictions}
+ H^1(S^\circ,\Omega^2_{S^\circ})
+ \xleftarrow{\ \sim\ } H^1(M,\mathcal F^2)
+ \xrightarrow{\ \sim\ } H^1(D,\mathcal F^2|_D)
+ =\Gr_F^2 H^3(L).
+\end{equation}
+The last equality comes from the logarithmic complex
+$\mathcal F^\bullet|_D$ for the link, whose Hodge spectral sequence
+degenerates at $E_1$ \cite[\S3]{Ste}.
+
+In fact $H^3(L)$ is pure of type $(2,2)$. Toric singularities are
+rational, so $\Gr_F^0H^2(L)=\Gr_F^2H^2(L)=0$ by
+\cite[\S3, Lemma~2]{Ste}. The logarithmic complex has no other
+possible Hodge degree in cohomological degree two except one.
+Hodge symmetry on each weight quotient therefore leaves only type
+$(1,1)$ in $H^2(L)$. Link duality identifies $H^3(L,\Q)$ with
+$H^2(L,\Q)^\vee(-3)$ as a mixed Hodge structure \cite[\S3]{Ste}.
+In particular $\Gr_F^2H^3(L)=H^3(L)$ canonically.
+
+Choose a generator $\omega$ of the dualizing sheaf on $S$. The
+depth-three comparison identifies the first-order deformation space
+$T^1_{S,p}$ with $H^1(S^\circ,\Theta_{S^\circ})$
+\cite[Lemma~1.17 and Remark~4.2]{FL}. Here the usual cotangent-complex
+tangent group agrees with $\Ext^1(\Omega^1_S,\OO_S)$ because the negative
+cohomology sheaves of the cotangent complex have finite support and
+grade three in $\OO_S$. Contraction with $\omega$ on
+$S^\circ$, followed by \eqref{hg:restrictions}, defines an isomorphism
+\begin{equation}\label{hg:lambda}
+ \lambda_\omega:T^1_{S,p}\longrightarrow H^3(L).
+\end{equation}
+
+\begin{proposition}\label{prop:variation}
+Let $A=\C[\varepsilon]/(\varepsilon^2)$. On a deformation of $(S,p)$
+over $A$ with Kodaira--Spencer class $v$, every relative volume form
+lifting $\omega$ has marked link class
+$\varepsilon\lambda_\omega(v)$. In particular the differential of the
+period of the homogeneous toric generator is an isomorphism from
+$W_Q$ to $H^3(L)$.
+\end{proposition}
+
+\begin{proof}
+We shall use the exactness of holomorphic three-forms on $S^\circ$
+after shrinking $S$. Write such a form as $f\omega_0$, where $\omega_0$
+is the toric generator and $f$ extends across $p$ by normality.
+An integral cocharacter in the interior of the cone contracts $S$ to
+$p$. Its Euler field $e$ has positive weights on the nonconstant
+semigroup generators, and $\omega_0$ has positive weight $a$, the
+pairing of the cocharacter with the Gorenstein degree. On a small
+invariant polydisc for the contracting real scalars $0<s\leq1$, set
+\[
+ F(x)=\int_0^1 s^{a-1} f(s\cdot x)\,ds .
+\]
+In homogeneous ambient coordinates the integral divides the coefficient
+of each monomial of weight $m$ by $a+m$, so $F$ is holomorphic. Thus
+$(e+a)F=f$ and Cartan's formula gives
+$d\iota_e(F\omega_0)=f\omega_0$. In particular choose
+$\Gamma$ on $S^\circ$ with $d\Gamma=\omega$.
+
+Trivialize the first-order deformation on a Stein cover of $S^\circ$.
+Use the convention that transport of forms from chart $j$ to chart $i$
+is $1-\varepsilon\mathcal L_{\kappa_{ij}}$ for the
+Kodaira--Spencer cocycle $\kappa$. Write the lifted form in chart $i$
+as $\omega+\varepsilon\eta_i$ and put
+$\beta_{ij}=\iota_{\kappa_{ij}}\omega$. The gluing identities give
+$\delta\eta=d\beta$ and $\delta\beta=0$. With total differential
+$\delta+(-1)^q d$ in \v Cech degree $q$, the pair $(\eta,\beta)$
+represents the coefficient of $\varepsilon$ in the marked class.
+Indeed lift $\Gamma$ by its central expression on each chart.
+Subtracting the total coboundary of this lift from the relative volume
+form leaves $\varepsilon(\eta,\mathcal L_\kappa\Gamma)$ on the central
+complex. The second entry differs from $\beta$ by
+$d\iota_\kappa\Gamma$, a total coboundary since
+$\delta\iota_\kappa\Gamma=0$. The relative de Rham resolution of the
+constant sheaf $A$ identifies multiplication by $\varepsilon$ in this
+calculation with the coefficient inclusion $\C\to A$,
+$c\mapsto\varepsilon c$.
+
+Lift $[\beta]$ by \eqref{hg:restrictions} and choose a logarithmic
+one-cocycle $b$ representing the lift. We claim that $db$ is a
+\v Cech coboundary on $M$. By \eqref{hg:vanishing} for $a=3$ the
+restriction
+$H^1(M,\mathcal F^3)\to H^1(D,\mathcal F^3|_D)$ is an
+isomorphism. There the class of $db$ is the first differential of
+the link Hodge spectral sequence on $[b|_D]$, hence zero. We may
+therefore choose a zero-cochain $c$ of logarithmic three-forms with
+$\delta c=db$. The total cocycle $(c,b)$ on $M$ restricts to a
+class on the link whose Hodge degree-two component is $[b|_D]$.
+As $F^2H^3(L)=H^3(L)$ and $F^3H^3(L)=0$, that component determines
+the class and gives $\lambda_\omega(v)$.
+
+The logarithmic comparison identifies restriction of $(c,b)$ to
+$S^\circ$ and to the link complex under $H^3(S^\circ)\simeq H^3(L)$
+\cite[\S1.1]{FL}. On $S^\circ$ choose a zero-cochain $u$ of
+two-forms with $\delta u=\beta-b$, refining the covers as necessary.
+The difference of $(\eta,\beta)$ and $(c,b)$, modulo the total
+coboundary of $u$, is the global holomorphic three-form
+$\eta-c-du$. Its primitive constructed above gives zero in $H^3(L)$.
+This proves the formula for every lift of $\omega$. For $S$ the cone
+of $Q$, the Kodaira--Spencer isomorphism $W_Q\simeq T^1_{S,p}$
+of \cite[\S6.2 and the corollary in \S7.2]{Alt} gives the final assertion.
+\end{proof}
+
+\subsection{Restriction from the smooth locus}
+Let $X$ be a normal projective threefold with isolated Gorenstein toric
+singularities. Choose a global volume form $\omega$ trivializing its
+dualizing sheaf. Write
+$U=X_{\mathrm{reg}}$. Let $Y\to X$ be a projective good resolution
+which is an isomorphism over $U$, with reduced exceptional divisor
+$E=\coprod_p E_p$. Orient each $L_p$ as the boundary of a small
+resolution neighborhood of $E_p$.
+
+\begin{proposition}\label{prop:tangent}
+Composing tangent localization with the local period differentials for
+$\omega$ and link Poincar\'e duality gives an exact sequence
+\[
+ 0\longrightarrow H^1(X,\Theta_X)
+ \longrightarrow T_0\Def(X)
+ \longrightarrow K\longrightarrow 0 .
+\]
+Under the same duality the image of
+$H^3(U)\to\bigoplus_p H^3(L_p)$ is $K$.
+\end{proposition}
+
+\begin{proof}
+Put $\mathcal F=\Omega_Y^2(\log E)$ and let $Y_p$ be the inverse
+image of a small Stein representative at $p$. Excision identifies
+$H^i_E(Y,\mathcal F)$ with the direct sum of the corresponding
+groups on $Y_p$. Their vanishing for $i=1,2$ proves that
+$H^1(Y,\mathcal F)\to H^1(U,\Omega_U^2)$ is an isomorphism.
+The natural depth-three comparison
+$T_0\Def(X)\simeq H^1(U,\Theta_U)$ intertwines tangent localization
+with restriction to the punctured representatives
+\cite[Lemma~4.1 and Remark~4.2]{FL}. Under contraction with
+$\omega$ and the inverse restriction isomorphisms, localization
+therefore becomes the map
+\[
+ H^1(Y,\mathcal F)\longrightarrow\bigoplus_p H^1(Y_p,\mathcal F|_{Y_p}).
+\]
+
+For $j:U\hookrightarrow Y$, restriction of $Rj_*\Q_U$ to $E$ gives the
+map $r:H^3(U)\to\bigoplus_p H^3(L_p)$. Its de Rham realization is
+restriction of $\Omega_Y^\bullet(\log E)$ to $E$, with the filtration
+by form degree \cite[\S1.1]{FL}. In particular $r$ is a morphism of
+mixed Hodge structures. By logarithmic Hodge degeneration for the
+smooth projective pair $(Y,E)$ \cite[Corollary~3.2.13(ii)]{Del}, the
+source of the last display is $\Gr_F^2H^3(U)$. After the local
+identifications \eqref{hg:restrictions}, the displayed map is
+$\Gr_F^2r$. Its target has only Hodge type $(2,2)$, so strictness
+\cite[Theorem~2.3.5(iii)]{Del} gives
+$\im(\Gr_F^2r)=\im r$. Proposition~\ref{prop:variation} identifies
+this image with that of the differential of the marked periods.
+
+The Mayer--Vietoris sequence for $Y=U\cup\bigcup_pY_p$ contains
+\[
+ H^3(U)\oplus\bigoplus_p H^3(E_p)
+ \longrightarrow \bigoplus_p H^3(L_p)
+ \xrightarrow{\partial} H^4(Y).
+\]
+The arrow $H^3(E_p)\to H^3(L_p)$ respects mixed Hodge structures
+\cite[(1.4)]{FL}. Its source has weights at most three since $E_p$ is
+proper, whereas the target is pure of weight four. This arrow
+vanishes, giving $\im r=\ker\partial$. The boundary map is the sum
+of the Gysin maps of the oriented links, as follows by excision and the
+Thom isomorphism on their collars. Poincar\'e duality thus identifies
+its kernel with the kernel of $\bigoplus_p H_2(L_p)\to H_2(Y)$.
+This proves both image assertions. Finally, the local-to-global
+spectral sequence for the cotangent complex identifies the kernel of
+tangent localization with $H^1(X,\Theta_X)$. Each local period
+differential is an isomorphism by Proposition~\ref{prop:variation},
+so this is also the kernel in the asserted sequence.
+\end{proof}

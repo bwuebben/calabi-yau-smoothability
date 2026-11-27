@@ -1,0 +1,85 @@
+\section{The first obstruction to a tangent direction}\label{sec:orders}
+
+For $m\geq1$ put $A_m=\C[s]/(s^{m+1})$. A tangent vector extends to order $m$ if
+it is induced by a deformation over $A_m$. Its first obstructed order
+is the least $m$ for which no such deformation exists. For a polygon
+$Q$ and $a\in W_Q$, choose the representative with $a_1=0$ and write
+\[
+                 M_{Q,k}(a)=\sum_i d_i a_i^k.
+\]
+For a local toric singularity the order-by-order criterion follows from
+Altmann's equations \cite[\S2.3]{Alt}, as observed in
+\cite[Appendix~A]{FHSU}. On a compact threefold the marked periods put
+the local criteria in the same coordinates as the homological relations.
+
+\begin{proposition}\label{prop:jet}
+A local tangent vector $a\in W_Q$ extends to order $m$ if and only if
+$M_{Q,k}(a)=0$ for $2\leq k\leq m$. Under the hypotheses of
+Theorem~\ref{thm:global}, let $\xi\in T_0\Def(X)$ and let
+$v=(v_p)_p\in K$ be its image under the differential of the global
+period map after link duality. Set
+$a_p=(\PD\circ\ell_{Q_p})^{-1}(v_p)$.
+Then $\xi$ extends to order $m$ if and only if
+\[
+       M_{Q_p,k}(a_p)=0\qquad\text{for every $p$ and $2\leq k\leq m$.}
+\]
+Its first obstructed order is the least $k\geq2$ for which some
+$M_{Q_p,k}(a_p)$ is nonzero. If there is no such $k$, then $\xi$ is
+tangent to a one-parameter analytic deformation.
+\end{proposition}
+
+\begin{proof}
+In a jet with tangent $a$, one has $t_i=s a_i+O(s^2)$. For $k\leq m$
+the coefficient of $s^k$ in the $k$th equation of \eqref{eq:moments}
+is $M_{Q,k}(a)$, independently of the higher coefficients of the jet.
+Conversely, $t_i=s a_i$ solves all the equations over $A_m$ if the
+stated moments vanish. In the product coordinates of
+Theorem~\ref{thm:global}, write $\xi=(b,v)\in\C^h\oplus K$.
+The same coefficient calculation applies at each $p$. For the converse,
+the line $(s b,s v)$ satisfies the equations of $K$ identically, and
+the remaining equations are exactly the local moment equations. If all
+moments vanish, this line lies in the analytic germ itself.
+\end{proof}
+
+Petracci's pentagon \cite[Example~4.8]{Pet} has local deformation
+algebra $\C[x,y]/(x^2,xy,y^3)$, so the $y$-direction first obstructs
+at order three. The possible orders are unbounded even among toric
+singularities whose reduced deformation space is a point.
+
+\begin{proposition}\label{prop:orders}
+For each $r\geq2$ there is an isolated Gorenstein toric threefold
+singularity with Artinian semiuniversal base and a tangent vector
+whose first obstructed order is $r$. The intersection of the base with
+the line spanned by this vector in $W_Q$ has ring $\C[s]/(s^r)$.
+\end{proposition}
+
+\begin{proof}
+For $0\leq j<r$ take the pairs of vectors
+\[
+        (j+2,1),\quad (-j-2,1),
+\]
+and adjoin $(1,1)$ and $(-1,-(2r+1))$. These primitive vectors
+have distinct directions, span the plane and sum to zero. In cyclic
+angular order they form the edges of a convex lattice polygon $Q$.
+All but $(-1,-(2r+1))$ have vertical component one. Thus
+a nonempty collection of edges with sum zero must contain that vector
+and all $2r+1$ other edges. Since the edges are primitive, a
+nontrivial lattice Minkowski decomposition would give a proper
+nonempty collection with sum zero. Hence $B_Q$ is supported at the
+origin by \cite[\S2.5]{Alt}.
+
+Take the translation slice on which the parameter of $(-1,-(2r+1))$
+is zero. Give both edges of the $j$th pair the same parameter $x_j$, and
+set the parameter of $(1,1)$ to zero. On this subspace the $k$th
+moment is $(0,2\sum_j x_j^k)$ for $k\geq1$. Equivalently, the
+resulting section has the symmetric-group coinvariant algebra
+$\C[x_0,\ldots,x_{r-1}]/(e_1,\ldots,e_r)$, where the $e_k$ are the
+elementary symmetric functions, by Newton's identities. The section
+is defined by equalities of edge parameters and is preserved by the
+changes of volume form in Theorem~\ref{thm:local}.
+
+Now put $x_j=s\zeta^j$, where $\zeta$ is a primitive $r$th root of
+unity. The first $r-1$ moments vanish, and the $r$th is $(0,2r s^r)$.
+The restricted ideal is therefore $(s^r)$. Proposition~\ref{prop:jet}
+excludes every order-$r$ jet in the full base with this tangent.
+\end{proof}

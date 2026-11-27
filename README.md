@@ -1,6 +1,6 @@
 # Smoothability of Calabi–Yau threefolds
 
-Paper sources, exact computations, and census data for eight papers on
+Paper sources, exact computations, and census data for nine papers on
 smoothings of singular Calabi–Yau threefolds. Papers 1–3 study
 anticanonical hypersurfaces in Gorenstein toric Fano fourfolds: local
 singularity types, ambient smoothing constructions, and isolated mirror
@@ -42,10 +42,13 @@ mixed criterion for those degrees.
 | 6. Mirror Symmetry for Conifold Relations in Calabi–Yau Threefolds | [paper6/](paper6/README.md) | [cy-vanishing-spheres.pdf](paper6/cy-vanishing-spheres.pdf) | 234 | [Zenodo:23904357](https://zenodo.org/records/23904357) |
 | Partial smoothings of Calabi–Yau threefolds with degree-six del Pezzo cone points | [partial-smoothings/](partial-smoothings/README.md) | [PDF](partial-smoothings/main.pdf) | 11 | [Zenodo:24570171](https://doi.org/10.5281/zenodo.24570171) |
 | Local equations for deformations of Calabi–Yau threefolds with del Pezzo cone points | [stratified-smoothing/](stratified-smoothing/README.md) | [PDF](stratified-smoothing/main.pdf) | 10 | [Zenodo:24573015](https://doi.org/10.5281/zenodo.24573015) |
+| Link periods and deformations of Calabi–Yau threefolds with toric singularities | [toric-periods/](toric-periods/README.md) | [PDF](toric-periods/main.pdf) | 16 | [Zenodo:24575797](https://doi.org/10.5281/zenodo.24575797) |
 
 The companion preprint [Partial smoothings of Calabi–Yau threefolds with degree-six del Pezzo cone points](https://bwuebben.github.io/papers/partial-smoothings-degree-six/) extends the selected-base smoothness theorem to every choice of local components for nodes and degree-six cones, and determines which singularities can persist together. The [integral computations](partial-smoothings/check_examples.sage) reproduce the two compact examples.
 
 [Local equations for deformations](https://bwuebben.github.io/papers/stratified-cy-deformation-germs/) determines the full marked analytic deformation germ for nodes and exact del Pezzo cones of degrees five and six under the projective resolution hypotheses. Two projective examples have the same reduced deformation space and tangent dimension, but their nilradicals have different squares.
+
+[Link periods and deformations](https://bwuebben.github.io/papers/toric-link-periods/) describes the full deformation germ for projective Calabi–Yau threefolds with isolated Gorenstein toric singularities. The homology relations between links preserve a cubic obstruction in an explicit projective example.
 
 Paper 6 retains its original manuscript date of September 29, 2026. Its
 November 2, 2026 revision adds the companion papers’ arXiv identifiers to the
@@ -446,5 +449,5 @@ Each paper builds from its directory with `latexmk -pdf main.tex`.
 ## License
 
 The code (`src/`), data files (`output/`) and manifest (`manifests/`) are
-released under the MIT License (see `LICENSE`). The paper sources and PDFs (`paper*/`, `partial-smoothings/`, and `stratified-smoothing/`) are
+released under the MIT License (see `LICENSE`). The paper sources and PDFs (`paper*/`, `partial-smoothings/`, `stratified-smoothing/`, and `toric-periods/`) are
 © Bernd Johannes Wuebben; all rights reserved pending journal publication.

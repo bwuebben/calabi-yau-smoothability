@@ -1,0 +1,136 @@
+\section{A cubic obstruction on a projective threefold}\label{sec:compact-example}
+
+Let $Q$ be the lattice hexagon with vertices
+\[
+ (0,-1),\ (1,0),\ (0,1),\ (-1,1),\ (-2,0),\ (-1,-1)
+\]
+in cyclic order. In $\Z^3$ take the pyramid
+$P=\operatorname{conv}((Q,1),a)$ with apex $a=(0,0,-1)$.
+Subdivide the face fan of $P$ at the ray through $m=(-1,0,0)$, and
+let $Z$ be the resulting toric threefold.
+
+\begin{proposition}\label{prop:compact-cubic}
+A general anticanonical hypersurface $X\subset Z\times\mathbf P^1$
+is a projective Calabi--Yau threefold with two singular points, both
+of type $X_Q$. For $h=h^1(X,\Theta_X)$ its semiuniversal ring is
+\[
+ \OO_{\Def(X),0}\simeq
+ \C\{w_1,\ldots,w_h,u,v,s\}/(us,vs,s^3).
+\]
+In particular there is a first-order deformation that extends over
+$\C[\varepsilon]/(\varepsilon^3)$ and has no extension over
+$\C[\varepsilon]/(\varepsilon^4)$.
+\end{proposition}
+
+\begin{proof}
+The plane of the upper facet has equation $z=1$. In the order of
+the edges of $Q$ the six side facets have equations
+$\langle n_i,\,\cdot\,\rangle=1$ with outward normals
+\[
+ (2,-2,-1),\ (2,2,-1),\ (0,2,-1),\
+ (-1,1,-1),\ (-1,-1,-1),\ (0,-2,-1).
+\]
+Thus $P$ is reflexive. The absolute determinants of the three rays
+of its side cones are $1,1,1,2,2,1$, respectively. The two cones of
+determinant two share the face spanned by $a$ and $(-2,0,1)$.
+Its midpoint $m$ divides each into two unimodular cones. This star
+subdivision is projective and crepant. The remaining maximal cone
+$\sigma$ over $(Q,1)$ is smooth off its closed orbit, since the
+edges of $Q$ are primitive. Write $p$ for its fixed point in $Z$.
+
+The anticanonical bundle on $Z$ is the pullback of the globally
+generated anticanonical bundle for the face fan of $P$. A general
+section on $Z\times\mathbf P^1$ cuts out a smooth hypersurface away
+from $\{p\}\times\mathbf P^1$ by Bertini. Its restriction there is
+a general binary quadratic, with two simple roots in $\C^*$.
+At each root projection to $Z$ identifies the hypersurface germ
+with $(X_Q,0)$ by the implicit function theorem. In particular $X$
+is normal. Adjunction gives $\omega_X\simeq\OO_X$. On the projective
+Gorenstein toric fourfold $A=Z\times\mathbf P^1$ one has
+$H^i(A,\OO_A)=0$ for $i>0$. Serre duality and the sequence
+$0\to\omega_A\to\OO_A\to\OO_X\to0$ give
+$H^0(X,\OO_X)=\C$ and $H^1(X,\OO_X)=0$.
+
+To resolve the two points, subdivide $\sigma$ successively at
+$(0,0,1)$ and $(-1,0,1)$. Their projections are the two interior
+lattice points of $Q$. The first star joins the origin of the
+polygon to its six edges. The second bisects the common edge of the
+two triangles of normalized area two. All resulting triangles are
+unimodular. Let $\widehat Z$ be the smooth projective toric
+threefold so obtained and $Y\subset\widehat Z\times\mathbf P^1$
+the proper transform of $X$. Near the two roots the resolution
+is identified by projection with the toric resolution of $X_Q$.
+Every interior edge in the triangulation contains an interior vertex
+as an endpoint. Thus each exceptional fibre is the union of the two
+toric divisors of the interior rays, meeting transversely along their
+common invariant curve. In particular $Y\to X$ is a projective log
+resolution and is an isomorphism on the regular locus.
+
+Use the two projection charts to identify both oriented links with
+the link $L$ of $X_Q$. We claim that the image of
+\[
+ H^2(Y,\C)\longrightarrow H^2(L,\C)\oplus H^2(L,\C)
+\]
+is the diagonal. Indeed the fan polytope of the original fourfold is
+the convex hull of $(P,0)$ and $(0,0,0,\pm1)$. Its boundary lattice
+points are the two latter vertices and the points of $(\partial P,0)$
+in the lattice. The fan of $\widehat Z\times\mathbf P^1$ gives a
+projective unimodular triangulation of this boundary using all its
+lattice points. We may choose our general section nondegenerate with
+respect to the polar Newton polytope. By the proof of
+\cite[Theorem~4.4.2]{Bat}, the components of the intersections of $Y$
+with the toric boundary divisors span $H^2(Y,\C)$. The six boundary
+divisors corresponding to vertices of $Q$ have irreducible
+intersections with $Y$, since their rays pass through vertices of the
+fan polytope. They restrict in both projection charts to the same
+six toric divisor classes on the punctured cone. Divisors associated
+to the two interior points of $Q$ split over the two roots, and
+each component is exceptional, hence disjoint from both links. All
+the other boundary divisors miss the two germs. This proves
+containment in the diagonal.
+
+For the reverse inclusion, the fan of the punctured cone consists
+of the proper faces of $\sigma$. Its homogeneous coordinate presentation
+\cite[Theorem~2.1]{Cox} is a principal torus bundle over the punctured
+cone. Indeed the fan is smooth and
+its six rays span $\Z^3$, as the rays over $(1,0),(0,1),(-1,1)$
+already form a lattice basis. The total space is the complement in
+$\C^6$ of coordinate subspaces of complex codimension at least two
+and has vanishing first and second cohomology by general position.
+The low-degree sequence of the bundle then gives a surjection from
+the complexified character group of the acting torus to $H^2(L,\C)$
+by first Chern classes, using the retraction of the punctured cone
+onto its link. The six coordinate characters generate this group
+and give precisely the six ray divisor classes. This proves the claim.
+
+By duality the relation space $K$ in \eqref{eq:K} is the
+anti-diagonal in $H_2(L,\C)\oplus H_2(L,\C)$. Taking the same
+marking and homogeneous toric form in the two projection charts
+identifies their period images with the same germ
+$G_Q=(\PD\circ\ell_Q)(B_Q)$. The restriction of a global volume form
+differs from the toric generator by a unit in each chart and hence
+has the same image by Theorem~\ref{thm:local}. Since the equations of $G_Q$ are
+homogeneous, the pullbacks of its two ideals to $K$ coincide.
+Theorem~\ref{thm:global} therefore gives $B_Q$ as the factor
+transverse to the smooth germ of dimension $h$.
+
+It remains to compute $B_Q$. The ordered edge vectors of $Q$ are
+\[
+ (1,1),\ (-1,1),\ (-1,0),\ (-1,-1),\ (1,-1),\ (1,0).
+\]
+Take the translation slice $t_6=0$. The general solution of the
+first moment equation is
+\[
+ (t_1,\ldots,t_6)=(u+3s,v+s,4s,u+s,v+3s,0).
+\]
+The second moment is $(4s(u+v),4s(u-v))$. Modulo $(us,vs)$
+the third is $(-12s^3,0)$. For every $k\geq 4$, setting $s=0$
+cancels the two pairs with parameters $u,v$. Every other term of
+the $k$th moment is divisible by $us$, $vs$ or $s^3$. This gives
+the stated ring. Its quotient by $(w_1,\ldots,w_h,u,v)$ is
+$\C\{s\}/(s^3)$, so $s^2\ne0$. Setting $s=\varepsilon$ and the
+other parameters to zero gives a deformation modulo $\varepsilon^3$.
+Every lift of its first-order class would send $s$ to
+$\varepsilon+O(\varepsilon^2)$, whose cube is nonzero modulo
+$\varepsilon^4$. This proves the assertion.
+\end{proof}

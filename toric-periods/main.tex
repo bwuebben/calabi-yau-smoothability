@@ -1,0 +1,239 @@
+\pdfoutput=1
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.2in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdfauthor={Bernd Johannes Wuebben},
+  pdftitle={Link periods and deformations of Calabi-Yau threefolds with toric singularities}}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\OO}{\mathcal O}
+\DeclareMathOperator{\Def}{Def}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Gr}{Gr}
+\DeclareMathOperator{\PD}{PD}
+\DeclareMathOperator{\im}{im}
+\title[Link periods and Calabi--Yau deformations]{Link periods and deformations of Calabi--Yau threefolds with toric singularities}
+\author{Bernd Johannes Wuebben}
+\date{November 26, 2026\newline This version: November 26, 2026}
+\subjclass[2020]{14B07 (primary); 14J32, 14M25, 32G20 (secondary)}
+\keywords{Toric singularities, link periods, Calabi--Yau threefolds, semiuniversal deformations, Minkowski decompositions}
+\begin{document}
+\begin{abstract}
+The periods of a relative volume form on the link of an isolated Gorenstein
+toric threefold singularity embed its semiuniversal deformation germ in
+the third cohomology of the link. For the homogeneous toric form this
+embedding is linear in Altmann's parameters. Multiplication by a
+holomorphic unit changes the embedding by an automorphism of its source,
+even over nonreduced bases. The automorphism comes from a common change
+of the toric height coordinate at all edges of the defining polygon.
+Let $X$ be a connected normal projective threefold with trivial
+dualizing sheaf, vanishing irregularity and only such singularities.
+In the product of the local period images, impose the linear condition
+that the Poincar\'e dual link classes sum to zero in the second homology
+of a projective log resolution. Using a local-to-global lifting theorem
+for small Artin extensions, we identify the semiuniversal germ of $X$ with
+the product of this scheme-theoretic linear section and a smooth germ
+of dimension $h^1(X,\Theta_X)$. We construct a projective example in
+which a first-order deformation extends to second order and is
+obstructed at third order.
+\end{abstract}
+\maketitle
+\enlargethispage{2pt}
+
+\section{Introduction}
+
+At an ordinary double point of a Calabi--Yau threefold, the period of a
+volume form over the vanishing three-sphere is a local smoothing
+parameter. When several nodes lie on a compact threefold, their
+parameters satisfy the homological relations among the exceptional
+curves of a small resolution \cite{Fri,LLW}. For a general isolated
+Gorenstein toric singularity in dimension three, the local deformation
+space can itself be reducible or nonreduced. Altmann describes its
+equations in terms of a lattice polygon \cite{Alt}. To use these
+equations on a compact threefold one must relate the polygon parameters
+at different singularities to the periods of a single global form.
+Even locally, the restriction of that form can differ from the toric
+one by a unit depending on the point of the threefold as well as on
+the deformation parameters.
+
+\subsection*{The local period embedding}
+Let $Q$ be a lattice polygon with primitive edges, and let $X_Q$ be
+the affine toric threefold defined by the cone over $Q$ at height one.
+These are the local models for isolated Gorenstein toric singularities
+in dimension three. Write $d_1,\ldots,d_n$ for the oriented edge
+vectors in cyclic order. Altmann's semiuniversal base $B_Q$ is the
+analytic germ at zero given by
+\begin{equation}\label{eq:moments}
+ \sum_{i=1}^n d_i t_i^k=0 \quad(k\geq 1),\qquad
+ (t_1,\ldots,t_n)\quad\text{modulo common translation}.
+\end{equation}
+We take the slice $t_1=0$. The equations of degree one embed $B_Q$ in
+its tangent space $W_Q$, of dimension $n-3$. For a lattice Minkowski
+decomposition of $Q$, the edges belonging to the same summand have
+equal parameters. The reduced components arise from maximal such
+decompositions \cite[\S\S2,8]{Alt}. The higher powers in
+\eqref{eq:moments} also determine deformations over Artin algebras
+that cannot be recovered from these components.
+
+Let $L$ be the oriented link of the vertex. On a deformation, the
+restriction of a relative dualizing generator to a neighbourhood of
+$L$ gives a class in $H^3(L,\C)$, with the marking induced by the
+central fibre. Over a local Artin $\C$-algebra $A$ this is a class in
+$H^3(L,\C)\otimes A$. We write $P_g$ for the period map of
+$g\Omega_Q$, where $\Omega_Q$ is the homogeneous toric volume form
+on Altmann's family and $g$ is a holomorphic unit. We allow $g$ to
+depend on a smooth parameter germ $D$, to accommodate the restriction
+of a volume form from a larger family.
+
+\begin{theorem}\label{thm:local}
+There is a linear isomorphism $\ell_Q:W_Q\to H^3(L,\C)$ whose
+restriction to $B_Q$ is the period map of $\Omega_Q$.
+For every $g$ as above there is an analytic automorphism
+$\varphi_g$ of $B_Q\times D$ over $D$ such that
+\[
+ P_g(t,u)=\ell_Q\bigl(\operatorname{pr}_1\varphi_g(t,u)\bigr).
+\]
+This equality gives the marked period class on every Artin pullback.
+The automorphism preserves the ideal of each diagonal $t_i=t_j$.
+\end{theorem}
+
+The distinction between a change of parameters in the ambient vector
+space and an automorphism of $B_Q$ already occurs for a polygon with
+six edges. Its base is a point of length ten with nonzero cubic
+products. A quadratic change with identity differential takes one of
+the defining equations to a nonzero cubic in its local ring
+(Section~\ref{sec:examples}). For a volume form the change has a
+special shape. The quotient by the horizontal two-dimensional torus
+has a height coordinate $z$. Averaging the unit $g$ over the compact
+torus gives a function of $z$ and the parameters, with the same effect
+on periods as $g$. Let $H$ be its primitive in $z$, vanishing at zero.
+The change on the base is $t_i\mapsto H(t_i,t,u)$ for every edge.
+The quotients
+\[
+  \frac{H(z,t,u)-H(t_i,t,u)}{z-t_i}
+\]
+are units. The moment equations imply all the multiplicative relations
+these units must satisfy to lift $z\mapsto H(z,t,u)$ through the
+binomial equations of the total family. This lift has the required
+Jacobian on the volume form (Section~\ref{sec:local}). Homogeneity
+makes the periods of $\Omega_Q$ linear. Identifying their differential
+with the logarithmic Hodge comparison on the link proves that these
+linear forms give coordinates (Section~\ref{sec:hodge}).
+
+\subsection*{The compact threefold}
+Let $X$ be a connected normal projective complex threefold with
+$\omega_X\simeq\OO_X$, $H^1(X,\OO_X)=0$ and isolated singularities
+analytically isomorphic to germs $(X_{Q_p},0)$ as above. Write
+$\Def(X)$ for its semiuniversal analytic germ, with the central
+fibre identified with $X$. Fix local toric
+identifications and a projective log resolution $Y\to X$ that is an
+isomorphism on the regular locus and has reduced exceptional divisor
+with simple normal crossings. Realize each link $L_p$ as the boundary
+of a small neighbourhood of the exceptional fibre. Set
+\begin{equation}\label{eq:K}
+ V_p=H_2(L_p,\C),\qquad V=\bigoplus_p V_p,\qquad
+ K=\ker\!\left(V\xrightarrow{\,\sum(\iota_p)_*\,}H_2(Y,\C)\right),
+\end{equation}
+where $\iota_p:L_p\hookrightarrow Y$ is the inclusion.
+Link Poincar\'e duality carries $\ell_{Q_p}(B_{Q_p})$ to a closed
+analytic subspace $G_p\subset V_p$. The homogeneous equations of
+$G_p$ make it independent of a scalar normalization of $\Omega_{Q_p}$.
+
+\begin{samepage}
+\begin{theorem}\label{thm:global}
+Suppose that a deformation of $X$ lifts across a small extension of
+local Artin $\C$-algebras whenever all its singular germs admit lifts
+across that extension. With $h=h^1(X,\Theta_X)$, there is an
+isomorphism of analytic germs
+\begin{equation}\label{eq:compact}
+ (\Def(X),0)\simeq
+ \left(\C^h\times\Bigl(K\times_V\prod_p G_p\Bigr),0\right).
+\end{equation}
+The projection to $V$ consists of the Poincar\'e duals of the link
+periods of one global relative volume form. The fibre product is taken
+with the scheme structures defined by \eqref{eq:moments}.
+\end{theorem}
+\end{samepage}
+
+The lifting hypothesis is the local detection theorem of
+\cite[Lemma~3.1]{Wue} for projective threefolds with isolated
+Gorenstein canonical singularities. It applies here because the
+Gorenstein toric germs are canonical. A small extension has kernel
+annihilated by the maximal ideal. Existence of a global lift across
+each such extension suffices in Theorem~\ref{thm:global}.
+To see why, restrict the volume form to the complement of the
+singularities. Its boundary classes lie in $K$ with coefficients in
+every Artin algebra. The logarithmic description of the derivative
+identifies $K$ with the image of tangent localization. Thus, once a
+lift exists, a first-order deformation with values in the kernel of
+the extension supplies exactly the missing change in its periods.
+This gives equality of the analytic ideals in \eqref{eq:compact}
+(Section~\ref{sec:compact}).
+
+In particular one can read the equations on $K$ by restricting the
+polygon equations, in the linear coordinates $\PD\circ\ell_{Q_p}$.
+If $K=0$, only the smooth factor remains. If $K=V$, all the local
+deformation parameters occur independently. For intermediate $K$,
+the multiplication of nilpotents is determined by restriction of the
+ideals. The construction requires a projective log resolution, which
+may have nonzero discrepancies.
+
+Gross constructed a projective Calabi--Yau threefold with two cones over
+$\mathbb F_1$ and a tangent direction obstructed at second order
+\cite[Example~2.19]{Gross}. For an example with a cubic obstruction,
+consider a general anticanonical hypersurface in the product of a
+toric threefold with $\mathbb P^1$. For the threefold constructed in
+Section~\ref{sec:compact-example}, the hypersurface has two singular
+points with the same hexagonal polygon. Projection to the toric factor
+identifies their links. Under this identification the kernel $K$ is
+the antidiagonal, so the compact germ contains one copy of the full
+local deformation space as a factor. Its ring, up to smooth parameters, is
+\[
+ \C\{u,v,s\}/(us,vs,s^3).
+\]
+The $s$-direction extends to order two, and the equation $s^3=0$
+obstructs every extension of that direction to order three.
+
+In general the first obstruction to extending a tangent vector occurs
+at the degree of the first polygon moment that is nonzero on its link
+periods (Proposition~\ref{prop:jet}). For every $r\geq 2$ we give an
+isolated toric singularity with deformation base supported at a point
+and a tangent vector whose first obstruction occurs at order $r$
+(Proposition~\ref{prop:orders}).
+
+Gross's local-to-global comparison for canonical Calabi--Yau threefolds
+gives equations for the reduced support when tangent localization has
+positive corank \cite[Theorems~1.16 and~2.2]{Gross}. In the formulation
+of Friedman \cite[Theorem~3.8 and Corollary~3.11]{Fried}, generalized
+$T^1$-lifting gives this comparison and a product decomposition when
+tangent localization is surjective. For nodes and the
+specified degree-five and degree-six del Pezzo cones, the description
+by marked link periods in \cite[Theorem~1.1]{Wue} also identifies
+particular discriminant loci. Here the polygons are arbitrary,
+including those with an intrinsically nonreduced local base. Gross's
+volume form on the family associated to a Minkowski decomposition
+\cite[Proposition~3.2]{GrossSL} gives the toric expression on such a
+component. The height change in Theorem~\ref{thm:local} acts on the
+whole semiuniversal family, which permits a common global volume form
+even in these nonreduced directions.
+
+\input{sections/local}
+\input{sections/hodge}
+\input{sections/compact}
+\input{sections/examples}
+\input{sections/obstruction_orders}
+\input{sections/compact_example}
+\input{references}
+\end{document}

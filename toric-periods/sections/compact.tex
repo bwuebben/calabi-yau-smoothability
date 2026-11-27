@@ -1,0 +1,120 @@
+\section{The equations on a projective threefold}\label{sec:compact}
+
+Let $B=\Def(X)$ and let $\mathcal X\to B$ be a proper semiuniversal
+family. We use the local models of Section~\ref{sec:local} with the
+markings fixed in the introduction. A choice of global generator of
+$\omega_X$ fixes the scale of the infinitesimal period comparison
+at every point.
+
+\subsection{The period map of a global form}
+After shrinking $B$, the family is relatively Gorenstein and its
+relative dualizing sheaf is a line bundle. Its restriction to $X$
+has a generator $\omega$. The vanishing $H^1(X,\omega_X)=0$ permits
+a lift of $\omega$ over the full analytic germ. Indeed a finite free
+complex for the proper cohomology of the relative dualizing sheaf
+computes cohomology after base change. In a minimal such complex the
+degree-zero term has rank one and the adjacent terms vanish, by the
+cohomology of the central fibre. A generator of the resulting direct
+image lifts $\omega$, and its zero locus has closed image disjoint
+from the origin. Shrinking once more yields a relative volume form
+$\widetilde\omega$. The same calculation for $\OO_{\mathcal X}$
+gives $\pi_*\OO_{\mathcal X}=\OO_B$, where $\pi$ is the family map.
+This form of the base change argument, including nonreduced $B$,
+is also used in \cite[\S2]{Wue}.
+
+For each $p$ choose an analytic classifying map $b_p:B\to B_{Q_p}$
+and an identification of the germ of the global family at $p$ with
+the pullback of the toric family. Embed $B$ in a smooth germ $D$.
+The graph of $b_p$ in $B_{Q_p}\times D$ is closed, so the above
+pullback is a closed subgerm of $\mathcal X_{Q_p}\times D$. There
+$\widetilde\omega/\Omega_{Q_p}$ is a unit on the pullback. Lift it to
+a unit $g_p$ on the ambient family by lifting a representative in the
+local ring. Theorem~\ref{thm:local} supplies over $D$ an isomorphism
+\[
+  B_{Q_p}\times D\longrightarrow G_p\times D
+\]
+whose first component is the marked period after link duality. Its
+restriction to the graph of $b_p$ depends only on the restricted form:
+on each Artin quotient it is the de Rham class of
+$\widetilde\omega$, and the analytic local ring of $B$ is separated.
+Taking all these restrictions gives $P:B\to G=\prod_pG_p$.
+
+For any Artin pullback the smooth locus over the central open set
+$U=X_{\rm reg}$ carries the closed form $\widetilde\omega$.
+The relative de Rham resolution of the constant coefficient ring
+therefore puts its link classes in the image of $H^3(U)\to
+\bigoplus_p H^3(L_p)$ tensored with that ring. By
+Proposition~\ref{prop:tangent} this image is $K$ after duality.
+Since the linear equations of $K$ vanish on every maximal-ideal
+quotient of $\OO_{B,0}$, the analytic map $P$ factors through
+$K\times_V G$. Its tangent map has image $K$ and kernel
+$H^1(X,\Theta_X)$ by the same proposition, now applied to the
+central form $\omega$. A different relative generator rescales the
+tuple by a single unit on $B$, which preserves both the linear
+subspace and the homogeneous local ideals.
+
+\subsection{Lifting with prescribed periods}
+\begin{proof}[Proof of Theorem~\ref{thm:global}]
+Choose functions $s_1,\ldots,s_h$ on $B$ vanishing at the origin
+whose differentials restrict to a basis of the dual of $\ker dP$.
+They give a map
+\[
+ F=(s,P):B\longrightarrow T=\C^h\times (K\times_V G).
+\]
+Since each $G_p$ has tangent space $V_p$, one has
+$T_0T=\C^h\oplus K$ and $dF$ is an isomorphism. In particular $F$
+is a closed immersion of germs. Indeed the pullbacks of ambient
+coordinates span the cotangent space of $B$. A basis among them is a
+coordinate system in a minimal smooth embedding of $B$, by the
+analytic inverse function theorem.
+
+Let $A'\to A$ be a small extension with kernel $I$ and let $b\in B(A)$.
+Fix $y'\in T(A')$ above $F(b)$. Lift the image of $b$ in the
+smooth ambient germ $D$ to $D(A')$. With this auxiliary parameter
+fixed, the $p$th component of the prescribed period in $y'$ pulls
+back under the inverse local period isomorphism to a point of
+$B_{Q_p}(A')$ above $b_p(b)$. This proves local liftability of the
+given deformation simultaneously at all of its singular points.
+The lifting hypothesis now supplies a global lift. A semiuniversal
+family induces a smooth morphism from its formal base to the
+deformation functor. Hence this lift is represented by a point
+$b'\in B(A')$ reducing to the specified point $b$.
+
+The two homomorphisms $\OO_{T,0}\to A'$ defined by $y'$ and
+$F(b')$ have the same reduction to $A$. Their difference is a
+derivation at the closed point with values in $I$, because
+$\mathfrak m_{A'} I=0$. Let $v\in T_0B\otimes I$ be the inverse
+image of this difference under $dF\otimes I$. Adding $v$ to the
+homomorphism defining $b'$ again gives a ring homomorphism, and
+its image under $F$ is $y'$. This proves formal smoothness of the
+closed immersion. Applying the lifting to the successive
+maximal-ideal quotients of $\OO_{T,0}$ gives a left inverse to the
+completed quotient homomorphism, hence its injectivity.
+Faithful flatness of completion gives the asserted analytic
+isomorphism.
+\end{proof}
+
+\begin{remark}
+The lifting argument also describes what follows from local
+liftability alone. Suppose $B$ classifies a semiuniversal deformation
+with isolated singularities and the lifting hypothesis of
+Theorem~\ref{thm:global} holds. Write $D_0$ for the product of its
+local hulls, $\lambda:T_0B\to T_0D_0$ for tangent localization, and
+$h_0,r$ for the dimensions of its kernel and cokernel. In a minimal
+smooth embedding of $D_0$ with ideal $I_0$, the global base admits
+a presentation
+\[
+ \OO_{B,0}\simeq \C\{s_1,\dots,s_{h_0},t_1,\dots,t_{\dim T_0D_0}\}
+             /(I_0,f_1,\dots,f_r)
+\]
+with the $df_i(0)$ linearly independent. To see this, embed $B$ in
+$\C^{h_0}\times D_0$ by the local classifying maps and functions
+dual to the kernel as above. Choose elements of its ideal whose
+linear parts span the conormal space in the smooth ambient germ.
+Their zero locus in $\C^{h_0}\times D_0$ has the same tangent space
+as $B$ and any point of this locus gives local lifts via its
+projection to $D_0$. The same small-extension argument proves
+equality of the germs. For the toric points, the periods give the
+$f_i$ as linear equations on $V$, independent of the smooth
+coordinates.
+\end{remark}
